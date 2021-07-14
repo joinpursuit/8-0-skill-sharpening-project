@@ -1,0 +1,16 @@
+{
+  "name": "8-0-skill-sharpening-project",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "jest --runInBand __tests__/*.test.js",
+    "watch": "jest --watch-all __tests__/*.test.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "jest": "^27.0.6"
+  }
+}
