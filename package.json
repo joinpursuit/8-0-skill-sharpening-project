@@ -4,8 +4,8 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "jest --runInBand __tests__/*.test.js",
-    "watch": "jest --watch-all __tests__/*.test.js"
+    "test": "jest --runInBand",
+    "watch": "jest --watchAll"
   },
   "keywords": [],
   "author": "",
