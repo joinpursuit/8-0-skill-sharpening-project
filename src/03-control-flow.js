@@ -2,6 +2,7 @@
  * isEqual()
  * ---------------------
  * Takes in two values and returns if they are strictly equal or not
+ * HINT: The prompt says STRICTLY equal. What does that mean in JavaScript?
  * @param {*} a
  * @param {*} b
  * @returns {boolean}
@@ -18,7 +19,7 @@ function isEqual(a, b) {}
 /**
  * findLarger()
  * ---------------------
- * Takes in two numbers and returns the larger number. The numbers are guaranteed to be unique.
+ * Takes in two numbers and returns the larger number. The numbers are guaranteed to be unique (not equal to each other).
  * @param {number} a
  * @param {number} b
  * @returns {number}
@@ -50,6 +51,7 @@ function findLargerOrTie(a, b) {}
  * positiveNegativeOrZero()
  * ---------------------
  * Takes in a number and returns whether that number is "Positive", "Negative", or "Zero".
+ * HINT: Capitalization and spelling count!
  * @param {number} a
  * @returns {string}
  *
@@ -70,9 +72,10 @@ function positiveNegativeOrZero(a) {}
  * ---------------------
  * Takes in a `language` (e.g "english", "spanish", or "german") and returns "Hello World" in that language. Must work for at least "english", "spanish", and "german". It should default to English if no argument is passed in.
  *
- * TRANSLATIONS: English -> "Hello World"
- *               Spanish -> "Hola Mundo"
- *               German  -> "Hallo Welt"
+ * TRANSLATIONS: english -> "Hello World"
+ *               spanish -> "Hola Mundo"
+ *               german  -> "Hallo Welt"
+ * HINT: The function expects lowercase names of languages.
  * @param {string} language
  * @returns {string}
  *
@@ -131,6 +134,7 @@ function calculateLetterGrade(grade) {}
  * animalCounts()
  * ---------------------
  * Returns the count of animals, properly pluralizing the animal if there is more than one.
+ * The animal is guaranteed to be one you can pluralize by adding `s`. (NO geese, fish, deer, oxen, etc.)
  * @param {string} animal
  * @param {number} numberOfAnimals
  * @returns {string}
@@ -148,12 +152,16 @@ function animalCounts(animal, numberOfAnimals) {}
  * evenOrOdd()
  * ---------------------
  * Takes in a number and returns whether that number is "Even" or "Odd".
+ * HINT: How is this similar to isOdd() or isEven() from part 2?
  * @param {number} a
  * @returns {string}
  *
  * EXAMPLE:
  *  evenOrOdd(11);
  *  //> "Odd"
+ * 
+ *  evenOrOdd(48);
+ *  //> "Even"
  */
 function evenOrOdd(a) {}
 

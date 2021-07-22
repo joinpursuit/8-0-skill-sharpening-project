@@ -2,6 +2,7 @@
  * alwaysTrue()
  * ---------------------
  * Always returns the value `true`.
+ * HINT: What data type do we want to return here?
  * @returns {boolean}
  *
  * EXAMPLE:
@@ -14,6 +15,8 @@ function alwaysTrue() {}
  * greet()
  * ---------------------
  * Greets the person by name.
+ * HINT: Look at the example closely. 
+ * Capitalization, spacing, spelling, and punctuation count!
  * @param {string} name
  * @returns {string}
  *
@@ -27,6 +30,7 @@ function greet() {}
  * add()
  * ---------------------
  * Adds two numbers together and returns the sum.
+ * HINT: If we are adding two numbers, how many parameters do we need?
  * @param {number} a
  * @param {number} b
  * @returns {number}
@@ -41,6 +45,7 @@ function add() {}
  * multiply()
  * ---------------------
  * Multiplies the two numbers together and returns the product.
+ * HINT: How is this similar to add()? How is it different?
  * @param {number} a
  * @param {number} b
  * @returns {number}
@@ -57,6 +62,9 @@ function multiply() {}
  * Returns the average of two numbers. You can get the average by adding up all numbers and then dividing by how many numbers were added.
  *
  * NOTE: The sum of all numbers will always be even.
+ * HINT: How is this problem similar to add()? How is it different?
+ * HINT: Use parentheses () to control the order of operations:
+ * 6 + 4 / 2 = 8 but (6 + 4) / 2 = 5. Why is this?
  *
  * @param {number} a
  * @param {number} b
@@ -64,7 +72,7 @@ function multiply() {}
  *
  * EXAMPLE:
  *  average(10, 6);
- *  //> 8
+ *  //> 8 // 10 + 6 = 16; 16/2 = 8;
  */
 function average() {}
 
@@ -74,6 +82,7 @@ function average() {}
  * Returns the average of three numbers. You can get the average by adding up all numbers and then dividing by how many numbers were added.
  *
  * NOTE: The sum of all numbers will always be even.
+ * HINT: How is this problem similar to average()? How is it different?
  *
  * @param {number} a
  * @param {number} b
@@ -82,7 +91,7 @@ function average() {}
  *
  * EXAMPLE:
  *  averageThree(10, 11, 19);
- *  //> 10
+ *  //> 10 // 10 + 11 + 19 = 30; 30 / 3 = 10;
  */
 function averageThree() {}
 
@@ -94,6 +103,8 @@ function averageThree() {}
  * @param {*} b
  * @returns {boolean}
  *
+ * HINT: What JavaScript function returns the data type of something?
+ * 
  * EXAMPLE:
  *  compareTypes("left", "right");
  *  //> true
@@ -110,6 +121,9 @@ function compareTypes() {}
  * @param {number} a
  * @returns {number}
  *
+ * HINT: Using pencil and paper, how would you make a positive number look negative?
+ * How could you apply this to a variable?
+ * 
  * EXAMPLE:
  *  flipSign(-10);
  *  //> 10
@@ -130,6 +144,9 @@ function flipSign() {}
  * @param {string} e
  * @returns {string}
  *
+ * HINT: You DON'T need fancy methods like `split()` and `join()` to do this.
+ * What is the simplest way to combine two strings?
+ * 
  * EXAMPLE:
  *  joinStringsWithSpaces("left", "right", "up", "down", "away");
  *  //> "left right up down away"
@@ -142,7 +159,8 @@ function joinStringsWithSpaces() {}
  * Returns the first and last character of a larger string as a single string.
  *
  * NOTE: The inputted string will always have a length of 2 or greater.
- *
+ * HINT: How can you find the nth character of any string?
+ * How can find out how long a string is? How will this help you solve this problem?
  * @param {string} a
  * @returns {string}
  *

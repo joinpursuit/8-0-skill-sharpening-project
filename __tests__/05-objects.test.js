@@ -17,6 +17,13 @@ describe("createEmptyObject()", () => {
     const expected = {};
     expect(actual).toEqual(expected);
   });
+
+  test("should return a new empty object each time function is called", () => {
+    const first = createEmptyObject();
+    const second = createEmptyObject();
+    expect(first).toEqual(second);
+    expect(first).not.toBe(second);
+  })
 });
 
 describe("createObjectWithValue()", () => {

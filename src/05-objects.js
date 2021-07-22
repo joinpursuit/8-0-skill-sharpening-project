@@ -2,6 +2,7 @@
  * createEmptyObject()
  * ---------------------
  * Returns an empty object.
+ * Should return a new empty object each time the function is called.
  * @returns {Object}
  *
  * EXAMPLE:
