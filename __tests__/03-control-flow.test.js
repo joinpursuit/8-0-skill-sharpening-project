@@ -30,6 +30,11 @@ describe("isEqual()", () => {
     expect(isEqual("cat", "")).toEqual(false);
     expect(isEqual("cat", "dog")).toEqual(false);
   });
+
+  test("returns false when elements are not strictly equal", () => {
+    // Returns false for values that are only equal through coercion
+    expect(isEqual(1, "1")).toEqual(false);
+  })
 });
 
 describe("findLarger()", () => {

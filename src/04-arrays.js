@@ -2,6 +2,8 @@
  * createEmptyArray()
  * ---------------------
  * Returns an empty array.
+ * Make sure you return a different empty array each time the function is called.
+ * You can do this by returning an empty array that is created INSIDE the function (not outside it).
  * @returns {*[]}
  *
  * EXAMPLE:
@@ -41,6 +43,7 @@ function getArrayLength(array) {}
  * getFirstElementOfArray()
  * ---------------------
  * Returns the first element of the array.
+ * HINT: How is this similar to getFirstAndLastCharacter() in part 1?
  * @param {*[]} array
  * @returns {*}
  *
@@ -54,6 +57,7 @@ function getFirstElementOfArray(array) {}
  * getLastElementOfArray()
  * ---------------------
  * Returns the last element of the array.
+ * HINT: How is this similar to getFirstAndLastCharacter() in part 1?
  * @param {*[]} array
  * @returns {*}
  *

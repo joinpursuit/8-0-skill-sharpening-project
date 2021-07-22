@@ -17,6 +17,20 @@ describe("createEmptyArray()", () => {
     const expected = [];
     expect(actual).toEqual(expected);
   });
+
+  /*
+   * Guards against incorrect implementations such as:
+   * let myArr = [];
+   * function createEmptyArray() {
+   *   return myArr;
+   * }
+  */
+  test("each function call should return a different array", () => {
+    const first = createEmptyArray();
+    const second = createEmptyArray();
+    expect(first).toEqual(second);
+    expect(first).not.toBe(second);
+  })
 });
 
 describe("createArrayWithTwoElements()", () => {

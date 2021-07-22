@@ -28,6 +28,7 @@ function convertToNumber(val) {}
  * convertToString()
  * ---------------------
  * Converts the inputted value into a string.
+ * The value is guaranteed to NOT be null or undefined.
  * @param {*} val
  * @returns {string}
  *
