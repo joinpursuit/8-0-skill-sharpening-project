@@ -101,7 +101,10 @@ function average(numberA, numberB) {
  *  averageThree(10, 11, 19);
  *  //> 10 // 10 + 11 + 19 = 30; 30 / 3 = 10;
  */
-function averageThree() {}
+function averageThree(numberA, numberB, numberC) {
+  return (numberA + numberB + numberC)/3
+}
+
 
 /**
  * compareTypes()
