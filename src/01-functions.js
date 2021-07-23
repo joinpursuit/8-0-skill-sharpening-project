@@ -126,7 +126,7 @@ function averageThree(a,b,c) {
  */
 function compareTypes(a, b) {
   if(typeof a === typeof b) return true;
-  else return false;
+  return false;
 }
 
 /**

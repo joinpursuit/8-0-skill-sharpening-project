@@ -149,7 +149,7 @@ function isOdd(num) {
  */
 function isTruthy(val) {
   if(val) return true;
-  else return false;
+  return false;
 }
 
 /**
@@ -168,7 +168,7 @@ function isTruthy(val) {
  */
 function isFalsy(val) {
   if (!val) return true;
-  else return false;
+  return false;
 }
 
 // Do not change the code below.
