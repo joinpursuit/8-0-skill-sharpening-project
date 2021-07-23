@@ -85,7 +85,15 @@ function findLargerOrTie(a, b) {
  *  positiveNegativeOrZero(1);
  *  //> "Positive"
  */
-function positiveNegativeOrZero(a) {}
+function positiveNegativeOrZero(a) {
+  if(a === 0){
+    return 'Zero';
+  }else if(Math.sign(a) === -1){
+    return 'Negative';
+  }else{
+    return 'Positive';
+  }
+}
 
 /**
  * aroundTheWorldGreeting()
