@@ -114,7 +114,15 @@ function positiveNegativeOrZero(a) {
  *  aroundTheWorldGreeting();
  *  //> "Hello World"
  */
-function aroundTheWorldGreeting(language) {}
+function aroundTheWorldGreeting(language) {
+  if(!language || language.toLowerCase() === 'english'){
+    return 'Hello World';
+  }else if(language.toLowerCase() === 'spanish'){
+    return 'Hola Mundo';
+  }else if(language.toLowerCase() === 'german'){
+    return 'Hallo Welt';
+  }
+}
 
 /**
  * aroundTheWorldGreetingWithSwitch()
