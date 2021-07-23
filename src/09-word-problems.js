@@ -19,7 +19,23 @@
  *  applyDiscount(1000, 9, true);
  *  //> 700
  */
-function applyDiscount(priceInCents, age, hasMembership) {}
+function applyDiscount(priceInCents, age, hasMembership) {
+  //create discount variable and set to 1
+  let discount = 1;
+
+  //if has membership is true
+  if (hasMembership) {
+    //subtract .2 from discount for 80% price
+    discount -= 0.2;
+  }
+
+  //if age is less than or equal to 10 or age is greater than or equal to 65
+  if (age <= 10 || age >= 65) {
+    //subtract .1 from discount for 70% price
+    discount -= 0.1;
+  }
+  return Math.round(priceInCents * discount);
+}
 
 /**
  * getCartTotal()
@@ -40,7 +56,18 @@ function applyDiscount(priceInCents, age, hasMembership) {}
     getCartTotal(cart);
  *  //> "$30.00"
  */
-function getCartTotal(products) {}
+function getCartTotal(products) {
+  //declare cartTotal variable and initialize it to 0
+  let cartTotal = 0;
+
+  //iterate through array of objects
+  products.forEach((item) => {
+    //add and re-assign totalCost to evaluated result of multiplying price in cents of current obj by quantity
+    cartTotal += item.priceInCents * item.quantity;
+  });
+  //post iteration return cartTotal
+  return `$${(cartTotal / 100).toFixed(2)}`;
+}
 
 /**
  * compareLocations()
@@ -80,7 +107,24 @@ function getCartTotal(products) {}
     compareLocations(address1, address2);
     //> "Same city."
  */
-function compareLocations(address1, address2) {}
+function compareLocations(address1, address2) {
+  //declare variables to make life easier
+  let postComparisonResult = "Addresses are not near each other.";
+  const sameStreet = address1.street === address2.street;
+  const sameCity = address1.city === address2.city;
+  const sameState = address1.state === address2.state;
+  const sameZip = address1.zip === address2.zip;
+
+  if (sameStreet && sameCity && sameState && sameZip) {
+    postComparisonResult = "Same building.";
+  } else if (sameCity && sameState && sameZip) {
+    postComparisonResult = "Same city.";
+  } else if (sameState) {
+    postComparisonResult = "Same state.";
+  }
+
+  return postComparisonResult;
+}
 
 /**
  * gradeAssignments()
@@ -127,7 +171,61 @@ function compareLocations(address1, address2) {}
     //>   },
     //> ];
  */
-function gradeAssignments(assignments) {}
+const assignments = [
+  { kind: "PASS-FAIL", score: { received: 4, max: 4 } },
+  { kind: "PASS-FAIL", score: { received: 3, max: 4 } },
+  { kind: "PERCENTAGE", score: { received: 8, max: 10 } },
+  { kind: "PERCENTAGE", score: { received: 7, max: 9 } },
+  { kind: "ESSAY", score: { received: 4, max: 5 } },
+];
+console.log(gradeAssignments(assignments));
+//> [
+//>   {
+//>     kind: "PASS-FAIL",
+//>     score: { received: 4, max: 4 },
+//>     status: "PASSED",
+//>   },
+//>   {
+//>     kind: "PERCENTAGE",
+//>     score: { received: 7, max: 9 },
+//>     status: "FAILED: 77.8%",
+//>   },
+//>   {
+//>     kind: "ESSAY",
+//>     score: { received: 4, max: 5 },
+//>     status: "SCORE: 4/5",
+//>   },
+//> ];
+function gradeAssignments(assignments) {
+  //iterate through array of objects
+  return assignments.map((currentAssignment) => {
+    //create key called status and set to `SCORE: currentAssignment.score.received / currentAssignment.score.max`
+    currentAssignment["status"] = `SCORE: ${currentAssignment.score.received}/${currentAssignment.score.max}`;
+
+    //if the currentAssignment.kind is "PASS-FAIL"
+    if (currentAssignment.kind === "PASS-FAIL") {
+      //if currentAssignment.score.received is strictly equal to currentAssignment.score.max
+      if (currentAssignment.score.received === currentAssignment.score.max) {
+        //create key called status in currentAssignment object and set value to 'PASSED'
+        currentAssignment.status = "PASSED";
+      } else {
+        //create key called status in currentAssignment and set to 'FAILED
+        currentAssignment.status = "FAILED";
+      }
+      //otherwise if currentAssignment.kind is 'PERCENTAGE'
+    } else if (currentAssignment.kind === "PERCENTAGE") {
+      //if the currentAssignment.score.received divide by max is greater than max times .8
+      if ((currentAssignment.score.received / currentAssignment.score.max) * 100 >= 80) {
+        //create key called status in currentAssignment object and set to 'PASSED: currentAssignment.score.received / currentAssignment.score.max * 100 %'
+        currentAssignment.status = `PASSED: ${((currentAssignment.score.received / currentAssignment.score.max) * 100).toFixed(1)}%`;
+      } else {
+        //create key called status in currentAssignment object and set to 'FAILED: currentAssignment.score.received / currentAssignment.score.max * 100 %'
+        currentAssignment.status = `FAILED: ${((currentAssignment.score.received / currentAssignment.score.max) * 100).toFixed(1)}%`;
+      }
+    }
+    return currentAssignment;
+  });
+}
 
 /**
  * createLineOrder()
@@ -152,7 +250,21 @@ function gradeAssignments(assignments) {}
     createLineOrder(people);
     //> [ "Ray Anderson", "America Marsh", "Wade Carson", "Patience Patel" ]
  */
-function createLineOrder(people) {}
+function createLineOrder(people) {
+  //input array of Objs
+  //output array of strings
+  const membershipLine = [];
+  const line = [];
+
+  people.forEach((person) => {
+    if (person.hasMembership) {
+      membershipLine.push(person.name);
+    } else {
+      line.push(person.name);
+    }
+  });
+  return [...membershipLine, ...line];
+}
 
 module.exports = {
   applyDiscount,
