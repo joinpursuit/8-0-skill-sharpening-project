@@ -252,7 +252,22 @@ function evenOrOdd(a) {
  *  evenOrOddWithTernary(8);
  *  //> "Even"
  */
-function evenOrOddWithTernary(a) {}
+function evenOrOddWithTernary(a) {
+  return (a%2 === 0 ? 'Even' : 'Odd');
+}
+
+// // function getFee(isMember) {
+// //   return (isMember ? '$2.00' : '$10.00');
+// // }
+
+// // console.log(getFee(true));
+// // // expected output: "$2.00"
+
+// // console.log(getFee(false));
+// // // expected output: "$10.00"
+
+// // console.log(getFee(null));
+// // // expected output: "$10.00"
 
 // Do not change any code below this line.
 module.exports = {
