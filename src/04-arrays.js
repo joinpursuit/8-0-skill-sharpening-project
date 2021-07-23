@@ -105,7 +105,9 @@ function addElementToEndOfArray(array, element) {
  *  removeElementFromEndOfArray([ 10, 9, 8 ]);
  *  //> 8
  */
-function removeElementFromEndOfArray(array) {}
+function removeElementFromEndOfArray(array) {
+  return array.pop();
+}
 
 /**
  * addElementToFrontOfArray()
