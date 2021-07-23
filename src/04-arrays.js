@@ -137,7 +137,9 @@ function addElementToFrontOfArray(array, element) {
  *  removeElementFromFrontOfArray([ 10, 9, 8 ]);
  *  //> 10
  */
-function removeElementFromFrontOfArray(array) {}
+function removeElementFromFrontOfArray(array) {
+  return array.shift();
+}
 
 /**
  * getMiddleElement()
