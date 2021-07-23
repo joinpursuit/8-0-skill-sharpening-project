@@ -10,7 +10,7 @@
  *  //> true
  */
 function alwaysTrue() {
-  return true
+  return true;
 }
 
 /**
@@ -27,7 +27,7 @@ function alwaysTrue() {
  *  //> "Hello, Ian."
  */
 function greet(name) {
-  return 'Hello, ' + name + '.'
+  return 'Hello, ' + name + '.';
 }
 
 /**
@@ -44,7 +44,7 @@ function greet(name) {
  *  //> 30
  */
 function add(a, b) {
-  return a + b 
+  return a + b; 
 }
 
 /**
@@ -60,7 +60,9 @@ function add(a, b) {
  *  multiply(2, 5);
  *  //> 10
  */
-function multiply() {}
+function multiply(a, b) {
+  return a * b;
+}
 
 /**
  * average()
