@@ -9,7 +9,10 @@
  *  getLengthOfString("down");
  *  //> 4
  */
-function getLengthOfString(str) {}
+function getLengthOfString(str) {
+  //use .length to get the length of the string and return it
+  return str.length;
+}
 
 /**
  * convertToNumber()
@@ -22,7 +25,14 @@ function getLengthOfString(str) {}
  *  convertToNumber("111");
  *  //> 111
  */
-function convertToNumber(val) {}
+function convertToNumber(val) {
+  //create result value to store result
+  let result = 0;
+  //Convert the string to a number. If successful, our result is the converted number, else give an error
+  typeof Number(val) === "number" ? result = Number(val) : result = "Input is not a number"
+  //return our result
+  return result;
+}
 
 /**
  * convertToString()
@@ -36,7 +46,10 @@ function convertToNumber(val) {}
  *  convertToString(99);
  *  //> "99"
  */
-function convertToString(val) {}
+function convertToString(val) {
+  //return the value converted to a string
+  return val.toString();
+}
 
 /**
  * convertToShoutingText()
@@ -49,7 +62,10 @@ function convertToString(val) {}
  *  convertToShoutingText("Hello There");
  *  //> "HELLO THERE"
  */
-function convertToShoutingText(text) {}
+function convertToShoutingText(text) {
+  //return the text, but uppercase
+  return text.toUpperCase();
+}
 
 /**
  * convertToWhisperText()
@@ -62,7 +78,10 @@ function convertToShoutingText(text) {}
  *  convertToWhisperText("Hello There");
  *  //> "hello there"
  */
-function convertToWhisperText(text) {}
+function convertToWhisperText(text) {
+  //return the text, but in lowercase
+  return text.toLowerCase();
+}
 
 /**
  * checkIfCharacterIsInString()
@@ -79,7 +98,10 @@ function convertToWhisperText(text) {}
  *  checkIfCharacterIsInString("hello there", "a");
  *  //> false
  */
-function checkIfCharacterIsInString(text, character) {}
+function checkIfCharacterIsInString(text, character) {
+  //check if text given includes the given character, and return if it does / doesn't
+  return text.includes(character);
+}
 
 /**
  * isEven()
@@ -95,7 +117,10 @@ function checkIfCharacterIsInString(text, character) {}
  *  isEven(11);
  *  //> false
  */
-function isEven(num) {}
+function isEven(num) {
+  //check if number is even, if it is, return true, else return false
+  return num % 2 === 0; 
+}
 
 /**
  * isOdd()
@@ -111,7 +136,10 @@ function isEven(num) {}
  *  isOdd(11);
  *  //> true
  */
-function isOdd(num) {}
+function isOdd(num) {
+  //check if number is odd, if it is, return true, else return false
+  return num % 2 !== 0; 
+}
 
 /**
  * isTruthy()
@@ -127,7 +155,12 @@ function isOdd(num) {}
  *  isTruthy(null);
  *  //> false
  */
-function isTruthy(val) {}
+function isTruthy(val) {
+  //test if val is truthy or falsy, and make that answer our result
+  let result = val ? true : false;
+  //return our result
+  return result;
+}
 
 /**
  * isFalsy()
@@ -143,7 +176,11 @@ function isTruthy(val) {}
  *  isFalsy(" ");
  *  //> false
  */
-function isFalsy(val) {}
+function isFalsy(val) {
+  // test if val is falsy or truthy, let the answer be our result
+  let result = !val ? true : false;
+  return result;
+}
 
 // Do not change the code below.
 module.exports = {
