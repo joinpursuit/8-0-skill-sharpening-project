@@ -145,7 +145,20 @@ function aroundTheWorldGreeting(language) {
  *  aroundTheWorldGreetingWithSwitch();
  *  //> "Hello World"
  */
-function aroundTheWorldGreetingWithSwitch(language) {}
+ function aroundTheWorldGreetingWithSwitch(language) {
+  if(!language){
+    return 'Hello World'
+  }else{
+    switch(language.toLowerCase()){
+      case 'english': return 'Hello World'
+      break;
+      case 'spanish': return 'Hola Mundo'
+      break;
+      case 'german': return 'Hallo Welt'
+      break;
+    }
+  }
+}
 
 /**
  * calculateLetterGrade()
