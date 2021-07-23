@@ -128,7 +128,13 @@ function averageThree(a, b, c) {
  *  compareTypes("left", 10);
  *  //> false
  */
-function compareTypes() {}
+function compareTypes(a, b) {
+if (typeof a === typeof b) {
+    return true;
+  } else if (typeof a !== typeof b) {
+    return false;
+  }
+}
 
 /**
  * flipSign()
@@ -147,7 +153,9 @@ function compareTypes() {}
  *  flipSign(50);
  *  //> -50
  */
-function flipSign() {}
+function flipSign(a) {
+  return 0 - a;
+}
 
 /**
  * joinStringsWithSpaces()
