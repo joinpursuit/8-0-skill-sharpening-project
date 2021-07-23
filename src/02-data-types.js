@@ -25,7 +25,9 @@ function getLengthOfString(str) {
  *  convertToNumber("111");
  *  //> 111
  */
-function convertToNumber(val) {}
+function convertToNumber(val) {
+  return Number(val);
+}
 
 /**
  * convertToString()
