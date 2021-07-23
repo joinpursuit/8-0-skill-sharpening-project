@@ -9,7 +9,9 @@
  *  alwaysTrue();
  *  //> true
  */
-function alwaysTrue() {}
+function alwaysTrue() {
+  return true;
+}
 
 /**
  * greet()
@@ -24,7 +26,22 @@ function alwaysTrue() {}
  *  greet("Ian");
  *  //> "Hello, Ian."
  */
-function greet() {}
+function greet(name) {
+  // input: name is a string
+  // output: return a string 'Hello, Name'
+
+  
+  // problem: a greeting with caps, space and capital letter for first name
+  // solution: 1. string copy into an array 2. string concatenation 3. add the rest of the name
+  // variable: declare a variable to make a string copy into an array
+  const strCopy = name.split();
+  // first letter needs to be accessed in the string arr and be capitalized
+  // add all the other letters need to the first letter
+  const firstName = strCopy[0][0].toUpperCase() + strCopy[0].slice(1)
+
+  // return the variable with the full name
+  return `Hello, ${firstName}.`;
+}
 
 /**
  * add()
@@ -39,7 +56,12 @@ function greet() {}
  *  add(10, 20);
  *  //> 30
  */
-function add() {}
+function add(a, b) {
+  // input: a and b are numbers
+  // output: return a number that adds a and b
+
+  return a + b
+}
 
 /**
  * multiply()
@@ -54,7 +76,12 @@ function add() {}
  *  multiply(2, 5);
  *  //> 10
  */
-function multiply() {}
+function multiply(a ,b) {
+  // input: a and b are numbers
+  // output: return the product of a and b
+
+  return a * b
+}
 
 /**
  * average()
@@ -74,7 +101,12 @@ function multiply() {}
  *  average(10, 6);
  *  //> 8 // 10 + 6 = 16; 16/2 = 8;
  */
-function average() {}
+function average(a ,b) {
+  // input: a and b are numbers
+  // output: return the average of the two numbers
+
+  return (a + b) / 2
+}
 
 /**
  * averageThree()
@@ -93,7 +125,12 @@ function average() {}
  *  averageThree(10, 11, 19);
  *  //> 10 // 10 + 11 + 19 = 30; 30 / 3 = 10;
  */
-function averageThree() {}
+function averageThree(a , b, c) {
+  // input: a, b and c are numbers
+  // output: return a number that returns the average of the three numbers
+
+  return (a + b + c) / 3
+}
 
 /**
  * compareTypes()
@@ -112,7 +149,18 @@ function averageThree() {}
  *  compareTypes("left", 10);
  *  //> false
  */
-function compareTypes() {}
+function compareTypes(a , b) {
+  // input: a and b are astericks --> symbol
+  // return true if a and b are the same data type or return false if a and b are not the same data type
+
+  // if a and b are the same data type
+  if (typeof a === typeof b) {
+    // return true
+    return true
+  }
+  // otherwise return false if a and b are not the same data type
+  return false
+}
 
 /**
  * flipSign()
@@ -131,7 +179,27 @@ function compareTypes() {}
  *  flipSign(50);
  *  //> -50
  */
-function flipSign() {}
+function flipSign(a) {
+  // input: a is a number
+  // output: return the negative `number` if the `number` is a positive integer or 
+  //         return the positive `number` if the `number` is a negative integer
+
+  // if the number is a positive integer
+  if (a > 0) {
+    // return a negative `number`
+    return - a
+
+    // if the `number` is a negative integer
+  } else if (a < 0) {
+    // return a positive `number`
+    return -a
+
+    // edge case if 0
+  } else {
+    // return `0 is a neutral number`
+    return '0 is a neutral number.'
+  }
+}
 
 /**
  * joinStringsWithSpaces()
@@ -151,7 +219,19 @@ function flipSign() {}
  *  joinStringsWithSpaces("left", "right", "up", "down", "away");
  *  //> "left right up down away"
  */
-function joinStringsWithSpaces() {}
+function joinStringsWithSpaces(a, b, c, d, e) {
+  // input: a, b, c, d and e are strings
+  // output: return a concatenated string
+
+  // problem: what is the simplest way to combine two strings?
+  // solution: string concatenation
+  // variable: declare the variable called string thread 
+  const space = ' '
+  const stringThread = a + space + b + space + c + space + d + space + e
+
+  // return the concatenated string
+  return stringThread
+}
 
 /**
  * getFirstAndLastCharacter()
@@ -168,7 +248,15 @@ function joinStringsWithSpaces() {}
  *  getFirstAndLastCharacter("upwards");
  *  //> "us"
  */
-function getFirstAndLastCharacter() {}
+function getFirstAndLastCharacter(a) {
+  // input: a is string
+  // output: returns a string with the first and last character of string a
+
+  // problem: How can you find the nth character of any string?
+  // solution: 1. String concatenation 2. string.prototype.charAt()
+  // return the first and last letter of the string using string concatenation
+  return a.charAt(0) + a.charAt(a.length - 1)
+}
 
 // Do not change the code below.
 module.exports = {
