@@ -1,3 +1,5 @@
+const { alwaysTrue } = require("./01-functions");
+
 /**
  * getLengthOfString()
  * ---------------------
@@ -90,7 +92,13 @@ function convertToWhisperText(text) {
  *  checkIfCharacterIsInString("hello there", "a");
  *  //> false
  */
-function checkIfCharacterIsInString(text, character) {}
+function checkIfCharacterIsInString(text, character) {
+  if(text.includes(character)){
+    return true;
+  }else{
+    return false;
+  }
+}
 
 /**
  * isEven()
