@@ -175,7 +175,10 @@ function flipSign(a) {
  *  joinStringsWithSpaces("left", "right", "up", "down", "away");
  *  //> "left right up down away"
  */
-function joinStringsWithSpaces() {}
+function joinStringsWithSpaces(a, b, c, d, e) {
+  space = " ";
+  return a + space + b + space + c + space + d + space + e;
+}
 
 /**
  * getFirstAndLastCharacter()
@@ -192,7 +195,12 @@ function joinStringsWithSpaces() {}
  *  getFirstAndLastCharacter("upwards");
  *  //> "us"
  */
-function getFirstAndLastCharacter() {}
+function getFirstAndLastCharacter(a) {
+  // a.length = length of all characters
+  // -1 is for the index number position for last character
+  return a[0] + a[a.length -1];
+}
+
 
 // Do not change the code below.
 module.exports = {
