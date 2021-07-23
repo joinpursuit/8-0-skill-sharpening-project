@@ -89,7 +89,7 @@ console.log(multiply(3, 3))
  *  //> 8 // 10 + 6 = 16; 16/2 = 8;
  */
 function average(a, b) {
-  return a + b / 2
+  return (a + b) / 2
 }
 
 console.log(average(10, 6))
@@ -111,7 +111,11 @@ console.log(average(10, 6))
  *  averageThree(10, 11, 19);
  *  //> 10 // 10 + 11 + 19 = 30; 30 / 3 = 10;
  */
-function averageThree() {}
+function averageThree(a, b, c) {
+  return (a + b + c) / 3
+}
+
+console.log(average(10, 11, 19))
 
 /**
  * compareTypes()
@@ -180,7 +184,7 @@ console.log(flipSign())
  *  //> "left right up down away"
  */
 function joinStringsWithSpaces(a, b, c, d, e) {
-  
+  return `${a} ${b} ${c} ${d} ${e}`
 }
 
 console.log(joinStringsWithSpaces("left", "right", "up", "down", "away"))
@@ -199,7 +203,11 @@ console.log(joinStringsWithSpaces("left", "right", "up", "down", "away"))
  *  getFirstAndLastCharacter("upwards");
  *  //> "us"
  */
-function getFirstAndLastCharacter() {}
+function getFirstAndLastCharacter(a) {
+  return a.charAt(0) + a.charAt(a.length - 1)
+}
+
+console.log(getFirstAndLastCharacter("upwards"))
 
 // Do not change the code below.
 module.exports = {
