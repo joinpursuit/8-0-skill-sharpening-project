@@ -219,7 +219,9 @@ function joinStringsWithSpaces(a,b,c,d,e) {
  *  //> "us"
  */
 function getFirstAndLastCharacter(a) {
-    
+
+  return a.charAt(0) + a.charAt(a.length-1);
+
 
 
 
