@@ -9,7 +9,10 @@
  *  getLengthOfString("down");
  *  //> 4
  */
-function getLengthOfString(str) {}
+function getLengthOfString(str) {
+  let split = str.split('');
+  return split.length;
+}
 
 /**
  * convertToNumber()
