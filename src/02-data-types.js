@@ -9,7 +9,14 @@
  *  getLengthOfString("down");
  *  //> 4
  */
-function getLengthOfString(str) {}
+function getLengthOfString(str) {
+  // input: str is a string
+  // output: returns a the number of characters in a string
+
+  // problem: How do I count the number os characters in a string?
+  // solution: .length property
+  return str.length
+}
 
 /**
  * convertToNumber()
@@ -22,7 +29,12 @@ function getLengthOfString(str) {}
  *  convertToNumber("111");
  *  //> 111
  */
-function convertToNumber(val) {}
+function convertToNumber(val) {
+  // input: val is string that contains a number
+  // ouput: return a number
+
+  return Number(val)
+}
 
 /**
  * convertToString()
@@ -36,7 +48,12 @@ function convertToNumber(val) {}
  *  convertToString(99);
  *  //> "99"
  */
-function convertToString(val) {}
+function convertToString(val) {
+  // input: val is a number or boolean
+  // output: return a string of the value
+
+  return `${val}`
+}
 
 /**
  * convertToShoutingText()
@@ -49,7 +66,12 @@ function convertToString(val) {}
  *  convertToShoutingText("Hello There");
  *  //> "HELLO THERE"
  */
-function convertToShoutingText(text) {}
+function convertToShoutingText(text) {
+  // input: text is a string
+  // output: return a string that converts `text` into all uppercase characters
+
+  return text.toUpperCase()
+}
 
 /**
  * convertToWhisperText()
@@ -62,7 +84,12 @@ function convertToShoutingText(text) {}
  *  convertToWhisperText("Hello There");
  *  //> "hello there"
  */
-function convertToWhisperText(text) {}
+function convertToWhisperText(text) {
+  // input: text is a string
+  // output: returns a string that converts `text` into all lowercase characters
+
+  return text.toLowerCase()
+}
 
 /**
  * checkIfCharacterIsInString()
@@ -79,7 +106,31 @@ function convertToWhisperText(text) {}
  *  checkIfCharacterIsInString("hello there", "a");
  *  //> false
  */
-function checkIfCharacterIsInString(text, character) {}
+function checkIfCharacterIsInString(text, character) {
+  // input: text is a string and character is a string with one letter
+  // output: return true if the `character` appears in the `text` otherwise return false
+
+  // problem: how do we check if the `character` appears in `text`
+  // solution: loop
+
+  // loop through string
+  // for (let i = 0; i < text.length; i++) {
+  //   const str = text[i]
+    // if the `character` appears in the `text`
+  //   if (str === character) {
+  
+  //     // return true
+  //     return true
+  //   }
+  // }
+  
+  // otherwise return false
+  // return false
+
+  // or use string method .includes it a case sensitive search returns a boolean if one string is found in another str
+
+  return text.includes(character);
+}
 
 /**
  * isEven()
@@ -95,7 +146,21 @@ function checkIfCharacterIsInString(text, character) {}
  *  isEven(11);
  *  //> false
  */
-function isEven(num) {}
+function isEven(num) {
+  // input: num is a number
+  // output: return true if the number given is even more than once otherwise return false
+
+  // problem: How do I check if a number is even?
+  // solution: modulo %
+
+  // if the number given is even 
+  if (num % 2 === 0) {
+    // return true
+    return true
+  }
+  // otherwise return false
+  return false
+}
 
 /**
  * isOdd()
@@ -111,7 +176,19 @@ function isEven(num) {}
  *  isOdd(11);
  *  //> true
  */
-function isOdd(num) {}
+function isOdd(num) {
+  // input: num is a number
+  // output: return true if the number given is odd otherwise return false
+
+  // if the number given is odd
+  if (num % 2 === 1) {
+    // return true
+    return true
+  }
+
+  // otherwise return false
+  return false
+}
 
 /**
  * isTruthy()
@@ -127,7 +204,19 @@ function isOdd(num) {}
  *  isTruthy(null);
  *  //> false
  */
-function isTruthy(val) {}
+function isTruthy(val) {
+  // input: val is any datatype
+  // output: return true if the value given is truthy otherwise return false
+
+  // if the value given is truthy it will execute code
+  if (val) {
+    // return true
+    return true
+  }
+
+  // otherwise return false if the value given is falsy
+  return false
+}
 
 /**
  * isFalsy()
@@ -143,7 +232,21 @@ function isTruthy(val) {}
  *  isFalsy(" ");
  *  //> false
  */
-function isFalsy(val) {}
+function isFalsy(val) {
+  // input: val is any datatype
+  // output: return true if the value given us a falsy value otherwise return false
+
+  // if the value given is falsy and you put a bang operator to turn falsy -> truthy it will execute code 
+  // if the value given is truthy and you put a bang operator to turn truthy -> falsy it will not execute code and return false
+  if (!val) {
+    
+    // return true return true
+    return true
+  }
+  
+  // return false
+  return false
+}
 
 // Do not change the code below.
 module.exports = {
