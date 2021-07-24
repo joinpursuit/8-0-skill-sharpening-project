@@ -14,7 +14,11 @@
  *  isEqual(10, "10");
  *  //> false
  */
-function isEqual(a, b) {}
+function isEqual(a, b) {
+  if(a === b)
+  return true;
+  return false;
+}
 
 /**
  * findLarger()
@@ -28,7 +32,10 @@ function isEqual(a, b) {}
  *  findLarger(19, 7);
  *  //> 19
  */
-function findLarger(a, b) {}
+function findLarger(a, b) {
+  let newNumber = Math.max(a, b)
+  return newNumber;
+}
 
 /**
  * findLargerOrTie()
@@ -45,7 +52,10 @@ function findLarger(a, b) {}
  *  findLargerOrTie(0, 0);
  *  //> "tie"
  */
-function findLargerOrTie(a, b) {}
+function findLargerOrTie(a, b) {
+  let newNumber = Math.max(a,b)
+  return newNumber;
+  }
 
 /**
  * positiveNegativeOrZero()
