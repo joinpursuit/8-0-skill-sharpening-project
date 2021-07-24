@@ -44,7 +44,7 @@ function createObjectWithValue(val) {
 function createObjectWithKey(key) {
   let newObject = {};
   let value = null;
-  newObject.key = null;
+  newObject.key = value;
   return newObject;
 }
 
@@ -60,7 +60,11 @@ function createObjectWithKey(key) {
  *  createObjectWithKeyValuePair("left", "right");
  *  //> { left: "right" }
  */
-function createObjectWithKeyValuePair(key, val) {}
+function createObjectWithKeyValuePair(key, val) {
+  let createObj = {};
+  createObj.null = val;
+  return createObj;
+}
 
 /**
  * getNameFromObject()
@@ -122,7 +126,7 @@ function addValueToObject(object, val) {
  *  //> { right: false, left: true }
  */
 function addKeyToObject(object, key) {
-  object.detail = key;
+  object.key = null;
   return object;
 }
 
