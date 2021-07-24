@@ -205,18 +205,20 @@ function getFullAddress(person) {
     };
  */
 function getFlatObject(person) {
-      let newObjOne = {};
-      newObjOne.person.first;
-      newObjOne.person.middle;
-      newObjOne.person.last;
-      newObjOne.person.street;
-      newObjOne.person.unit;
-      newObjOne.person.city;
-      newObjOne.person.state;
-      newObjOne.person.zip;
-      newObjOne.person.numbers;
-    return newObjOne;
+  let newObjOne = {};
+  newObjOne.first = person.names.first;
+  newObjOne.middle = person.names.middle;
+  newObjOne.last = person.names.last;
+  newObjOne.street = person.address.street;
+  newObjOne.unit = person.address.unit;
+  newObjOne.city = person.address.city;
+  newObjOne.state = person.address.state;
+  newObjOne.zip = person.address.zip;
+  newObjOne.numbers = person.numbers;
+  
+  return newObjOne;
 }
+    
 
 // Do not change the code below.
 module.exports = {
