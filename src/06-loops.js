@@ -90,7 +90,16 @@ function rangeEveryOther(min, max) {
  *  containsWhileLoop([ "left", "up", "right" ], "down");
  *  //> false
  */
-function containsWhileLoop(array, target) {}
+function containsWhileLoop(array, target) {
+  let i = 0;
+  while (i < array.length-1) {
+    i++;
+    if (array[i] === target) {
+      return true;
+    } 
+  }
+  return false;
+}
 
 /**
  * containsForLoop()
@@ -112,7 +121,14 @@ function containsWhileLoop(array, target) {}
  *  containsForLoop([ "left", "up", "right" ], "down");
  *  //> false
  */
-function containsForLoop(array, target) {}
+function containsForLoop(array, target) {
+  for (let i=0; i < array.length-1; i++) {
+    if (array[i] === target) {
+      return true;
+    } 
+  }
+  return false;
+}
 
 /**
  * targetCount()
@@ -146,7 +162,14 @@ function targetCount(array, target) {}
  *  firstIndexFound([ "left", "right", "left" ], "up");
  *  //> -1
  */
-function firstIndexFound(array, target) {}
+function firstIndexFound(array, target) {
+  for (let i = 0; i < array.length; i++) {
+    if (array[i] === target) {
+      return i;
+    }
+  }
+  return -1;
+}
 
 /**
  * lastIndexFound()
@@ -167,7 +190,6 @@ function firstIndexFound(array, target) {}
  *  //> -1
  */
 function lastIndexFound(array, target) {
-  let index = 0;
   for (let i=0; i<array.length;i++) {
     if (array[i]===target) {
       index += 0;
@@ -188,7 +210,14 @@ function lastIndexFound(array, target) {
  *  //> [ 7 * 0, 10 * 1, 11 * 2 ]
  *  //> [ 0, 10, 22 ]
  */
-function timesIndex(array) {}
+function timesIndex(array) {
+  let newArr = [];
+  for (let i = 0; i < array.length; i++) {
+    let newNum = array[i] * i;
+    newArr.push(newNum);
+  }
+  return newArr;
+}
 
 /**
  * cumulativeSum()
@@ -202,7 +231,15 @@ function timesIndex(array) {}
  *  //> [ 5, 5 + 2, 5 + 2 + 9 ]
  *  //> [ 5, 7, 16 ]
  */
-function cumulativeSum(array) {}
+function cumulativeSum(array) {
+  let emptyArr = [];
+  let sum = array[0]
+  for (let i = 0; i < array.length; i++) {
+    emptyArr.push(sum);
+    sum += array[i+1];
+  }
+  return emptyArr;
+}
 
 // Do not change anything below this line.
 module.exports = {
