@@ -9,7 +9,9 @@
  *  createEmptyObject()
  *  //> {}
  */
-function createEmptyObject() {}
+function createEmptyObject() {
+  return {};
+}
 
 /**
  * createObjectWithValue()
@@ -22,7 +24,11 @@ function createEmptyObject() {}
  *  createObjectWithValue(19);
  *  //> { whateverKey: 19 }
  */
-function createObjectWithValue(val) {}
+function createObjectWithValue(val) {
+  let obj ={};
+  obj.number = val;
+  return obj;
+}
 
 /**
  * createObjectWithKey()
@@ -35,7 +41,12 @@ function createObjectWithValue(val) {}
  *  createObjectWithKey("left");
  *  //> { left: false }
  */
-function createObjectWithKey(key) {}
+function createObjectWithKey(key) {
+  let newObject = {};
+  let value = null;
+  newObject.key = null;
+  return newObject;
+}
 
 /**
  * createObjectWithKeyValuePair()
@@ -62,7 +73,9 @@ function createObjectWithKeyValuePair(key, val) {}
  *  getNameFromObject({ name: "Jay" });
  *  //> "Jay"
  */
-function getNameFromObject(object) {}
+function getNameFromObject(object) {
+  return object.name;
+}
 
 /**
  * getAgeFromObject()
@@ -75,7 +88,9 @@ function getNameFromObject(object) {}
  *  getAgeFromObject({ age: 30 });
  *  //> 30
  */
-function getAgeFromObject(object) {}
+function getAgeFromObject(object) {
+  return object.age;
+}
 
 /**
  * addValueToObject()
@@ -89,7 +104,10 @@ function getAgeFromObject(object) {}
  *  addValueToObject({ left: true }, false);
  *  //> { left: true, key: false }
  */
-function addValueToObject(object, val) {}
+function addValueToObject(object, val) {
+  object.info = val;
+  return object;
+}
 
 /**
  * addKeyToObject()
@@ -103,7 +121,10 @@ function addValueToObject(object, val) {}
  *  addKeyToObject({ right: false }, "left");
  *  //> { right: false, left: true }
  */
-function addKeyToObject(object, key) {}
+function addKeyToObject(object, key) {
+  object.detail = key;
+  return object;
+}
 
 /**
  * addKeyValuePairToObject()
@@ -132,7 +153,11 @@ function addKeyValuePairToObject(object, key, val) {}
  *  deleteKeyFromObject({ left: true, right: false }, "left");
  *  //> { right: false }
  */
-function deleteKeyFromObject(object, key) {}
+function deleteKeyFromObject(object, key) {
+  // delete object;
+  // return object;
+console.log(object);
+}
 
 // Do not change any code below this line.
 module.exports = {
