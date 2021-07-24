@@ -9,8 +9,11 @@
  *  getLengthOfString("down");
  *  //> 4
  */
-function getLengthOfString(str) {}
-
+function getLengthOfString(str) {
+  let number = str.length;
+  return number;
+}
+console.log(getLengthOfString('down'))
 /**
  * convertToNumber()
  * ---------------------
@@ -22,8 +25,11 @@ function getLengthOfString(str) {}
  *  convertToNumber("111");
  *  //> 111
  */
-function convertToNumber(val) {}
-
+function convertToNumber(val) {
+let  stringNumber = Number(val);
+return stringNumber;
+}
+console.log(convertToNumber("9910"));
 /**
  * convertToString()
  * ---------------------
@@ -36,8 +42,14 @@ function convertToNumber(val) {}
  *  convertToString(99);
  *  //> "99"
  */
-function convertToString(val) {}
-
+function convertToString(val) {
+if(val.length === 0){
+  return '';
+}
+let numString = val.toString();
+return numString;
+}
+console.log(convertToString(-10))
 /**
  * convertToShoutingText()
  * ---------------------
@@ -49,8 +61,12 @@ function convertToString(val) {}
  *  convertToShoutingText("Hello There");
  *  //> "HELLO THERE"
  */
-function convertToShoutingText(text) {}
+function convertToShoutingText(text) {
+let upperCase = text.toUpperCase()
+return upperCase;
+}  
 
+console.log(convertToShoutingText('cODINg')) 
 /**
  * convertToWhisperText()
  * ---------------------
@@ -62,8 +78,12 @@ function convertToShoutingText(text) {}
  *  convertToWhisperText("Hello There");
  *  //> "hello there"
  */
-function convertToWhisperText(text) {}
+function convertToWhisperText(text) {
 
+let lowerCase = text.toLowerCase();
+return lowerCase;
+} 
+console.log(convertToWhisperText('PursuiT'))
 /**
  * checkIfCharacterIsInString()
  * ---------------------
@@ -79,8 +99,14 @@ function convertToWhisperText(text) {}
  *  checkIfCharacterIsInString("hello there", "a");
  *  //> false
  */
-function checkIfCharacterIsInString(text, character) {}
-
+function checkIfCharacterIsInString(text, character) {
+let checkChar = text;
+if(text.includes(character)){
+  return true;
+}
+return false;
+}
+console.log(checkIfCharacterIsInString("piano", "x"))
 /**
  * isEven()
  * ---------------------
@@ -95,8 +121,14 @@ function checkIfCharacterIsInString(text, character) {}
  *  isEven(11);
  *  //> false
  */
-function isEven(num) {}
-
+function isEven(num) {
+let number = num;
+if(number % 2 === 0){
+  return true;
+}
+return false;
+}
+console.log(isEven(100))
 /**
  * isOdd()
  * ---------------------
@@ -111,12 +143,19 @@ function isEven(num) {}
  *  isOdd(11);
  *  //> true
  */
-function isOdd(num) {}
-
+function isOdd(num) {
+  let number = num;
+  if(number % 2 === 1){
+    return true;
+  }
+  return false;
+  }
+  console.log(isOdd(7))
 /**
  * isTruthy()
  * ---------------------
- * Returns `true` if the value given is a truthy value. Otherwise, returns `false`.
+ * Returns `true` if the value given is a truthy value. 
+ * Otherwise, returns `false`.
  * @param {*} val
  * @returns {boolean}
  *
@@ -127,8 +166,15 @@ function isOdd(num) {}
  *  isTruthy(null);
  *  //> false
  */
-function isTruthy(val) {}
+function isTruthy(val) {
+  if(val){
+    return true;
+}
+  return false;
+}
 
+
+console.log(isTruthy(undefined))
 /**
  * isFalsy()
  * ---------------------
@@ -143,8 +189,14 @@ function isTruthy(val) {}
  *  isFalsy(" ");
  *  //> false
  */
-function isFalsy(val) {}
+function isFalsy(val) {
+  if(!val){
+    return true;
+}
+  return false;
+}
 
+console.log(isFalsy(-0))
 // Do not change the code below.
 module.exports = {
   getLengthOfString,
