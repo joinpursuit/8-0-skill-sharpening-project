@@ -11,8 +11,16 @@
  *  //> 25
  *  (3 + 4 + 5 + 6 + 7 = 25)
  */
-function rangeSum(min, max) {}
-
+function rangeSum(min, max) {
+  let sum = min;
+  let number = max - min + 1;
+    for (let i = 1; i < number; i++) {
+      addUpNum = min + i;
+      sum += addUpNum;
+      }
+  return sum;
+}
+  
 /**
  * rangeOdd()
  * ---------------------
@@ -25,7 +33,18 @@ function rangeSum(min, max) {}
  *  rangeOdd(10, 15);
  *  //> [ 15, 13, 11 ]
  */
-function rangeOdd(min, max) {}
+function rangeOdd(min, max) {
+  let array = [];
+  let number = max - min + 1;
+    for (let i = 0; i < number; i++) {
+      let exactNum = min + i;
+      if (exactNum%2 === 1) {
+      array.push(exactNum);
+      array.sort((a,b) => b - a);
+      }
+    }
+  return array;
+}
 
 /**
  * rangeEveryOther()
@@ -39,7 +58,17 @@ function rangeOdd(min, max) {}
  *  rangeEveryOther(11, 18);
  *  //> [ 11, 13, 15, 17 ]
  */
-function rangeEveryOther(min, max) {}
+function rangeEveryOther(min, max) {
+  let array = [];
+  let number = max - min + 1;
+    for (let i = 0; i < number; i++) {
+      let exactNum = min + i;
+      if (i%2 === 0 ) {
+      array.push(exactNum)
+      }
+    } 
+  return array;
+}
 
 /**
  * containsWhileLoop()
@@ -137,7 +166,15 @@ function firstIndexFound(array, target) {}
  *  lastIndexFound([ "left", "right", "left" ], "up");
  *  //> -1
  */
-function lastIndexFound(array, target) {}
+function lastIndexFound(array, target) {
+  let index = 0;
+  for (let i=0; i<array.length;i++) {
+    if (array[i]===target) {
+      index += 0;
+    }
+  }
+  return -1;
+}
 
 /**
  * timesIndex()
