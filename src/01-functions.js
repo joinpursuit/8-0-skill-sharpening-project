@@ -31,7 +31,7 @@ function greet(name) {
   let newStr = `Hello, ${name}.`
   return newStr
 }
-console.log(greet("James"))
+console.log(greet("Aashna"))
 
 /**
  * add()
@@ -187,7 +187,7 @@ function joinStringsWithSpaces(a, b, c, d, e) {
   return `${a} ${b} ${c} ${d} ${e}`
 }
 
-console.log(joinStringsWithSpaces("left", "right", "up", "down", "away"))
+console.log(joinStringsWithSpaces("lets", "go", "up", "town", "now"))
 /**
  * getFirstAndLastCharacter()
  * ---------------------
