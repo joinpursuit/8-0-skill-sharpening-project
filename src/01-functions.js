@@ -9,14 +9,22 @@
  *  alwaysTrue();
  *  //> true
  */
-function alwaysTrue() {}
+
+//This function returns true always
+function alwaysTrue() {
+  //This does the work =>returns true 
+return true;
+
+}
+console.log(alwaysTrue())
 
 /**
  * greet()
  * ---------------------
  * Greets the person by name.
  * HINT: Look at the example closely. 
- * Capitalization, spacing, spelling, and punctuation count!
+ * Capitalization, spacing, spelling, and 
+ * punctuation count!
  * @param {string} name
  * @returns {string}
  *
@@ -24,23 +32,29 @@ function alwaysTrue() {}
  *  greet("Ian");
  *  //> "Hello, Ian."
  */
-function greet() {}
-
+function greet(name) {
+ return `"Hello, ${name}."`;
+}
+console.log(greet('Reed'))
 /**
  * add()
  * ---------------------
  * Adds two numbers together and returns the sum.
- * HINT: If we are adding two numbers, how many parameters do we need?
+ * HINT: If we are adding two numbers, how many 
+ * parameters do we need?
  * @param {number} a
  * @param {number} b
  * @returns {number}
  *
  * EXAMPLE:
  *  add(10, 20);
- *  //> 30
+ *  //> 
  */
-function add() {}
-
+function add(a, b) {
+  let sum =  a + b;
+  return sum;
+}
+console.log(add(5, 7))
 /**
  * multiply()
  * ---------------------
@@ -54,12 +68,16 @@ function add() {}
  *  multiply(2, 5);
  *  //> 10
  */
-function multiply() {}
-
+function multiply(a, b) {
+  let product = a * b;
+  return product;
+}
+console.log(multiply(5, 11))
 /**
  * average()
  * ---------------------
- * Returns the average of two numbers. You can get the average by adding up all numbers and then dividing by how many numbers were added.
+ * Returns the average of two numbers. You can get the average 
+ * by adding up all numbers and then dividing by how many numbers were added.
  *
  * NOTE: The sum of all numbers will always be even.
  * HINT: How is this problem similar to add()? How is it different?
@@ -74,12 +92,17 @@ function multiply() {}
  *  average(10, 6);
  *  //> 8 // 10 + 6 = 16; 16/2 = 8;
  */
-function average() {}
+function average(a, b) {
+  let sumAvg = (a + b) / 2
+return sumAvg
+}
 
 /**
  * averageThree()
  * ---------------------
- * Returns the average of three numbers. You can get the average by adding up all numbers and then dividing by how many numbers were added.
+ * Returns the average of three numbers. You can get the 
+ * average by adding up all numbers and then dividing by how many 
+ * numbers were added.
  *
  * NOTE: The sum of all numbers will always be even.
  * HINT: How is this problem similar to average()? How is it different?
@@ -93,8 +116,12 @@ function average() {}
  *  averageThree(10, 11, 19);
  *  //> 10 // 10 + 11 + 19 = 30; 30 / 3 = 10;
  */
-function averageThree() {}
+function averageThree(a, b, c) {
+  let average = (a + b + c)/3
+  return average
+}
 
+console.log(averageThree(-5, 11, -3))
 /**
  * compareTypes()
  * ---------------------
@@ -112,16 +139,25 @@ function averageThree() {}
  *  compareTypes("left", 10);
  *  //> false
  */
-function compareTypes() {}
+function compareTypes(a, b) {
+if(typeof a === typeof b){
+  return true
+}
+return false;
+}
 
+console.log(compareTypes("Reed", "Aisha"))
+console.log(compareTypes(false, "Aisha"))
 /**
  * flipSign()
  * ---------------------
- * Returns the negative of a positive integer, or the positive of a negative integer.
+ * Returns the negative of a positive integer, or the positive 
+ * of a negative integer.
  * @param {number} a
  * @returns {number}
  *
- * HINT: Using pencil and paper, how would you make a positive number look negative?
+ * HINT: Using pencil and paper, how would you make a positive 
+ * number look negative?
  * How could you apply this to a variable?
  * 
  * EXAMPLE:
@@ -131,7 +167,17 @@ function compareTypes() {}
  *  flipSign(50);
  *  //> -50
  */
-function flipSign() {}
+function flipSign(number) {
+  if(number === 0){
+    return 0;
+  }
+  let signFlip = number
+        if (signFlip > 0){
+          return signFlip * -1
+        }
+        return signFlip * -1
+}
+console.log(flipSign(-20))
 
 /**
  * joinStringsWithSpaces()
@@ -151,8 +197,13 @@ function flipSign() {}
  *  joinStringsWithSpaces("left", "right", "up", "down", "away");
  *  //> "left right up down away"
  */
-function joinStringsWithSpaces() {}
+function joinStringsWithSpaces(a, b, c, d, e) {
 
+  return `"${a}  ${b}   ${c}  ${d}  ${e}"`
+
+}
+console.log(joinStringsWithSpaces("left", "right", "up", "down", "away"));
+console.log(joinStringsWithSpaces("apple", "cherry", "grape", "blueberry", "pear"))
 /**
  * getFirstAndLastCharacter()
  * ---------------------
@@ -160,7 +211,8 @@ function joinStringsWithSpaces() {}
  *
  * NOTE: The inputted string will always have a length of 2 or greater.
  * HINT: How can you find the nth character of any string?
- * How can find out how long a string is? How will this help you solve this problem?
+ * How can find out how long a string is? How will this help you 
+ * solve this problem?
  * @param {string} a
  * @returns {string}
  *
@@ -168,8 +220,11 @@ function joinStringsWithSpaces() {}
  *  getFirstAndLastCharacter("upwards");
  *  //> "us"
  */
-function getFirstAndLastCharacter() {}
-
+function getFirstAndLastCharacter(a) {
+let word = a[0].concat(a.slice(a.length-1))
+return word
+}
+console.log(getFirstAndLastCharacter('all about functions'))
 // Do not change the code below.
 module.exports = {
   alwaysTrue,
