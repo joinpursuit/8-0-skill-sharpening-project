@@ -14,7 +14,22 @@
  *  isEqual(10, "10");
  *  //> false
  */
-function isEqual(a, b) {}
+function isEqual(a, b) {
+  // input: a and b are data types
+  // output: return true if a and b are strictly equal to one another 
+
+  // problem: strictly equal to 
+  // solution: ===
+
+  // if a is strictly equal to b 
+  if (a === b) {
+     // return true
+     return true
+  }
+
+  // otherwise return false
+  return false
+}
 
 /**
  * findLarger()
@@ -28,7 +43,23 @@ function isEqual(a, b) {}
  *  findLarger(19, 7);
  *  //> 19
  */
-function findLarger(a, b) {}
+function findLarger(a, b) {
+  // input: a and b are numbers
+  // output: return the largest number, a and b will never be the same number
+
+  // problem: How can I find the largest number
+  // solution: 1. > greater than arthmetic operator
+
+  // if b is greater than a
+  if (b > a) {
+
+    // return b
+    return b
+  }
+
+  // otherwise return a 
+  return a
+}
 
 /**
  * findLargerOrTie()
@@ -45,7 +76,27 @@ function findLarger(a, b) {}
  *  findLargerOrTie(0, 0);
  *  //> "tie"
  */
-function findLargerOrTie(a, b) {}
+function findLargerOrTie(a, b) {
+  // input: a and b are numbers
+  // output: return the largest number or return a string `tie` if both numbers are the same
+
+  // edge case: if both the numbers are the same 
+  if (a === b) {
+
+    // return `tie`
+    return `tie`
+  }
+
+  // if b is greater than a 
+  if (b > a) {
+
+    // return b
+    return b
+  }
+
+  // otherwise return a ...if a is greater than b
+  return a
+}
 
 /**
  * positiveNegativeOrZero()
@@ -65,7 +116,27 @@ function findLargerOrTie(a, b) {}
  *  positiveNegativeOrZero(1);
  *  //> "Positive"
  */
-function positiveNegativeOrZero(a) {}
+function positiveNegativeOrZero(a) {
+  // input: a is a number
+  // output: return a string if the number is `Positive`, `Negative` or `Zero`
+
+  // problem: How do I check if a number is `Positive`, `Negative` or `Zero`
+  // solution: 1. arthmetic operators > 0, < 0 or === 0
+  
+  // if the the number is greater than 0
+  if (a > 0) {
+    // return `Positive`
+    return `Positive`
+  }
+  // if the number is less than zero
+  if (a < 0) {
+    // return `Negative`
+    return `Negative`
+  }
+  
+  // otherwise return `Zero`
+  return `Zero`
+}
 
 /**
  * aroundTheWorldGreeting()
@@ -86,7 +157,26 @@ function positiveNegativeOrZero(a) {}
  *  aroundTheWorldGreeting();
  *  //> "Hello World"
  */
-function aroundTheWorldGreeting(language) {}
+function aroundTheWorldGreeting(language) {
+  // input: language is a string
+  // output: return `Hello World` if the language is english, return `Hola Mundo` if the language is spanish, otherwise return `Hallo Welt`
+
+  // problem: what is the default value for the last return? 
+  // solution: english
+
+  // if the language is german
+  if (language === `german`) {
+    // return Hello World`
+    return `Hallo Welt`
+    // if the language is spanish
+  } else if (language === `spanish`) {
+    // return `Hola Mundo`
+    return `Hola Mundo`
+  }
+  
+  // otherwise return `Hello World`
+  return `Hello World`
+}
 
 /**
  * aroundTheWorldGreetingWithSwitch()
@@ -109,8 +199,37 @@ function aroundTheWorldGreeting(language) {}
  *  aroundTheWorldGreetingWithSwitch();
  *  //> "Hello World"
  */
-function aroundTheWorldGreetingWithSwitch(language) {}
+function aroundTheWorldGreetingWithSwitch(language) {
+  // input: language is a string `english`, `spanish` or `german`
+  // output: return  "Hallo Welt" if language is German or return "Hola Mundo" if Spanish otherwise return "Hello World"
 
+  // problem: How do I use a switch statement?
+  // solution: 1. switch statement syntax
+
+  // declare switch + space + place the variable inside () and open curly braces
+  switch (language) {
+    // declare keyword case with + space + `spanish` + colon
+    case `spanish`:
+        // return "Hola Mundo"
+        return "Hola Mundo"
+        // declare break + semicolon
+        break;
+    // declare keyword case with + space + `german` + colon
+    case `german`:
+        // return "Hallo Welt"
+        return "Hallo Welt"
+        // declare break + semicolon
+        break;
+    default: 
+        return "Hello World";
+  }
+}
+// // declare keyword case with + space + `english` + colon
+// case `english`:
+//   // return "Hello World" 
+//   return "Hello World"
+//   // declare break + semicolon
+//   break;
 /**
  * calculateLetterGrade()
  * ---------------------
@@ -128,7 +247,33 @@ function aroundTheWorldGreetingWithSwitch(language) {}
  *  calculateLetterGrade(99);
  *  //> "A"
  */
-function calculateLetterGrade(grade) {}
+function calculateLetterGrade(grade) {
+  // input: grade is a number greater than 90 or less than 60
+  // output: return the corresponding letter grade for that number
+
+  // if your grade is greater than or equal to 90
+  if (grade >= 90) {
+    // return `A`
+    return `A`
+  }
+  // if your grade is greater than or equal to 80 and less than 90
+  if (grade >= 80 && grade < 90) {
+    // return `B`
+    return `B`
+  }
+  // if your grade is greater than or equal to 70 and less than 80
+  if (grade >= 70 && grade < 80) {
+    // return `C`
+    return `C`
+  }
+  // if your grade is greater than or equal to 60 and less than 70
+  if (grade >= 60 && grade < 70)  {
+    // return `D`
+    return `D`
+  }
+  // otherwise return `F`
+  return `F`
+}
 
 /**
  * animalCounts()
@@ -146,7 +291,19 @@ function calculateLetterGrade(grade) {}
  *  animalCounts("pig", 1);
  *  //> "1 pig"
  */
-function animalCounts(animal, numberOfAnimals) {}
+function animalCounts(animal, numberOfAnimals) {
+  // input: animal is a `string` and numberOfAnimals is a number
+  // output: return a string of the count and the singular or plural name of the animal
+
+  // if the count is greater than 1
+  if (numberOfAnimals > 1) {
+    // return `2 animal`
+    return `${numberOfAnimals} ${animal}s`
+  }
+  
+  // otherwise return `1 animal + s`
+  return `1 ${animal}`
+}
 
 /**
  * evenOrOdd()
@@ -163,7 +320,19 @@ function animalCounts(animal, numberOfAnimals) {}
  *  evenOrOdd(48);
  *  //> "Even"
  */
-function evenOrOdd(a) {}
+function evenOrOdd(a) {
+  // input: a is a number
+  // output: return `Even` if the number is even otherwise return odd
+
+  // if the number is even 
+  if (a % 2 === 0) {
+    // return `Even`
+    return `Even`
+  }
+
+  // otherwise return `Odd`
+  return `Odd`
+}
 
 /**
  * evenOrOddWithTernary()
@@ -179,8 +348,18 @@ function evenOrOdd(a) {}
  *  evenOrOddWithTernary(8);
  *  //> "Even"
  */
-function evenOrOddWithTernary(a) {}
+function evenOrOddWithTernary(a) {
+  
+  return a % 2 === 0 ? `Even` :  `Odd`
+}
+// input: a is a number
+  // output: return `Even` if a is even otherwise return `Odd`
 
+  // problem: How do we declare a ternary?
+  // solution: return variableName ? execute this code if true : execute this code if false
+
+  // return variableName ? execute this code if true : execute this code if false
+  
 // Do not change any code below this line.
 module.exports = {
   isEqual,
