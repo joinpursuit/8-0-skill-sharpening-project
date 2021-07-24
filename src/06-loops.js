@@ -198,12 +198,16 @@ function firstIndexFound(array, target) {
  *  //> -1
  */
 function lastIndexFound(array, target) {
-  for (let i=0; i<array.length;i++) {
-    if (array[i]===target) {
-      index += 0;
-    }
-  }
-  return -1;
+  let num = array.lastIndexOf(target);
+  return num;
+
+  // let num = -1;
+  // for (let i = 0; i < array.length; i++){
+  //   if (array[i] === target){
+  //   num += 2;
+  //   }
+  // }
+  // return num;
 }
 
 /**
