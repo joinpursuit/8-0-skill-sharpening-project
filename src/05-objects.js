@@ -40,9 +40,8 @@ function createObjectWithValue(val) {
  *  //> { left: false }
  */
 function createObjectWithKey(key) {
-  return key
+  return obj={[key]:"tree"}
 }
-
 /**
  * createObjectWithKeyValuePair()
  * ---------------------
@@ -56,6 +55,7 @@ function createObjectWithKey(key) {
  *  //> { left: "right" }
  */
 function createObjectWithKeyValuePair(key, val) {
+  return obj={[key]:val}
 
 }
 
@@ -101,7 +101,9 @@ function getAgeFromObject(object) {
  *  addValueToObject({ left: true }, false);
  *  //> { left: true, key: false }
  */
-function addValueToObject(object, val) {}
+function addValueToObject(object, val) {
+  return {[object]:val}
+}
 
 /**
  * addKeyToObject()
@@ -115,7 +117,9 @@ function addValueToObject(object, val) {}
  *  addKeyToObject({ right: false }, "left");
  *  //> { right: false, left: true }
  */
-function addKeyToObject(object, key) {}
+function addKeyToObject(object, key) {
+  return {[key]:object}
+}
 
 /**
  * addKeyValuePairToObject()
@@ -130,7 +134,9 @@ function addKeyToObject(object, key) {}
  *  addKeyValuePairToObject({ up: true }, "left", false);
  *  //> { up: true, left: false }
  */
-function addKeyValuePairToObject(object, key, val) {}
+function addKeyValuePairToObject(object, key, val) {
+  return object={[key]:val}
+}
 
 /**
  * deleteKeyFromObject()
@@ -144,7 +150,10 @@ function addKeyValuePairToObject(object, key, val) {}
  *  deleteKeyFromObject({ left: true, right: false }, "left");
  *  //> { right: false }
  */
-function deleteKeyFromObject(object, key) {}
+function deleteKeyFromObject(object, key) {
+  delete object[key]
+  return object
+}
 
 // Do not change any code below this line.
 module.exports = {
