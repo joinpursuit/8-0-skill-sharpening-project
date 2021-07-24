@@ -158,8 +158,11 @@ function removeElementFromFrontOfArray(array) {
  *  getMiddleElement([ 10, null, "30" ]);
  *  //> null
  */
+//take an element out of th e array by find out its position
+
 function getMiddleElement(array) {
-  return array.slice(array.length + 1/2);
+  let position = ((array.length+1)/2)-1;
+  return (array.splice(position,1).pop());
 }
 
 // Do not change any code below this line.
