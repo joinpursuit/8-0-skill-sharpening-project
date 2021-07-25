@@ -9,7 +9,12 @@
  *  getLengthOfString("down");
  *  //> 4
  */
-function getLengthOfString(str) {}
+function getLengthOfString(str) {
+  // RETURNs the LENGTH of a string as a NUMBER
+  // work with or without storing the length in a variable (i.e. line 15)
+  stringLength = str.length;
+  return stringLength;
+}
 
 /**
  * convertToNumber()
@@ -22,7 +27,11 @@ function getLengthOfString(str) {}
  *  convertToNumber("111");
  *  //> 111
  */
-function convertToNumber(val) {}
+function convertToNumber(val) {
+  // converts the parameter to a NUMBER
+  // use either Number() or .toNumber()
+  return Number(val);
+}
 
 /**
  * convertToString()
@@ -36,7 +45,10 @@ function convertToNumber(val) {}
  *  convertToString(99);
  *  //> "99"
  */
-function convertToString(val) {}
+function convertToString(val) {
+  // RETURN modifed VAL by using String() method
+  return String(val);
+}
 
 /**
  * convertToShoutingText()
@@ -49,7 +61,10 @@ function convertToString(val) {}
  *  convertToShoutingText("Hello There");
  *  //> "HELLO THERE"
  */
-function convertToShoutingText(text) {}
+function convertToShoutingText(text) {
+  // RETURN the parameter as UpperCased()
+  return text.toUpperCase();
+}
 
 /**
  * convertToWhisperText()
@@ -62,7 +77,10 @@ function convertToShoutingText(text) {}
  *  convertToWhisperText("Hello There");
  *  //> "hello there"
  */
-function convertToWhisperText(text) {}
+function convertToWhisperText(text) {
+  // RETURN the parameter as LowerCased()
+  return text.toLocaleLowerCase();
+}
 
 /**
  * checkIfCharacterIsInString()
@@ -79,7 +97,10 @@ function convertToWhisperText(text) {}
  *  checkIfCharacterIsInString("hello there", "a");
  *  //> false
  */
-function checkIfCharacterIsInString(text, character) {}
+function checkIfCharacterIsInString(text, character) {
+  // RETURN BOOLEAN if one parameter INCLUDEs the other
+  return text.includes(character);
+}
 
 /**
  * isEven()
@@ -95,7 +116,17 @@ function checkIfCharacterIsInString(text, character) {}
  *  isEven(11);
  *  //> false
  */
-function isEven(num) {}
+function isEven(num) {
+  // IF NUM is even 
+  if (num % 2 === 0) {
+    // return true
+    return true;
+    // else 
+  } else {
+    // return false
+    return false;
+  }
+}
 
 /**
  * isOdd()
@@ -111,7 +142,17 @@ function isEven(num) {}
  *  isOdd(11);
  *  //> true
  */
-function isOdd(num) {}
+function isOdd(num) {
+  // IF NUM is odd 
+  if (num % 2 !== 0) {
+    // return true
+    return true;
+    // else 
+  } else {
+    // return false
+    return false;
+  }
+}
 
 /**
  * isTruthy()
@@ -127,7 +168,17 @@ function isOdd(num) {}
  *  isTruthy(null);
  *  //> false
  */
-function isTruthy(val) {}
+function isTruthy(val) {
+  // IF parameter is truthy 
+  if (val) {
+    // return true
+    return true;
+  // else
+  } else {
+    // return false
+    return false;
+  }
+}
 
 /**
  * isFalsy()
@@ -143,7 +194,17 @@ function isTruthy(val) {}
  *  isFalsy(" ");
  *  //> false
  */
-function isFalsy(val) {}
+function isFalsy(val) {
+  // IF parameter is false 
+  if (!val) {
+    // return true
+    return true;
+  // else
+  } else {
+    // return false
+    return false;
+  }
+}
 
 // Do not change the code below.
 module.exports = {
