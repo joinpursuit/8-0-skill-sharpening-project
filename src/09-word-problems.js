@@ -20,16 +20,19 @@
  *  //> 700
  */
 function applyDiscount(priceInCents, age, hasMembership) {
-  let sum = priceInCents;
+  // Define the type of input and default equals to the given price.
+  let sum = priceInCents; // No discount.
   
+  // There are three kinds of discount, and four situation.
+
   if (age <= 10 && hasMembership || age >= 65 && hasMembership) {
-    // discount = 0.3;
+    // discountOne = 0.3;
     sum = sum * 0.7;
   } else if (age <= 10 || age >= 65) {
-    // discount = 0.1;
+    // discountTwo = 0.1;
     sum = sum * 0.9;
   } else if (hasMembership) {
-    // discount = 0.2
+    // discountThree = 0.2
     sum = sum * 0.8;
   } 
   
@@ -56,10 +59,14 @@ function applyDiscount(priceInCents, age, hasMembership) {
  *  //> "$30.00"
  */
 function getCartTotal(products) {
+  // Declare wholePay variable and default equals to 0.
   let wholePay  = 0;
+
+  // For loop.
   for (let i=0; i<products.length;i++) {
     let cost = products[i].priceInCents;
     let numbers = products[i].quantity;
+    // Calculator.
     total = cost * numbers;
     wholePay += total;
     dollorPay = "$" + (wholePay/100).toFixed(2);
@@ -116,17 +123,21 @@ function compareLocations(address1, address2) {
   let addressTwo4 = address2.zip;
   let fullOne = addressOne1+addressOne2+addressOne3+addressOne4;
   let fullTwo = addressTwo1+addressTwo2+addressTwo3+addressTwo4;
+  // Compare all information, if all are the same return "Same building".
   if (fullOne === fullTwo){
     return "Same building."
   } 
   else if 
+  // Compare city, state and zip, if all of these three are the same return "Same city".
   (addressOne2 === addressTwo2 && addressOne3 === addressTwo3 && addressOne4 === addressTwo4) {
     return "Same city."
   } 
+  // Compare state, if states are same return "Same state".
   else if (addressOne3 === addressTwo3) {
     return "Same state."
   } 
   else  {
+  // If none of those matches occur:
     return "Addresses are not near each other."
   }
 }
@@ -184,23 +195,28 @@ function compareLocations(address1, address2) {
       let b = everyAssignment.score.max;
       let getScore = (a*100/b).toFixed(1);
     
+      // kind: "PASS-FAIL"
       if (everyAssignment.kind === "PASS-FAIL") {
         if (a === b) {
+          // the number of score.received compare with the number of score.max
+          // if they are the same, "PASSED"
           everyAssignment.status = "PASSED"
         } else {
+          // if not the same, "FAILED"
           everyAssignment.status = "FAILED"
         }
       } 
-    
+      // kind: "PERCENTAGE"
       if (everyAssignment.kind === "PERCENTAGE") {
-    
+        // getScore >= 80.0
         if (getScore >= 80.0) {
         everyAssignment.status = "PASSED: " + getScore + "%";
         } else {
+        // getScore < 80.0
         everyAssignment.status = "FAILED: " + getScore + "%"
         }
       }
-    
+      //kind: "ESSAY"
       if (everyAssignment.kind === "ESSAY") {
       everyAssignment.status = "SCORE: " + a + "/" + b;
       }
@@ -233,15 +249,21 @@ function compareLocations(address1, address2) {
     //> [ "Ray Anderson", "America Marsh", "Wade Carson", "Patience Patel" ]
  */
 function createLineOrder(people) {
-  let trueMember = [];
+  // Declare a empty array to add the trueMember
+  let trueMember = []; 
+  // Declare a empty array to add the falseMember
   let falseMember = [];
+  // For loop.
   for (let i =0; i<people.length; i++) {
+  // if hasMembership is true, add the name to the trueMember array.
   if (people[i].hasMembership) {
     trueMember.push(people[i].name)
   } else {
+  // if hasMembership is false, add the name to the falseMember array.
     falseMember.push(people[i].name);
   }
   }
+  //return the two array combine into one array.
 return trueMember.concat(falseMember) ;
 }
 
