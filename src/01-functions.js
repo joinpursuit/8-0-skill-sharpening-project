@@ -9,7 +9,11 @@
  *  alwaysTrue();
  *  //> true
  */
-function alwaysTrue() {}
+
+function alwaysTrue() {
+  // RETURN boolean value of TRUE
+  return true;
+}
 
 /**
  * greet()
@@ -24,7 +28,10 @@ function alwaysTrue() {}
  *  greet("Ian");
  *  //> "Hello, Ian."
  */
-function greet() {}
+function greet(name) {
+  // RETURN the NAME variable in an interpolated string
+  return `Hello, ${name}.`
+}
 
 /**
  * add()
@@ -39,7 +46,14 @@ function greet() {}
  *  add(10, 20);
  *  //> 30
  */
-function add() {}
+function add(a, b) {
+  // declare a variable and assign the 
+  // evaluated result of ADDing two NUMBERs
+  const result = a + b;
+
+  // RETURN the variable
+  return result;
+}
 
 /**
  * multiply()
@@ -54,13 +68,20 @@ function add() {}
  *  multiply(2, 5);
  *  //> 10
  */
-function multiply() {}
+function multiply(a, b) {
+  // declare a variable and assign the evaluated 
+  // result of MULTIPLYing two numbers
+  const result = a * b;
+
+  // RETURN the variable
+  return result;
+}
 
 /**
  * average()
  * ---------------------
- * Returns the average of two numbers. You can get the average by adding up all numbers and then dividing by how many numbers were added.
- *
+ * Returns the average of two numbers. You can get the average by adding 
+ * up all numbers and then dividing by how many numbers were added.
  * NOTE: The sum of all numbers will always be even.
  * HINT: How is this problem similar to add()? How is it different?
  * HINT: Use parentheses () to control the order of operations:
@@ -74,12 +95,21 @@ function multiply() {}
  *  average(10, 6);
  *  //> 8 // 10 + 6 = 16; 16/2 = 8;
  */
-function average() {}
+function average(a, b) {
+  // declare a variable and assign the 
+  // evaluated result of ADDing two NUMBERs
+  // also, divide by how many numbers were added
+  const result = (a + b) / arguments.length;
+
+  // return the variable
+  return result;
+}
 
 /**
  * averageThree()
  * ---------------------
- * Returns the average of three numbers. You can get the average by adding up all numbers and then dividing by how many numbers were added.
+ * Returns the average of three numbers. You can get the average by adding 
+ * up all numbers and then dividing by how many numbers were added.
  *
  * NOTE: The sum of all numbers will always be even.
  * HINT: How is this problem similar to average()? How is it different?
@@ -93,12 +123,21 @@ function average() {}
  *  averageThree(10, 11, 19);
  *  //> 10 // 10 + 11 + 19 = 30; 30 / 3 = 10;
  */
-function averageThree() {}
+function averageThree(a, b, c) {
+  // declare a variable and assign the 
+  // evaluated result of MULTIPLYing three NUMBERs
+  // also, divide by how many numbers were added
+  const result = (a + b + c) / arguments.length;
+
+  // return the variable
+  return result;
+}
 
 /**
  * compareTypes()
  * ---------------------
- * Returns `true` if `a` and `b` are of the same type. Otherwise, returns `false`. You can check for types with the `typeof` operator.
+ * Returns `true` if `a` and `b` are of the same type. Otherwise, returns `false`.
+ * You can check for types with the `typeof` operator.
  * @param {*} a
  * @param {*} b
  * @returns {boolean}
@@ -112,16 +151,24 @@ function averageThree() {}
  *  compareTypes("left", 10);
  *  //> false
  */
-function compareTypes() {}
+function compareTypes(a, b) {
+  if (typeof a === typeof b) {
+    return true;
+  } else {
+    return false;
+  }
+}
 
 /**
  * flipSign()
  * ---------------------
- * Returns the negative of a positive integer, or the positive of a negative integer.
+ * Returns the negative of a positive integer, or the 
+ * positive of a negative integer.
  * @param {number} a
  * @returns {number}
  *
- * HINT: Using pencil and paper, how would you make a positive number look negative?
+ * HINT: Using pencil and paper, how would you make a 
+ * positive number look negative?
  * How could you apply this to a variable?
  * 
  * EXAMPLE:
@@ -131,7 +178,11 @@ function compareTypes() {}
  *  flipSign(50);
  *  //> -50
  */
-function flipSign() {}
+function flipSign(a) {
+  // postive/negative number
+  // put a minus outside the paranthesis
+  return -(a);
+}
 
 /**
  * joinStringsWithSpaces()
@@ -151,7 +202,11 @@ function flipSign() {}
  *  joinStringsWithSpaces("left", "right", "up", "down", "away");
  *  //> "left right up down away"
  */
-function joinStringsWithSpaces() {}
+function joinStringsWithSpaces(a, b, c, d, e) {
+  // concatenate the parameters with space in between them
+  // can be done with interpolation too
+  return `${a} ${b} ${c} ${d} ${e}`;
+}
 
 /**
  * getFirstAndLastCharacter()
@@ -168,7 +223,12 @@ function joinStringsWithSpaces() {}
  *  getFirstAndLastCharacter("upwards");
  *  //> "us"
  */
-function getFirstAndLastCharacter() {}
+function getFirstAndLastCharacter(a) {
+  // returns the first character of a string concatenated
+  // with the last character of a string
+  // last character grabbing goes in [ ]
+  return a[0] + a[a.length - 1];
+}
 
 // Do not change the code below.
 module.exports = {
