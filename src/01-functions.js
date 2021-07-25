@@ -9,7 +9,12 @@
  *  alwaysTrue();
  *  //> true
  */
-function alwaysTrue() {}
+
+//
+function alwaysTrue() {
+  return true
+}
+// console.log(alwaysTrue());
 
 /**
  * greet()
@@ -24,7 +29,10 @@ function alwaysTrue() {}
  *  greet("Ian");
  *  //> "Hello, Ian."
  */
-function greet() {}
+function greet(name) {
+  return `Hello, ${name}.`
+}
+// console.log(greet('Rose'));
 
 /**
  * add()
@@ -39,8 +47,10 @@ function greet() {}
  *  add(10, 20);
  *  //> 30
  */
-function add() {}
-
+function add(a,b) {
+  return a + b;
+}
+// console.log(add(3,5));
 /**
  * multiply()
  * ---------------------
@@ -54,8 +64,10 @@ function add() {}
  *  multiply(2, 5);
  *  //> 10
  */
-function multiply() {}
-
+function multiply(a,b) {
+  return a * b; 
+}
+// console.log(multiply(5,5))
 /**
  * average()
  * ---------------------
@@ -74,8 +86,14 @@ function multiply() {}
  *  average(10, 6);
  *  //> 8 // 10 + 6 = 16; 16/2 = 8;
  */
-function average() {}
-
+function average(a,b) {
+  let averageArray = [];
+  averageArray.push(a);
+  averageArray.push(b);
+  averageArray = (a + b)/averageArray.length;
+  return averageArray;
+}
+// console.log(average(3,5));
 /**
  * averageThree()
  * ---------------------
@@ -93,7 +111,15 @@ function average() {}
  *  averageThree(10, 11, 19);
  *  //> 10 // 10 + 11 + 19 = 30; 30 / 3 = 10;
  */
-function averageThree() {}
+function averageThree(a,b,c) {
+  let averageArray = [];
+  averageArray.push(a);
+  averageArray.push(b);
+  averageArray.push(c);
+  averageArray = (a + b + c)/averageArray.length;
+  return averageArray;
+}
+// console.log(averageThree(2,3,5));
 
 /**
  * compareTypes()
@@ -112,7 +138,13 @@ function averageThree() {}
  *  compareTypes("left", 10);
  *  //> false
  */
-function compareTypes() {}
+function compareTypes(a,b) {
+  if (typeof a === typeof b) {
+    return true;
+  }
+  else return false
+}
+console.log(compareTypes(3,3));
 
 /**
  * flipSign()
@@ -131,8 +163,10 @@ function compareTypes() {}
  *  flipSign(50);
  *  //> -50
  */
-function flipSign() {}
-
+function flipSign(a) {
+  return -a;
+}
+// console.log(flipSign(-5))
 /**
  * joinStringsWithSpaces()
  * ---------------------
@@ -151,9 +185,12 @@ function flipSign() {}
  *  joinStringsWithSpaces("left", "right", "up", "down", "away");
  *  //> "left right up down away"
  */
-function joinStringsWithSpaces() {}
-
+function joinStringsWithSpaces(a,b,c,d,e) {
+  return a+ ` `+ b +` `+c +` `+ d + ` `+ e;
+}
+// console.log(joinStringsWithSpaces('1',"2",`1`,`d`,`e`));
 /**
+ * 
  * getFirstAndLastCharacter()
  * ---------------------
  * Returns the first and last character of a larger string as a single string.
@@ -168,9 +205,12 @@ function joinStringsWithSpaces() {}
  *  getFirstAndLastCharacter("upwards");
  *  //> "us"
  */
-function getFirstAndLastCharacter() {}
+function getFirstAndLastCharacter(a) {
+  return (a.charAt(0)) + (a.charAt(a.length - 1));
+}
+// console.log(getFirstAndLastCharacter('string'));
 
-// Do not change the code below.
+  // Do not change the code below.
 module.exports = {
   alwaysTrue,
   greet,
