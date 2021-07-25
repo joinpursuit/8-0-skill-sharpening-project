@@ -15,9 +15,9 @@
 function shoutForLoop(array) {
   let newArr = [];
   for (let i=0; i<array.length; i++) {
-    array.push(array[i]+"!")
+    newArray.push(array[i]+"!");
   }
-  return array;
+  return newArray;
 }
 
 /**

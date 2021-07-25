@@ -42,10 +42,9 @@ function createObjectWithValue(val) {
  *  //> { left: false }
  */
 function createObjectWithKey(key) {
-  let newObject = {};
-  let value = null;
-  newObject.key = value;
-  return newObject;
+  let createObj = {};
+  createObj[key] = "Good morning everyone!"
+  return createObj;
 }
 
 /**
@@ -62,7 +61,7 @@ function createObjectWithKey(key) {
  */
 function createObjectWithKeyValuePair(key, val) {
   let createObj = {};
-  createObj.null = val;
+  createObj[key] = val;
   return createObj;
 }
 
@@ -126,7 +125,7 @@ function addValueToObject(object, val) {
  *  //> { right: false, left: true }
  */
 function addKeyToObject(object, key) {
-  object.key = null;
+  object[key] = null;
   return object;
 }
 
@@ -143,7 +142,10 @@ function addKeyToObject(object, key) {
  *  addKeyValuePairToObject({ up: true }, "left", false);
  *  //> { up: true, left: false }
  */
-function addKeyValuePairToObject(object, key, val) {}
+function addKeyValuePairToObject(object, key, val) {
+  object[key] = val;
+  return object;
+}
 
 /**
  * deleteKeyFromObject()
@@ -158,9 +160,8 @@ function addKeyValuePairToObject(object, key, val) {}
  *  //> { right: false }
  */
 function deleteKeyFromObject(object, key) {
-  // delete object;
-  // return object;
-console.log(object);
+  delete object[key];
+  return object;
 }
 
 // Do not change any code below this line.
