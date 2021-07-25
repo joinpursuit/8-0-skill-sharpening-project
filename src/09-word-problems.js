@@ -19,7 +19,22 @@
  *  applyDiscount(1000, 9, true);
  *  //> 700
  */
-function applyDiscount(priceInCents, age, hasMembership) {}
+function applyDiscount(priceInCents, age, hasMembership) {
+  let sum = priceInCents;
+  
+  if (age <= 10 && hasMembership || age >= 65 && hasMembership) {
+    // discount = 0.3;
+    sum = sum * 0.7;
+  } else if (age <= 10 || age >= 65) {
+    // discount = 0.1;
+    sum = sum * 0.9;
+  } else if (hasMembership) {
+    // discount = 0.2
+    sum = sum * 0.8;
+  } 
+  
+  return sum;
+}
 
 /**
  * getCartTotal()
@@ -40,7 +55,17 @@ function applyDiscount(priceInCents, age, hasMembership) {}
     getCartTotal(cart);
  *  //> "$30.00"
  */
-function getCartTotal(products) {}
+function getCartTotal(products) {
+  let wholePay  = 0;
+  for (let i=0; i<products.length;i++) {
+    let cost = products[i].priceInCents;
+    let numbers = products[i].quantity;
+    total = cost * numbers;
+    wholePay += total;
+    dollorPay = "$" + (wholePay/100).toFixed(2);
+  }
+  return dollorPay;
+}
 
 /**
  * compareLocations()
@@ -80,7 +105,28 @@ function getCartTotal(products) {}
     compareLocations(address1, address2);
     //> "Same city."
  */
-function compareLocations(address1, address2) {}
+function compareLocations(address1, address2) {
+  let addressOne1 = address1.street;
+  let addressOne2 = address1.city;
+  let addressOne3 = address1.state;
+  let addressOne4 = address1.zip;
+  let addressTwo1 = address2.street;
+  let addressTwo2 = address2.city;
+  let addressTwo3 = address2.state;
+  let addressTwo4 = address2.zip;
+  let fullOne = addressOne1+addressOne2+addressOne3+addressOne4;
+  let fullTwo = addressTwo1+addressTwo2+addressTwo3+addressTwo4;
+  if (fullOne === fullTwo){
+    return "Same building."
+  } else if 
+  (addressOne2 === addressTwo2 && addressOne3 === addressTwo3 && addressOne4 === addressTwo4) {
+    return "Same city."
+  } else if (addressOne3 === addressTwo3) {
+  return "Same state."
+  } else  {
+  return "Addresses are not near each other."
+}
+}
 
 /**
  * gradeAssignments()
