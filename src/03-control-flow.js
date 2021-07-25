@@ -14,10 +14,13 @@
  *  isEqual(10, "10");
  *  //> false
  */
+//Compares two values
 function isEqual(a, b) {
 if(a === b){
+  //Returns true if the two values are equal
   return true;
 }
+////Returns false if the two values are not equal
 return false;
 }
 
@@ -35,11 +38,20 @@ return false;
  *  findLarger(19, 7);
  *  //> 19
  */
+//Searches for high value
 function findLarger(a, b) {
+  //Declare a variable, largeNum and assign a value to it
+  // Designated largeNum as the highest value
 let largeNum = a;
+
+//Compare variable, largeNum to b  
 if(largeNum < b){
+  
+  //Assigns b value to largeNum if b is greater than largeNum
   largeNum = b;
 }
+
+//Return value
 return largeNum
 }
 
@@ -61,14 +73,27 @@ console.log(findLarger(-2, -1))
  *  findLargerOrTie(0, 0);
  *  //> "tie"
  */
-function findLargerOrTie(a, b) {
-  let largeOrTie = a;
-  if(largeOrTie < b){
-    largeOrTie = b;
 
-  } else if(largeOrTie === b){
-    largeOrTie = `"tie"`
+//Searches for the highest value or a tie   
+function findLargerOrTie(a, b) {
+  // Assuming value a is the highest 
+  let largeOrTie = a;
+  //Compares the two values 
+  if(largeOrTie < b){
+
+    //Assigns value of b to largeOrTie if b is larger 
+    //than variable largeOrTie 
+    largeOrTie = b;
+  } 
+  
+  //compares if equal
+  else if(largeOrTie === b){
+
+    //Then assigns tie to variable largeOrTie if they're equal  
+    largeOrTie = "tie"
   }
+
+  //return value
   return largeOrTie
   }
  
@@ -92,17 +117,28 @@ console.log(findLargerOrTie(2, -1))
  *  positiveNegativeOrZero(1);
  *  //> "Positive"
  */
+//Checks for the type of number
  function positiveNegativeOrZero(a) {
+   //if a is not a number 
    if(typeof a !== 'number' ){
-     return `'\"${a}", not a number'`
-   }
-let thing = 'Zero';
-if(a > 0){
 
+    //returns value if not a number
+     return `${a}, not a number'`
+   }
+   //Accumulator default value
+let thing = 'Zero';
+
+//Compares a value to 0
+if(a > 0){
+//return positive if the condition is true
 return 'Positive'
-} else if(a < 0){
+} 
+//return Negative if the condition is false
+else if(a < 0){
+  //
   return 'Negative'
 }
+//default return value
 return thing;
 }
  console.log(positiveNegativeOrZero(0))
@@ -125,28 +161,40 @@ return thing;
  *  aroundTheWorldGreeting();
  *  //> "Hello World"
  */
+
+//Returns greeting based on the language chosen other default greeing 
 function aroundTheWorldGreeting(language) {
+  //checks if the defined language is inputted
 if(language === undefined){
+
+  //returns Hello World if any other language is 
+  //inputted other than the defined ones
   return "Hello World";
 }
+  //Converts string to lowercase 
   let languageTolowerCase = language.toLowerCase();  
+  
+  //Sets the accumulator to a string  
   let languageGreeting = '';
   
-
+//checks if the language is english
 if(languageTolowerCase === 'english'){
   languageGreeting += "Hello World"; 
 }
+//checks if the language is spanish
 else if(languageTolowerCase === 'spanish'){
   languageGreeting += "Hola Mundo"; 
 }
+//checks if the language is german
 else if(languageTolowerCase === 'german'){
   languageGreeting += "Hallo Welt"; 
 }
+//return value
 return languageGreeting
 
 }
 
-//console.log(aroundTheWorldGreeting('Spanish'))
+console.log(aroundTheWorldGreeting())
 
 /**
  * aroundTheWorldGreetingWithSwitch()
@@ -170,22 +218,26 @@ return languageGreeting
  *  //> "Hello World"
  */
 function aroundTheWorldGreetingWithSwitch(language) {
+  //This block runs when languages other than english, spanish or german is inputted
     if(language === undefined){
       return "Hello World";
     }
       let languageTolowerCase = language.toLowerCase();  
       let languageGreeting = "";
-      
+      //checks truthy
     switch(languageTolowerCase){
+      //if english this line of code runs
         case 'english': languageGreeting += 'Hello World';
         return languageGreeting;
         break;
+          //if spanish this line of code runs
         case 'spanish': languageGreeting += 'Hola Mundo';
         return languageGreeting;
         break;
+         //if german this line of code runs
         case 'german': languageGreeting += 'Hallo Welt';
         return languageGreeting; 
-        
+        //default
     }
 
   }
@@ -209,30 +261,46 @@ function aroundTheWorldGreetingWithSwitch(language) {
  *  //> "A"
  */
 function calculateLetterGrade(grade) {
+  //Checks if grade is less than zero
   if(grade < 0 ){
     return `'${grade}' cannot be a negative number`
   }
+
+  //Assigns as tring to the accumulator
 let letterGradeScore = '';
+//checks if the number inputted is less than 60
 if(grade < 60){
+  //Assigns letter F letterGradeScore 
+  
   letterGradeScore += 'F'; 
 
 }
+//checks if the number inputted is greater or equal 90
 else if(grade >= 90){
+
+  //Assigns letter A letterGradeScore 
   letterGradeScore += 'A'; 
 
 }
+//checks if the number inputted is greater or equal 80
 else if(grade >= 80){
+  //Assigns letter B letterGradeScore 
   letterGradeScore += 'B'; 
 
 }
+//checks if the number inputted is greater or equal 70
 else if(grade >= 70){
+  //Assigns letter C letterGradeScore 
   letterGradeScore += 'C'; 
 
 }
+//checks if the number inputted is greater or equal 60
 else if(grade >= 60){
+  //Assigns letter D letterGradeScore 
   letterGradeScore += 'D'; 
 
 }
+//Return value
 return letterGradeScore;
 }
 console.log(calculateLetterGrade(5))
@@ -255,16 +323,25 @@ console.log(calculateLetterGrade(5))
  *  //> "1 pig"
  */
 function animalCounts(animal, numberOfAnimals) {
+
+  //if animal count is zero only this code block runs
   if(numberOfAnimals === 0){
-    return `There's no animal`
+    return `There's no ${animal}`
+    
   }
 
 let numberOfAnimal = '';
+//checks if animal count is 1
+
 if(numberOfAnimals === 1){
-  numberOfAnimal += `"${numberOfAnimals} ${animal}"`
+  //reassigns variable, numberOfAnimal
+  numberOfAnimal += `${numberOfAnimals} ${animal}`
 } 
+//checks if animal count is more than 1
 else if(numberOfAnimals > 1){
-  numberOfAnimal += `"${numberOfAnimals} ${animal}s"`
+
+  //reassigns variable, numberOfAnimal
+  numberOfAnimal += `${numberOfAnimals} ${animal}s`
 }
 
 return numberOfAnimal;
@@ -288,11 +365,13 @@ console.log(animalCounts("dolphin", 6))
  */
 function evenOrOdd(a) {
 let typeOfNumber = '';
+//checks if odd
 if(a % 2 === 1 || a % 2 === -1){
-  typeOfNumber += `"Odd"`
+  typeOfNumber += "Odd"
 } 
+//Checks if even
 else if(a % 2 === 0){
-  typeOfNumber +=`"Even"`
+  typeOfNumber +="Even"
 
 }
 return typeOfNumber;
@@ -314,17 +393,17 @@ return typeOfNumber;
  *  //> "Even"
  */
 function evenOrOddWithTernary(a) {
-
-  if(a === -1){
-    return '"Odd"';
-  }
-let typeOfNumber = ''
-typeOfNumber += a % 2 === 1? '"Odd"' : '"Even"';
-
-return typeOfNumber;
+  //Accumulator
+  let typeOfNumber = '' 
+    // ternary operator
+    typeOfNumber += a % 2 ===  0 ? 'Even' : 'Odd';
+  
+//return value
+  return typeOfNumber;
 }
 
-console.log(evenOrOddWithTernary(9))
+//console.log(9 % 2 === 1 )
+console.log(evenOrOddWithTernary("if"))
 // Do not change any code below this line.
 module.exports = {
   isEqual,
