@@ -12,7 +12,11 @@
  *  shoutForLoop([ "A", "Very", "Happy", "Array" ]);
  *  //> [ "A!", "Very!", "Happy!", "Array!" ];
  */
-function shoutForLoop(array) {}
+function shoutForLoop(array) {
+  for(i=0;i<array.length;i++){
+    return array[i]=(i+"!")
+  }
+}
 
 /**
  * shoutWhileLoop()
@@ -57,7 +61,9 @@ function shoutForOfLoop(array) {}
  *  sumArray([ 10, 0, 10, 11 ]);
  *  //> 31
  */
-function sumArray(array) {}
+function sumArray(array) {
+  array.reduce()
+}
 
 /**
  * oddArray()
