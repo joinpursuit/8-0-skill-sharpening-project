@@ -118,14 +118,17 @@ function compareLocations(address1, address2) {
   let fullTwo = addressTwo1+addressTwo2+addressTwo3+addressTwo4;
   if (fullOne === fullTwo){
     return "Same building."
-  } else if 
+  } 
+  else if 
   (addressOne2 === addressTwo2 && addressOne3 === addressTwo3 && addressOne4 === addressTwo4) {
     return "Same city."
-  } else if (addressOne3 === addressTwo3) {
-  return "Same state."
-  } else  {
-  return "Addresses are not near each other."
-}
+  } 
+  else if (addressOne3 === addressTwo3) {
+    return "Same state."
+  } 
+  else  {
+    return "Addresses are not near each other."
+  }
 }
 
 /**
@@ -198,7 +201,9 @@ function gradeAssignments(assignments) {}
     createLineOrder(people);
     //> [ "Ray Anderson", "America Marsh", "Wade Carson", "Patience Patel" ]
  */
-function createLineOrder(people) {}
+function createLineOrder(people) {
+  
+}
 
 module.exports = {
   applyDiscount,

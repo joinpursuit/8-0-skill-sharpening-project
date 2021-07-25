@@ -208,8 +208,8 @@ function calculateLetterGrade(grade) {
 function animalCounts(animal, numberOfAnimals) {
   if (numberOfAnimals > 1) {
     return numberOfAnimals + " " + animal + "s";
-  } else if (numberOfAnimals = 1){
-    return 1 + " " + animal;
+  } else  {
+    return numberOfAnimals + " " + animal;
   }
 }
 
