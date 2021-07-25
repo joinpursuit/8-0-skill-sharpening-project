@@ -197,8 +197,10 @@ let negOne = a * -1
  *  //> "left right up down away"
  */
 function joinStringsWithSpaces(a, b, c, d, e) {
-//
-
+//declare a var and just add all the params with + ' ' in between them
+let spaceString = a + ' ' + b + ' ' + ' ' + c + ' ' + d + ' ' + e
+  //return the var
+  return spaceString
 }
 
 /**
@@ -216,8 +218,11 @@ function joinStringsWithSpaces(a, b, c, d, e) {
  *  getFirstAndLastCharacter("upwards");
  *  //> "us"
  */
-function getFirstAndLastCharacter() {
-
+function getFirstAndLastCharacter(a) {
+//declare a var and assign it to pull the first character of the string and hte last char of a string
+let beginAndEndChar = a.charAt(0) + a.slice(-1)
+  //return the var 
+  return beginAndEndChar
 }
 
 // Do not change the code below.
