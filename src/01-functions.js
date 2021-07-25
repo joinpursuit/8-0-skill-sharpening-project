@@ -9,7 +9,14 @@
  *  alwaysTrue();
  *  //> true
  */
-function alwaysTrue() {}
+function alwaysTrue() {
+  // This function will always return true;
+  // return true
+  return true;
+
+}
+
+
 
 /**
  * greet()
@@ -24,7 +31,15 @@ function alwaysTrue() {}
  *  greet("Ian");
  *  //> "Hello, Ian."
  */
-function greet() {}
+function greet(name) {
+  // This function greets person by name 
+  // Create a variable and assign it to 'Hello'
+  // return a string that greets person by name
+  let greet = 'Hello';
+  return greet + ',' + ' ' + name + '.';
+
+
+}
 
 /**
  * add()
@@ -39,7 +54,16 @@ function greet() {}
  *  add(10, 20);
  *  //> 30
  */
-function add() {}
+function add(a, b) {
+// This function adds two numbers (a & b) - > will return the sum
+// Create a variable that holds the total of a + b
+// Create a statement that adds a and b together
+let total = a + b
+// Return the total 
+  return total;
+
+
+}
 
 /**
  * multiply()
@@ -54,7 +78,13 @@ function add() {}
  *  multiply(2, 5);
  *  //> 10
  */
-function multiply() {}
+function multiply(a, b) {
+  // This function multiplies two numbers together
+  // Create a variable that holds the total of both numbers multiplied together
+  let total = a * b;
+  // return the variable
+  return total;
+}
 
 /**
  * average()
@@ -74,7 +104,16 @@ function multiply() {}
  *  average(10, 6);
  *  //> 8 // 10 + 6 = 16; 16/2 = 8;
  */
-function average() {}
+function average(a, b) {
+  // This function returns the average of all numbers
+  // Create a variable that adds all numbers
+  let total = a + b;
+  // Create a variable that divides the total by the amount of numbers
+  let average = total / 2;
+  // return variable
+  return average;
+
+}
 
 /**
  * averageThree()
@@ -93,7 +132,17 @@ function average() {}
  *  averageThree(10, 11, 19);
  *  //> 10 // 10 + 11 + 19 = 30; 30 / 3 = 10;
  */
-function averageThree() {}
+function averageThree(a, b, c) {
+// Finds the average of all three numbers
+// Create a variable that stores all numbers added
+let total = a + b + c
+// Create a variable that holds the average
+let average = total / 3
+// return variable
+return average;
+
+
+}
 
 /**
  * compareTypes()
@@ -112,7 +161,19 @@ function averageThree() {}
  *  compareTypes("left", 10);
  *  //> false
  */
-function compareTypes() {}
+function compareTypes(a, b) {
+// This functions finds if a & b are the same type 
+  // Create an if statement to find if a & b are the same type
+  if (typeof a === typeof b) {
+    return true;
+  } else {
+    return false;
+  }
+// return true
+// If not the same type return false
+
+
+}
 
 /**
  * flipSign()
@@ -131,7 +192,20 @@ function compareTypes() {}
  *  flipSign(50);
  *  //> -50
  */
-function flipSign() {}
+function flipSign(a) {
+// Function returns a negative if the number is positive/ positive if the number is negative
+// Create a variable and assign it to 0
+let num = 0
+// Create an if statement that makes a poitive number negative
+if (a < num) {
+  return Math.abs(a);
+  // Creates an else statement that makes a negative number positive
+} else if (a) {
+  return Math.abs(a) * -1;
+}
+// return value for each if statement
+
+}
 
 /**
  * joinStringsWithSpaces()
@@ -151,7 +225,12 @@ function flipSign() {}
  *  joinStringsWithSpaces("left", "right", "up", "down", "away");
  *  //> "left right up down away"
  */
-function joinStringsWithSpaces() {}
+function joinStringsWithSpaces(a, b, c, d, e) {
+// Join all strings into one single string
+// Create a return statement that joins all strings together
+ return a + ' ' + b + ' ' + c + ' ' + d + ' ' + e;
+}
+
 
 /**
  * getFirstAndLastCharacter()
@@ -168,7 +247,17 @@ function joinStringsWithSpaces() {}
  *  getFirstAndLastCharacter("upwards");
  *  //> "us"
  */
-function getFirstAndLastCharacter() {}
+function getFirstAndLastCharacter(a) {
+  // Function returns the first and last character of a string
+  // Create a variable that holds the first letter of the string
+  let firstLetter = a.slice(0, 1);
+  // Create a variable that holds the last letter of the string
+  let lastLetter = a.slice(-1);
+  // Create a variable that holds both the first and last letter
+  let newString = firstLetter + lastLetter
+  // return the variable
+  return newString;
+}
 
 // Do not change the code below.
 module.exports = {
