@@ -171,6 +171,8 @@ function isTruthy(val) {
   } else return false
 }
 
+console.log(isTruthy(10))
+console.log(isTruthy(null))
 /**
  * isFalsy()
  * ---------------------
@@ -192,6 +194,9 @@ function isFalsy(val) {
     return false
   }
 }
+
+console.log(isFalsy(undefined))
+console.log(isFalsy(" "))
 
 // Do not change the code below.
 module.exports = {
