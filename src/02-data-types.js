@@ -214,13 +214,15 @@ else {
  */
 function isFalsy(val) {
 //if vlaue is flasey...
-
+if (!val){
   //return true
-
+  return true;
+}
 // if else...
-
+else {
   //return false 
-
+  return false;
+}
 }
 
 // Do not change the code below.
