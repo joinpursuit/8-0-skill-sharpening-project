@@ -22,6 +22,9 @@ function isEqual(a, b) {
   }
 }
 
+console.log(isEqual(10, 10))
+console.log(isEqual(10, "10"))
+
 /**
  * findLarger()
  * ---------------------
@@ -35,8 +38,14 @@ function isEqual(a, b) {
  *  //> 19
  */
 function findLarger(a, b) {
-  
+  if(a > b) {
+    return a
+  } else {
+    return b
+  }
 }
+
+console.log(findLarger(19, 7))
 
 /**
  * findLargerOrTie()
@@ -53,7 +62,18 @@ function findLarger(a, b) {
  *  findLargerOrTie(0, 0);
  *  //> "tie"
  */
-function findLargerOrTie(a, b) {}
+function findLargerOrTie(a, b) {
+  if(a === b) {
+    return "tie"
+  } else if(a > b) {
+    return a
+  } else {
+    return b
+  }
+}
+
+console.log(findLargerOrTie(0, 1))
+console.log(findLargerOrTie(0, 0))
 
 /**
  * positiveNegativeOrZero()
@@ -73,8 +93,20 @@ function findLargerOrTie(a, b) {}
  *  positiveNegativeOrZero(1);
  *  //> "Positive"
  */
-function positiveNegativeOrZero(a) {}
+function positiveNegativeOrZero(a) {
+  if(a < 0) {
+    return "Negative"
+  } else if(a === 0) {
+    return "Zero"
+  } else if(a >= 1) {
+    return "Positive"
+  }
+}
 
+console.log(positiveNegativeOrZero(-1))
+console.log(positiveNegativeOrZero(0))
+console.log(positiveNegativeOrZero(1)
+)
 /**
  * aroundTheWorldGreeting()
  * ---------------------
@@ -94,7 +126,19 @@ function positiveNegativeOrZero(a) {}
  *  aroundTheWorldGreeting();
  *  //> "Hello World"
  */
-function aroundTheWorldGreeting(language) {}
+function aroundTheWorldGreeting(language) {
+  if(language === "spanish") {
+   return "Hola Mundo"
+ } else if(language === "german") {
+   return "Hallo Walt"
+ } else {
+   return "Hello World"
+ }
+}
+
+console.log(aroundTheWorldGreeting("english"))
+console.log(aroundTheWorldGreeting("spanish"))
+console.log(aroundTheWorldGreeting("german"))
 
 /**
  * aroundTheWorldGreetingWithSwitch()
@@ -117,7 +161,22 @@ function aroundTheWorldGreeting(language) {}
  *  aroundTheWorldGreetingWithSwitch();
  *  //> "Hello World"
  */
-function aroundTheWorldGreetingWithSwitch(language) {}
+function aroundTheWorldGreetingWithSwitch(language) {
+  switch(language) {
+    case "spanish":
+       return "Hola Mundo"
+      break;
+    case "german":
+       return "Hallo Walt"
+      break;
+    default:
+      "Hello World"
+  }
+}
+
+console.log(aroundTheWorldGreetingWithSwitch("spanish"))
+console.log(aroundTheWorldGreetingWithSwitch("german"))
+console.log(aroundTheWorldGreetingWithSwitch())
 
 /**
  * calculateLetterGrade()
@@ -136,7 +195,29 @@ function aroundTheWorldGreetingWithSwitch(language) {}
  *  calculateLetterGrade(99);
  *  //> "A"
  */
-function calculateLetterGrade(grade) {}
+function calculateLetterGrade(grade) {
+  let letterGrade = null
+  if(grade >= 90) {
+    letterGrade = "A"
+  } else if(grade >= 80) {
+    letterGrade = "B"
+  } else if(grade >= 70) {
+    letterGrade = "C"
+  } else if(grade >= 60) {
+    letterGrade = "D"
+  } else {
+    letterGrade = "F"
+  }
+  return letterGrade
+}
+
+console.log(calculateLetterGrade(99))
+console.log(calculateLetterGrade(90))
+console.log(calculateLetterGrade(80))
+console.log(calculateLetterGrade(70))
+console.log(calculateLetterGrade(60))
+console.log(calculateLetterGrade(50))
+console.log(calculateLetterGrade(5))
 
 /**
  * animalCounts()
@@ -154,7 +235,13 @@ function calculateLetterGrade(grade) {}
  *  animalCounts("pig", 1);
  *  //> "1 pig"
  */
-function animalCounts(animal, numberOfAnimals) {}
+function animalCounts(animal, numberOfAnimals) {
+  if(numberOfAnimals > 1) {
+    return `${numberOfAnimals} ${animal}s`
+  } else {
+    return `${numberOfAnimals} ${animal}`
+  }
+}
 
 /**
  * evenOrOdd()
@@ -171,7 +258,13 @@ function animalCounts(animal, numberOfAnimals) {}
  *  evenOrOdd(48);
  *  //> "Even"
  */
-function evenOrOdd(a) {}
+function evenOrOdd(a) {
+  if(a % 2 === 0) {
+    return "Even"
+  } else if(a % 1 === 0) {
+    return "Odd"
+  }
+}
 
 /**
  * evenOrOddWithTernary()
@@ -187,7 +280,9 @@ function evenOrOdd(a) {}
  *  evenOrOddWithTernary(8);
  *  //> "Even"
  */
-function evenOrOddWithTernary(a) {}
+function evenOrOddWithTernary(a) {
+  return (a % 2 === 0) ? "Even" : "Odd"
+}
 
 // Do not change any code below this line.
 module.exports = {
