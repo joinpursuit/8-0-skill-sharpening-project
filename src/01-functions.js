@@ -9,7 +9,7 @@
  *  alwaysTrue();
  *  //> true
  */
-function alwaysTrue() {
+function alwaysTrue(){
   return true;
 }
 
@@ -26,7 +26,7 @@ function alwaysTrue() {
  *  greet("Ian");
  *  //> "Hello, Ian."
  */
-function greet(name) {
+function greet(name){
   return "Hello, " + name + ".";
 }
 
@@ -43,7 +43,7 @@ function greet(name) {
  *  add(10, 20);
  *  //> 30
  */
-function add(numberA, numberB) {
+function add(numberA, numberB){
   return numberA += numberB;
 }
 
@@ -60,7 +60,7 @@ function add(numberA, numberB) {
  *  multiply(2, 5);
  *  //> 10
  */
-function multiply(numberA, numberB) {
+function multiply(numberA, numberB){
   return  numberA *= numberB
 }
 /**
@@ -81,8 +81,8 @@ function multiply(numberA, numberB) {
  *  average(10, 6);
  *  //> 8 // 10 + 6 = 16; 16/2 = 8;
  */
-function average(numberA, numberB) {
-  return (numberA + numberB) / 2 
+function average(numberA, numberB){
+  return (numberA + numberB)/2 
 }
 /**
  * averageThree()
@@ -101,7 +101,7 @@ function average(numberA, numberB) {
  *  averageThree(10, 11, 19);
  *  //> 10 // 10 + 11 + 19 = 30; 30 / 3 = 10;
  */
-function averageThree(numberA, numberB, numberC) {
+function averageThree(numberA, numberB, numberC){
   return (numberA + numberB + numberC)/3
 }
 
@@ -124,10 +124,11 @@ function averageThree(numberA, numberB, numberC) {
  *  //> false
  */
 function compareTypes(a, b) {
-  if(a == b){
+  if(typeof(a) == typeof(b)){
     return true;
-  } 
+  } else {return false};
 }
+
 
 /**
  * flipSign()
@@ -146,7 +147,7 @@ function compareTypes(a, b) {
  *  flipSign(50);
  *  //> -50
  */
-function flipSign(number) {
+function flipSign(number){
   return number * -1;
 }
 
@@ -168,7 +169,7 @@ function flipSign(number) {
  *  joinStringsWithSpaces("left", "right", "up", "down", "away");
  *  //> "left right up down away"
  */
-function joinStringsWithSpaces(a, b, c, d, e) {
+function joinStringsWithSpaces(a, b, c, d, e){
   return `${a} ${b} ${c} ${d} ${e}`;
 }
 
@@ -188,8 +189,25 @@ function joinStringsWithSpaces(a, b, c, d, e) {
  * EXAMPLE:
  *  getFirstAndLastCharacter("upwards");
  *  //> "us"
+ * 
+ * String str = "My String";
+
+System.out.println(str.charAt(0)); // "M"
+
+System.out.println(str.charAt(str.length-1)); // Last character "g"
+ * 
+ * 
  */
-function getFirstAndLastCharacter() {}
+function getFirstAndLastCharacter(givenString){
+  let firstChar = givenString.charAt(0);
+  let lastChar = givenString.charAt(givenString.length-1);
+  return `${firstChar}${lastChar}`;
+}
+
+
+
+
+
 
 // Do not change the code below.
 module.exports = {
