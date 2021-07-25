@@ -233,7 +233,16 @@ function compareLocations(address1, address2) {
     //> [ "Ray Anderson", "America Marsh", "Wade Carson", "Patience Patel" ]
  */
 function createLineOrder(people) {
-  
+  let trueMember = [];
+  let falseMember = [];
+  for (let i =0; i<people.length; i++) {
+  if (people[i].hasMembership) {
+    trueMember.push(people[i].name)
+  } else {
+    falseMember.push(people[i].name);
+  }
+  }
+return trueMember.concat(falseMember) ;
 }
 
 module.exports = {
