@@ -176,7 +176,38 @@ function compareLocations(address1, address2) {
     //>   },
     //> ];
  */
-function gradeAssignments(assignments) {}
+  function gradeAssignments(assignments) {
+
+    for (let everyAssignment of assignments) {
+    
+      let a = everyAssignment.score.received;
+      let b = everyAssignment.score.max;
+      let getScore = (a*100/b).toFixed(1);
+    
+      if (everyAssignment.kind === "PASS-FAIL") {
+        if (a === b) {
+          everyAssignment.status = "PASSED"
+        } else {
+          everyAssignment.status = "FAILED"
+        }
+      } 
+    
+      if (everyAssignment.kind === "PERCENTAGE") {
+    
+        if (getScore >= 80.0) {
+        everyAssignment.status = "PASSED: " + getScore + "%";
+        } else {
+        everyAssignment.status = "FAILED: " + getScore + "%"
+        }
+      }
+    
+      if (everyAssignment.kind === "ESSAY") {
+      everyAssignment.status = "SCORE: " + a + "/" + b;
+      }
+    }
+    return assignments;
+    }
+    
 
 /**
  * createLineOrder()
