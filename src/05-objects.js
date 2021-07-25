@@ -9,7 +9,12 @@
  *  createEmptyObject()
  *  //> {}
  */
-function createEmptyObject() {}
+function createEmptyObject() {
+  //declare result variable, make it an empty array
+  let result = {};
+  //return result
+  return result;
+}
 
 /**
  * createObjectWithValue()
@@ -22,7 +27,14 @@ function createEmptyObject() {}
  *  createObjectWithValue(19);
  *  //> { whateverKey: 19 }
  */
-function createObjectWithValue(val) {}
+function createObjectWithValue(val) {
+  //create an empty object, let it be our result
+  let result = {};
+  //declare any key, and make it's value the "val" parameter
+  result.key1 = val;
+  //return result
+  return result;
+}
 
 /**
  * createObjectWithKey()
@@ -35,7 +47,14 @@ function createObjectWithValue(val) {}
  *  createObjectWithKey("left");
  *  //> { left: false }
  */
-function createObjectWithKey(key) {}
+function createObjectWithKey(key) {
+ //declare an empty object, let it be our result
+ let result = {};
+ //declare a key that's our "key" paramater with any value
+ result[key] = 12;
+ //return result
+ return result;
+}
 
 /**
  * createObjectWithKeyValuePair()
@@ -49,7 +68,14 @@ function createObjectWithKey(key) {}
  *  createObjectWithKeyValuePair("left", "right");
  *  //> { left: "right" }
  */
-function createObjectWithKeyValuePair(key, val) {}
+function createObjectWithKeyValuePair(key, val) {
+  //create an empty object, let it be our result
+  let result = {};
+  //declare a key and value using the given parameters
+  result[key] = val;
+  //return result
+  return result;
+}
 
 /**
  * getNameFromObject()
@@ -62,7 +88,12 @@ function createObjectWithKeyValuePair(key, val) {}
  *  getNameFromObject({ name: "Jay" });
  *  //> "Jay"
  */
-function getNameFromObject(object) {}
+function getNameFromObject(object) {
+  //declare a result variable, let it's value be the value of the name key in object
+  let result = object.name;
+  //return result
+  return result;
+}
 
 /**
  * getAgeFromObject()
@@ -75,7 +106,12 @@ function getNameFromObject(object) {}
  *  getAgeFromObject({ age: 30 });
  *  //> 30
  */
-function getAgeFromObject(object) {}
+function getAgeFromObject(object) {
+   //declare a result variable, let it's value be the value of the age key in object
+   let result = object.age;
+   //return result
+   return result;
+}
 
 /**
  * addValueToObject()
@@ -89,7 +125,14 @@ function getAgeFromObject(object) {}
  *  addValueToObject({ left: true }, false);
  *  //> { left: true, key: false }
  */
-function addValueToObject(object, val) {}
+function addValueToObject(object, val) {
+  //declare a result variable, let it's value be our object parameter
+  let result = object;
+  //declare a key of choice into the object, let it's value be the "val" parameter
+  result.key = val;
+  //return result
+  return result;
+}
 
 /**
  * addKeyToObject()
@@ -103,7 +146,14 @@ function addValueToObject(object, val) {}
  *  addKeyToObject({ right: false }, "left");
  *  //> { right: false, left: true }
  */
-function addKeyToObject(object, key) {}
+function addKeyToObject(object, key) {
+  //declare a result variable, let it's value be our object parameter
+  let result = object;
+  //declare our key paramater as the key, it's value can be anything
+  result[key] = 12;
+  //return result
+  return result;
+}
 
 /**
  * addKeyValuePairToObject()
@@ -118,7 +168,14 @@ function addKeyToObject(object, key) {}
  *  addKeyValuePairToObject({ up: true }, "left", false);
  *  //> { up: true, left: false }
  */
-function addKeyValuePairToObject(object, key, val) {}
+function addKeyValuePairToObject(object, key, val) {
+  //declare a result variable, let it's value be our object parameter
+  let result = object;
+  //declare a key and value using the given parameters
+  result[key] = val; 
+  //return result
+  return result;
+}
 
 /**
  * deleteKeyFromObject()
@@ -132,7 +189,14 @@ function addKeyValuePairToObject(object, key, val) {}
  *  deleteKeyFromObject({ left: true, right: false }, "left");
  *  //> { right: false }
  */
-function deleteKeyFromObject(object, key) {}
+function deleteKeyFromObject(object, key) {
+  //declare a result variable, make it the object parameter
+  let result = object;
+  //use the key parameter to identify what to delete from our result
+  delete result[key];
+  //return result
+  return result;
+}
 
 // Do not change any code below this line.
 module.exports = {
