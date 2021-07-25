@@ -11,9 +11,9 @@
  */
 function getLengthOfString(str) {
 //declare a var and assign it the length of 'str'
-
+let stringLength = str.length
   //return the var
-
+  return stringLength;
 }
 
 /**
@@ -29,9 +29,9 @@ function getLengthOfString(str) {
  */
 function convertToNumber(val) {
 //decalre a var and set it to turn the number into a string 
-Number()
+let strToNum = Number(val)
   //return the var
-
+  return strToNum;
 }
 
 /**
@@ -48,9 +48,9 @@ Number()
  */
 function convertToString(val) {
 //declare a var and set it to take the number and make it a string 
-String()
+let numToStr = String(val)
    //return the var
-
+   return numToStr;
 }
 
 /**
@@ -66,9 +66,9 @@ String()
  */
 function convertToShoutingText(text) {
 //declare a var and assign it it make everything uppercase
-
+let upperStr = text.toUpperCase()
   //return the var
-
+  return upperStr;
 }
 
 /**
@@ -84,8 +84,9 @@ function convertToShoutingText(text) {
  */
 function convertToWhisperText(text) {
 //declare a var and set it to make the string all lowercase
-
+let lowerString = text.toLowerCase
   //return the vr 
+  return lowerString
 
 }
 
@@ -212,7 +213,7 @@ function isFalsy(val) {
 // if else...
 
   //return false 
-  
+
 }
 
 // Do not change the code below.
