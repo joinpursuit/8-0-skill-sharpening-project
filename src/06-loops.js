@@ -92,13 +92,14 @@ function rangeEveryOther(min, max) {
  */
 function containsWhileLoop(array, target) {
   let i = -1;
+  let result = false;
   while (i <= array.length-1) {
     i++;
     if (array[i] === target) {
-      return true;
+      result = true;
     } 
   }
-  return false;
+  return result;
 }
 
 /**
@@ -122,12 +123,13 @@ function containsWhileLoop(array, target) {
  *  //> false
  */
 function containsForLoop(array, target) {
+  let output =false;
   for (let i=0; i <= array.length-1; i++) {
     if (array[i] === target) {
-      return true;
+      output = true;
     } 
   }
-  return false;
+  return output;
 }
 
 /**
