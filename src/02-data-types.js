@@ -84,10 +84,9 @@ let upperStr = text.toUpperCase()
  */
 function convertToWhisperText(text) {
 //declare a var and set it to make the string all lowercase
-let lowerString = text.toLowerCase
+let lowerString = text.toLowerCase()
   //return the vr 
-  return lowerString
-
+  return lowerString;
 }
 
 /**
@@ -107,13 +106,15 @@ let lowerString = text.toLowerCase
  */
 function checkIfCharacterIsInString(text, character) {
 // if the character is included in the text...
-
+if(text.includes(character)){
   //return the true
-
+  return true;
+}
 //if else the char is NOT included in the text then...
-
+else {
   //return false
-
+  return false;
+}
 }
 
 /**
@@ -132,13 +133,15 @@ function checkIfCharacterIsInString(text, character) {
  */
 function isEven(num) {
 // if the the num is even then...
-
+if (num % 2 == 0){
   //return true
-
+  return true
+}
 // if else...
-
+else {
   //return false 
-
+  return false;
+}
 }
 
 /**
@@ -157,13 +160,15 @@ function isEven(num) {
  */
 function isOdd(num) {
 //if the number is odd...
-
+if(num % 2 != 0){
   //return true
-
+  return true;
+}
 //if else...
-
+else {
   //return false
-
+  return false;
+}
 }
 
 /**
@@ -182,13 +187,15 @@ function isOdd(num) {
  */
 function isTruthy(val) {
 //if the value is truthy...
-
+if (val){
   //return true
-
+  return true;
+}
 //if else...
-
-   //return false
-
+else {
+  //return false
+  return false;
+}
 }
 
 /**
