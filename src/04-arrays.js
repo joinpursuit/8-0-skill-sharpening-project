@@ -10,7 +10,10 @@
  *  createEmptyArray();
  *  //> []
  */
-function createEmptyArray() {}
+function createEmptyArray() {
+  // return an empty array with a space inside the arr
+  return [ ]
+}
 
 /**
  * createArrayWithTwoElements()
@@ -24,7 +27,12 @@ function createEmptyArray() {}
  *  createArrayWithTwoElements(true, false);
  *  //> [ true, false ]
  */
-function createArrayWithTwoElements(a, b) {}
+function createArrayWithTwoElements(a, b) {
+  // a and b are specific `data types`
+  // return a array where the first element is `a` and the second element is `b`
+
+  return [a, b]
+}
 
 /**
  * getArrayLength()
@@ -37,7 +45,12 @@ function createArrayWithTwoElements(a, b) {}
  *  getArrayLength([ 10, 20, 30 ]);
  *  //> 3
  */
-function getArrayLength(array) {}
+function getArrayLength(array) {
+  // input: array is an array of specific `data types`
+  // return: return the length of the array
+
+  return array.length
+}
 
 /**
  * getFirstElementOfArray()
@@ -51,7 +64,12 @@ function getArrayLength(array) {}
  *  getFirstElementOfArray([ 10, 20, 30 ]);
  *  //> 10
  */
-function getFirstElementOfArray(array) {}
+function getFirstElementOfArray(array) {
+  // input: array is an array of specific `data types`
+  // output: return the first element in the array
+
+  return array[0]
+}
 
 /**
  * getLastElementOfArray()
@@ -65,7 +83,12 @@ function getFirstElementOfArray(array) {}
  *  getLastElementOfArray([ null, undefined ]);
  *  //> undefined
  */
-function getLastElementOfArray(array) {}
+function getLastElementOfArray(array) {
+  // input: array is an array of specific `data types`
+  // output: return the last element in the array
+
+  return array[array.length - 1]
+}
 
 /**
  * addElementToEndOfArray()
@@ -79,7 +102,15 @@ function getLastElementOfArray(array) {}
  *  addElementToEndOfArray([ 10 ], 9);
  *  //> [ 10, 9 ]
  */
-function addElementToEndOfArray(array, element) {}
+function addElementToEndOfArray(array, element) {
+  // input: array is an array with a specific `data type` and element is specific `data type`
+  // output: return array with a new element 
+
+  // push element into array
+  array.push(element)
+  // return arr
+  return array
+}
 
 /**
  * removeElementFromEndOfArray()
@@ -92,7 +123,15 @@ function addElementToEndOfArray(array, element) {}
  *  removeElementFromEndOfArray([ 10, 9, 8 ]);
  *  //> 8
  */
-function removeElementFromEndOfArray(array) {}
+function removeElementFromEndOfArray(array) {
+  // input: array is an arr of certain data types
+  // output: return the removed element from the `array`
+
+  // problem: How do we return the element that has been popped off?
+  // solution: .pop() return the element that has been popped off?
+
+  return array.pop()
+}
 
 /**
  * addElementToFrontOfArray()
@@ -106,7 +145,17 @@ function removeElementFromEndOfArray(array) {}
  *  addElementToFrontOfArray([ 10 ], 9);
  *  //> [ 9, 10 ]
  */
-function addElementToFrontOfArray(array, element) {}
+function addElementToFrontOfArray(array, element) {
+  // input: a is an array of specific data types and element is a specific data type
+  // output: return array with a new element at index 0 
+
+  // problem: Which array method add a new element to the array at index 0
+  // solution: .unshift() return the last element add to the beginning of the arr
+
+  array.unshift(element)
+
+  return array
+}
 
 /**
  * removeElementFromFrontOfArray()
@@ -119,7 +168,11 @@ function addElementToFrontOfArray(array, element) {}
  *  removeElementFromFrontOfArray([ 10, 9, 8 ]);
  *  //> 10
  */
-function removeElementFromFrontOfArray(array) {}
+function removeElementFromFrontOfArray(array) {
+  // return the removed element at index 0 from the array of data types 
+
+  return array.shift()
+}
 
 /**
  * getMiddleElement()
@@ -135,7 +188,11 @@ function removeElementFromFrontOfArray(array) {}
  *  getMiddleElement([ 10, null, "30" ]);
  *  //> null
  */
-function getMiddleElement(array) {}
+function getMiddleElement(array) {
+  // returns the element in the middle of `array`
+
+  return array[(array.length - 1 ) / 2]
+}
 
 // Do not change any code below this line.
 module.exports = {
