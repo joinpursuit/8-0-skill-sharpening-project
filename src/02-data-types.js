@@ -9,8 +9,13 @@
  *  getLengthOfString("down");
  *  //> 4
  */
+
+//Counts string character
 function getLengthOfString(str) {
+  //Declare, initialize and find string count
   let number = str.length;
+
+  //Return string count
   return number;
 }
 console.log(getLengthOfString('down'))
@@ -25,8 +30,12 @@ console.log(getLengthOfString('down'))
  *  convertToNumber("111");
  *  //> 111
  */
+
 function convertToNumber(val) {
+  //Converts string to number using Number()function. 
 let  stringNumber = Number(val);
+
+//Returns converted string
 return stringNumber;
 }
 console.log(convertToNumber("9910"));
@@ -43,13 +52,12 @@ console.log(convertToNumber("9910"));
  *  //> "99"
  */
 function convertToString(val) {
-if(val.length === 0){
-  return '';
-}
+ //Converts string to number using toString()function. 
 let numString = val.toString();
+//Returns converted string
 return numString;
 }
-console.log(convertToString(-10))
+console.log(convertToString(0))
 /**
  * convertToShoutingText()
  * ---------------------
@@ -62,7 +70,9 @@ console.log(convertToString(-10))
  *  //> "HELLO THERE"
  */
 function convertToShoutingText(text) {
+  //Converts to upper case
 let upperCase = text.toUpperCase()
+//returns uppercase
 return upperCase;
 }  
 
@@ -79,8 +89,9 @@ console.log(convertToShoutingText('cODINg'))
  *  //> "hello there"
  */
 function convertToWhisperText(text) {
-
+//converts to lowercase
 let lowerCase = text.toLowerCase();
+//Returns lowercase 
 return lowerCase;
 } 
 console.log(convertToWhisperText('PursuiT'))
@@ -99,9 +110,13 @@ console.log(convertToWhisperText('PursuiT'))
  *  checkIfCharacterIsInString("hello there", "a");
  *  //> false
  */
+
+//Checks for a character in a string
 function checkIfCharacterIsInString(text, character) {
 let checkChar = text;
-if(text.includes(character)){
+//Checks for a character
+if(checkChar.includes(character)){
+  
   return true;
 }
 return false;
@@ -123,7 +138,10 @@ console.log(checkIfCharacterIsInString("piano", "x"))
  */
 function isEven(num) {
 let number = num;
+
+//checks if even
 if(number % 2 === 0){
+  
   return true;
 }
 return false;
@@ -145,6 +163,8 @@ console.log(isEven(100))
  */
 function isOdd(num) {
   let number = num;
+
+  //checks if odd
   if(number % 2 === 1){
     return true;
   }
@@ -167,7 +187,10 @@ function isOdd(num) {
  *  //> false
  */
 function isTruthy(val) {
+
+  //checks if truthy
   if(val){
+
     return true;
 }
   return false;
@@ -190,6 +213,7 @@ console.log(isTruthy(undefined))
  *  //> false
  */
 function isFalsy(val) {
+  //Checks if falsy
   if(!val){
     return true;
 }
