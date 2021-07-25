@@ -9,7 +9,12 @@
  *  getLengthOfString("down");
  *  //> 4
  */
-function getLengthOfString(str) {}
+function getLengthOfString(str) {
+//declare a var and assign it the length of 'str'
+
+  //return the var
+
+}
 
 /**
  * convertToNumber()
@@ -22,7 +27,12 @@ function getLengthOfString(str) {}
  *  convertToNumber("111");
  *  //> 111
  */
-function convertToNumber(val) {}
+function convertToNumber(val) {
+//decalre a var and set it to turn the number into a string 
+Number()
+  //return the var
+
+}
 
 /**
  * convertToString()
@@ -36,7 +46,12 @@ function convertToNumber(val) {}
  *  convertToString(99);
  *  //> "99"
  */
-function convertToString(val) {}
+function convertToString(val) {
+//declare a var and set it to take the number and make it a string 
+String()
+   //return the var
+
+}
 
 /**
  * convertToShoutingText()
@@ -49,7 +64,12 @@ function convertToString(val) {}
  *  convertToShoutingText("Hello There");
  *  //> "HELLO THERE"
  */
-function convertToShoutingText(text) {}
+function convertToShoutingText(text) {
+//declare a var and assign it it make everything uppercase
+
+  //return the var
+
+}
 
 /**
  * convertToWhisperText()
@@ -62,7 +82,12 @@ function convertToShoutingText(text) {}
  *  convertToWhisperText("Hello There");
  *  //> "hello there"
  */
-function convertToWhisperText(text) {}
+function convertToWhisperText(text) {
+//declare a var and set it to make the string all lowercase
+
+  //return the vr 
+
+}
 
 /**
  * checkIfCharacterIsInString()
@@ -79,7 +104,16 @@ function convertToWhisperText(text) {}
  *  checkIfCharacterIsInString("hello there", "a");
  *  //> false
  */
-function checkIfCharacterIsInString(text, character) {}
+function checkIfCharacterIsInString(text, character) {
+// if the character is included in the text...
+
+  //return the true
+
+//if else the char is NOT included in the text then...
+
+  //return false
+
+}
 
 /**
  * isEven()
@@ -95,7 +129,16 @@ function checkIfCharacterIsInString(text, character) {}
  *  isEven(11);
  *  //> false
  */
-function isEven(num) {}
+function isEven(num) {
+// if the the num is even then...
+
+  //return true
+
+// if else...
+
+  //return false 
+
+}
 
 /**
  * isOdd()
@@ -111,7 +154,16 @@ function isEven(num) {}
  *  isOdd(11);
  *  //> true
  */
-function isOdd(num) {}
+function isOdd(num) {
+//if the number is odd...
+
+  //return true
+
+//if else...
+
+  //return false
+
+}
 
 /**
  * isTruthy()
@@ -127,7 +179,16 @@ function isOdd(num) {}
  *  isTruthy(null);
  *  //> false
  */
-function isTruthy(val) {}
+function isTruthy(val) {
+//if the value is truthy...
+
+  //return true
+
+//if else...
+
+   //return false
+
+}
 
 /**
  * isFalsy()
@@ -143,7 +204,16 @@ function isTruthy(val) {}
  *  isFalsy(" ");
  *  //> false
  */
-function isFalsy(val) {}
+function isFalsy(val) {
+//if vlaue is flasey...
+
+  //return true
+
+// if else...
+
+  //return false 
+  
+}
 
 // Do not change the code below.
 module.exports = {
