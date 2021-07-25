@@ -30,7 +30,7 @@ function alwaysTrue() {
 function greet(name) {
 // decalre a varand assign it "Hello,"
 let greeting = "Hello, "
-//return the var + name
+  //return the var + name
   return greeting + name + '.';
 }
 
@@ -48,7 +48,10 @@ let greeting = "Hello, "
  *  //> 30
  */
 function add(a, b) {
-//
+//set a var assign it to just add a and b
+let addedNums = a + b
+  //return the var
+  return addedNums
 }
 
 /**
@@ -64,8 +67,11 @@ function add(a, b) {
  *  multiply(2, 5);
  *  //> 10
  */
-function multiply() {
-
+function multiply(a, b) {
+// declare a var assign it a * b
+let mulipliedNums = a * b
+  //return the var
+  return mulipliedNums 
 }
 
 /**
@@ -86,8 +92,11 @@ function multiply() {
  *  average(10, 6);
  *  //> 8 // 10 + 6 = 16; 16/2 = 8;
  */
-function average() {
-
+function average(a, b) {
+//decalre a var, assign it (a + b)/ 2
+let averageTwoNum = (a + b)/ 2
+  // return the var 
+  return averageTwoNum
 }
 
 /**
@@ -107,8 +116,11 @@ function average() {
  *  averageThree(10, 11, 19);
  *  //> 10 // 10 + 11 + 19 = 30; 30 / 3 = 10;
  */
-function averageThree() {
-
+function averageThree(a, b, c) {
+//declare a var, assign it to add all three in () then / by 3
+let averageThreeNum = (a + b + c)/3
+  //return the var
+  return averageThreeNum
 }
 
 /**
@@ -128,8 +140,17 @@ function averageThree() {
  *  compareTypes("left", 10);
  *  //> false
  */
-function compareTypes() {
-
+function compareTypes(a, b) {
+//if a and b are the same type then...
+if( typeof a === typeof b ){
+  // return true
+  return true
+}
+//if theyre not...
+else if( typeof a !== typeof b ) {
+  //return false 
+  return false
+}
 }
 
 /**
@@ -149,8 +170,12 @@ function compareTypes() {
  *  flipSign(50);
  *  //> -50
  */
-function flipSign() {
-
+function flipSign(a) {
+//decalre a var, assign it to make the pos a neg a neg a pos
+//(if you multpily by -1 a neg will become a pos and a pos will become a neg)
+let negOne = a * -1
+  //return the var 
+  return negOne
 }
 
 /**
@@ -171,7 +196,8 @@ function flipSign() {
  *  joinStringsWithSpaces("left", "right", "up", "down", "away");
  *  //> "left right up down away"
  */
-function joinStringsWithSpaces() {
+function joinStringsWithSpaces(a, b, c, d, e) {
+//
 
 }
 
