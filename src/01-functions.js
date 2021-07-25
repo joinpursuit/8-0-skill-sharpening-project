@@ -198,7 +198,7 @@ let negOne = a * -1
  */
 function joinStringsWithSpaces(a, b, c, d, e) {
 //declare a var and just add all the params with + ' ' in between them
-let spaceString = a + ' ' + b + ' ' + ' ' + c + ' ' + d + ' ' + e
+let spaceString = a + ' ' + b + ' ' + c + ' ' + d + ' ' + e
   //return the var
   return spaceString
 }
