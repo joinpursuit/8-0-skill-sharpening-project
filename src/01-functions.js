@@ -64,6 +64,7 @@ function greet(name) {
  */
 function add(a, b) {
   // 1. Default value and output
+  // Another way to test number of parameters - function.length
   if (!a && !b) {
     return null
   } else if (typeof a !== 'number' || typeof b !== 'number') {
@@ -122,13 +123,16 @@ function multiply(a, b) {
  */
 function average(a, b) {
   // 1. Default Value and Output
+  // Why doesn't average.length === 0 work here. 
+  //If there are no parameters, it shouldn't move to next if case
   if (!a && !b) {
     return null
   } else if (typeof a !== 'number' || typeof b !== 'number') {
     return "Error! Input two numbers"
   }
-
-  return (a+b) / 2
+  // Use functionname.length vs hardcode - 
+  // It's a way to use the number of function parameters (vs. arguments passed - arguments.length) 
+  return (a+b) / average.length
 }
 
 
@@ -158,10 +162,10 @@ function averageThree(a, b, c) {
   } else if (typeof a !== "number" || typeof b !== "number" || typeof c !== "number") {
     return "Error! Input three numbers"
   }
-  return (a + b + c) / 3
+  return (a + b + c) / averageThree.length
 }
 
-//console.log(averageThree())
+//console.log(averageThree(2, 1, 6))
 
 /**
  * compareTypes()
