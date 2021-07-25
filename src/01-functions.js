@@ -10,12 +10,13 @@
  *  //> true
  */
 
-//This function returns true always
+//This function is to return true
 function alwaysTrue() {
-  //This does the work =>returns true 
-return true;
 
+  //Returns true always when the method is invoked
+return true;
 }
+//logs the returned value
 console.log(alwaysTrue())
 
 /**
@@ -32,9 +33,15 @@ console.log(alwaysTrue())
  *  greet("Ian");
  *  //> "Hello, Ian."
  */
+
+//Greets any name inputted
 function greet(name) {
+
+//Returns the string
  return `"Hello, ${name}."`;
 }
+
+//logs the returned value
 console.log(greet('Reed'))
 /**
  * add()
@@ -50,10 +57,17 @@ console.log(greet('Reed'))
  *  add(10, 20);
  *  //> 
  */
+//Adds the value of a and b
 function add(a, b) {
+
+  //declaring and storing the summation of a and b
   let sum =  a + b;
+
+  //Returns the sum
   return sum;
 }
+
+//logs the returned value
 console.log(add(5, 7))
 /**
  * multiply()
@@ -69,9 +83,11 @@ console.log(add(5, 7))
  *  //> 10
  */
 function multiply(a, b) {
+  //Calculates the product
   let product = a * b;
   return product;
 }
+//logs the returned value
 console.log(multiply(5, 11))
 /**
  * average()
@@ -93,10 +109,12 @@ console.log(multiply(5, 11))
  *  //> 8 // 10 + 6 = 16; 16/2 = 8;
  */
 function average(a, b) {
+  //Calculates the average
   let sumAvg = (a + b) / 2
 return sumAvg
 }
 
+console.log(average(-5, 11))
 /**
  * averageThree()
  * ---------------------
@@ -117,6 +135,7 @@ return sumAvg
  *  //> 10 // 10 + 11 + 19 = 30; 30 / 3 = 10;
  */
 function averageThree(a, b, c) {
+  //Calculates the average
   let average = (a + b + c)/3
   return average
 }
@@ -140,6 +159,8 @@ console.log(averageThree(-5, 11, -3))
  *  //> false
  */
 function compareTypes(a, b) {
+
+  //compares data types
 if(typeof a === typeof b){
   return true
 }
@@ -167,14 +188,21 @@ console.log(compareTypes(false, "Aisha"))
  *  flipSign(50);
  *  //> -50
  */
+
+//Gives negation of the number inputted
 function flipSign(number) {
+
+  //Edge case handling: if zero, only this code block runs
   if(number === 0){
     return 0;
   }
-  let signFlip = number
+  let signFlip = number;
+  //compares if the number inputted is a positive number
         if (signFlip > 0){
+         //negates if the value is positive
           return signFlip * -1
         }
+        //negates if the value is negative 
         return signFlip * -1
 }
 console.log(flipSign(-20))
@@ -198,7 +226,7 @@ console.log(flipSign(-20))
  *  //> "left right up down away"
  */
 function joinStringsWithSpaces(a, b, c, d, e) {
-
+//Combing strings using interpolation 
   return `"${a}  ${b}   ${c}  ${d}  ${e}"`
 
 }
@@ -221,6 +249,7 @@ console.log(joinStringsWithSpaces("apple", "cherry", "grape", "blueberry", "pear
  *  //> "us"
  */
 function getFirstAndLastCharacter(a) {
+  //Declare, initialize and copy first and last characters of a string 
 let word = a[0].concat(a.slice(a.length-1))
 return word
 }
