@@ -31,7 +31,7 @@ function greet(name) {
 // decalre a varand assign it "Hello,"
 let greeting = "Hello, "
 //return the var + name
-  return greeting + name;
+  return greeting + name + '.';
 }
 
 /**
