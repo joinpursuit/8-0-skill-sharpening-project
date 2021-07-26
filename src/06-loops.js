@@ -172,7 +172,18 @@ function targetCount(array, target) {
  *  firstIndexFound([ "left", "right", "left" ], "up");
  *  //> -1
  */
-function firstIndexFound(array, target) {}
+function firstIndexFound(array, target) {
+  let isFound = -1;
+  for(let i=0; i<array.length; i++){
+    if(array[i] === target){
+      isFound = i;
+    }
+    if (isFound !== -1){
+      break; 
+    }
+  }
+  return isFound
+}
 
 /**
  * lastIndexFound()
