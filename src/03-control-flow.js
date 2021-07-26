@@ -171,30 +171,29 @@ function aroundTheWorldGreetingWithSwitch(language) {
  *  //> "A"
  */
 function calculateLetterGrade(grade) {
-  if(grade >= 90){
-    return 'A'
-  }else if(grade >= 80){
-    return 'B'
-  }else if(grade >= 70){
-    return 'C'
-  }else if(grade >= 60){
-    return 'D'
-  }else {
-    return 'F'
-  }
-  // console.log(grade)
-  // switch(true){
-  // case (100 >=grade >= 90):
+  // if(grade >= 90){
   //   return 'A'
-  // case (90 > grade >= 80):
+  // }else if(grade >= 80){
   //   return 'B'
-  // case (80 > grade >= 70):
+  // }else if(grade >= 70){
   //   return 'C'
-  // case (70 > grade >= 60):
+  // }else if(grade >= 60){
   //   return 'D'
-  // default:
+  // }else {
   //   return 'F'
   // }
+  switch(true){
+  case (grade >= 90):
+    return 'A'
+  case (grade >= 80):
+    return 'B'
+  case (grade >= 70):
+    return 'C'
+  case (grade >= 60):
+    return 'D'
+  default:
+    return 'F'
+  }
 }
 
 /**
