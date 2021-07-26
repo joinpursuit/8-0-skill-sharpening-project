@@ -11,7 +11,19 @@
  *  //> 25
  *  (3 + 4 + 5 + 6 + 7 = 25)
  */
-function rangeSum(min, max) {}
+function rangeSum(min, max) {
+  //1. Default value and output 
+  let total = 0
+  let range = max - min
+  //2. Define the loop
+  for (let i = 0; i <= range; i++) {
+    //3. Accumulate
+    total += min + i
+  }
+  return total
+}
+
+//console.log(rangeSum(3, 7))
 
 /**
  * rangeOdd()
@@ -25,7 +37,24 @@ function rangeSum(min, max) {}
  *  rangeOdd(10, 15);
  *  //> [ 15, 13, 11 ]
  */
-function rangeOdd(min, max) {}
+function rangeOdd(min, max) {
+  // 1. Default Value and output
+  let newArray = []
+  let range = max - min
+  // 2. Define the loop 
+  for (let i = 0; i <= range; i++) {
+    //3. Accumulate
+    let element = range[i]
+    element = min + i
+    if (element % 2 === 0) {
+    } else {
+      newArray.unshift(element)
+    }
+  }
+  return newArray
+}
+
+//console.log(rangeOdd(10, 15))
 
 /**
  * rangeEveryOther()
@@ -39,7 +68,24 @@ function rangeOdd(min, max) {}
  *  rangeEveryOther(11, 18);
  *  //> [ 11, 13, 15, 17 ]
  */
-function rangeEveryOther(min, max) {}
+function rangeEveryOther(min, max) {
+  // 1. Default Value and Output
+  let newArray = []
+  let range = max - min
+  // 2. Define the loop 
+  for (let i = 0; i <= range; i++) {
+    //3. Accumulate
+    let element = range[i]
+    element = min + i
+    if (i % 2 === 0) {
+      newArray.push(element)
+    }
+  }
+  return newArray
+}
+
+
+//console.log(rangeEveryOther(11, 18))
 
 /**
  * containsWhileLoop()
@@ -61,7 +107,22 @@ function rangeEveryOther(min, max) {}
  *  containsWhileLoop([ "left", "up", "right" ], "down");
  *  //> false
  */
-function containsWhileLoop(array, target) {}
+function containsWhileLoop(array, target) {
+  // 1. Default Value and Output
+  // 2. Define the loop 
+  let i = 0
+  while (i < array.length) {
+    // 3. Accumulate
+    if (array[i] === target) {
+      return true
+    }
+    i++
+  }
+  return false
+}
+
+//console.log(containsWhileLoop([ 5, 2, 4 ], 4))
+//console.log(containsWhileLoop([ "left", "up", "right" ], "down"))
 
 /**
  * containsForLoop()
@@ -83,7 +144,20 @@ function containsWhileLoop(array, target) {}
  *  containsForLoop([ "left", "up", "right" ], "down");
  *  //> false
  */
-function containsForLoop(array, target) {}
+function containsForLoop(array, target) {
+  // 1. Default Value and Output
+  // 2. Define the loop 
+  for (let i = 0; i < array.length; i++) {
+    // 3. Accumulate
+    if (array[i] === target) {
+      return true
+    }
+  }
+  return false
+}
+
+//console.log(containsForLoop([ 5, 2, 4 ], 4))
+//console.log(containsForLoop([ "left", "up", "right" ], "down"))
 
 /**
  * targetCount()
@@ -97,7 +171,22 @@ function containsForLoop(array, target) {}
  *  targetCount([ 10, 20, 10, 20, 30 ], 10);
  *  //> 2
  */
-function targetCount(array, target) {}
+function targetCount(array, target) {
+  // 1. Default Value and output
+  // 2. Define the loop
+  let i = 0
+  let count = 0
+  while (i < array.length) {
+    // 3. Accumulate
+    if (array[i] === target) {
+      count += 1
+    } 
+    i++
+  }
+  return count
+}
+
+//console.log(targetCount([ 10, 20, 10, 20, 30 ], 10))
 
 /**
  * firstIndexFound()
@@ -117,7 +206,24 @@ function targetCount(array, target) {}
  *  firstIndexFound([ "left", "right", "left" ], "up");
  *  //> -1
  */
-function firstIndexFound(array, target) {}
+function firstIndexFound(array, target) {
+  // 1. Default value and output
+  let firstTime = -1
+  // 2. Define the loop
+  let i = 0
+  while (i < array.length) {
+    //3. Accumulate
+    if (array[i] === target) {
+      firstTime = i
+      return firstTime
+    }
+    i++
+  }
+  return firstTime
+}
+
+//console.log(firstIndexFound([ "left", "right", "left" ], "left"))
+//console.log(firstIndexFound([ "left", "right", "left" ], "up"))
 
 /**
  * lastIndexFound()
@@ -137,7 +243,23 @@ function firstIndexFound(array, target) {}
  *  lastIndexFound([ "left", "right", "left" ], "up");
  *  //> -1
  */
-function lastIndexFound(array, target) {}
+function lastIndexFound(array, target) {
+  // 1. Default value and output
+  let lastTime = -1
+  // 2. Define the loop
+  let i = 0
+  while (i < array.length) {
+    //3. Accumulate
+    if (array[i] === target) {
+      lastTime = i
+    }
+    i++
+  }
+  return lastTime
+}
+
+//console.log(lastIndexFound([ "left", "right", "left" ], "left"))
+//console.log(lastIndexFound([ "left", "right", "left" ], "up"))
 
 /**
  * timesIndex()
@@ -151,7 +273,21 @@ function lastIndexFound(array, target) {}
  *  //> [ 7 * 0, 10 * 1, 11 * 2 ]
  *  //> [ 0, 10, 22 ]
  */
-function timesIndex(array) {}
+function timesIndex(array) {
+  // 1. Default value and output
+  let newArray = []
+  // 2. Define the loop
+  let i = 0
+  while (i < array.length) {
+    //3. Accumulate
+    newElement = array[i] * i
+    newArray.push(newElement)
+    i++
+  }
+  return newArray
+}
+
+//console.log(timesIndex([ 7, 10, 11 ]))
 
 /**
  * cumulativeSum()
@@ -165,7 +301,22 @@ function timesIndex(array) {}
  *  //> [ 5, 5 + 2, 5 + 2 + 9 ]
  *  //> [ 5, 7, 16 ]
  */
-function cumulativeSum(array) {}
+function cumulativeSum(array) {
+  // 1. Default value and output
+  let newArray = []
+  // 2. Define the loop
+  let sumTotal = 0
+  let i = 0
+  while (i < array.length) {
+    //3. Accumulate
+    sumTotal += array[i]
+    newArray.push(sumTotal)
+    i++
+  }
+  return newArray
+}
+
+//console.log(cumulativeSum([ 5, 2, 9 ]))
 
 // Do not change anything below this line.
 module.exports = {
