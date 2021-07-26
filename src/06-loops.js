@@ -122,7 +122,15 @@ function containsWhileLoop(array, target) {
  *  containsForLoop([ "left", "up", "right" ], "down");
  *  //> false
  */
-function containsForLoop(array, target) {}
+function containsForLoop(array, target) {
+  let answer = false;
+  for(let i=0; i<array.length; i++){
+    if(array[i] === target){
+      answer = true;
+    }
+  }
+  return answer;
+}
 
 /**
  * targetCount()
