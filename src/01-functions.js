@@ -9,7 +9,10 @@
  *  alwaysTrue();
  *  //> true
  */
-function alwaysTrue() {}
+function alwaysTrue() {
+  //quite literal here. Just a function with the return value of true. 
+  return true
+}
 
 /**
  * greet()
@@ -24,7 +27,16 @@ function alwaysTrue() {}
  *  greet("Ian");
  *  //> "Hello, Ian."
  */
-function greet() {}
+function greet(name) {
+  //access the first element of the name string and run the .toUpperCase() method, to make sure inputted names are capitalized. 
+
+  //access the remainder of the name using the slice method. 
+
+  //use string interpolation.
+
+  return `Hello, ${name[0].toUpperCase()}${name.slice(1)}.`
+  
+}
 
 /**
  * add()
@@ -39,7 +51,11 @@ function greet() {}
  *  add(10, 20);
  *  //> 30
  */
-function add() {}
+function add(a, b) {
+  //quite straightforward code. Should be flexible.
+
+  return a + b
+}
 
 /**
  * multiply()
@@ -54,7 +70,9 @@ function add() {}
  *  multiply(2, 5);
  *  //> 10
  */
-function multiply() {}
+function multiply(a, b) {
+  return a * b
+}
 
 /**
  * average()
@@ -74,7 +92,11 @@ function multiply() {}
  *  average(10, 6);
  *  //> 8 // 10 + 6 = 16; 16/2 = 8;
  */
-function average() {}
+function average(a, b) {
+  //We need to contain the sum of a and b before dividing them by 2. We do this with parentheses. Otherwise, the computer would first divide b by 2, and then add a, which would result in a diferent answer. That's because the order of operations has division and multiplication before addition.
+
+  return (a + b) / 2
+}
 
 /**
  * averageThree()
@@ -93,7 +115,9 @@ function average() {}
  *  averageThree(10, 11, 19);
  *  //> 10 // 10 + 11 + 19 = 30; 30 / 3 = 10;
  */
-function averageThree() {}
+function averageThree(a, b, c) {
+  return (a + b + c) / 3
+}
 
 /**
  * compareTypes()
@@ -112,7 +136,14 @@ function averageThree() {}
  *  compareTypes("left", 10);
  *  //> false
  */
-function compareTypes() {}
+function compareTypes(a, b){ 
+  if(typeof a === typeof b){
+    return true
+  }else{
+    return false
+  }
+
+}
 
 /**
  * flipSign()
@@ -131,7 +162,13 @@ function compareTypes() {}
  *  flipSign(50);
  *  //> -50
  */
-function flipSign() {}
+function flipSign(a) {
+  if(a < 0){
+    return a * -1
+  }else if(a > 0){
+    return a * -1
+  }
+}
 
 /**
  * joinStringsWithSpaces()
@@ -151,7 +188,10 @@ function flipSign() {}
  *  joinStringsWithSpaces("left", "right", "up", "down", "away");
  *  //> "left right up down away"
  */
-function joinStringsWithSpaces() {}
+function joinStringsWithSpaces(a, b, c, d, e){
+  //I chose to use string interpolation instead of concatenation, because concatenation would require spaces in quotation marks, which felt like more work.
+  return `${a} ${b} ${c} ${d} ${e}`
+}
 
 /**
  * getFirstAndLastCharacter()
@@ -166,9 +206,12 @@ function joinStringsWithSpaces() {}
  *
  * EXAMPLE:
  *  getFirstAndLastCharacter("upwards");
+ * 
  *  //> "us"
  */
-function getFirstAndLastCharacter() {}
+function getFirstAndLastCharacter(a) {
+  return a[0] + a[a.length-1]
+}
 
 // Do not change the code below.
 module.exports = {
