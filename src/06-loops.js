@@ -62,7 +62,13 @@
  *  rangeEveryOther(11, 18);
  *  //> [ 11, 13, 15, 17 ]
  */
-function rangeEveryOther(min, max) {}
+function rangeEveryOther(min, max) {
+  let numArr = [];
+  for(let i=min; i<=max; i+=2){
+    numArr.push(i);
+  }
+  return numArr;
+}
 
 /**
  * containsWhileLoop()
