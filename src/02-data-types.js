@@ -9,7 +9,18 @@
  *  getLengthOfString("down");
  *  //> 4
  */
-function getLengthOfString(str) {}
+function getLengthOfString(str) {
+  // 1. Default Value and Output
+  if (!str) {
+    return 0
+  } else if (typeof str !== 'string') {
+    return "Error! Input a string"
+  }
+  return str.length
+}
+
+
+//console.log(getLengthOfString("down"))
 
 /**
  * convertToNumber()
@@ -22,7 +33,17 @@ function getLengthOfString(str) {}
  *  convertToNumber("111");
  *  //> 111
  */
-function convertToNumber(val) {}
+function convertToNumber(val) {
+  //1. Default Value and Output 
+  if (!val) {
+    return null
+  }
+
+  return Number(val)
+}
+
+
+//console.log(convertToNumber("111"))
 
 /**
  * convertToString()
@@ -36,7 +57,15 @@ function convertToNumber(val) {}
  *  convertToString(99);
  *  //> "99"
  */
-function convertToString(val) {}
+function convertToString(val) {
+  //1. Default Value and Output
+  if (!val) {
+    return null
+  }
+  return String(val)
+}
+
+//console.log(convertToString(99))
 
 /**
  * convertToShoutingText()
@@ -49,7 +78,17 @@ function convertToString(val) {}
  *  convertToShoutingText("Hello There");
  *  //> "HELLO THERE"
  */
-function convertToShoutingText(text) {}
+function convertToShoutingText(text) {
+  // 1. Default Value and Output
+  if (!text) {
+    return null
+  } else if(typeof text !== "string") {
+    return "Error! Input a string"
+  }
+  return text.toUpperCase()
+}
+
+//convertToShoutingText("Hello There")
 
 /**
  * convertToWhisperText()
@@ -62,7 +101,17 @@ function convertToShoutingText(text) {}
  *  convertToWhisperText("Hello There");
  *  //> "hello there"
  */
-function convertToWhisperText(text) {}
+function convertToWhisperText(text) {
+  // 1. Default Value and Output
+  if (!text) {
+    return null
+  } else if(typeof text !== "string") {
+    return "Error! Input a string"
+  }
+  return text.toLowerCase()
+}
+
+//console.log(convertToWhisperText("Hello There"))
 
 /**
  * checkIfCharacterIsInString()
@@ -79,7 +128,28 @@ function convertToWhisperText(text) {}
  *  checkIfCharacterIsInString("hello there", "a");
  *  //> false
  */
-function checkIfCharacterIsInString(text, character) {}
+function checkIfCharacterIsInString(text, character) {
+  // 1. Default Value and Output
+  if (!text) {
+    return null
+  } else if(typeof text !== "string") {
+    return "Error! Input a string"
+  }
+
+  let inString = false
+  // 2. Define the loop
+  for (let i = 0; i < text.length; i++) {
+    // 3. Accumulate!
+    const element = text[i]
+    if (element === character) {
+      inString = true
+    }
+  }
+  return inString
+}
+
+//console.log(checkIfCharacterIsInString("hello there", "e"));
+//console.log(checkIfCharacterIsInString("hello there", "a"))
 
 /**
  * isEven()
@@ -95,7 +165,18 @@ function checkIfCharacterIsInString(text, character) {}
  *  isEven(11);
  *  //> false
  */
-function isEven(num) {}
+function isEven(num) {
+  // 1. Default Value and Output
+  if (!num) {
+    return null
+  } else if(typeof num !== "number") {
+    return "Error! Input a number"
+  }
+  return num % 2 === 0
+}
+
+//console.log(isEven(10))
+//console.log(isEven(11))
 
 /**
  * isOdd()
@@ -111,7 +192,23 @@ function isEven(num) {}
  *  isOdd(11);
  *  //> true
  */
-function isOdd(num) {}
+function isOdd(num) {
+  // 1. Default Value and Output
+  let oddNum = false
+  if (!num) {
+    return null
+  } else if(typeof num !== "number") {
+    return "Error! Input a number"
+  } else if (num % 2 === 0) {
+    return oddNum
+  } else {
+    oddNum = true
+  }
+  return oddNum
+}
+
+//console.log(isOdd(10))
+//console.log(isOdd(11))
 
 /**
  * isTruthy()
@@ -127,7 +224,16 @@ function isOdd(num) {}
  *  isTruthy(null);
  *  //> false
  */
-function isTruthy(val) {}
+function isTruthy(val) {
+  // 1. Default Value and Output
+  if (val) {
+    return true
+  }
+  return false
+}
+
+//console.log(isTruthy(10))
+//console.log(isTruthy(null))
 
 /**
  * isFalsy()
@@ -143,7 +249,16 @@ function isTruthy(val) {}
  *  isFalsy(" ");
  *  //> false
  */
-function isFalsy(val) {}
+function isFalsy(val) {
+  // 1. Default Value and Output
+  if (!val) {
+    return true
+  }
+  return false
+}
+
+//console.log(isFalsy(undefined))
+//console.log(isFalsy(" "))
 
 // Do not change the code below.
 module.exports = {
