@@ -14,7 +14,17 @@
  *  isEqual(10, "10");
  *  //> false
  */
-function isEqual(a, b) {}
+function isEqual(a, b) {
+  // This function determins whether two values are stictly equal
+  // Create an if statement to determine whether the values are strictly equal
+  if (a === b) {
+    // return true
+    return true;
+    // else return false
+  } else {
+    return false;
+  }
+}
 
 /**
  * findLarger()
@@ -28,7 +38,13 @@ function isEqual(a, b) {}
  *  findLarger(19, 7);
  *  //> 19
  */
-function findLarger(a, b) {}
+function findLarger(a, b) {
+  // This function determines what is the larger number
+  // Declare a variable that holds the larger number
+  let maxNumber = Math.max(a, b);
+  // return variable
+  return maxNumber;
+}
 
 /**
  * findLargerOrTie()
@@ -45,7 +61,19 @@ function findLarger(a, b) {}
  *  findLargerOrTie(0, 0);
  *  //> "tie"
  */
-function findLargerOrTie(a, b) {}
+function findLargerOrTie(a, b) {
+  // This function finds the larger numbers if two numbers
+  // Also returns 'tie' if both numbers are equal
+  // Declare a variable that holds the larger number
+  let largeNum = Math.max(a, b);
+  // Create an if statement to determine if both numbers are equal
+  if (a === b) {
+    return "tie";
+  } else {
+    return largeNum;
+  }
+  // return 'tie'
+}
 
 /**
  * positiveNegativeOrZero()
@@ -65,7 +93,15 @@ function findLargerOrTie(a, b) {}
  *  positiveNegativeOrZero(1);
  *  //> "Positive"
  */
-function positiveNegativeOrZero(a) {}
+function positiveNegativeOrZero(a) {
+  if (a > 0) {
+    return "Positive";
+  } else if (a < 0) {
+    return "Negative";
+  } else if (a === 0) {
+    return "Zero";
+  }
+}
 
 /**
  * aroundTheWorldGreeting()
@@ -86,7 +122,23 @@ function positiveNegativeOrZero(a) {}
  *  aroundTheWorldGreeting();
  *  //> "Hello World"
  */
-function aroundTheWorldGreeting(language) {}
+function aroundTheWorldGreeting(language) {
+  // This function takes in a language and returns a greeting in that langauge
+  // Declare a variable for each language
+  let englishGreeting = "Hello World";
+  let spanishGreeting = "Hola Mundo";
+  let germanGreeting = "Hallo Welt";
+  // Create an if and else if statement that goes through each language to determine what output to return
+  if (language === "english") {
+    return englishGreeting;
+  } else if (language === "spanish") {
+    return spanishGreeting;
+  } else if (language === "german") {
+    return germanGreeting;
+  } else {
+    return englishGreeting;
+  }
+}
 
 /**
  * aroundTheWorldGreetingWithSwitch()
@@ -109,7 +161,23 @@ function aroundTheWorldGreeting(language) {}
  *  aroundTheWorldGreetingWithSwitch();
  *  //> "Hello World"
  */
-function aroundTheWorldGreetingWithSwitch(language) {}
+function aroundTheWorldGreetingWithSwitch(language) {
+  // Create a switch statement instead of an if statement
+  //const greetingLanguage = language
+  switch (language) {
+    case "english":
+      return "Hello World";
+
+    case "spanish":
+      return "Hola Mundo";
+
+    case "german":
+      return "Hallo Welt";
+
+    default:
+      return "Hello World";
+  }
+}
 
 /**
  * calculateLetterGrade()
@@ -128,7 +196,23 @@ function aroundTheWorldGreetingWithSwitch(language) {}
  *  calculateLetterGrade(99);
  *  //> "A"
  */
-function calculateLetterGrade(grade) {}
+function calculateLetterGrade(grade) {
+  // This function takes in a number and returns a letter(string) grade
+  // Declare variables that covert number into a letter(string)
+  // Create an if statement that determines what letter grade to output
+  if (grade >= 90) {
+    return "A";
+  } else if (grade >= 80) {
+    return "B";
+  } else if (grade >= 70) {
+    return "C";
+  } else if (grade >= 60) {
+    return "D";
+  } else grade < 60;
+  {
+    return "F";
+  }
+}
 
 /**
  * animalCounts()
@@ -146,7 +230,15 @@ function calculateLetterGrade(grade) {}
  *  animalCounts("pig", 1);
  *  //> "1 pig"
  */
-function animalCounts(animal, numberOfAnimals) {}
+function animalCounts(animal, numberOfAnimals) {
+  // This function will return the count of animals - pluralizing if more than one
+
+  if (numberOfAnimals > 1) {
+    return numberOfAnimals + " " + animal + "s";
+  } else {
+    return numberOfAnimals + " " + animal;
+  }
+}
 
 /**
  * evenOrOdd()
@@ -159,11 +251,18 @@ function animalCounts(animal, numberOfAnimals) {}
  * EXAMPLE:
  *  evenOrOdd(11);
  *  //> "Odd"
- * 
+ *
  *  evenOrOdd(48);
  *  //> "Even"
  */
-function evenOrOdd(a) {}
+function evenOrOdd(a) {
+  // This function finds whether a number is even or odd
+  if (a % 2 == 0) {
+    return "Even";
+  } else {
+    return "Odd";
+  }
+}
 
 /**
  * evenOrOddWithTernary()
@@ -179,7 +278,11 @@ function evenOrOdd(a) {}
  *  evenOrOddWithTernary(8);
  *  //> "Even"
  */
-function evenOrOddWithTernary(a) {}
+function evenOrOddWithTernary(a) {
+  // Takes a number and returns whether that number is even or odd
+  // Use a ternary
+  return a % 2 === 0 ? "Even" : "Odd";
+}
 
 // Do not change any code below this line.
 module.exports = {
