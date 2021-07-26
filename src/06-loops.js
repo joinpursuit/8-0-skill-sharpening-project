@@ -12,14 +12,14 @@
  *  (3 + 4 + 5 + 6 + 7 = 25)
  */
 function rangeSum(min, max) {
-  let sum = 0
-  for(let i = min; i <= max; i++) {
-    sum += i
+  let sum = 0;
+  for (let i = min; i <= max; i++) {
+    sum += i;
   }
-  return sum
+  return sum;
 }
 
-console.log(rangeSum(3, 7))
+console.log(rangeSum(3, 7));
 /**
  * rangeOdd()
  * ---------------------
@@ -33,9 +33,15 @@ console.log(rangeSum(3, 7))
  *  //> [ 15, 13, 11 ]
  */
 function rangeOdd(min, max) {
+  let array = [];
   
-}
+  for(let i = max; i >= min; i--) {
 
+  }
+    return array
+  }
+
+console.log(rangeOdd(10, 15));
 /**
  * rangeEveryOther()
  * ---------------------

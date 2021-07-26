@@ -47,8 +47,12 @@ console.log(createObjectWithValue(19))
  *  //> { left: false }
  */
 function createObjectWithKey(key) {
-  let obj = {}
+ let obj = {}
+ // bracket notation dynamically sets key 
 
+ obj[key] = 'left'
+
+ return obj
 }
 
 console.log(createObjectWithKey("left"))
@@ -70,7 +74,7 @@ function createObjectWithKeyValuePair(key, val) {
   return obj
 }
 
-console.log(createObjectWithKeyValuePair(key, val))
+console.log(createObjectWithKeyValuePair("left", "right"))
 /**
  * getNameFromObject()
  * ---------------------
@@ -100,10 +104,7 @@ console.log(getNameFromObject({name : "Jay"}))
  *  //> 30
  */
 function getAgeFromObject(object) {
-  let object = {
-    object: age
-  }
-  return object
+  return object.age
 }
 
 console.log(getAgeFromObject({age: 30}))
@@ -121,10 +122,11 @@ console.log(getAgeFromObject({age: 30}))
  *  //> { left: true, key: false }
  */
 function addValueToObject(object, val) {
-  let newObj = {}
+  object.key = val
+  return object
 }
 
-
+console.log(addValueToObject({ left: true }, false))
 
 /**
  * addKeyToObject()
@@ -138,8 +140,12 @@ function addValueToObject(object, val) {
  *  addKeyToObject({ right: false }, "left");
  *  //> { right: false, left: true }
  */
-function addKeyToObject(object, key) {}
+function addKeyToObject(object, key) {
+  object[key] = false
+  return object
+}
 
+console.log(addKeyToObject({ right: false }, "left"))
 /**
  * addKeyValuePairToObject()
  * ---------------------
@@ -153,8 +159,12 @@ function addKeyToObject(object, key) {}
  *  addKeyValuePairToObject({ up: true }, "left", false);
  *  //> { up: true, left: false }
  */
-function addKeyValuePairToObject(object, key, val) {}
+function addKeyValuePairToObject(object, key, val) {
+  object[key] = val
+  return object
+}
 
+console.log(addKeyValuePairToObject({ up: true }, "left", false))
 /**
  * deleteKeyFromObject()
  * ---------------------
@@ -167,8 +177,13 @@ function addKeyValuePairToObject(object, key, val) {}
  *  deleteKeyFromObject({ left: true, right: false }, "left");
  *  //> { right: false }
  */
-function deleteKeyFromObject(object, key) {}
+function deleteKeyFromObject(object, key) {
+  delete object[key]
+  return object
+}
 
+console.log(deleteKeyFromObject({ left: true, right: false }, "left"))
+  
 // Do not change any code below this line.
 module.exports = {
   createEmptyObject,
