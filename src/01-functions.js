@@ -125,14 +125,22 @@ function average(a, b) {
   // 1. Default Value and Output
   // Why doesn't average.length === 0 work here. 
   //If there are no parameters, it shouldn't move to next if case
+  let sumTotal = 0
   if (!a && !b) {
     return null
   } else if (typeof a !== 'number' || typeof b !== 'number') {
     return "Error! Input two numbers"
+  } else if (a && b) {
+    //a = 1
+    //b = 1
+    // use !! to convert to Boolean (e.g. !!value is the same as Boolean(value))
+    //then add to get the number of parameters that exist
+    sumTotal = !!a + !!b
+
   }
   // Use functionname.length vs hardcode - 
   // It's a way to use the number of function parameters (vs. arguments passed - arguments.length) 
-  return (a+b) / average.length
+  return (a+b) / sumTotal
 }
 
 
@@ -157,12 +165,16 @@ function average(a, b) {
  */
 function averageThree(a, b, c) {
   // 1. Default Value and Output
+  let sumTotal = 0
   if (!a && !b && !c) {
     return null
   } else if (typeof a !== "number" || typeof b !== "number" || typeof c !== "number") {
     return "Error! Input three numbers"
+  } else if (a && b && c) {
+    sumTotal = !!a + !!b + !!c
+
   }
-  return (a + b + c) / averageThree.length
+  return (a + b + c) / sumTotal
 }
 
 //console.log(averageThree(2, 1, 6))
