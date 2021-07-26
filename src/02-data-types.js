@@ -11,8 +11,8 @@
  */
 function getLengthOfString(str) {
   // 1. Default Value and Output
-  if (!str) {
-    return 0
+  if (str === undefined) {
+    return null
   } else if (typeof str !== 'string') {
     return "Error! Input a string"
   }
@@ -21,6 +21,7 @@ function getLengthOfString(str) {
 
 
 //console.log(getLengthOfString("down"))
+//console.log(getLengthOfString())
 
 /**
  * convertToNumber()
@@ -35,7 +36,7 @@ function getLengthOfString(str) {
  */
 function convertToNumber(val) {
   //1. Default Value and Output 
-  if (!val) {
+  if (val === undefined) {
     return null
   }
 
@@ -59,7 +60,7 @@ function convertToNumber(val) {
  */
 function convertToString(val) {
   //1. Default Value and Output
-  if (!val) {
+  if (val === undefined) {
     return null
   }
   return String(val)
@@ -80,7 +81,7 @@ function convertToString(val) {
  */
 function convertToShoutingText(text) {
   // 1. Default Value and Output
-  if (!text) {
+  if (text === undefined) {
     return null
   } else if(typeof text !== "string") {
     return "Error! Input a string"
@@ -103,7 +104,7 @@ function convertToShoutingText(text) {
  */
 function convertToWhisperText(text) {
   // 1. Default Value and Output
-  if (!text) {
+  if (text === undefined) {
     return null
   } else if(typeof text !== "string") {
     return "Error! Input a string"
@@ -130,7 +131,7 @@ function convertToWhisperText(text) {
  */
 function checkIfCharacterIsInString(text, character) {
   // 1. Default Value and Output
-  if (!text) {
+  if (text === undefined) {
     return null
   } else if(typeof text !== "string") {
     return "Error! Input a string"
@@ -167,7 +168,7 @@ function checkIfCharacterIsInString(text, character) {
  */
 function isEven(num) {
   // 1. Default Value and Output
-  if (!num) {
+  if (num === undefined) {
     return null
   } else if(typeof num !== "number") {
     return "Error! Input a number"
@@ -195,7 +196,7 @@ function isEven(num) {
 function isOdd(num) {
   // 1. Default Value and Output
   let oddNum = false
-  if (!num) {
+  if (num === undefined) {
     return null
   } else if(typeof num !== "number") {
     return "Error! Input a number"
@@ -234,6 +235,7 @@ function isTruthy(val) {
 
 //console.log(isTruthy(10))
 //console.log(isTruthy(null))
+//console.log(isTruthy())
 
 /**
  * isFalsy()
