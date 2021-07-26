@@ -80,12 +80,20 @@ function findLargerOrTie(a, b) {
  *  //> "Positive"
  */
 function positiveNegativeOrZero(a) {
-  if (a === 0) {
-    return 'Zero'
-  }else if (a > 0) {
-    return 'Positive'
-  }else if (a < 0) {
-    return 'Negative'
+  // if (a === 0) {
+  //   return 'Zero'
+  // }else if (a > 0) {
+  //   return 'Positive'
+  // }else if (a < 0) {
+  //   return 'Negative'
+  // }
+  switch(true){
+    case (a>0):
+      return 'Positive'
+    case (a<0):
+      return 'Negative'
+    default:
+      return 'Zero'
   }
 }
 
@@ -174,6 +182,19 @@ function calculateLetterGrade(grade) {
   }else {
     return 'F'
   }
+  // console.log(grade)
+  // switch(true){
+  // case (100 >=grade >= 90):
+  //   return 'A'
+  // case (90 > grade >= 80):
+  //   return 'B'
+  // case (80 > grade >= 70):
+  //   return 'C'
+  // case (70 > grade >= 60):
+  //   return 'D'
+  // default:
+  //   return 'F'
+  // }
 }
 
 /**
