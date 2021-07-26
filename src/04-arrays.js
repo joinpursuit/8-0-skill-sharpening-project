@@ -10,7 +10,11 @@
  *  createEmptyArray();
  *  //> []
  */
-function createEmptyArray() {}
+function createEmptyArray() {
+  return []
+}
+
+//console.log(createEmptyArray())
 
 /**
  * createArrayWithTwoElements()
@@ -24,7 +28,11 @@ function createEmptyArray() {}
  *  createArrayWithTwoElements(true, false);
  *  //> [ true, false ]
  */
-function createArrayWithTwoElements(a, b) {}
+function createArrayWithTwoElements(a, b) {
+  return [a, b]
+}
+
+//console.log(createArrayWithTwoElements(true, false))
 
 /**
  * getArrayLength()
@@ -37,13 +45,17 @@ function createArrayWithTwoElements(a, b) {}
  *  getArrayLength([ 10, 20, 30 ]);
  *  //> 3
  */
-function getArrayLength(array) {}
+function getArrayLength(array) {
+  return array.length
+}
+
+//console.log(getArrayLength([ 10, 20, 30 ]))
 
 /**
  * getFirstElementOfArray()
  * ---------------------
  * Returns the first element of the array.
- * HINT: How is this similar to getFirstAndLastCharacter() in part 1?
+ * HINT: How is this similar to getFirstAndLastCharacter() in part 1? similar methods to strings
  * @param {*[]} array
  * @returns {*}
  *
@@ -51,13 +63,17 @@ function getArrayLength(array) {}
  *  getFirstElementOfArray([ 10, 20, 30 ]);
  *  //> 10
  */
-function getFirstElementOfArray(array) {}
+function getFirstElementOfArray(array) {
+  return array.shift()
+}
+
+//console.log(getFirstElementOfArray([ 10, 20, 30 ]))
 
 /**
  * getLastElementOfArray()
  * ---------------------
  * Returns the last element of the array.
- * HINT: How is this similar to getFirstAndLastCharacter() in part 1?
+ * HINT: How is this similar to getFirstAndLastCharacter() in part 1? similar methods to strings
  * @param {*[]} array
  * @returns {*}
  *
@@ -65,7 +81,11 @@ function getFirstElementOfArray(array) {}
  *  getLastElementOfArray([ null, undefined ]);
  *  //> undefined
  */
-function getLastElementOfArray(array) {}
+function getLastElementOfArray(array) {
+  return array.pop()
+}
+
+//console.log(getLastElementOfArray([ null, undefined ]))
 
 /**
  * addElementToEndOfArray()
@@ -79,7 +99,12 @@ function getLastElementOfArray(array) {}
  *  addElementToEndOfArray([ 10 ], 9);
  *  //> [ 10, 9 ]
  */
-function addElementToEndOfArray(array, element) {}
+function addElementToEndOfArray(array, element) {
+  array.push(element)
+  return array
+}
+
+//console.log(addElementToEndOfArray([ 10 ], 9))
 
 /**
  * removeElementFromEndOfArray()
@@ -92,7 +117,11 @@ function addElementToEndOfArray(array, element) {}
  *  removeElementFromEndOfArray([ 10, 9, 8 ]);
  *  //> 8
  */
-function removeElementFromEndOfArray(array) {}
+function removeElementFromEndOfArray(array) {
+  return array.pop()
+}
+
+//console.log(removeElementFromEndOfArray([ 10, 9, 8 ]))
 
 /**
  * addElementToFrontOfArray()
@@ -106,7 +135,12 @@ function removeElementFromEndOfArray(array) {}
  *  addElementToFrontOfArray([ 10 ], 9);
  *  //> [ 9, 10 ]
  */
-function addElementToFrontOfArray(array, element) {}
+function addElementToFrontOfArray(array, element) {
+  array.unshift(element)
+  return array
+}
+
+//console.log(addElementToFrontOfArray([ 10 ], 9))
 
 /**
  * removeElementFromFrontOfArray()
@@ -119,7 +153,11 @@ function addElementToFrontOfArray(array, element) {}
  *  removeElementFromFrontOfArray([ 10, 9, 8 ]);
  *  //> 10
  */
-function removeElementFromFrontOfArray(array) {}
+function removeElementFromFrontOfArray(array) {
+  return array.shift()
+}
+
+//console.log(removeElementFromFrontOfArray([ 10, 9, 8 ]))
 
 /**
  * getMiddleElement()
@@ -135,7 +173,12 @@ function removeElementFromFrontOfArray(array) {}
  *  getMiddleElement([ 10, null, "30" ]);
  *  //> null
  */
-function getMiddleElement(array) {}
+function getMiddleElement(array) {
+  let median = Math.round(array.length / 2)
+  return array[median - 1]
+}
+
+console.log(getMiddleElement([ 10, null, "30" ]))
 
 // Do not change any code below this line.
 module.exports = {
