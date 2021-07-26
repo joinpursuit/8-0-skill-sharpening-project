@@ -18,7 +18,6 @@ function rangeSum(min, max) {
   }
   return sum
 }
-rangeSum(3, 7)
 /**
  * rangeOdd()
  * ---------------------
@@ -41,7 +40,6 @@ function rangeOdd(min, max) {
   }  
   return oddNum
 }
-
 /**
  * rangeEveryOther()
  * ---------------------
@@ -92,7 +90,6 @@ function containsWhileLoop(array, target) {
 
   return  false
 }
-console.log(containsWhileLoop([ "left", "up", "right" ], "down"))
 /**
  * containsForLoop()
  * ---------------------
@@ -143,7 +140,6 @@ function targetCount(array, target) {
   }
   return amount
 }
-targetCount([ 10, 20, 10, 20, 30 ], 10)
 /**
  * firstIndexFound()
  * ---------------------
@@ -172,7 +168,6 @@ function firstIndexFound(array, target) {
   }
   return answer
 }
-// console.log(firstIndexFound([ "left", "right", "left" ], "up"))
 /**
  * lastIndexFound()
  * ---------------------
@@ -201,7 +196,6 @@ function lastIndexFound(array, target) {
   }
   return answer
 }
-// lastIndexFound([ "left", "right", "left" ], "left")
 /**
  * timesIndex()
  * ---------------------
@@ -221,7 +215,6 @@ function timesIndex(array) {
     }
   return newArr
 }
-
 /**
  * cumulativeSum()
  * ---------------------
@@ -242,7 +235,6 @@ function cumulativeSum(array) {
   }
   return newArr
 }
-cumulativeSum([ 5, 2, 9 ])
 // Do not change anything below this line.
 module.exports = {
   rangeSum,
