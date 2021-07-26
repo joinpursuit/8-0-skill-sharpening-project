@@ -9,7 +9,10 @@
  *  createEmptyObject()
  *  //> {}
  */
-function createEmptyObject() {}
+function createEmptyObject() {
+  // return an empty object
+  return {}
+}
 
 /**
  * createObjectWithValue()
@@ -22,7 +25,10 @@ function createEmptyObject() {}
  *  createObjectWithValue(19);
  *  //> { whateverKey: 19 }
  */
-function createObjectWithValue(val) {}
+function createObjectWithValue(val) {
+  // return object with `any key` `val` pair
+  return {key: val}
+}
 
 /**
  * createObjectWithKey()
@@ -35,7 +41,17 @@ function createObjectWithValue(val) {}
  *  createObjectWithKey("left");
  *  //> { left: false }
  */
-function createObjectWithKey(key) {}
+function createObjectWithKey(key) {
+  // problem: How do you add a `key` `any value` pair to an empty array?
+  // solution: 1. x dot notation / bracket notation 
+
+  // declare a variable cache array and assign it an empty obj
+  let cacheObj = {}
+  // add a `key` `any value` pair to `cacheObj` using bracket notation
+  cacheObj[`${key}`] = `any value`
+  // return object with`key` `any value` pair
+  return cacheObj
+}
 
 /**
  * createObjectWithKeyValuePair()
@@ -49,7 +65,16 @@ function createObjectWithKey(key) {}
  *  createObjectWithKeyValuePair("left", "right");
  *  //> { left: "right" }
  */
-function createObjectWithKeyValuePair(key, val) {}
+function createObjectWithKeyValuePair(key, val) {
+  // output: return `object` with `key` `val` pair
+
+  // declare a variable `cacheObj` and assign it an empty obj
+  let cacheObj = {}
+  // add a `key` `val` pair to cache object using bracket notion 
+  cacheObj[`${key}`] = val
+  // return cacheObj with `key` `val` pair
+  return cacheObj
+}
 
 /**
  * getNameFromObject()
@@ -62,7 +87,10 @@ function createObjectWithKeyValuePair(key, val) {}
  *  getNameFromObject({ name: "Jay" });
  *  //> "Jay"
  */
-function getNameFromObject(object) {}
+function getNameFromObject(object) {
+  //return the value of the key `name` in object
+  return object.name
+}
 
 /**
  * getAgeFromObject()
@@ -75,7 +103,10 @@ function getNameFromObject(object) {}
  *  getAgeFromObject({ age: 30 });
  *  //> 30
  */
-function getAgeFromObject(object) {}
+function getAgeFromObject(object) {
+  // return the value of the key `age` from object
+  return object.age
+}
 
 /**
  * addValueToObject()
@@ -89,7 +120,14 @@ function getAgeFromObject(object) {}
  *  addValueToObject({ left: true }, false);
  *  //> { left: true, key: false }
  */
-function addValueToObject(object, val) {}
+function addValueToObject(object, val) {
+  // output: return object with new `any key` `value` pair
+
+  // add `any key` `value` pair to `object`
+  object.key = val
+  // return object
+  return object
+}
 
 /**
  * addKeyToObject()
@@ -103,7 +141,14 @@ function addValueToObject(object, val) {}
  *  addKeyToObject({ right: false }, "left");
  *  //> { right: false, left: true }
  */
-function addKeyToObject(object, key) {}
+function addKeyToObject(object, key) {
+  // output: return object with `key` `any value` pair
+
+  // add `key` `any value` pair to object
+  object[`${key}`] = 1
+  //return object
+  return object
+}
 
 /**
  * addKeyValuePairToObject()
@@ -118,7 +163,14 @@ function addKeyToObject(object, key) {}
  *  addKeyValuePairToObject({ up: true }, "left", false);
  *  //> { up: true, left: false }
  */
-function addKeyValuePairToObject(object, key, val) {}
+function addKeyValuePairToObject(object, key, val) { 
+  // output: return object with new `key` `value` pair
+
+  // add `key` `value` pair to object
+  object[`${key}`] = val
+  // return object
+  return object
+}
 
 /**
  * deleteKeyFromObject()
@@ -132,7 +184,17 @@ function addKeyValuePairToObject(object, key, val) {}
  *  deleteKeyFromObject({ left: true, right: false }, "left");
  *  //> { right: false }
  */
-function deleteKeyFromObject(object, key) {}
+function deleteKeyFromObject(object, key) {
+  // output: return object with the removed `key` any value pair
+
+  // problem: How do we delete a property from an object?
+  // solution: object property `delete`
+
+  // `delete` + space + the`key` from object
+  delete object[`${key}`]
+  // return object without `key`
+  return object
+}
 
 // Do not change any code below this line.
 module.exports = {
