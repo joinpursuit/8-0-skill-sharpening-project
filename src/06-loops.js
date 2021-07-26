@@ -203,7 +203,15 @@ function firstIndexFound(array, target) {
  *  lastIndexFound([ "left", "right", "left" ], "up");
  *  //> -1
  */
-function lastIndexFound(array, target) {}
+function lastIndexFound(array, target) {
+  let isFound = -1;
+  for(let i=0; i<array.length; i++){
+    if(array[i] === target){
+      isFound = i;
+    }
+  }
+  return isFound
+}
 
 /**
  * timesIndex()
