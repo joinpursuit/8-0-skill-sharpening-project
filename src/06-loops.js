@@ -36,7 +36,9 @@ function rangeOdd(min, max) {
   let array = [];
   
   for(let i = max; i >= min; i--) {
-
+    if(i % 2 === 1) {
+      array.push(i)
+    }
   }
     return array
   }
@@ -54,8 +56,17 @@ console.log(rangeOdd(10, 15));
  *  rangeEveryOther(11, 18);
  *  //> [ 11, 13, 15, 17 ]
  */
-function rangeEveryOther(min, max) {}
+function rangeEveryOther(min, max) {
+  let array = []
+  for(let i = min; i < max; i++) {
+    if(i % 2 === 1) {
+      array.push(i)
+    }
+  }
+  return array
+}
 
+console.log(rangeEveryOther(11, 18))
 /**
  * containsWhileLoop()
  * ---------------------
@@ -76,7 +87,16 @@ function rangeEveryOther(min, max) {}
  *  containsWhileLoop([ "left", "up", "right" ], "down");
  *  //> false
  */
-function containsWhileLoop(array, target) {}
+function containsWhileLoop(array, target) {
+  isInArray = false
+  for(let i = 0; i < array.length; i++) {
+    while(!target) {
+      isInArray = true
+    }
+  }
+  return isInArray
+}
+console.log(containsWhileLoop([5, 2, 4], 4))
 
 /**
  * containsForLoop()
@@ -98,7 +118,9 @@ function containsWhileLoop(array, target) {}
  *  containsForLoop([ "left", "up", "right" ], "down");
  *  //> false
  */
-function containsForLoop(array, target) {}
+function containsForLoop(array, target) {
+
+}
 
 /**
  * targetCount()
