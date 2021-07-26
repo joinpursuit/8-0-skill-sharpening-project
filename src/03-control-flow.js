@@ -14,7 +14,24 @@
  *  isEqual(10, "10");
  *  //> false
  */
-function isEqual(a, b) {}
+function isEqual(a, b) {
+  //1. Default Value and Output
+  let equal = false
+  // If check for values in a AND b, this will give a false answer - because both can be ZERO (0, 0) or other falsy
+  // if (!a && !b) {
+    //return null
+  // To check for undefined, strictly check for undefined
+  if (a === undefined && b === undefined) {
+    return null
+  } else if (a === b) {
+    equal = true
+  }
+  return equal
+}
+
+// console.log(isEqual(10, 10))
+// console.log(isEqual(10, "10"))
+// console.log(isEqual())
 
 /**
  * findLarger()
@@ -28,7 +45,21 @@ function isEqual(a, b) {}
  *  findLarger(19, 7);
  *  //> 19
  */
-function findLarger(a, b) {}
+function findLarger(a, b) {
+  //1. Default Value and Output
+  if (a === undefined && b === undefined) {
+    return null
+  } else if (typeof a !== 'number' || typeof b !== 'number') {
+    return "Error! Input two different numbers"
+  } else if (a === b) {
+    return "Error! Input two different numbers"
+  } else if (a > b) {
+    return a
+  }
+  return b
+}
+
+//console.log(findLarger(19, 7))
 
 /**
  * findLargerOrTie()
@@ -45,7 +76,22 @@ function findLarger(a, b) {}
  *  findLargerOrTie(0, 0);
  *  //> "tie"
  */
-function findLargerOrTie(a, b) {}
+function findLargerOrTie(a, b) {
+  //1. Default Value and Output
+  if (a === undefined && b === undefined) {
+    return null
+  } else if (typeof a !== 'number' || typeof b !== 'number') {
+    return "Error! Input two numbers"
+  } else if (a === b) {
+    return "tie"
+  } else if (a > b) {
+    return a
+  }
+  return b
+}
+
+// console.log(findLargerOrTie(0, 1))
+// console.log(findLargerOrTie(0, 0))
 
 /**
  * positiveNegativeOrZero()
@@ -65,7 +111,24 @@ function findLargerOrTie(a, b) {}
  *  positiveNegativeOrZero(1);
  *  //> "Positive"
  */
-function positiveNegativeOrZero(a) {}
+function positiveNegativeOrZero(a) {
+  //1. Default Value and Output
+  if (a === undefined) {
+    return null
+  } else if (typeof a !== 'number') {
+    return "Error! Input a number"
+  } else if (a === 0) {
+    return "Zero"
+  } else if (a < 0) {
+    return "Negative"
+  }  
+  return "Positive"
+}
+
+
+// console.log(positiveNegativeOrZero(-1))
+// console.log(positiveNegativeOrZero(0))
+// console.log(positiveNegativeOrZero(1))
 
 /**
  * aroundTheWorldGreeting()
@@ -86,7 +149,19 @@ function positiveNegativeOrZero(a) {}
  *  aroundTheWorldGreeting();
  *  //> "Hello World"
  */
-function aroundTheWorldGreeting(language) {}
+function aroundTheWorldGreeting(language) {
+  // 1. Default Value and output
+  if (language === 'spanish') {
+    return "Hola Mundo"
+  } else if (language === 'german') {
+    return "Hallo Welt"
+  }
+  return "Hello World"
+}
+
+
+// console.log(aroundTheWorldGreeting("spanish"))
+// console.log(aroundTheWorldGreeting())
 
 /**
  * aroundTheWorldGreetingWithSwitch()
@@ -109,7 +184,21 @@ function aroundTheWorldGreeting(language) {}
  *  aroundTheWorldGreetingWithSwitch();
  *  //> "Hello World"
  */
-function aroundTheWorldGreetingWithSwitch(language) {}
+function aroundTheWorldGreetingWithSwitch(language) {
+  switch (language) {
+    case 'spanish':
+      return "Hola Mundo"
+      break;
+    case 'german':
+      return "Hallo Welt"
+      break;
+    default:
+      return "Hello World"
+  }
+}
+
+// console.log(aroundTheWorldGreetingWithSwitch("german"))
+// console.log(aroundTheWorldGreetingWithSwitch())
 
 /**
  * calculateLetterGrade()
@@ -128,7 +217,26 @@ function aroundTheWorldGreetingWithSwitch(language) {}
  *  calculateLetterGrade(99);
  *  //> "A"
  */
-function calculateLetterGrade(grade) {}
+function calculateLetterGrade(grade) {
+  // 1. Default Value and output
+  if (grade === undefined) {
+    return null
+  } else if (typeof grade !== 'number') {
+    return "Error! Input a number"
+  } else if (grade >= 90) {
+    return "A"
+  } else if (grade < 90 && grade >= 80) {
+    return "B"
+  } else if (grade < 80 && grade >= 70) {
+    return "C"
+  } else if (grade < 70 && grade >= 60) {
+    return "D"
+  } 
+  return "F"
+}
+
+
+//console.log(calculateLetterGrade(99))
 
 /**
  * animalCounts()
@@ -146,13 +254,26 @@ function calculateLetterGrade(grade) {}
  *  animalCounts("pig", 1);
  *  //> "1 pig"
  */
-function animalCounts(animal, numberOfAnimals) {}
+function animalCounts(animal, numberOfAnimals) {
+  // 1. Default Value and output
+  if (animal === undefined && numberOfAnimals === undefined) {
+    return null
+  } else if (typeof animal !== 'string' || typeof numberOfAnimals !== 'number') {
+    return "Error! Input a string and then a number"
+  } else if (numberOfAnimals > 1) {
+    return numberOfAnimals + " " + animal + "s"
+  } 
+  return numberOfAnimals + " " + animal
+}
+
+// console.log(animalCounts("dog", 2))
+// console.log(animalCounts("pig", 1))
 
 /**
  * evenOrOdd()
  * ---------------------
  * Takes in a number and returns whether that number is "Even" or "Odd".
- * HINT: How is this similar to isOdd() or isEven() from part 2?
+ * HINT: How is this similar to isOdd() or isEven() from part 2? Using modulo and boolean to check results
  * @param {number} a
  * @returns {string}
  *
@@ -163,7 +284,18 @@ function animalCounts(animal, numberOfAnimals) {}
  *  evenOrOdd(48);
  *  //> "Even"
  */
-function evenOrOdd(a) {}
+function evenOrOdd(a) {
+  //1. Default Value and Output 
+  if (a === undefined) {
+    return null
+  } else if (a % 2 === 0) {
+    return "Even"
+  }
+  return "Odd"
+}
+
+// console.log(evenOrOdd(11))
+// console.log(evenOrOdd(48))
 
 /**
  * evenOrOddWithTernary()
@@ -179,7 +311,13 @@ function evenOrOdd(a) {}
  *  evenOrOddWithTernary(8);
  *  //> "Even"
  */
-function evenOrOddWithTernary(a) {}
+function evenOrOddWithTernary(a) {
+  
+  return (a % 2 === 0) ? "Even" : "Odd" 
+}
+
+
+//console.log(evenOrOddWithTernary(9))
 
 // Do not change any code below this line.
 module.exports = {
