@@ -32,7 +32,10 @@
  *  getFirstName(person);
  *  //> "Rachel"
  */
-function getFirstName(person) {}
+function getFirstName(person) {
+  
+}
+console.log(getFirstName(person))
 
 /**
  * getLastName()

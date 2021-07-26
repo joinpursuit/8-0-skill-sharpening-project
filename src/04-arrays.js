@@ -170,7 +170,7 @@ console.log(removeElementFromFrontOfArray([10, 9, 8]))
  *  //> null
  */
 function getMiddleElement(array) {
-  return array.splice()
+  return middleElement = array[Math.floor(array.length/ 2)]
 }
 console.log(getMiddleElement([10, null, "30"]))
 
