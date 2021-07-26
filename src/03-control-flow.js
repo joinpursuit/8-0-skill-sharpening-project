@@ -14,7 +14,20 @@
  *  isEqual(10, "10");
  *  //> false
  */
-function isEqual(a, b) {}
+function isEqual(a, b) {
+  // //if a and b are equal
+  // if(typeof a === typeof b && a === b){
+  //   //return true
+  //   return true;
+  // }
+  // //if not
+  // else{
+  //   //return false
+  //   return false;
+  // }
+  //return a equals b becasue its basically the same as above
+  return a === b;
+}
 
 /**
  * findLarger()
@@ -28,7 +41,18 @@ function isEqual(a, b) {}
  *  findLarger(19, 7);
  *  //> 19
  */
-function findLarger(a, b) {}
+function findLarger(a, b) {
+  //if a is bigger than b
+  if (a > b) {
+    //return a
+    return a;
+  }
+  //if b is bigger than a
+  else if (b > a) {
+    //return b
+    return b;
+  }
+}
 
 /**
  * findLargerOrTie()
@@ -45,7 +69,23 @@ function findLarger(a, b) {}
  *  findLargerOrTie(0, 0);
  *  //> "tie"
  */
-function findLargerOrTie(a, b) {}
+function findLargerOrTie(a, b) {
+  //if a is bigger than b
+  if (a > b) {
+    //return a
+    return a;
+  }
+  //if b is bigger than a
+  else if (b > a) {
+    //return b
+    return b;
+  }
+  //if a and b are equal
+  else if (a === b) {
+    //return 'tie'
+    return "tie";
+  }
+}
 
 /**
  * positiveNegativeOrZero()
@@ -65,7 +105,23 @@ function findLargerOrTie(a, b) {}
  *  positiveNegativeOrZero(1);
  *  //> "Positive"
  */
-function positiveNegativeOrZero(a) {}
+function positiveNegativeOrZero(a) {
+  //if a is negative
+  if (a < 0) {
+    //return "Negative"
+    return "Negative";
+  }
+  //if a is zero
+  else if (a === 0) {
+    //return "Zero"
+    return "Zero";
+  }
+  //if a is positive
+  else if (a > 0) {
+    //return "Positive"
+    return "Positive";
+  }
+}
 
 /**
  * aroundTheWorldGreeting()
@@ -86,7 +142,23 @@ function positiveNegativeOrZero(a) {}
  *  aroundTheWorldGreeting();
  *  //> "Hello World"
  */
-function aroundTheWorldGreeting(language) {}
+function aroundTheWorldGreeting(language) {
+  //if language is spanish
+  if (language === "spanish") {
+    //return "Hola Mundo"
+    return "Hola Mundo";
+  }
+  //if language is german
+  else if (language === "german") {
+    //return "Hallo Welt"
+    return "Hallo Welt";
+  }
+  //else
+  else if (!language || language === "english") {
+    //return "Hello World"
+    return "Hello World";
+  }
+}
 
 /**
  * aroundTheWorldGreetingWithSwitch()
@@ -109,7 +181,23 @@ function aroundTheWorldGreeting(language) {}
  *  aroundTheWorldGreetingWithSwitch();
  *  //> "Hello World"
  */
-function aroundTheWorldGreetingWithSwitch(language) {}
+function aroundTheWorldGreetingWithSwitch(language) {
+  //decalre a switch for language
+  switch (language) {
+    //case for 'spanish'
+    case "spanish":
+      //return "Hola Mundo"
+      return "Hola Mundo";
+    //case for 'german'
+    case "german":
+      //return "Hallo Welt"
+      return "Hallo Welt";
+    //case for 'english' and default
+    default:
+      //return "Hello World"
+      return "Hello World";
+  }
+}
 
 /**
  * calculateLetterGrade()
@@ -128,7 +216,33 @@ function aroundTheWorldGreetingWithSwitch(language) {}
  *  calculateLetterGrade(99);
  *  //> "A"
  */
-function calculateLetterGrade(grade) {}
+function calculateLetterGrade(grade) {
+  //if grade is 90 >=
+  if (grade >= 90) {
+    //return "A"
+    return "A";
+  }
+  //if grade is 80 >= && grade < 90
+  else if (grade >= 80 && grade < 90) {
+    //return "B"
+    return "B";
+  }
+  //if grade is 70 >= && grade < 80
+  else if (grade >= 70 && grade < 80) {
+    //return "C"
+    return "C";
+  }
+  //if grade is 60 >= && grade < 70
+  else if (grade >= 60 && grade < 70) {
+    //return "D"
+    return "D";
+  }
+  //else
+  else {
+    //retrun "F"
+    return "F";
+  }
+}
 
 /**
  * animalCounts()
@@ -146,7 +260,18 @@ function calculateLetterGrade(grade) {}
  *  animalCounts("pig", 1);
  *  //> "1 pig"
  */
-function animalCounts(animal, numberOfAnimals) {}
+function animalCounts(animal, numberOfAnimals) {
+  //if numberOfAnimals is greater than 1
+  if (numberOfAnimals > 1) {
+    // return the number of animals, the animal, and s at the end
+    return `${numberOfAnimals} ${animal}s`;
+  }
+  //else
+  else {
+    //return 1 animal
+    return `1 ${animal}`;
+  }
+}
 
 /**
  * evenOrOdd()
@@ -159,11 +284,22 @@ function animalCounts(animal, numberOfAnimals) {}
  * EXAMPLE:
  *  evenOrOdd(11);
  *  //> "Odd"
- * 
+ *
  *  evenOrOdd(48);
  *  //> "Even"
  */
-function evenOrOdd(a) {}
+function evenOrOdd(a) {
+  //if the number is even...
+  if (a % 2 === 0) {
+    //return even
+    return "Even";
+  }
+  //if else...
+  else {
+    //return odd
+    return "Odd";
+  }
+}
 
 /**
  * evenOrOddWithTernary()
@@ -179,7 +315,9 @@ function evenOrOdd(a) {}
  *  evenOrOddWithTernary(8);
  *  //> "Even"
  */
-function evenOrOddWithTernary(a) {}
+function evenOrOddWithTernary(a) {
+  return a % 2 === 0 ? "Even" : "Odd";
+}
 
 // Do not change any code below this line.
 module.exports = {
