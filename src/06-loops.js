@@ -18,7 +18,7 @@ function rangeSum(min, max) {
   }
   return sum
 }
-
+rangeSum(3, 7)
 /**
  * rangeOdd()
  * ---------------------
@@ -214,7 +214,13 @@ function lastIndexFound(array, target) {
  *  //> [ 7 * 0, 10 * 1, 11 * 2 ]
  *  //> [ 0, 10, 22 ]
  */
-function timesIndex(array) {}
+function timesIndex(array) {
+  let newArr = []
+    for (let i=0;i<array.length;i++){
+       newArr.push(i * array[i])
+    }
+  return newArr
+}
 
 /**
  * cumulativeSum()
@@ -230,11 +236,13 @@ function timesIndex(array) {}
  */
 function cumulativeSum(array) {
   let newArr= []
+  let sum = 0
   for (let i=0;i<array.length;i++){
-    return newArr.unshift(array[i]+= i)
+    newArr.push(sum+=array[i])
   }
+  return newArr
 }
-
+cumulativeSum([ 5, 2, 9 ])
 // Do not change anything below this line.
 module.exports = {
   rangeSum,

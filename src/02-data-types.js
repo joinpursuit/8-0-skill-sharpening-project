@@ -108,7 +108,6 @@ function checkIfCharacterIsInString(text, character) {
  *  //> false
  */
 function isEven(num) {
-
   if (num%2){
     return false
   }
