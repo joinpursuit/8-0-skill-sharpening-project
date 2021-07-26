@@ -38,7 +38,7 @@ In alwaysTrue, the default value is false
  */
 function greet(name) {
   // 1. Default Value and output (avoid comparing against undefined with strict quality operator, i.e. === undefined)
-  if (!name) {
+  if (name === undefined) {
     return null
   } else if (typeof name !== "string") {
     return "Error! Input data as a string"
@@ -65,7 +65,7 @@ function greet(name) {
 function add(a, b) {
   // 1. Default value and output
   // Another way to test number of parameters - function.length
-  if (!a && !b) {
+  if (a === undefined && b === undefined) {
     return null
   } else if (typeof a !== 'number' || typeof b !== 'number') {
     return "Error! Input two numbers"
@@ -74,7 +74,8 @@ function add(a, b) {
 }
 
 
- //console.log(add(2))
+ console.log(add(2))
+ console.log(add(0, 0))
 
 /**
  * multiply()
@@ -91,7 +92,7 @@ function add(a, b) {
  */
 function multiply(a, b) {
   // 1. Default Value and Output
-  if (!a && !b) {
+  if (a === undefined && b === undefined) {
     return null
   } else if (typeof a !== 'number' || typeof b !== 'number') {
     return "Error! Input two numbers"
@@ -126,7 +127,7 @@ function average(a, b) {
   // Why doesn't average.length === 0 work here. 
   //If there are no parameters, it shouldn't move to next if case
   let sumTotal = 0
-  if (!a && !b) {
+  if (a === undefined && b === undefined) {
     return null
   } else if (typeof a !== 'number' || typeof b !== 'number') {
     return "Error! Input two numbers"
@@ -166,7 +167,7 @@ function average(a, b) {
 function averageThree(a, b, c) {
   // 1. Default Value and Output
   let sumTotal = 0
-  if (!a && !b && !c) {
+  if (a === undefined && b === undefined && c === undefined) {
     return null
   } else if (typeof a !== "number" || typeof b !== "number" || typeof c !== "number") {
     return "Error! Input three numbers"
@@ -198,7 +199,7 @@ function averageThree(a, b, c) {
  */
 function compareTypes(a, b) {
   // 1. Default value and output
-  if (!a && !b) {
+  if (a === undefined && b === undefined) {
     return null
     // Edge case if only one argument is passed 
   // } else if (!a || !b) {
@@ -230,7 +231,7 @@ function compareTypes(a, b) {
  */
 function flipSign(a) {
   // 1. Default value and output
-  if (!a) {
+  if (a === undefined) {
     return null
   } else if (typeof a !== 'number') {
     return "Error! Input a number"
@@ -262,7 +263,7 @@ function flipSign(a) {
  */
 function joinStringsWithSpaces(a, b, c, d, e) {
   // 1. Default value and output
-  if (!a && !b && !c && !d && !e) {
+  if (a === undefined && b === undefined && c === undefined && d === undefined && e === undefined) {
     return null
   } else if (typeof a !== 'string' || typeof b !== 'string' || typeof c !== 'string' || typeof d !== 'string' || typeof e !== 'string') {
     return "Error! Input five strings"
@@ -290,7 +291,7 @@ function joinStringsWithSpaces(a, b, c, d, e) {
  */
 function getFirstAndLastCharacter(a) {
   // 1. Default value and output
-  if (!a) {
+  if (a === undefined) {
     return null
   } else if (typeof a !== 'string') {
     return "Error! Input a string"
