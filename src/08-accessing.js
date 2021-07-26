@@ -164,7 +164,9 @@ function getCityAndState(person) {
  *  getFullAddress(person);
  *  //> "697 Pine Drive 2A, Staten Island, NY, 10306"
  */
-function getFullAddress(person) {}
+function getFullAddress(person) {
+  return person.address.street + ' ' + person.address.unit + ', ' + person.address.city + ', ' + person.address.state + ', ' + person.address.zip;
+}
 
 /**
  * getFlatObject()
