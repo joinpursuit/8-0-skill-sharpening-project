@@ -12,7 +12,13 @@
  *  shoutForLoop([ "A", "Very", "Happy", "Array" ]);
  *  //> [ "A!", "Very!", "Happy!", "Array!" ];
  */
-function shoutForLoop(array) {}
+function shoutForLoop(array) {
+  let MyArr = [];
+  for(let i=0;i<array.length;i++){
+    MyArr.push(array[i] + "!");
+  }
+  return MyArr;
+}
 
 /**
  * shoutWhileLoop()
@@ -28,7 +34,17 @@ function shoutForLoop(array) {}
  *  shoutWhileLoop([ "A", "Very", "Happy", "Array" ]);
  *  //> [ "A!", "Very!", "Happy!", "Array!" ];
  */
-function shoutWhileLoop(array) {}
+function shoutWhileLoop(array) {
+let emptyArr = [];
+let i = 0;
+
+  while (i < array.length){
+    emptyArr.push(array[i] + '!');
+      i++;
+    } 
+  return emptyArr;
+}
+
 
 /**
  * shoutForOfLoop()
@@ -44,7 +60,13 @@ function shoutWhileLoop(array) {}
  *  shoutForOfLoop([ "A", "Very", "Happy", "Array" ]);
  *  //> [ "A!", "Very!", "Happy!", "Array!" ];
  */
-function shoutForOfLoop(array) {}
+function shoutForOfLoop(array) {
+  let shouts = [];
+    for (const shout of array) {
+      shouts.push(shout + "!");
+    }
+  return shouts;
+}
 
 /**
  * sumArray()
@@ -57,7 +79,14 @@ function shoutForOfLoop(array) {}
  *  sumArray([ 10, 0, 10, 11 ]);
  *  //> 31
  */
-function sumArray(array) {}
+function sumArray(array) {
+  let emptyArr = [];
+    let sum = 0;
+      for (let i = 0;i < array.length;i++){
+      sum += array[i];
+    }
+  return sum;
+}
 
 /**
  * oddArray()
@@ -70,7 +99,15 @@ function sumArray(array) {}
  *  oddArray([ 11, 15, 20, 22, 37 ]);
  *  //> [ 11, 15, 37 ]
  */
-function oddArray(array) {}
+function oddArray(array) {
+  let emptyArr = [];
+  for(let i = 0;i<array.length;i++){
+    if(array[i] %2 != 0) {
+      emptyArr.add(array[i]);
+    }
+  }
+  return emptyArr;
+  }
 
 /**
  * evenArray()
