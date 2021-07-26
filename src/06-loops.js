@@ -35,7 +35,20 @@
  *  rangeOdd(10, 15);
  *  //> [ 15, 13, 11 ]
  */
-function rangeOdd(min, max) {}
+ function rangeOdd(min, max) {
+  let numArr = [];
+  // let total = 0;
+  for(let i=min; i<=max; i++){
+    if(i%2 === 1){
+      numArr.push(i);
+    }
+  };
+  let reverseNumArr = [];
+  for(let i=0; i<numArr.length; i++){
+    reverseNumArr.push(numArr[numArr.length-(1 + i)]);
+  }
+  return reverseNumArr;
+}
 
 /**
  * rangeEveryOther()
