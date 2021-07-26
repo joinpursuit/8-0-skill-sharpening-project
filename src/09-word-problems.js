@@ -49,7 +49,14 @@ function applyDiscount(priceInCents, age, hasMembership) {
     getCartTotal(cart);
  *  //> "$30.00"
  */
-function getCartTotal(products) {}
+function getCartTotal(products) {
+  let totalInCents = 0;
+  for(product of products){
+    totalInCents += product.priceInCents * product.quantity;
+  };
+  totalInDollars = (totalInCents / 100).toFixed(2);
+  return '$' + totalInDollars;
+}
 
 /**
  * compareLocations()
