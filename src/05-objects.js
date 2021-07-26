@@ -9,7 +9,11 @@
  *  createEmptyObject()
  *  //> {}
  */
-function createEmptyObject() {}
+function createEmptyObject() {
+  let obj = {}
+  return obj
+}
+console.log(createEmptyObject())
 
 /**
  * createObjectWithValue()
@@ -22,7 +26,14 @@ function createEmptyObject() {}
  *  createObjectWithValue(19);
  *  //> { whateverKey: 19 }
  */
-function createObjectWithValue(val) {}
+function createObjectWithValue(val) {
+  let obj = {
+    number: val
+  }
+  return obj
+}
+
+console.log(createObjectWithValue(19))
 
 /**
  * createObjectWithKey()
@@ -35,8 +46,12 @@ function createObjectWithValue(val) {}
  *  createObjectWithKey("left");
  *  //> { left: false }
  */
-function createObjectWithKey(key) {}
+function createObjectWithKey(key) {
+  let obj = {}
 
+}
+
+console.log(createObjectWithKey("left"))
 /**
  * createObjectWithKeyValuePair()
  * ---------------------
@@ -49,8 +64,13 @@ function createObjectWithKey(key) {}
  *  createObjectWithKeyValuePair("left", "right");
  *  //> { left: "right" }
  */
-function createObjectWithKeyValuePair(key, val) {}
+function createObjectWithKeyValuePair(key, val) {
+  let obj = {}
+  obj[key] = val
+  return obj
+}
 
+console.log(createObjectWithKeyValuePair(key, val))
 /**
  * getNameFromObject()
  * ---------------------
@@ -62,7 +82,11 @@ function createObjectWithKeyValuePair(key, val) {}
  *  getNameFromObject({ name: "Jay" });
  *  //> "Jay"
  */
-function getNameFromObject(object) {}
+function getNameFromObject(object) {
+  return object.name
+}
+
+console.log(getNameFromObject({name : "Jay"}))
 
 /**
  * getAgeFromObject()
@@ -75,7 +99,14 @@ function getNameFromObject(object) {}
  *  getAgeFromObject({ age: 30 });
  *  //> 30
  */
-function getAgeFromObject(object) {}
+function getAgeFromObject(object) {
+  let object = {
+    object: age
+  }
+  return object
+}
+
+console.log(getAgeFromObject({age: 30}))
 
 /**
  * addValueToObject()
@@ -89,7 +120,11 @@ function getAgeFromObject(object) {}
  *  addValueToObject({ left: true }, false);
  *  //> { left: true, key: false }
  */
-function addValueToObject(object, val) {}
+function addValueToObject(object, val) {
+  let newObj = {}
+}
+
+
 
 /**
  * addKeyToObject()
