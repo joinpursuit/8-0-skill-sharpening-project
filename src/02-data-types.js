@@ -9,7 +9,9 @@
  *  getLengthOfString("down");
  *  //> 4
  */
-function getLengthOfString(str) {}
+function getLengthOfString(str) {
+  return str.length;
+}
 
 /**
  * convertToNumber()
@@ -22,7 +24,12 @@ function getLengthOfString(str) {}
  *  convertToNumber("111");
  *  //> 111
  */
-function convertToNumber(val) {}
+function convertToNumber(val) {
+  let num = val;
+  return Math.floor(num);
+}
+
+
 
 /**
  * convertToString()
