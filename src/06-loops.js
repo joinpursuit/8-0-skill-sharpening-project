@@ -245,8 +245,15 @@ function timesIndex(array) {
  *  //> [ 5, 5 + 2, 5 + 2 + 9 ]
  *  //> [ 5, 7, 16 ]
  */
-function cumulativeSum(array) {}
-
+function cumulativeSum(array) {
+  let runningTotal = 0;
+  let newArr = [];
+  for(let i=0; i<array.length; i++){
+    newArr.push(array[i] + runningTotal);
+    runningTotal += array[i];
+  }
+  return newArr;
+}
 // Do not change anything below this line.
 module.exports = {
   rangeSum,
