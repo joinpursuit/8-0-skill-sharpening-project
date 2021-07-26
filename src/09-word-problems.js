@@ -19,7 +19,22 @@
  *  applyDiscount(1000, 9, true);
  *  //> 700
  */
-function applyDiscount(priceInCents, age, hasMembership) {}
+function applyDiscount(priceInCents, age, hasMembership) {
+  //declate variable with our default value, 0
+  let discountedPrice = 0;
+  //declare discount variable to accumulate our discounts to
+  let discount = 0;
+  //check if their age is less than 10 or more than 65
+  //if they are, add a 10% discount, if not, add no discount
+  age <= 10 || age >= 65 ? discount += .10 : discount += 0;
+  //check if the person has membership
+  //if they do, add 20% discount, if not, add no discount
+  hasMembership ? discount += .20 : discount += 0;
+  //declare our result to be their ticket cost times (1 - their discount)
+  discountedPrice = priceInCents * (1 - discount); 
+  //return discountedPrice
+  return discountedPrice;
+}
 
 /**
  * getCartTotal()
@@ -40,7 +55,19 @@ function applyDiscount(priceInCents, age, hasMembership) {}
     getCartTotal(cart);
  *  //> "$30.00"
  */
-function getCartTotal(products) {}
+function getCartTotal(products) {
+  //declare variable to accumulate to
+  let totalInCents = 0;
+  //declare loop to iterate through the products;
+  for (let item of products){
+    //in loop, add each product times it's quanity to the total variable
+    totalInCents += (item.priceInCents * item.quantity);
+  }
+  //after looping, convert our cost from cents to dollars
+  let totalInDollars = (totalInCents / 100).toFixed(2);
+  //return an formatted string using totalInDollars
+  return `$${totalInDollars}`
+}
 
 /**
  * compareLocations()
@@ -80,7 +107,38 @@ function getCartTotal(products) {}
     compareLocations(address1, address2);
     //> "Same city."
  */
-function compareLocations(address1, address2) {}
+function compareLocations(address1, address2) {
+  //declare default result, set to "Addresses are not near each other"
+  let result = "Addresses are not near each other."
+  //create values for streetcheck, city check, state check, and zip check, all false
+  let streetCheck = false;
+  let cityCheck = false;
+  let stateCheck = false;
+  let zipCheck = false;
+  //check if each key value pair is equal to eachother
+  //if they are, turn their respective variable true, if not, then false
+  address1.street === address2.street ? streetCheck = true : Check = false;
+  address1.city === address2.city ? cityCheck = true : Check = false;
+  address1.state === address2.state ? stateCheck = true : Check = false;
+  address1.zip === address2.zip ? zipCheck = true : Check = false;
+  //Check if all our checks match
+  if (streetCheck && cityCheck && stateCheck && zipCheck){
+    //if they do, result = Same building
+    result = "Same building.";
+  }
+  //Check if if city, state, and zip match 
+  else if (cityCheck && stateCheck && zipCheck){
+    //if they do, result = same city
+    result = "Same city.";
+  }
+  //Check if state matches,
+  else if (stateCheck){
+    //if it does, result = same state
+    result = "Same state.";
+  }
+  //return result;
+  return result;
+}
 
 /**
  * gradeAssignments()
@@ -127,7 +185,32 @@ function compareLocations(address1, address2) {}
     //>   },
     //> ];
  */
-function gradeAssignments(assignments) {}
+function gradeAssignments(assignments) {
+  //declare result variable as our assignments parameter
+  const result = assignments;
+  //create a loop to iterate through our array
+  for (const test of result){
+    //in loop, check if "kind" is pass-fail
+    if (test.kind === "PASS-FAIL"){
+      //if it is, check if score recieved = score max
+      //if it is, set status to passed, else, set status to failed
+      test.status = test.score.received === test.score.max ? "PASSED" : "FAILED"
+    }
+    //check if kind is percentage
+    else if (test.kind === "PERCENTAGE"){
+      //create percentage variable for clarity
+      let percentage = test.score.received / test.score.max
+      //if it is, set status to passed it score is above 80%, else set status to failed
+      test.status = percentage >= .8 ? `PASSED: ${(percentage * 100).toFixed(1)}%` : `FAILED: ${(percentage * 100).toFixed(1)}%`
+    }
+    //check if kind isn't pass-fail or percentage, set status to "SCORE: recieved / max"
+    else if (test.kind !== "PASS-FAIL" && test.kind !== "PERCENTAGE"){
+      test.status = `SCORE: ${test.score.received}/${test.score.max}`
+    }
+  }
+  //after loop return result
+  return result;
+}
 
 /**
  * createLineOrder()
@@ -152,7 +235,28 @@ function gradeAssignments(assignments) {}
     createLineOrder(people);
     //> [ "Ray Anderson", "America Marsh", "Wade Carson", "Patience Patel" ]
  */
-function createLineOrder(people) {}
+function createLineOrder(people) {
+  //declare a variable to accumulate to, set to empty array
+  const result = [];
+  //create a loop to iterate through our array
+  for (const member of people){
+    //in loop, check if the person has a membership
+    if (member.hasMembership){
+      //if they do, push JUST THEIR NAME into the result array
+      result.push(member.name);
+    }
+  }
+  //after looping, declare a second loop for our un-membered guest
+  for (nonMember of people){
+    //in loop, check if the person DOESN'T have a membership
+    if (!nonMember.hasMembership){
+      //if they don't, add JUST THEIR NAME to our result array
+      result.push(nonMember.name);
+    }
+  }
+  //after looping, return result
+  return result;
+}
 
 module.exports = {
   applyDiscount,
