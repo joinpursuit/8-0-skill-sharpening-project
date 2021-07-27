@@ -255,15 +255,19 @@ console.log(timesIndex([ 7, 10, 11 ]))
  *  //> [ 5, 7, 16 ]
  */
 function cumulativeSum(array) {
-  let newArr = [array[0]]
-  for(let i = 0; i < array.length - 1; i++){
-    newArr.push(array[i] + array[i + 1])
+  // set new array variable to the first index in array
+  let sumArr = [array[0]]
+  
+  // loop through starting index at 1 since first index is covered
+  for(let i = 1; i < array.length; i++){
+
+    sumArr.push(sumArr[i - 1] + array[i])
   }
 
-  return newArr
+  return sumArr
 }
 
-console.log(cumulativeSum([ 5, 2, 9 ]))
+// console.log(cumulativeSum([ 5, 2, 9 ]))
 
 // Do not change anything below this line.
 module.exports = {

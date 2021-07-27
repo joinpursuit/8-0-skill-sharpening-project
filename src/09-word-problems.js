@@ -19,7 +19,28 @@
  *  applyDiscount(1000, 9, true);
  *  //> 700
  */
-function applyDiscount(priceInCents, age, hasMembership) {}
+function applyDiscount(priceInCents, age, hasMembership) {
+  let younginAndOldiesDiscount = .1
+  let membersDiscount = .2
+  let doubleDiscount = .3
+  
+  let totalPrice = 0
+  
+  if(age <= 10 || age >= 65 && hasMembership) {
+    totalPrice += priceInCents * doubleDiscount
+  } else if (age <= 10 || age >= 65) {
+    totalPrice += priceInCents * younginAndOldiesDiscount
+  } else if (hasMembership) {
+    totalPrice += priceInCents * membersDiscount
+  } else {
+    totalPrice += priceInCents
+  }
+  return totalPrice
+}
+
+console.log(applyDiscount(1000, 23, false))
+console.log(applyDiscount(1000, 66, false))
+console.log(applyDiscount(1000, 9, true))
 
 /**
  * getCartTotal()
