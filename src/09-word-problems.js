@@ -19,8 +19,26 @@
  *  applyDiscount(1000, 9, true);
  *  //> 700
  */
-function applyDiscount(priceInCents, age, hasMembership) {}
-
+function applyDiscount(priceInCents, age, hasMembership) {
+  let sum = priceInCents
+  let ageDisco= 0.90
+  let memDisco= 0.80
+  let doubleDisco = 0.70
+  if (age <= 10 && hasMembership || age>=65 && hasMembership){
+    sum = sum * doubleDisco 
+  }
+  else if(age <=10 || age >=65){
+    sum = sum * ageDisco
+  }
+  else if (age >10 &&hasMembership || age <65 && hasMembership){
+    sum = sum * memDisco
+  }
+  else {
+    sum = priceInCents
+  }
+  return sum
+}
+applyDiscount(1000, 23, false)
 /**
  * getCartTotal()
  * ---------------------
@@ -40,7 +58,11 @@ function applyDiscount(priceInCents, age, hasMembership) {}
     getCartTotal(cart);
  *  //> "$30.00"
  */
-function getCartTotal(products) {}
+function getCartTotal(products) {
+  let price = ""
+  
+  
+}
 
 /**
  * compareLocations()

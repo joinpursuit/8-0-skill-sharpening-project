@@ -134,10 +134,12 @@ function containsForLoop(array, target) {
  */
 function targetCount(array, target) {
   let amount = 0
+
   for(i=0;i<array.length;i++)
   if (array[i] === target){
     amount++
   }
+  
   return amount
 }
 /**
