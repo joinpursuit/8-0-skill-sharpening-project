@@ -144,6 +144,7 @@ function containsForLoop(array, target) {
  *  //> 2
  */
 function targetCount(array, target) {
+
   let total = 0;
 
   array.forEach((targets) => {
