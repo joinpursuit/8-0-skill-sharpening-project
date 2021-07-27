@@ -20,8 +20,25 @@
  *  //> 700
  */
 function applyDiscount(priceInCents, age, hasMembership) {
-
-  
+// If the attendee is 10 years old or younger, or 65 years old or older, they receive a 10% discount. 
+// If the attendee is viewing the movie with a member, they receive a 20% discount. If both situations apply, they receive a 30% discount.
+  let cost = priceInCents;
+  let ageDiscountValue = 0.9;
+  let memberDiscountValue = 0.8;
+  let bothDiscountValue = 0.7;
+    if(age <= 10 && hasMembership || age >= 65 && hasMembership) {
+    cost = cost * bothDiscountValue;
+  }
+  else if (age <= 10 || age >= 65){
+    cost = cost * ageDiscountValue;
+  } 
+  else if ( age > 10 && hasMembership || age < 65 && hasMembership){
+    cost = cost * memberDiscountValue;
+  } 
+  else {
+    cost = cost;
+  }
+  return cost;
 }
 
 /**
@@ -29,7 +46,8 @@ function applyDiscount(priceInCents, age, hasMembership) {
  * ---------------------
  * An online store allows for customers to add products to their cart. Customers can add multiples of each product to the cart.
  * 
- * Write an algorithm that will determine the total amount of all items in the cart. Make sure to multiply the `priceInCents` times the `quantity` to get the full cost of each product.
+ * Write an algorithm that will determine the total amount of all items in the cart. 
+ * Make sure to multiply the `priceInCents` times the `quantity` to get the full cost of each product.
  * @param {Object[]} products - An array of products.
  * @param {number} products[].priceInCents - The price of the product, in cents.
  * @param {number} products[].quantity - The number of products being bought.
@@ -43,14 +61,22 @@ function applyDiscount(priceInCents, age, hasMembership) {
     getCartTotal(cart);
  *  //> "$30.00"
  */
-function getCartTotal(products) {}
+function getCartTotal(products) {
+  let total = 0;
+  for (let i=0; i<products.length; i++){
+    total += products[i].priceInCents * products[i].quantity;
+  }
+  return `$${((total / 100).toFixed(2))}`
+}
 
 /**
  * compareLocations()
  * ---------------------
- * A shipping company is looking to make its deliveries more efficient by comparing the destinations of multiple deliveries. If the locations are similar, the packages may be able to be bundled together.
+ * A shipping company is looking to make its deliveries more efficient by comparing the destinations of multiple deliveries.
+ * If the locations are similar, the packages may be able to be bundled together.
  * 
- * Write an algorithm that takes in two objects of similar shape, each object representing an address. Then, return a string that describes the relationship between those two addresses.
+ * Write an algorithm that takes in two objects of similar shape, each object representing an address. 
+ * Then, return a string that describes the relationship between those two addresses.
  * 
  * - If the street, city, state, and zip for both addresses are the same, return the string "Same building."
  * - If the city, state, and zip are the same, return the string "Same city."
@@ -66,7 +92,6 @@ function getCartTotal(products) {}
  * @param {string} address1.zip
  * @param {Object} address2 - An address object. In the same shape as `address1`, above.
  * @returns {string} A string that describes the relationship between the two addresses.
- * 
  * EXAMPLE:
  *  const address1 = {
       street: "8785 Trenton St.",
@@ -83,7 +108,23 @@ function getCartTotal(products) {}
     compareLocations(address1, address2);
     //> "Same city."
  */
-function compareLocations(address1, address2) {}
+function compareLocations(address1, address2) {
+ 
+   if(address1.street === address2.street && address1.city === address2.city && address1.state === address2.state && address1.zip === address2.zip){
+      return  `Same building.`
+  } 
+  else if (address1.city === address2.city && address1.state === address2.state && address1.zip === address2.zip){
+      return `Same city.`
+  } 
+  
+  else if (address1.state === address2.state){
+    return `Same state.`
+  }
+  else {
+    return `Addresses are not near each other.`
+  } 
+}
+
 
 /**
  * gradeAssignments()
@@ -130,16 +171,39 @@ function compareLocations(address1, address2) {}
     //>   },
     //> ];
  */
-function gradeAssignments(assignments) {}
+function gradeAssignments(assignments) {
+  for(let assignment of assignments){
+    if (assignment.kind === 'PASS-FAIL') {
+      if (assignment.score.received === assignment.score.max){
+        assignment.status = 'PASSED';
+      } else {
+        assignment.status = 'FAILED';
+      }
+    } else if (assignment.kind === 'PERCENTAGE'){
+      if((assignment.score.received / assignment.score.max) >= 0.8) {
+        assignment.status = 'PASSED: ' + ( (((assignment.score.received / assignment.score.max)*100).toFixed(1))+ "%")
+      }else{
+        assignment.status = 'FAILED: ' + ( (((assignment.score.received / assignment.score.max)*100).toFixed(1))+ "%")
+      }
+    } else {
+      assignment.status = 'SCORE: ' + assignment.score.received + '/' + assignment.score.max;
+    }    
+  }
+  return assignments
+}
 
 /**
  * createLineOrder()
  * ---------------------
- * An airline wants to build an application that improves the boarding process for its customers. They want to have customers sign up in order of arrival, but prioritize those customers who have a membership.
+ * An airline wants to build an application that improves the boarding process for its customers. 
+ * They want to have customers sign up in order of arrival, but prioritize those customers who have a membership.
  * 
- * Build an algorithm that takes in an array of objects, where each object represents a person. The order of the array is important; the person at index `0` arrived first while the person at index `1` arrived afterwards.
+ * Build an algorithm that takes in an array of objects, where each object represents a person.
+ *  The order of the array is important; the person at index `0` arrived first while the person at index `1` arrived afterwards.(how do i put into code words)
  * 
- * Return an array that includes only the names of each person, but reordered to account for whether or not each person has a membership. Everyone who has a membership should be at the front of the line in the same order they arrived. Everyone without a membership should be in the same order they arrived but after those with a membership.
+ * Return an array that includes only the names of each person, but reordered to account for whether or not each person has a membership. 
+ * Everyone who has a membership should be at the front of the line in the same order they arrived. 
+ * Everyone without a membership should be in the same order they arrived but after those with a membership.
  * @param {Object[]} people - An array of people objects.
  * @param {string} people[].name - The name of the person.
  * @param {boolean} people[].hasMembership - Whether or not the person has a membership.
@@ -155,7 +219,18 @@ function gradeAssignments(assignments) {}
     createLineOrder(people);
     //> [ "Ray Anderson", "America Marsh", "Wade Carson", "Patience Patel" ]
  */
-function createLineOrder(people) {}
+function createLineOrder(people) {
+  let newArr = [];
+  let membershipPeople = [];
+  for(let i=0; i<people.length; i++){
+    if(people[i].hasMembership){
+      membershipPeople.push(people[i].name);
+  } else {
+    newArr.push(people[i].name);
+  }
+}
+return [...membershipPeople,...newArr];
+}
 
 module.exports = {
   applyDiscount,
