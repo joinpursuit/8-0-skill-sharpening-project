@@ -29,17 +29,14 @@ function alwaysTrue() {
 function greet(name) {
   // input: name is a string
   // output: return a string 'Hello, Name'
-
   
-  // problem: a greeting with caps, space and capital letter for first name
-  // solution: 1. string copy into an array 2. string concatenation 3. add the rest of the name
-  // variable: declare a variable to make a string copy into an array
+  // problem: How do you capitalize the letter for first name only?
+  // solution: 1. create a string copy in array 2. use string concatenation - to add the rest of the name
+  // variable: declare a variable to make a string copy in an array
   const strCopy = name.split();
-  // first letter needs to be accessed in the string arr and be capitalized
-  // add all the other letters need to the first letter
+  // The first letter needs to be accessed and capitalized in strCopy then add all the other letters to the first letter
   const firstName = strCopy[0][0].toUpperCase() + strCopy[0].slice(1)
-
-  // return the variable with the full name
+  // return firstName with greeting  "Hello, "
   return `Hello, ${firstName}.`;
 }
 
@@ -150,16 +147,19 @@ function averageThree(a , b, c) {
  *  //> false
  */
 function compareTypes(a , b) {
-  // input: a and b are astericks --> symbol
+  // input: a and b - can be any data type
   // return true if a and b are the same data type or return false if a and b are not the same data type
 
-  // if a and b are the same data type
-  if (typeof a === typeof b) {
-    // return true
-    return true
-  }
-  // otherwise return false if a and b are not the same data type
-  return false
+  // // if a and b are the same data type
+  // if (typeof a === typeof b) {
+  //   // return true
+  //   return true
+  // }
+  // // otherwise return false if a and b are not the same data type
+  // return false
+
+  // === stricly equal to operator returns a boolean 
+  return typeof a === typeof b
 }
 
 /**
@@ -225,8 +225,9 @@ function joinStringsWithSpaces(a, b, c, d, e) {
 
   // problem: what is the simplest way to combine two strings?
   // solution: string concatenation
-  // variable: declare the variable called string thread 
+  // declare a variab;e called space and assign it a empty string with one space in between
   const space = ' '
+  // declare the variable called string thread 
   const stringThread = a + space + b + space + c + space + d + space + e
 
   // return the concatenated string
@@ -254,8 +255,11 @@ function getFirstAndLastCharacter(a) {
 
   // problem: How can you find the nth character of any string?
   // solution: 1. String concatenation 2. string.prototype.charAt()
-  // return the first and last letter of the string using string concatenation
-  return a.charAt(0) + a.charAt(a.length - 1)
+  // declare a variable `firstAndLastLetter` of the string using string concatenation
+  const firstAndLastLetter =  a.charAt(0) + a.charAt(a.length - 1)
+  // return first and last letter
+  return firstAndLastLetter
+
 }
 
 // Do not change the code below.
