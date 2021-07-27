@@ -220,7 +220,7 @@ function gradeAssignments(assignments) {
     //> [ "Ray Anderson", "America Marsh", "Wade Carson", "Patience Patel" ]
  */
 function createLineOrder(people) {
-  let newArr = [];
+  let newArr = [];git 
   let membershipPeople = [];
   for(let i=0; i<people.length; i++){
     if(people[i].hasMembership){
