@@ -206,7 +206,7 @@ function getFlatObject(person) {
   flatObj[personNumbers[0]] = personNumbers[1];
 
   return flatObj;
-}
+} 
 
 // Do not change the code below.
 module.exports = {
