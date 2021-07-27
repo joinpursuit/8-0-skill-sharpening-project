@@ -89,14 +89,14 @@ function rangeEveryOther(min, max) {
  */
 function containsWhileLoop(array, target) {
   let i = 0;
-    while (i < array.length){
-      if (array.indexOf(target) === i){
-        return true;
 
-      } else {
-        return false;
-      }
-    }
+  while (i < array.length){
+    if (array[i] === target){
+      return true;
+    } 
+    i++;
+  }
+  return false;
 
 }
 
@@ -123,13 +123,11 @@ function containsWhileLoop(array, target) {
 function containsForLoop(array, target) {
 
   for (let i = 0 ; i < array.length; i++){
-
-    if (array.indexOf(target) === i){
+    if (target === array[i]){
       return true;
-    } else {
-      return false;
-    }
+    } 
   }
+  return false;
 }
 
 /**
@@ -150,8 +148,6 @@ function targetCount(array, target) {
       if ( target === array[i])
       count ++;
     } return count;
-
-
 }
 
 /**
@@ -173,18 +169,14 @@ function targetCount(array, target) {
  *  //> -1
  */
 function firstIndexFound(array, target) {
-  for (let i = 0 ; i < array.length; i ++){
-    let value = array.indexOf(target)
-     if (i === value){
+  // let index = array[i];
 
-        return value;
-
-     } else {
-       return value;
-     }
-    
-
+  for (let i = 0; i < array.length; i ++){
+    if (array[i] === target){
+      return i;
+    }    
   } 
+  return -1;
 }
 
 /**
@@ -206,11 +198,12 @@ function firstIndexFound(array, target) {
  *  //> -1
  */
 function lastIndexFound(array, target) {
-  for (let i = 0 ; i < array.length; i++){
-    return array.lastIndexOf(target);
-
+  for (let i = array.length-1 ; i >= 0; i--){    
+    if (array[i] === target){
+      return i;
+    }
   }
-
+  return -1;
 }
 
 /**
