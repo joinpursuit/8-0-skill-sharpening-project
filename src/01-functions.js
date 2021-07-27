@@ -45,8 +45,7 @@ greet("Ian");
  *  //> 30
  */
 function add(a,b) {
-let addedNumber = a + b;
-  return addedNumber;
+return a + b;
 }
 add(10,20);
 /**
@@ -63,8 +62,7 @@ add(10,20);
  *  //> 10
  */
 function multiply(a, b) {
-let multipliedNumber = a * b;
-return multipliedNumber;
+return a * b;
 }
 multiply(2,5)
 /**
@@ -86,9 +84,7 @@ multiply(2,5)
  *  //> 8 // 10 + 6 = 16; 16/2 = 8;
  */
 function average(a, b) {
-let addedNum = a + b;
-let averageNum = addedNum/2;
-return averageNum; 
+return (a+b)/2
 }
 average(10, 6);
 
@@ -110,9 +106,7 @@ average(10, 6);
  *  //> 10 // 10 + 11 + 19 = 30; 30 / 3 = 10;
  */
 function averageThree(a, b, c) {
-  let addedNum = a + b + c;
-  let averageNum = addedNum/3;
-  return averageNum;
+  return (a + b + c)/3;
 }
 averageThree(10, 11, 19)
 
@@ -134,12 +128,7 @@ averageThree(10, 11, 19)
  *  //> false
  */
 function compareTypes(a, b) {
-if(typeof a === typeof b){
-  return true;
-} else{
-  (a !== b)
-  return false;
-}
+  return typeof a === typeof b;
 }
 compareTypes("left", 10);
 compareTypes("left", "right");
@@ -184,8 +173,7 @@ flipSign(-10);
  *  //> "left right up down away"
  */
 function joinStringsWithSpaces(a, b, c, d, e,) {
-  let stringOfList = a + " " + b + " " + c + " " + d + " " + e;
-  return stringOfList;
+ return a + " " + b + " " + c + " " + d + " " + e;
 }
 joinStringsWithSpaces("left", "right", "up", "down", "away")
 
@@ -205,12 +193,8 @@ joinStringsWithSpaces("left", "right", "up", "down", "away")
  *  //> "us"
  */
 function getFirstAndLastCharacter(a) {
-  let firstLetter = a[0];
-    let lastLetter = a.slice(-1);
-      let bothLetters = firstLetter + lastLetter;
-    return bothLetters;
+  return `${a[0]}${a.slice(-1)}`;
 }
-console.log(getFirstAndLastCharacter("upwards"));
 
 // Do not change the code below.
 module.exports = {

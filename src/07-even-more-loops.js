@@ -44,7 +44,7 @@ let i = 0;
     } 
   return emptyArr;
 }
-
+  
 
 /**
  * shoutForOfLoop()
@@ -100,13 +100,11 @@ function sumArray(array) {
  *  //> [ 11, 15, 37 ]
  */
 function oddArray(array) {
-  let emptyArr = [];
-  for(let i = 0;i<array.length;i++){
-    if(array[i] %2 != 0) {
-      emptyArr.add(array[i]);
-    }
+  let newArr = [];
+  for(let i of array) {
+    if(i % 2 === 1) newArr.push(i);
   }
-  return emptyArr;
+  return newArr;
   }
 
 /**
@@ -120,7 +118,12 @@ function oddArray(array) {
  *  evenArray([ 11, 15, 20, 22, 37 ]);
  *  //> [ 20, 22 ]
  */
-function evenArray(array) {}
+function evenArray(array) {let newArr = [];
+  for(let i of array) {
+    if(i % 2 === 0) newArr.push(i);
+  }
+  return newArr;
+}
 
 /**
  * findSmallest()
@@ -133,7 +136,16 @@ function evenArray(array) {}
  *  findSmallest([ 0, 11, -2, 5 ]);
  *  //> -2
  */
-function findSmallest(array) {}
+function findSmallest(array) {
+  let index = 0;
+let value = array[0];
+for (let i = 1; i < array.length; i++) {
+  if (array[i] < value) {
+    value = temp[i];
+    index = i;
+  }
+}
+}
 
 /**
  * findLargest()
