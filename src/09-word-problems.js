@@ -19,7 +19,27 @@
  *  applyDiscount(1000, 9, true);
  *  //> 700
  */
-function applyDiscount(priceInCents, age, hasMembership) {}
+function applyDiscount(priceInCents, age, hasMembership) {
+  // 1. Default Value and output 
+  let specialDiscount = .10
+  let membershipDiscount = .20
+  let totalCost = priceInCents 
+  
+  if (age <= 10 || age >= 65) {
+    if (hasMembership) {
+      return totalCost * (1 - (specialDiscount + membershipDiscount))
+    } else {
+      return totalCost * (1 - specialDiscount)
+    }
+  } else if (hasMembership) {
+    return totalCost * (1 - membershipDiscount)
+  }
+    return totalCost 
+  }
+
+// console.log(applyDiscount(1000, 23, false))
+// console.log(applyDiscount(1000, 66, false))
+// console.log(applyDiscount(1000, 9, true))
 
 /**
  * getCartTotal()
@@ -40,7 +60,16 @@ function applyDiscount(priceInCents, age, hasMembership) {}
     getCartTotal(cart);
  *  //> "$30.00"
  */
-function getCartTotal(products) {}
+function getCartTotal(products) {
+  // 1. Default Value and output
+  let totalCost = 0
+  // 2. Define the loop
+  for (let i in products) {
+    //3. Accumulate
+    totalCost += products[i].priceInCents/100 * products[i].quantity
+  }
+  return "$" + totalCost.toFixed(2) 
+}
 
 /**
  * compareLocations()
@@ -80,7 +109,20 @@ function getCartTotal(products) {}
     compareLocations(address1, address2);
     //> "Same city."
  */
-function compareLocations(address1, address2) {}
+function compareLocations(address1, address2) {
+  // 1. Default Value and output
+  let result = "Addresses are not near each other."
+  if (address1.state === address2.state) {
+    result = "Same state."
+    if (address1.city === address2.city) {
+      result = "Same city."
+      if (address1.street === address2.street) {
+        result = "Same building."
+      }
+    }
+  }
+  return result
+}
 
 /**
  * gradeAssignments()
@@ -127,7 +169,37 @@ function compareLocations(address1, address2) {}
     //>   },
     //> ];
  */
-function gradeAssignments(assignments) {}
+function gradeAssignments(assignments) {
+  //1. Default value and output
+  let newArray = []
+  //2. Define the loop
+  for (let i in assignments) {
+    //3. Accumulate
+    newArray[i] = assignments[i]
+    if(assignments[i].kind === 'PASS-FAIL') {
+      newArray[i].kind = assignments[i].kind
+      newArray[i].score = assignments[i].score
+      if (assignments[i].score.max === assignments[i].score.received) {
+        newArray[i].status = 'PASSED'
+      } else {
+        newArray[i].status = 'FAILED'
+      }
+    } else if (assignments[i].kind === 'PERCENTAGE') {
+      newArray[i].kind = assignments[i].kind
+      newArray[i].score = assignments[i].score
+      if (assignments[i].score.received / assignments[i].score.max >= .80 ) {
+        newArray[i].status = 'PASSED: ' + (assignments[i].score.received / assignments[i].score.max * 100).toFixed(1) + "%"
+      } else {
+        newArray[i].status = 'FAILED: ' + (assignments[i].score.received / assignments[i].score.max * 100).toFixed(1) + "%" 
+      }
+    } else {
+      newArray[i].kind = assignments[i].kind
+      newArray[i].score = assignments[i].score
+      newArray[i].status = 'SCORE: ' + assignments[i].score.received + "/" + assignments[i].score.max
+    }
+  }
+  return newArray
+}
 
 /**
  * createLineOrder()
@@ -152,7 +224,22 @@ function gradeAssignments(assignments) {}
     createLineOrder(people);
     //> [ "Ray Anderson", "America Marsh", "Wade Carson", "Patience Patel" ]
  */
-function createLineOrder(people) {}
+function createLineOrder(people) {
+  //1. Default Value and Output
+  let memArray = []
+  let newArray = []
+  //2. Define the loop 
+  for (let i in people) {
+    let person = people[i]
+    if (person.hasMembership) {
+      memArray.push(person.name)
+    } else {
+      newArray.push(person.name)
+    }
+  }
+  newArray.unshift(...memArray)
+  return newArray
+}
 
 module.exports = {
   applyDiscount,
