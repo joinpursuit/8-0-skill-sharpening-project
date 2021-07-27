@@ -175,7 +175,28 @@ function compareLocations(address1, address2) {
     //>   },
     //> ];
  */
-function gradeAssignments(assignments) {}
+
+//     - If the assignment has a `kind` of `"PASS-FAIL"`, set the `status` value to `"PASSED"` if the `score.received` equals the `score.max`. Otherwise, set that `status` to be `"FAILED"`.
+//  * - If the assignment has a `kind` of `"PERCENTAGE"`, set the `status` value to be `"PASSED: <percentage>"` if the student scored at least 80.0%. The `<percentage>` should be set to one decimal place. If the student scored less than 80.0%, set the status to `"FAILED: <percentage>"`.
+//  * - If the assignment has any other `kind` than the two above, set the `status` value to equal `"SCORE: <received>/<max>"`, where `<received>` is the `score.received` value and `<max>` is the `score.max` value.
+//  *
+function gradeAssignments(assignments) {
+  for(let assignment of assignments){
+    let per = (assignment.score.received/assignment.score.max)*100
+    if(assignment.kind === "PASS-FAIL" && assignment.score.received === assignment.score.max){
+      assignment.status = "PASSED"
+    }else if(assignment.kind === "PASS-FAIL" && assignment.score.received !== assignment.score.max){ 
+      assignment.status = "FAILED"
+    }else if(assignment.kind === "PERCENTAGE" && per >= 80){
+      assignment.status = "PASSED"+": "+per.toFixed(1)+"%"
+    }else if(assignment.kind === "PERCENTAGE" && per < 80){
+      assignment.status = "FAILED"+": "+per.toFixed(1)+"%"
+    }else{
+      assignment.status = "SCORE"+": "+assignment.score.received+"/"+assignment.score.max
+    }
+  }
+  return assignments
+}
 
 /**
  * createLineOrder()
@@ -200,7 +221,19 @@ function gradeAssignments(assignments) {}
     createLineOrder(people);
     //> [ "Ray Anderson", "America Marsh", "Wade Carson", "Patience Patel" ]
  */
-function createLineOrder(people) {}
+function createLineOrder(people) {
+  let newArr = [];
+  let newForMemebers = [];
+  for(let i=0; i<people.length; i++){
+    if(people[i].hasMembership === true){
+      newForMemebers.push(people[i].name)
+    }
+    else{
+      newArr.push(people[i].name)
+    }
+  }
+  return [...newForMemebers,...newArr]
+}
 
 module.exports = {
   applyDiscount,
