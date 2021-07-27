@@ -117,7 +117,7 @@ function findLargest(array) {}
  * Returns whether or not the `selected` value can be found in the array.
  * @param {number[]} array
  * @param {number} selected
- * @returns {number}
+ * @returns {boolean}
  *
  * EXAMPLE:
  *  findEqual([ 0, 11, -2, 5 ], 11);
