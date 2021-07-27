@@ -230,11 +230,11 @@ function calculateLetterGrade(grade) {
     return "Error! Input a number"
   } else if (grade >= 90) {
     return "A"
-  } else if (grade < 90 && grade >= 80) {
+  } else if (grade >= 80) {
     return "B"
-  } else if (grade < 80 && grade >= 70) {
+  } else if (grade >= 70) {
     return "C"
-  } else if (grade < 70 && grade >= 60) {
+  } else if (grade >= 60) {
     return "D"
   } 
   return "F"
