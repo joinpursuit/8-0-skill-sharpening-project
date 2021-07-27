@@ -212,12 +212,11 @@ console.log(firstIndexFound(["left", "right", "left"], "up"));
  *  //> -1
  */
 function lastIndexFound(array, target) {
-  for (let i = 0; i < array.length; i++) {
-    if (target === array[i]) {
-      return i;
-    }
+  for(let i = array.length; i > 0; i--) {
+    if(array[i] === target) 
+    return i;
   }
-  return -1
+  return -1;
 }
 
 /**
@@ -255,19 +254,16 @@ console.log(timesIndex([ 7, 10, 11 ]))
  *  //> [ 5, 7, 16 ]
  */
 function cumulativeSum(array) {
-  // set new array variable to the first index in array
-  let sumArr = [array[0]]
-  
-  // loop through starting index at 1 since first index is covered
+  // loop through starting index at 1 since first index won't be touched
   for(let i = 1; i < array.length; i++){
-
-    sumArr.push(sumArr[i - 1] + array[i])
+    
+    array[i] = array[i] + array[i - 1]
   }
-
-  return sumArr
+  return array
 }
 
-// console.log(cumulativeSum([ 5, 2, 9 ]))
+
+ console.log(cumulativeSum([ 5, 2, 9 ]))
 
 // Do not change anything below this line.
 module.exports = {
