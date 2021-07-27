@@ -86,7 +86,7 @@ describe("oddArray", () => {
 });
 
 describe("evenArray", () => {
-  test("returns a new array of only the odd valued elements", () => {
+  test("returns a new array of only the even valued elements", () => {
     expect(evenArray([1, 2, 3, 4, 5])).toEqual([2, 4]);
     expect(evenArray([0, 2, 4, 6])).toEqual([0, 2, 4, 6]);
     expect(evenArray([7, 9])).toEqual([]);
