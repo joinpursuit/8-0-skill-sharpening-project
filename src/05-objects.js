@@ -25,7 +25,10 @@ function createEmptyObject() {
  *  //> { whateverKey: 19 }
  */
 function createObjectWithValue(val) {
-  return {val}
+  let newObj= {}
+  newObj["tree"]=val
+  // return {val}
+return newObj
 }
 
 /**
@@ -40,7 +43,10 @@ function createObjectWithValue(val) {
  *  //> { left: false }
  */
 function createObjectWithKey(key) {
-  return obj={[key]:"tree"}
+  let newObj = {}
+  newObj[key]="tree"
+  // return obj={[key]:"tree"}
+  return newObj
 }
 /**
  * createObjectWithKeyValuePair()
@@ -55,8 +61,12 @@ function createObjectWithKey(key) {
  *  //> { left: "right" }
  */
 function createObjectWithKeyValuePair(key, val) {
-  return obj={[key]:val}
-
+  let newObj={}
+  newObj[key]=val
+  // newObj["fruit"]=apple
+  // newObj.fruit=apple
+  // return obj={[key]:val}
+return newObj
 }
 
 /**
@@ -102,7 +112,9 @@ function getAgeFromObject(object) {
  *  //> { left: true, key: false }
  */
 function addValueToObject(object, val) {
-  return {[object]:val}
+  object.tree=val
+  // return {[object]:val}
+  return object
 }
 
 /**
@@ -118,7 +130,9 @@ function addValueToObject(object, val) {
  *  //> { right: false, left: true }
  */
 function addKeyToObject(object, key) {
-  return {[key]:object}
+  object[key]="tree"
+  // return {[key]:object}
+  return object
 }
 
 /**

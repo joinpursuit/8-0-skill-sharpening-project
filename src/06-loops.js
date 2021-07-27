@@ -13,9 +13,11 @@
  */
 function rangeSum(min, max) {
   let sum = 0
+
   for(let i = min; i <= max; i++){
     sum += i
   }
+  
   return sum
 }
 /**
@@ -32,6 +34,7 @@ function rangeSum(min, max) {
  */
 function rangeOdd(min, max) {
   let oddNum = []
+
   while (max >= min){
     if (max % 2 === 1){  
       oddNum.push(max--)
