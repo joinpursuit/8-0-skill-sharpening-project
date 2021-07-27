@@ -183,7 +183,7 @@ function findLargest(array) {
  * Returns whether or not the `selected` value can be found in the array.
  * @param {number[]} array
  * @param {number} selected
- * @returns {number}
+ * @returns {boolean}
  *
  * EXAMPLE:
  *  findEqual([ 0, 11, -2, 5 ], 11);
@@ -193,17 +193,14 @@ function findLargest(array) {
  *  //> false
  */
 function findEqual(array, selected) {
-  let equalNum = 0; // number
+  let equalNum = false;
   for (let i = 0; i < array.length; i++) {
     if (array[i] === selected) {
-      return true;
-    } else {
-      return false;
+      equalNum = true; // if the number exists in the array
     }
   }
-  return equalNum; // number - outside for loop
+  return equalNum; // return true/false - outside for loop
 }
-findEqual([ 0, 11, -2, 5 ], 11);
 /**
  * removeDuplicates()
  * ---------------------
@@ -220,13 +217,17 @@ findEqual([ 0, 11, -2, 5 ], 11);
  */
 
 function removeDuplicates(array) {
-  let equalNum = 0; // number
-  for (let i = 0; i < array.length; i++) {
-    if (array[i] === array[i]) {
-      element.splice(i, 1);
+  let equalNum = []; // new array - step 1
+  for (let i = 0; i < array.length; i++) { // old array
+    // put numbers in the new array, and then check that array to see if it has that number.
+    if (!equalNum.includes(array[i])) {
+      // if new array doesn't include the number in the old array
+      // add it to the new array
+      equalNum.push(array[i]);
+      // if not, loop again
     }
   }
-  return equalNum; // number - outside for loop
+  return equalNum; // new array - outside for loop
 }
 
 // Do not change any code below this line.
