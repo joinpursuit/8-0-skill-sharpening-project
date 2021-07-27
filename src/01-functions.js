@@ -9,7 +9,10 @@
  *  alwaysTrue();
  *  //> true
  */
-function alwaysTrue() {}
+function alwaysTrue() {
+  let x = true 
+  return x 
+}
 
 /**
  * greet()
@@ -24,7 +27,9 @@ function alwaysTrue() {}
  *  greet("Ian");
  *  //> "Hello, Ian."
  */
-function greet() {}
+function greet(user) {
+  return `Hello, ${user}.`;
+}
 
 /**
  * add()
@@ -39,7 +44,11 @@ function greet() {}
  *  add(10, 20);
  *  //> 30
  */
-function add() {}
+function add(a,b) {
+  let  sum = a + b
+  
+  return sum
+}
 
 /**
  * multiply()
@@ -54,7 +63,11 @@ function add() {}
  *  multiply(2, 5);
  *  //> 10
  */
-function multiply() {}
+function multiply(a,b) {
+  let sum = a * b
+
+  return sum 
+}
 
 /**
  * average()
@@ -74,7 +87,11 @@ function multiply() {}
  *  average(10, 6);
  *  //> 8 // 10 + 6 = 16; 16/2 = 8;
  */
-function average() {}
+function average(a,b) {
+  let sum = (a + b)/2
+ 
+  return sum
+}
 
 /**
  * averageThree()
@@ -93,7 +110,11 @@ function average() {}
  *  averageThree(10, 11, 19);
  *  //> 10 // 10 + 11 + 19 = 30; 30 / 3 = 10;
  */
-function averageThree() {}
+function averageThree(a,b,c) {
+  let sum = (a + b + c)/3
+
+  return sum 
+}
 
 /**
  * compareTypes()
@@ -112,7 +133,15 @@ function averageThree() {}
  *  compareTypes("left", 10);
  *  //> false
  */
-function compareTypes() {}
+function compareTypes(a,b) {
+  if (typeof a === typeof b){
+    return true;
+
+} else { 
+  return false;
+}
+
+}
 
 /**
  * flipSign()
@@ -131,7 +160,11 @@ function compareTypes() {}
  *  flipSign(50);
  *  //> -50
  */
-function flipSign() {}
+function flipSign(a) {
+  let object = a * -1 
+
+  return object; 
+}
 
 /**
  * joinStringsWithSpaces()
@@ -151,7 +184,10 @@ function flipSign() {}
  *  joinStringsWithSpaces("left", "right", "up", "down", "away");
  *  //> "left right up down away"
  */
-function joinStringsWithSpaces() {}
+function joinStringsWithSpaces(a,b,c,d,e) {
+   
+ return `${a} ${b} ${c} ${d} ${e}`// memo wont work without spaces
+}
 
 /**
  * getFirstAndLastCharacter()
@@ -168,7 +204,13 @@ function joinStringsWithSpaces() {}
  *  getFirstAndLastCharacter("upwards");
  *  //> "us"
  */
-function getFirstAndLastCharacter() {}
+function getFirstAndLastCharacter(a) {
+  let firstCharacter = a.charAt(0)
+  let lastCharacter = a.charAt(a.length -1) 
+ 
+  return `${firstCharacter}${lastCharacter}`
+
+}
 
 // Do not change the code below.
 module.exports = {
