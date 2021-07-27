@@ -198,14 +198,10 @@ function joinStringsWithSpaces(a, b, c, d, e) {
  *  //> "us"
  */
 function getFirstAndLastCharacter(a) {
-  let strFal = '';
-   let aStr = a;
-  let first = aStr.charAt()
-  let last = aStr[aStr.length - 1];
-   strFal = `${first}${last}`;
-  return strFal;
+return `${a[0]}${a[a.length -1]}`;
+  
 }
-console.log(getFirstAndLastCharacter('upwards'));
+
 
 // Do not change the code below.
 module.exports = {
