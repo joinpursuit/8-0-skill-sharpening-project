@@ -185,13 +185,18 @@ function aroundTheWorldGreeting(language) {
  *  //> "Hello World"
  */
 function aroundTheWorldGreetingWithSwitch(language) {
+  //switch works like lookup and it makes having one value checked short and simple
+  // use it when you're having these kind of conditionals to use less brackets, etc.
   switch (language) {
     case 'spanish':
       return "Hola Mundo"
-      break;
+      // only use break if you can't use return statement. 
+      // you'll still need it in console.logging stuff
+      // you won't need it when using for loops
+   
     case 'german':
       return "Hallo Welt"
-      break;
+      
     default:
       return "Hello World"
   }
