@@ -14,7 +14,14 @@
  *  isEqual(10, "10");
  *  //> false
  */
-function isEqual(a, b) {}
+function isEqual(a, b) {
+  // return a === b is a simpler solution 
+  if (a === b){
+    return true;
+  } else {
+    return false 
+  }
+}
 
 /**
  * findLarger()
@@ -28,7 +35,20 @@ function isEqual(a, b) {}
  *  findLarger(19, 7);
  *  //> 19
  */
-function findLarger(a, b) {}
+function findLarger(a, b) {
+  return Math.max(a,b)
+
+  /**
+   Alternative way to solve
+   function findLarger(a, b) {
+  if (a > b) {
+    return a
+  } else {
+    return b
+  }
+}
+   */
+}
 
 /**
  * findLargerOrTie()
@@ -45,7 +65,26 @@ function findLarger(a, b) {}
  *  findLargerOrTie(0, 0);
  *  //> "tie"
  */
-function findLargerOrTie(a, b) {}
+function findLargerOrTie(a, b) {
+  if (a === b){
+
+    return 'tie'
+  }else {
+
+  }
+  return Math.max(a,b) 
+}
+/**{
+  if (a === b) {
+    return `tie`
+  }
+  if (a >= b) {
+    return a;
+  } else {
+    return b;
+  }
+} */
+
 
 /**
  * positiveNegativeOrZero()
@@ -65,7 +104,26 @@ function findLargerOrTie(a, b) {}
  *  positiveNegativeOrZero(1);
  *  //> "Positive"
  */
-function positiveNegativeOrZero(a) {}
+function positiveNegativeOrZero(a) {
+  if (a > 0){
+  return "Positive"
+}else if (a < 0) {
+  return "Negative"
+} else {
+  return "Zero";
+}
+}
+/**
+Alternative add in the value because what if someone put in an edge case. 
+* if (a > 0) {
+  value = "Positive"
+} else if ( a === 0) {
+  value = "Zero"
+} else {
+  value = "Negative"
+}
+  return value
+} */
 
 /**
  * aroundTheWorldGreeting()
@@ -86,7 +144,15 @@ function positiveNegativeOrZero(a) {}
  *  aroundTheWorldGreeting();
  *  //> "Hello World"
  */
-function aroundTheWorldGreeting(language) {}
+function aroundTheWorldGreeting(language) {
+  if (language === "german"){
+    return "Hallo Welt";
+    } else if (language === "spanish") {
+    return "Hola Mundo";
+    } else {
+      return "Hello World"
+    }
+  }
 
 /**
  * aroundTheWorldGreetingWithSwitch()
@@ -109,7 +175,17 @@ function aroundTheWorldGreeting(language) {}
  *  aroundTheWorldGreetingWithSwitch();
  *  //> "Hello World"
  */
-function aroundTheWorldGreetingWithSwitch(language) {}
+function aroundTheWorldGreetingWithSwitch(language){
+  switch (language){
+      default: return 'Hello World';
+
+      case 'german'  : return 'Hallo Welt';
+
+      case 'spanish' : return 'Hola Mundo';
+
+      case 'english' : return 'Hello World';
+    }   
+  };
 
 /**
  * calculateLetterGrade()
@@ -128,7 +204,45 @@ function aroundTheWorldGreetingWithSwitch(language) {}
  *  calculateLetterGrade(99);
  *  //> "A"
  */
-function calculateLetterGrade(grade) {}
+function calculateLetterGrade(grade) {
+  if (grade >= 90){
+    return 'A';
+    }else if (grade >= 80){
+     return 'B'
+    }else if (grade >= 70){
+      return 'C'
+    }else if (grade >= 60){
+      return 'D'
+    } else {
+      return 'F'
+    }
+    /**
+ Alternative code 
+ * if (!grade.length === 0) {
+    return null
+  }
+
+  let result = "";
+
+  if (grade >= 90) {
+    result = "A";
+  }
+  else if (grade >= 80) {
+    result = "B";
+  }
+  else if (grade >= 70) {
+    result = "C";
+  }
+  else if (grade >= 60) {
+    result = "D";
+  }
+  else {
+  result = "F"
+  }
+  return result
+
+} */
+}
 
 /**
  * animalCounts()
@@ -146,7 +260,15 @@ function calculateLetterGrade(grade) {}
  *  animalCounts("pig", 1);
  *  //> "1 pig"
  */
-function animalCounts(animal, numberOfAnimals) {}
+function animalCounts(animal, numberOfAnimals) {
+   if (numberOfAnimals>1){
+     return `${numberOfAnimals} ${animal}s`
+   } else {
+     return `${numberOfAnimals} ${animal}`}
+/** Alternative code
+ return (numberOfAnimals > 1) ? `${numberOfAnimals} ${animal}s` : `${numberOfAnimals} ${animal}`;
+ */
+}
 
 /**
  * evenOrOdd()
@@ -163,7 +285,18 @@ function animalCounts(animal, numberOfAnimals) {}
  *  evenOrOdd(48);
  *  //> "Even"
  */
-function evenOrOdd(a) {}
+function evenOrOdd(a) {
+  /**
+   Alternative solution 
+
+   const evenOrOdd = a => a % 2 ? 'Odd' : 'Even'
+   */
+   if (a % 2 !== 0){
+    return 'Odd'
+  } else {
+    return 'Even'
+  }
+}
 
 /**
  * evenOrOddWithTernary()
@@ -179,7 +312,9 @@ function evenOrOdd(a) {}
  *  evenOrOddWithTernary(8);
  *  //> "Even"
  */
-function evenOrOddWithTernary(a) {}
+function evenOrOddWithTernary(a) {
+  return (a % 2 !== 0 ? 'Odd' : 'Even');
+}
 
 // Do not change any code below this line.
 module.exports = {
