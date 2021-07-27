@@ -12,6 +12,7 @@
  */
 function createEmptyArray() {
   return [];
+  
 }
 
 /**

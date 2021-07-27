@@ -10,7 +10,8 @@
  *  //> true
  */
 function alwaysTrue() {
-  return true
+  return true;
+
 }
 
 /**

@@ -11,6 +11,7 @@
  */
 function getLengthOfString(str) {
   return str.length;
+  
 }
 
 /**

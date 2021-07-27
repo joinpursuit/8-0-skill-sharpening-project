@@ -127,6 +127,7 @@ function addValueToObject(object, val) {
 function addKeyToObject(object, key) {
   object[key] = false;
   return object;
+  
 }
 
 /**

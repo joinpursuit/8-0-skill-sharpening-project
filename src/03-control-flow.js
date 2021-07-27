@@ -251,7 +251,7 @@ function evenOrOdd(a) {
  */
 function evenOrOddWithTernary(a) {
   let answer = (a % 2) ? "Odd" : "Even" ;
-  return answer
+  return answer;
 }
 
 // Do not change any code below this line.

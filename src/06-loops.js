@@ -19,7 +19,7 @@ function rangeSum(min, max) {
     number += min;
     min++;
   }
-  return number
+  return number;
 }
 
 /**

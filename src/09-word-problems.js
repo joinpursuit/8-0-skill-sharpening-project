@@ -195,7 +195,7 @@ function gradeAssignments(assignments) {
       assignment.status = "SCORE"+": "+assignment.score.received+"/"+assignment.score.max
     }
   }
-  return assignments
+  return assignments;
 }
 
 /**

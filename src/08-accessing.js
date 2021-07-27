@@ -224,6 +224,7 @@ function getFlatObject(person) {
     numbers: person.numbers
   };
   return newObj;
+  
 }
 
 // Do not change the code below.
