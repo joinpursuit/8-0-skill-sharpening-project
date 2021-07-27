@@ -20,22 +20,25 @@
  *  //> 700
  */
 function applyDiscount(priceInCents, age, hasMembership) {
-  let younginAndOldiesDiscount = .1
-  let membersDiscount = .2
-  let doubleDiscount = .3
   
-  let totalPrice = 0
+  let total = priceInCents
   
-  if(age <= 10 || age >= 65 && hasMembership) {
-    totalPrice += priceInCents * doubleDiscount
-  } else if (age <= 10 || age >= 65) {
-    totalPrice += priceInCents * younginAndOldiesDiscount
-  } else if (hasMembership) {
-    totalPrice += priceInCents * membersDiscount
-  } else {
-    totalPrice += priceInCents
+  let discounts = {
+    age: .9,
+    membership: .8,
+    both: .7 
   }
-  return totalPrice
+  
+  if(hasMembership) {
+    if(age <= 10 || age >= 65) {
+      total *= discounts.both
+    } else {
+      total *= discounts.membership
+    }
+  } else if(age <= 10 || age >= 65) {
+    total *= discounts.age
+  }
+  return total
 }
 
 console.log(applyDiscount(1000, 23, false))
@@ -61,8 +64,17 @@ console.log(applyDiscount(1000, 9, true))
     getCartTotal(cart);
  *  //> "$30.00"
  */
-function getCartTotal(products) {}
+function getCartTotal(products) {
+  
+  // let total = 0
 
+  // for(let i = 0; i < cart.length; i++) {
+  //   total += products.priceInCents * products.quantity
+  // }
+  // return total * .1
+}
+
+console.log(getCartTotal(cart))
 /**
  * compareLocations()
  * ---------------------

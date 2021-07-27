@@ -59,7 +59,12 @@ console.log(shoutWhileLoop([ "A", "Very", "Happy", "Array" ]))
  *  //> [ "A!", "Very!", "Happy!", "Array!" ];
  */
 function shoutForOfLoop(array) {
+  let newArr = []
   
+  for(word of array) {
+    newArr.push(`${word}!`)
+  }
+  return newArr
 }
 
 console.log(shoutForOfLoop([ "A", "Very", "Happy", "Array" ]))
@@ -142,9 +147,9 @@ console.log(evenArray([ 11, 15, 20, 22, 37 ]))
 function findSmallest(array) {
 let smallestNumber = array[0]
 
-for(let i = 0; i < array.length; i++){
-  if(smallestNumber > array[i + 1]) 
-  smallestNumber = array[i + 1]
+for(let i = 1; i < array.length; i++){
+  if(smallestNumber > array[i]) 
+  smallestNumber = array[i]
 }
   return smallestNumber
 }
@@ -164,8 +169,8 @@ console.log(findSmallest([ 0, 11, -2, 5 ]))
 function findLargest(array) {
   let largestNumber = array[0]
   
-  for(let i = 0; i < array.length; i++) {
-    if(largestNumber < array[i + 1]) largestNumber = array[i + 1]
+  for(let i = 1; i < array.length; i++) {
+    if(largestNumber < array[i]) largestNumber = array[i]
   }
   return largestNumber
 }
