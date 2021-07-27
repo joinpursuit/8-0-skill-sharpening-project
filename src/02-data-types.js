@@ -125,6 +125,8 @@ function isEven(num) {
   } else {
     // return false
     return false;
+
+    // return num % 2 === 0
   }
 }
 

@@ -157,6 +157,7 @@ function compareTypes(a, b) {
   } else {
     return false;
   }
+  // return typeof a === typeof b
 }
 
 /**
