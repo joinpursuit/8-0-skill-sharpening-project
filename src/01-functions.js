@@ -27,7 +27,7 @@ function alwaysTrue(){
  *  //> "Hello, Ian."
  */
 function greet(name){
-  return "Hello, " + name + ".";
+  return `Hello, ${name}.`;
 }
 
 /**
@@ -61,7 +61,7 @@ function add(numberA, numberB){
  *  //> 10
  */
 function multiply(numberA, numberB){
-  return  numberA *= numberB
+  return  numberA *= numberB;
 }
 /**
  * average()
@@ -82,7 +82,7 @@ function multiply(numberA, numberB){
  *  //> 8 // 10 + 6 = 16; 16/2 = 8;
  */
 function average(numberA, numberB){
-  return (numberA + numberB)/2 
+  return (numberA + numberB)/2; 
 }
 /**
  * averageThree()
@@ -102,7 +102,7 @@ function average(numberA, numberB){
  *  //> 10 // 10 + 11 + 19 = 30; 30 / 3 = 10;
  */
 function averageThree(numberA, numberB, numberC){
-  return (numberA + numberB + numberC)/3
+  return (numberA + numberB + numberC)/3;
 }
 
 
@@ -124,9 +124,7 @@ function averageThree(numberA, numberB, numberC){
  *  //> false
  */
 function compareTypes(a, b) {
-  if(typeof(a) == typeof(b)){
-    return true;
-  } else {return false};
+  return typeof(a) === typeof(b);
 }
 
 
@@ -147,8 +145,8 @@ function compareTypes(a, b) {
  *  flipSign(50);
  *  //> -50
  */
-function flipSign(number){
-  return number * -1;
+function flipSign(a){
+  return a * -1;
 }
 
 /**
@@ -169,11 +167,11 @@ function flipSign(number){
  *  joinStringsWithSpaces("left", "right", "up", "down", "away");
  *  //> "left right up down away"
  */
-function joinStringsWithSpaces(a, b, c, d, e){
+
+
+function joinStringsWithSpaces(a, b, c, d, e){ 
   return `${a} ${b} ${c} ${d} ${e}`;
 }
-
-
 
 /**
  * getFirstAndLastCharacter()
@@ -198,9 +196,9 @@ System.out.println(str.charAt(str.length-1)); // Last character "g"
  * 
  * 
  */
-function getFirstAndLastCharacter(givenString){
-  let firstChar = givenString.charAt(0);
-  let lastChar = givenString.charAt(givenString.length-1);
+function getFirstAndLastCharacter(a){
+  let firstChar = a.charAt(0);
+  let lastChar = a.charAt(a.length-1);
   return `${firstChar}${lastChar}`;
 }
 
