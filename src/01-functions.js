@@ -104,7 +104,9 @@ function average(a,b) {
  *  averageThree(10, 11, 19);
  *  //> 10 // 10 + 11 + 19 = 30; 30 / 3 = 10;
  */
-function averageThree() {}
+function averageThree(a,b,c) {
+  return (a+b+c)/3
+}
 
 /**
  * compareTypes()
@@ -123,7 +125,10 @@ function averageThree() {}
  *  compareTypes("left", 10);
  *  //> false
  */
-function compareTypes() {}
+function compareTypes(a,b) {
+  let isSameType = typeof a === typeof b;
+  return isSameType
+}
 
 /**
  * flipSign()
@@ -142,7 +147,10 @@ function compareTypes() {}
  *  flipSign(50);
  *  //> -50
  */
-function flipSign() {}
+function flipSign(a) {
+  return a * -1;
+  // or -a
+}
 
 /**
  * joinStringsWithSpaces()
@@ -162,7 +170,9 @@ function flipSign() {}
  *  joinStringsWithSpaces("left", "right", "up", "down", "away");
  *  //> "left right up down away"
  */
-function joinStringsWithSpaces() {}
+function joinStringsWithSpaces(a, b, c, d, e) {
+  return a + " " + b + " " + c + " " + d + " " + e;
+}
 
 /**
  * getFirstAndLastCharacter()
@@ -179,7 +189,10 @@ function joinStringsWithSpaces() {}
  *  getFirstAndLastCharacter("upwards");
  *  //> "us"
  */
-function getFirstAndLastCharacter() {}
+function getFirstAndLastCharacter(a) {
+  let firstAndLast = a.charAt(0) + a.charAt(a.length-1);
+  return firstAndLast;
+}
 
 // Do not change the code below.
 module.exports = {

@@ -223,7 +223,7 @@ function getFlatObject(person) {
     zip: person.address.zip,
     numbers: person.numbers.slice(0)
   };
-  return newObj
+  return newObj;
 }
 
 // Do not change the code below.

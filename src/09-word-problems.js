@@ -19,7 +19,24 @@
  *  applyDiscount(1000, 9, true);
  *  //> 700
  */
-function applyDiscount(priceInCents, age, hasMembership) {}
+function applyDiscount(priceInCents, age, hasMembership) {
+  let totalPrice = 0;
+  if(age <= 10 || age >= 65){
+    if (hasMembership){
+      totalPrice = priceInCents * .70;
+    } else {totalPrice = priceInCents * .90;}
+      // if hasmembership is true, then -.20
+  }else if(hasMembership){
+    totalPrice = priceInCents * .80;
+  } else{ totalPrice = priceInCents; }
+  return totalPrice
+}
+
+
+
+  // if age and hasMembership, then -.30
+  // esle return priceInCents
+
 
 /**
  * getCartTotal()
@@ -30,7 +47,7 @@ function applyDiscount(priceInCents, age, hasMembership) {}
  * @param {Object[]} products - An array of products.
  * @param {number} products[].priceInCents - The price of the product, in cents.
  * @param {number} products[].quantity - The number of products being bought.
- * @returns {string} A formatted representation of the total, rounded to two decimal places.
+ * @returns {string} A formatted representation of the total, rounded to two decimal places. .toFixed(2)
  * 
  * EXAMPLE:
  *  const cart = [
@@ -40,7 +57,14 @@ function applyDiscount(priceInCents, age, hasMembership) {}
     getCartTotal(cart);
  *  //> "$30.00"
  */
-function getCartTotal(products) {}
+function getCartTotal(products) {
+  let cartTotal = 0;
+  for(let product of products){
+    cartTotal += (product.priceInCents * product.quantity)/100;
+  }
+  return "$"+cartTotal.toFixed(2);
+
+}
 
 /**
  * compareLocations()
@@ -80,7 +104,31 @@ function getCartTotal(products) {}
     compareLocations(address1, address2);
     //> "Same city."
  */
-function compareLocations(address1, address2) {}
+    //Write an algorithm that takes in two objects of similar shape, each object representing an address. 
+    //Then, return a string that describes the relationship between those two addresses.
+    // * - If the street, city, state, and zip for both addresses are the same, return the string "Same building."
+    // * - If the city, state, and zip are the same, return the string "Same city."
+    // * - If just the state is the same, return the string "Same state."
+    // * - If none of those matches occur, return the string "Addresses are not near each other."
+    // * 
+    // we are comparing ttwo addreses (address1, address2)
+    // first we compare the objests { street, city, state, zip }
+    // if the street, city, state, and zip for both addresses are the same, return the string "Same building."
+    // If the city, state, and zip are the same, return the string "Same city."
+    // If just the state is the same, return the string "Same state."
+    // If none of those matches occur, return the string "Addresses are not near each other."
+function compareLocations(address1, address2) {
+  let variable = "";
+  if(address1.city === address2.city && address1.state === address2.state && address1.zip === address2.zip){
+    if(address1.street === address2.street){
+      variable = "Same building.";
+    } else {variable = "Same city.";}
+    
+  } else if(address1.state===address2.state){
+    variable = "Same state."
+  } else { variable = "Addresses are not near each other."}
+  return variable;
+}
 
 /**
  * gradeAssignments()
