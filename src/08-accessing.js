@@ -192,10 +192,9 @@ function getFullAddress(person) {
     };
  */
 function getFlatObject(person) {
-  // let clonedObj = { ...person }
   
-  let clonedObj = {
-    first: person.names.first,
+    return {
+      first: person.names.first,
       middle: person.names.middle,
       last: person.names.last,
       street: person.address.street,
@@ -203,11 +202,10 @@ function getFlatObject(person) {
       city: person.address.city,
       state: person.address.state,
       zip: person.address.zip,
-      numbers: person.numbers
-      
-  }
-  return clonedObj
+      numbers: person.numbers,
+    }
 }
+
 // Do not change the code below.
 module.exports = {
   getFirstName,
