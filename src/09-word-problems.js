@@ -153,7 +153,29 @@ function compareLocations(address1, address2) {
     //>   },
     //> ];
  */
-function gradeAssignments(assignments) {}
+function gradeAssignments(assignments) {
+  for(let i=0; i<assignments.length; i++){
+    let assignment = assignments[i]
+    if(assignment.kind === 'PASS-FAIL'){
+      if(assignment.score.received === assignment.score.max){
+        assignment.status = 'PASSED';
+      }else{
+        assignment.status = 'FAILED';
+      };
+    }else if(assignment.kind === 'PERCENTAGE'){
+      if((assignment.score.received / assignment.score.max) >= .8){
+        assignment.status = 'PASSED: ' + (((assignment.score.received / assignment.score.max)*100).toFixed(1)) + '%';
+      }else{
+        assignment.status = 'FAILED: ' + (((assignment.score.received / assignment.score.max)*100).toFixed(1)) + '%';
+      };
+    }else{
+      assignments[i].status = 'SCORE: ' + assignments[i].score.received + '/' + assignments[i].score.max;
+    };
+  };
+  return assignments;
+}
+
+//IDK WHY NOT PASSING, IT IS JUST OUTPUTTING undefinded
 
 /**
  * createLineOrder()
@@ -178,7 +200,19 @@ function gradeAssignments(assignments) {}
     createLineOrder(people);
     //> [ "Ray Anderson", "America Marsh", "Wade Carson", "Patience Patel" ]
  */
-function createLineOrder(people) {}
+function createLineOrder(people) {
+  let orderedMembership = [];
+  let orderedNoMembership = [];
+  for(let i=0; i<people.length; i++){
+    if(people[i].hasMembership){
+      orderedMembership.push(people[i].name);
+    }else{
+      orderedNoMembership.push(people[i].name);
+    };
+  }
+  let orderedPeople = orderedMembership.concat(orderedNoMembership);
+  return orderedPeople;
+}
 
 module.exports = {
   applyDiscount,
