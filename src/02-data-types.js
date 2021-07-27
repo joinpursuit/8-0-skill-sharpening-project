@@ -25,8 +25,7 @@ function getLengthOfString(str) {
  *  //> 111
  */
 function convertToNumber(val) {
-let number = Number(val);
-return number;
+return Number(val);
 }
 
 /**
@@ -42,9 +41,7 @@ return number;
  *  //> "99"
  */
 function convertToString(val) {
-let toString = val.toString();
-return toString;
-
+return val.toString();
 }
 
 /**
@@ -59,8 +56,7 @@ return toString;
  *  //> "HELLO THERE"
  */
 function convertToShoutingText(text) {
-let upperCase = text.toUpperCase()
-return upperCase;
+return text.toUpperCase()
 }
 
 /**
@@ -75,8 +71,7 @@ return upperCase;
  *  //> "hello there"
  */
 function convertToWhisperText(text) {
-  let lowerCase = text.toLowerCase()
-  return lowerCase;
+  return text.toLowerCase()
 }
 
 /**
