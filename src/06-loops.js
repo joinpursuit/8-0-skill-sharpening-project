@@ -135,7 +135,7 @@ function containsForLoop(array, target) {
   }
   return false;
 }
-containsForLoop([ 5, 2, 4 ], 4)
+
 
 /**
  * targetCount()
