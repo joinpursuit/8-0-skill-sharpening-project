@@ -26,9 +26,12 @@ function createEmptyObject() {
  *  //> { whateverKey: 19 }
  */
 function createObjectWithValue(val) {
-let newObj = {}
-newObj = {val}
-return newObj;
+let birthday = {
+ day: val,
+}
+ newObj = {val}
+
+return birthday;
 }
 
 /**
@@ -44,11 +47,11 @@ return newObj;
  */
 function createObjectWithKey(key) {
   let newObj = {};
-  newKey = key;
-  newObj[newKey] = "value"  //basically i had to use bracket notation not dot notation But WHyyy?
+  newObj[key] = "value"  //basically i had to use bracket notation not dot notation But WHyyy?
   // newObj = {newKey: value};
   return newObj;
 }
+//How do we create the key? what syntax do we use?
 
 /**
  * createObjectWithKeyValuePair()
