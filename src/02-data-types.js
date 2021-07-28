@@ -90,11 +90,10 @@ function convertToWhisperText(text) {
  *  //> false
  */
 function checkIfCharacterIsInString(text, character) {
-  let isInStr = false;
-  for(let i=0;i<text.length;i++){
+  return text.includes(character)
 
   }
-}
+
 
 /**
  * isEven()
@@ -148,10 +147,11 @@ function isOdd(num) {
  *  //> false
  */
 function isTruthy(val) {
- if (val === val){
+ if(val){
    return true;
- } else (val === val)
+ } else {
    return false;
+ }
  }
    
 
@@ -170,7 +170,13 @@ function isTruthy(val) {
  *  isFalsy(" ");
  *  //> false
  */
-function isFalsy(val) {}
+function isFalsy(val) {
+  if(val){
+    return false;
+  } else {
+    return true;
+  }
+}
 
 // Do not change the code below.
 module.exports = {
