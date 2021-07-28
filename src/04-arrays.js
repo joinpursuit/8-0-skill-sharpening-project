@@ -12,7 +12,7 @@
  */
 function createEmptyArray() {
   // return an empty array with a space inside the arr
-  return [ ]
+  return []
 }
 
 /**
@@ -149,8 +149,8 @@ function addElementToFrontOfArray(array, element) {
   // input: a is an array of specific data types and element is a specific data type
   // output: return array with a new element at index 0 
 
-  // problem: Which array method add a new element to the array at index 0
-  // solution: .unshift() return the last element add to the beginning of the arr
+  // problem: Which array method adds a new element to the array at index 0
+  // solution: .unshift() return the last element added to the beginning of the array
 
   array.unshift(element)
 
