@@ -105,7 +105,18 @@ function getAgeFromObject(object) {
  *  addValueToObject({ left: true }, false);
  *  //> { left: true, key: false }
  */
-function addValueToObject(object, val) {}
+
+//  obj["key3"] = "value3";
+//  var getProperty = function (propertyName) {
+//   return obj[propertyName];
+// };
+
+
+
+function addValueToObject(object, val) {
+  object["newKey"] = val;
+  return object;
+}
 
 /**
  * addKeyToObject()
