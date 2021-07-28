@@ -12,7 +12,7 @@
  */
 function createEmptyArray() {
   // return an empty array with a space inside the arr
-  return []
+  return [];
 }
 
 /**
@@ -31,7 +31,7 @@ function createArrayWithTwoElements(a, b) {
   // a and b are specific `data types`
   // return a array where the first element is `a` and the second element is `b`
 
-  return [a, b]
+  return [a, b];
 }
 
 /**
@@ -49,7 +49,7 @@ function getArrayLength(array) {
   // input: array is an array of specific `data types`
   // return: return the length of the array
 
-  return array.length
+  return array.length;
 }
 
 /**
@@ -68,7 +68,7 @@ function getFirstElementOfArray(array) {
   // input: array is an array of specific `data types`
   // output: return the first element in the array
 
-  return array[0]
+  return array[0];
 }
 
 /**
@@ -87,7 +87,7 @@ function getLastElementOfArray(array) {
   // input: array is an array of specific `data types`
   // output: return the last element in the array
 
-  return array[array.length - 1]
+  return array[array.length - 1];
 }
 
 /**
@@ -107,9 +107,9 @@ function addElementToEndOfArray(array, element) {
   // output: return array with a new element 
 
   // push element into array
-  array.push(element)
+  array.push(element);
   // return arr
-  return array
+  return array;
 }
 
 /**
@@ -130,7 +130,7 @@ function removeElementFromEndOfArray(array) {
   // problem: How do we return the element that has been popped off?
   // solution: .pop() return the element that has been popped off?
 
-  return array.pop()
+  return array.pop();
 }
 
 /**
@@ -152,9 +152,9 @@ function addElementToFrontOfArray(array, element) {
   // problem: Which array method adds a new element to the array at index 0
   // solution: .unshift() return the last element added to the beginning of the array
 
-  array.unshift(element)
+  array.unshift(element);
 
-  return array
+  return array;
 }
 
 /**
@@ -171,7 +171,7 @@ function addElementToFrontOfArray(array, element) {
 function removeElementFromFrontOfArray(array) {
   // return the removed element at index 0 from the array of data types 
 
-  return array.shift()
+  return array.shift();
 }
 
 /**
@@ -191,7 +191,7 @@ function removeElementFromFrontOfArray(array) {
 function getMiddleElement(array) {
   // returns the element in the middle of `array`
 
-  return array[(array.length - 1 ) / 2]
+  return array[(array.length - 1 ) / 2];
 }
 
 // Do not change any code below this line.
