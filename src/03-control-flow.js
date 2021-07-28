@@ -15,11 +15,7 @@
  *  //> false
  */
 function isEqual(a, b) {
-  if( a === b){
-    return true;
-  } else {
-    return false;
-  }
+  return a === b;
 }
 
 /**
@@ -58,7 +54,7 @@ function findLarger(a, b) {
  *  //> "tie"
  */
 function findLargerOrTie(a, b) {
-  if(a == b){
+  if(a === b){
     return "tie";
   } else if (a > b){
     return a;
@@ -85,7 +81,14 @@ function findLargerOrTie(a, b) {
  *  positiveNegativeOrZero(1);
  *  //> "Positive"
  */
-function positiveNegativeOrZero(a) {}
+function positiveNegativeOrZero(a) {
+  if(a < 0){
+    return "Negative";
+  } else if ( a > 0){
+    return "Positive";}
+   else {return "Zero";}
+}
+
 
 /**
  * aroundTheWorldGreeting()
@@ -106,7 +109,16 @@ function positiveNegativeOrZero(a) {}
  *  aroundTheWorldGreeting();
  *  //> "Hello World"
  */
-function aroundTheWorldGreeting(language) {}
+
+
+
+function aroundTheWorldGreeting(language) {
+  if(language === "spanish"){
+    return "Hola Mundo";
+  } else if (language === "german"){
+    return "Hallo Welt";
+  } else {return "Hello World";}
+}
 
 /**
  * aroundTheWorldGreetingWithSwitch()
@@ -129,7 +141,18 @@ function aroundTheWorldGreeting(language) {}
  *  aroundTheWorldGreetingWithSwitch();
  *  //> "Hello World"
  */
-function aroundTheWorldGreetingWithSwitch(language) {}
+function aroundTheWorldGreetingWithSwitch(language) {
+  switch(language){
+    case "spanish":
+      return "Hola Mundo";
+      break;
+      case "german":
+        return "Hallo Welt";
+        break;
+        default: 
+        return "Hello World";
+  }
+}
 
 /**
  * calculateLetterGrade()
