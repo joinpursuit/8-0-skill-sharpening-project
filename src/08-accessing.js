@@ -55,7 +55,7 @@ function getLastName(person) {
   // input: person is an obj
   // output: return the `last` `names` of `person`
 
-  return person.names.last
+  return person.names.last;
 }
 
 /**
@@ -73,7 +73,7 @@ function getAddressStreet(person) {
   // input: person is an obj
   // output: return the `street` `address` of `person` 
 
-  return person.address.street
+  return person.address.street;
 }
 
 /**
@@ -110,7 +110,7 @@ function getFirstPhoneNumber(person) {
   // input: person is an obj
   // output: return the first phone number [0] `numbers` of `person` 
   
-  return person.numbers[0]
+  return person.numbers[0];
 }
 
 /**
@@ -131,7 +131,7 @@ function getLastPhoneNumber(person) {
   // input: person is an obj
   // output: return the last phone number [] `numbers` of `person` 
 
-  return person.numbers[person.numbers.length -1]
+  return person.numbers[person.numbers.length -1];
 }
 
 /**
@@ -147,9 +147,9 @@ function getLastPhoneNumber(person) {
  */
 function getFullName(person) {
   // return the full name of the person
-  const space = ' '
-  const name = person.names
-  return name.first + space + name.middle + space + name.last
+
+  const name = person.names;
+  return `${name.first} ${name.middle} ${name.last}`;
 }
 
 /**
@@ -168,8 +168,8 @@ function getFullName(person) {
  */
 function getCityAndState(person) {
   // output: return the `city` and `state` of the `person` `address`
-  
-  return person.address.city + ', ' + person.address.state
+ 
+  return `${person.address.city}, ${person.address.state}`;
 }
 
 /**
@@ -190,8 +190,8 @@ function getFullAddress(person) {
   // output: return the full `address` of `person` that includes `street` `unit` `city` `state` `zip`
 
   // declare a variable shortcut that is not the same name as parameter for person.address
-  const address = person.address
-  return `${address.street} ${address.unit}, ${address.city}, ${address.state}, ${address.zip}`
+  const address = person.address;
+  return `${address.street} ${address.unit}, ${address.city}, ${address.state}, ${address.zip}`;
 }
 
 /**
