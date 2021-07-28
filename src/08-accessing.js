@@ -202,35 +202,40 @@ function getFullAddress(person) {
       numbers: [7185550921, 7185558611],
     };
  */
+
+    // from the object, grab the properties that are just key and value pairs
+    //from the object, if the properties are key and value and the value is an object, i want to grab the key and pair values in that object
+    // first i have to identify if an object is the value of a key - how do i find that out data type and how do i find the value
+    // or i can be explicit and say if it's not name and address - this method works because the structure of the objects are the same
+    //person.property = grabs the initial list of properties
+    //grab the value 
+//array.is array
+
+
+
 function getFlatObject(person) {
   let flatObject = {};
-    for (const property in person) {
-      // console.log(property) - this loops and gives me names, address, street and phone
-      flatObject[property] = person.property; //added the 1st set of objects to the object
-        for (const nameProperties in person.names) {
-          flatObject[nameProperties] = person.names.properties;  
-        }
-          for (const addressProperties in person.address) {
-            flatObject[addressProperties] = person.address.properties;  
-          }
-      // for (const properties in person.property) {
-      // console.log(properties)};
-      // for (const properties in person.property) {
-      // flatObject[p;
+  for (const property in person) {
+    if (!Array.isArray(person[property])) {
+    // console.log(property) - this loops and gives me names, address, street and phone
+    // flatObject[property] = person.property; //added the 1st set of objects to the object
+      for (const nameAddressProperties in person[property]) {
+        flatObject[nameAddressProperties] = person[property][nameAddressProperties];  
+      }
+    } else { 
+      flatObject[property] = person[property];
     }
+  }
   return flatObject;
 }
 
 
 //create an object loop to loop through the initial properties
-//then create another object loop to loop and grab the properties that are in the subsequent objecrs
+//then create another object loop to loop and grab the properties that are in the subsequent objects
 
 console.log(getFlatObject(person));
 
-for (const personProperty in person) {
-  console.log(personProperty);
-}
-  // if (person.personProperty
+
 
 
 
