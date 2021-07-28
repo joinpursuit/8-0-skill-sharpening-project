@@ -19,7 +19,20 @@
  *  applyDiscount(1000, 9, true);
  *  //> 700
  */
-function applyDiscount(priceInCents, age, hasMembership) {}
+function applyDiscount(priceInCents, age, hasMembership) {
+  let discount = 0; // keep track of the discount
+
+  // separate if statements - keeps it separate  
+  if (age <= 10 || age >= 65) {  // 10 years old or younger, or 65 years old or older
+    discount += 0.10; // they get a 10% discount
+  }
+  if (hasMembership) { // if they have a membership
+    discount += 0.20 // they get a 20% discount
+  }
+  // reassign variable priceInCents
+  priceInCents *= (1 - discount);  // subtract from 1 to get the percentage
+  return priceInCents; // this is in cents (not dollars)
+}
 
 /**
  * getCartTotal()
@@ -33,14 +46,23 @@ function applyDiscount(priceInCents, age, hasMembership) {}
  * @returns {string} A formatted representation of the total, rounded to two decimal places.
  * 
  * EXAMPLE:
- *  const cart = [
+ */
+const cart = [
       { name: "T-Shirt", priceInCents: 1200, quantity: 1 },
       { name: "Socks", priceInCents: 900, quantity: 2 },
     ];
     getCartTotal(cart);
- *  //> "$30.00"
- */
-function getCartTotal(products) {}
+
+// > "$30.00"
+ 
+function getCartTotal(products) {
+  let fullCost = 0; // track the total amount of all items in cart
+
+  for (let product of products) {
+    fullCost += product.priceInCents * product.quantity;     // += to add everything in the cart, not re-assign it.
+  }
+  return "$" + (fullCost/100).toFixed(2);  // divides cost first, then add toFixed for decimal
+}
 
 /**
  * compareLocations()
@@ -80,7 +102,26 @@ function getCartTotal(products) {}
     compareLocations(address1, address2);
     //> "Same city."
  */
-function compareLocations(address1, address2) {}
+function compareLocations(address1, address2) {
+  switch (true) {
+    case (address1.street === address2.street 
+      && address1.city === address2.city
+      && address1.state === address2.state
+      && address1.zip === address2.zip):
+    return "Same building.";
+
+    case (address1.city === address2.city
+      && address1.state === address2.state
+      && address1.zip === address2.zip):
+    return "Same city.";
+
+    case (address1.state === address2.state):
+    return "Same state.";
+
+    default: // if none of these occur
+    return "Addresses are not near each other.";
+  }
+}
 
 /**
  * gradeAssignments()
@@ -127,7 +168,27 @@ function compareLocations(address1, address2) {}
     //>   },
     //> ];
  */
-function gradeAssignments(assignments) {}
+function gradeAssignments(assignments) {
+for (let el of assignments) {
+  if (el.kind === "PASS-FAIL") {
+    if (el.score.received === el.score.max) {
+      el.status = "PASSED";
+    } else {
+      el.status = "FAILED";
+    }
+  } else if (el.kind === "PERCENTAGE") {
+    let percent = (el.score.received/el.score.max)* 100;
+    if (percent >= 80) {
+      el.status = "PASSED: " + percent.toFixed(1) + "%";
+    } else {
+      el.status = "FAILED: " + percent.toFixed(1) + "%";
+    }
+  } else {
+    el.status = "SCORE: " + el.score.received + "/" + el.score.max;
+  }
+}
+return assignments // array of objects
+}
 
 /**
  * createLineOrder()
@@ -152,7 +213,22 @@ function gradeAssignments(assignments) {}
     createLineOrder(people);
     //> [ "Ray Anderson", "America Marsh", "Wade Carson", "Patience Patel" ]
  */
-function createLineOrder(people) {}
+function createLineOrder(people) {
+  let newArray = [];
+  for (let i = 0; i < people.length; i++) {
+    let personName = people[i].name;
+    if (people[i].hasMembership === true) {
+      newArray.push(personName); // new people get pushed into new array
+    }
+  }
+  for (let i = 0; i < people.length; i++) { // WET CODE
+    let personName = people[i].name;
+    if (people[i].hasMembership === false) {
+      newArray.push(personName);
+    }
+  }
+  return newArray;
+}
 
 module.exports = {
   applyDiscount,
