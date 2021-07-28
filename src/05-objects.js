@@ -48,7 +48,7 @@ function createObjectWithKey(key) {
   // declare a variable cache array and assign it an empty obj
   let cacheObj = {}
   // add a `key` `any value` pair to `cacheObj` using bracket notation
-  cacheObj[`${key}`] = `any value`
+  cacheObj[key] = `any value`
   // return object with`key` `any value` pair
   return cacheObj
 }
@@ -71,7 +71,7 @@ function createObjectWithKeyValuePair(key, val) {
   // declare a variable `cacheObj` and assign it an empty obj
   let cacheObj = {}
   // add a `key` `val` pair to cache object using bracket notion 
-  cacheObj[`${key}`] = val
+  cacheObj[key] = val
   // return cacheObj with `key` `val` pair
   return cacheObj
 }
@@ -145,7 +145,7 @@ function addKeyToObject(object, key) {
   // output: return object with `key` `any value` pair
 
   // add `key` `any value` pair to object
-  object[`${key}`] = 1
+  object[key] = 1
   //return object
   return object
 }
@@ -167,7 +167,7 @@ function addKeyValuePairToObject(object, key, val) {
   // output: return object with new `key` `value` pair
 
   // add `key` `value` pair to object
-  object[`${key}`] = val
+  object[key] = val
   // return object
   return object
 }
@@ -191,7 +191,7 @@ function deleteKeyFromObject(object, key) {
   // solution: object property `delete`
 
   // `delete` + space + the`key` from object
-  delete object[`${key}`]
+  delete object[key]
   // return object without `key`
   return object
 }
