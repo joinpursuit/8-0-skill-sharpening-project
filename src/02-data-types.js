@@ -10,10 +10,10 @@
  *  //> 4
  */
 function getLengthOfString(str) {
-  // input: str is a string
-  // output: returns a the number of characters in a string
+  // input: `str` is a string
+  // output: returns the number of characters in a string
 
-  // problem: How do I count the number os characters in a string?
+  // problem: How do I count the number of characters in a string?
   // solution: .length property
   return str.length
 }
@@ -30,8 +30,8 @@ function getLengthOfString(str) {
  *  //> 111
  */
 function convertToNumber(val) {
-  // input: val is string that contains a number
-  // ouput: return a number
+  // input: val can be any data type
+  // ouput: returns the number value of any data type `val`
 
   return Number(val)
 }
@@ -49,8 +49,8 @@ function convertToNumber(val) {
  *  //> "99"
  */
 function convertToString(val) {
-  // input: val is a number or boolean
-  // output: return a string of the value
+  // input: val can be any data type
+  // output: return a string of val using template literals
 
   return `${val}`
 }
@@ -113,10 +113,10 @@ function checkIfCharacterIsInString(text, character) {
   // problem: how do we check if the `character` appears in `text`
   // solution: loop
 
-  // loop through string
+  // // loop through string
   // for (let i = 0; i < text.length; i++) {
   //   const str = text[i]
-    // if the `character` appears in the `text`
+  //   // if the `character` appears in the `text`
   //   if (str === character) {
   
   //     // return true
@@ -124,10 +124,10 @@ function checkIfCharacterIsInString(text, character) {
   //   }
   // }
   
-  // otherwise return false
+  // // otherwise return false
   // return false
 
-  // or use string method .includes it a case sensitive search returns a boolean if one string is found in another str
+  // or use string method .includes a case sensitive search that returns a boolean if one string is found in another str
 
   return text.includes(character);
 }
@@ -148,18 +148,21 @@ function checkIfCharacterIsInString(text, character) {
  */
 function isEven(num) {
   // input: num is a number
-  // output: return true if the number given is even more than once otherwise return false
+  // output: return true if the number given is even more otherwise return false
 
   // problem: How do I check if a number is even?
   // solution: modulo %
 
-  // if the number given is even 
-  if (num % 2 === 0) {
-    // return true
-    return true
-  }
-  // otherwise return false
-  return false
+  // // if the number given is even 
+  // if (num % 2 === 0) {
+  //   // return true
+  //   return true
+  // }
+  // // otherwise return false
+  // return false
+
+  // == strictly equal to operator returns true or false
+  return num % 2 === 0
 }
 
 /**
@@ -180,14 +183,23 @@ function isOdd(num) {
   // input: num is a number
   // output: return true if the number given is odd otherwise return false
 
-  // if the number given is odd
-  if (num % 2 === 1) {
-    // return true
-    return true
-  }
+  // // if the number given is odd
+  // if (num % 2 === 1) {
+  //   // return true
+  //   return true
+  // }
 
-  // otherwise return false
-  return false
+  // // otherwise return false
+  // return false
+
+  // // == strictly equal to operator returns true or false
+  // return num % 2 === 1
+
+  // // num is odd if the function isEven is strictly equal to false 
+  // return isEven(num) === false
+
+  // num is odd if the function isEven is not even
+  return !isEven(num)
 }
 
 /**
@@ -207,16 +219,22 @@ function isOdd(num) {
 function isTruthy(val) {
   // input: val is any datatype
   // output: return true if the value given is truthy otherwise return false
+  
+  // // if the value given is truthy it will execute code
+  // if (val) {
+  //   // return true
+  //   return true
+  // }
+  
+  // // otherwise return false if the value given is falsy
+  // return false
 
-  // if the value given is truthy it will execute code
-  if (val) {
-    // return true
-    return true
-  }
-
-  // otherwise return false if the value given is falsy
-  return false
+  // if the value given is truthy and you put two bang operators to turn !!truthy -> !false --> true it will return true
+  // if the value given is falsy and you put two bang operators to turn !!falsy -> !true -> false it will return false
+  return !!val
 }
+
+
 
 /**
  * isFalsy()
@@ -236,16 +254,18 @@ function isFalsy(val) {
   // input: val is any datatype
   // output: return true if the value given us a falsy value otherwise return false
 
-  // if the value given is falsy and you put a bang operator to turn falsy -> truthy it will execute code 
-  // if the value given is truthy and you put a bang operator to turn truthy -> falsy it will not execute code and return false
-  if (!val) {
+  // if the value given is falsy and you put a bang operator to turn falsy -> true it will execute code 
+  // if the value given is truthy and you put a bang operator to turn truthy -> false it will not execute code and return false
+  // if (!val) {
     
-    // return true return true
-    return true
-  }
+  //   // return true return true
+  //   return true
+  // }
   
+  // // return false
   // return false
-  return false
+
+  return !val
 }
 
 // Do not change the code below.
