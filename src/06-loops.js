@@ -51,12 +51,11 @@ function rangeOdd(min, max) {
   // loop through numbers starting from `max` all the way down to `min` 
   for (let i = max; i >= min; i--) {
     // if the number is odd
-    if (i % 2 === 1) {
+    if (i % 2) {
       // `push` the odd numbers into `cacheArr`
       cacheArr.push(i)
     }
   }
-  
   // return cacheArr
   return cacheArr
 }
@@ -77,7 +76,7 @@ function rangeEveryOther(min, max) {
   // output: return an array of numbers in increasing order skipping every other number starting from `min` 
 
   // problem: How would you create a loop to skip every other number?
-  // solution: 
+  // solution: for i loop and change the increment 
 
   // declare a variable `cacheArr` and assign it an empty arr
   let cacheArr = []
@@ -124,7 +123,6 @@ function containsWhileLoop(array, target) {
     }
     i++
   }
-  
   // otherwise return false
   return false
 }
@@ -280,9 +278,8 @@ function timesIndex(array) {
   // declare a `cacheArr` and assign it an empty arr
   let cacheArr = []
   // loop through `array`
-  for (let i = 0; i < array.length; i++) {
-    // multiply the element by it's index 
-    // push the product into cache arr
+  for (let i = 0; i < array.length; i++) { 
+    // push the product of element multiplied by it's index into cache arr
     cacheArr.push(array[i] * i)
   }
   // return cacheArr
