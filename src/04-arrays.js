@@ -123,11 +123,6 @@ function removeElementFromEndOfArray(array) {
  */
 
 
-//  console.log(array1.unshift(4, 5));
-//  // expected output: 5
- 
-//  console.log(array1);
-
 
 function addElementToFrontOfArray(array, element) {
   array.unshift(element);
@@ -163,7 +158,11 @@ function removeElementFromFrontOfArray(array) {
  *  getMiddleElement([ 10, null, "30" ]);
  *  //> null
  */
-function getMiddleElement(array) {}
+
+
+function getMiddleElement(array) {
+  return array[Math.floor(array.length/2)];
+}
 
 // Do not change any code below this line.
 module.exports = {
