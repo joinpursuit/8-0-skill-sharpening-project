@@ -18,14 +18,14 @@ function rangeSum(min, max) {
   // solution: 1. loop: let i = min, set condition so i stops at max , increment by one
 
   // declare a variable `sumOfRange` and assign it min
-  let sumOfRange = 0
+  let sumOfRange = 0;
   // loop through numbers between `min++` and `max` (inclusive)
   for (let i = min; i <= max; i++) {
     // reassign sumOfRange using += to 
-    sumOfRange += i
+    sumOfRange += i;
   }
   // return sumOfRange
-  return sumOfRange
+  return sumOfRange;
 }
 
 /**
@@ -47,17 +47,17 @@ function rangeOdd(min, max) {
   // solution: 1. loop 2. If the number is odd push it to arr 
 
   // declare a variable `cacheArr` and assign it an empty arr
-  let cacheArr = []
+  let cacheArr = [];
   // loop through numbers starting from `max` all the way down to `min` 
   for (let i = max; i >= min; i--) {
     // if the number is odd
     if (i % 2) {
       // `push` the odd numbers into `cacheArr`
-      cacheArr.push(i)
+      cacheArr.push(i);
     }
   }
   // return cacheArr
-  return cacheArr
+  return cacheArr;
 }
 
 /**
@@ -79,14 +79,14 @@ function rangeEveryOther(min, max) {
   // solution: for i loop and change the increment 
 
   // declare a variable `cacheArr` and assign it an empty arr
-  let cacheArr = []
+  let cacheArr = [];
   // loop through numbers starting from `min` and ending at `max`
   for (let i = min; i <= max; i += 2) {
     // push the number into `cacheArr`
-    cacheArr.push(i)
+    cacheArr.push(i);
   }
   // return cacheArr
-  return cacheArr
+  return cacheArr;
 }
 
 /**
@@ -113,18 +113,18 @@ function containsWhileLoop(array, target) {
   // output: return true if the `target` valie exists in the `array`
 
   // declare a variable `arrayIndex` assign it 0
-  let i = 0
+  let i = 0;
   // loop through the array
   while (i < array.length) {
     // if the target value is equal to one of the element in the array
     if (target === array[i]) {
       // return true
-      return true
+      return true;
     }
-    i++
+    i++;
   }
   // otherwise return false
-  return false
+  return false;
 }
 
 /**
@@ -155,11 +155,11 @@ function containsForLoop(array, target) {
     // if target value is strictly equal to one of the element in the array
     if (target === array[i]) {
       // return true
-      return true
+      return true;
     }
   }
   // otherwise return false
-  return false
+  return false;
 }
 
 /**
@@ -178,17 +178,17 @@ function targetCount(array, target) {
   // output: return the number of times the `target` value occurs in the `array`
 
   // declare a variable count and assign it 0
-  let count = 0
+  let count = 0;
   // loop through array
   for (let i = 0; i < array.length; i++) {
     // if the target value is equal to on of the element in the array
     if (target === array[i]) {
       // reassign the count up by one
-      count++
+      count++;
     }
   }
   // return count
-  return count
+  return count;
 }
 
 /**
@@ -217,11 +217,11 @@ function firstIndexFound(array, target) {
     // if the target value is strinctly equal to the dirst index in the array
     if (target === array[i]) {
       // return index at which target value is found
-      return i
+      return i;
     }
   }
   // otherwise return -1
-  return -1
+  return -1;
 }
 
 /**
@@ -250,11 +250,11 @@ function lastIndexFound(array, target) {
     // if the target value is found   
     if (target === array[i]) {
       // return the index of the array
-      return i
+      return i;
     }
   }
   // otherwise return -1
-  return -1
+  return -1;
 }
 
 /**
@@ -276,14 +276,14 @@ function timesIndex(array) {
   // solution: 1. loop 2. artmetic operator 3. empty array to push the product into as an element
 
   // declare a `cacheArr` and assign it an empty arr
-  let cacheArr = []
+  let cacheArr = [];
   // loop through `array`
   for (let i = 0; i < array.length; i++) { 
     // push the product of element multiplied by it's index into cache arr
-    cacheArr.push(array[i] * i)
+    cacheArr.push(array[i] * i);
   }
   // return cacheArr
-  return cacheArr
+  return cacheArr;
 }
 
 /**
@@ -304,16 +304,16 @@ function cumulativeSum(array) {
   // edge case for empty array
   if (array.length === 0) {
     // return empty array
-    return []
+    return [];
   }
   // declare a variable `cacheArr` and assign it the first element in the `array`
   let cacheArr = [array[0]]
   // loop through `array`
   for (let i = 1; i < array.length; i++) {
-      cacheArr.push(cacheArr[cacheArr.length -1] + array[i])
+      cacheArr.push(cacheArr[cacheArr.length -1] + array[i]);
   }
     //return cacheArr
-    return cacheArr
+    return cacheArr;
 }
 
 // Do not change anything below this line.
