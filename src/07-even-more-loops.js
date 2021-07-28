@@ -16,14 +16,14 @@ function shoutForLoop(array) {
   // return a new array of strings by adding 1 exclamation point to the elements in `array`
 
   // declare a variable `cacheArr` and assign it an empty arr
-  let cacheArr = []
+  let cacheArr = [];
   // loop through the array of string
   for (let i = 0; i < array.length; i++) {
     // use string concatenation to add an exclamatino point and push to cacheArr
-    cacheArr.push(array[i] + `!`)
+    cacheArr.push(array[i] + `!`);
   }
   // return cacheArr
-  return cacheArr
+  return cacheArr;
 }
 
 /**
@@ -50,18 +50,18 @@ function shoutWhileLoop(array) {
   // }
 
   // declare a variable `cacheArr` and assign it an empty arr
-  let cacheArr = []
+  let cacheArr = [];
   // declare a variable `i` and assign it index 0
-  let i = 0
+  let i = 0;
   // use while loop where the condition i is less than array length
   while (i < array.length) {
     // use string interpolation to add one exclamation point and push to `cacheArr`
-    cacheArr.push(array[i] + `!`)
+    cacheArr.push(array[i] + `!`);
     // increment index
-    i++
+    i++;
   }
   // return cacheArr
-  return cacheArr
+  return cacheArr;
 }
 
 /**
@@ -82,13 +82,14 @@ function shoutForOfLoop(array) {
   // output: return a new array by adding one exclamation point to the element in `array`
 
   // declare a variable `cacheArr` and assign it an empty arr
-  let cacheArr = []
+  let cacheArr = [];
   // loop through array using for of
-  for (let strings of array)
-      // use string concatenation to add an exclamation point and push it too `cacheArr`
-      cacheArr.push(strings + `!`)
+  for (let strings of array) {
+    // use string concatenation to add an exclamation point and push it too `cacheArr`
+    cacheArr.push(strings + `!`);
+  }
   // return `cacheArr`
-  return cacheArr
+  return cacheArr;
 }
 
 /**
@@ -106,14 +107,14 @@ function sumArray(array) {
   // output: return a number that represents the sum of all values in the array
 
   // declare a variable called sum and assign it the first index in `array`
-  let sum = 0
+  let sum = 0;
   // loop through array but it won't loop if array is empty
   for (let i of array) {
     // reassign the sum by adding tht element with index 1 to element with index 0
-    sum += i
+    sum += i;
   }
   // return sum
-  return sum
+  return sum;
 }
 
 /**
@@ -131,17 +132,17 @@ function oddArray(array) {
   // output: return a new array and push all the odd numbers from `array`
 
   // declare a variable `cacheArr` and assign it an empty arr
-  let cacheArr = []
+  let cacheArr = [];
   // loop through `array` of number
   for (let i of array) {
     // if the numbers in `array` are odd
     if (i % 2) {
       // push the odd numbers into cacheArr
-      cacheArr.push(i)
+      cacheArr.push(i);
     }
   }
   // return cacheArr
-  return cacheArr
+  return cacheArr;
 }
 
 /**
@@ -159,16 +160,17 @@ function evenArray(array) {
   // output: return a new array and push all the even numbers from `array`
 
   // declare a variable `cacheArr` and assign it an empty arr
-  let cacheArr = []
+  let cacheArr = [];
   // loop through `array` of numbers
   for (let numbers of array) {
     // if the numbers are even 
-    if (numbers % 2 === 0)
-    // push the number to cacheArr
-    cacheArr.push(numbers)
+    if (numbers % 2 === 0) {
+      // push the number to cacheArr
+      cacheArr.push(numbers);
+    }
   }
   // return cacheArr
-  return cacheArr
+  return cacheArr;
 }
 
 /**
@@ -186,17 +188,17 @@ function findSmallest(array) {
   // output: return the smallest number from the array of numbers
 
   // declare a variable `smallestNum` and assign it the first index in `array`
-  let smallestNum = array[0]
+  let smallestNum = array[0];
   // use a for loop to iterate over the numbers in `array`
   for (let i of array) {
     // if the current element is less than smallestNum
     if (i < smallestNum) {
       // reassign smallestNum to current element with index i
-      smallestNum = i
+      smallestNum = i;
     }
   }
   // return smallestNum
-  return smallestNum
+  return smallestNum;
 }
 
 /**
@@ -214,17 +216,17 @@ function findLargest(array) {
   // output: return the largest number from `array`
 
   // declare a variable `largestNum` and assign it the first element with index 0 in `array`
-  let largestNum = array[0]
+  let largestNum = array[0];
   // use a for loop to iterate through the numbers in `array`
   for (let i of array) {
     // if the element with index i is greater than largestNum
     if (i > largestNum) {
       // reassign largestNum to element with index i
-      largestNum = i
+      largestNum = i;
     }
   }
   // return largestNum
-  return largestNum
+  return largestNum;
 }
 
 /**
@@ -250,11 +252,11 @@ function findEqual(array, selected) {
     // if the `selected` value is strictly equal to one of the numbers in the array
     if (i === selected) {
       // return true
-      return true
+      return true;
     }
   }
   // otherwise return false
-  return false
+  return false;
 }
 
 /**
@@ -279,17 +281,17 @@ function removeDuplicates(array) {
   // solution: 1. loop 2. includes as conditional statment 3. push
 
   // declare a variable `cacheArr` and assign it an empty arr
-  let cacheArr = []
+  let cacheArr = [];
   // use for of loop to iterate through numbers in `array`
   for (let i of array) {
     // if cacheArr does not include number in array
     if (!cacheArr.includes(i)) {
       // push that number to cacheArr
-      cacheArr.push(i)
+      cacheArr.push(i);
     }
   }
   // return cacheArr
-  return cacheArr
+  return cacheArr;
 }
 
 // Do not change any code below this line.
