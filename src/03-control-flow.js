@@ -127,19 +127,18 @@ console.log(positiveNegativeOrZero(1)
  *  //> "Hello World"
  */
 function aroundTheWorldGreeting(language) {
-  if (language === "spanish") {
+  
+  if(language === "spanish"){
     return "Hola Mundo"
-  } else if (language === "german") {
+  } else if (language === "german"){
     return "Hallo Welt"
-  } else {
+  } else if(language === "english"){
+    return "Hello World"
+  } else{
     return "Hello World"
   }
+
 }
-
-
-console.log(aroundTheWorldGreeting("english"))
-console.log(aroundTheWorldGreeting("spanish"))
-console.log(aroundTheWorldGreeting("german"))
 
 /**
  * aroundTheWorldGreetingWithSwitch()
@@ -170,8 +169,9 @@ function aroundTheWorldGreetingWithSwitch(language) {
       return "Hola Mundo"
     case "german":
       return "Hallo Welt"
+      default: return "Hello World"
+      
   }
-
 }
 
 console.log(aroundTheWorldGreetingWithSwitch("spanish"))

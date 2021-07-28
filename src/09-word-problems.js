@@ -65,16 +65,21 @@ console.log(applyDiscount(1000, 9, true))
  *  //> "$30.00"
  */
 function getCartTotal(products) {
-  
-  // let total = 0
+  // set my input and output
+  let totalPrice = 0
 
-  // for(let i = 0; i < cart.length; i++) {
-  //   total += products.priceInCents * products.quantity
-  // }
-  // return total * .1
+  // loop through products array 
+  for(let i = 0; i < products.length; i++) {
+    // if the  quantity of items in the cart is greater than 0 
+    // the total price will equal the quantiy of each product * the price of the prduct
+    if(products[i].quantity > 0) {
+      totalPrice += products[i].quantity * products[i].priceInCents
+    }
+  }
+  // return the total price the way test asks (dollar ammount)
+  return `$${(totalPrice / 100).toFixed(2)}`
 }
 
-console.log(getCartTotal(cart))
 /**
  * compareLocations()
  * ---------------------
@@ -113,7 +118,18 @@ console.log(getCartTotal(cart))
     compareLocations(address1, address2);
     //> "Same city."
  */
-function compareLocations(address1, address2) {}
+function compareLocations(address1, address2) {
+
+  if(address1.street === address2.street && address1.city ===address2.city && address1.state ===address2.state && address1.zip === address2.zip){
+    return `Same building.`
+  } else if(address1.city === address2.city && address1.state === address2.state && address1.zip === address2.zip){
+    return `Same city.`
+  } else if(address1.state === address2.state ){
+   return `Same state.`
+   } else{
+   return `Addresses are not near each other.`
+ }
+}
 
 /**
  * gradeAssignments()
@@ -160,7 +176,36 @@ function compareLocations(address1, address2) {}
     //>   },
     //> ];
  */
-function gradeAssignments(assignments) {}
+function gradeAssignments(assignments) {
+  // use forofloop to iterate though the assignments array
+  for(let assignment of assignments){
+    // store a variable to give me percentage scare
+    let numScore = (assignment.score.received/assignment.score.max)*100
+     // If the assignment has a `kind` of `"PASS-FAIL"`
+    if(assignment.kind === "PASS-FAIL" && assignment.score.received === assignment.score.max){
+       // set the `status` value to `"PASSED"`
+      assignment.status = "PASSED"
+      // Otherwise, set that `status` to be `"FAILED"`
+    }else if(assignment.kind === "PASS-FAIL" && assignment.score.received !== assignment.score.max){
+      assignment.status = "FAILED"
+      // If the assignment has a `kind` of `"PERCENTAGE"`
+      // set the `status` value to be `"PASSED: <percentage>"`
+      // if the student scored at least 80.0%. The `<percentage>` should be set to one decimal place.
+    }else if(assignment.kind === "PERCENTAGE" && numScore >= 80){
+      assignment.status = `PASSED: ${numScore.toFixed(1)}%`
+      // If the student scored less than 80.0%, set the status to `"FAILED: <percentage>"`. 
+      // The `<percentage>` should be set to one decimal place.
+    }else if(assignment.kind === "PERCENTAGE" && numScore < 80){
+      assignment.status = `FAILED: ${numScore.toFixed(1)}%`
+      // If the assignment has any other `kind` than the two above
+      // set the `status` value to equal `"SCORE: <received>/<max>"`
+      // where `<received>` is the `score.received` value and `<max>` is the `score.max` value.
+    }else{
+      assignment.status = `SCORE: ${assignment.score.received}/${assignment.score.max}`
+    }
+  }
+  return assignments
+}
 
 /**
  * createLineOrder()
@@ -185,7 +230,29 @@ function gradeAssignments(assignments) {}
     createLineOrder(people);
     //> [ "Ray Anderson", "America Marsh", "Wade Carson", "Patience Patel" ]
  */
-function createLineOrder(people) {}
+function createLineOrder(people) {
+  //  set input and output this array will hold names of people 
+  let arr = [];
+  // this will iterate through array
+  for(let i of people) {
+    // if customer has memership push their name first (priority)
+    if(i.hasMembership) {
+    arr.push(i.name);
+    }
+  }
+  // another loop to iterate for non memers
+  // if customer does not have membership
+  // push thier name (since its after the first these people come after)
+  for(let i of people) {
+    if(!i.hasMembership) {
+      arr.push(i.name);
+    }
+  }
+  // return array of names in correct boarding order
+  return arr;
+}
+
+
 
 module.exports = {
   applyDiscount,
