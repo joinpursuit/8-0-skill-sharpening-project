@@ -21,14 +21,16 @@ function isEqual(a, b) {
   // problem: strictly equal to 
   // solution: ===
 
-  // if a is strictly equal to b 
-  if (a === b) {
-     // return true
-     return true
-  }
+  // // if a is strictly equal to b 
+  // if (a === b) {
+  //    // return true
+  //    return true
+  // }
 
-  // otherwise return false
-  return false
+  // // otherwise return false
+  // return false
+
+  return a === b
 }
 
 /**
@@ -87,15 +89,17 @@ function findLargerOrTie(a, b) {
     return `tie`
   }
 
-  // if b is greater than a 
-  if (b > a) {
+  // // if b is greater than a 
+  // if (b > a) {
 
-    // return b
-    return b
-  }
+  //   // return b
+  //   return b
+  // }
 
-  // otherwise return a ...if a is greater than b
-  return a
+  // // otherwise return a ...if a is greater than b
+  // return a
+
+  return findLarger(a, b)
 }
 
 /**
@@ -212,24 +216,17 @@ function aroundTheWorldGreetingWithSwitch(language) {
     case `spanish`:
         // return "Hola Mundo"
         return "Hola Mundo"
-        // declare break + semicolon
-        break;
     // declare keyword case with + space + `german` + colon
     case `german`:
         // return "Hallo Welt"
         return "Hallo Welt"
-        // declare break + semicolon
-        break;
+    // declare keyword default + colon
     default: 
+        // return "Hello World"
         return "Hello World";
   }
 }
-// // declare keyword case with + space + `english` + colon
-// case `english`:
-//   // return "Hello World" 
-//   return "Hello World"
-//   // declare break + semicolon
-//   break;
+
 /**
  * calculateLetterGrade()
  * ---------------------
@@ -358,8 +355,8 @@ function evenOrOddWithTernary(a) {
   // problem: How do we declare a ternary?
   // solution: return variableName ? execute this code if true : execute this code if false
 
-  // return variableName ? execute this code if true : execute this code if false
-  
+  // return a is even ? execute this code if true : execute this code if false
+
 // Do not change any code below this line.
 module.exports = {
   isEqual,
