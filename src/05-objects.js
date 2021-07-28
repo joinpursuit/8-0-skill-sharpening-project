@@ -11,7 +11,7 @@
  */
 function createEmptyObject() {
   // return an empty object
-  return {}
+  return {};
 }
 
 /**
@@ -27,7 +27,7 @@ function createEmptyObject() {
  */
 function createObjectWithValue(val) {
   // return object with `any key` `val` pair
-  return {key: val}
+  return {anyKey: val};
 }
 
 /**
@@ -46,11 +46,11 @@ function createObjectWithKey(key) {
   // solution: 1. x dot notation / bracket notation 
 
   // declare a variable cache array and assign it an empty obj
-  let cacheObj = {}
+  let cacheObj = {};
   // add a `key` `any value` pair to `cacheObj` using bracket notation
-  cacheObj[key] = `any value`
+  cacheObj[key] = `any value`;
   // return object with`key` `any value` pair
-  return cacheObj
+  return cacheObj;
 }
 
 /**
@@ -69,11 +69,11 @@ function createObjectWithKeyValuePair(key, val) {
   // output: return `object` with `key` `val` pair
 
   // declare a variable `cacheObj` and assign it an empty obj
-  let cacheObj = {}
+  let cacheObj = {};
   // add a `key` `val` pair to cache object using bracket notion 
-  cacheObj[key] = val
+  cacheObj[key] = val;
   // return cacheObj with `key` `val` pair
-  return cacheObj
+  return cacheObj;
 }
 
 /**
@@ -89,7 +89,7 @@ function createObjectWithKeyValuePair(key, val) {
  */
 function getNameFromObject(object) {
   //return the value of the key `name` in object
-  return object.name
+  return object.name;
 }
 
 /**
@@ -105,7 +105,7 @@ function getNameFromObject(object) {
  */
 function getAgeFromObject(object) {
   // return the value of the key `age` from object
-  return object.age
+  return object.age;
 }
 
 /**
@@ -124,9 +124,9 @@ function addValueToObject(object, val) {
   // output: return object with new `any key` `value` pair
 
   // add `any key` `value` pair to `object`
-  object.key = val
+  object.anyKey = val;
   // return object
-  return object
+  return object;
 }
 
 /**
@@ -145,9 +145,9 @@ function addKeyToObject(object, key) {
   // output: return object with `key` `any value` pair
 
   // add `key` `any value` pair to object
-  object[key] = 1
+  object[key] = `any value`;
   //return object
-  return object
+  return object;
 }
 
 /**
@@ -167,9 +167,9 @@ function addKeyValuePairToObject(object, key, val) {
   // output: return object with new `key` `value` pair
 
   // add `key` `value` pair to object
-  object[key] = val
+  object[key] = val;
   // return object
-  return object
+  return object;
 }
 
 /**
@@ -191,9 +191,9 @@ function deleteKeyFromObject(object, key) {
   // solution: object property `delete`
 
   // `delete` + space + the`key` from object
-  delete object[key]
+  delete object[key];
   // return object without `key`
-  return object
+  return object;
 }
 
 // Do not change any code below this line.
