@@ -147,8 +147,9 @@ function getLastPhoneNumber(person) {
  */
 function getFullName(person) {
   // return the full name of the person
-
-  return person.names.first + ' ' + person.names.middle + ' ' + person.names.last
+  const space = ' '
+  const name = person.names
+  return name.first + space + name.middle + space + name.last
 }
 
 /**
@@ -219,15 +220,17 @@ function getFlatObject(person) {
 
   // declare a variable `cacheObj` and assign it an empty obj
   let cacheObj = {}
+  const name = person.names
+  const address = person.address
   // create keys from `person` : `names` `address` `numbers` to `cacheObj`
-  cacheObj.first = person.names.first
-  cacheObj.middle = person.names.middle
-  cacheObj.last = person.names.last
-  cacheObj.street = person.address.street
-  cacheObj.unit = person.address.unit
-  cacheObj.city = person.address.city
-  cacheObj.state = person.address.state
-  cacheObj.zip = person.address.zip
+  cacheObj.first = name.first
+  cacheObj.middle = name.middle
+  cacheObj.last = name.last
+  cacheObj.street = address.street
+  cacheObj.unit = address.unit
+  cacheObj.city = address.city
+  cacheObj.state = address.state
+  cacheObj.zip = address.zip
   cacheObj.numbers = person.numbers
   
   // return cacheObj
