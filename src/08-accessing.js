@@ -1,5 +1,6 @@
 /*
   For all of the functions below, assume each function takes the following `person` object as its input. While the values of the object may change, the structure of it will always be the same.
+*/
 
   const person = {
     names: {
@@ -19,7 +20,6 @@
       7185558611
     ]
   }
-*/
 
 /**
  * getFirstName()
@@ -32,7 +32,9 @@
  *  getFirstName(person);
  *  //> "Rachel"
  */
-function getFirstName(person) {}
+function getFirstName(person) {
+  return person.names.first
+}
 
 /**
  * getLastName()
@@ -45,7 +47,9 @@ function getFirstName(person) {}
  *  getLastName(person);
  *  //> "Rojas"
  */
-function getLastName(person) {}
+function getLastName(person) {
+  return person.names.last
+}
 
 /**
  * getAddressStreet()
@@ -58,7 +62,9 @@ function getLastName(person) {}
  *  getAddressStreet(person);
  *  //> "697 Pine Drive"
  */
-function getAddressStreet(person) {}
+function getAddressStreet(person) {
+  return person.address.street
+}
 
 /**
  * getCountOfPhoneNumbers()
@@ -89,7 +95,9 @@ function getCountOfPhoneNumbers(person) {
  *  getFirstPhoneNumber(person);
  *  //> 7185550921
  */
-function getFirstPhoneNumber(person) {}
+function getFirstPhoneNumber(person) {
+  return person.numbers[0]
+}
 
 /**
  * getLastPhoneNumber()
@@ -105,7 +113,9 @@ function getFirstPhoneNumber(person) {}
  *  getLastPhoneNumber(person);
  *  //> 7185558611
  */
-function getLastPhoneNumber(person) {}
+function getLastPhoneNumber(person) {
+  return person.numbers[person.numbers.length - 1]
+}
 
 /**
  * getFullName()
@@ -118,7 +128,10 @@ function getLastPhoneNumber(person) {}
  *  getFullName(person);
  *  //> "Rachel Eleanor Rojas"
  */
-function getFullName(person) {}
+function getFullName(person) {
+  let fullName = `${person.names.first} ${person.names.middle} ${person.names.last}`
+  return fullName
+}
 
 /**
  * getCityAndState()
@@ -134,7 +147,10 @@ function getFullName(person) {}
  *  getCityAndState(person);
  *  //> "Staten Island, NY"
  */
-function getCityAndState(person) {}
+function getCityAndState(person) {
+  let shortAddress = `${person.address.city}, ${person.address.state}`
+  return shortAddress
+}
 
 /**
  * getFullAddress()
@@ -150,7 +166,11 @@ function getCityAndState(person) {}
  *  getFullAddress(person);
  *  //> "697 Pine Drive 2A, Staten Island, NY, 10306"
  */
-function getFullAddress(person) {}
+function getFullAddress(person) {
+  let address = person.address
+  let fullAddress = `${address.street} ${address.unit}, ${address.city}, ${address.state}, ${address.zip}`
+  return fullAddress
+}
 
 /**
  * getFlatObject()
@@ -173,7 +193,22 @@ function getFullAddress(person) {}
       numbers: [7185550921, 7185558611],
     };
  */
-function getFlatObject(person) {}
+function getFlatObject(person) {
+  let newObject = {}
+  for(const key in person.names){
+    newObject[key] = person.names[key]
+  }
+  for(const key in person.address){
+    newObject[key] = person.address[key]
+  }
+  newObject.numbers = person.numbers
+  
+  return newObject
+}
+
+getFlatObject(person)
+
+
 
 // Do not change the code below.
 module.exports = {

@@ -19,7 +19,21 @@
  *  applyDiscount(1000, 9, true);
  *  //> 700
  */
-function applyDiscount(priceInCents, age, hasMembership) {}
+function applyDiscount(priceInCents, age, hasMembership) {
+  const ageDiscount = .1
+  const memberDiscount = .2
+  let totalDiscount = 0
+  if(age <= 10 || age >= 65){
+  totalDiscount += ageDiscount
+  }
+  if(hasMembership){
+    totalDiscount += memberDiscount
+  }
+  let total = priceInCents * (1 - totalDiscount)
+
+  return total
+
+}
 
 /**
  * getCartTotal()
@@ -40,7 +54,14 @@ function applyDiscount(priceInCents, age, hasMembership) {}
     getCartTotal(cart);
  *  //> "$30.00"
  */
-function getCartTotal(products) {}
+function getCartTotal(products) {
+  let total = 0
+  for(const item of products){
+    total += item.priceInCents * item.quantity
+  }
+  total = (total/100).toFixed(2)
+  return `$${total}`
+}
 
 /**
  * compareLocations()
@@ -63,24 +84,44 @@ function getCartTotal(products) {}
  * @param {string} address1.zip
  * @param {Object} address2 - An address object. In the same shape as `address1`, above.
  * @returns {string} A string that describes the relationship between the two addresses.
- * 
  * EXAMPLE:
- *  const address1 = {
-      street: "8785 Trenton St.",
-      city: "Melbourne",
-      state: "FL",
-      zip: "32904",
-    };
-    const address2 = {
-      street: "2 Lees Creek Ave.",
-      city: "Melbourne",
-      state: "FL",
-      zip: "32904",
-    };
-    compareLocations(address1, address2);
-    //> "Same city."
- */
-function compareLocations(address1, address2) {}
+ const address1 = {
+   street: "8785 Trenton St.",
+   city: "Melbourne",
+   state: "FL",
+   zip: "32904",
+  };
+  const address2 = {
+    street: "2 Lees Creek Ave.",
+    city: "Melbourne",
+    state: "FL",
+    zip: "32904",
+  };
+  compareLocations(address1, address2);
+  //> "Same city."
+  
+*/ 
+function compareLocations(address1, address2) {
+  let relationship = 'Same building.'
+  for(const key in address1){
+    if(address1[key] === address2[key] && key !== 'zip'){
+      continue
+    } else {
+      switch (key) {
+        case 'street':
+        relationship = 'Same city.'
+        break;
+        case 'city':
+          relationship = 'Same state.'
+          break;
+        case 'state':
+          relationship = 'Addresses are not near each other.'
+          break;
+      }
+    }
+  }
+  return relationship
+}
 
 /**
  * gradeAssignments()
@@ -127,8 +168,54 @@ function compareLocations(address1, address2) {}
     //>   },
     //> ];
  */
-function gradeAssignments(assignments) {}
+function gradeAssignments(assignments) {
+  for(const assignment of assignments){
+    let scoreRecieved = assignment.score.received
+    let scoreMax = assignment.score.max
+    switch(assignment.kind){
+      case 'PASS-FAIL':
+        if(scoreRecieved < scoreMax){
+          assignment.status = 'FAILED'
+        } else {
+          assignment.status = 'PASSED'
+        }
+        break;
+      case 'PERCENTAGE':
+        score = (scoreRecieved/scoreMax)*100;
+        if(score >= 80){
+          assignment.status = `PASSED: ${score.toFixed(1)}%`
+        } else {
+          assignment.status = `FAILED: ${score.toFixed(1)}%`
+       }
+        break
+      case 'ESSAY':
+        assignment.status = `SCORE: ${scoreRecieved}/${scoreMax}`
+        break;
+    }
+  }
+  return assignments
+}
 
+// assignments =
+//  [
+//    { 
+//      kind: "PASS-FAIL",
+//      score: { received: 4, max: 4 },
+     
+//    },
+//   { 
+//      kind: "PERCENTAGE",
+//      score: { received: 7, max: 9 },
+     
+//    },
+//    { 
+//      kind: "ESSAY",
+//      score: { received: 4, max: 5 },
+    
+//  },
+//  ];
+
+// gradeAssignments(assignments)
 /**
  * createLineOrder()
  * ---------------------
@@ -152,7 +239,28 @@ function gradeAssignments(assignments) {}
     createLineOrder(people);
     //> [ "Ray Anderson", "America Marsh", "Wade Carson", "Patience Patel" ]
  */
-function createLineOrder(people) {}
+function createLineOrder(people) {
+  let array = []
+  let notMemArray = []
+  for(const person of people){
+    if(person.hasMembership){
+      array.push(person.name)
+    } else {
+      notMemArray.push(person.name)
+    }
+  }
+  array.push(...notMemArray)
+  return array
+}
+
+const people = [
+  { name: "Wade Carson", hasMembership: false },
+  { name: "Ray Anderson", hasMembership: true },
+  { name: "America Marsh", hasMembership: true },
+  { name: "Patience Patel", hasMembership: false },
+];
+
+createLineOrder(people)
 
 module.exports = {
   applyDiscount,

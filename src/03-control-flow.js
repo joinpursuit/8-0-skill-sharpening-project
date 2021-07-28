@@ -14,7 +14,13 @@
  *  isEqual(10, "10");
  *  //> false
  */
-function isEqual(a, b) {}
+function isEqual(a, b) {
+  let equal = false
+  if(a === b){
+    equal = true
+  }
+  return equal
+}
 
 /**
  * findLarger()
@@ -28,7 +34,14 @@ function isEqual(a, b) {}
  *  findLarger(19, 7);
  *  //> 19
  */
-function findLarger(a, b) {}
+function findLarger(a, b) {
+  let larger = a
+  if(a < b){
+    larger = b
+  }
+  return larger
+}
+
 
 /**
  * findLargerOrTie()
@@ -45,7 +58,15 @@ function findLarger(a, b) {}
  *  findLargerOrTie(0, 0);
  *  //> "tie"
  */
-function findLargerOrTie(a, b) {}
+function findLargerOrTie(a, b) {
+  let larger = a
+  if(a < b){
+    larger = b
+  } else if (a === b){
+    larger = 'tie'
+  }
+  return larger
+}
 
 /**
  * positiveNegativeOrZero()
@@ -65,7 +86,15 @@ function findLargerOrTie(a, b) {}
  *  positiveNegativeOrZero(1);
  *  //> "Positive"
  */
-function positiveNegativeOrZero(a) {}
+function positiveNegativeOrZero(a) {
+  let result = 'Zero'
+  if(a < 0){
+    result = 'Negative'
+  } else if (a > 0){
+    result = 'Positive'
+  }
+  return result
+}
 
 /**
  * aroundTheWorldGreeting()
@@ -86,7 +115,18 @@ function positiveNegativeOrZero(a) {}
  *  aroundTheWorldGreeting();
  *  //> "Hello World"
  */
-function aroundTheWorldGreeting(language) {}
+function aroundTheWorldGreeting(language) {
+  let translation = 'Hello World'
+  if(!language){
+    return translation
+  }
+  if (language === 'spanish') {
+    translation = 'Hola Mundo'
+  } else if (language === 'german') {
+    translation = 'Hallo Welt'
+  }
+  return translation
+}
 
 /**
  * aroundTheWorldGreetingWithSwitch()
@@ -109,7 +149,19 @@ function aroundTheWorldGreeting(language) {}
  *  aroundTheWorldGreetingWithSwitch();
  *  //> "Hello World"
  */
-function aroundTheWorldGreetingWithSwitch(language) {}
+function aroundTheWorldGreetingWithSwitch(language) {
+  if(!language){return 'Hello World'}
+  switch (language){
+    case 'english':
+      return 'Hello World';
+    case 'spanish':
+      return 'Hola Mundo';
+    case 'german':
+      return 'Hallo Welt';
+  }
+}
+aroundTheWorldGreetingWithSwitch('german')
+
 
 /**
  * calculateLetterGrade()
@@ -128,7 +180,22 @@ function aroundTheWorldGreetingWithSwitch(language) {}
  *  calculateLetterGrade(99);
  *  //> "A"
  */
-function calculateLetterGrade(grade) {}
+function calculateLetterGrade(grade) {
+  switch (true){
+    case (grade >= 90):
+      return 'A'
+    case (grade >= 80):
+      return 'B'
+    case (grade >= 70):
+      return 'C'
+    case (grade >= 60):
+      return 'D'
+    case (grade < 60):
+      return 'F'
+  }
+}
+
+calculateLetterGrade(78)
 
 /**
  * animalCounts()
@@ -146,7 +213,15 @@ function calculateLetterGrade(grade) {}
  *  animalCounts("pig", 1);
  *  //> "1 pig"
  */
-function animalCounts(animal, numberOfAnimals) {}
+function animalCounts(animal, numberOfAnimals) {
+  let animalWithS = `${numberOfAnimals} ${animal}`
+  if(numberOfAnimals > 1){
+    animalWithS = `${numberOfAnimals} ${animal}s`
+  }
+  return animalWithS
+}
+
+animalCounts('fish', 4)
 
 /**
  * evenOrOdd()
@@ -163,7 +238,15 @@ function animalCounts(animal, numberOfAnimals) {}
  *  evenOrOdd(48);
  *  //> "Even"
  */
-function evenOrOdd(a) {}
+function evenOrOdd(a) {
+  let evenOrOdd = null
+  if(a % 2 === 0){
+    evenOrOdd = 'Even'
+  } else {
+    evenOrOdd = 'Odd'
+  }
+  return evenOrOdd
+}
 
 /**
  * evenOrOddWithTernary()
@@ -179,7 +262,12 @@ function evenOrOdd(a) {}
  *  evenOrOddWithTernary(8);
  *  //> "Even"
  */
-function evenOrOddWithTernary(a) {}
+function evenOrOddWithTernary(a) {
+  let evenOrOdd = null
+  a % 2 === 0 ? evenOrOdd = 'Even' : evenOrOdd = 'Odd'
+ 
+  return evenOrOdd
+}
 
 // Do not change any code below this line.
 module.exports = {
