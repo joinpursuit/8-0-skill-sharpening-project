@@ -77,9 +77,9 @@ function getCartTotal(products) {
   // declare a variable called sum and assign it 0
   let sum = 0
   // loop through array of objects `products
-  for (let i = 0; i < products.length; i++) {
+  for (let i of products) {
     // reassign the sum with the product of `products[].priceInCents` and `products[].quantity` 
-    sum += (products[i].priceInCents / 100) * products[i].quantity
+    sum += (i.priceInCents / 100) * i.quantity
   }
   // return a formatted string number using toFixed()
   return '$' + sum.toFixed(2)
@@ -202,30 +202,29 @@ function gradeAssignments(assignments) {
   // output: return the `assignments` object with a new key of `status` added to each obj
 
   // iterate through `assigments` array of objects
-  for (let i = 0; i < assignments.length; i++) {
-    const assignment = assignments[i]
+  for (let i of assignments) {
     // If the assignment has a `kind` of `"PASS-FAIL"`and `score.received` equals the `score.max`.
-    if (assignment.kind === "PASS-FAIL" && assignment.score.received === assignment.score.max) {
+    if (i.kind === "PASS-FAIL" && i.score.received === i.score.max) {
       // set the `status` value to `"PASSED"`  
-      assignment.status = "PASSED"
+      i.status = "PASSED"
       // Otherwise, if the student `score.received` does not strictly equal to equal the `score.max`. set that `status` to be `"FAILED"`.
-    } else if (assignment.kind === "PASS-FAIL" && assignment.score.received !== assignment.score.max) {
-      assignment.status = "FAILED"
+    } else if (i.kind === "PASS-FAIL" && i.score.received !== i.score.max) {
+      i.status = "FAILED"
     }
-    const percentScored = (assignment.score.received / assignment.score.max) * 100
+    const percentScored = (i.score.received / i.score.max) * 100
     // If the assignment has a `kind` of `"PERCENTAGE"`, and the student scored at least 80.0%.  
-    if (assignment.kind === "PERCENTAGE" && percentScored >= 80.0) {
+    if (i.kind === "PERCENTAGE" && percentScored >= 80.0) {
       // set the `status` value to be `"PASSED: <percentage>" the `<percentage>` should be set to one decimal place.
-      assignment.status = "PASSED: " + percentScored.toFixed(1) + '%'
+      i.status = `PASSED: ${percentScored.toFixed(1)}%`
       // otherwise if the student scored less than 80.0%, set the status to `"FAILED: <percentage>"`.
-    } else if (assignment.kind === "PERCENTAGE" && percentScored < 80.0) {
-      assignment.status = "FAILED: " + percentScored.toFixed(1) + `%`
+    } else if (i.kind === "PERCENTAGE" && percentScored < 80.0) {
+      i.status = `FAILED: ${percentScored.toFixed(1)}%`
     }
 
     // If the assignment has any other `kind` than the two above, 
-    if (assignment.kind !== "PASS-FAIL" && assignment.kind !== "PERCENTAGE") {
+    if (i.kind !== "PASS-FAIL" && i.kind !== "PERCENTAGE") {
       // set the `status` value to equal `"SCORE: <received>/<max>"`, where `<received>` is the `score.received` value and `<max>` is the `score.max` value.
-      assignment.status = "SCORE: " + `${assignment.score.received}` + '/' + `${assignment.score.max}`
+      i.status = `SCORE: ${i.score.received}/${i.score.max}`
     }
 
   }
