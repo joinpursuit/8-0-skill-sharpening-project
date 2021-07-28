@@ -32,22 +32,22 @@ function applyDiscount(priceInCents, age, hasMembership) {
   // solution: 1. conditional statements
 
   // declare a variable `discount` and assign it 0
-  let discount = 0
+  let discount = 0;
   // if the attendee `age` is 10 years old or younger or 65 years old or older
   if (age <= 10 || age >= 65) {
     // apply a 10 percent discount 
-    discount += .10
+    discount += .10;
   }
   // if the attendee attends the movie with a member 
   if (hasMembership) {
     // apply a 20 percent discount
-    discount += .20
+    discount += .20;
   }
   // declare a variable `totalPriceInDollars` and apply the `discount` to `priceInCents`
-  const totalPriceInDollars = priceInCents * (1 - discount)
+  const totalPriceInDollars = priceInCents * (1 - discount);
 
   // return totalPriceInDollars
-  return totalPriceInDollars
+  return totalPriceInDollars;
 }
 
 /**
@@ -75,14 +75,14 @@ function getCartTotal(products) {
   // output: return a string number rounded to two decimals places --> toFixed()
 
   // declare a variable called sum and assign it 0
-  let sum = 0
+  let sum = 0;
   // loop through array of objects `products
   for (let i of products) {
     // reassign the sum with the product of `products[].priceInCents` and `products[].quantity` 
-    sum += (i.priceInCents / 100) * i.quantity
+    sum += (i.priceInCents / 100) * i.quantity;
   }
   // return a formatted string number using toFixed()
-  return '$' + sum.toFixed(2)
+  return '$' + sum.toFixed(2);
 }
 
 /**
@@ -134,21 +134,21 @@ function compareLocations(address1, address2) {
   // If the street, city, state, and zip for both addresses are the same, 
   if (address1.street === address2.street && address1.city === address2.city && address1.state === address2.state && address1.zip === address2.zip) {
     // return the string "Same building."
-    return "Same building."
+    return "Same building.";
   }
   // If the city, state, and zip are the same, 
   if (address1.city === address2.city && address1.state === address2.state && address1.zip === address2.zip) {
     // return the string "Same city."
-    return "Same city."
+    return "Same city.";
   }
   // If just the state is the same, 
   if (address1.state === address2.state) {
     // return the string "Same state."
-    return "Same state."
+    return "Same state.";
   }
 
   // otherwise return the string "Addresses are not near each other."
-  return "Addresses are not near each other."
+  return "Addresses are not near each other.";
 }
 
 /**
@@ -206,30 +206,30 @@ function gradeAssignments(assignments) {
     // If the assignment has a `kind` of `"PASS-FAIL"`and `score.received` equals the `score.max`.
     if (i.kind === "PASS-FAIL" && i.score.received === i.score.max) {
       // set the `status` value to `"PASSED"`  
-      i.status = "PASSED"
+      i.status = "PASSED";
       // Otherwise, if the student `score.received` does not strictly equal to equal the `score.max`. set that `status` to be `"FAILED"`.
     } else if (i.kind === "PASS-FAIL" && i.score.received !== i.score.max) {
-      i.status = "FAILED"
+      i.status = "FAILED";
     }
-    const percentScored = (i.score.received / i.score.max) * 100
+    const percentScored = (i.score.received / i.score.max) * 100;
     // If the assignment has a `kind` of `"PERCENTAGE"`, and the student scored at least 80.0%.  
     if (i.kind === "PERCENTAGE" && percentScored >= 80.0) {
       // set the `status` value to be `"PASSED: <percentage>" the `<percentage>` should be set to one decimal place.
-      i.status = `PASSED: ${percentScored.toFixed(1)}%`
+      i.status = `PASSED: ${percentScored.toFixed(1)}%`;
       // otherwise if the student scored less than 80.0%, set the status to `"FAILED: <percentage>"`.
     } else if (i.kind === "PERCENTAGE" && percentScored < 80.0) {
-      i.status = `FAILED: ${percentScored.toFixed(1)}%`
+      i.status = `FAILED: ${percentScored.toFixed(1)}%`;
     }
 
     // If the assignment has any other `kind` than the two above, 
     if (i.kind !== "PASS-FAIL" && i.kind !== "PERCENTAGE") {
       // set the `status` value to equal `"SCORE: <received>/<max>"`, where `<received>` is the `score.received` value and `<max>` is the `score.max` value.
-      i.status = `SCORE: ${i.score.received}/${i.score.max}`
+      i.status = `SCORE: ${i.score.received}/${i.score.max}`;
     }
 
   }
   // return assignments 
-  return assignments
+  return assignments;
 }
 
 /**
@@ -262,24 +262,24 @@ function createLineOrder(people) {
   // output: return an array of strings depending on order in `people` array of obj and the person's priority
 
   // declare a variable `membership` and assign it an empty arr
-  let membership = []
+  let membership = [];
   // declare a variable `notAMember` and assign it an empty arr
-  let notAMember = []
+  let notAMember = [];
   // loop through people which is an array of objs
   for (let i = 0; i < people.length; i++) {
-    const person = people[i]
+    const person = people[i];
     // check for hasMembership
     if (person.hasMembership) {
       // push `name` to membership arr
-      membership.push(person.name)
+      membership.push(person.name);
       // check for hasMembership false
     } else {
       // pushing `name` to `notAMember`
-      notAMember.push(person.name)
+      notAMember.push(person.name);
     } 
   }
   // return cacheArr
-  return membership.concat(notAMember)
+  return membership.concat(notAMember);
 }
 
 module.exports = {
