@@ -15,7 +15,7 @@ function getLengthOfString(str) {
 
   // problem: How do I count the number of characters in a string?
   // solution: .length property
-  return str.length
+  return str.length;
 }
 
 /**
@@ -33,7 +33,7 @@ function convertToNumber(val) {
   // input: val can be any data type
   // ouput: returns the number value of any data type `val`
 
-  return Number(val)
+  return Number(val);
 }
 
 /**
@@ -52,7 +52,7 @@ function convertToString(val) {
   // input: val can be any data type
   // output: return a string of val using template literals
 
-  return `${val}`
+  return `${val}`;
 }
 
 /**
@@ -70,7 +70,7 @@ function convertToShoutingText(text) {
   // input: text is a string
   // output: return a string that converts `text` into all uppercase characters
 
-  return text.toUpperCase()
+  return text.toUpperCase();
 }
 
 /**
@@ -88,7 +88,7 @@ function convertToWhisperText(text) {
   // input: text is a string
   // output: returns a string that converts `text` into all lowercase characters
 
-  return text.toLowerCase()
+  return text.toLowerCase();
 }
 
 /**
@@ -162,7 +162,7 @@ function isEven(num) {
   // return false
 
   // == strictly equal to operator returns true or false
-  return num % 2 === 0
+  return num % 2 === 0;
 }
 
 /**
@@ -199,7 +199,7 @@ function isOdd(num) {
   // return isEven(num) === false
 
   // num is odd if the function isEven is not even
-  return !isEven(num)
+  return !isEven(num);
 }
 
 /**
@@ -231,7 +231,7 @@ function isTruthy(val) {
 
   // if the value given is truthy and you put two bang operators to turn !!truthy -> !false --> true it will return true
   // if the value given is falsy and you put two bang operators to turn !!falsy -> !true -> false it will return false
-  return !!val
+  return !!val;
 }
 
 
@@ -265,7 +265,7 @@ function isFalsy(val) {
   // // return false
   // return false
 
-  return !val
+  return !val;
 }
 
 // Do not change the code below.
