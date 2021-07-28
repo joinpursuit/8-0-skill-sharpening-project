@@ -1,5 +1,5 @@
-/*
-  For all of the functions below, assume each function takes the following `person` object as its input. While the values of the object may change, the structure of it will always be the same.
+
+//  For all of the functions below, assume each function takes the following `person` object as its input. While the values of the object may change, the structure of it will always be the same.
 
   const person = {
     names: {
@@ -19,7 +19,6 @@
       7185558611
     ]
   }
-*/
 
 /**
  * getFirstName()
@@ -32,8 +31,11 @@
  *  getFirstName(person);
  *  //> "Rachel"
  */
-function getFirstName(person) {}
+function getFirstName(person) {
+  return person.names.firstpe;
+}
 
+console.log(getFirstName(person));
 /**
  * getLastName()
  * ---------------------
@@ -45,8 +47,10 @@ function getFirstName(person) {}
  *  getLastName(person);
  *  //> "Rojas"
  */
-function getLastName(person) {}
-
+function getLastName(person) {
+  return person.names.last;
+}
+// console.log(getLastName(person))
 /**
  * getAddressStreet()
  * ---------------------
@@ -58,8 +62,10 @@ function getLastName(person) {}
  *  getAddressStreet(person);
  *  //> "697 Pine Drive"
  */
-function getAddressStreet(person) {}
-
+function getAddressStreet(person) {
+  return person.address.street;
+}
+// console.log(getAddressStreet(person))
 /**
  * getCountOfPhoneNumbers()
  * ---------------------
@@ -89,7 +95,10 @@ function getCountOfPhoneNumbers(person) {
  *  getFirstPhoneNumber(person);
  *  //> 7185550921
  */
-function getFirstPhoneNumber(person) {}
+function getFirstPhoneNumber(person) {
+  return person.numbers[0];
+}
+// console.log(getFirstPhoneNumber(person));
 
 /**
  * getLastPhoneNumber()
@@ -105,7 +114,10 @@ function getFirstPhoneNumber(person) {}
  *  getLastPhoneNumber(person);
  *  //> 7185558611
  */
-function getLastPhoneNumber(person) {}
+function getLastPhoneNumber(person) {
+  return person.numbers.pop();
+}
+// console.log(getLastPhoneNumber(person));
 
 /**
  * getFullName()
@@ -118,7 +130,16 @@ function getLastPhoneNumber(person) {}
  *  getFullName(person);
  *  //> "Rachel Eleanor Rojas"
  */
-function getFullName(person) {}
+
+
+let stringName = '';
+function getFullName(person) {
+  for (const property in person.names) {
+    stringName += `${(person.names[property])} `;
+  }
+return stringName.trim();
+}
+// console.log(getFullName(person));
 
 /**
  * getCityAndState()
@@ -134,7 +155,11 @@ function getFullName(person) {}
  *  getCityAndState(person);
  *  //> "Staten Island, NY"
  */
-function getCityAndState(person) {}
+
+function getCityAndState(person) {
+  return `${person.address.city}, ${person.address.state}`  
+}
+// console.log(getCityAndState(person));
 
 /**
  * getFullAddress()
@@ -150,7 +175,11 @@ function getCityAndState(person) {}
  *  getFullAddress(person);
  *  //> "697 Pine Drive 2A, Staten Island, NY, 10306"
  */
-function getFullAddress(person) {}
+
+function getFullAddress(person) {
+  return `${person.address.street} ${person.address.unit}, ${getCityAndState(person)}, ${person.address.zip}`
+}
+// console.log(getFullAddress(person));
 
 /**
  * getFlatObject()
@@ -173,7 +202,37 @@ function getFullAddress(person) {}
       numbers: [7185550921, 7185558611],
     };
  */
-function getFlatObject(person) {}
+function getFlatObject(person) {
+  let flatObject = {};
+    for (const property in person) {
+      // console.log(property) - this loops and gives me names, address, street and phone
+      flatObject[property] = person.property; //added the 1st set of objects to the object
+        for (const nameProperties in person.names) {
+          flatObject[nameProperties] = person.names.properties;  
+        }
+          for (const addressProperties in person.address) {
+            flatObject[addressProperties] = person.address.properties;  
+          }
+      // for (const properties in person.property) {
+      // console.log(properties)};
+      // for (const properties in person.property) {
+      // flatObject[p;
+    }
+  return flatObject;
+}
+
+
+//create an object loop to loop through the initial properties
+//then create another object loop to loop and grab the properties that are in the subsequent objecrs
+
+console.log(getFlatObject(person));
+
+for (const personProperty in person) {
+  console.log(personProperty);
+}
+  // if (person.personProperty
+
+
 
 // Do not change the code below.
 module.exports = {

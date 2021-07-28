@@ -11,7 +11,14 @@
  *  //> 25
  *  (3 + 4 + 5 + 6 + 7 = 25)
  */
-function rangeSum(min, max) {}
+function rangeSum(min, max) {
+  let total = 0;
+    for (let i = min; i <= max; i++) {
+      total = total + i
+    }
+  return total;
+}
+// console.log(rangeSum(3, 7));
 
 /**
  * rangeOdd()
@@ -25,7 +32,16 @@ function rangeSum(min, max) {}
  *  rangeOdd(10, 15);
  *  //> [ 15, 13, 11 ]
  */
-function rangeOdd(min, max) {}
+
+function rangeOdd(min, max) {
+  let rangeOddArray = [];
+    for (let i = max; i >= min; i--) {
+      if (i % 2 === 1 ) {
+      rangeOddArray.push(i);
+      }
+    }
+return rangeOddArray;
+}
 
 /**
  * rangeEveryOther()
@@ -39,7 +55,14 @@ function rangeOdd(min, max) {}
  *  rangeEveryOther(11, 18);
  *  //> [ 11, 13, 15, 17 ]
  */
-function rangeEveryOther(min, max) {}
+function rangeEveryOther(min, max) {
+  let everyOtherArray = [];
+    for (let i = min; i <= max; i++) {
+      everyOtherArray.push(i);
+      i++;
+    }
+  return everyOtherArray;
+}
 
 /**
  * containsWhileLoop()
@@ -61,8 +84,28 @@ function rangeEveryOther(min, max) {}
  *  containsWhileLoop([ "left", "up", "right" ], "down");
  *  //> false
  */
-function containsWhileLoop(array, target) {}
 
+//determines if the value exists - look through the array
+//let n = the 0 index
+//let n be less than the index length
+//determine how to find a a value without using include
+//if the value in n is equal to target then return true
+function containsWhileLoop(array , target) {
+  let n = 0;
+  let arrayLength = array.length;
+    while (n < arrayLength) {
+      let value = array[n];
+      if (value === target) {
+      return true
+      }
+      if (value !== target) {
+      n++
+       }
+    }
+  return false
+}
+
+// console.log(containsWhileLoop([ "left", "up", "right" ], "below"));
 /**
  * containsForLoop()
  * ---------------------
@@ -83,7 +126,17 @@ function containsWhileLoop(array, target) {}
  *  containsForLoop([ "left", "up", "right" ], "down");
  *  //> false
  */
-function containsForLoop(array, target) {}
+function containsForLoop(array, target) {
+  for(let i = 0; i < array.length; i++) {
+    let loopArrayIndex = array[i];
+    if (loopArrayIndex === target) {
+      return true;
+    }
+  }
+  return false;
+}
+
+// console.log(containsForLoop([ 5, 2, 4 ], 4));
 
 /**
  * targetCount()
@@ -97,7 +150,15 @@ function containsForLoop(array, target) {}
  *  targetCount([ 10, 20, 10, 20, 30 ], 10);
  *  //> 2
  */
-function targetCount(array, target) {}
+function targetCount(array, target) {
+  let countingTarget = 0;
+  for (const element of array) {
+    if (element === target) {
+    countingTarget++;
+    }
+  }
+  return countingTarget;
+  }
 
 /**
  * firstIndexFound()
@@ -117,7 +178,16 @@ function targetCount(array, target) {}
  *  firstIndexFound([ "left", "right", "left" ], "up");
  *  //> -1
  */
-function firstIndexFound(array, target) {}
+function firstIndexFound(array, target) {
+  for (let i = 0; i < array.length; i++) {
+    if (array[i] === target) {
+      return i;
+    }
+  }
+  return -1
+}
+// console.log(firstIndexFound([ "left", "right", "left" ], "up"));
+
 
 /**
  * lastIndexFound()
@@ -137,7 +207,18 @@ function firstIndexFound(array, target) {}
  *  lastIndexFound([ "left", "right", "left" ], "up");
  *  //> -1
  */
-function lastIndexFound(array, target) {}
+
+//look through an array and return the index - i loop
+// but what if i want to loop through an array backwards? - i loop backwards
+function lastIndexFound(array, target) {
+  for (let i = array.length; i >= 0; i--) {
+    if (array[i] === target) {
+      return i;
+    }
+  }
+  return -1
+}
+// console.log(lastIndexFound([ "left", "right", "left" ], "up"));
 
 /**
  * timesIndex()
@@ -151,8 +232,16 @@ function lastIndexFound(array, target) {}
  *  //> [ 7 * 0, 10 * 1, 11 * 2 ]
  *  //> [ 0, 10, 22 ]
  */
-function timesIndex(array) {}
 
+//push an element * its into an array
+//need an i loop to grab the index
+function timesIndex(array) {
+  let timesArray = [];
+  for (let i = 0; i < array.length; i++) {
+    timesArray.push(i * array[i]); 
+  }
+  return timesArray;
+}
 /**
  * cumulativeSum()
  * ---------------------
@@ -162,10 +251,28 @@ function timesIndex(array) {}
  *
  * EXAMPLE:
  *  cumulativeSum([ 5, 2, 9 ]);
- *  //> [ 5, 5 + 2, 5 + 2 + 9 ]
+ *  //> [ 5, 5 + 2, 7 + 9 ]
  *  //> [ 5, 7, 16 ]
  */
-function cumulativeSum(array) {}
+//declare a new array and return a new array
+// take each index value and add to it, push that value to the array
+// push the current index + value at -1 index 
+function cumulativeSum(array) {
+  let cumulativeSumArray = [];
+    for (i = 0; i < array.length; i++) {
+      let elementAtIndexOfArray = array[i];
+      let elementAtPreviousIndexOfArray = cumulativeSumArray[i-1];
+        if (i === 0) {
+          cumulativeSumArray.push(elementAtIndexOfArray);
+        }
+        if (i !== 0) {
+        indexTotal = elementAtIndexOfArray + elementAtPreviousIndexOfArray
+        cumulativeSumArray.push(indexTotal);
+        }  
+    }    
+  return cumulativeSumArray;
+}
+console.log(cumulativeSum([ 2, 2, 2 ]));
 
 // Do not change anything below this line.
 module.exports = {
