@@ -30,7 +30,7 @@ function isEqual(a, b) {
   // // otherwise return false
   // return false
 
-  return a === b
+  return a === b;
 }
 
 /**
@@ -60,7 +60,7 @@ function findLarger(a, b) {
   }
 
   // otherwise return a 
-  return a
+  return a;
 }
 
 /**
@@ -86,7 +86,7 @@ function findLargerOrTie(a, b) {
   if (a === b) {
 
     // return `tie`
-    return `tie`
+    return `tie`;
   }
 
   // // if b is greater than a 
@@ -99,7 +99,8 @@ function findLargerOrTie(a, b) {
   // // otherwise return a ...if a is greater than b
   // return a
 
-  return findLarger(a, b)
+  // return larger number by invoking findLarger function
+  return findLarger(a, b);
 }
 
 /**
@@ -130,16 +131,16 @@ function positiveNegativeOrZero(a) {
   // if the the number is greater than 0
   if (a > 0) {
     // return `Positive`
-    return `Positive`
+    return `Positive`;
   }
   // if the number is less than zero
   if (a < 0) {
     // return `Negative`
-    return `Negative`
+    return `Negative`;
   }
   
   // otherwise return `Zero`
-  return `Zero`
+  return `Zero`;
 }
 
 /**
@@ -171,15 +172,15 @@ function aroundTheWorldGreeting(language) {
   // if the language is german
   if (language === `german`) {
     // return Hello World`
-    return `Hallo Welt`
+    return `Hallo Welt`;
     // if the language is spanish
   } else if (language === `spanish`) {
     // return `Hola Mundo`
-    return `Hola Mundo`
+    return `Hola Mundo`;
   }
   
   // otherwise return `Hello World`
-  return `Hello World`
+  return `Hello World`;
 }
 
 /**
@@ -215,11 +216,11 @@ function aroundTheWorldGreetingWithSwitch(language) {
     // declare keyword case with + space + `spanish` + colon
     case `spanish`:
         // return "Hola Mundo"
-        return "Hola Mundo"
+        return "Hola Mundo";
     // declare keyword case with + space + `german` + colon
     case `german`:
         // return "Hallo Welt"
-        return "Hallo Welt"
+        return "Hallo Welt";
     // declare keyword default + colon
     default: 
         // return "Hello World"
@@ -251,25 +252,25 @@ function calculateLetterGrade(grade) {
   // if your grade is greater than or equal to 90
   if (grade >= 90) {
     // return `A`
-    return `A`
+    return `A`;
   }
   // if your grade is greater than or equal to 80 and less than 90
   if (grade >= 80 && grade < 90) {
     // return `B`
-    return `B`
+    return `B`;
   }
   // if your grade is greater than or equal to 70 and less than 80
   if (grade >= 70 && grade < 80) {
     // return `C`
-    return `C`
+    return `C`;
   }
   // if your grade is greater than or equal to 60 and less than 70
   if (grade >= 60 && grade < 70)  {
     // return `D`
-    return `D`
+    return `D`;
   }
   // otherwise return `F`
-  return `F`
+  return `F`;
 }
 
 /**
@@ -295,11 +296,11 @@ function animalCounts(animal, numberOfAnimals) {
   // if the count is greater than 1
   if (numberOfAnimals > 1) {
     // return `2 animal`
-    return `${numberOfAnimals} ${animal}s`
+    return `${numberOfAnimals} ${animal}s`;
   }
   
   // otherwise return `1 animal + s`
-  return `1 ${animal}`
+  return `1 ${animal}`;
 }
 
 /**
@@ -324,11 +325,11 @@ function evenOrOdd(a) {
   // if the number is even 
   if (a % 2 === 0) {
     // return `Even`
-    return `Even`
+    return `Even`;
   }
 
   // otherwise return `Odd`
-  return `Odd`
+  return `Odd`;
 }
 
 /**
@@ -347,7 +348,7 @@ function evenOrOdd(a) {
  */
 function evenOrOddWithTernary(a) {
   
-  return a % 2 === 0 ? `Even` :  `Odd`
+  return a % 2 === 0 ? `Even` :  `Odd`;
 }
 // input: a is a number
   // output: return `Even` if a is even otherwise return `Odd`
