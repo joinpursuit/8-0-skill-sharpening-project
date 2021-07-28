@@ -219,12 +219,14 @@ function createLineOrder(people) {
   let array =[];
   let i = 0;
   
-  while (i < people.length){
+    while (i < people.length){
       if (people[i].hasMembership){
       array.push(people[i].name);
       i++;
+      }
 
-    } else if (!people[i].hasMembership){
+    } while (i < people.length){
+      if (!people[i].hasMembership){
       array.push(people[i].name);
       i++;
     } 
