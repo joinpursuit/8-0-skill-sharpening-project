@@ -24,12 +24,10 @@ function getLengthOfString(str) {
  *  convertToNumber("111");
  *  //> 111
  */
+
 function convertToNumber(val) {
-  let num = val;
-  return Math.floor(num);
+  return parseInt(val);
 }
-
-
 
 /**
  * convertToString()
@@ -112,7 +110,7 @@ function checkIfCharacterIsInString(text, character) {
  */
 
 function isEven(num) {
-  if(num % 2 == 0){
+  if(num % 2 === 0){
     return true;
   } else {
     return false;
