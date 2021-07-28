@@ -33,8 +33,8 @@ function isEqual(a, b) {
  *  //> 19
  */
 function findLarger(a, b) {
-  let newNumber = Math.max(a, b)
-  return newNumber;
+  let largerNum = Math.max(a, b)
+  return largerNum;
 }
 
 /**

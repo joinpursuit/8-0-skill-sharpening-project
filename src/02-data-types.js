@@ -171,8 +171,6 @@ function isTruthy(val) {
  *  //> false
  */
 
- let num = 0; 
-
 function isFalsy(val) {
   if (!val){
     return true;    

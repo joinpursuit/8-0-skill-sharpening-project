@@ -156,9 +156,6 @@ function removeElementFromFrontOfArray(array) {
  *  //> null
  */
 function getMiddleElement(array) {
-  if (array.length === 1) return array[0];
-  if (array.length === 3) return array[1];
-
   return array[Math.ceil(array.length / 2)];
 }
 
