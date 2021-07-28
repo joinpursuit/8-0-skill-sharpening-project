@@ -11,7 +11,14 @@
  *  //> 25
  *  (3 + 4 + 5 + 6 + 7 = 25)
  */
-function rangeSum(min, max) {}
+function rangeSum(min, max) {
+  let totalSum = 0
+  for (let i = min; i < max + 1; i++) {    // i < max + 1 worked as well
+    totalSum += i
+  }
+
+  return totalSum
+}
 
 /**
  * rangeOdd()
@@ -25,7 +32,15 @@ function rangeSum(min, max) {}
  *  rangeOdd(10, 15);
  *  //> [ 15, 13, 11 ]
  */
-function rangeOdd(min, max) {}
+function rangeOdd(min, max) {
+    let arr = [];
+    for (let i = max; i > min -1; i--) {
+      if (i % 2 !== 0) {
+        arr.push(i)
+      }
+    }
+    return arr
+}
 
 /**
  * rangeEveryOther()
@@ -39,7 +54,14 @@ function rangeOdd(min, max) {}
  *  rangeEveryOther(11, 18);
  *  //> [ 11, 13, 15, 17 ]
  */
-function rangeEveryOther(min, max) {}
+function rangeEveryOther(min, max) {
+
+  let arr = [];
+  for (let i = min; i < max + 1; i += 2) {
+      arr.push(i)
+    }
+    return arr
+  }
 
 /**
  * containsWhileLoop()
@@ -61,7 +83,18 @@ function rangeEveryOther(min, max) {}
  *  containsWhileLoop([ "left", "up", "right" ], "down");
  *  //> false
  */
-function containsWhileLoop(array, target) {}
+function containsWhileLoop(array, target) {
+
+  let hasValue = false
+  let i = 0;
+  while (i < array.length) {
+    if (array[i] === target){
+      hasValue = true
+    } 
+    i++;
+  }
+    return hasValue
+}
 
 /**
  * containsForLoop()
@@ -83,8 +116,16 @@ function containsWhileLoop(array, target) {}
  *  containsForLoop([ "left", "up", "right" ], "down");
  *  //> false
  */
-function containsForLoop(array, target) {}
-
+function containsForLoop(array, target) {
+  let isValue = false
+  for (let i = 0; i < array.length; i++) {
+    const hasValue = array[i];
+    if (hasValue === target) {
+      isValue = true
+    }
+  }
+    return isValue
+}
 /**
  * targetCount()
  * ---------------------
@@ -97,7 +138,17 @@ function containsForLoop(array, target) {}
  *  targetCount([ 10, 20, 10, 20, 30 ], 10);
  *  //> 2
  */
-function targetCount(array, target) {}
+function targetCount(array, target) {
+
+let totalCount = 0;
+for (const i of array) {
+  if (i === target) {
+    totalCount += 1
+  }
+}
+  return totalCount
+}
+
 
 /**
  * firstIndexFound()
@@ -117,7 +168,18 @@ function targetCount(array, target) {}
  *  firstIndexFound([ "left", "right", "left" ], "up");
  *  //> -1
  */
-function firstIndexFound(array, target) {}
+function firstIndexFound(array, target) {
+  
+  // Define your loop
+    for (let i = 0; i < array.length; i++) { // Check each element in the 'array' array
+    // Accumulating
+      const isPlaced = array[i];
+     if (isPlaced === target) { // IF target is found
+      return i
+    } 
+    }
+    return -1
+  }
 
 /**
  * lastIndexFound()
@@ -137,8 +199,19 @@ function firstIndexFound(array, target) {}
  *  lastIndexFound([ "left", "right", "left" ], "up");
  *  //> -1
  */
-function lastIndexFound(array, target) {}
-
+function lastIndexFound(array, target) {
+  if (!array.includes(target)){
+    return -1
+  }
+  let lastIndex = 0
+  for (let i = 0; i < array.length; i++) {
+    let index = array[i];
+    if (index === target) {
+        lastIndex = i
+       }
+      }
+        return lastIndex
+ }
 /**
  * timesIndex()
  * ---------------------
@@ -151,12 +224,22 @@ function lastIndexFound(array, target) {}
  *  //> [ 7 * 0, 10 * 1, 11 * 2 ]
  *  //> [ 0, 10, 22 ]
  */
-function timesIndex(array) {}
+function timesIndex(array) {
+
+  let newArr = [];
+    for (let i = 0; i < array.length; i++) {
+      const index = i
+      const multiplied = index * array[i]
+      newArr.push(multiplied)
+      }
+        return newArr
+ }
 
 /**
  * cumulativeSum()
  * ---------------------
- * Returns a new array where each element is the cumulative sum in the array, up until that point.
+ * Returns a new array where each element is the cumulative sum in the array, 
+ * up until that point.
  * @param {number[]} array
  * @returns {number[]}
  *
@@ -165,7 +248,15 @@ function timesIndex(array) {}
  *  //> [ 5, 5 + 2, 5 + 2 + 9 ]
  *  //> [ 5, 7, 16 ]
  */
-function cumulativeSum(array) {}
+function cumulativeSum(array) {
+  let newArr = [];
+  let sum = 0;
+    for (const i of array) {
+      sum += i
+      newArr.push(sum)
+  }
+    return newArr
+}
 
 // Do not change anything below this line.
 module.exports = {
