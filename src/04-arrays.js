@@ -121,7 +121,18 @@ function removeElementFromEndOfArray(array) {
  *  addElementToFrontOfArray([ 10 ], 9);
  *  //> [ 9, 10 ]
  */
-function addElementToFrontOfArray(array, element) {}
+
+
+//  console.log(array1.unshift(4, 5));
+//  // expected output: 5
+ 
+//  console.log(array1);
+
+
+function addElementToFrontOfArray(array, element) {
+  array.unshift(element);
+  return array;
+}
 
 /**
  * removeElementFromFrontOfArray()
