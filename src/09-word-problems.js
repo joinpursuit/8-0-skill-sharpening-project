@@ -19,7 +19,21 @@
  *  applyDiscount(1000, 9, true);
  *  //> 700
  */
-function applyDiscount(priceInCents, age, hasMembership) {}
+function applyDiscount(priceInCents, age, hasMembership) {
+  let total = 0;
+  if (hasMembership && age <= 10) {
+    total = priceInCents - (priceInCents * .30);
+ } else if (hasMembership  && age >= 65) {
+  total = priceInCents - (priceInCents * .30);
+} else if (hasMembership) {
+   total = priceInCents - (priceInCents * .20);
+ }  else if (age <= 10 || age >= 65) {
+  total = priceInCents - (priceInCents * .10)
+  } else {
+   total = priceInCents;
+ }
+ return total;
+}
 
 /**
  * getCartTotal()
@@ -40,7 +54,17 @@ function applyDiscount(priceInCents, age, hasMembership) {}
     getCartTotal(cart);
  *  //> "$30.00"
  */
-function getCartTotal(products) {}
+function getCartTotal(products) {
+  let total = 0;
+  for (let i = 0; i < products.length; i++) {
+    if (products[i].quantity >= 1) {
+      total += (products[i].priceInCents /100 * products[i].quantity)
+    }
+      
+  }
+  return "$" + 
+  total.toFixed(2);
+}
 
 /**
  * compareLocations()
@@ -76,11 +100,22 @@ function getCartTotal(products) {}
       city: "Melbourne",
       state: "FL",
       zip: "32904",
-    };
+    } ;
     compareLocations(address1, address2);
     //> "Same city."
  */
-function compareLocations(address1, address2) {}
+function compareLocations(address1, address2) {
+  if (address1.street === address2.street && address1.city === address2.city && address1.zip === address2.zip && address1.state === address2.state) {
+    return "Same building.";
+  } else if (address1.city === address2.city && address1.zip === address2.zip && address1.state === address2.state) {
+    return "Same city.";
+  } else if (address1.state === address2.state) {
+    return "Same state.";
+  } else {
+    return "Addresses are not near each other."
+  }
+  
+}
 
 /**
  * gradeAssignments()
@@ -152,7 +187,18 @@ function gradeAssignments(assignments) {}
     createLineOrder(people);
     //> [ "Ray Anderson", "America Marsh", "Wade Carson", "Patience Patel" ]
  */
-function createLineOrder(people) {}
+function createLineOrder(people) {
+  let boarding = [];
+  for (let i = 0; i < people.length; i++) {
+    if (people[i].hasMembership === true) {
+        boarding.push(people[i].name);
+    } else 
+    if (!people[i].hasMembership === true) {
+      boarding.push(people[i].name);
+    }
+  }
+  return boarding;
+}
 
 module.exports = {
   applyDiscount,
