@@ -86,7 +86,8 @@ function positiveNegativeOrZero(a) {
     return "Negative";
   } else if ( a > 0){
     return "Positive";}
-   else {return "Zero";}
+   else if (a === 0){
+     return "Zero";}
 }
 
 
