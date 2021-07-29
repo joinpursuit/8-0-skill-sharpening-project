@@ -114,7 +114,9 @@ console.log(getFirstPhoneNumber)
  *  //> 7185558611
  */
 function getLastPhoneNumber(person) {
-  return person.numbers.length - 1
+  let last = person.numbers[1]
+
+  return last
 }
 console.log(getLastPhoneNumber)
 /**
@@ -203,13 +205,14 @@ console.log(getFullAddress)
 function getFlatObject(person) {
   let a = person.names
   let b = person.address
-  let c = person.numbers[0]
-  let Person = {
+  let c = person.numbers
+  let personObj = {
     ...a,
     ...b,
     ...c
   }
-  return Person
+
+  return personObj
 }
 console.log(getFlatObject)
 // Do not change the code below.

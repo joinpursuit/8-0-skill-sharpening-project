@@ -19,25 +19,18 @@
  *  applyDiscount(1000, 9, true);
  *  //> 700
  */
-function applyDiscount(priceInCents, age, hasMembership) {
-  let ageDiscount = priceInCents*.90;
-  let membership = priceInCents *.80
-  let both = priceInCents *.70
-
-  if(age > 10 && age < 65 && hasMembership===false){
-    return priceInCents;
-  } else if(age <=10){
-    return ageDiscount
-  } else if(age >=65){
-    return ageDiscount
-  } else if(hasMembership){
-    return membership
-  }else if(age >=65 && hasMembership===true){
-    return both
-  } else if (age <=10 && hasMembership===true){
-    return both
+function applyDiscount(priceInCents, age, hasMembership) { 
+  let totalPrice = priceInCents;
+  if (hasMembership && (age>=65 || age <=10)){
+    totalPrice *= .70;
+  } else if (hasMembership){
+    totalPrice *= .80;
+  } else if (age>=65 || age<=10){
+    totalPrice *= .90;
   }
+  return totalPrice
 }
+
 console.log(applyDiscount)
 /**
  * getCartTotal()
@@ -58,7 +51,14 @@ console.log(applyDiscount)
     getCartTotal(cart);
  *  //> "$30.00"
  */
-function getCartTotal(products) {}
+    // cart = [
+    //   { name: "T-Shirt", priceInCents: 1200, quantity: 1 },
+    //   { name: "Shoes", priceInCents: 8950, quantity: 1 },
+    //   { name: "Skirt", priceInCents: 4400, quantity: 1 },
+    //   { name: "Socks", priceInCents: 900, quantity: 1 },
+    // ];
+function getCartTotal(products) {
+}
 
 /**
  * compareLocations()

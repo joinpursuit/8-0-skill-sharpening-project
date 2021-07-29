@@ -163,7 +163,7 @@ console.log(removeElementFromFrontOfArray)
  *  //> null
  */
 function getMiddleElement(array) {
-   return array[1]
+   return array[Math.floor(array.length/2)]
  
 }
 console.log(getMiddleElement)

@@ -12,10 +12,11 @@
  *  (3 + 4 + 5 + 6 + 7 = 25)
  */
 function rangeSum(min, max) {
-  let sum =0
-  for(let i=0; i<rangeSum.length; i++){
-    
+  let sum =0;
+  for(let i=min; i<=max; i++){
+    sum +=i;
   }
+  return sum
 }
 console.log(rangeSum)
 /**
@@ -30,7 +31,15 @@ console.log(rangeSum)
  *  rangeOdd(10, 15);
  *  //> [ 15, 13, 11 ]
  */
-function rangeOdd(min, max) {}
+function rangeOdd(min, max) {
+  let numArr =[];
+  for(let i=max; i>=min; i--){
+    if(i%2===1){
+      numArr.push(i);
+    }
+  }
+  return numArr
+}
 
 /**
  * rangeEveryOther()
@@ -44,8 +53,14 @@ function rangeOdd(min, max) {}
  *  rangeEveryOther(11, 18);
  *  //> [ 11, 13, 15, 17 ]
  */
-function rangeEveryOther(min, max) {}
-
+function rangeEveryOther(min, max) {
+  let arr=[];
+  for(let i=min; i<=max; i+=2){
+    arr.push(i)
+  }
+  return arr
+}
+console.log(rangeEveryOther)
 /**
  * containsWhileLoop()
  * ---------------------
@@ -66,8 +81,16 @@ function rangeEveryOther(min, max) {}
  *  containsWhileLoop([ "left", "up", "right" ], "down");
  *  //> false
  */
-function containsWhileLoop(array, target) {}
-
+function containsWhileLoop(array, target) {
+  let i = array;
+  while (i = target){
+    return true
+  } 
+  while (i != target){
+    return false
+  }
+}
+console.log(containsWhileLoop)
 /**
  * containsForLoop()
  * ---------------------
@@ -88,8 +111,16 @@ function containsWhileLoop(array, target) {}
  *  containsForLoop([ "left", "up", "right" ], "down");
  *  //> false
  */
-function containsForLoop(array, target) {}
-
+function containsForLoop(array, target) {
+for(let i=0; i=target; i++){
+  if (target = array){
+    return true
+  } else if(target !== array){
+    return false 
+  }
+}
+}
+console.log(containsForLoop)
 /**
  * targetCount()
  * ---------------------
