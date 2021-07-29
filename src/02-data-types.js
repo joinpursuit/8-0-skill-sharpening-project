@@ -173,7 +173,7 @@ function isOdd(num) {
  */
 function isTruthy(val) {
 
-  if(val){
+  if(val){ // val = true? apparently
 
     return true;
   }
