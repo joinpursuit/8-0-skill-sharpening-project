@@ -3,19 +3,30 @@
  * ---------------------
  * Returns an empty array.
  * Make sure you return a different empty array each time the function is called.
- * You can do this by returning an empty array that is created INSIDE the function (not outside it).
+ * You can do this by returning an empty array that is created INSIDE the 
+ * function (not outside it).
  * @returns {*[]}
  *
  * EXAMPLE:
  *  createEmptyArray();
  *  //> []
  */
-function createEmptyArray() {}
 
+//
+function createEmptyArray() {
+
+  //New array declared, initialized with no element 
+  const newArr = [];
+  
+  //Return value
+  return newArr;
+}
+console.log(createEmptyArray())
 /**
  * createArrayWithTwoElements()
  * ---------------------
- * Creates and returns an array where the first element is `a` and the second element is `b`.
+ * Creates and returns an array where the first element is `a` 
+ * and the second element is `b`.
  * @param {*} a
  * @param {*} b
  * @returns {*[]}
@@ -24,7 +35,13 @@ function createEmptyArray() {}
  *  createArrayWithTwoElements(true, false);
  *  //> [ true, false ]
  */
-function createArrayWithTwoElements(a, b) {}
+function createArrayWithTwoElements(a, b) {
+//New array declared, initialized with two elements
+  const newArr = [a, b];
+
+  //Return value
+  return newArr;
+}
 
 /**
  * getArrayLength()
@@ -37,13 +54,21 @@ function createArrayWithTwoElements(a, b) {}
  *  getArrayLength([ 10, 20, 30 ]);
  *  //> 3
  */
-function getArrayLength(array) {}
+
+function getArrayLength(array) {
+  //gets array length
+const length = array.length
+
+//Return value
+return length;
+}
 
 /**
  * getFirstElementOfArray()
  * ---------------------
  * Returns the first element of the array.
- * HINT: How is this similar to getFirstAndLastCharacter() in part 1?
+ * HINT: How is this similar to getFirstAndLastCharacter() 
+ * in part 1?
  * @param {*[]} array
  * @returns {*}
  *
@@ -51,13 +76,21 @@ function getArrayLength(array) {}
  *  getFirstElementOfArray([ 10, 20, 30 ]);
  *  //> 10
  */
-function getFirstElementOfArray(array) {}
+function getFirstElementOfArray(array) {
+  //gets thefirst element
+const firstElement = array[0]
+
+//return value
+return firstElement;
+}
+
 
 /**
  * getLastElementOfArray()
  * ---------------------
  * Returns the last element of the array.
- * HINT: How is this similar to getFirstAndLastCharacter() in part 1?
+ * HINT: How is this similar to getFirstAndLastCharacter() 
+ * in part 1?
  * @param {*[]} array
  * @returns {*}
  *
@@ -65,12 +98,21 @@ function getFirstElementOfArray(array) {}
  *  getLastElementOfArray([ null, undefined ]);
  *  //> undefined
  */
-function getLastElementOfArray(array) {}
+function getLastElementOfArray(array) {
+
+  //get the last element
+  const lastElement = array[array.length-1];
+
+  //return value
+  return lastElement;
+}
+
 
 /**
  * addElementToEndOfArray()
  * ---------------------
- * Adds an `element` to the end of the inputted `array`. Then, returns the array.
+ * Adds an `element` to the end of the inputted `array`. 
+ * Then, returns the array.
  * @param {*[]} array
  * @param {*} element
  * @returns {*[]}
@@ -79,7 +121,13 @@ function getLastElementOfArray(array) {}
  *  addElementToEndOfArray([ 10 ], 9);
  *  //> [ 10, 9 ]
  */
-function addElementToEndOfArray(array, element) {}
+function addElementToEndOfArray(array, element) {
+  //adds an element at the back
+  array.push(element);
+
+  //return value
+  return array; 
+}
 
 /**
  * removeElementFromEndOfArray()
@@ -92,7 +140,14 @@ function addElementToEndOfArray(array, element) {}
  *  removeElementFromEndOfArray([ 10, 9, 8 ]);
  *  //> 8
  */
-function removeElementFromEndOfArray(array) {}
+function removeElementFromEndOfArray(array) {
+  
+  //Removes element from the back
+  const elementRemovedEnd  = array.pop();
+
+  //return value
+  return elementRemovedEnd; 
+}
 
 /**
  * addElementToFrontOfArray()
@@ -106,7 +161,13 @@ function removeElementFromEndOfArray(array) {}
  *  addElementToFrontOfArray([ 10 ], 9);
  *  //> [ 9, 10 ]
  */
-function addElementToFrontOfArray(array, element) {}
+function addElementToFrontOfArray(array, element) {
+
+  //puts  an element at index zero
+  array.unshift(element);
+  //return value
+  return array;
+}
 
 /**
  * removeElementFromFrontOfArray()
@@ -119,7 +180,13 @@ function addElementToFrontOfArray(array, element) {}
  *  removeElementFromFrontOfArray([ 10, 9, 8 ]);
  *  //> 10
  */
-function removeElementFromFrontOfArray(array) {}
+function removeElementFromFrontOfArray(array) {
+  //removes first elemnent
+  const elementRemovedFront = array.shift();
+
+  //return value
+  return elementRemovedFront;
+}
 
 /**
  * getMiddleElement()
@@ -135,7 +202,27 @@ function removeElementFromFrontOfArray(array) {}
  *  getMiddleElement([ 10, null, "30" ]);
  *  //> null
  */
-function getMiddleElement(array) {}
+function getMiddleElement(array) {
+//Checks if the array is empty
+  if(array.length === 0){
+    return [];
+  }
+
+  let middleElement = 0;
+  //checks if array length is even
+  if(array.length % 2 === 0 ){
+
+    middleElement  = `Two elementsare in the middle`
+  }
+ //checks if array lengthis odd
+  else if(array.length % 2 === 1 ){
+    //truncates the remainder allowing us to use the quotient
+    middleElement  = array[Math.trunc(array.length/2)]
+    // Or : array.length/2 -.5
+  }
+//return value
+  return middleElement;
+}
 
 // Do not change any code below this line.
 module.exports = {
