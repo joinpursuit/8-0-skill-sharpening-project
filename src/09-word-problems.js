@@ -51,8 +51,19 @@ function applyDiscount(priceInCents, age, hasMembership) {
  *  //> "$30.00"
  */
 function getCartTotal(products) {
+// Input : an array of products
+// Output: STRING 
 
+// Define your default value
+let totalCost = 0;
+// Define your loop
+for (const i of products) {
+  totalCost += i.priceInCents/100 * i.quantity // each item multiply the pricecent  times quantity
+}  // Add () to i.priceInCenter/100, see if it still passes
+
+return "$" + totalCost.toFixed(2)
 }
+
 
 /**
  * compareLocations()
@@ -163,6 +174,8 @@ if (address1.street === address2.street) {
 
 
 function gradeAssignments(assignments) {
+
+
 //Declare variable for accumulation
 // let newTest = assignments;
 // //Declare loop to iterate trhough assignments
@@ -244,7 +257,24 @@ function gradeAssignments(assignments) {
     createLineOrder(people);
     //> [ "Ray Anderson", "America Marsh", "Wade Carson", "Patience Patel" ]
  */
-function createLineOrder(people) {}
+function createLineOrder(people) {
+    // Define a default value
+    let withNoMembership = [];
+    let withMembership = [];
+    // Define your loop
+      for (let i = 0; i < people.length; i++) {
+        const eachIndex = people[i]
+        if (eachIndex.hasMembership) {
+          withMembership.push(eachIndex.name)
+        } 
+          else {
+          withNoMembership.push(eachIndex.name)
+        }
+      }
+      withMembership.push(...withNoMembership)
+    return withMembership
+}
+
 
 module.exports = {
   applyDiscount,
