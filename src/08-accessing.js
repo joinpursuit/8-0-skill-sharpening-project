@@ -32,8 +32,11 @@
  *  getFirstName(person);
  *  //> "Rachel"
  */
-function getFirstName(person) {}
-
+//input : object
+//output:
+function getFirstName(person) {
+  person.names[getFirstPhoneNumber];
+}
 /**
  * getLastName()
  * ---------------------
@@ -45,7 +48,9 @@ function getFirstName(person) {}
  *  getLastName(person);
  *  //> "Rojas"
  */
-function getLastName(person) {}
+function getLastName(person) {
+  person.names[0];
+}
 
 /**
  * getAddressStreet()
@@ -87,7 +92,9 @@ function getCountOfPhoneNumbers(person) {}
  *  getFirstPhoneNumber(person);
  *  //> 7185550921
  */
-function getFirstPhoneNumber(person) {}
+function getFirstPhoneNumber(person) {
+  person.names[first];
+}
 
 /**
  * getLastPhoneNumber()

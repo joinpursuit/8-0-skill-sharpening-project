@@ -12,7 +12,13 @@
  *  shoutForLoop([ "A", "Very", "Happy", "Array" ]);
  *  //> [ "A!", "Very!", "Happy!", "Array!" ];
  */
-function shoutForLoop(array) {}
+function shoutForLoop(array) {
+  let happyArray = [];
+  for (let i = 0; i < array.length; i++) {
+    happyArray.push(array[i] + "!");
+  }
+  return happyArray;
+}
 
 /**
  * shoutWhileLoop()
@@ -96,7 +102,11 @@ function evenArray(array) {}
  *  findSmallest([ 0, 11, -2, 5 ]);
  *  //> -2
  */
-function findSmallest(array) {}
+function findSmallest(array) {
+  //loop through the array until finding the smallest number
+  //return that number
+  return Math.min.apply(Math, array);
+}
 
 /**
  * findLargest()
@@ -109,7 +119,13 @@ function findSmallest(array) {}
  *  findLargest([ 0, 11, -2, 5 ]);
  *  //> 11
  */
-function findLargest(array) {}
+function findLargest(array) {
+  let counts = [];
+  //const i
+  for (i = 0; i < array.length; i++) {
+    counts.push(Math.random());
+  }
+}
 
 /**
  * findEqual()
