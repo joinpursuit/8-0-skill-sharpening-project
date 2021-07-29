@@ -19,7 +19,22 @@
  *  applyDiscount(1000, 9, true);
  *  //> 700
  */
-function applyDiscount(priceInCents, age, hasMembership) {}
+function applyDiscount(priceInCents, age, hasMembership) {
+  let total = 0; //let discount = 100, 200, 300. 
+  if(age <= 10 && !hasMembership){
+    total = priceInCents * 0.9;
+  }else if(age >= 65 && !hasMembership){
+    total = priceInCents * 0.9;
+  }else if (age <= 10 && hasMembership) {
+    total = priceInCents * 0.7;
+  }else if(age >= 65 && hasMembership){
+   total = priceInCents * 0.7;
+  }else if(hasMembership){
+    total = priceInCents * 0.8;
+  }else total = priceInCents;
+      return total;
+  }
+
 
 /**
  * getCartTotal()
@@ -40,7 +55,9 @@ function applyDiscount(priceInCents, age, hasMembership) {}
     getCartTotal(cart);
  *  //> "$30.00"
  */
-function getCartTotal(products) {}
+function getCartTotal(products) {
+
+}
 
 /**
  * compareLocations()
@@ -80,7 +97,35 @@ function getCartTotal(products) {}
     compareLocations(address1, address2);
     //> "Same city."
  */
-function compareLocations(address1, address2) {}
+function compareLocations(address1, address2) {
+  let addObj1 = {
+    street: "8785 Trenton St.",
+    city: "Melbourne",
+    state: "FL",
+    zip: "32904",
+  }
+  let addObj2 = {
+    street: "8785 Trenton St.",
+    city: "Melbourne",
+    state: "CO",
+    zip: "32904",
+  }
+
+  let result = {}
+
+  for (key in address2){
+    if(address1[key] !== address2[key]){
+      return "Addresses are not near each other.";
+    }else if(address1[key] === address2[key]){
+      return "Same building.";
+    }else if(address1.city.state.zip[key] == address2.city.state.zip[key]){
+      return "Same city."
+    }else if(address1.state[key] === adderess2.state[key]){
+      return "Same state.";
+    }
+  }return result = address1;
+}
+console.log(compareLocations(address1, address2));
 
 /**
  * gradeAssignments()
@@ -152,7 +197,30 @@ function gradeAssignments(assignments) {}
     createLineOrder(people);
     //> [ "Ray Anderson", "America Marsh", "Wade Carson", "Patience Patel" ]
  */
-function createLineOrder(people) {}
+function createLineOrder(people) {
+//   { name: "Jackson Read", hasMembership: true },
+//       { name: "Esme Day", hasMembership: false },
+//       { name: "Ethan Hart", hasMembership: true },
+//       { name: "Willow Francis", hasMembership: false },
+//       { name: "Kiran Foster", hasMembership: false },
+//       { name: "Noah Harper", hasMembership: true }
+// ];
+      let personObline = [];
+
+      if(age <= 10 && !hasMembership){
+        total = priceInCents * 0.9;
+      }else if(age >= 65 && !hasMembership){
+        total = priceInCents * 0.9;
+      }else if (age <= 10 && hasMembership) {
+        total = priceInCents * 0.7;
+      }else if(age >= 65 && hasMembership){
+       total = priceInCents * 0.7;
+      }else if(hasMembership){
+        total = priceInCents * 0.8;
+      }else total = priceInCents;
+          return total;
+
+}
 
 module.exports = {
   applyDiscount,
