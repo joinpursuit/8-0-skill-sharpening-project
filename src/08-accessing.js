@@ -1,5 +1,6 @@
 /*
-  For all of the functions below, assume each function takes the following `person` object as its input. While the values of the object may change, the structure of it will always be the same.
+  For all of the functions below, assume each function takes the following `person` object as its input. 
+  While the values of the object may change, the structure of it will always be the same.
 
   const person = {
     names: {
@@ -32,7 +33,9 @@
  *  getFirstName(person);
  *  //> "Rachel"
  */
-function getFirstName(person) {}
+function getFirstName(person) {
+  return person.names.first;
+}
 
 /**
  * getLastName()
@@ -45,7 +48,9 @@ function getFirstName(person) {}
  *  getLastName(person);
  *  //> "Rojas"
  */
-function getLastName(person) {}
+function getLastName(person) {
+  return person.names.last;
+}
 
 /**
  * getAddressStreet()
@@ -58,7 +63,17 @@ function getLastName(person) {}
  *  getAddressStreet(person);
  *  //> "697 Pine Drive"
  */
-function getAddressStreet(person) {}
+
+//  address: {
+//   street: "697 Pine Drive",
+//   unit: "2A",
+//   city: "Staten Island",
+//   state: "NY",
+//   zip: "10306"
+// },
+function getAddressStreet(person) {
+  
+}
 
 /**
  * getCountOfPhoneNumbers()
@@ -71,7 +86,9 @@ function getAddressStreet(person) {}
  *  getCountOfPhoneNumbers(person);
  *  //> 2
  */
-function getCountOfPhoneNumbers(person) {}
+function getCountOfPhoneNumbers(person) {
+  return person.numbers.length;
+}
 
 /**
  * getFirstPhoneNumber()
@@ -87,7 +104,9 @@ function getCountOfPhoneNumbers(person) {}
  *  getFirstPhoneNumber(person);
  *  //> 7185550921
  */
-function getFirstPhoneNumber(person) {}
+function getFirstPhoneNumber(person) {
+  return person.numbers[0];
+}
 
 /**
  * getLastPhoneNumber()
@@ -103,7 +122,9 @@ function getFirstPhoneNumber(person) {}
  *  getLastPhoneNumber(person);
  *  //> 7185558611
  */
-function getLastPhoneNumber(person) {}
+function getLastPhoneNumber(person) {
+  return person.numbers.length - 1;
+}
 
 /**
  * getFullName()
@@ -116,7 +137,13 @@ function getLastPhoneNumber(person) {}
  *  getFullName(person);
  *  //> "Rachel Eleanor Rojas"
  */
-function getFullName(person) {}
+function getFullName(person) {
+  const first = person.names.first;
+  const middle = person.names.middle;
+  const last = person.names.last;
+
+  return first + ' ' + middle + ' '+last;
+}
 
 /**
  * getCityAndState()
@@ -132,7 +159,12 @@ function getFullName(person) {}
  *  getCityAndState(person);
  *  //> "Staten Island, NY"
  */
-function getCityAndState(person) {}
+function getCityAndState(person) {
+  const city = person.address.city;
+  const state = person.address.state
+
+  return city +','+ ' '+state;
+}
 
 /**
  * getFullAddress()
@@ -148,7 +180,15 @@ function getCityAndState(person) {}
  *  getFullAddress(person);
  *  //> "697 Pine Drive 2A, Staten Island, NY, 10306"
  */
-function getFullAddress(person) {}
+function getFullAddress(person) {
+  let street = person.address.street;
+let unit = person.address.unit;
+let city = person.address.city
+let state = person.address.state;
+let zip = person.address.zip;
+  return `${street} ${unit}, ${city}, ${state}, ${zip}`
+}
+
 
 /**
  * getFlatObject()
@@ -171,7 +211,17 @@ function getFullAddress(person) {}
       numbers: [7185550921, 7185558611],
     };
  */
-function getFlatObject(person) {}
+function getFlatObject(person) {
+  let newObject = {}
+  let objNames = person.names
+  let objAddress = person.address
+  newObject  = {...objNames
+}
+Object.assign(newObject, objAddress);
+newObject.numbers = person.numbers
+return newObject;
+}
+}
 
 // Do not change the code below.
 module.exports = {
