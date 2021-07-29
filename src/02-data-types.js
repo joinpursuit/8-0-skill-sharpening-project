@@ -9,7 +9,10 @@
  *  getLengthOfString("down");
  *  //> 4
  */
-function getLengthOfString(str) {}
+function getLengthOfString(str) {
+  let result = str.length
+  return result
+}
 
 /**
  * convertToNumber()
@@ -22,7 +25,10 @@ function getLengthOfString(str) {}
  *  convertToNumber("111");
  *  //> 111
  */
-function convertToNumber(val) {}
+function convertToNumber(val) {
+  num = Number(val)
+  return num
+}
 
 /**
  * convertToString()
@@ -36,7 +42,11 @@ function convertToNumber(val) {}
  *  convertToString(99);
  *  //> "99"
  */
-function convertToString(val) {}
+function convertToString(val) {
+  let result = val.toString()
+
+  return result
+}
 
 /**
  * convertToShoutingText()
@@ -49,7 +59,11 @@ function convertToString(val) {}
  *  convertToShoutingText("Hello There");
  *  //> "HELLO THERE"
  */
-function convertToShoutingText(text) {}
+function convertToShoutingText(text) {
+  let scream = text.toUpperCase()
+
+  return scream
+}
 
 /**
  * convertToWhisperText()
@@ -62,7 +76,11 @@ function convertToShoutingText(text) {}
  *  convertToWhisperText("Hello There");
  *  //> "hello there"
  */
-function convertToWhisperText(text) {}
+function convertToWhisperText(text) {
+  let secret = text.toLowerCase()
+  
+  return secret
+}
 
 /**
  * checkIfCharacterIsInString()
@@ -79,7 +97,13 @@ function convertToWhisperText(text) {}
  *  checkIfCharacterIsInString("hello there", "a");
  *  //> false
  */
-function checkIfCharacterIsInString(text, character) {}
+function checkIfCharacterIsInString(text, character) {
+  if (text.includes(character)){
+    return true
+  }
+
+  return false
+}
 
 /**
  * isEven()
@@ -95,7 +119,12 @@ function checkIfCharacterIsInString(text, character) {}
  *  isEven(11);
  *  //> false
  */
-function isEven(num) {}
+function isEven(num) {
+  if(num % 2 === 0){
+    return true
+  }
+  return false
+}
 
 /**
  * isOdd()
@@ -111,7 +140,12 @@ function isEven(num) {}
  *  isOdd(11);
  *  //> true
  */
-function isOdd(num) {}
+function isOdd(num) {
+  if(num % 2 === 0){
+    return false
+  }
+  return true
+}
 
 /**
  * isTruthy()
@@ -127,7 +161,13 @@ function isOdd(num) {}
  *  isTruthy(null);
  *  //> false
  */
-function isTruthy(val) {}
+function isTruthy(val) {
+  if (val){
+    return true
+  }
+
+  return false
+}
 
 /**
  * isFalsy()
@@ -143,7 +183,13 @@ function isTruthy(val) {}
  *  isFalsy(" ");
  *  //> false
  */
-function isFalsy(val) {}
+function isFalsy(val) {
+  if (!val){
+    return true
+  }
+
+  return false
+}
 
 // Do not change the code below.
 module.exports = {
