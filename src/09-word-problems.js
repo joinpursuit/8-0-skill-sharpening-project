@@ -1,7 +1,8 @@
 /**
  * applyDiscount()
  * ---------------------
- * A local movie theater has a few different ticket discounts. If the attendee is 10 years old or younger, or 65 years old or older, they receive a 10% discount. If the attendee is viewing the movie with a member, they receive a 20% discount. If both situations apply, they receive a 30% discount.
+ * A local movie theater has a few different ticket discounts. If the attendee is 10 years old or younger, or 65 years old or older, they receive a 10% discount.
+ *  If the attendee is viewing the movie with a member, they receive a 20% discount. If both situations apply, they receive a 30% discount.
  *
  * Write an algorithm that will determine the price of a ticket based on the `priceInCents` of the ticket, the `age` of the attendee, and the membership status (i.e. `hasMembership`).
  * @param {number} priceInCents - The price of the ticket, in cents.
@@ -19,7 +20,21 @@
  *  applyDiscount(1000, 9, true);
  *  //> 700
  */
-function applyDiscount(priceInCents, age, hasMembership) {}
+function applyDiscount(priceInCents, age, hasMembership) {
+let totalDiscount = 0
+let discount10 = 0.1
+let discount20 = 0.2
+
+if ( age <= 10 || age >= 65) {
+  totalDiscount += discount10
+}
+if (hasMembership) {
+  totalDiscount += discount20
+}
+priceInCents *= (1 - totalDiscount);
+
+ return priceInCents
+}
 
 /**
  * getCartTotal()
@@ -40,7 +55,18 @@ function applyDiscount(priceInCents, age, hasMembership) {}
     getCartTotal(cart);
  *  //> "$30.00"
  */
-function getCartTotal(products) {}
+function getCartTotal(products) {
+
+  let total = 0;
+
+  for (let i = 0; i < products.length; i++){
+    
+    total += products[i].priceInCents * products[i].quantity
+  }
+  total = total / 100
+
+  return '$' + total.toFixed(2)
+}
 
 /**
  * compareLocations()
@@ -80,7 +106,29 @@ function getCartTotal(products) {}
     compareLocations(address1, address2);
     //> "Same city."
  */
-function compareLocations(address1, address2) {}
+function compareLocations(address1, address2) {
+
+
+
+const street = address1.street === address2.street;
+const city = address1.city === address2.city;
+const state = address1.state === address2.state;
+const zip = address1.zip === address2.zip
+
+
+  if (street && city && state && zip) {
+      return "Same building."
+
+    } else if (city && state && zip) {
+         return "Same city."
+
+       }else if (state) {
+         return "Same state."
+
+       }else {
+         return "Addresses are not near each other."
+       }
+}
 
 /**
  * gradeAssignments()
@@ -127,7 +175,33 @@ function compareLocations(address1, address2) {}
     //>   },
     //> ];
  */
-function gradeAssignments(assignments) {}
+function gradeAssignments(assignments) {
+
+  for(let assignment of assignments){
+    let score = assignment.score.received / assignment.score.max * 100;
+    if(assignment.kind === 'PASS-FAIL'){
+
+      if(assignment.score.received === assignment.score.max){
+        assignment.status = 'PASSED';
+      } else{
+
+        assignment.status = 'FAILED';
+      }
+    } else if(assignment.kind === 'PERCENTAGE'){
+
+      if(score >= 80){
+
+        assignment.status = `PASSED: ${score.toFixed(1)}%`;
+      } else if(score < 80){
+        assignment.status = `FAILED: ${score.toFixed(1)}%`;
+      }
+    } else{
+      assignment.status = `SCORE: ${assignment.score.received}/${assignment.score.max}`;
+    }
+  }
+  return assignments;
+  
+}
 
 /**
  * createLineOrder()
@@ -152,7 +226,27 @@ function gradeAssignments(assignments) {}
     createLineOrder(people);
     //> [ "Ray Anderson", "America Marsh", "Wade Carson", "Patience Patel" ]
  */
-function createLineOrder(people) {}
+function createLineOrder(people) {
+
+
+ let arr =[]
+
+  for (let ind of people) {
+
+    if (ind.hasMembership){
+      arr.push(ind.name)
+    }
+  }
+
+  for (ind of people) {
+
+    if (!ind.hasMembership){
+      arr.push(ind.name)
+    }
+  }
+
+ return arr
+}
 
 module.exports = {
   applyDiscount,
