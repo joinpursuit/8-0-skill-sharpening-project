@@ -99,9 +99,10 @@ function convertToWhisperText(text) {
 function checkIfCharacterIsInString(text, character) {
   
   if (text.includes(character)){
-    return true
-  }
-  return false
+    return true;
+  } else {
+  return false;
+ }
 }
 
 /**
@@ -121,8 +122,9 @@ function checkIfCharacterIsInString(text, character) {
 function isEven(num) {
   if (num % 2 === 0){
   return true;
- } 
+ } else {
  return false;
+ }
 }
 /**
  * isOdd()
@@ -140,9 +142,10 @@ function isEven(num) {
  */
 function isOdd(num) {
   if (num % 2 === 1){
-  return true
-  }
-  return false
+  return true;
+  } else {
+  return false;
+ }
 }
 /**
  * isTruthy()
@@ -160,9 +163,10 @@ function isOdd(num) {
  */
 function isTruthy(val) {
   if(!val){
-    return false
-  }
-  return true
+    return false;
+  } else {
+  return true;
+ }
 }
 
 /**
@@ -181,9 +185,10 @@ function isTruthy(val) {
  */
 function isFalsy(val) {
   if(val) {
-  return false
+  return false;
+ } else {
+return true;
  }
-return true
 }
 
 

@@ -15,12 +15,13 @@
  *  //> false
  */
 function isEqual(a, b) {
+//  return (a === b)
   if(a !== b){
-    return false
-  }
-  return true
+    return false;
+  } else {
+  return true;
+ }
 }
-
 /**
  * findLarger()
  * ---------------------
@@ -34,11 +35,11 @@ function isEqual(a, b) {
  *  //> 19
  */
 function findLarger(a, b) {
-  let bigNumber = a 
+  // let number = a 
   if (b > a){
     return b
   }
-  return bigNumber
+  return a
 }
 
 /**
@@ -85,7 +86,13 @@ function findLargerOrTie(a, b) {
  *  //> "Positive"
  */
 function positiveNegativeOrZero(a) {
-  
+ let status = "Zero"
+  if (a > 0) {
+    status = "Positive";
+  } else if (a < 0) {
+    status = "Negative";
+  } 
+    return status;
 }
 
 /**
@@ -107,7 +114,17 @@ function positiveNegativeOrZero(a) {
  *  aroundTheWorldGreeting();
  *  //> "Hello World"
  */
-function aroundTheWorldGreeting(language) {}
+function aroundTheWorldGreeting(language) {
+  let greeting = "Hello World"
+  if (language === "spanish"){
+    greeting = "Hola Mundo"
+  } else if (language === "german") {
+  greeting = "Hallo Welt"
+  } else if (language === "english"){
+   greeting;
+  }
+   return greeting;
+}
 
 /**
  * aroundTheWorldGreetingWithSwitch()
@@ -130,7 +147,22 @@ function aroundTheWorldGreeting(language) {}
  *  aroundTheWorldGreetingWithSwitch();
  *  //> "Hello World"
  */
-function aroundTheWorldGreetingWithSwitch(language) {}
+function aroundTheWorldGreetingWithSwitch(language) {
+  let greeting = "Hello World"
+  switch (language) {
+    case 'english': 
+     greeting = "Hello World"
+     break;
+    case 'german':
+      greeting = "Hallo Welt";
+      break;
+    case 'spanish':
+      greeting = "Hola Mundo";
+      break;
+    }
+    return greeting;
+  }
+  
 
 /**
  * calculateLetterGrade()
@@ -149,7 +181,27 @@ function aroundTheWorldGreetingWithSwitch(language) {}
  *  calculateLetterGrade(99);
  *  //> "A"
  */
-function calculateLetterGrade(grade) {}
+function calculateLetterGrade(grade) {
+  //let letterGrade = " "
+  switch (true) {
+   case grade >= 90 :
+    letterGrade = "A"
+    break;
+  case grade >= 80 :
+    letterGrade = "B"
+    break;
+ case grade >= 70 :
+    letterGrade = "C"
+    break;
+ case grade >= 60 :
+    letterGrade = "D"
+    break;
+  case grade < 60 :
+    letterGrade = "F"
+  }
+    return letterGrade;
+}
+
 
 /**
  * animalCounts()
@@ -167,7 +219,14 @@ function calculateLetterGrade(grade) {}
  *  animalCounts("pig", 1);
  *  //> "1 pig"
  */
-function animalCounts(animal, numberOfAnimals) {}
+function animalCounts(animal, numberOfAnimals) {
+  if (numberOfAnimals <= 1){
+    return `${numberOfAnimals} ${animal}`
+  } //else if (numberOfAnimals > 1)
+    return  `${numberOfAnimals} ${animal}s`
+}
+
+
 
 /**
  * evenOrOdd()
@@ -184,8 +243,14 @@ function animalCounts(animal, numberOfAnimals) {}
  *  evenOrOdd(48);
  *  //> "Even"
  */
-function evenOrOdd(a) {}
+function evenOrOdd(a) {
+  if (a % 2 === 0){
+    return "Even"
+   } 
+     return "Odd"
+  }
 
+ 
 /**
  * evenOrOddWithTernary()
  * ---------------------
@@ -200,7 +265,11 @@ function evenOrOdd(a) {}
  *  evenOrOddWithTernary(8);
  *  //> "Even"
  */
-function evenOrOddWithTernary(a) {}
+function evenOrOddWithTernary(a) {
+  //   var day = true; //conditon
+// alert(day ? 'It is day-time' : 'It is night-time') //> It is day-time
+return a % 2 === 0 ? "Even" : "Odd"
+}
 
 // Do not change any code below this line.
 module.exports = {
