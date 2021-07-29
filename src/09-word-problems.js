@@ -1,7 +1,8 @@
 /**
  * applyDiscount()
  * ---------------------
- * A local movie theater has a few different ticket discounts. If the attendee is 10 years old or younger, or 65 years old or older, they receive a 10% discount. If the attendee is viewing the movie with a member, they receive a 20% discount. If both situations apply, they receive a 30% discount.
+ * A local movie theater has a few different ticket discounts. 
+ * If the attendee is 10 years old or younger, or 65 years old or older, they receive a 10% discount. If the attendee is viewing the movie with a member, they receive a 20% discount. If both situations apply, they receive a 30% discount.
  *
  * Write an algorithm that will determine the price of a ticket based on the `priceInCents` of the ticket, the `age` of the attendee, and the membership status (i.e. `hasMembership`).
  * @param {number} priceInCents - The price of the ticket, in cents.
@@ -19,7 +20,21 @@
  *  applyDiscount(1000, 9, true);
  *  //> 700
  */
-function applyDiscount(priceInCents, age, hasMembership) {}
+function applyDiscount(priceInCents, age, hasMembership) {
+  // 10 years old or younger, or 65 years old or older, they receive a 10% discount
+  //a member, they receive a 20% discount. If both situations apply, they receive a 30% discount.
+  let discount10 = priceInCents * 0.1;
+  let discount20 = priceInCents * 0.2;
+  let discount30 = priceInCents * 0.3;
+  if (age <= 10 || age >= 65) {
+    priceInCents -= discount10;
+  }
+  if (hasMembership) {
+    priceInCents -= discount20;
+  }
+  return priceInCents;
+}
+
 
 /**
  * getCartTotal()
@@ -40,7 +55,19 @@ function applyDiscount(priceInCents, age, hasMembership) {}
     getCartTotal(cart);
  *  //> "$30.00"
  */
-function getCartTotal(products) {}
+function getCartTotal(products) {
+  {
+    //declare variables
+    let sum = 0;
+    //target cart.priceincents and multiply by quantity
+    for (let element of products) {
+      sum += element.priceInCents * element.quantity;
+    }
+    total = (sum / 100).toFixed(2);
+    //return formatted string representing cart.tofixed(2)
+    return `$${total}`;
+  }
+}
 
 /**
  * compareLocations()
@@ -80,7 +107,34 @@ function getCartTotal(products) {}
     compareLocations(address1, address2);
     //> "Same city."
  */
-function compareLocations(address1, address2) {}
+function compareLocations(address1, address2) {
+  //If the street, city, state, and zip for both addresses are the same, return the string “Same building.”
+  if (
+    address1.street === address2.street &&
+    address1.city === address2.city &&
+    address1.state === address2.state &&
+    address1.zip === address2.zip
+  ) {
+    return `Same building.`;
+  }
+  //If the city, state, and zip are the same, return the string “Same city.”
+  else if (
+    address1.city === address2.city &&
+    address1.state === address2.state &&
+    address1.zip === address2.zip
+  ) {
+    return `Same city.`;
+  }
+  //If just the state is the same, return the string “Same state.”
+  else if (address1.state === address2.state) {
+    return `Same state.`;
+  }
+  //If none of those matches occur, return the string “Addresses are not near each other.”
+  else {
+    return `Addresses are not near each other.`;
+  }
+}
+
 
 /**
  * gradeAssignments()
@@ -90,8 +144,10 @@ function compareLocations(address1, address2) {}
  * Write an algorithm that adds a key of `status` to each object in an array of objects. Each object represents a single assignment submitted by a student.
  *
  * - If the assignment has a `kind` of `"PASS-FAIL"`, set the `status` value to `"PASSED"` if the `score.received` equals the `score.max`. Otherwise, set that `status` to be `"FAILED"`.
- * - If the assignment has a `kind` of `"PERCENTAGE"`, set the `status` value to be `"PASSED: <percentage>"` if the student scored at least 80.0%. The `<percentage>` should be set to one decimal place. If the student scored less than 80.0%, set the status to `"FAILED: <percentage>"`.
- * - If the assignment has any other `kind` than the two above, set the `status` value to equal `"SCORE: <received>/<max>"`, where `<received>` is the `score.received` value and `<max>` is the `score.max` value.
+ * - If the assignment has a `kind` of `"PERCENTAGE"`, set the `status` value to be `"PASSED: <percentage>"` if the student scored at least 80.0%. 
+ * The `<percentage>` should be set to one decimal place. If the student scored less than 80.0%, set the status to `"FAILED: <percentage>"`.
+ * - If the assignment has any other `kind` than the two above, set the `status` value to equal 
+ * `"SCORE: <received>/<max>"`, where `<received>` is the `score.received` value and `<max>` is the `score.max` value.
  *
  * Then, return the overall array with all modified assignments.
  *
@@ -127,22 +183,62 @@ function compareLocations(address1, address2) {}
     //>   },
     //> ];
  */
-function gradeAssignments(assignments) {}
+function gradeAssignments(assignments) {
+  //if statements --> if student scores under 80% = fail
+  //if student scores above 80% = pass
+  // figure out percentage
+  // add keys and values
+  // return array
+  // use loop to check each index
+
+  for (let assign of  assignments){
+  
+    if(assign.kind !== "PERCENTAGE" && assign.kind !== "PASS-FAIL"){
+     assign.status = `SCORE: ${assign.score.received}/${assign.score.max}`
+   }
+   
+     if(assign.kind === "PASS-FAIL"){
+       if(assign.score.received === assign.score.max){
+       assign.status = "PASSED"
+     } else {
+       assign.status = "FAILED"
+     }
+   }
+   else if(assign.kind === "PERCENTAGE"){
+    let percentScore = assign.score.received / assign.score.max;
+     if(percentScore >= 0.8){
+     assign.status = `PASSED: ${(percentScore * 100).toFixed(1)}%` 
+    
+   } else if(percentScore < 0.8) {
+    assign.status = `FAILED: ${(percentScore * 100).toFixed(1)}%`
+   
+   }   
+   } 
+   
+   }
+   return assignments
+   }
+  
+
 
 /**
  * createLineOrder()
  * ---------------------
- * An airline wants to build an application that improves the boarding process for its customers. They want to have customers sign up in order of arrival, but prioritize those customers who have a membership.
+ * An airline wants to build an application that improves the boarding process for its customers. 
+ * They want to have customers sign up in order of arrival, but prioritize those customers who have a membership.
  * 
- * Build an algorithm that takes in an array of objects, where each object represents a person. The order of the array is important; the person at index `0` arrived first while the person at index `1` arrived afterwards.
+ * Build an algorithm that takes in an array of objects, where each object represents a person. T
+ * he order of the array is important; the person at index `0` arrived first while the person at index `1` arrived afterwards.
  * 
- * Return an array that includes only the names of each person, but reordered to account for whether or not each person has a membership. Everyone who has a membership should be at the front of the line in the same order they arrived. Everyone without a membership should be in the same order they arrived but after those with a membership.
+ * Return an array that includes only the names of each person, but reordered to account for whether or not each person has a membership. 
+ * Everyone who has a membership should be at the front of the line in the same order they arrived. 
+ * Everyone without a membership should be in the same order they arrived but after those with a membership.
  * @param {Object[]} people - An array of people objects.
  * @param {string} people[].name - The name of the person.
  * @param {boolean} people[].hasMembership - Whether or not the person has a membership.
  * @returns {string[]} An array of names, in order depending on the person's order in the original array and the person's priority.
  * 
- * EXAMPLE:
+ * assignmentsPLE:
  *  const people = [
       { name: "Wade Carson", hasMembership: false },
       { name: "Ray Anderson", hasMembership: true },
@@ -152,7 +248,20 @@ function gradeAssignments(assignments) {}
     createLineOrder(people);
     //> [ "Ray Anderson", "America Marsh", "Wade Carson", "Patience Patel" ]
  */
-function createLineOrder(people) {}
+function createLineOrder(people) {
+  let arrWMems = [];
+  let arrNonMems = [];
+  let prioritizedList;
+  for (let person of people) {
+    if (person.hasMembership) {
+      arrWMems.push(person.name);
+    } else {
+      arrNonMems.push(person.name);
+    }
+  }
+  prioritizedList = arrWMems.concat(arrNonMems);
+  return prioritizedList;
+}
 
 module.exports = {
   applyDiscount,
