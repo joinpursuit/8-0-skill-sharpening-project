@@ -11,7 +11,24 @@
  *  //> 25
  *  (3 + 4 + 5 + 6 + 7 = 25)
  */
-function rangeSum(min, max) {}
+function rangeSum(min, max) {
+//   let totalAdd = 0;
+//   for (i = 0; i > max.length; i++) {
+//   let min = max[i];
+//   min += max;
+//   }
+//   return totalAdd;
+
+let total = 0;
+let current = min;
+
+while (current <= max) {
+  total = total + current;
+  current = current + 1;
+}
+
+return total;
+}
 
 /**
  * rangeOdd()
@@ -25,7 +42,18 @@ function rangeSum(min, max) {}
  *  rangeOdd(10, 15);
  *  //> [ 15, 13, 11 ]
  */
-function rangeOdd(min, max) {}
+
+function rangeOdd(min, max) {
+let newArray = [];
+for (let i = max; i > min -1; i--) {
+
+  if (i % 2 !== 0) {
+    newArray.push(i);
+  }
+
+}
+return newArray;
+}
 
 /**
  * rangeEveryOther()
@@ -39,7 +67,18 @@ function rangeOdd(min, max) {}
  *  rangeEveryOther(11, 18);
  *  //> [ 11, 13, 15, 17 ]
  */
-function rangeEveryOther(min, max) {}
+
+function rangeEveryOther(min, max) {
+  const result = [min];
+  let current = min + 2;
+
+while ( current <= max) {
+  result.push(current);
+  current = current + 2;
+}
+
+return result;
+}
 
 /**
  * containsWhileLoop()
@@ -61,7 +100,18 @@ function rangeEveryOther(min, max) {}
  *  containsWhileLoop([ "left", "up", "right" ], "down");
  *  //> false
  */
-function containsWhileLoop(array, target) {}
+function containsWhileLoop(array, target) { 
+  let i = 0;
+  while (i < array.length) {
+
+    if (array[i] === target) {
+      return true;
+    }
+    i++;
+  }
+
+  return false;
+}
 
 /**
  * containsForLoop()
@@ -83,7 +133,18 @@ function containsWhileLoop(array, target) {}
  *  containsForLoop([ "left", "up", "right" ], "down");
  *  //> false
  */
-function containsForLoop(array, target) {}
+function containsForLoop(array, target) {
+  let count = false;
+  for (let i = 0; i < array.length; i++){
+    const hasCount = array[i];
+
+    if (hasCount === target) {
+      count = true;
+    }
+  }
+
+  return count;
+}
 
 /**
  * targetCount()
@@ -97,7 +158,19 @@ function containsForLoop(array, target) {}
  *  targetCount([ 10, 20, 10, 20, 30 ], 10);
  *  //> 2
  */
-function targetCount(array, target) {}
+
+function targetCount(array, target) {
+  let count = 0;
+  for (let i = 0; i < array.length; i++){
+    const hasCount = array[i];
+
+    if (hasCount === target) {
+      count += 1;
+    }
+  }
+
+  return count;
+}
 
 /**
  * firstIndexFound()
@@ -117,7 +190,22 @@ function targetCount(array, target) {}
  *  firstIndexFound([ "left", "right", "left" ], "up");
  *  //> -1
  */
-function firstIndexFound(array, target) {}
+
+function firstIndexFound(array, target) {
+  for (let i = 0; i < array.length; i++) {
+    const multi = array[i];
+  
+    if (multi === target) {
+      return i;
+    }
+  }
+    return -1;
+  }
+  // console.log(firstIndexFound([ "left", "right", "left" ], "left"));
+  //  //> 0
+ 
+  // console.log(firstIndexFound([ "left", "right", "left" ], "up"));
+  // //> -1
 
 /**
  * lastIndexFound()
@@ -137,7 +225,18 @@ function firstIndexFound(array, target) {}
  *  lastIndexFound([ "left", "right", "left" ], "up");
  *  //> -1
  */
-function lastIndexFound(array, target) {}
+function lastIndexFound(array, target) {
+let result = -1;
+for (let i =0; i < array.length; i++){
+  let currentElement = array[i];
+
+  if ( currentElement === target)[
+    result = i
+  ]
+ }
+ 
+return result;
+}
 
 /**
  * timesIndex()
@@ -151,7 +250,17 @@ function lastIndexFound(array, target) {}
  *  //> [ 7 * 0, 10 * 1, 11 * 2 ]
  *  //> [ 0, 10, 22 ]
  */
-function timesIndex(array) {}
+function timesIndex(array) {
+let arrayMulti = [];
+
+for (let i = 0; i < array.length; i++) {
+  const element = i
+  const multi = element * array[i];
+  arrayMulti.push(multi);
+
+  }
+  return arrayMulti;
+}
 
 /**
  * cumulativeSum()
@@ -165,7 +274,16 @@ function timesIndex(array) {}
  *  //> [ 5, 5 + 2, 5 + 2 + 9 ]
  *  //> [ 5, 7, 16 ]
  */
-function cumulativeSum(array) {}
+
+function cumulativeSum(array) {
+  const result = [];
+  let total = 0;
+  for (let i =0; i < array.length; i++) {
+    total = total + array[i];
+    result.push(total);
+  }
+return result;
+}
 
 // Do not change anything below this line.
 module.exports = {
