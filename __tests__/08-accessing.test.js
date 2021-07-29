@@ -224,7 +224,7 @@ describe("getFlatObject()", () => {
     expect(actual).toEqual(expected);
   });
 
-  test.only("should be dynamic for all situations depending on the input", () => {
+  test("should be dynamic for all situations depending on the input", () => {
     const actual = getFlatObject(anotherPerson);
     const expected = {
       first: "Jack",
