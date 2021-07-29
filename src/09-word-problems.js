@@ -19,7 +19,32 @@
  *  applyDiscount(1000, 9, true);
  *  //> 700
  */
-function applyDiscount(priceInCents, age, hasMembership) {}
+function applyDiscount(priceInCents, age, hasMembership) {
+  //initialize discount
+  let custDiscount = 0
+  //initialize total
+  let finalCost = 0
+  //If customer is under 10 or over 65 - they get 10% discount
+  if (age < 10 || age > 65) {
+    custDiscount += .10; //10% discoiunt
+  }
+  //If customer has a memebrship they get 20% off
+  if (hasMembership) {
+    custDiscount += .20; //20% discount 
+  }
+  //If under 10 or over 65 and has memebership 30% off
+  if (age < 10 || age > 65 && hasMembership) {
+    custDiscount += .30
+  }
+
+  finalCost = priceInCents * (1 - custDiscount)
+  return finalCost
+
+}
+
+
+
+applyDiscount(4500, 45, false)
 
 /**
  * getCartTotal()
@@ -40,7 +65,19 @@ function applyDiscount(priceInCents, age, hasMembership) {}
     getCartTotal(cart);
  *  //> "$30.00"
  */
-function getCartTotal(products) {}
+function getCartTotal(products) {
+  //we need to create a total to capture the total since it wasn't given to us
+  let cartTotal = 0;
+  //for look to iterate down the array....
+  for (let i = 0; i < products.length; i++) {
+    //to get cart total we multiply producuts cost in cents by quanity - PEMDAS - parenthesis first - 
+    cartTotal += (products[i].priceInCents * products[i].quantity) / 100
+  }
+  //to fixed - moves deceminal 
+  return cartTotal.toFixed(2)
+
+
+}
 
 /**
  * compareLocations()
@@ -80,7 +117,22 @@ function getCartTotal(products) {}
     compareLocations(address1, address2);
     //> "Same city."
  */
-function compareLocations(address1, address2) {}
+function compareLocations(address1, address2) {
+  if (address1.street === address2.street && address1.city === address2.city && address1.state === address2.state && address1.zip === address2.zip) {
+    return "Same building"
+  } else if (address1.city === address2.city && address1.state === address2.state && address1.zip === address2.zip) {
+    return "Same City"
+  } else if (address1.state === address2.state) {
+    return "Same state";
+  } else {
+    return "Addresses are not near each other."
+  }
+}
+
+
+
+compareLocations("167 Park Ave", "cat")
+
 
 /**
  * gradeAssignments()
@@ -127,7 +179,31 @@ function compareLocations(address1, address2) {}
     //>   },
     //> ];
  */
-function gradeAssignments(assignments) {}
+function gradeAssignments(assignments) {
+  for (let grade of assignments) {
+    if (grade.kind === "PASS-FAIL") {
+      if (grade.score.reieved === grade.score.max) {
+        grade.status === "PASSED"
+      } else {
+        grade.status === "FAILED"
+      }
+    } else if (grade.kind === "PERCENTAGE") {
+      //how do we get percentage? score / 100 * 100 (remeber PEMDAS)
+      let percentScore = (grade.score.recieved / grade.score.max) * 100;
+      if (percentScore >= 80) {
+        //interpolation to push return score - toFix moves decimal
+        grade.status = `PASSED: ${percentScore.toFixed(1)}%`
+      } else {
+        grade.status = `FALED: ${percentScore.toFixed(1)}%`
+      }
+
+
+    } else {
+      grade.status = `SCORE: ${grade.score.recieved} / ${grade.score.max}`
+    }
+  }
+  return assignments;
+}
 
 /**
  * createLineOrder()
@@ -152,7 +228,24 @@ function gradeAssignments(assignments) {}
     createLineOrder(people);
     //> [ "Ray Anderson", "America Marsh", "Wade Carson", "Patience Patel" ]
  */
-function createLineOrder(people) {}
+function createLineOrder(people) {
+  //Create accumulator - we are returning an ARRAY of string
+  let peopleArr = [];
+  for (let i = 0; i < people.length; i++) {
+    if (hasMembership) {
+      arr.push(people[i].name)
+    }
+  }
+  for (let i = 0; i < people.length; i++) {
+    if (!hasMembership) {
+      arr.push(people[i].name);
+    }
+  }
+  return peopleArr
+}
+
+createLineOrder()
+
 
 module.exports = {
   applyDiscount,

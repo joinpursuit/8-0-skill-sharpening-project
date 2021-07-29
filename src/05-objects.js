@@ -9,7 +9,12 @@
  *  createEmptyObject()
  *  //> {}
  */
-function createEmptyObject() {}
+function createEmptyObject() {
+  let newObject = {};
+  return newObject;
+}
+
+createEmptyObject()
 
 /**
  * createObjectWithValue()
@@ -22,7 +27,12 @@ function createEmptyObject() {}
  *  createObjectWithValue(19);
  *  //> { whateverKey: 19 }
  */
-function createObjectWithValue(val) {}
+function createObjectWithValue(val) {
+  let objVal = {val};
+  return objVal;
+}
+
+createObjectWithValue()
 
 /**
  * createObjectWithKey()
@@ -35,7 +45,9 @@ function createObjectWithValue(val) {}
  *  createObjectWithKey("left");
  *  //> { left: false }
  */
-function createObjectWithKey(key) {}
+function createObjectWithKey(key) {
+return obj = {[key]:"Lamborghini Aventador"};
+}
 
 /**
  * createObjectWithKeyValuePair()
@@ -49,8 +61,13 @@ function createObjectWithKey(key) {}
  *  createObjectWithKeyValuePair("left", "right");
  *  //> { left: "right" }
  */
-function createObjectWithKeyValuePair(key, val) {}
+function createObjectWithKeyValuePair(key, val) {
+return objedt = {[key]:val};
 
+}
+
+
+createObjectWithValue()
 /**
  * getNameFromObject()
  * ---------------------
@@ -62,7 +79,12 @@ function createObjectWithKeyValuePair(key, val) {}
  *  getNameFromObject({ name: "Jay" });
  *  //> "Jay"
  */
-function getNameFromObject(object) {}
+function getNameFromObject(object) { 
+  return object.name;
+}
+
+
+
 
 /**
  * getAgeFromObject()
@@ -75,7 +97,10 @@ function getNameFromObject(object) {}
  *  getAgeFromObject({ age: 30 });
  *  //> 30
  */
-function getAgeFromObject(object) {}
+function getAgeFromObject(object) { 
+  return object.age
+}
+
 
 /**
  * addValueToObject()
@@ -89,7 +114,9 @@ function getAgeFromObject(object) {}
  *  addValueToObject({ left: true }, false);
  *  //> { left: true, key: false }
  */
-function addValueToObject(object, val) {}
+function addValueToObject(object, val) {
+  return {[object]:val}
+ }
 
 /**
  * addKeyToObject()
@@ -103,7 +130,10 @@ function addValueToObject(object, val) {}
  *  addKeyToObject({ right: false }, "left");
  *  //> { right: false, left: true }
  */
-function addKeyToObject(object, key) {}
+function addKeyToObject(object, key) {
+  object[key] = 'Aston Martin'; //Reminder to watch equals signs. Objects are NOT conditionals!!
+  return object;
+ }
 
 /**
  * addKeyValuePairToObject()
@@ -118,7 +148,10 @@ function addKeyToObject(object, key) {}
  *  addKeyValuePairToObject({ up: true }, "left", false);
  *  //> { up: true, left: false }
  */
-function addKeyValuePairToObject(object, key, val) {}
+function addKeyValuePairToObject(object, key, val) {
+  object[key] = val;
+  return object;
+}
 
 /**
  * deleteKeyFromObject()

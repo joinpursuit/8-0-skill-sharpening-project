@@ -9,7 +9,11 @@
  *  getLengthOfString("down");
  *  //> 4
  */
-function getLengthOfString(str) {}
+function getLengthOfString(str) {
+  return str.length;
+}
+
+getLengthOfString(8)
 
 /**
  * convertToNumber()
@@ -22,7 +26,11 @@ function getLengthOfString(str) {}
  *  convertToNumber("111");
  *  //> 111
  */
-function convertToNumber(val) {}
+function convertToNumber(val) {
+  return parseInt()
+}
+
+convertToNumber("12")
 
 /**
  * convertToString()
@@ -36,7 +44,11 @@ function convertToNumber(val) {}
  *  convertToString(99);
  *  //> "99"
  */
-function convertToString(val) {}
+function convertToString(val) {
+  return val.toString();
+}
+
+convertToString(14);
 
 /**
  * convertToShoutingText()
@@ -49,7 +61,11 @@ function convertToString(val) {}
  *  convertToShoutingText("Hello There");
  *  //> "HELLO THERE"
  */
-function convertToShoutingText(text) {}
+function convertToShoutingText(text) {
+  return text.toUpperCase()
+}
+
+convertToShoutingText("porsche")
 
 /**
  * convertToWhisperText()
@@ -62,7 +78,11 @@ function convertToShoutingText(text) {}
  *  convertToWhisperText("Hello There");
  *  //> "hello there"
  */
-function convertToWhisperText(text) {}
+function convertToWhisperText(text) {
+  return text.toLowerCase()
+}
+
+convertToWhisperText("PORSCHE")
 
 /**
  * checkIfCharacterIsInString()
@@ -79,7 +99,18 @@ function convertToWhisperText(text) {}
  *  checkIfCharacterIsInString("hello there", "a");
  *  //> false
  */
-function checkIfCharacterIsInString(text, character) {}
+function checkIfCharacterIsInString(text, character) {
+  //step 1
+  let isCharacter = false;
+  for (let i = 0; i < text.length; i++) {
+    if (text[i] === character) {
+      isCharacter = true
+    }
+  }
+  return isCharacter
+}
+
+checkIfCharacterIsInString('hello')
 
 /**
  * isEven()
@@ -95,7 +126,15 @@ function checkIfCharacterIsInString(text, character) {}
  *  isEven(11);
  *  //> false
  */
-function isEven(num) {}
+function isEven(num) {
+  if (num / 2 === 0) {
+    return true
+  } else if (num/2 !== 0) {
+    return false;
+  }
+}
+
+isEven(1)
 
 /**
  * isOdd()
@@ -111,7 +150,17 @@ function isEven(num) {}
  *  isOdd(11);
  *  //> true
  */
-function isOdd(num) {}
+function isOdd(num) {
+  if (num / 2 !== 0) {
+    return true
+  } else if (num / 2 == 0) {
+    return false
+  } else {
+    return null
+  }
+}
+
+isOdd(34)
 
 /**
  * isTruthy()
@@ -127,7 +176,14 @@ function isOdd(num) {}
  *  isTruthy(null);
  *  //> false
  */
-function isTruthy(val) {}
+function isTruthy(val) {
+  if (val == true) {
+    return true
+  } else {
+    return false
+  }
+}
+isTruthy("dog")
 
 /**
  * isFalsy()
@@ -143,7 +199,15 @@ function isTruthy(val) {}
  *  isFalsy(" ");
  *  //> false
  */
-function isFalsy(val) {}
+function isFalsy(val) { 
+  if (val !== true) {
+    return false 
+    } else {
+      return true
+    }
+}
+
+isTruthy("cat")
 
 // Do not change the code below.
 module.exports = {

@@ -11,7 +11,21 @@
  *  //> 25
  *  (3 + 4 + 5 + 6 + 7 = 25)
  */
-function rangeSum(min, max) {}
+function rangeSum(min, max) {
+  let sum = 0;
+  for (let i = min; i <= max; i++) {
+    sum += min; //0 + 3, 
+    min++
+  }
+  return sum
+}
+
+rangeSum(5, 10)
+
+
+//store the number
+//add to previous number
+
 
 /**
  * rangeOdd()
@@ -25,7 +39,18 @@ function rangeSum(min, max) {}
  *  rangeOdd(10, 15);
  *  //> [ 15, 13, 11 ]
  */
-function rangeOdd(min, max) {}
+function rangeOdd(min, max) {
+  let decendingArray = [];
+
+  while (max >= min) {
+    if (max % 2 !== 0)
+      decendingArray.push(max)
+    max--;
+  }
+  return decendingArray;
+}
+
+rangeOdd(10, 6)
 
 /**
  * rangeEveryOther()
@@ -39,7 +64,17 @@ function rangeOdd(min, max) {}
  *  rangeEveryOther(11, 18);
  *  //> [ 11, 13, 15, 17 ]
  */
-function rangeEveryOther(min, max) {}
+function rangeEveryOther(min, max) {
+  let everyOtherArr = [];
+
+  while (min <= max) {
+    everyOtherArr.push(min);
+    min += 2;
+  }
+  return everyOtherArr
+}
+
+rangeEveryOther(10, 16)
 
 /**
  * containsWhileLoop()
@@ -61,7 +96,25 @@ function rangeEveryOther(min, max) {}
  *  containsWhileLoop([ "left", "up", "right" ], "down");
  *  //> false
  */
-function containsWhileLoop(array, target) {}
+function containsWhileLoop(array, target) {
+  //Always set a boolean accumulator to false 
+  let isTarget = false;
+  //We arte checking whether a target exist in the array which means we are checkind indexes
+  let arrayIndexToCheck = 0;
+//While loops are built off of a condition - in this case whether the index is less than length of the array
+  while (arrayIndexToCheck < array.length) {
+  //check to see if the index we are checking is equal to the target
+    if (array[index] === isTarget) {
+      isTarget = true;
+    } else {
+      isTarget = false;
+    }
+    //we need to increment and move up the indexes
+    arrayIndextoCheck++;
+  }
+  return isTarget
+}
+
 
 /**
  * containsForLoop()
@@ -83,7 +136,21 @@ function containsWhileLoop(array, target) {}
  *  containsForLoop([ "left", "up", "right" ], "down");
  *  //> false
  */
-function containsForLoop(array, target) {}
+function containsForLoop(array, target) {
+  //always begin with "false" when itnitalizing the accumulator
+  let doesLoopHaveTarget = false;
+  //init for loop
+  for (let i = 0; i < array.length; i++) {
+    //if the index of the loop is equal to the target, it is true
+    if (array[i] === target) {
+      doesLoopHaveTarget = true;
+    }
+  }
+  return doesLoopHaveTarget;
+}
+
+
+
 
 /**
  * targetCount()
@@ -97,7 +164,17 @@ function containsForLoop(array, target) {}
  *  targetCount([ 10, 20, 10, 20, 30 ], 10);
  *  //> 2
  */
-function targetCount(array, target) {}
+function targetCount(array, target) { 
+  //initlize the accumulator - returning a number
+  targetCounter = 0;
+
+  for (let i = 0; i < array.length; i++) {
+    if (array[i] === target) {
+      targetCounter++;
+    }
+  }
+  return targetCounter;
+}
 
 /**
  * firstIndexFound()
@@ -117,7 +194,15 @@ function targetCount(array, target) {}
  *  firstIndexFound([ "left", "right", "left" ], "up");
  *  //> -1
  */
-function firstIndexFound(array, target) {}
+function firstIndexFound(array, target) {
+//simply loop along array length to check each index
+  for (let i = 0; i < array.length; i++) {
+    //if array index equals target return the index
+    if (array[i] === target) return i
+  }
+  return -1
+}
+
 
 /**
  * lastIndexFound()
@@ -137,7 +222,12 @@ function firstIndexFound(array, target) {}
  *  lastIndexFound([ "left", "right", "left" ], "up");
  *  //> -1
  */
-function lastIndexFound(array, target) {}
+function lastIndexFound(array, target) {
+  for (let i = array.length; i > 0; i--) {
+    if (array[i] === target) return i
+  }
+  return -1;
+}
 
 /**
  * timesIndex()
@@ -151,12 +241,18 @@ function lastIndexFound(array, target) {}
  *  //> [ 7 * 0, 10 * 1, 11 * 2 ]
  *  //> [ 0, 10, 22 ]
  */
-function timesIndex(array) {}
+function timesIndex(array) {
+  let multipliyArray = [];
+  for (let i = 0; i < array.length; i++) {
+    multipliyArray.push(array[i] * i);
+  }
+  return multipliyArray;
+}
 
 /**
  * cumulativeSum()
  * ---------------------
- * Returns a new array where each element is the cumulative sum in the array, up until that point.
+ * Returns a new array where **each element** is the cumulative sum in the array, up until that point.
  * @param {number[]} array
  * @returns {number[]}
  *
@@ -165,7 +261,19 @@ function timesIndex(array) {}
  *  //> [ 5, 5 + 2, 5 + 2 + 9 ]
  *  //> [ 5, 7, 16 ]
  */
-function cumulativeSum(array) {}
+
+//cumulative: increasing by sucessive additions
+function cumulativeSum(array) {
+  //intialize accumulator - array
+  let sumArray = [];
+  //**"element = index"
+  let cumSum = array[i]
+  for (let i = 0; i < array.length; i++) {
+    sumArray.push(sumArray);
+    sumArray += array[i + 1]
+  }
+  return sumArray
+}
 
 // Do not change anything below this line.
 module.exports = {

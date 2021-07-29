@@ -14,7 +14,8 @@
  *  isEqual(10, "10");
  *  //> false
  */
-function isEqual(a, b) {}
+function isEqual(a, b) {
+}
 
 /**
  * findLarger()
@@ -28,7 +29,15 @@ function isEqual(a, b) {}
  *  findLarger(19, 7);
  *  //> 19
  */
-function findLarger(a, b) {}
+function findLarger(a, b) {
+  if (a > b) {
+    return a
+  } else if (b > a) {
+    return b
+  }
+}
+
+findLarger(5, 7)
 
 /**
  * findLargerOrTie()
@@ -45,7 +54,7 @@ function findLarger(a, b) {}
  *  findLargerOrTie(0, 0);
  *  //> "tie"
  */
-function findLargerOrTie(a, b) {}
+function findLargerOrTie(a, b) { }
 
 /**
  * positiveNegativeOrZero()
@@ -65,7 +74,15 @@ function findLargerOrTie(a, b) {}
  *  positiveNegativeOrZero(1);
  *  //> "Positive"
  */
-function positiveNegativeOrZero(a) {}
+function positiveNegativeOrZero(a) {
+  if (a > 0) {
+    return "Positive"
+  } else if (a < 0) {
+    return "Negative"
+  } else if (a === 0) {
+    return "Zero"
+  }
+}
 
 /**
  * aroundTheWorldGreeting()
@@ -86,7 +103,24 @@ function positiveNegativeOrZero(a) {}
  *  aroundTheWorldGreeting();
  *  //> "Hello World"
  */
-function aroundTheWorldGreeting(language) {}
+function aroundTheWorldGreeting(language) {
+
+  //make a guard clause for undefined
+  if (language === undefined) language = "english";
+
+  //make language lowerCase
+  language = language.toLowerCase();
+
+  if (language === "english") {
+    return "Hello World";
+  } else if (language === "spanish") {
+    return "Hola Mundo";
+  } else if (language === "german") {
+    return "Hallo Welt";
+  }
+}
+
+aroundTheWorldGreeting()
 
 /**
  * aroundTheWorldGreetingWithSwitch()
@@ -109,7 +143,26 @@ function aroundTheWorldGreeting(language) {}
  *  aroundTheWorldGreetingWithSwitch();
  *  //> "Hello World"
  */
-function aroundTheWorldGreetingWithSwitch(language) {}
+function aroundTheWorldGreetingWithSwitch(language) {
+
+  //make a guard clause for undefined
+  if (language === undefined) language = "english";
+
+  //make language lowerCase
+  language = language.toLowerCase();
+
+  switch (language) {
+    case "english":
+      return "Hello World";
+      break;
+    case "spanish":
+      return "Hola Mundo";
+      break;
+    case "german":
+      return "Hallo Welt"
+    //No need for ending "break - W3Schools
+  }
+}
 
 /**
  * calculateLetterGrade()
@@ -128,7 +181,7 @@ function aroundTheWorldGreetingWithSwitch(language) {}
  *  calculateLetterGrade(99);
  *  //> "A"
  */
-function calculateLetterGrade(grade) {}
+function calculateLetterGrade(grade) { }
 
 /**
  * animalCounts()
@@ -146,51 +199,66 @@ function calculateLetterGrade(grade) {}
  *  animalCounts("pig", 1);
  *  //> "1 pig"
  */
-function animalCounts(animal, numberOfAnimals) {}
+function animalCounts(animal, numberOfAnimals) {
+  if (numberOfAnimals > 1) { //greater than one is pural
+    return numberOfAnimals + " " + animal + "s"; //watch spacing when concatinating
+  } else if (numberOfAnimals === 1) { //equal to one - singular
+    return numberOfAnimals + " " + animal;
+  }
+}
+  animalCounts("lion", 3)
+  
+      /**
+       * evenOrOdd()
+       * ---------------------
+       * Takes in a number and returns whether that number is "Even" or "Odd".
+       * HINT: How is this similar to isOdd() or isEven() from part 2?
+       * @param {number} a
+       * @returns {string}
+       *
+       * EXAMPLE:
+       *  evenOrOdd(11);
+       *  //> "Odd"
+       * 
+       *  evenOrOdd(48);
+       *  //> "Even"
+       */
+      function evenOrOdd(a) { 
+        if (a / 2 === 0) {
+          return "Even" 
+        } else if (a /2 !== 0) {
+          return "Odd"
+        }
+      }
 
-/**
- * evenOrOdd()
- * ---------------------
- * Takes in a number and returns whether that number is "Even" or "Odd".
- * HINT: How is this similar to isOdd() or isEven() from part 2?
- * @param {number} a
- * @returns {string}
- *
- * EXAMPLE:
- *  evenOrOdd(11);
- *  //> "Odd"
- * 
- *  evenOrOdd(48);
- *  //> "Even"
- */
-function evenOrOdd(a) {}
+  /**
+   * evenOrOddWithTernary()
+   * ---------------------
+   * Takes in a number and returns whether that number is even or odd.
+   *
+   * NOTE: You must use a ternary to solve this.
+   *
+   * @param {number} a
+   * @returns {string}
+   *
+   * EXAMPLE:
+   *  evenOrOddWithTernary(8);
+   *  //> "Even"
+   */
+  function evenOrOddWithTernary(a) {
+    return a / 2 ? "Odd" : "Even";
+  }
 
-/**
- * evenOrOddWithTernary()
- * ---------------------
- * Takes in a number and returns whether that number is even or odd.
- *
- * NOTE: You must use a ternary to solve this.
- *
- * @param {number} a
- * @returns {string}
- *
- * EXAMPLE:
- *  evenOrOddWithTernary(8);
- *  //> "Even"
- */
-function evenOrOddWithTernary(a) {}
-
-// Do not change any code below this line.
-module.exports = {
-  isEqual,
-  findLarger,
-  findLargerOrTie,
-  positiveNegativeOrZero,
-  aroundTheWorldGreeting,
-  aroundTheWorldGreetingWithSwitch,
-  calculateLetterGrade,
-  animalCounts,
-  evenOrOdd,
-  evenOrOddWithTernary,
-};
+  // Do not change any code below this line.
+  module.exports = {
+    isEqual,
+    findLarger,
+    findLargerOrTie,
+    positiveNegativeOrZero,
+    aroundTheWorldGreeting,
+    aroundTheWorldGreetingWithSwitch,
+    calculateLetterGrade,
+    animalCounts,
+    evenOrOdd,
+    evenOrOddWithTernary,
+  };
