@@ -19,28 +19,56 @@
  *  applyDiscount(1000, 9, true);
  *  //> 700
  */
-function applyDiscount(priceInCents, age, hasMembership) {}
+function applyDiscount(priceInCents, age, hasMembership) {
+  let totalPrice = 0;
+  if (age <= 10 && !hasMembership) {
+    totalPrice = priceInCents * 0.9;
+  } else if (age >= 65 && !hasMembership) {
+    totalPrice = priceInCents * 0.9;
+  } else if (age >= 65 && hasMembership) {
+    totalPrice = priceInCents * 0.7;
+  } else if (age <= 10 && hasMembership) {
+    totalPrice = priceInCents * 0.7;
+  } else if (hasMembership) {
+    totalPrice = priceInCents * 0.8;
+  } else if (age <= 10 && hasMembership) {
+    totalPrice = priceInCents * 0.7;
+  } else totalPrice = priceInCents;
+  return totalPrice;
+}
 
 /**
  * getCartTotal()
  * ---------------------
  * An online store allows for customers to add products to their cart. Customers can add multiples of each product to the cart.
- * 
+ *
  * Write an algorithm that will determine the total amount of all items in the cart. Make sure to multiply the `priceInCents` times the `quantity` to get the full cost of each product.
  * @param {Object[]} products - An array of products.
  * @param {number} products[].priceInCents - The price of the product, in cents.
  * @param {number} products[].quantity - The number of products being bought.
  * @returns {string} A formatted representation of the total, rounded to two decimal places.
- * 
+ *
  * EXAMPLE:
- *  const cart = [
-      { name: "T-Shirt", priceInCents: 1200, quantity: 1 },
-      { name: "Socks", priceInCents: 900, quantity: 2 },
-    ];
-    getCartTotal(cart);
- *  //> "$30.00"
- */
-function getCartTotal(products) {}
+ * */
+const cart = [
+  { name: "T-Shirt", priceInCents: 1200, quantity: 1 },
+  { name: "Socks", priceInCents: 900, quantity: 2 },
+];
+//getCartTotal(cart);
+//> "$30.00"
+
+function getCartTotal(products) {
+  // Write an algorithm that will determine the total amount of all items in the cart
+  // Create a variable that holds an empty string
+  let totalItems = 0;
+  // Create a for loop that loops through each element
+  for (let i = 0; i < products.length; i++) {
+    totalItems += products[i].priceInCents * products[i].quantity;
+  }
+  return `$${(totalItems / 100).toFixed(2)}`;
+}
+
+getCartTotal(cart);
 
 /**
  * compareLocations()
@@ -80,7 +108,33 @@ function getCartTotal(products) {}
     compareLocations(address1, address2);
     //> "Same city."
  */
-function compareLocations(address1, address2) {}
+
+function compareLocations(address1, address2) {
+  // This function determins whether certain addresses are similar to eachother
+  // Declare a variable that holds an empty string
+  let result = " ";
+  //let firstObj = JSON.stringify(address1);
+  //let secondObj = JSON.stringify(address2);
+  // Create an if statement that compares each statmenet
+  if (
+    address1.city === address2.city &&
+    address1.state === address2.state &&
+    address1.street === address2.street
+  ) {
+    result = "Same building.";
+  } else if (
+    address1.city === address2.city &&
+    address1.state === address2.state
+  ) {
+    result = "Same city.";
+  } else if (address1.state === address2.state) {
+    result = "Same state.";
+  } else result = "Addresses are not near each other.";
+  return result;
+}
+
+//compareLocations(address1, address2);
+//console.log(compareLocations(address1, address2));
 
 /**
  * gradeAssignments()
@@ -101,33 +155,60 @@ function compareLocations(address1, address2) {}
  * @param {number} assignments[].score.received - The score received on the assignment.
  * @param {number} assignments[].score.max - The maximum score that could be received on the assignment.
  * @returns {Object[]} The original array of assignment objects, with a new key of `status` added to each object.
- * 
- * EXAMPLE:
- *  const assignments = [
-      { kind: "PASS-FAIL", score: { received: 4, max: 4 } },
-      { kind: "PERCENTAGE", score: { received: 8, max: 10 } },
-      { kind: "ESSAY", score: { received: 4, max: 5 } },
-    ];
-    gradeAssignments(assignments);
-    //> [
-    //>   { 
-    //>     kind: "PASS-FAIL",
-    //>     score: { received: 4, max: 4 },
-    //>     status: "PASSED",
-    //>   },
-    //>   { 
-    //>     kind: "PERCENTAGE",
-    //>     score: { received: 7, max: 9 },
-    //>     status: "FAILED: 77.8%",
-    //>   },
-    //>   { 
-    //>     kind: "ESSAY",
-    //>     score: { received: 4, max: 5 },
-    //>     status: "SCORE: 4/5",
-    //>   },
-    //> ];
- */
-function gradeAssignments(assignments) {}
+ *
+ * */
+//EXAMPLE:
+const assignments = [
+  { kind: "PASS-FAIL", score: { received: 4, max: 4 } },
+  { kind: "PERCENTAGE", score: { received: 8, max: 10 } },
+  { kind: "ESSAY", score: { received: 4, max: 5 } },
+];
+//gradeAssignments(assignments);
+//> [
+//>   {
+//>     kind: "PASS-FAIL",
+//>     score: { received: 4, max: 4 },
+//>     status: "PASSED",
+//>   },
+//>   {
+//>     kind: "PERCENTAGE",
+//>     score: { received: 7, max: 9 },
+//>     status: "FAILED: 77.8%",
+//>   },
+//>   {
+//>     kind: "ESSAY",
+//>     score: { received: 4, max: 5 },
+//>     status: "SCORE: 4/5",
+//>   },
+//> ];
+
+function gradeAssignments(assignments) {
+  // Create a for loop that goes through each element in the array
+  for (let i = 0; i < assignments.length; i++) {
+    let assignment = assignments[i];
+    if (assignment.kind === "PASS-FAIL") {
+      if (assignment.score.received === assignment.score.max) {
+        assignment.status = "PASSED";
+      } else {
+        assignment.status = "FAILED";
+      }
+    }
+    if (assignment.kind === "ESSAY") {
+      assignment.status = `SCORE: ${assignment.score.received}/${assignment.score.max}`;
+    }
+    if (assignment.kind === "PERCENTAGE") {
+      let score = (assignment.score.received / assignment.score.max) * 100;
+      if (score >= 80) {
+        assignment.status = `PASSED: ${score.toFixed(1)}%`;
+      } else {
+        assignment.status = `FAILED: ${score.toFixed(1)}%`;
+      }
+    }
+  }
+  return assignments;
+}
+
+//gradeAssignments(assignments);
 
 /**
  * createLineOrder()
@@ -152,7 +233,22 @@ function gradeAssignments(assignments) {}
     createLineOrder(people);
     //> [ "Ray Anderson", "America Marsh", "Wade Carson", "Patience Patel" ]
  */
-function createLineOrder(people) {}
+function createLineOrder(people) {
+  // Declare a variable that holds an empty array
+  let newArr = [];
+  // Create a for loop that loops through each element
+  for (let i = 0; i < people.length; i++) {
+    if (people[i].hasMembership === true) {
+      newArr.push(people[i].name);
+    }
+  }
+  for (let i = 0; i < people.length; i++) {
+    if (people[i].hasMembership === false) {
+      newArr.push(people[i].name);
+    }
+  }
+  return newArr;
+}
 
 module.exports = {
   applyDiscount,
