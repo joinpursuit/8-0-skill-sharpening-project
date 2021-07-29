@@ -19,7 +19,22 @@
  *  applyDiscount(1000, 9, true);
  *  //> 700
  */
-function applyDiscount(priceInCents, age, hasMembership) {}
+function applyDiscount(priceInCents, age, hasMembership) {
+  if(age <= 10 && hasMembership || age >= 65 && hasMembership){
+    let discount = priceInCents * .3;
+    let newPrice = priceInCents - discount;
+    return newPrice;
+  }else if(age <= 10 || age >= 65){
+    let discount = priceInCents * .1;
+    let newPrice = priceInCents - discount;
+    return newPrice;
+  }else if(hasMembership){
+    let discount = priceInCents * .2;
+    let newPrice = priceInCents - discount;
+    return newPrice;
+  }
+  return priceInCents
+}
 
 /**
  * getCartTotal()
@@ -40,7 +55,14 @@ function applyDiscount(priceInCents, age, hasMembership) {}
     getCartTotal(cart);
  *  //> "$30.00"
  */
-function getCartTotal(products) {}
+function getCartTotal(products) {
+  let total = 0;
+  for(let i = 0; i < products.length; i++){
+    total += (products[i].priceInCents * products[i].quantity)
+  }
+  total /= 100
+  return `$${total.toFixed(2)}`
+}
 
 /**
  * compareLocations()
@@ -80,7 +102,19 @@ function getCartTotal(products) {}
     compareLocations(address1, address2);
     //> "Same city."
  */
-function compareLocations(address1, address2) {}
+function compareLocations(address1, address2) {
+  //If the street, city, state, and zip for both addresses are the same, return the string "Same building."
+  if(address1.street === address2.street && address1.city === address2.city && address1.state === address2.state && address1.zip === address2.zip){
+    return 'Same building.'
+  } //If the city, state, and zip are the same, return the string "Same city."
+  else if(address1.city === address2.city && address1.state === address2.state && address1.zip === address2.zip){
+    return "Same city."
+  } //If just the state is the same, return the string "Same state."
+  else if(address1.state === address2.state){
+    return "Same state."
+  }//If none of those matches occur, return the string "Addresses are not near each other."
+  return "Addresses are not near each other."
+}
 
 /**
  * gradeAssignments()
@@ -127,7 +161,25 @@ function compareLocations(address1, address2) {}
     //>   },
     //> ];
  */
-function gradeAssignments(assignments) {}
+function gradeAssignments(assignments) {
+  //If the assignment has a `kind` of `"PASS-FAIL"`, set the `status` value to `"PASSED"` if the `score.received` equals the `score.max`. Otherwise, set that `status` to be `"FAILED"`.
+  for(let i = 0; i < assignments.length; i++){
+    if(assignments[i].kind === "PASS-FAIL" && assignments[i].score.received === assignments[i].score.max){
+      assignments[i].push({status: "PASSED"})
+    }//If the assignment has a `kind` of `"PERCENTAGE"`, set the `status` value to be `"PASSED: <percentage>"` if the student scored at least 80.0%. The `<percentage>` should be set to one decimal place. If the student scored less than 80.0%, set the status to `"FAILED: <percentage>"`.
+    else if(assignments[i].kind === "PERCENTAGE" && assignments[i].score.received >= 8){
+      let receivedScore = assignments[i].score.received
+      let percentage = receivedScore/assignments[i].score.max
+      assignments[i].status = `PASSED: ${percentage}%`
+    }else if(assignments[i].score.received < 8){
+      assignments[i].status = `FAILED: ${percentage}`
+    }//If the assignment has any other `kind` than the two above, set the `status` value to equal `"SCORE: <received>/<max>"`, where `<received>` is the `score.received` value and `<max>` is the `score.max` value.
+    else if(assignments[i].kind !== "PERCENTAGE" || assignments[i].kind !== "PASS-FAIL"){
+      assignments[i].status = `SCORE: ${assignments[i].score.received/assignments[i].score.max}`
+    }
+  }
+  return assignments
+}
 
 /**
  * createLineOrder()
