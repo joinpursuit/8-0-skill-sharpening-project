@@ -152,7 +152,7 @@ function isOdd(num) {
 function isTruthy(val) {
   if (val){
     return true;
-  }else return false;
+  }else return false
 }
 
 /**
@@ -172,8 +172,9 @@ function isTruthy(val) {
 function isFalsy(val) {
   if (val){
     return false;
-  }else return true;
+  }else return true
 }
+
 
 // Do not change the code below.
 module.exports = {
