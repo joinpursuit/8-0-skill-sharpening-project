@@ -2,19 +2,26 @@
  * createEmptyObject()
  * ---------------------
  * Returns an empty object.
- * Should return a new empty object each time the function is called.
+ * Should return a new empty object each time the function 
+ * is called.
  * @returns {Object}
  *
  * EXAMPLE:
  *  createEmptyObject()
  *  //> {}
  */
-function createEmptyObject() {}
-
+function createEmptyObject() {
+//creates an empty array
+  const  emptyObj = {}
+  //return value
+  return emptyObj;
+}
+console.log(createEmptyObject())
 /**
  * createObjectWithValue()
  * ---------------------
- * Creates an object with the input as a value. The key can be anything.
+ * Creates an object with the input as a value. The key can be 
+ * anything.
  * @param {*} val
  * @returns {Object}
  *
@@ -22,12 +29,17 @@ function createEmptyObject() {}
  *  createObjectWithValue(19);
  *  //> { whateverKey: 19 }
  */
-function createObjectWithValue(val) {}
-
+function createObjectWithValue(val) {
+  const  emptyObj= {}
+  emptyObj.key = val
+return emptyObj;
+}
+console.log(createObjectWithValue("my value"))
 /**
  * createObjectWithKey()
  * ---------------------
- * Creates an object with the input as a key. The value can be anything.
+ * Creates an object with the input as a key. 
+ * The value can be anything.
  * @param {*} key
  * @returns {Object}
  *
@@ -35,8 +47,15 @@ function createObjectWithValue(val) {}
  *  createObjectWithKey("left");
  *  //> { left: false }
  */
-function createObjectWithKey(key) {}
+function createObjectWithKey(key) {
+  
+  const  emptyObj = {}
+  emptyObj[key] = 'left'; 
+return emptyObj;
 
+}
+
+console.log(createObjectWithValue(undefined))
 /**
  * createObjectWithKeyValuePair()
  * ---------------------
@@ -49,8 +68,15 @@ function createObjectWithKey(key) {}
  *  createObjectWithKeyValuePair("left", "right");
  *  //> { left: "right" }
  */
-function createObjectWithKeyValuePair(key, val) {}
+function createObjectWithKeyValuePair(key, val) {
 
+  const emptyObj = {}
+ emptyObj[key] = val
+  
+return emptyObj;
+
+}
+console.log(createObjectWithKeyValuePair(1, 2))
 /**
  * getNameFromObject()
  * ---------------------
@@ -62,8 +88,14 @@ function createObjectWithKeyValuePair(key, val) {}
  *  getNameFromObject({ name: "Jay" });
  *  //> "Jay"
  */
-function getNameFromObject(object) {}
-
+function getNameFromObject(object) {
+  let objName = ''
+  for (const property in object){
+     objName = object[property]
+  }
+return objName;
+}
+console.log(getNameFromObject({ name: null }))
 /**
  * getAgeFromObject()
  * ---------------------
@@ -75,12 +107,20 @@ function getNameFromObject(object) {}
  *  getAgeFromObject({ age: 30 });
  *  //> 30
  */
-function getAgeFromObject(object) {}
+function getAgeFromObject(object) {
 
+let objName = ''
+  for (const property in object){
+     objName = object[property]
+  }
+return objName;
+}
+console.log(getAgeFromObject({age: undefined}))
 /**
  * addValueToObject()
  * ---------------------
- * Adds the input as a value on the given object. The key can be anything.
+ * Adds the input as a value on the given object. 
+ * The key can be anything.
  * @param {Object} object
  * @param {*} val
  * @returns {Object}
@@ -89,12 +129,18 @@ function getAgeFromObject(object) {}
  *  addValueToObject({ left: true }, false);
  *  //> { left: true, key: false }
  */
-function addValueToObject(object, val) {}
+function addValueToObject(object, val) {
+  const addValue = object;
+  addValue.key = val
+  return addValue
+}
 
+console.log(addValueToObject({}, null))
 /**
  * addKeyToObject()
  * ---------------------
- * Adds the input as a key on the given object. The value can be anything.
+ * Adds the input as a key on the given object. 
+ * The value can be anything.
  * @param {Object} object
  * @param {*} key
  * @returns {Object}
@@ -103,8 +149,14 @@ function addValueToObject(object, val) {}
  *  addKeyToObject({ right: false }, "left");
  *  //> { right: false, left: true }
  */
-function addKeyToObject(object, key) {}
 
+
+function addKeyToObject(object, key) {
+ const addKey = object;
+ addKey[key] = 'true' 
+  return addKey
+}
+console.log(addKeyToObject({ right: false }, "left"))
 /**
  * addKeyValuePairToObject()
  * ---------------------
@@ -118,8 +170,12 @@ function addKeyToObject(object, key) {}
  *  addKeyValuePairToObject({ up: true }, "left", false);
  *  //> { up: true, left: false }
  */
-function addKeyValuePairToObject(object, key, val) {}
-
+function addKeyValuePairToObject(object, key, val) {
+  const addKey = object;
+  addKey[key] = val;
+  return addKey;
+}
+console.log(addKeyValuePairToObject({}, 'age', 21));
 /**
  * deleteKeyFromObject()
  * ---------------------
@@ -132,8 +188,12 @@ function addKeyValuePairToObject(object, key, val) {}
  *  deleteKeyFromObject({ left: true, right: false }, "left");
  *  //> { right: false }
  */
-function deleteKeyFromObject(object, key) {}
-
+function deleteKeyFromObject(object, key) {
+  const delKey = object;
+delete delKey[key];
+return delKey;
+}
+console.log(deleteKeyFromObject({ key: "val", true: false }, true))
 // Do not change any code below this line.
 module.exports = {
   createEmptyObject,
