@@ -1,3 +1,5 @@
+const { createArrayWithTwoElements } = require("./04-arrays");
+
 /**
  * shoutForLoop()
  * ---------------------
@@ -12,7 +14,14 @@
  *  shoutForLoop([ "A", "Very", "Happy", "Array" ]);
  *  //> [ "A!", "Very!", "Happy!", "Array!" ];
  */
-function shoutForLoop(array) {}
+function shoutForLoop(array) {
+  let newArr = []
+  for (let i = 0; i < array.length; i++) {
+    let arrays = array[i];
+    newArr.push(arrays + '!')
+  }
+  return newArr
+}
 
 /**
  * shoutWhileLoop()
@@ -28,7 +37,14 @@ function shoutForLoop(array) {}
  *  shoutWhileLoop([ "A", "Very", "Happy", "Array" ]);
  *  //> [ "A!", "Very!", "Happy!", "Array!" ];
  */
-function shoutWhileLoop(array) {}
+function shoutWhileLoop(array) {
+  let i = 0
+  while (i < array.length){
+    array[i] = array[i] + '!'
+    i++
+  }
+  return array
+}
 
 /**
  * shoutForOfLoop()
@@ -44,7 +60,13 @@ function shoutWhileLoop(array) {}
  *  shoutForOfLoop([ "A", "Very", "Happy", "Array" ]);
  *  //> [ "A!", "Very!", "Happy!", "Array!" ];
  */
-function shoutForOfLoop(array) {}
+function shoutForOfLoop(array) {
+  let newArr = [];
+  for (const i of array) {
+    newArr.push(i + "!")
+  }
+  return newArr
+}
 
 /**
  * sumArray()
@@ -57,7 +79,13 @@ function shoutForOfLoop(array) {}
  *  sumArray([ 10, 0, 10, 11 ]);
  *  //> 31
  */
-function sumArray(array) {}
+function sumArray(array) {
+  let sum = 0;
+  for (let i of array) {
+    sum += i
+  }
+  return sum
+}
 
 /**
  * oddArray()
@@ -70,7 +98,15 @@ function sumArray(array) {}
  *  oddArray([ 11, 15, 20, 22, 37 ]);
  *  //> [ 11, 15, 37 ]
  */
-function oddArray(array) {}
+function oddArray(array) {
+  let result = []
+  for (let num of array) {
+    if (num % 2 === 1) {
+      result.push(num)
+    }
+  }
+  return result
+}
 
 /**
  * evenArray()
