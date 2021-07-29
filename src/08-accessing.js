@@ -32,7 +32,9 @@
  *  getFirstName(person);
  *  //> "Rachel"
  */
-function getFirstName(person) {}
+function getFirstName(person) {
+  return person.names.first
+}
 
 /**
  * getLastName()
@@ -45,7 +47,9 @@ function getFirstName(person) {}
  *  getLastName(person);
  *  //> "Rojas"
  */
-function getLastName(person) {}
+function getLastName(person) {
+  return person.names.last
+}
 
 /**
  * getAddressStreet()
@@ -58,7 +62,9 @@ function getLastName(person) {}
  *  getAddressStreet(person);
  *  //> "697 Pine Drive"
  */
-function getAddressStreet(person) {}
+function getAddressStreet(person) {
+  return person.address.street
+}
 
 /**
  * getCountOfPhoneNumbers()
@@ -71,7 +77,9 @@ function getAddressStreet(person) {}
  *  getCountOfPhoneNumbers(person);
  *  //> 2
  */
-function getCountOfPhoneNumbers(person) {}
+function getCountOfPhoneNumbers(person) {
+  return person.numbers.length
+}
 
 /**
  * getFirstPhoneNumber()
@@ -171,7 +179,46 @@ function getFullAddress(person) {}
       numbers: [7185550921, 7185558611],
     };
  */
-function getFlatObject(person) {}
+    //       ORIGINAL
+    // const person = {
+    //   names: {
+    //     first: "Rachel",
+    //     middle: "Eleanor",
+    //     last: "Rojas"
+    //   },
+    //   address: {
+    //     street: "697 Pine Drive",
+    //     unit: "2A",
+    //     city: "Staten Island",
+    //     state: "NY",
+    //     zip: "10306"
+    //   },
+    //   numbers: [
+    //     7185550921,
+    //     7185558611
+    //   ]
+    // }
+
+    function getFlatObject(person) {
+  const newObj = {}
+  for (const property in person) {
+    const value = person[property]
+
+    //if our value is not an array
+    if (!Array.isArray(value)) {
+      //iterate through value
+      for (const innerProperty in value) {
+        //declare constant variable named innerValue = value[innerProperty]
+        const innerValue = value[innerProperty]
+        newObj[innerProperty] = innerValue
+      }
+    } else {
+      newObj[property] = value;
+    }
+  }
+
+  return newObj
+}
 
 // Do not change the code below.
 module.exports = {
