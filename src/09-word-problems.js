@@ -56,7 +56,11 @@ function applyDiscount(priceInCents, age, hasMembership) {
  *  //> "$30.00"
  */
 function getCartTotal(products) {
-
+  let total = 0;
+  for (let product of products){
+    total += (product.priceInCents*product.quantity)/100;
+  }
+  return "$" + total.toFixed(2);
 }
 
 /**
@@ -98,34 +102,21 @@ function getCartTotal(products) {
     //> "Same city."
  */
 function compareLocations(address1, address2) {
-  let addObj1 = {
-    street: "8785 Trenton St.",
-    city: "Melbourne",
-    state: "FL",
-    zip: "32904",
-  }
-  let addObj2 = {
-    street: "8785 Trenton St.",
-    city: "Melbourne",
-    state: "CO",
-    zip: "32904",
-  }
-
   let result = {}
 
   for (key in address2){
-    if(address1[key] !== address2[key]){
-      return "Addresses are not near each other.";
-    }else if(address1[key] === address2[key]){
+    if(address1.street === address2.street && address1.city === address2.city && address1.state === address2.state && address1.zip === address2.zip){
       return "Same building.";
-    }else if(address1.city.state.zip[key] == address2.city.state.zip[key]){
-      return "Same city."
-    }else if(address1.state[key] === adderess2.state[key]){
+    } else if (address1.city === address2.city && address1.state === address2.state && address1.zip === address2.zip){
+      return "Same city.";
+    } else if (address1.state === address2.state){
       return "Same state.";
+    } else {
+      return "Addresses are not near each other."
     }
-  }return result = address1;
+  }
 }
-console.log(compareLocations(address1, address2));
+//console.log(compareLocations(address1, address2));
 
 /**
  * gradeAssignments()
@@ -172,7 +163,30 @@ console.log(compareLocations(address1, address2));
     //>   },
     //> ];
  */
-function gradeAssignments(assignments) {}
+function gradeAssignments(assignments) {
+  for (let i of assignments) {
+    if (i.kind.includes("PASS-FAIL") && 
+    i.score.received === i.score.max){
+    i.status = "PASSED";
+    }
+    if (i.kind.includes("PASS-FAIL") && 
+      i.score.received !== i.score.max) {
+        i.status ="FAILED";
+      }
+      if  (i.kind.includes("PERCENTAGE") && i.score.received >= i.score.max * 0.8) {
+        const score = (i.score.received * 10 / i.score.max * 10).toFixed(1)
+        i.status = "PASSED: " + score + "%"
+      }
+      if  (i.kind.includes("PERCENTAGE") && i.score.received < i.score.max * 0.8) {
+        const score = (i.score.received * 10 / i.score.max * 10).toFixed(1)
+        i.status = "FAILED: " + score + "%"
+      }
+      if (!i.kind.includes("PASS-FAIL") && !i.kind.includes("PERCENTAGE")) {
+        i.status = "SCORE: " + i.score.received + "/" + i.score.max
+      }
+    }
+    return assignments;
+}
 
 /**
  * createLineOrder()
@@ -197,30 +211,22 @@ function gradeAssignments(assignments) {}
     createLineOrder(people);
     //> [ "Ray Anderson", "America Marsh", "Wade Carson", "Patience Patel" ]
  */
+
 function createLineOrder(people) {
-//   { name: "Jackson Read", hasMembership: true },
-//       { name: "Esme Day", hasMembership: false },
-//       { name: "Ethan Hart", hasMembership: true },
-//       { name: "Willow Francis", hasMembership: false },
-//       { name: "Kiran Foster", hasMembership: false },
-//       { name: "Noah Harper", hasMembership: true }
-// ];
-      let personObline = [];
+       let newArrMembers = [];
+       let newArrNonMembers = [];
 
-      if(age <= 10 && !hasMembership){
-        total = priceInCents * 0.9;
-      }else if(age >= 65 && !hasMembership){
-        total = priceInCents * 0.9;
-      }else if (age <= 10 && hasMembership) {
-        total = priceInCents * 0.7;
-      }else if(age >= 65 && hasMembership){
-       total = priceInCents * 0.7;
-      }else if(hasMembership){
-        total = priceInCents * 0.8;
-      }else total = priceInCents;
-          return total;
-
-}
+       for(let i=0;i<people.length;i++){
+       let person = people[i];
+       if(person.hasMembership){
+         newArrMembers.push(person.name);
+       }else {
+         newArrNonMembers.push(person.name);
+       }
+      }
+        let orderLine = newArrMembers.concat(newArrNonMembers);
+        return orderLine;
+    }
 
 module.exports = {
   applyDiscount,
