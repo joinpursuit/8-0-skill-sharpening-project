@@ -22,12 +22,12 @@
 function applyDiscount(priceInCents, age, hasMembership) {
   let discount = 0;
   let totalPrice = 0;
-  if (age <= 10 || age >= 65) {
+  if ((age <= 10 || age >= 65) && hasMembership) {
+    discount += 0.3;
+  } else if (age <= 10 || age >= 65) {
     discount += 0.1;
   } else if (hasMembership) {
     discount += 0.2;
-  } else if ((age <= 10 || age >= 65) && hasMembership) {
-    discount += 0.3;
   }
   totalPrice = priceInCents * (1 - discount);
   return totalPrice;
