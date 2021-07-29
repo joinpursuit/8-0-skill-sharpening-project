@@ -19,7 +19,17 @@
  *  applyDiscount(1000, 9, true);
  *  //> 700
  */
-function applyDiscount(priceInCents, age, hasMembership) {}
+function applyDiscount(priceInCents, age, hasMembership) {
+  let dCount = 0; 
+
+  if (age <= 10 || age >= 65) {
+    dCount += 10
+  }
+  if (hasMembership) {
+    dCount  += 20
+  }
+  return priceInCents - dCount * 10
+}
 
 /**
  * getCartTotal()
@@ -40,7 +50,9 @@ function applyDiscount(priceInCents, age, hasMembership) {}
     getCartTotal(cart);
  *  //> "$30.00"
  */
-function getCartTotal(products) {}
+function getCartTotal(products) {
+
+}
 
 /**
  * compareLocations()
@@ -80,7 +92,24 @@ function getCartTotal(products) {}
     compareLocations(address1, address2);
     //> "Same city."
  */
-function compareLocations(address1, address2) {}
+function compareLocations(address1, address2) {
+
+if (address1.state !== address2.state) {
+  return "Addresses are not near each other."
+}
+let message = " ";
+
+if(address1.state === address2.state) {
+  message = "Same state."
+}
+if (address1.city === address2.city && address1.zip === address2.zip) {
+  message = "Same city."
+}
+if (address1.street === address2.street) {
+  message = "Same building."
+ }
+ return message;
+}
 
 /**
  * gradeAssignments()
@@ -127,7 +156,70 @@ function compareLocations(address1, address2) {}
     //>   },
     //> ];
  */
-function gradeAssignments(assignments) {}
+
+
+
+
+
+
+function gradeAssignments(assignments) {
+//Declare variable for accumulation
+// let newTest = assignments;
+// //Declare loop to iterate trhough assignments
+// for (let i = 0; i < newTest.length; i++) {
+
+// let currentTest = newTest[i];
+// if (currentTest.kind === "PASS-FAIL") {
+//   if (currentTest.score.received === currentTest.score.max ){
+//     newTest.status = "PASSED"
+//   } else {
+//     newTest.status = "FAILED"
+//   }
+// }
+// if (currentTest.kind === "PERCENTAGE") { 
+//   if (currentTest.score.received === currentTest.score.max * 0.8){
+//     newTest.status = "PASSED"
+//   } else {
+//     newTest.status = "FAILED"
+//   }
+// }
+// if (currentTest.kind === "ESSAY") { 
+//   if (currentTest.score.received === currentTest.score.max){
+//     newTest.status = "SCORE:" + newTest.score.received + "/" + newTest.score.max;
+// } 
+//  //inside loop check if kind is pass/fail
+//  //If it is pass/fail, check if score received = score max
+//  //if it is, let satus = passed else let it be failed
+//  //
+//  //return our newtest
+//  }
+//  return newTest;
+// }
+}
+// console.log(gradeAssignments(assignments));
+// [
+//    { 
+//      kind: "PASS-FAIL",
+//      score: { received: 4, max: 4 },
+//      status: "PASSED",
+//    },
+//    { 
+//      kind: "PERCENTAGE",
+//      score: { received: 7, max: 9 },
+//      status: "FAILED: 77.8%",
+//    },
+//    { 
+//      kind: "ESSAY",
+//      score: { received: 4, max: 5 },
+//      status: "SCORE: 4/5",
+//    },
+//  ];
+
+
+
+
+
+
 
 /**
  * createLineOrder()
