@@ -11,7 +11,13 @@
  *  //> 25
  *  (3 + 4 + 5 + 6 + 7 = 25)
  */
-function rangeSum(min, max) {}
+function rangeSum(min, max) {
+  let sum = 0
+  for (let s = min; s <= max; s++){
+    sum += s
+  }
+ return sum 
+}
 
 /**
  * rangeOdd()
@@ -25,7 +31,15 @@ function rangeSum(min, max) {}
  *  rangeOdd(10, 15);
  *  //> [ 15, 13, 11 ]
  */
-function rangeOdd(min, max) {}
+function rangeOdd(min, max) {
+  let array = []
+  for (let a = max; a >= min; a--){
+    if (a % 2 !== 0){
+      array.push(a)
+    }
+  } 
+ return array 
+}
 
 /**
  * rangeEveryOther()
@@ -39,7 +53,14 @@ function rangeOdd(min, max) {}
  *  rangeEveryOther(11, 18);
  *  //> [ 11, 13, 15, 17 ]
  */
-function rangeEveryOther(min, max) {}
+function rangeEveryOther(min, max) {
+  let other =[];
+  while(min <= max) {
+    other.push(min);
+    min += 2;
+  }
+  return other;
+}
 
 /**
  * containsWhileLoop()
@@ -61,7 +82,14 @@ function rangeEveryOther(min, max) {}
  *  containsWhileLoop([ "left", "up", "right" ], "down");
  *  //> false
  */
-function containsWhileLoop(array, target) {}
+function containsWhileLoop(array, target) {
+  let i = 0 
+ while (i < array.length){
+  if (array[i] === target) return true 
+   i++;
+ }
+return false 
+};
 
 /**
  * containsForLoop()
@@ -83,7 +111,12 @@ function containsWhileLoop(array, target) {}
  *  containsForLoop([ "left", "up", "right" ], "down");
  *  //> false
  */
-function containsForLoop(array, target) {}
+function containsForLoop(array, target) {
+  for (let i = 0; i <array.length; i++){
+    if (array[i] === target) return true 
+    }
+    return false 
+}
 
 /**
  * targetCount()
@@ -97,12 +130,21 @@ function containsForLoop(array, target) {}
  *  targetCount([ 10, 20, 10, 20, 30 ], 10);
  *  //> 2
  */
-function targetCount(array, target) {}
+function targetCount(array, target) {
+  let number = 0;
+  for (let type of array){
+    if (type === target){
+      number += 1;
+    }
+  }
+  return number  
+}
 
 /**
  * firstIndexFound()
  * ---------------------
- * Returns the first index that the `target` is found at in the array. If the `target` is not found, it should return `-1`.
+ * Returns the first index that the `target` is found at in the array.
+ * If the `target` is not found, it should return `-1`.
  *
  * NOTE: You may NOT use the `.indexOf()` method.
  *
@@ -117,12 +159,22 @@ function targetCount(array, target) {}
  *  firstIndexFound([ "left", "right", "left" ], "up");
  *  //> -1
  */
-function firstIndexFound(array, target) {}
+function firstIndexFound(array, target) {
+   //whenever you see index want to do for i 
+  
+  for (let i = 0; i < array.length; i++) {
+    if (array[i] === target){
+      return i;
+    }
+  }
+  return -1;
+}
 
 /**
  * lastIndexFound()
  * ---------------------
- * Returns the last index that the `target` is found at in the array. If the `target` is not found, it should return `-1`.
+ * Returns the last index that the `target` is found at in the array. 
+ * If the `target` is not found, it should return `-1`.
  *
  * NOTE: You may NOT use the `.indexOf()` method.
  *
@@ -137,7 +189,18 @@ function firstIndexFound(array, target) {}
  *  lastIndexFound([ "left", "right", "left" ], "up");
  *  //> -1
  */
-function lastIndexFound(array, target) {}
+
+function lastIndexFound(array, target) {
+  for (let i = array.length-1; i >= 0; i--) {
+    if (array[i] === target){
+      return i;
+    }
+  }
+  return -1;
+}
+
+// lastIndexFound([1,2,3,4,5,6,7], 7) array[3] 4
+// lastIndexFound([1,'hi','bye', 2 3,2,1] ,1)
 
 /**
  * timesIndex()
@@ -151,7 +214,12 @@ function lastIndexFound(array, target) {}
  *  //> [ 7 * 0, 10 * 1, 11 * 2 ]
  *  //> [ 0, 10, 22 ]
  */
-function timesIndex(array) {}
+function timesIndex(array) {
+   for(let i = 0; i< array.length; i++){
+    array[i] = array[i] * i 
+  }
+  return array
+}
 
 /**
  * cumulativeSum()
@@ -165,7 +233,15 @@ function timesIndex(array) {}
  *  //> [ 5, 5 + 2, 5 + 2 + 9 ]
  *  //> [ 5, 7, 16 ]
  */
-function cumulativeSum(array) {}
+function cumulativeSum(array) {
+   let element = [];
+   let newArray = 0;
+   for (let oldArray of array){
+      newArray += oldArray;
+      element.push(newArray)
+   }
+      return element
+}
 
 // Do not change anything below this line.
 module.exports = {
