@@ -55,8 +55,6 @@ if(largeNum < b){
 return largeNum
 }
 
-
-console.log(findLarger(-2, -1))
 /**
  * findLargerOrTie()
  * ---------------------
@@ -97,7 +95,6 @@ function findLargerOrTie(a, b) {
   return largeOrTie
   }
  
-console.log(findLargerOrTie(2, -1))
 /**
  * positiveNegativeOrZero()
  * ---------------------
@@ -141,7 +138,7 @@ else if(a < 0){
 //default return value
 return thing;
 }
- console.log(positiveNegativeOrZero(0))
+ 
 /**
  * aroundTheWorldGreeting()
  * ---------------------
@@ -194,7 +191,7 @@ return languageGreeting
 
 }
 
-console.log(aroundTheWorldGreeting())
+
 
 /**
  * aroundTheWorldGreetingWithSwitch()
@@ -229,19 +226,19 @@ function aroundTheWorldGreetingWithSwitch(language) {
       //if english this line of code runs
         case 'english': languageGreeting += 'Hello World';
         return languageGreeting;
-        break;
+       
           //if spanish this line of code runs
         case 'spanish': languageGreeting += 'Hola Mundo';
         return languageGreeting;
-        break;
+       //use break when you'renot returning
          //if german this line of code runs
         case 'german': languageGreeting += 'Hallo Welt';
         return languageGreeting; 
-        //default
+        //default:
     }
 
   }
-  console.log(aroundTheWorldGreetingWithSwitch())
+  
 /**
  * calculateLetterGrade()
  * ---------------------
@@ -303,7 +300,6 @@ else if(grade >= 60){
 //Return value
 return letterGradeScore;
 }
-console.log(calculateLetterGrade(5))
 /**
  * animalCounts()
  * ---------------------
@@ -347,7 +343,6 @@ else if(numberOfAnimals > 1){
 return numberOfAnimal;
 }
 
-console.log(animalCounts("dolphin", 6))
 /**
  * evenOrOdd()
  * ---------------------
@@ -377,7 +372,7 @@ else if(a % 2 === 0){
 return typeOfNumber;
 }
 
- console.log(evenOrOdd(-2))
+ 
 /**
  * evenOrOddWithTernary()
  * ---------------------
@@ -403,7 +398,7 @@ function evenOrOddWithTernary(a) {
 }
 
 //console.log(9 % 2 === 1 )
-console.log(evenOrOddWithTernary("if"))
+
 // Do not change any code below this line.
 module.exports = {
   isEqual,
