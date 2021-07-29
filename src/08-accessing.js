@@ -129,7 +129,9 @@ function getLastPhoneNumber(person) {
  *  //> "Rachel Eleanor Rojas"
  */
 function getFullName(person) {
-
+    for(let value of Object.names(person)){
+      return names;
+    }
   }
     
 /**
@@ -147,9 +149,10 @@ function getFullName(person) {
  *  //> "Staten Island, NY"
  */
 function getCityAndState(person) {
-    
+  for(let value of Object.city.state(person)){
+    return city.state;
+  }
 }
-
 /**
  * getFullAddress()
  * ---------------------
@@ -165,8 +168,10 @@ function getCityAndState(person) {
  *  //> "697 Pine Drive 2A, Staten Island, NY, 10306"
  */
 function getFullAddress(person) {
-  return person.address.street.unit.city.state.zip;
-}
+  for(let value of Object.address(person)){
+    return address;
+  }
+} 
 
 /**
  * getFlatObject()
