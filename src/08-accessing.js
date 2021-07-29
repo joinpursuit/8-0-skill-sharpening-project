@@ -33,7 +33,7 @@
  *  //> "Rachel"
  */
 function getFirstName(person) {
-  return person[names.first];
+  return person.names.first;
 }
 
 /**
@@ -129,10 +129,8 @@ function getLastPhoneNumber(person) {
  *  //> "Rachel Eleanor Rojas"
  */
 function getFullName(person) {
-    for(let value of Object.names(person)){
-      return names;
+    return person.names.first + " " + person.names.middle + " " + person.names.last;
     }
-  }
     
 /**
  * getCityAndState()
@@ -149,10 +147,8 @@ function getFullName(person) {
  *  //> "Staten Island, NY"
  */
 function getCityAndState(person) {
-  for(let value of Object.city.state(person)){
-    return city.state;
+  return person.address.city + ", " + person.address.state;
   }
-}
 /**
  * getFullAddress()
  * ---------------------
@@ -168,10 +164,8 @@ function getCityAndState(person) {
  *  //> "697 Pine Drive 2A, Staten Island, NY, 10306"
  */
 function getFullAddress(person) {
-  for(let value of Object.address(person)){
-    return address;
+  return person.address.street + " " + person.address.unit + ", " + person.address.city + ", " + person.address.state + ", " + person.address.zip;
   }
-} 
 
 /**
  * getFlatObject()
@@ -196,19 +190,19 @@ function getFullAddress(person) {
  */
 function getFlatObject(person) {
 
-let flattenObj = person 
-  let result = {};
-  for(const i in person){
-    if(typeof person[i] === 'object') {
-      const elem = flattenObj(person[i]);
-      for(const j in elem) {
-      result[i + "." + j] = elem[j];
-      }
-    } else{
-      return[i] = person[i];
-      }
-    }
+return {
+  first: person.names.first,
+  middle: person.names.middle,
+  last: person.names.last,
+  street: person.address.street,
+  unit: person.address.unit,
+  city: person.address.city,
+  state: person.address.state,
+  zip: person.address.zip,
+  numbers: person.numbers
+}
   }
+  
 // Do not change the code below.
 module.exports = {
   getFirstName,
