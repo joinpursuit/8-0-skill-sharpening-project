@@ -19,7 +19,19 @@
  *  applyDiscount(1000, 9, true);
  *  //> 700
  */
-function applyDiscount(priceInCents, age, hasMembership) {}
+function applyDiscount(priceInCents, age, hasMembership) {
+  let discount = 0;
+  let totalPrice = 0;
+  if (age <= 10 || age >= 65) {
+    discount += 0.1;
+  } else if (hasMembership) {
+    discount += 0.2;
+  } else if ((age <= 10 || age >= 65) && hasMembership) {
+    discount += 0.3;
+  }
+  totalPrice = priceInCents * (1 - discount);
+  return totalPrice;
+}
 
 /**
  * getCartTotal()
@@ -40,7 +52,19 @@ function applyDiscount(priceInCents, age, hasMembership) {}
     getCartTotal(cart);
  *  //> "$30.00"
  */
-function getCartTotal(products) {}
+function getCartTotal(products) {
+  //declare a var and assign it 0
+  let total = 0;
+  //for of loop through our products
+  for (const items of products) {
+    // add each product times the quantity to the var
+    total += items.priceInCents * items.quantity;
+  }
+  //outside of our loop make cents into dollars var
+  let totalDollars = (total / 100).toFixed(2);
+  //return the var with a '$' in front
+  return `$${totalDollars}`;
+}
 
 /**
  * compareLocations()
@@ -80,7 +104,34 @@ function getCartTotal(products) {}
     compareLocations(address1, address2);
     //> "Same city."
  */
-function compareLocations(address1, address2) {}
+function compareLocations(address1, address2) {
+  // If the street, city, state, and zip for both addresses are the same,
+  if (
+    address1.street === address2.street &&
+    address1.city === address2.city &&
+    address1.state === address2.state &&
+    address1.zip === address2.zip
+  ) {
+    //return the string "Same building."
+    return `Same building.`;
+    // If the city, state, and zip are the same,
+  } else if (
+    address1.city === address2.city &&
+    address1.state === address2.state &&
+    address1.zip === address2.zip
+  ) {
+    //return the string "Same city."
+    return `Same city.`;
+    // If just the state is the same,
+  } else if (address1.state === address2.state) {
+    //return the string "Same state."
+    return `Same state.`;
+    // If none of those matches occur,
+  } else {
+    //return the string "Addresses are not near each other."
+    return `Addresses are not near each other.`;
+  }
+}
 
 /**
  * gradeAssignments()
@@ -127,7 +178,45 @@ function compareLocations(address1, address2) {}
     //>   },
     //> ];
  */
-function gradeAssignments(assignments) {}
+function gradeAssignments(assignments) {
+  //for of loop through assignments
+  for (let item of assignments) {
+    //if the assignments at any index is wual to pass-fail
+    if (item.kind === "PASS-FAIL") {
+      //if the score received is equal to the max score
+      if (item.score.received === item.score.max) {
+        //the assignment passed
+        item.status = "PASSED";
+        //if else the assignment failed
+      } else {
+        item.status = "FAILED";
+      }
+      //i the assignment at any index is equal to percentage
+    } else if (item.kind === "PERCENTAGE") {
+      //if the score received divied by the max score is more than or equal to .80
+      if (item.score.received / item.score.max >= 0.8) {
+        //then assignment passed
+        item.status = `PASSED: ${(
+          (item.score.received / item.score.max) *
+          100
+        ).toFixed(1)}%`;
+        //if the score received divided by the max score is less than 80
+      } else if (item.score.received / item.score.max < 0.8) {
+        //then fail
+        item.status = `FAILED: ${(
+          (item.score.received / item.score.max) *
+          100
+        ).toFixed(1)}%`;
+      }
+      //if assignment kind is NOT pass-fail or percentage
+    } else if (item.kind !== "PASS-FAIL" || item.kind !== "PERCENTAGE") {
+      //then the assignment status is the score received divided by the max
+      item.status = `SCORE: ${item.score.received}/${item.score.max}`;
+    }
+  }
+  //outside of the loop, return assignments
+  return assignments;
+}
 
 /**
  * createLineOrder()
@@ -152,7 +241,28 @@ function gradeAssignments(assignments) {}
     createLineOrder(people);
     //> [ "Ray Anderson", "America Marsh", "Wade Carson", "Patience Patel" ]
  */
-function createLineOrder(people) {}
+function createLineOrder(people) {
+  //declare a var, set to empty array
+  const result = [];
+  //for of loop through people
+  for (const member of people) {
+    //in loop, check if the person has a membership
+    if (member.hasMembership) {
+      //if they do, push just their name into the var
+      result.push(member.name);
+    }
+  }
+  //after looping, declare a second loop for non-membered guests
+  for (nonMember of people) {
+    //check if the person DOESN'T have a membership
+    if (!nonMember.hasMembership) {
+      //if they don't, add just their name into the var
+      result.push(nonMember.name);
+    }
+  }
+  //outside of loop, return result
+  return result;
+}
 
 module.exports = {
   applyDiscount,
