@@ -19,8 +19,22 @@
  *  applyDiscount(1000, 9, true);
  *  //> 700
  */
-function applyDiscount(priceInCents, age, hasMembership) {}
+function applyDiscount(priceInCents, age, hasMembership) {
+  let disc = 0;
+  if (age <= 10 || age >= 65) {
+    disc = priceInCents - priceInCents * .10;
+  } else if (hasMembership) { 
+    disc = priceInCents - priceInCents * .20;
+  } else if (hasMembership && age <= 10 || hasMembership && age >= 65){
+    disc = priceInCents - priceInCents * .30;
+  } else if (!hasMembership && age > 10 || !hasMembership && age < 65){
+    !disc;
+  } else {
 
+  }
+  return priceInCents;
+}
+applyDiscount(1000, 66, true);
 /**
  * getCartTotal()
  * ---------------------
