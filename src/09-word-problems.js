@@ -1,8 +1,10 @@
 /**
  * applyDiscount()
  * ---------------------
- * A local movie theater has a few different ticket discounts. If the attendee is 10 years old or younger, or 65 years old or older, they receive a 10% discount. If the attendee is viewing the movie with a member, they receive a 20% discount. If both situations apply, they receive a 30% discount.
- *
+ * A local movie theater has a few different ticket discounts. 
+ * If the attendee is 10 years old or younger, or 65 years old or older, 
+ * they receive a 10% discount. If the attendee is viewing the movie with a member, 
+ * they receive a 20% discount. If both situations apply, they receive a 30% discount.
  * Write an algorithm that will determine the price of a ticket based on the `priceInCents` of the ticket, the `age` of the attendee, and the membership status (i.e. `hasMembership`).
  * @param {number} priceInCents - The price of the ticket, in cents.
  * @param {number} age - The age of the attendee.
@@ -19,14 +21,46 @@
  *  applyDiscount(1000, 9, true);
  *  //> 700
  */
-function applyDiscount(priceInCents, age, hasMembership) {}
+function applyDiscount(priceInCents, age, hasMembership) {
+  // /** if you're age 10 and below, you get 10% discount
+  // * if you're age 65 and above you get 10%
+  // * if you're a member you get 20%
+  // * if you're both a memeber and falls under age <=10 or age >=65, you get 30%
+  // * else you  pay regular price.
+  // * return the total amount applied 
+  // * /
+
+  let total = 0;
+
+  if(!hasMembership && age > 10 && age < 65){
+    total += priceInCents 
+  }
+  else if(hasMembership && age <= 10 || hasMembership && age >= 65){
+    total += .7 * priceInCents
+  }
+else if(age <= 10 || age >= 65  ){
+  total += .9 * priceInCents
+
+} 
+else if (hasMembership){
+  total += .8 * priceInCents
+}
+total = total;
+
+return total
+}
+
+//console.log(applyDiscount(1000, 35, true))
 
 /**
  * getCartTotal()
  * ---------------------
- * An online store allows for customers to add products to their cart. Customers can add multiples of each product to the cart.
+ * An online store allows for customers to add products to their cart. 
+ * Customers can add multiples of each product to the cart.
  * 
- * Write an algorithm that will determine the total amount of all items in the cart. Make sure to multiply the `priceInCents` times the `quantity` to get the full cost of each product.
+ * Write an algorithm that will determine the total amount of all items in the cart.
+ * Make sure to multiply the `priceInCents` times the `quantity` to get the full cost 
+ * of each product.
  * @param {Object[]} products - An array of products.
  * @param {number} products[].priceInCents - The price of the product, in cents.
  * @param {number} products[].quantity - The number of products being bought.
@@ -40,21 +74,41 @@ function applyDiscount(priceInCents, age, hasMembership) {}
     getCartTotal(cart);
  *  //> "$30.00"
  */
-function getCartTotal(products) {}
+ function getCartTotal(products) {
+// /** Get the count of each item in the cart
+//  * Know the price per item
+//  * get the cost for each set of items
+//  * /Then the total cost of all items
+let total = 0;
+for (let i =0; i < products.length; i++){
+  const product = products[i];
+  total += product.priceInCents  * product.quantity;
+  
+}
+total = (total/100).toFixed(2)
+return `$${total}`;
+}
 
 /**
  * compareLocations()
  * ---------------------
- * A shipping company is looking to make its deliveries more efficient by comparing the destinations of multiple deliveries. If the locations are similar, the packages may be able to be bundled together.
+ * A shipping company is looking to make its deliveries more efficient by 
+ * comparing the destinations of multiple deliveries. If the locations are similar, 
+ * the packages may be able to be bundled together.
  * 
- * Write an algorithm that takes in two objects of similar shape, each object representing an address. Then, return a string that describes the relationship between those two addresses.
+ * Write an algorithm that takes in two objects of similar shape, each object 
+ * representing an address. Then, return a string that describes the relationship 
+ * between those two addresses.
  * 
- * - If the street, city, state, and zip for both addresses are the same, return the string "Same building."
+ * - If the street, city, state, and zip for both addresses are the same, 
+ * return the string "Same building."
  * - If the city, state, and zip are the same, return the string "Same city."
  * - If just the state is the same, return the string "Same state."
- * - If none of those matches occur, return the string "Addresses are not near each other."
+ * - If none of those matches occur, return the string "Addresses are not near 
+ * each other."
  * 
- * Keep in mind that an address could have the same street address or the same city but be in a different state. 
+ * Keep in mind that an address could have the same street address or the same 
+ * city but be in a different state. 
  * 
  * @param {Object} address1 - An address object.
  * @param {string} address1.street
@@ -80,18 +134,62 @@ function getCartTotal(products) {}
     compareLocations(address1, address2);
     //> "Same city."
  */
-function compareLocations(address1, address2) {}
+function compareLocations(address1, address2) {
+
+  // * - If street, city, state, and zip the same, 
+  // =>  return => the string "Same building."
+  // * - If the city, state, and zip are the same => "Same city."
+  // * - If the same state, return=>"Same state."
+  // * - If no match , return =>"Addresses are not near 
+  // *   each other."
+  if(address1.state !== address2.state){
+    return "Addresses are not near each other."
+  } 
+
+  else if(address1.street == address2.street 
+    && address1.city == address2.city 
+    && address1.state == address2.state
+    && address1.zip == address2.zip){
+    return "Same building."
+  } 
+
+  else if (address1.city == address2.city ){
+    return "Same city."
+  } 
+  else if(address1.state === address2.state){
+     {return"Same state." }
+  }
+
+}
 
 /**
  * gradeAssignments()
  * ---------------------
- * An online learning management system needs a way to quickly add the current status to a list of assignments. Depending on the `kind` of assignment, different statuses should be applied.
+ * An online learning management system needs a way to quickly add the current 
+ * status to a list of assignments. Depending on the `kind` of assignment, 
+ * different statuses should be applied.
  *
- * Write an algorithm that adds a key of `status` to each object in an array of objects. Each object represents a single assignment submitted by a student.
+ * Write an algorithm that adds a key of `status` to each object in an array of objects. 
+ * Each object represents a single assignment submitted by a student.
  *
- * - If the assignment has a `kind` of `"PASS-FAIL"`, set the `status` value to `"PASSED"` if the `score.received` equals the `score.max`. Otherwise, set that `status` to be `"FAILED"`.
- * - If the assignment has a `kind` of `"PERCENTAGE"`, set the `status` value to be `"PASSED: <percentage>"` if the student scored at least 80.0%. The `<percentage>` should be set to one decimal place. If the student scored less than 80.0%, set the status to `"FAILED: <percentage>"`.
- * - If the assignment has any other `kind` than the two above, set the `status` value to equal `"SCORE: <received>/<max>"`, where `<received>` is the `score.received` value and `<max>` is the `score.max` value.
+ * - If the assignment has a `kind` of `"PASS-FAIL"`, set the `status` 
+ * value to `"PASSED"` if the `score.received` equals the `score.max`. 
+ *
+ * Otherwise, set that `status` to be `"FAILED"`.
+ * - If the assignment has a `kind` of `"PERCENTAGE"`, set the `status` 
+ * value to be `"PASSED: <percentage>"` if the student scored at least 80.0%.
+ 
+ * The `<percentage>` should be set to one decimal place. If the student scored 
+ * less than 80.0%, set the status to `"FAILED: <percentage>"`.
+ * //set kind: "FAILED: <percentage>" if score.received < score.max
+ * 
+ * - If the assignment has any other `kind` than the two above, set the `status` 
+ * value to equal `"SCORE: <received>/<max>"`, where `<received>` is the `score.received` 
+ * value and `<max>` is the `score.max` value.
+ * 
+ * //else kind: "SCORE: <received>/<max>" 
+ * 
+ * //return the new array 
  *
  * Then, return the overall array with all modified assignments.
  *
@@ -100,7 +198,8 @@ function compareLocations(address1, address2) {}
  * @param {Object} assignments[].score - An object that contains the scores of the assignment.
  * @param {number} assignments[].score.received - The score received on the assignment.
  * @param {number} assignments[].score.max - The maximum score that could be received on the assignment.
- * @returns {Object[]} The original array of assignment objects, with a new key of `status` added to each object.
+ * @returns {Object[]} The original array of assignment objects, with a new key of `status`
+ *  added to each object.
  * 
  * EXAMPLE:
  *  const assignments = [
@@ -127,20 +226,62 @@ function compareLocations(address1, address2) {}
     //>   },
     //> ];
  */
-function gradeAssignments(assignments) {}
+function gradeAssignments(assignments) {
+// /**
+//   - set Status: "PASSED" if score.received === score.max
+//   - else Status: "FAILED
+//   - set status: "PASSED: <percentage>" if score.received >= .8 0 * score.max && Kind: Percentage
+//   - one decimal place e.g 80.0%
+
+// const assignments = [
+//   { kind: "PASS-FAIL", score: { received: 4, max: 4 } },
+//   { kind: "PERCENTAGE", score: { received: 8, max: 10 } },
+//   { kind: "ESSAY", score: { received: 4, max: 5 } },
+// ];
+ 
+
+  for (let assign of assignments) {
+    if (assign.kind === "PASS-FAIL") {
+      if (assign.score.received === assign.score.max) {
+        assign.status = "PASSED";
+      } else {
+        assign.status = "FAILED";
+      }
+    } else if (assign.kind === "PERCENTAGE") {
+      let percentScore = assign.score.received / assign.score.max;
+      if (percentScore >= 0.8) {
+        assign.status = `PASSED: ${(percentScore * 100).toFixed(1)}%`;
+      } else {
+        assign.status = `FAILED: ${(percentScore * 100).toFixed(1)}%`;
+      }
+    } else if (assign.kind !== "PASS-FAIL" && assign.kind !== "PERCENTAGE") {
+      assign.status = `SCORE: ${assign.score.received}/${assign.score.max}`;
+    }
+  }
+  return assignments;
+}
 
 /**
  * createLineOrder()
  * ---------------------
- * An airline wants to build an application that improves the boarding process for its customers. They want to have customers sign up in order of arrival, but prioritize those customers who have a membership.
+ * An airline wants to build an application that improves the boarding process 
+ * for its customers. They want to have customers sign up in order of arrival, 
+ * but prioritize those customers who have a membership.
  * 
- * Build an algorithm that takes in an array of objects, where each object represents a person. The order of the array is important; the person at index `0` arrived first while the person at index `1` arrived afterwards.
+ * Build an algorithm that takes in an array of objects, where each object represents a person. 
+ * The order of the array is important; the person at index `0` arrived first while the person 
+ * at index `1` arrived afterwards.
  * 
- * Return an array that includes only the names of each person, but reordered to account for whether or not each person has a membership. Everyone who has a membership should be at the front of the line in the same order they arrived. Everyone without a membership should be in the same order they arrived but after those with a membership.
+ * Return an array that includes only the names of each person, but reordered to account for 
+ * whether or not each person has a membership. Everyone who has a membership should be at 
+ * the front of the line in the same order they arrived. Everyone without a membership should 
+ * be in the same order they arrived but after those with a membership.
+ * 
  * @param {Object[]} people - An array of people objects.
  * @param {string} people[].name - The name of the person.
  * @param {boolean} people[].hasMembership - Whether or not the person has a membership.
- * @returns {string[]} An array of names, in order depending on the person's order in the original array and the person's priority.
+ * @returns {string[]} An array of names, in order depending on the person's order in the 
+ * original array and the person's priority.
  * 
  * EXAMPLE:
  *  const people = [
@@ -152,7 +293,23 @@ function gradeAssignments(assignments) {}
     createLineOrder(people);
     //> [ "Ray Anderson", "America Marsh", "Wade Carson", "Patience Patel" ]
  */
-function createLineOrder(people) {}
+function createLineOrder(people) {
+  let member = []
+  let nonMember = [];
+  let orderedList = []
+for (let person of people){
+    if(person.hasMembership){
+      member.push(person.name);
+     
+    }
+    else
+       {
+        nonMember.push(person.name);
+       
+  }}
+  orderedList = member.concat(nonMember)
+  return orderedList;
+}
 
 module.exports = {
   applyDiscount,
