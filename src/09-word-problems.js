@@ -127,7 +127,29 @@ function compareLocations(address1, address2) {}
     //>   },
     //> ];
  */
-function gradeAssignments(assignments) {}
+function gradeAssignments(assignments) {
+  // Declare a variable & output
+  const newGrade = assignments;
+// Create a loop to iterate through assignments
+for (i = 0; i < newGrade.length; i++) {
+  // create a variable for clarity
+  currentTest = newTest[i];
+  // Check if grade is pass/fail; 
+  if (currentTest.kind === "PASS-FAIL") {
+  // If it is, check if score received = score max
+  if (currentTest.score.received === currentTest.score.max) {
+  // Let status = pass, else = fail
+  newTest.status = "PASSED" 
+ } else {
+  newTest.status = "FAILED" 
+ }
+}
+if (current.test "PERCENTAGE")
+}
+//
+  // Return our new grades array
+  return newGrade; 
+}
 
 /**
  * createLineOrder()

@@ -127,7 +127,7 @@ describe("addKeyToObject()", () => {
   });
 });
 
-describe("addKeyValuePairToObject()", () => {
+describe.only("addKeyValuePairToObject()", () => {
   test("should add a key-value pair to an existing object and then return the object", () => {
     const key = "name";
     const value = "Opal";

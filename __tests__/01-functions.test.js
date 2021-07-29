@@ -125,7 +125,7 @@ describe("flipSign()", () => {
   });
 });
 
-describe("joinStringsWithSpaces()", () => {
+describe.only("joinStringsWithSpaces()", () => {
   test("should join five strings with spaces between", () => {
     const actual = joinStringsWithSpaces("A", "B", "C", "D", "E");
     const expected = "A B C D E";

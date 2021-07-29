@@ -143,7 +143,7 @@ describe("isEven()", () => {
   });
 });
 
-describe("isOdd()", () => {
+describe.only("isOdd()", () => {
   test("should return `true` if the number given is odd", () => {
     const input = 7;
     const actual = isOdd(input);
