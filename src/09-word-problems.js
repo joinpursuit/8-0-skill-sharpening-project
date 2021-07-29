@@ -60,9 +60,19 @@ function applyDiscount(priceInCents, age, hasMembership) {
  *  //> "$30.00"
  */
 function getCartTotal(products) {
-  let getTotal = " "
-  for (let i =0)
+  let getTotal = 0
+  for (let i =0; i < products.length; i++) {
+    let product = products[i]
+    getTotal += product.priceInCents * product.quantity
+  }
+
+  let priceInDollars = getTotal / 100;
+  return "$" + priceInDollars.toFixed(2)
 }
+
+    
+
+
 
 /**
  * compareLocations()
