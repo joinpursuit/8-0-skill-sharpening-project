@@ -19,7 +19,27 @@
  *  applyDiscount(1000, 9, true);
  *  //> 700
  */
-function applyDiscount(priceInCents, age, hasMembership) {}
+ function applyDiscount(priceInCents, age, hasMembership) {
+  // If the attendee is 10 years old or younger, or 65 years old or older, they receive a 10% discount. 
+  // If the attendee is viewing the movie with a member, they receive a 20% discount. If both situations apply, they receive a 30% discount.
+    let cost = priceInCents;
+    let ageDiscountValue = 0.9;
+    let memberDiscountValue = 0.8;
+    let bothDiscountValue = 0.7;
+      if(age <= 10 && hasMembership || age >= 65 && hasMembership) {
+      cost = cost * bothDiscountValue;
+    }
+    else if (age <= 10 || age >= 65){
+      cost = cost * ageDiscountValue;
+    } 
+    else if ( age > 10 && hasMembership || age < 65 && hasMembership){
+      cost = cost * memberDiscountValue;
+    } 
+    else {
+      cost = cost;
+    }
+    return cost;
+  }
 
 /**
  * getCartTotal()
@@ -40,7 +60,13 @@ function applyDiscount(priceInCents, age, hasMembership) {}
     getCartTotal(cart);
  *  //> "$30.00"
  */
-function getCartTotal(products) {}
+    function getCartTotal(products) {
+      let total = 0;
+      for (let i=0; i<products.length; i++){
+        total += products[i].priceInCents * products[i].quantity;
+      }
+      return `$${((total / 100).toFixed(2))}`
+    }
 
 /**
  * compareLocations()
@@ -80,7 +106,22 @@ function getCartTotal(products) {}
     compareLocations(address1, address2);
     //> "Same city."
  */
-function compareLocations(address1, address2) {}
+    function compareLocations(address1, address2) {
+ 
+      if(address1.street === address2.street && address1.city === address2.city && address1.state === address2.state && address1.zip === address2.zip){
+         return  `Same building.`
+     } 
+     else if (address1.city === address2.city && address1.state === address2.state && address1.zip === address2.zip){
+         return `Same city.`
+     } 
+     
+     else if (address1.state === address2.state){
+       return `Same state.`
+     }
+     else {
+       return `Addresses are not near each other.`
+     } 
+   }
 
 /**
  * gradeAssignments()
@@ -127,7 +168,26 @@ function compareLocations(address1, address2) {}
     //>   },
     //> ];
  */
-function gradeAssignments(assignments) {}
+    function gradeAssignments(assignments) {
+      for(let assignment of assignments){
+        if (assignment.kind === 'PASS-FAIL') {
+          if (assignment.score.received === assignment.score.max){
+            assignment.status = 'PASSED';
+          } else {
+            assignment.status = 'FAILED';
+          }
+        } else if (assignment.kind === 'PERCENTAGE'){
+          if((assignment.score.received / assignment.score.max) >= 0.8) {
+            assignment.status = 'PASSED: ' + ( (((assignment.score.received / assignment.score.max)*100).toFixed(1))+ "%")
+          }else{
+            assignment.status = 'FAILED: ' + ( (((assignment.score.received / assignment.score.max)*100).toFixed(1))+ "%")
+          }
+        } else {
+          assignment.status = 'SCORE: ' + assignment.score.received + '/' + assignment.score.max;
+        }    
+      }
+      return assignments
+    }
 
 /**
  * createLineOrder()
@@ -152,7 +212,18 @@ function gradeAssignments(assignments) {}
     createLineOrder(people);
     //> [ "Ray Anderson", "America Marsh", "Wade Carson", "Patience Patel" ]
  */
-function createLineOrder(people) {}
+    function createLineOrder(people) {
+      let newArr = [];
+      let membershipPeople = [];
+      for(let i=0; i<people.length; i++){
+        if(people[i].hasMembership){
+          membershipPeople.push(people[i].name);
+      } else {
+        newArr.push(people[i].name);
+      }
+    }
+    return [...membershipPeople,...newArr];
+    }
 
 module.exports = {
   applyDiscount,
