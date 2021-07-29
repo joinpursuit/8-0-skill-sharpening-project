@@ -210,7 +210,7 @@ const person = {
 };
 
 function getFlatObject(person) {
-  const newObj = {};
+  const flatObj = {};
 
   //iterate through person
   for (const prop in person) {
@@ -223,15 +223,15 @@ function getFlatObject(person) {
         //get innerValue
         innerValue = value[innerProp];
         //create key in newObject with innerProp as key and value as inner value
-        newObj[innerProp] = innerValue;
+        flatObj[innerProp] = innerValue;
       }
       //otherwise
     } else {
       //create key in newObject with prop as key and value as value
-      newObj[prop] = value;
+      flatObj[prop] = value;
     }
   }
-  return newObj;
+  return flatObj;
 }
 
 console.log(getFlatObject(person));
