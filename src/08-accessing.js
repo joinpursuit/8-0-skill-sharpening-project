@@ -194,28 +194,17 @@ function getFullAddress(person) {
     };
  */
 function getFlatObject(person) {
-  //decalre a var,assign it an open object
-  let result = {};
-  //for in loop through our person object
-  for (const info in person) {
-    //check whether the obeject at any given key is an object and NOT an array
-    if (typeof person[info] === "object" && !Array.isArray(person[info])) {
-      //if it is, assign a new var to not get confused
-      let people = person[info];
-      //creat another for in loop for the key in our new object
-      for (const key in people) {
-        //send it to our var
-        result[key] = people[key];
-      }
-    }
-    //else if its not an object and it IS an array
-    else {
-      //return thr array
-      return (result[info] = person[info]);
-    }
-  }
-  //outside of the loop return out first var
-  return result;
+  return {
+    first: person.names.first,
+    middle: person.names.middle,
+    last: person.names.last,
+    street: person.address.street,
+    unit: person.address.unit,
+    city: person.address.city,
+    state: person.address.state,
+    zip: person.address.zip,
+    numbers: person.numbers,
+  };
 }
 
 // Do not change the code below.
