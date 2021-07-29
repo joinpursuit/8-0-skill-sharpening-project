@@ -1,7 +1,7 @@
 /**
  * applyDiscount()
  * ---------------------
- * A local movie theater has a few different ticket discounts. If the attendee is 10 years old or younger, or 65 years old or older, they receive a 10% discount. If the attendee is viewing the movie with a member, they receive a 20% discount. If both situations apply, they receive a 30% discount.
+ * A local movie theater has a few different ticket discounts. If the attendee is 10 years old or younger, or 65 years old or older, they receive a 10% discount. the attendeeIf  is viewing the movie with a member, they receive a 20% discount. If both situations apply, they receive a 30% discount.
  *
  * Write an algorithm that will determine the price of a ticket based on the `priceInCents` of the ticket, the `age` of the attendee, and the membership status (i.e. `hasMembership`).
  * @param {number} priceInCents - The price of the ticket, in cents.
@@ -19,7 +19,20 @@
  *  applyDiscount(1000, 9, true);
  *  //> 700
  */
-function applyDiscount(priceInCents, age, hasMembership) {}
+function applyDiscount(priceInCents, age, hasMembership) {
+let total = priceInCents;
+  if (age <= 10 && hasMembership || age >= 65 && hasMembership) {
+    total *= .7
+  }
+  else if (hasMembership) {
+      total *= .8
+  }
+  else if (age <= 10 || age >= 65) {
+    total *= .9
+  } 
+  return total
+}
+applyDiscount(1000, 9, true)
 
 /**
  * getCartTotal()
@@ -40,7 +53,16 @@ function applyDiscount(priceInCents, age, hasMembership) {}
     getCartTotal(cart);
  *  //> "$30.00"
  */
-function getCartTotal(products) {}
+function getCartTotal(products) {
+let total = 0;
+for (product of products) {
+    let quantity = product.quantity;
+    let price = product.priceInCents;
+   total += (quantity * price) / 100
+  }
+    total = '$' + total.toFixed(2) 
+  return total
+}
 
 /**
  * compareLocations()
@@ -80,7 +102,25 @@ function getCartTotal(products) {}
     compareLocations(address1, address2);
     //> "Same city."
  */
-function compareLocations(address1, address2) {}
+function compareLocations(address1, address2) {
+  let state = address1.state === address2.state;
+  let city = address1.city === address2.city;
+  let street =  address1.street === address2.street;
+  let zip = address1.zip === address2.zip;
+
+if (state && city && street && zip) {
+  return "Same building."
+}  
+if (state && city && zip) {
+  return "Same city."
+}
+if (state) {
+  return "Same state."
+}
+else {
+  return "Addresses are not near each other."
+}
+}
 
 /**
  * gradeAssignments()
@@ -126,8 +166,35 @@ function compareLocations(address1, address2) {}
     //>     status: "SCORE: 4/5",
     //>   },
     //> ];
- */
-function gradeAssignments(assignments) {}
+    */
+function gradeAssignments(assignments) { 
+ for (let assignment of assignments) {
+// If the assignment has a `kind` of `"PASS-FAIL"`, set the `status` value to `"PASSED"` if the `score.received` equals the `score.max`. Otherwise, set that `status` to be `"FAILED"`.
+if (assignment.kind === "PASS-FAIL") {
+  if (assignment.score.received === assignment.score.max) {
+    assignment['status'] = "PASSED"
+} else {
+  assignment['status'] = "FAILED"
+  }
+}
+//  If the assignment has any other `kind` than the two above, set the `status` value to equal `"SCORE: <received>/<max>"`, where `<received>` is the `score.received` value and `<max>` is the `score.max` value.
+if (assignment.kind === "ESSAY") {
+  assignment['status'] = `SCORE: ${assignment.score.received}/${assignment.score.max}`
+}
+//  If the assignment has a `kind` of `"PERCENTAGE"`, set the `status` value to be `"PASSED: <percentage>"` if the student scored at least 80.0%. The `<percentage>` should be set to one decimal place. 
+if (assignment.kind === "PERCENTAGE") {
+  let recScore = assignment.score.received / assignment.score.max * 100;
+if (recScore >= 80) {
+  assignment['status'] = `PASSED: ${recScore.toFixed(1)}%`
+} else {
+   assignment['status'] = `FAILED: ${recScore.toFixed(1)}%`
+  }
+  }
+}
+//  Then, return the overall array with all modified assignments.
+return assignments
+}
+
 
 /**
  * createLineOrder()
@@ -152,7 +219,20 @@ function gradeAssignments(assignments) {}
     createLineOrder(people);
     //> [ "Ray Anderson", "America Marsh", "Wade Carson", "Patience Patel" ]
  */
-function createLineOrder(people) {}
+function createLineOrder(people) {
+  let arr = [];
+  for (first of people) {
+  if (first.hasMembership === true) {
+    arr.push(first.name);
+  }
+  }
+  for (second of people) {
+    if (second.hasMembership === false) {
+      arr.push(second.name)
+    }
+  }
+  return arr
+}
 
 module.exports = {
   applyDiscount,
