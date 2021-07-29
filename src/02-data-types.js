@@ -186,12 +186,14 @@ function isEven(num) {
      */
     function isFalsy(val) {
       if (val) {
-        return true; 
-      } else {
         return false; 
+      } else {
+        return true; 
       } 
       return !!val;
     }
+    
+    
   
     // Do not change the code below.
     module.exports = {

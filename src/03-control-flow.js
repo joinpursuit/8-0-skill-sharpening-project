@@ -232,6 +232,12 @@ function animalCounts(animal, numberOfAnimals) { }
  *  //> "Even"
  */
 function evenOrOdd(a) {
+  if (a % 2 === 0) {
+    return 'Even';
+  } else {
+    return 'Odd';
+  }
+}
     // if (num % 2 === 1) {
     //   return "Odd"; 
     // }
@@ -254,8 +260,15 @@ function evenOrOdd(a) {
  *  evenOrOddWithTernary(8);
  *  //> "Even"
  */
-function evenOrOddWithTernary(a) { }
+function evenOrOddWithTernary(a) {
+  return (a ? 'Odd' : 'Even');
+}
 
+//if (a % 2 === 0) {
+//   return 'Even';
+// } else {
+//   return 'Odd';
+// }
 // Do not change any code below this line.
 module.exports = {
   isEqual,

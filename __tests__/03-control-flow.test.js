@@ -136,7 +136,7 @@ describe("evenOrOdd()", () => {
   });
 });
 
-describe("evenOrOddWithTernary()", () => {
+describe.only("evenOrOddWithTernary()", () => {
   test("works for even numbers", () => {
     expect(evenOrOddWithTernary(0)).toEqual("Even");
     expect(evenOrOddWithTernary(2)).toEqual("Even");

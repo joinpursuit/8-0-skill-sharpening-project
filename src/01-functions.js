@@ -200,8 +200,12 @@ function joinStringsWithSpaces(a, b, c, d, e) {
  *  //> "us"
  */
 function getFirstAndLastCharacter(a) {
-let newString = '';
-newString = 
+if (a === undefined) {
+  return null;
+} else if (typeof a !== 'string') {
+  return "Error! Input a string";
+}
+return a[0] + a[a.length-1];
 }
 
 // Do not change the code below.
