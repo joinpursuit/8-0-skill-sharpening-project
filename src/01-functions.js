@@ -9,7 +9,9 @@
  *  alwaysTrue();
  *  //> true
  */
-function alwaysTrue() {}
+function alwaysTrue() {
+  return true
+}
 
 /**
  * greet()
@@ -24,7 +26,12 @@ function alwaysTrue() {}
  *  greet("Ian");
  *  //> "Hello, Ian."
  */
-function greet() {}
+// "Hello, name"
+function greet(name) {
+
+  // OR >> return `Hello, ${name}`
+  return "Hello, " + name + "."
+}
 
 /**
  * add()
@@ -39,7 +46,14 @@ function greet() {}
  *  add(10, 20);
  *  //> 30
  */
-function add() {}
+function add(a, b) {
+
+  let sum = a + b
+
+  // a = 10; b = 20
+
+  return sum
+}
 
 /**
  * multiply()
@@ -54,7 +68,11 @@ function add() {}
  *  multiply(2, 5);
  *  //> 10
  */
-function multiply() {}
+function multiply(a, b) {
+  let product = a * b
+
+  return product
+}
 
 /**
  * average()
@@ -74,7 +92,13 @@ function multiply() {}
  *  average(10, 6);
  *  //> 8 // 10 + 6 = 16; 16/2 = 8;
  */
-function average() {}
+function average(a, b) {
+  // OR >> let averageNum = (a + b) / 2
+  let averageNum = a + b
+  averageNum = averageNum / 2
+
+  return averageNum
+}
 
 /**
  * averageThree()
@@ -93,7 +117,12 @@ function average() {}
  *  averageThree(10, 11, 19);
  *  //> 10 // 10 + 11 + 19 = 30; 30 / 3 = 10;
  */
-function averageThree() {}
+function averageThree(a, b, c) {
+
+  let average = (a + b + c) / 3
+
+  return average 
+}
 
 /**
  * compareTypes()
@@ -112,7 +141,13 @@ function averageThree() {}
  *  compareTypes("left", 10);
  *  //> false
  */
-function compareTypes() {}
+function compareTypes(a, b) {
+  if (typeof a === typeof b){
+
+    return true
+  } 
+  return false
+}
 
 /**
  * flipSign()
@@ -131,7 +166,13 @@ function compareTypes() {}
  *  flipSign(50);
  *  //> -50
  */
-function flipSign() {}
+function flipSign(a) {
+
+  let number = a + a
+  number = a - number
+
+  return number
+}
 
 /**
  * joinStringsWithSpaces()
@@ -151,7 +192,12 @@ function flipSign() {}
  *  joinStringsWithSpaces("left", "right", "up", "down", "away");
  *  //> "left right up down away"
  */
-function joinStringsWithSpaces() {}
+function joinStringsWithSpaces(a, b, c, d,e) {
+  let combine = a + " " + b + " " + c + " " + d + " " + e
+
+  return combine
+
+}
 
 /**
  * getFirstAndLastCharacter()
@@ -168,7 +214,11 @@ function joinStringsWithSpaces() {}
  *  getFirstAndLastCharacter("upwards");
  *  //> "us"
  */
-function getFirstAndLastCharacter() {}
+function getFirstAndLastCharacter(a) {
+  let word = a[0] + a[a.length - 1]
+  
+  return word
+}
 
 // Do not change the code below.
 module.exports = {

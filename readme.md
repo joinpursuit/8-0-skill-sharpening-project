@@ -56,7 +56,7 @@ npm test loops
 
 ### Run tests individually
 
-_After choosing a specific file to run,_ you can also specific which test you want to run, specifically. Add `.only` after either `test` or `describe` for the specific test you'd like to run.
+_After choosing a specific file to run,_ you can also specify which test you want to run, specifically. Add `.only` after either `test` or `describe` for the specific test you'd like to run.
 
 ```js
 test.only("should return an array of everyone's name who is in the line, in order", () => {
