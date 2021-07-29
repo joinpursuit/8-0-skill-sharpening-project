@@ -86,14 +86,13 @@
  *  positiveNegativeOrZero(1);
  *  //> "Positive"
  */
- function findLargerOrTie(a, b) {
-  if (a>b) {
-    return a;
-  } else if (b>a){
-    return b;
-  }
-  if (a === b) {
-    return "tie";
+ function positiveNegativeOrZero(a) {
+  if (a > 0) {
+    return "Positive";
+  } else if (a < 0) {
+    return "Negative";
+  } else {
+    return "Zero";
   }
 }
 
