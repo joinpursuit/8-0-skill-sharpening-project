@@ -1,24 +1,24 @@
 
 //  For all of the functions below, assume each function takes the following `person` object as its input. While the values of the object may change, the structure of it will always be the same.
 
-  const person = {
-    names: {
-      first: "Rachel",
-      middle: "Eleanor",
-      last: "Rojas"
-    },
-    address: {
-      street: "697 Pine Drive",
-      unit: "2A",
-      city: "Staten Island",
-      state: "NY",
-      zip: "10306"
-    },
-    numbers: [
-      7185550921,
-      7185558611
-    ]
-  }
+  // const person = {
+  //   names: {
+  //     first: "Rachel",
+  //     middle: "Eleanor",
+  //     last: "Rojas"
+  //   },
+  //   address: {
+  //     street: "697 Pine Drive",
+  //     unit: "2A",
+  //     city: "Staten Island",
+  //     state: "NY",
+  //     zip: "10306"
+  //   },
+  //   numbers: [
+  //     7185550921,
+  //     7185558611
+  //   ]
+  // }
 
 /**
  * getFirstName()
@@ -32,10 +32,10 @@
  *  //> "Rachel"
  */
 function getFirstName(person) {
-  return person.names.firstpe;
+  return person.names.first;
 }
 
-console.log(getFirstName(person));
+// console.log(getFirstName(person));
 /**
  * getLastName()
  * ---------------------
@@ -132,11 +132,11 @@ function getLastPhoneNumber(person) {
  */
 
 
-let stringName = '';
 function getFullName(person) {
-  for (const property in person.names) {
-    stringName += `${(person.names[property])} `;
-  }
+  let stringName = '';
+    for (const property in person.names) {
+      stringName += `${(person.names[property])} `;
+    }
 return stringName.trim();
 }
 // console.log(getFullName(person));
@@ -222,18 +222,18 @@ function getFlatObject(person) {
       for (const nameAddressProperties in person[property]) {
         flatObject[nameAddressProperties] = person[property][nameAddressProperties];  
       }
-    } else { 
+    } if (Array.isArray(person[property])) { 
       flatObject[property] = person[property];
     }
   }
-  return flatObject;
+return flatObject;
 }
 
 
 //create an object loop to loop through the initial properties
 //then create another object loop to loop and grab the properties that are in the subsequent objects
 
-console.log(getFlatObject(person));
+// console.log(getFlatObject(person));
 
 
 
