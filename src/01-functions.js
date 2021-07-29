@@ -17,7 +17,7 @@ function alwaysTrue() {
 return true;
 }
 //logs the returned value
-console.log(alwaysTrue())
+
 
 /**
  * greet()
@@ -38,11 +38,10 @@ console.log(alwaysTrue())
 function greet(name) {
 
 //Returns the string
- return `"Hello, ${name}."`;
+ return `Hello, ${name}.`;
 }
 
-//logs the returned value
-console.log(greet('Reed'))
+
 /**
  * add()
  * ---------------------
@@ -67,8 +66,6 @@ function add(a, b) {
   return sum;
 }
 
-//logs the returned value
-console.log(add(5, 7))
 /**
  * multiply()
  * ---------------------
@@ -114,7 +111,6 @@ function average(a, b) {
 return sumAvg
 }
 
-console.log(average(-5, 11))
 /**
  * averageThree()
  * ---------------------
@@ -140,7 +136,6 @@ function averageThree(a, b, c) {
   return average
 }
 
-console.log(averageThree(-5, 11, -3))
 /**
  * compareTypes()
  * ---------------------
@@ -165,10 +160,10 @@ if(typeof a === typeof b){
   return true
 }
 return false;
+
+//return typeof a === typeof b
 }
 
-console.log(compareTypes("Reed", "Aisha"))
-console.log(compareTypes(false, "Aisha"))
 /**
  * flipSign()
  * ---------------------
@@ -227,7 +222,7 @@ console.log(flipSign(-20))
  */
 function joinStringsWithSpaces(a, b, c, d, e) {
 //Combing strings using interpolation 
-  return `"${a}  ${b}   ${c}  ${d}  ${e}"`
+  return a +' '+ b +' '+ c +' '+ d +' '+ e
 
 }
 console.log(joinStringsWithSpaces("left", "right", "up", "down", "away"));
