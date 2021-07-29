@@ -1,25 +1,21 @@
 /*
   For all of the functions below, assume each function takes the following `person` object as its input. While the values of the object may change, the structure of it will always be the same.
-
-  const person = {
-    names: {
-      first: "Rachel",
-      middle: "Eleanor",
-      last: "Rojas"
-    },
-    address: {
-      street: "697 Pine Drive",
-      unit: "2A",
-      city: "Staten Island",
-      state: "NY",
-      zip: "10306"
-    },
-    numbers: [
-      7185550921,
-      7185558611
-    ]
-  }
 */
+const person = {
+  names: {
+    first: "Rachel",
+    middle: "Eleanor",
+    last: "Rojas",
+  },
+  address: {
+    street: "697 Pine Drive",
+    unit: "2A",
+    city: "Staten Island",
+    state: "NY",
+    zip: "10306",
+  },
+  numbers: [7185550921, 7185558611],
+};
 
 /**
  * getFirstName()
@@ -32,7 +28,11 @@
  *  getFirstName(person);
  *  //> "Rachel"
  */
-function getFirstName(person) {}
+function getFirstName(person) {
+  // This function returns the first name of the inputted person
+  // return first name
+  return person.names.first;
+}
 
 /**
  * getLastName()
@@ -45,7 +45,11 @@ function getFirstName(person) {}
  *  getLastName(person);
  *  //> "Rojas"
  */
-function getLastName(person) {}
+function getLastName(person) {
+  // This function returns the last name of the person
+  // return last name
+  return person.names.last;
+}
 
 /**
  * getAddressStreet()
@@ -58,7 +62,11 @@ function getLastName(person) {}
  *  getAddressStreet(person);
  *  //> "697 Pine Drive"
  */
-function getAddressStreet(person) {}
+function getAddressStreet(person) {
+  // This function returns the street of the person's address
+  // return street
+  return person.address.street;
+}
 
 /**
  * getCountOfPhoneNumbers()
@@ -89,7 +97,11 @@ function getCountOfPhoneNumbers(person) {
  *  getFirstPhoneNumber(person);
  *  //> 7185550921
  */
-function getFirstPhoneNumber(person) {}
+function getFirstPhoneNumber(person) {
+  // This function returns the first phone number
+  // return first phone number
+  return person.numbers[0];
+}
 
 /**
  * getLastPhoneNumber()
@@ -105,7 +117,11 @@ function getFirstPhoneNumber(person) {}
  *  getLastPhoneNumber(person);
  *  //> 7185558611
  */
-function getLastPhoneNumber(person) {}
+function getLastPhoneNumber(person) {
+  // This function gets last phone number
+  // return the last number
+  return person.numbers.pop();
+}
 
 /**
  * getFullName()
@@ -118,7 +134,15 @@ function getLastPhoneNumber(person) {}
  *  getFullName(person);
  *  //> "Rachel Eleanor Rojas"
  */
-function getFullName(person) {}
+function getFullName(person) {
+  // This function returns the first, middle and last name.
+  let firstName = person.names.first;
+  let middleName = person.names.middle;
+  let lastName = person.names.last;
+
+  // Return these names as a string
+  return firstName + " " + middleName + " " + lastName;
+}
 
 /**
  * getCityAndState()
@@ -134,7 +158,16 @@ function getFullName(person) {}
  *  getCityAndState(person);
  *  //> "Staten Island, NY"
  */
-function getCityAndState(person) {}
+function getCityAndState(person) {
+  // This function combines the city and state of the person's address
+  // Declare a variable that holds the city
+  // Declare a variable that holds the state
+  let city = person.address.city;
+  let state = person.address.state;
+
+  // return both the city and state
+  return city + "," + " " + state;
+}
 
 /**
  * getFullAddress()
@@ -150,7 +183,31 @@ function getCityAndState(person) {}
  *  getFullAddress(person);
  *  //> "697 Pine Drive 2A, Staten Island, NY, 10306"
  */
-function getFullAddress(person) {}
+function getFullAddress(person) {
+  // This function combines all address fields to create a full address
+  // Declare variable that hold each part of the address
+  let unit = person.address.unit;
+  let street = person.address.street;
+  let city = person.address.city;
+  let state = person.address.state;
+  let zipcode = person.address.zip;
+
+  // return variables
+  return (
+    street +
+    " " +
+    unit +
+    "," +
+    " " +
+    city +
+    "," +
+    " " +
+    state +
+    "," +
+    " " +
+    zipcode
+  );
+}
 
 /**
  * getFlatObject()
@@ -173,7 +230,21 @@ function getFullAddress(person) {}
       numbers: [7185550921, 7185558611],
     };
  */
-function getFlatObject(person) {}
+function getFlatObject(person) {
+  let newObj = {};
+  let sameKeys = Object.assign(person.names);
+  let sameAdd = Object.assign(person.address);
+  let sameNum = [person.numbers];
+
+  newObj = {
+    ...sameKeys,
+    ...sameAdd,
+  };
+
+  newObj["numbers"] = person.numbers;
+
+  return newObj;
+}
 
 // Do not change the code below.
 module.exports = {
