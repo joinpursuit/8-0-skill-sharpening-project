@@ -9,7 +9,9 @@
  *  getLengthOfString("down");
  *  //> 4
  */
-function getLengthOfString(str) {}
+function getLengthOfString(str) {
+  return str.length;
+};
 
 /**
  * convertToNumber()
@@ -22,7 +24,9 @@ function getLengthOfString(str) {}
  *  convertToNumber("111");
  *  //> 111
  */
-function convertToNumber(val) {}
+function convertToNumber(val) {
+  return val * 1;//return Number(val) is the same thing
+};
 
 /**
  * convertToString()
@@ -36,7 +40,9 @@ function convertToNumber(val) {}
  *  convertToString(99);
  *  //> "99"
  */
-function convertToString(val) {}
+function convertToString(val) {
+  return String(val);
+};
 
 /**
  * convertToShoutingText()
@@ -49,7 +55,9 @@ function convertToString(val) {}
  *  convertToShoutingText("Hello There");
  *  //> "HELLO THERE"
  */
-function convertToShoutingText(text) {}
+function convertToShoutingText(text) {
+  return text.toUpperCase();
+};
 
 /**
  * convertToWhisperText()
@@ -62,7 +70,9 @@ function convertToShoutingText(text) {}
  *  convertToWhisperText("Hello There");
  *  //> "hello there"
  */
-function convertToWhisperText(text) {}
+function convertToWhisperText(text) {
+  return text.toLowerCase();
+};
 
 /**
  * checkIfCharacterIsInString()
@@ -79,7 +89,13 @@ function convertToWhisperText(text) {}
  *  checkIfCharacterIsInString("hello there", "a");
  *  //> false
  */
-function checkIfCharacterIsInString(text, character) {}
+function checkIfCharacterIsInString(text, character) {
+  if (text.includes(character)) {
+    return true;
+  } else 
+  return false;
+};//return text.includes(character); would pass the test because this one line of code evaluates to True or False already.
+
 
 /**
  * isEven()
@@ -95,7 +111,13 @@ function checkIfCharacterIsInString(text, character) {}
  *  isEven(11);
  *  //> false
  */
-function isEven(num) {}
+function isEven(num) { 
+  if (num % 2 === 0) {// 0 if it's even
+    return true;
+  } else
+  return false;
+};//or return (num % 2 === 0); evaluates to True or False already.
+
 
 /**
  * isOdd()
@@ -111,7 +133,15 @@ function isEven(num) {}
  *  isOdd(11);
  *  //> true
  */
-function isOdd(num) {}
+function isOdd(num) {
+  if (num % 2 === 1) {// 1 if it's odd
+    return true;
+  } else
+  return false;
+};// or return (num % === 1); Boolean is already in code
+//let mod = num % 2
+//return (mod === 1) 
+// return !isEven(num); isEven is function being called from previous code with bang operator to make isEven false.
 
 /**
  * isTruthy()
@@ -127,7 +157,13 @@ function isOdd(num) {}
  *  isTruthy(null);
  *  //> false
  */
-function isTruthy(val) {}
+function isTruthy(val) {
+  if (val) {
+    return true;
+  } else {
+    return false;
+  }
+};// or return val == true; used == here, represents a so so truth
 
 /**
  * isFalsy()
@@ -143,7 +179,14 @@ function isTruthy(val) {}
  *  isFalsy(" ");
  *  //> false
  */
-function isFalsy(val) {}
+function isFalsy(val) {
+  if (!val) {
+    return true;
+  } else {
+    return false;
+  }
+  // or return !isTruthy(val); both codes would pass the test
+};
 
 // Do not change the code below.
 module.exports = {
