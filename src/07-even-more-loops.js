@@ -12,7 +12,17 @@
  *  shoutForLoop([ "A", "Very", "Happy", "Array" ]);
  *  //> [ "A!", "Very!", "Happy!", "Array!" ];
  */
-function shoutForLoop(array) {}
+function shoutForLoop(array) {
+  //declare a var, assign it an empty arr
+  let newArr = [];
+  //for i loop through our array
+  for (let i = 0; i < array.length; i++) {
+    //.push var + '!' to each string
+    newArr.push(array[i] + "!");
+  }
+  //return var outside of loop
+  return newArr;
+}
 
 /**
  * shoutWhileLoop()
@@ -28,7 +38,21 @@ function shoutForLoop(array) {}
  *  shoutWhileLoop([ "A", "Very", "Happy", "Array" ]);
  *  //> [ "A!", "Very!", "Happy!", "Array!" ];
  */
-function shoutWhileLoop(array) {}
+function shoutWhileLoop(array) {
+  //declare a var, assign it an empty arr
+  let newArr = [];
+  //decare i and assing it 0
+  let i = 0;
+  //while i is less than the array.length...
+  while (i < array.length) {
+    //.push array at any index plus '!' into the var
+    newArr.push(array[i] + "!");
+    //make sure to increment i by 1!
+    i++;
+  }
+  //outside the loop return the var
+  return newArr;
+}
 
 /**
  * shoutForOfLoop()
@@ -44,7 +68,17 @@ function shoutWhileLoop(array) {}
  *  shoutForOfLoop([ "A", "Very", "Happy", "Array" ]);
  *  //> [ "A!", "Very!", "Happy!", "Array!" ];
  */
-function shoutForOfLoop(array) {}
+function shoutForOfLoop(array) {
+  //declare a var, assign it an empty arr
+  let newArr = [];
+  //for of loop through our array
+  for (const arr of array) {
+    //.push var + '!' to each string
+    newArr.push(arr + "!");
+  }
+  //return var outside of loop
+  return newArr;
+}
 
 /**
  * sumArray()
@@ -57,7 +91,17 @@ function shoutForOfLoop(array) {}
  *  sumArray([ 10, 0, 10, 11 ]);
  *  //> 31
  */
-function sumArray(array) {}
+function sumArray(array) {
+  //declare a var, assign it 0
+  let result = 0;
+  //for of loop through arr
+  for (const arr of array) {
+    //result now equals result plus arr
+    result += arr;
+  }
+  //return the var
+  return result;
+}
 
 /**
  * oddArray()
@@ -70,7 +114,22 @@ function sumArray(array) {}
  *  oddArray([ 11, 15, 20, 22, 37 ]);
  *  //> [ 11, 15, 37 ]
  */
-function oddArray(array) {}
+function oddArray(array) {
+  //decalre a var, assign it an empty array
+  let newArr = [];
+  // for of loop through 'array'
+  for (const arr of array) {
+    //create var assign it array%2 !== 0
+    let odd = arr % 2 !== 0;
+    //if that var...
+    if (odd) {
+      //then push that result into our empty arr
+      newArr.push(arr);
+    }
+  }
+  //outside of the loop return the empty arr with the odd #'s
+  return newArr;
+}
 
 /**
  * evenArray()
@@ -83,7 +142,22 @@ function oddArray(array) {}
  *  evenArray([ 11, 15, 20, 22, 37 ]);
  *  //> [ 20, 22 ]
  */
-function evenArray(array) {}
+function evenArray(array) {
+  //decalre a var, assign it an empty array
+  let newArr = [];
+  // for of loop through 'array'
+  for (const arr of array) {
+    //create var assign it array%2 === 0
+    let even = arr % 2 === 0;
+    //if that var...
+    if (even) {
+      //then push that result into our empty arr
+      newArr.push(arr);
+    }
+  }
+  //outside of the loop return the empty arr with the odd #'s
+  return newArr;
+}
 
 /**
  * findSmallest()
@@ -96,7 +170,20 @@ function evenArray(array) {}
  *  findSmallest([ 0, 11, -2, 5 ]);
  *  //> -2
  */
-function findSmallest(array) {}
+function findSmallest(array) {
+  //declare a var, assign it array index at 0
+  let smallest = array[0];
+  //for of loop through our array
+  for (const arr of array) {
+    //if array at any index is samller than the var
+    if (arr < smallest) {
+      //then the var is equal to array at any index
+      smallest = arr;
+    }
+  }
+  //outside of the loop return the var
+  return smallest;
+}
 
 /**
  * findLargest()
@@ -109,7 +196,20 @@ function findSmallest(array) {}
  *  findLargest([ 0, 11, -2, 5 ]);
  *  //> 11
  */
-function findLargest(array) {}
+function findLargest(array) {
+  //declare a var, assign it array index at 0
+  let biggest = array[0];
+  //for of loop through our array
+  for (const arr of array) {
+    //if array at any index is bigger than the var
+    if (arr > biggest) {
+      //then the var is equal to array at any index
+      biggest = arr;
+    }
+  }
+  //outside of the loop return the var
+  return biggest;
+}
 
 /**
  * findEqual()
@@ -126,7 +226,20 @@ function findLargest(array) {}
  *  findEqual([ 0, 11, -2, 5 ], 9);
  *  //> false
  */
-function findEqual(array, selected) {}
+function findEqual(array, selected) {
+  //declare a var, assign it false
+  let equal = false;
+  //for of through our array
+  for (const arr of array) {
+    //if selected
+    if (selected === arr) {
+      //assign equal to true
+      equal = true;
+    }
+  }
+  //return var
+  return equal;
+}
 
 /**
  * removeDuplicates()
@@ -143,7 +256,20 @@ function findEqual(array, selected) {}
  *  //> [ 1, 11, 2, 3, 4, 9 ]
  */
 
-function removeDuplicates(array) {}
+function removeDuplicates(array) {
+  //create a var, assign it an empty arr
+  let newArr = [];
+  //for of loop through our array
+  for (const arr of array) {
+    //if false, var .includes array at any given index
+    if (!newArr.includes(arr)) {
+      //then .push the array at any given index into the var
+      newArr.push(arr);
+    }
+  }
+  //outside of the loop return the var
+  return newArr;
+}
 
 // Do not change any code below this line.
 module.exports = {
