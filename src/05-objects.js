@@ -10,7 +10,7 @@
  *  //> {}
  */
 function createEmptyObject() {
-  emptyObj = {}
+  emptyObj = {};
   return emptyObj;
 }
 
@@ -26,7 +26,7 @@ function createEmptyObject() {
  *  //> { whateverKey: 19 }
  */
 function createObjectWithValue(val) {
-  secondObj = {val}
+  secondObj = { val };
   return secondObj;
 }
 
@@ -44,13 +44,10 @@ function createObjectWithValue(val) {
 function createObjectWithKey(key) {
   let keyObj = {};
   let keyValue = "anything";
-  
+
   keyObj[key] = keyValue;
-  
 
   return keyObj;
-
- 
 }
 
 /**
@@ -69,13 +66,10 @@ function createObjectWithKeyValuePair(key, val) {
   let keyObj = {};
   // let keyValue = "anything";
   // let keyValue2 = "more anything"
-  
+
   keyObj[key] = val;
-  
 
   return keyObj;
-  
-  
 }
 
 /**
@@ -138,13 +132,10 @@ function addValueToObject(object, val) {
  *  //> { right: false, left: true }
  */
 function addKeyToObject(object, key) {
-  let keyObj = {};
   let keyValue = "anything";
-  
-  keyObj[key] = keyValue;
-  
+  object[key] = keyValue;
 
-  return keyObj;
+  return object;
 }
 
 /**
