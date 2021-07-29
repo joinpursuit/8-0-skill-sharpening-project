@@ -210,23 +210,28 @@ const person = {
 };
 
 function getFlatObject(person) {
-  //get all keys values
-  const flatObj = {};
-  const personName = person.names;
-  const personAddress = person.address;
-  const personNumbers = ["numbers", person.numbers];
+  const newObj = {};
 
-  for (names in personName) {
-    flatObj[names] = personName[names];
+  //iterate through person
+  for (const prop in person) {
+    //get value
+    const value = person[prop];
+    //if value is not an array and is object type and not null
+    if (typeof value === "object" && !Array.isArray(value) && value !== null) {
+      //iterate through value object
+      for (const innerProp in value) {
+        //get innerValue
+        innerValue = value[innerProp];
+        //create key in newObject with innerProp as key and value as inner value
+        newObj[innerProp] = innerValue;
+      }
+      //otherwise
+    } else {
+      //create key in newObject with prop as key and value as value
+      newObj[prop] = value;
+    }
   }
-
-  for (address in personAddress) {
-    flatObj[address] = personAddress[address];
-  }
-
-  flatObj[personNumbers[0]] = personNumbers[1];
-
-  return flatObj;
+  return newObj;
 }
 
 console.log(getFlatObject(person));

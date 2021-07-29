@@ -44,6 +44,27 @@ const otherPerson = {
   numbers: [9195554309],
 };
 
+const anotherPerson = {
+  names: {
+    first: "Jack",
+    middle: "Reuben",
+    last: "Stein",
+  },
+  address: {
+    street: "47 Ocean Ave",
+    unit: "9B",
+    city: "Apex",
+    state: "NC",
+    zip: "27502",
+  },
+  numbers: [9195554309],
+  lovesViolin: true,
+  isHappy: true,
+  isConfused: false,
+  favNums: [1, 2, 3, 4, 69, 100],
+  social: null,
+};
+
 describe("getFirstName()", () => {
   test("should return the person's first name", () => {
     const actual = getFirstName(person);
@@ -199,6 +220,27 @@ describe("getFlatObject()", () => {
       state: "NC",
       zip: "27502",
       numbers: [9195554309],
+    };
+    expect(actual).toEqual(expected);
+  });
+
+  test.only("should be dynamic for all situations depending on the input", () => {
+    const actual = getFlatObject(anotherPerson);
+    const expected = {
+      first: "Jack",
+      middle: "Reuben",
+      last: "Stein",
+      street: "47 Ocean Ave",
+      unit: "9B",
+      city: "Apex",
+      state: "NC",
+      zip: "27502",
+      numbers: [9195554309],
+      lovesViolin: true,
+      isHappy: true,
+      isConfused: false,
+      favNums: [1, 2, 3, 4, 69, 100],
+      social: null,
     };
     expect(actual).toEqual(expected);
   });
