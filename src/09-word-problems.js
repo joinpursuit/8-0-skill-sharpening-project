@@ -19,7 +19,27 @@
  *  applyDiscount(1000, 9, true);
  *  //> 700
  */
-function applyDiscount(priceInCents, age, hasMembership) {}
+
+//age < 10 = 10% discount
+// with a member = 20%
+//age  with a member = 30%
+//no converting cents to dollas
+
+function applyDiscount(priceInCents, age, hasMembership) {
+  let totalDiscount = 0;
+    if (age <=10) {
+      totalDiscount += 10;
+    }
+    if (age >= 65) {
+      totalDiscount += 10
+    }
+    if (hasMembership === true) {
+      totalDiscount += 20
+    }
+    totalDiscount = (totalDiscount/100) * priceInCents;
+    priceInCents = priceInCents - totalDiscount;
+  return priceInCents
+}
 
 /**
  * getCartTotal()
@@ -40,7 +60,22 @@ function applyDiscount(priceInCents, age, hasMembership) {}
     getCartTotal(cart);
  *  //> "$30.00"
  */
-function getCartTotal(products) {}
+//grab the total of everything in the cart
+//looking for the key and grabbing the value
+//it's an array of objects
+//calculating the total - accumulator
+//converting total to dollars
+//looping through the array and looking in each index
+function getCartTotal(products) {
+  let total = 0;
+  for (const eachProduct of products) {
+    eachProductPrice = eachProduct.priceInCents * eachProduct.quantity;
+    total = total + eachProductPrice 
+  }  
+ total = (total/100).toFixed(2)
+ return `$${total}`  
+}
+
 
 /**
  * compareLocations()
@@ -80,8 +115,37 @@ function getCartTotal(products) {}
     compareLocations(address1, address2);
     //> "Same city."
  */
-function compareLocations(address1, address2) {}
+//compare the properties of one address to the second address
+// dependent on which elements returns specific results - if statement
 
+function compareLocations(address1, address2) {
+  if (address1.street === address2.street && address1.city === address2.city && address1.state === address2.state && address1.zip === address2.zip) {
+    return  `Same building.`
+  }
+  if (address1.city === address2.city && address1.state === address2.state && address1.zip === address2.zip) {
+    return `Same city.`
+  }
+  if (address1.state === address2.state) {
+    return `Same state.`
+  }
+  else {
+    return `Addresses are not near each other.`
+  }
+}
+
+// const address1 = {
+//   street: "8785 Trenton St.",
+//   city: "Melbourne",
+//   state: "FL",
+//   zip: "32904",
+// };
+// const address2 = {
+//   street: "2 Lees Creek Ave.",
+//   city: "Melbourne",
+//   state: "FL",
+//   zip: "32904",
+// };
+// console.log(compareLocations(address1, address2));
 /**
  * gradeAssignments()
  * ---------------------
@@ -127,7 +191,43 @@ function compareLocations(address1, address2) {}
     //>   },
     //> ];
  */
-function gradeAssignments(assignments) {}
+     //loop through the index of each array
+    //evaluate the properties of an object
+    //then add a property of status passed on the information received from the properties
+    // returning the same array with the newly added statuses
+    //determine if values of an object meets the condition
+
+function gradeAssignments(assignments) {
+  for (let i = 0; i < assignments.length; i++){
+      let assignmentsIndex = assignments[i];
+        if (assignmentsIndex.kind === `PASS-FAIL` && assignmentsIndex.score.received === assignmentsIndex.score.max) {
+          assignmentsIndex['status'] = 'PASSED';
+        }
+        if (assignmentsIndex.kind === `PASS-FAIL` && assignmentsIndex.score.received !== assignmentsIndex.score.max) {
+          assignmentsIndex['status'] = 'FAILED';
+        }
+        if (assignmentsIndex.kind === `PERCENTAGE` && assignmentsIndex.score.received/assignmentsIndex.score.max >= .8) {
+          let percentageScore = ((assignmentsIndex.score.received/assignmentsIndex.score.max) * 100).toFixed(1);
+          assignmentsIndex['status'] = `PASSED: ${percentageScore}%`;
+        }
+        if (assignmentsIndex.kind === `PERCENTAGE` && assignmentsIndex.score.received/assignmentsIndex.score.max < .8) {
+          let percentageScore = ((assignmentsIndex.score.received/assignmentsIndex.score.max) * 100).toFixed(1);
+          assignmentsIndex['status'] = `FAILED: ${percentageScore}%`;
+        } 
+        if (assignmentsIndex.kind !== `PERCENTAGE` && assignmentsIndex.kind !== `PASS-FAIL`) {
+        assignmentsIndex['status'] = `SCORE: ${assignmentsIndex.score.received}/${assignmentsIndex.score.max}`
+        }
+        assignmentsIndex['status'] 
+    }
+  return assignments;   
+} 
+
+// const assignments = [
+//   { kind: "PASS-FAIL", score: { received: 4, max: 4 } },
+//   { kind: "PERCENTAGE", score: { received: 8, max: 10 } },
+//   { kind: "ESSAY", score: { received: 4, max: 5 } },
+// ];
+// console.log(gradeAssignments(assignments));
 
 /**
  * createLineOrder()
@@ -152,7 +252,34 @@ function gradeAssignments(assignments) {}
     createLineOrder(people);
     //> [ "Ray Anderson", "America Marsh", "Wade Carson", "Patience Patel" ]
  */
-function createLineOrder(people) {}
+
+//push the name of the people based on time of arrival and whether they have memberships
+//look at the index of the people, that determines when they are able to board
+//able to push the people that have memberships to the array first
+//the next thing is to loop back around to the beginning of the array
+
+function createLineOrder(people) {
+  let membershipLineup = [];
+  let noMembershipLineup = [];
+  for (let i = 0; i < people.length; i++) {
+    let folk = people[i];
+    if (folk.hasMembership === true) {
+    membershipLineup.push(folk.name)
+    }
+    if (folk.hasMembership === false) {
+    noMembershipLineup.push(folk.name)
+    }
+  }
+  let lineup = membershipLineup.concat(noMembershipLineup);
+  return lineup;
+}
+const people = [
+  { name: "Wade Carson", hasMembership: false },
+  { name: "Ray Anderson", hasMembership: true },
+  { name: "America Marsh", hasMembership: true },
+  { name: "Patience Patel", hasMembership: false },
+];
+console.log(createLineOrder(people));
 
 module.exports = {
   applyDiscount,
