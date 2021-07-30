@@ -204,7 +204,6 @@ function getFlatObject(person) {
      
    } else {
    newObject[personObj] = person.numbers
-
 }
    }
  
