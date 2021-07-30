@@ -174,60 +174,27 @@ if (address1.street === address2.street) {
 
 
 function gradeAssignments(assignments) {
-
-
-//Declare variable for accumulation
-// let newTest = assignments;
-// //Declare loop to iterate trhough assignments
-// for (let i = 0; i < newTest.length; i++) {
-
-// let currentTest = newTest[i];
-// if (currentTest.kind === "PASS-FAIL") {
-//   if (currentTest.score.received === currentTest.score.max ){
-//     newTest.status = "PASSED"
-//   } else {
-//     newTest.status = "FAILED"
-//   }
-// }
-// if (currentTest.kind === "PERCENTAGE") { 
-//   if (currentTest.score.received === currentTest.score.max * 0.8){
-//     newTest.status = "PASSED"
-//   } else {
-//     newTest.status = "FAILED"
-//   }
-// }
-// if (currentTest.kind === "ESSAY") { 
-//   if (currentTest.score.received === currentTest.score.max){
-//     newTest.status = "SCORE:" + newTest.score.received + "/" + newTest.score.max;
-// } 
-//  //inside loop check if kind is pass/fail
-//  //If it is pass/fail, check if score received = score max
-//  //if it is, let satus = passed else let it be failed
-//  //
-//  //return our newtest
-//  }
-//  return newTest;
-// }
-}
-// console.log(gradeAssignments(assignments));
-// [
-//    { 
-//      kind: "PASS-FAIL",
-//      score: { received: 4, max: 4 },
-//      status: "PASSED",
-//    },
-//    { 
-//      kind: "PERCENTAGE",
-//      score: { received: 7, max: 9 },
-//      status: "FAILED: 77.8%",
-//    },
-//    { 
-//      kind: "ESSAY",
-//      score: { received: 4, max: 5 },
-//      status: "SCORE: 4/5",
-//    },
-//  ];
-
+    for (let el of assignments) {
+      
+      if (el.kind === "PASS-FAIL") {
+        if (el.score.received === el.score.max) {
+          el.status = "PASSED";
+        } else {
+          el.status = "FAILED";
+        }
+      } else if (el.kind === "PERCENTAGE") {
+        let percent = (el.score.received/el.score.max)* 100;
+        if (percent >= 80) {
+          el.status = "PASSED: " + percent.toFixed(1) + "%";
+        } else {
+          el.status = "FAILED: " + percent.toFixed(1) + "%";
+        }
+      } else {
+        el.status = "SCORE: " + el.score.received + "/" + el.score.max;
+      }
+    }
+    return assignments // array of objects
+    }
 
 
 
