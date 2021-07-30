@@ -114,7 +114,10 @@ function getFirstPhoneNumber(person) {
  *  //> 7185558611
  */
 function getLastPhoneNumber(person) {
-  return person.numbers.pop();
+  
+  let phone = person.numbers[person.numbers.length-1]
+  return phone;  
+  // return person.numbers.pop();
 }
 
 /**

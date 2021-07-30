@@ -164,6 +164,7 @@ function compareLocations(address1, address2) {
     //>   },
     //> ];
  */
+
 function gradeAssignments(assignments) {
     for(const assignment of assignments){
       let scoreRecieved = assignment.score.received
