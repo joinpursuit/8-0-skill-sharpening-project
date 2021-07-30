@@ -10,8 +10,8 @@
  *  //> 4
  */
 function getLengthOfString(str) {
-  let length = str.length;
-  return length;
+  return  str.length;
+  
 }
 
 /**
@@ -26,8 +26,7 @@ function getLengthOfString(str) {
  *  //> 111
  */
 function convertToNumber(val) {
-  let change = parseInt(val); 
-  return change;
+  return parseInt(val); 
 }
 
 /**
@@ -42,9 +41,9 @@ function convertToNumber(val) {
  *  convertToString(99);
  *  //> "99"
  */
+
 function convertToString(val) {
-  let change = val.toString();
-  return change;
+ return val.toString();
 }
 
 /**
@@ -58,9 +57,9 @@ function convertToString(val) {
  *  convertToShoutingText("Hello There");
  *  //> "HELLO THERE"
  */
-function convertToShoutingText(text) {
-  let change =  text.toUpperCase();
-  return change;
+function convertToShoutingText(text){
+ return text.toUpperCase();
+  
 }
 
 /**
@@ -75,8 +74,8 @@ function convertToShoutingText(text) {
  *  //> "hello there"
  */
 function convertToWhisperText(text) {
-let change =  text.toLowerCase();
-  return change;
+return text.toLowerCase();
+  
 }
 /**
  * checkIfCharacterIsInString()
@@ -93,16 +92,12 @@ let change =  text.toLowerCase();
  *  checkIfCharacterIsInString("hello there", "a");
  *  //> false
  */
-
  // Need Help 
 
 function checkIfCharacterIsInString(text, character) {
-if(text.includes(String) || character.includes(String)){
-  return true;
-}else {
-  return false;
- }
+ return text.includes(character) ? true : false ;
 }
+
 /**
  * isEven()
  * ---------------------
@@ -118,12 +113,7 @@ if(text.includes(String) || character.includes(String)){
  *  //> false
  */
 function isEven(num) {
-  if (num % 2 == 0){
-    return  true;
-  }else {
-    return false;
-  }
- 
+ return num % 2 == 0;
 }
 
 /**
@@ -140,12 +130,9 @@ function isEven(num) {
  *  isOdd(11);
  *  //> true
  */
+
 function isOdd(num) {
-  if (num % 2 == 0){
-    return  false;
-  }else {
-    return true;
-  }
+  return num % 2 == 1;
 }
 
 /**
@@ -162,13 +149,11 @@ function isOdd(num) {
  *  isTruthy(null);
  *  //> false
  */
+
 function isTruthy(val) {
-  if(val){
-    return true;
-  }else {
-    return false;
-  }
+    return val ? true : false;
 }
+
 
 /**
  * isFalsy()
@@ -184,12 +169,9 @@ function isTruthy(val) {
  *  isFalsy(" ");
  *  //> false
  */
+
 function isFalsy(val) {
-  if(!val){
-    return true;
-  }else {
-    return false;
-  }
+  return val ? false : true;
 }
 
 // Do not change the code below.

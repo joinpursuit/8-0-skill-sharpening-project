@@ -19,7 +19,27 @@
  *  applyDiscount(1000, 9, true);
  *  //> 700
  */
-function applyDiscount(priceInCents, age, hasMembership) {}
+  
+  function applyDiscount(priceInCents, age, hasMembership) {
+
+    let first = 0.9;
+    let second = 0.8;
+    let third = 0.7;
+    let total = priceInCents;
+  
+    if (hasMembership){
+      if (age <= 10 || age >= 65){
+        total *= third;
+      } else {
+        total *= second;
+      }
+    } else if (age <= 10 || age >= 65){
+      total *= first;
+    }
+    return total;
+  }
+
+
 
 /**
  * getCartTotal()
@@ -34,13 +54,44 @@ function applyDiscount(priceInCents, age, hasMembership) {}
  * 
  * EXAMPLE:
  *  const cart = [
-      { name: "T-Shirt", priceInCents: 1200, quantity: 1 },
+      { name: "T-Shirt", priceInCents: 1200, quantity: 1 },t
       { name: "Socks", priceInCents: 900, quantity: 2 },
     ];
     getCartTotal(cart);
  *  //> "$30.00"
  */
-function getCartTotal(products) {}
+//price multiply quantity 
+//return the total cost .
+// add products to their cart
+// Make sure to multiply the `priceInCents` times the `quantity`
+
+function getCartTotal(products) {
+
+//  let arr = "";
+//  let sum = 0;
+
+// for (let i = 0; i < products.length; i ++){
+//   sum = sum + products.quantity[i];
+//   arr = add * products.priceInCents[i];
+// }
+// return arr.toFixed(2);
+
+let sum = 0;
+for (let product of products){
+  sum += product.priceInCents * product.quantity;
+}
+let total = sum/100;
+return `$${total.toFixed(2)}`;
+
+}
+
+// cart = [
+//   { name: "T-Shirt", priceInCents: 1200, quantity: 1 },
+//   { name: "Shoes", priceInCents: 8950, quantity: 1 },
+//   { name: "Skirt", priceInCents: 4400, quantity: 1 },
+//   { name: "Socks", priceInCents: 900, quantity: 1 },
+// ];
+// });
 
 /**
  * compareLocations()
@@ -80,7 +131,24 @@ function getCartTotal(products) {}
     compareLocations(address1, address2);
     //> "Same city."
  */
-function compareLocations(address1, address2) {}
+function compareLocations(address1, address2) {
+
+  let answer = "";
+  if (address1.state === address2.state && address1.city === address2.city && address1.zip === address2.zip && address1.street === address2.street){
+    answer = "Same building."
+  } else if
+   (address1.state === address2.state && address1.city === address2.city && address1.zip === address2.zip ){
+   answer = "Same city."
+  } else if (address1.state === address2.state){
+    answer = "Same state."
+  }else if (address1.state !== address2.state && address1.city !== address2.city && address1.zip !== address2.zip && address1.street !== address2.street){
+    answer = "Addresses are not near each other."
+  }
+   else {
+    answer = "Addresses are not near each other."
+  }
+  return answer;
+}
 
 /**
  * gradeAssignments()
@@ -127,7 +195,29 @@ function compareLocations(address1, address2) {}
     //>   },
     //> ];
  */
-function gradeAssignments(assignments) {}
+
+function gradeAssignments(assignments) {
+
+for (let assign of assignments) {
+  if(assign.kind === "PASS-FAIL"){
+    if(assign.score.received === assign.score.max){
+      assign.status = "PASSED";
+    }else {
+      assign.status = "FAILED"
+    }
+}else if (assign.kind === "PERCENTAGE"){
+  let percent = (assign.score.received/assign.score.max)*100;
+  if(percent >= 80){
+    assign.status = "PASSED: " + percent.toFixed(1) + "%";
+  }else {
+    assign.status = "FAILED: " + percent.toFixed(1) + "%";
+  }
+}else {
+  assign.status = "SCORE: " + assign.score.received + "/" + assign.score.max;
+ }
+}
+ return assignments;
+}
 
 /**
  * createLineOrder()
@@ -152,7 +242,26 @@ function gradeAssignments(assignments) {}
     createLineOrder(people);
     //> [ "Ray Anderson", "America Marsh", "Wade Carson", "Patience Patel" ]
  */
-function createLineOrder(people) {}
+
+
+function createLineOrder(people) {
+    let newArr = [];
+    for (let i = 0; i < people.length; i++) {
+      let arrName = people[i].name;
+      let member = people[i].hasMembership;
+      if (member === true) {
+        newArr.push(arrName); 
+      }
+    }
+    for (let i = 0; i < people.length; i++) {
+      let arrName = people[i].name;
+      let member = people[i].hasMembership;
+      if (member === false ) {
+        newArr.push(arrName);
+      }
+    }
+    return newArr;
+  }
 
 module.exports = {
   applyDiscount,

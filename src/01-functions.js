@@ -88,9 +88,7 @@ function multiply(a,b) {
  *  //> 8 // 10 + 6 = 16; 16/2 = 8;
  */
 function average(a,b) {
- let sum = a + b ;
- let avg = 2;
- return sum / avg ;
+ return [a+b]/2;
 }
 
 /**
@@ -111,9 +109,7 @@ function average(a,b) {
  *  //> 10 // 10 + 11 + 19 = 30; 30 / 3 = 10;
  */
 function averageThree(a,b,c) {
-  let sum = a + b + c ;
-  let avg = 3;
-  return sum / avg ;
+  return [a+b+c]/3 ;
 }
 
 /**
@@ -133,12 +129,11 @@ function averageThree(a,b,c) {
  *  compareTypes("left", 10);
  *  //> false
  */
+
 function compareTypes(a,b) {
-  if(a.typeOf == b.typeOf){
-    return true ;
-  }else {
-    return false;
-  }
+  let answer = false;
+  typeof a === typeof b ? answer = true : answer = false ;
+  return answer;
 }
 
 /**
@@ -158,9 +153,13 @@ function compareTypes(a,b) {
  *  flipSign(50);
  *  //> -50
  */
+
 function flipSign(a) {
-let plus = a - a;
-return plus ;
+
+ let okNew = a * -1 ;
+ return okNew ;
+// return -a;
+
 }
 
 /**
@@ -182,8 +181,7 @@ return plus ;
  *  //> "left right up down away"
  */
 function joinStringsWithSpaces(a,b,c,d,e) {
-  let add = a +" "+ b +" "+  c +" "+ d +" "+ e;
-  return add;
+  return  a +" "+ b +" "+  c +" "+ d +" "+ e;
 }
 
 /**
@@ -202,11 +200,7 @@ function joinStringsWithSpaces(a,b,c,d,e) {
  *  //> "us"
  */
 function getFirstAndLastCharacter(a) {
-  let sum = a[0];
-  let hum = a.length -1;
-  let dum = sum + hum ;
-  return dum;
-
+  return  a[0] + a[a.length-1];
 }
 
 // Do not change the code below.
