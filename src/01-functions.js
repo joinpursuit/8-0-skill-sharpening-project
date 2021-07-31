@@ -9,7 +9,10 @@
  *  alwaysTrue();
  *  //> true
  */
-function alwaysTrue() {}
+function alwaysTrue() {
+  return true;
+}
+
 
 /**
  * greet()
@@ -24,7 +27,13 @@ function alwaysTrue() {}
  *  greet("Ian");
  *  //> "Hello, Ian."
  */
-function greet() {}
+ function greet(name) {
+  let greeting = "Hello";
+  let newGreeting = greeting + "," + " " + name + ".";
+
+  return newGreeting;
+}
+
 
 /**
  * add()
@@ -39,7 +48,10 @@ function greet() {}
  *  add(10, 20);
  *  //> 30
  */
-function add() {}
+function add(a, b) {
+return a + b;
+}
+
 
 /**
  * multiply()
@@ -54,7 +66,10 @@ function add() {}
  *  multiply(2, 5);
  *  //> 10
  */
-function multiply() {}
+function multiply(a, b) {
+  return a * b;
+}
+
 
 /**
  * average()
@@ -74,7 +89,10 @@ function multiply() {}
  *  average(10, 6);
  *  //> 8 // 10 + 6 = 16; 16/2 = 8;
  */
-function average() {}
+function average(a, b) {
+  return (a + b) / 2;
+}
+
 
 /**
  * averageThree()
@@ -93,7 +111,9 @@ function average() {}
  *  averageThree(10, 11, 19);
  *  //> 10 // 10 + 11 + 19 = 30; 30 / 3 = 10;
  */
-function averageThree() {}
+function averageThree(a, b, c) {
+  return (a + b + c) / 3;
+}
 
 /**
  * compareTypes()
@@ -112,7 +132,22 @@ function averageThree() {}
  *  compareTypes("left", 10);
  *  //> false
  */
-function compareTypes() {}
+// function compareTypes(a, b) {
+//   let result;
+//   if (typeof "Reed" === "Aisha") {
+//     result = true;
+//   } else {
+//     result = false;
+//   }
+//   return result;
+// }
+// console.log(compareTypes("Reed", "Aiasha")); 
+
+//Correct
+function compareTypes(a, b) {
+  
+  return typeof a === typeof b;
+}
 
 /**
  * flipSign()
@@ -131,7 +166,11 @@ function compareTypes() {}
  *  flipSign(50);
  *  //> -50
  */
-function flipSign() {}
+ function flipSign(a) {
+  return a*-1; // The asterisk can be any operator I think.
+  // or 
+  //return -1;
+  }
 
 /**
  * joinStringsWithSpaces()
@@ -151,7 +190,9 @@ function flipSign() {}
  *  joinStringsWithSpaces("left", "right", "up", "down", "away");
  *  //> "left right up down away"
  */
-function joinStringsWithSpaces() {}
+ function joinStringsWithSpaces(a,b,c,d,e) {
+  return a + " " +  b + " " + c + " " + d + " " + e;
+}
 
 /**
  * getFirstAndLastCharacter()
@@ -168,7 +209,9 @@ function joinStringsWithSpaces() {}
  *  getFirstAndLastCharacter("upwards");
  *  //> "us"
  */
-function getFirstAndLastCharacter() {}
+function getFirstAndLastCharacter(a) {
+  return `${a[0]}${a[a.length-1]}`;
+}
 
 // Do not change the code below.
 module.exports = {

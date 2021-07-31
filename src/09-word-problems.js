@@ -19,7 +19,17 @@
  *  applyDiscount(1000, 9, true);
  *  //> 700
  */
-function applyDiscount(priceInCents, age, hasMembership) {}
+function applyDiscount(priceInCents, age, hasMembership) {
+ let discount = 0;
+ if(age <= 10 || age >= 65) {
+   discount += .1;
+ }
+ if (hasMembership) {
+   discount += .2;
+ }
+ return priceInCents * (1-discount);
+}
+
 
 /**
  * getCartTotal()
@@ -40,7 +50,14 @@ function applyDiscount(priceInCents, age, hasMembership) {}
     getCartTotal(cart);
  *  //> "$30.00"
  */
-function getCartTotal(products) {}
+function getCartTotal(products) {
+  let totalInCents = 0;
+  for(let product of products) {
+    totalInCents += product.priceInCents*product.quantity;
+  }
+  let totalInDollars = totalInCents/100;
+  return `$${totalInDollars.toFixed(2)}`;
+}
 
 /**
  * compareLocations()
@@ -80,7 +97,22 @@ function getCartTotal(products) {}
     compareLocations(address1, address2);
     //> "Same city."
  */
-function compareLocations(address1, address2) {}
+function compareLocations(address1, address2) {
+  let sameStreet = address1.street === address2.street;
+  let sameCity = address1.city === address2.city;
+  let sameZip = address1.zip === address2.zip;
+  let sameState = address1.state === address2.state;
+
+  if(sameStreet && sameCity && sameZip && sameState) {
+    return "Same building.";
+  } else if (sameCity && sameState && sameZip) {
+    return "Same city.";
+  } else if (sameState) {
+    return "Same state.";
+  } else {
+    return "Addresses are not near each other.";
+  }
+}
 
 /**
  * gradeAssignments()
@@ -127,7 +159,27 @@ function compareLocations(address1, address2) {}
     //>   },
     //> ];
  */
-function gradeAssignments(assignments) {}
+function gradeAssignments(assignments) {
+  for (let assignment of assignments) {
+    if (assignment.kind === "PASS-FAIL") {
+      if (assignment.score.received === assignment.score.max) {
+        assignment.status = "PASSED";
+      } else {
+        assignment.status = "FAILED";
+      }
+    } else if (assignment.kind === "PERCENTAGE") {
+      let scorePercent = assignment.score.received/assignment.score.max*100;
+      if (scorePercent >= 80) {
+        assignment.status = "PASSED: " + scorePercent.toFixed(1) + "%";
+      } else {
+        assignment.status = "FAILED: " + scorePercent.toFixed(1) + "%";
+      }
+    } else {
+      assignment.status = "SCORE: " + assignment.score.received + "/" + assignment.score.max;
+    }
+  }
+  return assignments;
+}
 
 /**
  * createLineOrder()
@@ -152,7 +204,20 @@ function gradeAssignments(assignments) {}
     createLineOrder(people);
     //> [ "Ray Anderson", "America Marsh", "Wade Carson", "Patience Patel" ]
  */
-function createLineOrder(people) {}
+function createLineOrder(people) {
+  let memberArr = [];
+  let nonMemberArr = [];
+
+  for(let person of people){
+    if (person.hasMembership) {
+      memberArr.push(person.name);
+    } else {
+      nonMemberArr.push(person.name);
+    }
+  }
+  let lineOrder = memberArr.concat(nonMemberArr);
+  return lineOrder;
+}
 
 module.exports = {
   applyDiscount,
