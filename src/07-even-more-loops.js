@@ -109,7 +109,15 @@ function sumArray(array) {
  *  oddArray([ 11, 15, 20, 22, 37 ]);
  *  //> [ 11, 15, 37 ]
  */
-function oddArray(array) {}
+function oddArray(array) {
+  let newOddArr = [];
+  for (i = 0;i < array.length;i++){
+    if(array[i]%2 === 1){
+      newOddArr.push(array[i]);
+    }
+  }
+  return newOddArr;
+}
 
 /**
  * evenArray()
