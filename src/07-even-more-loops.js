@@ -36,9 +36,19 @@ function shoutForLoop(array) {
  *  shoutWhileLoop([ "A", "Very", "Happy", "Array" ]);
  *  //> [ "A!", "Very!", "Happy!", "Array!" ];
  */
-function shoutWhileLoop(array) {}
+
+function shoutWhileLoop(array) {
+ let shoutArr = [];
+  let i = 0;
+  while (i < array.length){
+    shoutArr.push(array[i] + "!");
+    i++;
+  }
+  return shoutArr;
+}
 
 /**
+ * 
  * shoutForOfLoop()
  * ---------------------
  * Takes in an array and returns a new array, adding "!" to each string.
@@ -52,7 +62,22 @@ function shoutWhileLoop(array) {}
  *  shoutForOfLoop([ "A", "Very", "Happy", "Array" ]);
  *  //> [ "A!", "Very!", "Happy!", "Array!" ];
  */
-function shoutForOfLoop(array) {}
+
+//  const iterable = [10, 20, 30];
+
+//  for (let value of iterable) {
+//    value += 1;
+//    console.log(value);
+
+
+
+function shoutForOfLoop(array) {
+  let shoutArr = [];
+    for(let value of array){
+     shoutArr.push(value + "!");
+    }
+  return shoutArr;
+}
 
 /**
  * sumArray()
