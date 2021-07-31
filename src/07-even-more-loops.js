@@ -130,7 +130,15 @@ function oddArray(array) {
  *  evenArray([ 11, 15, 20, 22, 37 ]);
  *  //> [ 20, 22 ]
  */
-function evenArray(array) {}
+function evenArray(array) {
+  let newEvenArr = [];
+  for(i = 0;i < array.length;i++){
+    if(array[i]%2 === 0){
+      newEvenArr.push(array[i]);
+    }
+  }
+  return newEvenArr;
+}
 
 /**
  * findSmallest()
