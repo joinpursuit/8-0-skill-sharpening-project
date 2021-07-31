@@ -151,7 +151,15 @@ function evenArray(array) {
  *  findSmallest([ 0, 11, -2, 5 ]);
  *  //> -2
  */
-function findSmallest(array) {}
+function findSmallest(array) {
+  let smallestNum = array[0];
+  for(i = 0;i < array.length;i++){
+    if(array[i] < smallestNum){
+      smallestNum = array[i];
+    }
+  }
+  return smallestNum;
+}
 
 /**
  * findLargest()
