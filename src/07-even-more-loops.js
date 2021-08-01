@@ -197,7 +197,15 @@ function findLargest(array) {
  *  findEqual([ 0, 11, -2, 5 ], 9);
  *  //> false
  */
-function findEqual(array, selected) {}
+function findEqual(array, selected) {
+  let hasSelected = false;
+  for(i = 0;i < array.length;i++){
+    if(array[i] === selected){
+      hasSelected = true;
+    }
+  }
+  return hasSelected;
+}
 
 /**
  * removeDuplicates()
@@ -214,7 +222,15 @@ function findEqual(array, selected) {}
  *  //> [ 1, 11, 2, 3, 4, 9 ]
  */
 
-function removeDuplicates(array) {}
+function removeDuplicates(array) {
+  let newArr = [];
+  for(let num of array){
+    if(!newArr.includes(num)){
+      newArr.push(num);
+    }
+  }
+  return newArr;
+}
 
 // Do not change any code below this line.
 module.exports = {
