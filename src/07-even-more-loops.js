@@ -63,14 +63,6 @@ function shoutWhileLoop(array) {
  *  //> [ "A!", "Very!", "Happy!", "Array!" ];
  */
 
-//  const iterable = [10, 20, 30];
-
-//  for (let value of iterable) {
-//    value += 1;
-//    console.log(value);
-
-
-
 function shoutForOfLoop(array) {
   let shoutArr = [];
     for(let value of array){
