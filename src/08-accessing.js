@@ -32,8 +32,9 @@
  *  getFirstName(person);
  *  //> "Rachel"
  */
-function getFirstName(person) {}
-
+function getFirstName(person) {
+  return person.names.first;
+}
 /**
  * getLastName()
  * ---------------------
@@ -48,7 +49,6 @@ function getFirstName(person) {}
 function getLastName(person) {
   return person.names.last;
 }
-
 /**
  * getAddressStreet()
  * ---------------------
@@ -60,8 +60,9 @@ function getLastName(person) {
  *  getAddressStreet(person);
  *  //> "697 Pine Drive"
  */
-function getAddressStreet(person) {}
-
+function getAddressStreet(person) {
+  return person.address.street;
+}
 /**
  * getCountOfPhoneNumbers()
  * ---------------------
@@ -76,7 +77,6 @@ function getAddressStreet(person) {}
 function getCountOfPhoneNumbers(person) {
   return person.numbers.length;
 }
-
 /**
  * getFirstPhoneNumber()
  * ---------------------
@@ -91,12 +91,13 @@ function getCountOfPhoneNumbers(person) {
  *  getFirstPhoneNumber(person);
  *  //> 7185550921
  */
-function getFirstPhoneNumber(person) {}
-
+function getFirstPhoneNumber(person) {
+  return person.numbers[0];
+}
 /**
  * getLastPhoneNumber()
  * ---------------------
- * Return the first phone number associated with the person.
+ * Return the last phone number associated with the person.
  *
  * NOTE: There will always be at least one phone number.
  *
@@ -107,8 +108,9 @@ function getFirstPhoneNumber(person) {}
  *  getLastPhoneNumber(person);
  *  //> 7185558611
  */
-function getLastPhoneNumber(person) {}
-
+function getLastPhoneNumber(person) {
+  return person.numbers[person.numbers.length -1];
+}
 /**
  * getFullName()
  * ---------------------
@@ -120,8 +122,12 @@ function getLastPhoneNumber(person) {}
  *  getFullName(person);
  *  //> "Rachel Eleanor Rojas"
  */
-function getFullName(person) {}
-
+function getFullName(person) {
+  let firstName = person.names.first;
+  let middleName = person.names.middle;
+  let lastName = person.names.last;
+  return `${firstName} ${middleName} ${lastName}`;
+}
 /**
  * getCityAndState()
  * ---------------------
@@ -136,8 +142,11 @@ function getFullName(person) {}
  *  getCityAndState(person);
  *  //> "Staten Island, NY"
  */
-function getCityAndState(person) {}
-
+function getCityAndState(person) {
+  let curCity = person.address.city;
+  let curState = person.address.state;
+  return `${curCity}, ${curState}`;
+}
 /**
  * getFullAddress()
  * ---------------------
@@ -152,8 +161,14 @@ function getCityAndState(person) {}
  *  getFullAddress(person);
  *  //> "697 Pine Drive 2A, Staten Island, NY, 10306"
  */
-function getFullAddress(person) {}
-
+function getFullAddress(person) {
+  let curStreet = person.address.street;
+  let curUnit = person.address.unit;
+  let curCity = person.address.city;
+  let curState = person.address.state;
+  let curZip = person.address.zip;
+  return `${curStreet} ${curUnit}, ${curCity}, ${curState}, ${curZip}`;
+}
 /**
  * getFlatObject()
  * ---------------------
@@ -175,8 +190,19 @@ function getFullAddress(person) {}
       numbers: [7185550921, 7185558611],
     };
  */
-function getFlatObject(person) {}
-
+function getFlatObject(person) {
+  return {
+       first: person.names.first,
+       middle: person.names.middle,
+       last: person.names.last,
+       street: person.address.street,
+       unit: person.address.unit,
+       city: person.address.city,
+       state: person.address.state,
+       zip: person.address.zip,
+       numbers: person.numbers
+  }
+}
 // Do not change the code below.
 module.exports = {
   getFirstName,
