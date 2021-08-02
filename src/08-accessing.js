@@ -101,7 +101,6 @@ function getFirstPhoneNumber(person) {
   return person.numbers[0];
 }
 
-
 /**
  * getLastPhoneNumber()
  * ---------------------
@@ -116,8 +115,9 @@ function getFirstPhoneNumber(person) {
  *  getLastPhoneNumber(person);
  *  //> 7185558611
  */
+
 function getLastPhoneNumber(person) {
-  return person.numbers[person.length-1];
+  return person.numbers[person.numbers.length-1];
 }
 
 /**
@@ -131,11 +131,12 @@ function getLastPhoneNumber(person) {
  *  getFullName(person);
  *  //> "Rachel Eleanor Rojas"
  */
+
 function getFullName(person) {
   let firstName = person.names.first
   let midName = person.names.middle
   let lastName = person.names.last
-  return `${firstName} ${midName } ${lastName }`;
+  return `${firstName} ${midName} ${lastName}`;
 }
 
 /**
