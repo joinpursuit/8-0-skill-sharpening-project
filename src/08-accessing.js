@@ -179,30 +179,12 @@ function getFullAddress(person) {
   let city = person.address.city;
   let state = person.address.state;
   let zip = person.address.zip;
-  return street + " " + unit + ", " + city + ", " + state + ", " + zip;
+  return `${street} ${unit}, ${city}, ${state}, ${zip}`;
 }
+  
 
-/**
- * getFlatObject()
- * ---------------------
- * Create a new object where all of the keys from the `names` and `address` objects are in the same object. You may leave the `numbers` array as is.
- * @param {Object} person 
- * @returns {Object}
- * 
- * EXAMPLE:
- *  getFlatObject(person);
- *  //> {
-      first: "Rachel",
-      middle: "Eleanor",
-      last: "Rojas",
-      street: "697 Pine Drive",
-      unit: "2A",
-      city: "Staten Island",
-      state: "NY",
-      zip: "10306",
-      numbers: [7185550921, 7185558611],
-    };
- */
+
+
 function getFlatObject(person) {
   return {
     first: person.names.first,
@@ -214,7 +196,7 @@ function getFlatObject(person) {
     state: person.address.state,
     zip: person.address.zip,
     numbers: person.numbers,
-   }
+   };
 }
 
 // Do not change the code below.
@@ -229,4 +211,6 @@ module.exports = {
   getCityAndState,
   getFullAddress,
   getFlatObject,
-};
+
+
+  };
