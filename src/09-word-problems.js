@@ -60,19 +60,19 @@ function applyDiscount(priceInCents, age, hasMembership) {
  *  //> "$30.00"
  */
 function getCartTotal(products) {
+  //create default value
   let getTotal = 0
+  //Loop thru products array
   for (let i =0; i < products.length; i++) {
     let product = products[i]
+
     getTotal += product.priceInCents * product.quantity
   }
 
   let priceInDollars = getTotal / 100;
+  //Return a string. Just add $ to number
   return "$" + priceInDollars.toFixed(2)
 }
-
-    
-
-
 
 /**
  * compareLocations()
@@ -112,7 +112,35 @@ function getCartTotal(products) {
     compareLocations(address1, address2);
     //> "Same city."
  */
-function compareLocations(address1, address2) {}
+function compareLocations(address1, address2) {
+/* - If the street, city, state, and zip for both addresses are the same, return the string "Same building."
+ * - If the city, state, and zip are the same, return the string "Same city."
+ * - If just the state is the same, return the string "Same state."
+ * - If none of those matches occur, return the string "Addresses are not near each other."
+ * 
+ * Keep in mind that an address could have the same street address or the same state*/
+const street = address1.street === address2.street;
+const city = address1.city === address2.city;
+const state = address1.state === address2.state;
+const zip = address1.zip === address2.zip
+
+if (street && city && state && zip) {
+    return "Same building."
+
+  } else if (city && state && zip) {
+       return "Same city."
+
+     }else if (state) {
+       return "Same state."
+
+     }else {
+       return "Addresses are not near each other."
+     }
+};
+
+
+
+
 
 /**
  * gradeAssignments()
@@ -159,7 +187,45 @@ function compareLocations(address1, address2) {}
     //>   },
     //> ];
  */
-function gradeAssignments(assignments) {}
+function gradeAssignments(assignments) {
+  
+  //for each object in array add a status key.
+  for (let assignment of assignments) {
+  const received = assignment.score.received;
+  const max = assignment.score.max;
+  const score = assignment.score.received / assignment.score.max * 100;
+  
+  //IF THE KIND OF ASSIGNMENT IS A PASS OR FAIL
+  if (assignment.kind === "PASS-FAIL") {
+    //"PASSED"` if the `score.received` equals the `score.max`
+    if(received === max) {
+      assignment.status = "PASSED";
+  
+    } else {
+      assignment.status = "FAILED";
+    }
+  
+    //IF KIND OF ASSIGNMENT IS BASED ON PERCENTAGE 
+  } else if (assignment.kind === "PERCENTAGE") {
+    //PASSED if the percent is equal to or above 80
+    if(score >= 80) {
+      assignment.status = `PASSED: ${score.toFixed(1)}%`;
+    //FAILED if score is below 80 percent  
+    } else if (score < 80) {
+      assignment.status = `FAILED: ${score.toFixed(1)}%`;
+
+    }
+    //ELSE THE ASSIGNMENT IS AN ESSAY with a score of 4/5
+  } else {
+    assignment.status = `SCORE: ${received}/${max}`;
+
+  }
+} 
+return assignments;
+};
+
+
+
 
 /**
  * createLineOrder()
@@ -184,7 +250,25 @@ function gradeAssignments(assignments) {}
     createLineOrder(people);
     //> [ "Ray Anderson", "America Marsh", "Wade Carson", "Patience Patel" ]
  */
-function createLineOrder(people) {}
+function createLineOrder(people) {
+    let arr =[]
+
+    for (let peep of people) {
+      if (peep.hasMembership){
+
+        arr.push(peep.name)
+      }
+    }
+   
+    for (peep of people) {
+      if (!peep.hasMembership){
+   
+        arr.push(peep.name)
+      }
+    }
+   
+    return arr
+  }
 
 module.exports = {
   applyDiscount,
