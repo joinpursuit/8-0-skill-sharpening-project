@@ -44,7 +44,7 @@ function createObjectWithValue(val) {
  */
 function createObjectWithKey(key) {
   let obj = {};
-  obj[key] = 'yes';
+  obj[key] = 'yes'
   return obj;
 }
 

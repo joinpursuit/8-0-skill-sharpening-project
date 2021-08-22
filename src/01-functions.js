@@ -27,7 +27,7 @@ function alwaysTrue() {
  *  //> "Hello, Ian."
  */
 function greet(name) {
-  return "Hello, " + name + ".";
+  return `Hello, ${name}.`;
 }
 
 /**
@@ -176,7 +176,7 @@ function flipSign(a) {
  *  //> "left right up down away"
  */
 function joinStringsWithSpaces(a, b, c, d, e) {
-  let str =  a + " " + b + " " + c + " " + d + " " + e ;
+  let str =  `${a} ${b} ${c} ${d} ${e}` ;
   return str;
 }
 

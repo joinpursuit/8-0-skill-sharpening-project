@@ -199,7 +199,21 @@ function getFullAddress(person) {
       numbers: [7185550921, 7185558611],
     };
  */
-function getFlatObject(person) {}
+function getFlatObject(person) {
+  const newObj = {
+  first: person.names.first,
+  middle: person.names.middle,
+  last: person.names.last,
+  street: person.address.street,
+  unit: person.address.unit,
+  city: person.address.city,
+  state: person.address.state,
+  zip: person.address.zip,
+  numbers: person.address.numbers
+}
+  return newObj;
+}
+
 
 // Do not change the code below.
 module.exports = {

@@ -42,7 +42,6 @@ function findLarger(a, b) {
   }
 }
 
-let lar = findLarger;
 
 /**
  * findLargerOrTie()
@@ -222,7 +221,7 @@ function calculateLetterGrade(grade) {
  */
 function animalCounts(animal, numberOfAnimals) {
   if (numberOfAnimals === 1){
-    return `${numberOfAniamls} ${animal}`;
+    return `${numberOfAnimals} ${animal}`;
   } else if (numberOfAnimals > 1){
     return `${numberOfAnimals} ${animal}s`;
   }
@@ -266,7 +265,7 @@ function evenOrOdd(a) {
  *  //> "Even"
  */
 function evenOrOddWithTernary(a) {
-   a % 2 === 0 ? "Even" : "Odd";
+  return (a % 2 === 0 ? "Even" : "Odd");
   
 }
 
