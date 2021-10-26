@@ -10,8 +10,7 @@
  *  //> 4
  */
 function getLengthOfString(str) {
-  return  str.length;
-  
+	return str.length;
 }
 
 /**
@@ -26,7 +25,7 @@ function getLengthOfString(str) {
  *  //> 111
  */
 function convertToNumber(val) {
-  return parseInt(val); 
+	return Number(val);
 }
 
 /**
@@ -43,7 +42,7 @@ function convertToNumber(val) {
  */
 
 function convertToString(val) {
- return val.toString();
+	return val.toString();
 }
 
 /**
@@ -57,9 +56,8 @@ function convertToString(val) {
  *  convertToShoutingText("Hello There");
  *  //> "HELLO THERE"
  */
-function convertToShoutingText(text){
- return text.toUpperCase();
-  
+function convertToShoutingText(text) {
+	return text.toUpperCase();
 }
 
 /**
@@ -74,8 +72,7 @@ function convertToShoutingText(text){
  *  //> "hello there"
  */
 function convertToWhisperText(text) {
-return text.toLowerCase();
-  
+	return text.toLowerCase();
 }
 /**
  * checkIfCharacterIsInString()
@@ -92,10 +89,10 @@ return text.toLowerCase();
  *  checkIfCharacterIsInString("hello there", "a");
  *  //> false
  */
- // Need Help 
+// Need Help
 
 function checkIfCharacterIsInString(text, character) {
- return text.includes(character) ? true : false ;
+	return text.includes(character) ? true : false;
 }
 
 /**
@@ -113,7 +110,7 @@ function checkIfCharacterIsInString(text, character) {
  *  //> false
  */
 function isEven(num) {
- return num % 2 == 0;
+	return num % 2 == 0;
 }
 
 /**
@@ -132,7 +129,7 @@ function isEven(num) {
  */
 
 function isOdd(num) {
-  return num % 2 == 1;
+	return num % 2 == 1;
 }
 
 /**
@@ -151,9 +148,8 @@ function isOdd(num) {
  */
 
 function isTruthy(val) {
-    return val ? true : false;
+	return val ? true : false;
 }
-
 
 /**
  * isFalsy()
@@ -171,19 +167,19 @@ function isTruthy(val) {
  */
 
 function isFalsy(val) {
-  return val ? false : true;
+	return val ? false : true;
 }
 
 // Do not change the code below.
 module.exports = {
-  getLengthOfString,
-  convertToNumber,
-  convertToString,
-  convertToShoutingText,
-  convertToWhisperText,
-  checkIfCharacterIsInString,
-  isEven,
-  isOdd,
-  isTruthy,
-  isFalsy,
-}
+	getLengthOfString,
+	convertToNumber,
+	convertToString,
+	convertToShoutingText,
+	convertToWhisperText,
+	checkIfCharacterIsInString,
+	isEven,
+	isOdd,
+	isTruthy,
+	isFalsy,
+};

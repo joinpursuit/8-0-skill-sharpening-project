@@ -9,15 +9,13 @@
  *  alwaysTrue();
  *  //> true
  */
-function alwaysTrue() {
-  return true;
-}
+let alwaysTrue = () => true;
 
 /**
  * greet()
  * ---------------------
  * Greets the person by name.
- * HINT: Look at the example closely. 
+ * HINT: Look at the example closely.
  * Capitalization, spacing, spelling, and punctuation count!
  * @param {string} name
  * @returns {string}
@@ -27,11 +25,7 @@ function alwaysTrue() {
  *  //> "Hello, Ian."
  */
 
-function greet(name) {
-  return `Hello, ${name}.`;
-}
-
-
+let greet = (name) => `Hello, ${name}.`;
 /**
  * add()
  * ---------------------
@@ -45,9 +39,8 @@ function greet(name) {
  *  add(10, 20);
  *  //> 30
  */
-function add(a,b) {
-  let sum = a + b ;
-  return sum;
+function add(a, b) {
+	return a + b;
 }
 
 /**
@@ -63,10 +56,8 @@ function add(a,b) {
  *  multiply(2, 5);
  *  //> 10
  */
-function multiply(a,b) {
-  let multiply = a * b;
-  return multiply;
-
+function multiply(a, b) {
+	return a * b;
 }
 
 /**
@@ -87,8 +78,8 @@ function multiply(a,b) {
  *  average(10, 6);
  *  //> 8 // 10 + 6 = 16; 16/2 = 8;
  */
-function average(a,b) {
- return [a+b]/2;
+function average(a, b) {
+	return [a + b] / 2;
 }
 
 /**
@@ -108,8 +99,8 @@ function average(a,b) {
  *  averageThree(10, 11, 19);
  *  //> 10 // 10 + 11 + 19 = 30; 30 / 3 = 10;
  */
-function averageThree(a,b,c) {
-  return [a+b+c]/3 ;
+function averageThree(a, b, c) {
+	return [a + b + c] / 3;
 }
 
 /**
@@ -121,7 +112,7 @@ function averageThree(a,b,c) {
  * @returns {boolean}
  *
  * HINT: What JavaScript function returns the data type of something?
- * 
+ *
  * EXAMPLE:
  *  compareTypes("left", "right");
  *  //> true
@@ -130,10 +121,10 @@ function averageThree(a,b,c) {
  *  //> false
  */
 
-function compareTypes(a,b) {
-  let answer = false;
-  typeof a === typeof b ? answer = true : answer = false ;
-  return answer;
+function compareTypes(a, b) {
+	let answer = false;
+	typeof a === typeof b ? (answer = true) : (answer = false);
+	return answer;
 }
 
 /**
@@ -145,7 +136,7 @@ function compareTypes(a,b) {
  *
  * HINT: Using pencil and paper, how would you make a positive number look negative?
  * How could you apply this to a variable?
- * 
+ *
  * EXAMPLE:
  *  flipSign(-10);
  *  //> 10
@@ -155,11 +146,7 @@ function compareTypes(a,b) {
  */
 
 function flipSign(a) {
-
- let okNew = a * -1 ;
- return okNew ;
-// return -a;
-
+	return -a;
 }
 
 /**
@@ -175,13 +162,13 @@ function flipSign(a) {
  *
  * HINT: You DON'T need fancy methods like `split()` and `join()` to do this.
  * What is the simplest way to combine two strings?
- * 
+ *
  * EXAMPLE:
  *  joinStringsWithSpaces("left", "right", "up", "down", "away");
  *  //> "left right up down away"
  */
-function joinStringsWithSpaces(a,b,c,d,e) {
-  return  a +" "+ b +" "+  c +" "+ d +" "+ e;
+function joinStringsWithSpaces(a, b, c, d, e) {
+	return `${a} ${b} ${c} ${d} ${e}`;
 }
 
 /**
@@ -200,19 +187,19 @@ function joinStringsWithSpaces(a,b,c,d,e) {
  *  //> "us"
  */
 function getFirstAndLastCharacter(a) {
-  return  a[0] + a[a.length-1];
+	return a[0] + a[a.length - 1];
 }
 
 // Do not change the code below.
 module.exports = {
-  alwaysTrue,
-  greet,
-  add,
-  multiply,
-  average,
-  averageThree,
-  compareTypes,
-  flipSign,
-  joinStringsWithSpaces,
-  getFirstAndLastCharacter,
+	alwaysTrue,
+	greet,
+	add,
+	multiply,
+	average,
+	averageThree,
+	compareTypes,
+	flipSign,
+	joinStringsWithSpaces,
+	getFirstAndLastCharacter,
 };
