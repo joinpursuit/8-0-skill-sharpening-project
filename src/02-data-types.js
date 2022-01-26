@@ -9,7 +9,10 @@
  *  getLengthOfString("down");
  *  //> 4
  */
-function getLengthOfString(str) {}
+function getLengthOfString(str) {
+  // use .length to retrun length of str
+  return str.length;
+}
 
 /**
  * convertToNumber()
@@ -22,7 +25,10 @@ function getLengthOfString(str) {}
  *  convertToNumber("111");
  *  //> 111
  */
-function convertToNumber(val) {}
+function convertToNumber(val) {
+  // use Number() method to convert val to number
+  return Number(val);
+}
 
 /**
  * convertToString()
@@ -36,7 +42,10 @@ function convertToNumber(val) {}
  *  convertToString(99);
  *  //> "99"
  */
-function convertToString(val) {}
+function convertToString(val) {
+  // use String() method to convert val to number
+  return String(val);
+}
 
 /**
  * convertToShoutingText()
@@ -49,7 +58,11 @@ function convertToString(val) {}
  *  convertToShoutingText("Hello There");
  *  //> "HELLO THERE"
  */
-function convertToShoutingText(text) {}
+function convertToShoutingText(text) {
+  // use toUpperCase() method to change text to SHOUTING
+  // I DON'T KNOW WHAT WE'RE YELLING ABOUT
+  return text.toUpperCase();
+}
 
 /**
  * convertToWhisperText()
@@ -62,7 +75,10 @@ function convertToShoutingText(text) {}
  *  convertToWhisperText("Hello There");
  *  //> "hello there"
  */
-function convertToWhisperText(text) {}
+function convertToWhisperText(text) {
+  // use toLowerCase() method to change text to all lowercase
+  return text.toLowerCase();
+}
 
 /**
  * checkIfCharacterIsInString()
@@ -79,7 +95,10 @@ function convertToWhisperText(text) {}
  *  checkIfCharacterIsInString("hello there", "a");
  *  //> false
  */
-function checkIfCharacterIsInString(text, character) {}
+function checkIfCharacterIsInString(text, character) {
+  // use includes() method to check text for presence of character
+  return text.includes(character);
+}
 
 /**
  * isEven()
@@ -95,7 +114,15 @@ function checkIfCharacterIsInString(text, character) {}
  *  isEven(11);
  *  //> false
  */
-function isEven(num) {}
+function isEven(num) {
+  // use modulo to check for remainder to seeif number is even
+  if (num % 2 === 0) {
+    return true;
+  }
+  else {
+    return false;
+  }
+}
 
 /**
  * isOdd()
@@ -111,7 +138,15 @@ function isEven(num) {}
  *  isOdd(11);
  *  //> true
  */
-function isOdd(num) {}
+function isOdd(num) {
+    // use modulo to check for remainder to see if number is odd 
+    if (num % 2 === 1) {
+      return true;
+    }
+    else {
+      return false;
+    }
+}
 
 /**
  * isTruthy()
@@ -127,7 +162,15 @@ function isOdd(num) {}
  *  isTruthy(null);
  *  //> false
  */
-function isTruthy(val) {}
+function isTruthy(val) {
+  // if value is truthy, return true; otherwise, return false
+  if (val) {
+    return true;
+  } 
+  else {
+    return false;
+  }
+}
 
 /**
  * isFalsy()
@@ -143,7 +186,16 @@ function isTruthy(val) {}
  *  isFalsy(" ");
  *  //> false
  */
-function isFalsy(val) {}
+function isFalsy(val) {
+  // use bang to determine if val is falsy
+  // if value is falsy, return true; otherwise, return false
+  if (!val) {
+    return true;
+  } 
+  else {
+    return false;
+  }
+}
 
 // Do not change the code below.
 module.exports = {
