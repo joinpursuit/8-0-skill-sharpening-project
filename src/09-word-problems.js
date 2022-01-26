@@ -1,7 +1,8 @@
 /**
  * applyDiscount()
  * ---------------------
- * A local movie theater has a few different ticket discounts. If the attendee is 10 years old or younger, or 65 years old or older, they receive a 10% discount. If the attendee is viewing the movie with a member, they receive a 20% discount. If both situations apply, they receive a 30% discount.
+ * A local movie theater has a few different ticket discounts. If the attendee is 10 years old or younger, or 65 years old or older, they receive a 10% discount. 
+ * If the attendee is viewing the movie with a member, they receive a 20% discount. If both situations apply, they receive a 30% discount.
  *
  * Write an algorithm that will determine the price of a ticket based on the `priceInCents` of the ticket, the `age` of the attendee, and the membership status (i.e. `hasMembership`).
  * @param {number} priceInCents - The price of the ticket, in cents.
@@ -19,7 +20,29 @@
  *  applyDiscount(1000, 9, true);
  *  //> 700
  */
-function applyDiscount(priceInCents, age, hasMembership) {}
+
+
+function applyDiscount(priceInCents, age, hasMembership) {
+     
+     let total=0
+     let discount=0
+     if((!age <= 10 || !age >= 65) && hasMembership){
+       discount=0
+     }
+     if(age <= 10 || age >= 65){
+       discount=(priceInCents*10)/100
+     }
+      if(hasMembership){
+      discount=(priceInCents*20)/100
+     }
+    if((age <= 10 || age >= 65) && hasMembership){
+      discount=(priceInCents*30)/100
+     }
+     total=priceInCents-discount
+     
+     return total
+
+}
 
 /**
  * getCartTotal()
@@ -40,14 +63,26 @@ function applyDiscount(priceInCents, age, hasMembership) {}
     getCartTotal(cart);
  *  //> "$30.00"
  */
-function getCartTotal(products) {}
+function getCartTotal(products) {
+  let total=0
+  
+   for(prod of products){
+     
+     total+=(prod.priceInCents*prod.quantity)/100
+     
+   }
+   
+   return `$${total.toFixed(2)}`
+}
 
 /**
  * compareLocations()
  * ---------------------
- * A shipping company is looking to make its deliveries more efficient by comparing the destinations of multiple deliveries. If the locations are similar, the packages may be able to be bundled together.
+ * A shipping company is looking to make its deliveries more efficient by comparing the destinations of multiple deliveries. 
+ * If the locations are similar, the packages may be able to be bundled together.
  * 
- * Write an algorithm that takes in two objects of similar shape, each object representing an address. Then, return a string that describes the relationship between those two addresses.
+ * Write an algorithm that takes in two objects of similar shape, each object representing an address. 
+ * Then, return a string that describes the relationship between those two addresses.
  * 
  * - If the street, city, state, and zip for both addresses are the same, return the string "Same building."
  * - If the city, state, and zip are the same, return the string "Same city."
@@ -80,7 +115,24 @@ function getCartTotal(products) {}
     compareLocations(address1, address2);
     //> "Same city."
  */
-function compareLocations(address1, address2) {}
+function compareLocations(address1, address2) {
+    let street=address1.street===address2.street
+    let city=address1.city===address2.city
+    let state=address1.state===address2.state
+    let zip=address1.zip===address2.zip
+
+     let bundle=''
+    if(street && city && state && zip){
+       bundle='Same building.'
+    }else if(city && state && zip){
+        bundle='Same city.'
+    }else if(state){
+      bundle="Same state."
+    }else{
+      bundle='Addresses are not near each other.'
+    }
+    return bundle
+}
 
 /**
  * gradeAssignments()
@@ -127,16 +179,42 @@ function compareLocations(address1, address2) {}
     //>   },
     //> ];
  */
-function gradeAssignments(assignments) {}
+function gradeAssignments(assignments) {
 
+  for (let i=0;i<assignments.length;i++){
+    let percentage=((assignments[i].score.received/assignments[i].score.max)*100).toFixed(1)
+    if(assignments[i].kind==='PASS-FAIL'){
+         if(assignments[i].score.received===assignments[i].score.max ){
+              assignments[i]['status']="PASSED"
+         }else{
+           assignments[i]['status']="FAILED"
+       }
+    }else if(assignments[i].kind==='PERCENTAGE'){
+     if(percentage >= 80.0){
+       assignments[i]['status']='PASSED: '+ percentage+'%'
+     }else{
+      assignments[i]['status']='FAILED: '+percentage+'%'
+     }
+     }else{
+    assignments[i]['status']='SCORE: '+assignments[i].score.received+'/'+assignments[i].score.max
+    }
+  }
+
+  return assignments
+}
 /**
  * createLineOrder()
  * ---------------------
- * An airline wants to build an application that improves the boarding process for its customers. They want to have customers sign up in order of arrival, but prioritize those customers who have a membership.
+ * An airline wants to build an application that improves the boarding process for its customers. 
+ * They want to have customers sign up in order of arrival, but prioritize those customers who have a membership.
  * 
- * Build an algorithm that takes in an array of objects, where each object represents a person. The order of the array is important; the person at index `0` arrived first while the person at index `1` arrived afterwards.
+ * Build an algorithm that takes in an array of objects, where each object represents a person. 
+ * The order of the array is important; the person at index `0` arrived first while the person at index `1` arrived afterwards.
  * 
- * Return an array that includes only the names of each person, but reordered to account for whether or not each person has a membership. Everyone who has a membership should be at the front of the line in the same order they arrived. Everyone without a membership should be in the same order they arrived but after those with a membership.
+ * Return an array that includes only the names of each person, but reordered to account for whether or 
+ * not each person has a membership. Everyone who has a membership should be at the front of the line in the same order they arrived.
+ *  Everyone without a membership should be in the same order they arrived but after those with a membership.
+ * 
  * @param {Object[]} people - An array of people objects.
  * @param {string} people[].name - The name of the person.
  * @param {boolean} people[].hasMembership - Whether or not the person has a membership.
@@ -152,7 +230,21 @@ function gradeAssignments(assignments) {}
     createLineOrder(people);
     //> [ "Ray Anderson", "America Marsh", "Wade Carson", "Patience Patel" ]
  */
-function createLineOrder(people) {}
+function createLineOrder(people) {
+      let memberArr=[]
+      let nonmemberArr=[]
+    
+     for(let human of people){
+       if(human.hasMembership){
+           memberArr.push(human.name)
+       }else{
+          nonmemberArr.push(human.name)
+       }
+     }
+     let orderedArr= memberArr.concat(nonmemberArr)
+      return orderedArr
+  }
+
 
 module.exports = {
   applyDiscount,

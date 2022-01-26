@@ -14,7 +14,9 @@
  *  isEqual(10, "10");
  *  //> false
  */
-function isEqual(a, b) {}
+function isEqual(a, b) {
+  return a===b?true:false
+}
 
 /**
  * findLarger()
@@ -28,7 +30,11 @@ function isEqual(a, b) {}
  *  findLarger(19, 7);
  *  //> 19
  */
-function findLarger(a, b) {}
+function findLarger(a, b) {
+  if(a > b) {
+    return a
+  }else {return b}
+}
 
 /**
  * findLargerOrTie()
@@ -45,7 +51,9 @@ function findLarger(a, b) {}
  *  findLargerOrTie(0, 0);
  *  //> "tie"
  */
-function findLargerOrTie(a, b) {}
+function findLargerOrTie(a, b) {
+  return a===b?'tie':a>b?a:b
+}
 
 /**
  * positiveNegativeOrZero()
@@ -65,9 +73,11 @@ function findLargerOrTie(a, b) {}
  *  positiveNegativeOrZero(1);
  *  //> "Positive"
  */
-function positiveNegativeOrZero(a) {}
+function positiveNegativeOrZero(a) {
+   return a>0?'Positive':a<0?'Negative':'Zero'
+}
 
-/**
+/**npm control-
  * aroundTheWorldGreeting()
  * ---------------------
  * Takes in a `language` (e.g "english", "spanish", or "german") and returns "Hello World" in that language. Must work for at least "english", "spanish", and "german". It should default to English if no argument is passed in.
@@ -86,7 +96,12 @@ function positiveNegativeOrZero(a) {}
  *  aroundTheWorldGreeting();
  *  //> "Hello World"
  */
-function aroundTheWorldGreeting(language) {}
+function aroundTheWorldGreeting(language='english') {
+     return  language ==='spanish'?'Hola Mundo':
+                language==='german'?`Hallo Welt`:
+               `Hello World`
+       
+}
 
 /**
  * aroundTheWorldGreetingWithSwitch()
@@ -109,7 +124,24 @@ function aroundTheWorldGreeting(language) {}
  *  aroundTheWorldGreetingWithSwitch();
  *  //> "Hello World"
  */
-function aroundTheWorldGreetingWithSwitch(language) {}
+function aroundTheWorldGreetingWithSwitch(language='english') {
+   let greeting=''
+   switch (language){
+     case 'spanish':
+       greeting="Hola Mundo"
+       break;
+    case 'german':
+      greeting="Hallo Welt"
+      break;
+      case 'english':
+        greeting='Hello World'
+    default:
+      greeting='Hello World'
+      break;
+   }
+   return greeting
+}
+
 
 /**
  * calculateLetterGrade()
@@ -128,7 +160,12 @@ function aroundTheWorldGreetingWithSwitch(language) {}
  *  calculateLetterGrade(99);
  *  //> "A"
  */
-function calculateLetterGrade(grade) {}
+function calculateLetterGrade(grade) {
+  return    grade >=90?'A': 
+            grade >=80 && grade <90?'B':
+            grade >=70 && grade <80?'C':
+            grade >=60 && grade <70?'D':'F'
+}
 
 /**
  * animalCounts()
@@ -146,7 +183,14 @@ function calculateLetterGrade(grade) {}
  *  animalCounts("pig", 1);
  *  //> "1 pig"
  */
-function animalCounts(animal, numberOfAnimals) {}
+function animalCounts(animal, numberOfAnimals) {
+   if(numberOfAnimals > 1){
+     return `${numberOfAnimals} ${animal}s`
+
+   }else{
+     return `${numberOfAnimals} ${animal}`
+   }
+}
 
 /**
  * evenOrOdd()
@@ -163,7 +207,14 @@ function animalCounts(animal, numberOfAnimals) {}
  *  evenOrOdd(48);
  *  //> "Even"
  */
-function evenOrOdd(a) {}
+function evenOrOdd(a) {
+  if(a%2===0){
+    return 'Even'
+  }else{
+    return 'Odd'
+  }
+}
+
 
 /**
  * evenOrOddWithTernary()
@@ -179,7 +230,9 @@ function evenOrOdd(a) {}
  *  evenOrOddWithTernary(8);
  *  //> "Even"
  */
-function evenOrOddWithTernary(a) {}
+function evenOrOddWithTernary(a) {
+  return a%2===0?'Even':'Odd'
+}
 
 // Do not change any code below this line.
 module.exports = {
