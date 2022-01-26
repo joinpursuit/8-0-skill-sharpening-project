@@ -69,7 +69,17 @@ function findLargerOrTie(a, b) {}
  *  positiveNegativeOrZero(1);
  *  //> "Positive"
  */
-function positiveNegativeOrZero(a) {}
+function positiveNegativeOrZero(a) {
+  let result;
+  if (a > 0 ){
+    result = "Negative"
+  }else if (a < 0){
+    result = "Positive"
+  }else if (a === 0){
+    result = "Zero"
+  }
+return result
+}
 
 /**
  * aroundTheWorldGreeting()
@@ -90,7 +100,9 @@ function positiveNegativeOrZero(a) {}
  *  aroundTheWorldGreeting();
  *  //> "Hello World"
  */
-function aroundTheWorldGreeting(language) {}
+function aroundTheWorldGreeting(language) {
+  return 
+}
 
 /**
  * aroundTheWorldGreetingWithSwitch()
@@ -132,7 +144,9 @@ function aroundTheWorldGreetingWithSwitch(language) {}
  *  calculateLetterGrade(99);
  *  //> "A"
  */
-function calculateLetterGrade(grade) {}
+function calculateLetterGrade(grade) {
+
+}
 
 /**
  * animalCounts()
