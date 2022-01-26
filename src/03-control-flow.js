@@ -14,7 +14,15 @@
  *  isEqual(10, "10");
  *  //> false
  */
-function isEqual(a, b) {}
+function isEqual(a, b) {
+  // if a is equal to b, return true; otherwise return false
+  if (a === b) {
+    return true;
+  }
+  else {
+    return false;
+  }
+}
 
 /**
  * findLarger()
@@ -28,7 +36,15 @@ function isEqual(a, b) {}
  *  findLarger(19, 7);
  *  //> 19
  */
-function findLarger(a, b) {}
+function findLarger(a, b) {
+  // if a is larger than b, return a; otherwise return b
+  if (a > b) {
+    return a;
+  }
+  else {
+    return b;
+  }
+}
 
 /**
  * findLargerOrTie()
@@ -45,7 +61,20 @@ function findLarger(a, b) {}
  *  findLargerOrTie(0, 0);
  *  //> "tie"
  */
-function findLargerOrTie(a, b) {}
+function findLargerOrTie(a, b) {
+  // if a is larger than b, return a
+  if (a > b) {
+    return a;
+  }
+  // if b is larger than a, return b
+  else if (b > a) {
+    return b;
+  }
+  // otherwise, return string tie
+  else {
+    return "tie";
+  }
+}
 
 /**
  * positiveNegativeOrZero()
@@ -65,7 +94,20 @@ function findLargerOrTie(a, b) {}
  *  positiveNegativeOrZero(1);
  *  //> "Positive"
  */
-function positiveNegativeOrZero(a) {}
+function positiveNegativeOrZero(a) {
+  // if a is less than zero, return negative
+  if (a < 0) {
+    return "Negative";
+  }
+  // if a is greater than zero, return postiive
+  else if (a > 0) {
+    return "Positive";
+  }
+  // otherwise, return string zero
+  else {
+    return "Zero"
+  }
+}
 
 /**
  * aroundTheWorldGreeting()
@@ -86,7 +128,20 @@ function positiveNegativeOrZero(a) {}
  *  aroundTheWorldGreeting();
  *  //> "Hello World"
  */
-function aroundTheWorldGreeting(language) {}
+function aroundTheWorldGreeting(language) {
+  // if language is english or no language is entered, return Hello World in english
+  if (language == "english" || !language) {
+    return "Hello World";
+  }
+  // if language is spanish, return Hello World in spanish
+  else if (language == "spanish") {
+    return "Hola Mundo";
+  }
+  // if language is german, return Hello World in german
+  else if (language == "german") {
+    return "Hallo Welt";
+  }
+}
 
 /**
  * aroundTheWorldGreetingWithSwitch()
@@ -106,10 +161,28 @@ function aroundTheWorldGreeting(language) {}
  *  aroundTheWorldGreetingWithSwitch("german");
  *  //> "Hallo Welt"
  *
- *  aroundTheWorldGreetingWithSwitch();
+ *  aroundTheWorldGreetingWit`hSwitch();
  *  //> "Hello World"
  */
-function aroundTheWorldGreetingWithSwitch(language) {}
+function aroundTheWorldGreetingWithSwitch(language) {
+  switch (language) {
+    // if language is english, return Hello World in english
+    case "english":
+      return "Hello World";
+      break;
+    // if language is spanish, return Hello World in spanish
+    case "spanish":
+      return "Hola Mundo";
+      break;
+    // if language is german, return Hello World in german
+    case "german":
+      return "Hallo Welt";
+      break;
+    // if no language is provided, default to english
+    default:
+      return "Hello World"
+  }
+}
 
 /**
  * calculateLetterGrade()
@@ -128,7 +201,23 @@ function aroundTheWorldGreetingWithSwitch(language) {}
  *  calculateLetterGrade(99);
  *  //> "A"
  */
-function calculateLetterGrade(grade) {}
+function calculateLetterGrade(grade) {
+  if (grade >= 90) {
+    return "A";
+  }
+  else if (grade >= 80) {
+    return "B";
+  }
+  else if (grade >= 70) {
+    return "C";
+  }
+  else if (grade >= 60) {
+    return "D";
+  }
+  else {
+    return "F";
+  }
+}
 
 /**
  * animalCounts()
@@ -146,7 +235,14 @@ function calculateLetterGrade(grade) {}
  *  animalCounts("pig", 1);
  *  //> "1 pig"
  */
-function animalCounts(animal, numberOfAnimals) {}
+function animalCounts(animal, numberOfAnimals) {
+  if (numberOfAnimals > 1) {
+    return `${numberOfAnimals} ${animal}s`;
+  }
+  else {
+    return `${numberOfAnimals} ${animal}`;
+  }
+}
 
 /**
  * evenOrOdd()
@@ -163,7 +259,16 @@ function animalCounts(animal, numberOfAnimals) {}
  *  evenOrOdd(48);
  *  //> "Even"
  */
-function evenOrOdd(a) {}
+function evenOrOdd(a) {
+  // if dividing a by 2 produces no remainder, a is even
+  if (a % 2 === 0) {
+    return "Even";
+  }
+  // otherwise, a is odd
+  else {
+    return "Odd";
+  }
+}
 
 /**
  * evenOrOddWithTernary()
@@ -179,7 +284,11 @@ function evenOrOdd(a) {}
  *  evenOrOddWithTernary(8);
  *  //> "Even"
  */
-function evenOrOddWithTernary(a) {}
+function evenOrOddWithTernary(a) {
+  // divide a by 2, produce no remainder, then a is even
+  // otherwise, a is odd
+  return (a % 2 === 0 ? "Even" : "Odd")
+}
 
 // Do not change any code below this line.
 module.exports = {
