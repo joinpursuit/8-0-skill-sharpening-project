@@ -112,7 +112,9 @@ function addElementToEndOfArray(array, element) {
  *  //> 8
  */
 function removeElementFromEndOfArray(array) {
-
+// let arr = ["C","B","A"]
+// arr.pop();
+// return arr
 }
 
 /**
