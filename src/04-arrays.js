@@ -121,7 +121,11 @@ function removeElementFromEndOfArray(array) {}
  *  addElementToFrontOfArray([ 10 ], 9);
  *  //> [ 9, 10 ]
  */
-function addElementToFrontOfArray(array, element) {}
+function addElementToFrontOfArray(array, element) {
+  let arr = [10]
+  arr.unshift("A")
+  return arr
+}
 
 /**
  * removeElementFromFrontOfArray()
