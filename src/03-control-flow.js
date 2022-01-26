@@ -30,7 +30,9 @@ function isEqual(a, b) {
  *  findLarger(19, 7);
  *  //> 19
  */
-function findLarger(a, b) {}
+function findLarger(a, b) {
+  return Math.max(a,b)
+}
 
 /**
  * findLargerOrTie()
