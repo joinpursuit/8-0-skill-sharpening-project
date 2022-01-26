@@ -60,7 +60,9 @@ function add(a,b) {
  *  multiply(2, 5);
  *  //> 10
  */
-function multiply() {}
+function multiply(a,b) {
+  return a * b
+}
 
 /**
  * average()
