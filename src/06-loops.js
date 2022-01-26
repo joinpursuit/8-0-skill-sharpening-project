@@ -33,7 +33,7 @@ function rangeSum(min, max) {
  */
 function rangeOdd(min, max) {
   let sum=[];
-  for(let x= min; x<= max; x++){
+  for(let x= max; x>=min; x--){
     if(x%2){
       sum.push(x);
     }
@@ -53,16 +53,16 @@ function rangeOdd(min, max) {
  *  rangeEveryOther(11, 18);
  *  //> [ 11, 13, 15, 17 ]
  */
-function rangeEveryOther(min, max) {
-  let sum=0;
+function rangeEveryOther(min, max) { //#TODO error here probbaly
+  let arr=[];
   counter = true;
   for(let x=min; x<= max; x++){
     if(counter){
-      sum+=x;
+      arr.push(x);
     }
     counter= !counter;
   }
-  return sum;
+  return arr;
 }
 
 /**
