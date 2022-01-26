@@ -10,7 +10,10 @@
  *  createEmptyArray();
  *  //> []
  */
-function createEmptyArray() {}
+function createEmptyArray() {
+  const arr = [];
+  return arr
+}
 
 /**
  * createArrayWithTwoElements()
@@ -24,7 +27,10 @@ function createEmptyArray() {}
  *  createArrayWithTwoElements(true, false);
  *  //> [ true, false ]
  */
-function createArrayWithTwoElements(a, b) {}
+function createArrayWithTwoElements(a, b) {
+  const arrA = [a,b];
+  return arrA
+}
 
 /**
  * getArrayLength()
