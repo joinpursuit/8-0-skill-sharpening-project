@@ -77,7 +77,9 @@ return person.address.street
  *  getCountOfPhoneNumbers(person);
  *  //> 2
  */
-function getCountOfPhoneNumbers(person) {}
+function getCountOfPhoneNumbers(person) {
+  return person.numbers.length
+}
 
 /**
  * getFirstPhoneNumber()
