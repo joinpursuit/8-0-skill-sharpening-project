@@ -107,7 +107,9 @@ function addElementToEndOfArray(array, element) {}
  *  removeElementFromEndOfArray([ 10, 9, 8 ]);
  *  //> 8
  */
-function removeElementFromEndOfArray(array) {}
+function removeElementFromEndOfArray(array) {
+
+}
 
 /**
  * addElementToFrontOfArray()
@@ -138,7 +140,11 @@ function addElementToFrontOfArray(array, element) {
  *  removeElementFromFrontOfArray([ 10, 9, 8 ]);
  *  //> 10
  */
-function removeElementFromFrontOfArray(array) {}
+function removeElementFromFrontOfArray(array) {
+  // let arr = ["A","B","C"]
+  // arr.shift("A")
+  // return (arr.shift)
+}
 
 /**
  * getMiddleElement()
@@ -154,7 +160,10 @@ function removeElementFromFrontOfArray(array) {}
  *  getMiddleElement([ 10, null, "30" ]);
  *  //> null
  */
-function getMiddleElement(array) {}
+function getMiddleElement(array) {
+  let arr = ["first","middle","last"]
+  return arr[1]
+}
 
 // Do not change any code below this line.
 module.exports = {
