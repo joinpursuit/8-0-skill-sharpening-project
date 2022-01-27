@@ -127,7 +127,7 @@ function averageThree(a, b, c) {
  *  //> false
  */
 function compareTypes(a, b) {
- return (typeof a === typeof b)
+  return (typeof a === typeof b)
 }
 
 /**
@@ -148,11 +148,15 @@ function compareTypes(a, b) {
  *  //> -50
  */
 function flipSign(number) {
-  if(Math.sign(number) === 1){
-    number = -Math.abs(number);
-  }else {
-    number = Math.abs(number);
+  switch(Math.sign(number)){
+    case 1:
+      number = -Math.abs(number);
+      break;
+    case -1:
+      number = Math.abs(number);
+      break;
   }
+
   return number;
 }
 
@@ -175,7 +179,7 @@ function flipSign(number) {
  *  //> "left right up down away"
  */
  function joinStringsWithSpaces(a, b, c, d, e) {
-  let result = [...arguments]; // The arguments object is not an Array. It is similar, but lacks all Array properties except length
+  let result = [...arguments]; // Cloning the arguments object in a real Array
   return result.join(' ');
 }
 
