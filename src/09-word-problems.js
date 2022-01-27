@@ -19,7 +19,19 @@
  *  applyDiscount(1000, 9, true);
  *  //> 700
  */
-function applyDiscount(priceInCents, age, hasMembership) {}
+function applyDiscount(priceInCents, age, hasMembership) {
+  let discount = 0;
+  // if age is 10 or less or 65 or older, discount by 10% 
+  if (age <= 10 || age >= 65) {
+    discount += .1;
+  }
+  // if hasMembership is true, discount by 20%
+  if (hasMembership) {
+    discount += .2;
+  }
+  // multiply priceInCents by remainder of discount subtracted from 1 to get finsl price
+  return priceInCents * (1 - discount);
+}
 
 /**
  * getCartTotal()
@@ -40,7 +52,17 @@ function applyDiscount(priceInCents, age, hasMembership) {}
     getCartTotal(cart);
  *  //> "$30.00"
  */
-function getCartTotal(products) {}
+function getCartTotal(products) {
+  let totalInCents = 0;
+  for (let product of products) {
+    // multiply priceInCents by quantity to get cart total
+    totalInCents += product.priceInCents * product.quantity;
+  }
+  // convert to dollars by dividing cents by 100
+  let totalInDollars = totalInCents / 100;
+  // return formatted total 
+  return `$${totalInDollars.toFixed(2)}`;
+}
 
 /**
  * compareLocations()
@@ -80,7 +102,35 @@ function getCartTotal(products) {}
     compareLocations(address1, address2);
     //> "Same city."
  */
-function compareLocations(address1, address2) {}
+function compareLocations(address1, address2) {
+  // if the street, city, state, and zip code match, it's the same building.
+  if (
+    address1.street === address2.street &&
+    address1.city === address2.city &&
+    address1.state === address2.state &&
+    address1.zip === address2.zip
+    ) {
+    return "Same building.";
+  }
+  // If the city, state, and zip code match, it's the same city.
+  else if (
+    address1.city === address2.city &&
+    address1.state === address2.state &&
+    address1.zip === address2.zip
+    ) {
+    return "Same city.";
+  }
+  // If just the state matches, it's the same state.
+  else if (
+    address1.state === address2.state
+    ) {
+    return "Same state.";
+  }
+  // Otherwise, the addresses are not near each other.
+  else {
+    return "Addresses are not near each other.";
+  }
+}
 
 /**
  * gradeAssignments()
@@ -127,7 +177,35 @@ function compareLocations(address1, address2) {}
     //>   },
     //> ];
  */
-function gradeAssignments(assignments) {}
+function gradeAssignments(assignments) {
+  for (let assignment of assignments) {
+    // if the assignment type is pass-fail, only pass if recieved score is max, otherwise fail.
+    if (assignment.kind === "PASS-FAIL") {
+      if (assignment.score.received === assignment.score.max) {
+        assignment.status = "PASSED";
+      }
+      else {
+        assignment.status = "FAILED";
+      }
+    }
+    // if the assignment type is percentage, pass if score is above 80%, otherwise fail.
+    else if (assignment.kind === "PERCENTAGE") {
+      // compute percentage based on recieved score divided by max score times 100
+      let scoreInPercent = assignment.score.received / assignment.score.max * 100;
+      if (scoreInPercent >= 80) {
+        assignment.status = `PASSED: ${scoreInPercent.toFixed(1)}%`;
+      }
+      else {
+        assignment.status = `FAILED: ${scoreInPercent.toFixed(1)}%`;
+      }
+    }
+    // any other type of assignment, final score is a fraction, with received score over max score.
+    else {
+      assignment.status = `SCORE: ${assignment.score.received}/${assignment.score.max}`;
+    }
+  }
+  return assignments;
+}
 
 /**
  * createLineOrder()
@@ -152,7 +230,24 @@ function gradeAssignments(assignments) {}
     createLineOrder(people);
     //> [ "Ray Anderson", "America Marsh", "Wade Carson", "Patience Patel" ]
  */
-function createLineOrder(people) {}
+function createLineOrder(people) {
+  // create two empty arrays to group person objects in people array: one for members, and the other for non-members.
+  let members = [];
+  let nonMembers = [];
+  // use a for of loop to sort person objects in people array into their proper new arrays using push() method.
+  for (let person of people) {
+    if (person.hasMembership) {
+      members.push(person.name);
+    }
+    else {
+      nonMembers.push(person.name);
+    }
+  }
+  // merge two arrays into a new lineOrder array using concat() method, which will then be returned.
+  // https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/concat
+  let lineOrder = members.concat(nonMembers);
+  return lineOrder;
+}
 
 module.exports = {
   applyDiscount,
