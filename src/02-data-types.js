@@ -65,7 +65,10 @@ return message
  *  convertToWhisperText("Hello There");
  *  //> "hello there"
  */
-function convertToWhisperText(text) {}
+function convertToWhisperText(text) {
+let message = text.toLowerCase()
+return message
+}
 
 /**
  * checkIfCharacterIsInString()
