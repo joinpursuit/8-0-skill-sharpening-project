@@ -55,7 +55,12 @@ function createObjectWithKey(key) {}
  *  createObjectWithKeyValuePair("left", "right");
  *  //> { left: "right" }
  */
-function createObjectWithKeyValuePair(key, val) {}
+function createObjectWithKeyValuePair(key, val) {
+let obj = {
+key: "value",
+}
+return obj
+}
 
 /**
  * getNameFromObject()
