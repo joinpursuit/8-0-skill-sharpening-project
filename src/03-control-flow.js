@@ -14,7 +14,15 @@
  *  isEqual(10, "10");
  *  //> false
  */
-function isEqual(a, b) {}
+function isEqual(a, b) {
+  if (a === b) {
+    return true;
+
+    } else {
+      return false
+    }
+  }
+
 
 /**
  * findLarger()
@@ -28,7 +36,13 @@ function isEqual(a, b) {}
  *  findLarger(19, 7);
  *  //> 19
  */
-function findLarger(a, b) {}
+function findLarger(a, b) {
+  if (a > b) {
+    return a;
+  } else if (a < b) {
+    return b;
+  }
+}
 
 /**
  * findLargerOrTie()
@@ -45,7 +59,16 @@ function findLarger(a, b) {}
  *  findLargerOrTie(0, 0);
  *  //> "tie"
  */
-function findLargerOrTie(a, b) {}
+function findLargerOrTie(a, b) {
+  if (a > b) {
+    return a;
+  } else if (a < b) {
+    return b;
+  } else if (a === b) {
+    return 'tie';
+  }
+
+}
 
 /**
  * positiveNegativeOrZero()
@@ -65,7 +88,15 @@ function findLargerOrTie(a, b) {}
  *  positiveNegativeOrZero(1);
  *  //> "Positive"
  */
-function positiveNegativeOrZero(a) {}
+function positiveNegativeOrZero(a) {
+  if ( a === (+a)) {
+    return 'Positive';
+  } if (a === (-a)) {
+    return 'Negative';
+  } else if (a === 0) {
+    return 'Zero';
+  }
+}
 
 /**
  * aroundTheWorldGreeting()
@@ -86,7 +117,15 @@ function positiveNegativeOrZero(a) {}
  *  aroundTheWorldGreeting();
  *  //> "Hello World"
  */
-function aroundTheWorldGreeting(language) {}
+function aroundTheWorldGreeting(language) {
+  if (language === 'spanish') {
+    return 'Hola Mundo';
+  } else if (language === 'german') {
+    return 'Hallo Welt';
+  } else {
+    return 'Hello World';
+  }
+}
 
 /**
  * aroundTheWorldGreetingWithSwitch()
@@ -109,7 +148,13 @@ function aroundTheWorldGreeting(language) {}
  *  aroundTheWorldGreetingWithSwitch();
  *  //> "Hello World"
  */
-function aroundTheWorldGreetingWithSwitch(language) {}
+function aroundTheWorldGreetingWithSwitch(language) {
+  if (language === 'german') {
+    return 'Hallo Welt';
+  } else if (language === 'spanish') {
+    return 'Hola Mundo'
+  } else { language !== 'german'}
+}
 
 /**
  * calculateLetterGrade()
