@@ -198,7 +198,7 @@ function getFlatObject(person) {
   //   obj.numbers = person.numbers
   //   return obj
 
-  let obj = {
+  return obj = {
     first: person.names.first,
     middle: person.names.middle,
     last: person.names.last,
@@ -208,9 +208,7 @@ function getFlatObject(person) {
     state: person.address.state,
     zip: person.address.zip,
     numbers: person.numbers
-  }
-  
-  return obj
+  }  
 }
 
 // Do not change the code below.
