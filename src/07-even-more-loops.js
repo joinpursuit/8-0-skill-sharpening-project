@@ -12,7 +12,13 @@
  *  shoutForLoop([ "A", "Very", "Happy", "Array" ]);
  *  //> [ "A!", "Very!", "Happy!", "Array!" ];
  */
-function shoutForLoop(array) {}
+function shoutForLoop(array) {
+  let newArray = [];
+  for (let i = 0; i < array.length; ++i) {
+    newArray.push(`${array[i]}!`);
+  }
+  return newArray;  
+}
 
 /**
  * shoutWhileLoop()
@@ -28,7 +34,15 @@ function shoutForLoop(array) {}
  *  shoutWhileLoop([ "A", "Very", "Happy", "Array" ]);
  *  //> [ "A!", "Very!", "Happy!", "Array!" ];
  */
-function shoutWhileLoop(array) {}
+function shoutWhileLoop(array) {
+  let newArray = [];
+  let i = 0;
+  while (i < array.length) {
+    newArray.push(`${array[i]}!`);
+    ++i;
+  }
+  return newArray;  
+}
 
 /**
  * shoutForOfLoop()
@@ -44,7 +58,13 @@ function shoutWhileLoop(array) {}
  *  shoutForOfLoop([ "A", "Very", "Happy", "Array" ]);
  *  //> [ "A!", "Very!", "Happy!", "Array!" ];
  */
-function shoutForOfLoop(array) {}
+function shoutForOfLoop(array) {
+  let newArray = [];
+  for (let word of array) {
+    newArray.push(`${word}!`);
+  }
+  return newArray;
+}
 
 /**
  * sumArray()
@@ -57,7 +77,13 @@ function shoutForOfLoop(array) {}
  *  sumArray([ 10, 0, 10, 11 ]);
  *  //> 31
  */
-function sumArray(array) {}
+function sumArray(array) {
+  let sum = 0;
+  for (let number of array) {
+    sum += number;
+  }
+  return sum;
+}
 
 /**
  * oddArray()
@@ -70,7 +96,15 @@ function sumArray(array) {}
  *  oddArray([ 11, 15, 20, 22, 37 ]);
  *  //> [ 11, 15, 37 ]
  */
-function oddArray(array) {}
+function oddArray(array) {
+  let oddArray = [];
+  for (let i = 0; i < array.length; ++i) {
+    if ((array[i] % 2 !== 0) || (array[i] % 2 !== -0)) {
+      oddArray.push(array[i]);
+    }
+  }
+  return oddArray;
+}
 
 /**
  * evenArray()
@@ -83,7 +117,15 @@ function oddArray(array) {}
  *  evenArray([ 11, 15, 20, 22, 37 ]);
  *  //> [ 20, 22 ]
  */
-function evenArray(array) {}
+function evenArray(array) {
+  let oddArray = [];
+  for (let i = 0; i < array.length; ++i) {
+    if ((array[i] % 2 === 0) || (array[i] % 2 === -0)) {
+      oddArray.push(array[i]);
+    }
+  }
+  return oddArray;
+}
 
 /**
  * findSmallest()
@@ -96,7 +138,15 @@ function evenArray(array) {}
  *  findSmallest([ 0, 11, -2, 5 ]);
  *  //> -2
  */
-function findSmallest(array) {}
+function findSmallest(array) {
+  let tinyNum = array[0];
+  for (let i = 1; i < array.length; ++i) {
+    if (array[i] <= tinyNum) {
+      tinyNum = array[i];
+    }
+  }
+  return tinyNum
+}
 
 /**
  * findLargest()
@@ -109,7 +159,15 @@ function findSmallest(array) {}
  *  findLargest([ 0, 11, -2, 5 ]);
  *  //> 11
  */
-function findLargest(array) {}
+function findLargest(array) {
+  let giantNum = array[0];
+  for (let i = 1; i < array.length; ++i) {
+    if (array[i] >= giantNum) {
+      giantNum = array[i];
+    }
+  }
+  return giantNum
+}
 
 /**
  * findEqual()
@@ -126,7 +184,17 @@ function findLargest(array) {}
  *  findEqual([ 0, 11, -2, 5 ], 9);
  *  //> false
  */
-function findEqual(array, selected) {}
+function findEqual(array, selected) {
+  let bool = false;
+  for (let i = 0; i < array.length; ++i) {
+    if (array[i] !== selected) {
+      continue
+    } else if (array[i] === selected) {
+      bool = true;
+    }
+  }
+  return bool;
+}
 
 /**
  * removeDuplicates()
@@ -143,7 +211,36 @@ function findEqual(array, selected) {}
  *  //> [ 1, 11, 2, 3, 4, 9 ]
  */
 
-function removeDuplicates(array) {}
+// Bear with me on this function. I had a lot of fun designing it! 
+// I was really curious about the potential of using loops within loops.
+
+/**
+ * Line 226 creates a loop that iterates through each element of the given array, staring with the first (zeroth) element.
+ * Line 227 creates a loop within that loop that compares the previous elements, one by one, to every other element after it.
+ * Line 228 takes out (splices) the first repeated occurances of the observed element, then moving on to the next element to perfomr the double loop again.
+ * Lines 233 to 236 repeat this entire process to take into account the fault that line 228 has of not accounting for multiple repitions, thus continuing the process.
+ * 
+ * I still have a lot to explore but I thought it was nice that this function passes the test! 
+ * Thank you .splice and loops!
+*/
+
+function removeDuplicates(array) {
+  for (let indx = 0; indx < array.length; ++indx) {
+    for (let counter = indx + 1; counter < array.length; ++counter) {
+      if (array[indx] === array[counter]) {
+        array.splice(counter, 1);
+      }
+    }
+  }
+  for (let indx = 0; indx < array.length; ++indx) {
+    for (let counter = indx + 1; counter < array.length; ++counter) {
+      if (array[indx] === array[counter]) {
+        array.splice(counter, 1);
+      }
+    }
+  }
+  return array;
+}
 
 // Do not change any code below this line.
 module.exports = {
