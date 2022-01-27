@@ -61,8 +61,9 @@ return array.length
  *  //> 10
  */
 function getFirstElementOfArray(array) {
-  let arr = ["first","last"]
-  return arr[0]
+  
+return array[0]
+
 }
 
 /**
