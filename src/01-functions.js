@@ -103,7 +103,7 @@ function average(a,b) {
  *  averageThree(10, 11, 19);
  *  //> 10 // 10 + 11 + 19 = 30; 30 / 3 = 10;
  */
-function averageThree() {
+function averageThree(a,b,c) {
   return (a + b + c)/3
 }
 
