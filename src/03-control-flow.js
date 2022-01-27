@@ -208,7 +208,13 @@ function calculateLetterGrade(grade) {
  *  animalCounts("pig", 1);
  *  //> "1 pig"
  */
-function animalCounts(animal, numberOfAnimals) {}
+function animalCounts(animal, numberOfAnimals) {
+  if (numberOfAnimals === 1) {
+    return numberOfAnimals.toString() + " " + animal;
+  } else {
+    return numberOfAnimals.toString() + " " + animal + "s"
+  }
+}
 
 /**
  * evenOrOdd()
@@ -248,7 +254,7 @@ function evenOrOdd(a) {
  *  //> "Even"
  */
 function evenOrOddWithTernary(a) {
-  return (a ? 'even' : 'odd');
+  return a % 2 === 0 ? ('Even'):('Odd');
 }
 
 // Do not change any code below this line.
