@@ -30,7 +30,7 @@ function greet(name) {
   name= name.toLowerCase()
   let temp= name.split('');
   temp[0]= temp[0].toUpperCase();
-  name= temp.join('');
+  name= temp.join(''); //I feel like there's a better way to do this?
 
   return `Hello, ${name}.`;
 }
