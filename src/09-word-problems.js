@@ -54,7 +54,13 @@ function applyDiscount(priceInCents, age, hasMembership) {
     getCartTotal(cart);
  *  //> "$30.00"
  */
-function getCartTotal(products) {}
+function getCartTotal(products) {
+  let num = 0
+      for(i = 0; i < products.length; i++){
+       num +=  (products[i].priceInCents * products[i].quantity) / 100;
+}
+return "$" + num.toFixed(2);
+}
 
 /**
  * compareLocations()
@@ -94,7 +100,22 @@ function getCartTotal(products) {}
     compareLocations(address1, address2);
     //> "Same city."
  */
-function compareLocations(address1, address2) {}
+function compareLocations(address1, address2) {
+  let streets = address1.street === address2.street;
+  let cities = address1.city === address2.city;
+  let states = address1.state === address2.state;
+  let zips = address1.zip === address2.zip;
+  if(streets && cities && zips && states){
+    return "Same building.";
+  } else if(cities && states && zips){
+    return "Same city.";
+  } else if(states){
+    return "Same state.";
+  } else {
+    return "Addresses are not near each other.";
+  }
+}
+
 
 /**
  * gradeAssignments()
@@ -141,7 +162,28 @@ function compareLocations(address1, address2) {}
     //>   },
     //> ];
  */
-function gradeAssignments(assignments) {}
+// r ccould do for of loop for(let type of assignments){}
+function gradeAssignments(assignments) {
+  for(let type of assignments)
+    if (type.kind === 'PASS-FAIL'){
+      if (type.score.received === type.score.max) {
+        type.status = 'PASSED';
+      } else {
+        type.status = 'FAILED';
+      }
+
+    } else if (type.kind === 'PERCENTAGE'){
+      let perScore = (type.score.received / type.score.max) * 100;
+      if (perScore >= 80) {
+        type.status = `PASSED: ${perScore.toFixed(1)}%`
+      } else{
+        type.status = `FAILED: ${perScore.toFixed(1)}%`
+      }
+    } else {
+      type.status = `SCORE: ${type.score.received}/${type.score.max}`
+    }
+return assignments
+  }
 
 /**
  * createLineOrder()
@@ -166,7 +208,20 @@ function gradeAssignments(assignments) {}
     createLineOrder(people);
     //> [ "Ray Anderson", "America Marsh", "Wade Carson", "Patience Patel" ]
  */
-function createLineOrder(people) {}
+function createLineOrder(people) {
+  let priority = []
+  let nonPriority = []
+  let fullList;
+  for (let check of people){
+    if (check.hasMembership === true){
+      priority.push(check.name)
+    }else {
+      nonPriority.push(check.name)
+    }
+  }
+fullList = priority.concat(nonPriority);
+return fullList
+}
 
 module.exports = {
   applyDiscount,
