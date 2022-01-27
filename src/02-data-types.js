@@ -141,8 +141,8 @@ function isOdd(num) {}
  *  //> false
  */
 function isTruthy(val) {
-   val = !!true
-  return val
+   let result = !!val
+  return result 
 }
 
 /**
