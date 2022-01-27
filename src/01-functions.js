@@ -178,8 +178,8 @@ function flipSign() {}
  *  joinStringsWithSpaces("left", "right", "up", "down", "away");
  *  //> "left right up down away"
  */
-function joinStringsWithSpaces() {
-  // return a + b + c + d + e
+function joinStringsWithSpaces(a,b,c,d,e) {
+return a + ` ` + b + ` `  + c + ` ` + d + ` ` + e
 }
 
 /**
