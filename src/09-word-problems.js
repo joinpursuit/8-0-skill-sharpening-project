@@ -19,7 +19,34 @@
  *  applyDiscount(1000, 9, true);
  *  //> 700
  */
-function applyDiscount(priceInCents, age, hasMembership) {}
+function applyDiscount(priceInCents, age, hasMembership) {
+  let totalPriceInCents = 0;
+  if ((10 < age) && (age < 65) && !hasMembership) {
+    return priceInCents;
+    // Output for receving no discount
+
+  } else if (hasMembership) {
+    totalPriceInCents = priceInCents * 0.8
+    if ((age <= 10) || (age >= 65)) {
+      totalPriceInCents = priceInCents * 0.7;
+    }
+    return totalPriceInCents;
+    // Output for receving membership discount first and then possibly age discount too
+
+  } else if ((age <= 10) || (age >= 65)) {
+    totalPriceInCents = priceInCents * 0.9;
+    if (hasMembership) {
+      totalPriceInCents = priceInCents * 0.7;
+    }
+    return totalPriceInCents;
+    // Output for receiving agediscount first and then possibly membership discount too
+  }
+}
+// Comment:
+// This was tricky because without the last "else if" statement 
+// the function wasn't processing the age discount for people 
+// who don't have a membership. Might try to refactor this later 
+// with only two conditional statements...
 
 /**
  * getCartTotal()
@@ -40,7 +67,14 @@ function applyDiscount(priceInCents, age, hasMembership) {}
     getCartTotal(cart);
  *  //> "$30.00"
  */
-function getCartTotal(products) {}
+function getCartTotal(products) {
+  let cartTotal = 0;
+  for (let product of products) {
+    cartTotal += (product.priceInCents * product.quantity); 
+  }
+  cartTotal = (cartTotal / 100);
+  return `$${cartTotal.toFixed(2)}`;
+}
 
 /**
  * compareLocations()
@@ -80,7 +114,32 @@ function getCartTotal(products) {}
     compareLocations(address1, address2);
     //> "Same city."
  */
-function compareLocations(address1, address2) {}
+function compareLocations(address1, address2) {
+  let comparisonArray1 = [];
+  let comparisonArray2 = [];
+  for (const addressUnit in address1) {
+      comparisonArray1.push(address1[addressUnit])
+      comparisonArray2.push(address2[addressUnit])
+  }
+  // Here I make two arrays for each complete address which will be easier to manipulate and compare
+
+  if ((comparisonArray1[0] === comparisonArray2[0]) && (comparisonArray1[1] === comparisonArray2[1]) && (comparisonArray1[2] === comparisonArray2[2]) && (comparisonArray1[3] === comparisonArray2[3])) {
+    return "Same building.";
+  // If the addresses are exactly the same
+  
+  } else if ((comparisonArray1[1] === comparisonArray2[1]) && (comparisonArray1[2] === comparisonArray2[2]) && (comparisonArray1[3] === comparisonArray2[3])) {
+    return "Same city.";
+  // If the address vary in the street address
+
+  } else if (comparisonArray1[2] === comparisonArray2[2]) {
+    return "Same state.";
+  // If the address vary in street address and city
+
+  } else {
+    return "Addresses are not near each other."
+  }
+  // If the addresses vary in all cases
+}
 
 /**
  * gradeAssignments()
@@ -127,7 +186,34 @@ function compareLocations(address1, address2) {}
     //>   },
     //> ];
  */
-function gradeAssignments(assignments) {}
+function gradeAssignments(assignments) {
+  for (let i = 0; i < assignments.length; ++i) {
+    // Setting a loop to itirate over all the cases depending on their type of test
+
+    let percent = ((assignments[i].score.received / assignments[i].score.max) * 100).toFixed(1)
+    // Setting a variable "percent" to be used in the cases where the test kind is "PERCENTAGE"
+    
+    if (assignments[i].kind === "PASS-FAIL") {
+      if (assignments[i].score.received === assignments[i].score.max) {
+        assignments[i].status = "PASSED"
+      } else {assignments[i].status = "FAILED"}
+      // This conditional works out the cases for the "PASS-FAIL" kind
+
+    } else if (assignments[i].kind === "PERCENTAGE") {
+      if (percent >= 80.0) {
+        assignments[i].status = `PASSED: ${percent}%`
+      } else {
+        assignments[i].status = `FAILED: ${percent}%`
+      }
+      // This conditional works out the cases for the "PERCENTAGE" kind
+
+    } else if ((assignments[i].kind !== "PASS-FAIL") || (assignments[i].kind !== "PERCENTAGE")) {
+      assignments[i].status = `SCORE: ${assignments[i].score.received}/${assignments[i].score.max}`
+    }
+      // This conditional works out the cases for the "ESSAY" kind
+  }
+  return assignments;
+}
 
 /**
  * createLineOrder()
@@ -152,7 +238,22 @@ function gradeAssignments(assignments) {}
     createLineOrder(people);
     //> [ "Ray Anderson", "America Marsh", "Wade Carson", "Patience Patel" ]
  */
-function createLineOrder(people) {}
+function createLineOrder(people) {
+  const memberArray = [];
+  const nonMemberArray = [];
+  // Creating two empty arrays which will receive their respective members in line order depending on their position in the original array
+
+  for (let i = 0; i < people.length; ++i) {
+    if (people[i].hasMembership) {
+      memberArray.push(people[i].name);
+    } else if (!people[i].hasMembership) {
+      nonMemberArray.push(people[i].name);
+    }
+  }
+  // This loop works like a sorter that "pushes" each respective traveler into the previously created empty arrays depending on whether they have membership
+
+  return memberArray.concat(nonMemberArray);
+}
 
 module.exports = {
   applyDiscount,
