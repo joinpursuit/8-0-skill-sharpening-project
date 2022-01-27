@@ -89,14 +89,24 @@ function findLargerOrTie(a, b) {
  *  //> "Positive"
  */
 function positiveNegativeOrZero(a) {
-  
-  if (!a === a) {
-  return 'Negative';
-  } else if ( a === +a) {
+  if ( a > 0) {
       return 'Positive';
+
+  } else if (a < 0) {
+      return 'Negative';
+
   } else if (a === 0) {
-    return 'Zero';
+      return 'Zero';
   }
+  // if ( a === +a) {
+  //   return 'Positive';
+
+  // } else if (a === -a && a !== 0) {
+  // return 'Negative';
+  
+  // }  else if (a === 0) {
+  //   return 'Zero';
+  // }
 }
 
 /**
@@ -151,17 +161,17 @@ function aroundTheWorldGreeting(language) {
  */
 function aroundTheWorldGreetingWithSwitch(language) {
 switch (language) {
-  case "English":
-    return ("Hello World");
+  // case "English":
+  //   return ("Hello World");
+  //   break;
+  case 'spanish':
+    return ('Hola Mundo');
     break;
-  case "Spanish":
-    return ("Hola Mundo");
-    break;
-  case "German":
-    return ("Hallo Welt");
+  case 'german':
+    return ('Hallo Welt');
     break;
   default:
-    return ("Hello World");
+    return ('Hello World');
   }
 }
 
@@ -182,7 +192,19 @@ switch (language) {
  *  calculateLetterGrade(99);
  *  //> "A"
  */
-function calculateLetterGrade(grade) {}
+function calculateLetterGrade(grade) {
+  if (grade >= 90) {
+    return 'A';
+  } else if (grade >= 80 && grade < 90) {
+    return 'B'
+  } else if (grade >= 70 && grade < 80) {
+    return 'C'
+  } else if (grade >= 60 && grade < 70) {
+    return 'D'
+  } else {
+    return 'F'
+  }
+}
 
 /**
  * animalCounts()
@@ -200,7 +222,13 @@ function calculateLetterGrade(grade) {}
  *  animalCounts("pig", 1);
  *  //> "1 pig"
  */
-function animalCounts(animal, numberOfAnimals) {}
+function animalCounts(animal, numberOfAnimals) {
+  if (numberOfAnimals === 1) {
+    return `${numberOfAnimals} ${animal}`
+  } else if (numberOfAnimals > 1) {
+    return `${numberOfAnimals} ${animal}s`
+  }
+}
 
 /**
  * evenOrOdd()
@@ -217,7 +245,13 @@ function animalCounts(animal, numberOfAnimals) {}
  *  evenOrOdd(48);
  *  //> "Even"
  */
-function evenOrOdd(a) {}
+function evenOrOdd(a) {
+  if(a % 2 === 0) {
+    return 'Even';
+  } else if (a % 2 !== 0) {
+    return 'Odd'
+  }
+}
 
 /**
  * evenOrOddWithTernary()
@@ -233,7 +267,9 @@ function evenOrOdd(a) {}
  *  evenOrOddWithTernary(8);
  *  //> "Even"
  */
-function evenOrOddWithTernary(a) {}
+function evenOrOddWithTernary(a) {
+  return a % 2 === 0 ? 'Even' : 'Odd'
+}
 
 // Do not change any code below this line.
 module.exports = {
