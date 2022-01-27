@@ -79,8 +79,7 @@ return array[0]
  *  //> undefined
  */
 function getLastElementOfArray(array) {
-  let arr = ["first","last"]
-  return arr[1]
+return array[array.length-1]
 }
 
 /**
