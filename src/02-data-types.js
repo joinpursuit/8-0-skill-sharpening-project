@@ -85,7 +85,10 @@ return message
  *  checkIfCharacterIsInString("hello there", "a");
  *  //> false
  */
-function checkIfCharacterIsInString(text, character) {}
+function checkIfCharacterIsInString(text, character) {
+  let isIt = text.includes()
+  return isIt
+}
 
 /**
  * isEven()
