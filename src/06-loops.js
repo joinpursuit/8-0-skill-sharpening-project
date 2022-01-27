@@ -14,7 +14,7 @@
 function rangeSum(min, max) {
   let sum = 0
   while(min<= max){
-  sum += min;
+  sum += min;// getting comfortable with practicing the variable adding to itself in same line
   min++
   }
   return sum
@@ -61,7 +61,7 @@ function rangeEveryOther(min, max) {
   }
     return array
 }
-
+// start from min, end at max, increment by 2 instead of 1 to get every other element
 /**
  * containsWhileLoop()
  * ---------------------
@@ -165,14 +165,12 @@ function targetCount(array, target) {
  *  //> -1
  */
 function firstIndexFound(array, target) {
-  let result = -1
   for(let i = 0; i< array.length; i++){
     if (array[i] === target){
-      result = i;
-      break;// stops when i find the target
+      return i;
       } 
     }
-    return result
+    return -1
   }
 
 /**
@@ -194,7 +192,7 @@ function firstIndexFound(array, target) {
  *  //> -1
  */
 function lastIndexFound(array, target) {
-  let result = -1// or could be 0 but then would need an else statement
+  let result = -1
   for(let i = 0; i< array.length; i++){
     if (array[i] === target){
       result = i;

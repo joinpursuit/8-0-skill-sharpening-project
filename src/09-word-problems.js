@@ -105,6 +105,7 @@ function compareLocations(address1, address2) {
   let cities = address1.city === address2.city;
   let states = address1.state === address2.state;
   let zips = address1.zip === address2.zip;
+  
   if(streets && cities && zips && states){
     return "Same building.";
   } else if(cities && states && zips){

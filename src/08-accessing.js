@@ -212,8 +212,8 @@ function getFlatObject(person) {
     zip: person.address.zip,
     numbers: person.numbers
   }
-
 }
+
 
 // Do not change the code below.
 module.exports = {
