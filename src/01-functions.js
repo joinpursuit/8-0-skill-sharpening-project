@@ -10,8 +10,8 @@
  *  //> true
  */
 function alwaysTrue() {
-
-  if(alwaysTrue === true){
+const solution = true
+  if(solution === true){
 
     return true
   }
@@ -32,9 +32,9 @@ function alwaysTrue() {
  */
 function greet(name) {
 
-  `Hello ${John}`
 
-  return name
+
+  return  'Hello,' + greet(name) 
 }
 
 /**
@@ -171,12 +171,18 @@ function compareTypes(a=11,b=12) {
  *  flipSign(50);
  *  //> -50
  */
-function flipSign(a=69) {
+function flipSign(a) {
+ if(a === (-a)){
+  return a
 
+}if (a === (+a)){
+  return (-a)
+}
+}
        // method -Math.abs() from w3 schools
 
-  return -Math.abs(a)
-}
+ // return -Math.abs(a)
+
 
 
 
@@ -198,11 +204,11 @@ function flipSign(a=69) {
  *  joinStringsWithSpaces("left", "right", "up", "down", "away");
  *  //> "left right up down away"
  */
-function joinStringsWithSpaces(greet1 = 'hello' , greet2 ='goodbye') {
+function joinStringsWithSpaces(greet1 ,greet2,greet3,greet4,greet5) {
 
 
 
-  return greet1 + '' + greet2
+  return greet1 + ' ' + greet2 + ' ' + greet3 + ' ' + greet4 + ' ' + greet5
 
 }
 
@@ -221,17 +227,21 @@ function joinStringsWithSpaces(greet1 = 'hello' , greet2 ='goodbye') {
  *  getFirstAndLastCharacter("upwards");
  *  //> "us"
  */
-function getFirstAndLastCharacter(a= 'Kaylas') {
+function getFirstAndLastCharacter(a) {
 
- 
-let result =  a.charAt(0)
-let reuslt1 = a.charAt(5)
+ //if(a.length >=2){
 
 
+  return a.charAt(0) + a.charAt(a.length -1)
+ }
 
 
-  return result += result1
-}
+
+
+
+
+
+
 
 // Do not change the code below.
 module.exports = {
