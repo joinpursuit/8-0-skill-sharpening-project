@@ -44,8 +44,8 @@ function createArrayWithTwoElements(a, b) {
  *  //> 3
  */
 function getArrayLength(array) {
-let arr = [1,2,3]
-return arr.length
+
+return array.length
 }
 
 /**
