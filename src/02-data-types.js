@@ -175,7 +175,8 @@ return val ? true : false
  *  //> false
  */
 function isFalsy(val) {
-  return val ? true : false
+  //return val ? false : false
+  return val?  false : true
 }
 
 // Do not change the code below.
