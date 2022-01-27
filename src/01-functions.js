@@ -130,6 +130,14 @@ function compareTypes() {
   // if (a === b){
   //   return true 
   // }else return false
+function compareTypes(a,b) {
+  let result ;
+  if (typeof a === typeof b){
+    result = true
+  } else if (typeof a !== typeof b) {
+    result = false
+  }
+  return result
 }
 
 
