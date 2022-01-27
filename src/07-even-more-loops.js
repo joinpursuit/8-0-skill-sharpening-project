@@ -55,9 +55,11 @@ function shoutWhileLoop(array) {
  *  //> [ "A!", "Very!", "Happy!", "Array!" ];
  */
 function shoutForOfLoop(array) {
-  for (let element of array) {
-    array.push(`${element}!`);
-  }  return array
+ let newArray = []
+  let bang = "!"
+   for (let element of array) {
+    newArray.push(element.concat(bang));
+  }  return newArray
 }
 
 /**
@@ -73,8 +75,9 @@ function shoutForOfLoop(array) {
  */
 function sumArray(array) {
  let sum = 0;
-  for(let i = 0; i < array.length; i++)
+  for(let i = 0; i < array.length; i++) {
    sum += array[i];
+  } 
     return sum;
 }
 
@@ -92,7 +95,7 @@ function sumArray(array) {
 function oddArray(array) {
   let oddArray = array.filter(number => {
     return number % 2 === 1;
-   });
+  });
     return oddArray
 }
 
@@ -126,12 +129,12 @@ function evenArray(array) {
  *  //> -2
  */
 function findSmallest(array) {
- let smallestNum = array[0];
+ let smallestNums = array[0];
   for(let i = 0; i < array.length; i++) {
-    if(smallestNum > array[i]) {
-      smallestNum = array[i]
+    if(smallestNums > array[i]) {
+      smallestNums = array[i]
     }
-  } return smallestNum;
+  } return smallestNums;
 }
 
 /**
@@ -146,12 +149,12 @@ function findSmallest(array) {
  *  //> 11
  */
 function findLargest(array) {
- let largestNum = array[0];
+ let largestNums = array[0];
   for(let i = 0; i < array.length; i++) {
-    if(largestNum < array[i]) {
-      largestNum = array[i]
+    if(largestNums < array[i]) {
+      largestNums = array[i]
     }
-  } return largestNum;
+  } return largestNums;
 }
 
 /**
@@ -170,14 +173,12 @@ function findLargest(array) {
  *  //> false
  */
 function findEqual(array, selected) {
-  for(let i = 0; i < array.length; i++) {
-    if(array[i] === selected) {
-      return true
-    }
-    else {
-      return false
-    }
-  }
+ let equalFound = false;
+  for(let element of array) {
+    if(element === selected) {
+      equalFound = true
+    } 
+  }   return equalFound
 }
 
 /**
@@ -195,7 +196,14 @@ function findEqual(array, selected) {
  *  //> [ 1, 11, 2, 3, 4, 9 ]
  */
 
-function removeDuplicates(array) {}
+function removeDuplicates(array) {
+ let removedDupArray = [];
+  for(let element of array) {
+   if(!removedDupArray.includes(element)) {
+     removedDupArray.push(element)
+   } 
+  } return removedDupArray
+}
 
 // Do not change any code below this line.
 module.exports = {

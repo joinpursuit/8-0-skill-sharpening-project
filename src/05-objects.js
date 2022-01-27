@@ -42,8 +42,9 @@ function createObjectWithValue(val) {
  *  //> { left: false }
  */
 function createObjectWithKey(key) {
-  
-  return key
+  let newObj = {}
+  newObj[key] = false;
+  return newObj;
 }
 
 /**
@@ -59,8 +60,9 @@ function createObjectWithKey(key) {
  *  //> { left: "right" }
  */
 function createObjectWithKeyValuePair(key, val) {
-  let object = {key: val}
-  return object
+  let newObject = {}
+  newObject[key] = val;
+  return newObject
 }
 
 /**
@@ -74,7 +76,9 @@ function createObjectWithKeyValuePair(key, val) {
  *  getNameFromObject({ name: "Jay" });
  *  //> "Jay"
  */
-function getNameFromObject(object) {}
+function getNameFromObject(object) {
+ return object.name;
+}
 
 /**
  * getAgeFromObject()
@@ -88,8 +92,7 @@ function getNameFromObject(object) {}
  *  //> 30
  */
 function getAgeFromObject(object) {
-  let age = object.key;
-  return age
+ return object.age;
 }
 
 /**
@@ -104,7 +107,11 @@ function getAgeFromObject(object) {
  *  addValueToObject({ left: true }, false);
  *  //> { left: true, key: false }
  */
-function addValueToObject(object, val) {}
+function addValueToObject(object, val) {
+  let newObject = {}
+  newObject.key = val 
+  return newObject
+}
 
 /**
  * addKeyToObject()
@@ -119,7 +126,9 @@ function addValueToObject(object, val) {}
  *  //> { right: false, left: true }
  */
 function addKeyToObject(object, key) {
-  
+  let newObject = {}
+  newObject[key] = "true"
+  return newObject
 }
 
 /**
@@ -135,7 +144,11 @@ function addKeyToObject(object, key) {
  *  addKeyValuePairToObject({ up: true }, "left", false);
  *  //> { up: true, left: false }
  */
-function addKeyValuePairToObject(object, key, val) {}
+function addKeyValuePairToObject(object, key, val) {
+  let newObject = {}
+  newObject[key] = val;
+  return newObject;
+}
 
 /**
  * deleteKeyFromObject()
@@ -150,8 +163,8 @@ function addKeyValuePairToObject(object, key, val) {}
  *  //> { right: false }
  */
 function deleteKeyFromObject(object, key) {
-  let newObject = delete object.key;
-  return newObject;
+  delete object[key];
+  return object
 }
 
 // Do not change any code below this line.
