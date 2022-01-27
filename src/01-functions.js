@@ -29,6 +29,7 @@ function alwaysTrue() {
 function greet(name) {
   name = name.toLowerCase();
   name[0] = name[0].toUpperCase(); //TODO why not man
+  
   return `Hello, ${name}.`;
 }
 
