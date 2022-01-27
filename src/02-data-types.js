@@ -49,7 +49,10 @@ function convertToString(val) {}
  *  convertToShoutingText("Hello There");
  *  //> "HELLO THERE"
  */
-function convertToShoutingText(text) {}
+function convertToShoutingText(text) {
+  let message = text.toUpperCase();
+return message
+}
 
 /**
  * convertToWhisperText()
