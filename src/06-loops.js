@@ -11,7 +11,14 @@
  *  //> 25
  *  (3 + 4 + 5 + 6 + 7 = 25)
  */
-function rangeSum(min, max) {}
+function rangeSum(min, max) {
+  let number = 0;
+  for (let i = min; i <= max; i++) {
+    // increase number by iterator with each pass of loop
+    number += i;
+  }
+  return number;
+}
 
 /**
  * rangeOdd()
@@ -25,7 +32,17 @@ function rangeSum(min, max) {}
  *  rangeOdd(10, 15);
  *  //> [ 15, 13, 11 ]
  */
-function rangeOdd(min, max) {}
+function rangeOdd(min, max) {
+  let arr = [];
+  for (let i = max; i >= min; i--) {
+    // use modulo to filter only odd numbers of iterator
+    if (i % 2 === 1) {
+      // use push to update to iterator index in array
+      arr.push(i);
+    }
+  }
+  return arr;
+}
 
 /**
  * rangeEveryOther()
@@ -39,7 +56,15 @@ function rangeOdd(min, max) {}
  *  rangeEveryOther(11, 18);
  *  //> [ 11, 13, 15, 17 ]
  */
-function rangeEveryOther(min, max) {}
+function rangeEveryOther(min, max) {
+  let arr = [];
+  // increment by 2 for every other number
+  for (let i = min; i <= max; i += 2) {
+    // use push to update to iterator index in array
+    arr.push(i);
+  }
+  return arr;
+}
 
 /**
  * containsWhileLoop()
@@ -61,7 +86,18 @@ function rangeEveryOther(min, max) {}
  *  containsWhileLoop([ "left", "up", "right" ], "down");
  *  //> false
  */
-function containsWhileLoop(array, target) {}
+function containsWhileLoop(array, target) {
+  let result = false;
+  let i = 0;
+  while (i < array.length) {
+    // use iterator index to compare to target
+    if (array[i] === target) {
+      result = true;
+    }
+    i++;
+  }
+  return result;
+}
 
 /**
  * containsForLoop()
@@ -83,7 +119,16 @@ function containsWhileLoop(array, target) {}
  *  containsForLoop([ "left", "up", "right" ], "down");
  *  //> false
  */
-function containsForLoop(array, target) {}
+function containsForLoop(array, target) {
+  let result = false;
+  for (let i = 0; i < array.length; i++) {
+    // use iterator index to compare to target
+    if (array[i] === target) {
+      result = true;
+    }
+  }
+  return result;
+}
 
 /**
  * targetCount()
@@ -97,7 +142,16 @@ function containsForLoop(array, target) {}
  *  targetCount([ 10, 20, 10, 20, 30 ], 10);
  *  //> 2
  */
-function targetCount(array, target) {}
+function targetCount(array, target) {
+  let result = 0;
+  for (let element of array) {
+    // increment result with each instance of target in array elements
+    if (element === target) {
+      result++;
+    }
+  }
+  return result;
+}
 
 /**
  * firstIndexFound()
@@ -117,7 +171,17 @@ function targetCount(array, target) {}
  *  firstIndexFound([ "left", "right", "left" ], "up");
  *  //> -1
  */
-function firstIndexFound(array, target) {}
+function firstIndexFound(array, target) {
+  let result = -1;
+  for (let i = 0; i < array.length; i++) {
+    if (array[i] === target) {
+      result = i;
+      // use break to end loop with first occurance of target 
+      break;
+    }
+  }
+  return result;
+}
 
 /**
  * lastIndexFound()
@@ -137,7 +201,16 @@ function firstIndexFound(array, target) {}
  *  lastIndexFound([ "left", "right", "left" ], "up");
  *  //> -1
  */
-function lastIndexFound(array, target) {}
+function lastIndexFound(array, target) {
+  let result = -1;
+  for (let i = 0; i < array.length; i++) {
+    if (array[i] === target) {
+      result = i;
+      // loop continues through entire array to find last occurance of target
+    }
+  }
+  return result;
+}
 
 /**
  * timesIndex()
@@ -151,7 +224,14 @@ function lastIndexFound(array, target) {}
  *  //> [ 7 * 0, 10 * 1, 11 * 2 ]
  *  //> [ 0, 10, 22 ]
  */
-function timesIndex(array) {}
+function timesIndex(array) {
+  let newArray = [];
+  for (let i = 0; i < array.length; i++) {
+    // push to new array each index multiplied by iterator
+    newArray.push(array[i] * i);
+  }
+  return newArray;
+}
 
 /**
  * cumulativeSum()
@@ -165,7 +245,16 @@ function timesIndex(array) {}
  *  //> [ 5, 5 + 2, 5 + 2 + 9 ]
  *  //> [ 5, 7, 16 ]
  */
-function cumulativeSum(array) {}
+function cumulativeSum(array) {
+  let newArray = [];
+  let total = 0;
+  for (let i = 0; i < array.length; i++) {
+    total += array[i];
+    // use push() method to insert incremented total to end of array recursively
+    newArray.push(total);
+  }
+  return newArray;
+}
 
 // Do not change anything below this line.
 module.exports = {
