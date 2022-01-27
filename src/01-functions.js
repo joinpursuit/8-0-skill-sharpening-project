@@ -82,7 +82,9 @@ function multiply(a,b) {
  *  average(10, 6);
  *  //> 8 // 10 + 6 = 16; 16/2 = 8;
  */
-function average() {}
+function average(a,b) {
+  return (a+b)/2
+}
 
 /**
  * averageThree()
@@ -120,7 +122,12 @@ function averageThree() {}
  *  compareTypes("left", 10);
  *  //> false
  */
-function compareTypes() {}
+function compareTypes() {
+  // if (a === b){
+  //   return true 
+  // }else return false
+}
+
 
 /**
  * flipSign()
@@ -159,7 +166,9 @@ function flipSign() {}
  *  joinStringsWithSpaces("left", "right", "up", "down", "away");
  *  //> "left right up down away"
  */
-function joinStringsWithSpaces() {}
+function joinStringsWithSpaces() {
+  // return a + b + c + d + e
+}
 
 /**
  * getFirstAndLastCharacter()
