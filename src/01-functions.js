@@ -10,6 +10,8 @@
  *  //> true
  */
 function alwaysTrue() {
+  let a = true
+  return a 
 
 }
 
