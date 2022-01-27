@@ -131,9 +131,9 @@ function removeElementFromEndOfArray(array) {
  *  //> [ 9, 10 ]
  */
 function addElementToFrontOfArray(array, element) {
-  let arr = [10]
-  arr.unshift("A")
-  return arr
+
+  array.unshift(element)
+  return array
 }
 
 /**
