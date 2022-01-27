@@ -90,7 +90,7 @@ return message
  *  //> false
  */
 function checkIfCharacterIsInString(text, character) {
-  let isIt = text.includes()
+  let isIt = text.includes(character)
   return isIt
 }
 
