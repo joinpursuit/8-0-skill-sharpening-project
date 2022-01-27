@@ -155,7 +155,13 @@ function isOdd(num) {
  *  isTruthy(null);
  *  //> false
  */
-function isTruthy(val) {}
+function isTruthy(val) {
+  if (val) {
+    return true;
+  } else {
+    return false;
+  }
+}
 
 /**
  * isFalsy()
@@ -171,7 +177,13 @@ function isTruthy(val) {}
  *  isFalsy(" ");
  *  //> false
  */
-function isFalsy(val) {}
+function isFalsy(val) {
+  if (val) {
+    return false;
+  } else {
+    return true;
+  }
+}
 
 // Do not change the code below.
 module.exports = {
