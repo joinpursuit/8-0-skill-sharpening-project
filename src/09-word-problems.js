@@ -220,9 +220,10 @@ function createLineOrder(people) {
       nonPriority.push(check.name)
     }
   }
-fullList = priority.concat(nonPriority);
+fullList = priority.concat(nonPriority);// practicing with variable assigning
 return fullList
 }
+// or i could do just 1 array and maybe use .unshift() for the  membership ppl so that they are added to the front of the array
 
 module.exports = {
   applyDiscount,

@@ -175,6 +175,7 @@ function getFullAddress(person) {
   let city = person.address.city;
   let state = person.address.state;
   let zip = person.address.zip;
+  
   return `${street} ${unit}, ${city}, ${state}, ${zip}`
   
 }
@@ -213,6 +214,10 @@ function getFlatObject(person) {
     numbers: person.numbers
   }
 }
+
+// or I can make a variable obj={}
+//obj.first = person.names.first , etc.
+// return obj
 
 
 // Do not change the code below.
