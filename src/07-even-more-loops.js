@@ -39,6 +39,7 @@ function shoutWhileLoop(array) {
   let x=[];
   while(i< array.length){
     x.push(array[i] + "!");
+    i++;
   }
   return x;
 }
