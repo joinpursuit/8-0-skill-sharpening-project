@@ -83,7 +83,7 @@ function multiply(a, b) {
  *  //> 8 // 10 + 6 = 16; 16/2 = 8;
  */
 function average(a, b) {
-  let base = arguments.length;
+  const base = arguments.length;
   return (a + b)/base;
 }
 
@@ -105,7 +105,7 @@ function average(a, b) {
  *  //> 10 // 10 + 11 + 19 = 30; 30 / 3 = 10;
  */
 function averageThree(a, b, c) {
-  let base = arguments.length;
+  const base = arguments.length;
   return (a + b + c)/base;
 }
 
