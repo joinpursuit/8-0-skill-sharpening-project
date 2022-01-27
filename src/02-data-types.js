@@ -90,12 +90,13 @@ function convertToWhisperText(text) {
  *  //> false
  */
 function checkIfCharacterIsInString(text, character) {
+  return text.includes(character);
   
-  if (character === 'u') {
-    return true;
-  } else {
-    return false;
-  }
+  // if (character === 'u') {
+  //   return true;
+  // } else {
+  //   return false;
+  // }
   
   
   //let result = text.match('e')

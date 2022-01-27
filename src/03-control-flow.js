@@ -89,10 +89,11 @@ function findLargerOrTie(a, b) {
  *  //> "Positive"
  */
 function positiveNegativeOrZero(a) {
-  if ( a === (+a)) {
-    return 'Positive';
-  } if (a === (-a)) {
-    return 'Negative';
+  
+  if (!a === a) {
+  return 'Negative';
+  } else if ( a === +a) {
+      return 'Positive';
   } else if (a === 0) {
     return 'Zero';
   }
@@ -149,11 +150,19 @@ function aroundTheWorldGreeting(language) {
  *  //> "Hello World"
  */
 function aroundTheWorldGreetingWithSwitch(language) {
-  if (language === 'german') {
-    return 'Hallo Welt';
-  } else if (language === 'spanish') {
-    return 'Hola Mundo'
-  } else { language !== 'german'}
+switch (language) {
+  case "English":
+    return ("Hello World");
+    break;
+  case "Spanish":
+    return ("Hola Mundo");
+    break;
+  case "German":
+    return ("Hallo Welt");
+    break;
+  default:
+    return ("Hello World");
+  }
 }
 
 /**
