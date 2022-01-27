@@ -41,7 +41,12 @@ function createObjectWithValue(val) {
  *  createObjectWithKey("left");
  *  //> { left: false }
  */
-function createObjectWithKey(key) {}
+function createObjectWithKey(key) {
+  let obj = {
+   "my key": true
+  }
+return obj
+}
 
 /**
  * createObjectWithKeyValuePair()
