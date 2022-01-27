@@ -9,7 +9,9 @@
  *  getLengthOfString("down");
  *  //> 4
  */
-function getLengthOfString(str) {}
+function getLengthOfString(str) {
+  return str.length
+}
 
 /**
  * convertToNumber()
@@ -49,7 +51,9 @@ function convertToString(val) {}
  *  convertToShoutingText("Hello There");
  *  //> "HELLO THERE"
  */
-function convertToShoutingText(text) {}
+function convertToShoutingText(text) {
+  return text.toUpperCase();
+}
 
 /**
  * convertToWhisperText()
@@ -62,7 +66,9 @@ function convertToShoutingText(text) {}
  *  convertToWhisperText("Hello There");
  *  //> "hello there"
  */
-function convertToWhisperText(text) {}
+function convertToWhisperText(text) {
+  return text.toLowerCase()
+}
 
 /**
  * checkIfCharacterIsInString()
