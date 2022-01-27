@@ -96,9 +96,9 @@ function getLastElementOfArray(array) {
  *  //> [ 10, 9 ]
  */
 function addElementToEndOfArray(array, element) {
-  let arr = []
-  arr.push("A")
-  return arr
+ 
+  array.push(element)
+  return array
 }
 
 /**
