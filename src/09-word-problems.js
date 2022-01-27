@@ -174,7 +174,7 @@ function gradeAssignments(assignments) {
       }
 
     } else if (type.kind === 'PERCENTAGE'){
-      let perScore = (type.score.received / type.score.max) * 100;
+      let perScore = (type.score.received / type.score.max) * 100;// set a variable to clean it up a bit/ dividing received by max gets me a decimal. * it by 100 to get the whole # we need.
       if (perScore >= 80) {
         type.status = `PASSED: ${perScore.toFixed(1)}%`
       } else{

@@ -115,7 +115,7 @@ function containsWhileLoop(array, target) {
  *  //> false
  */
 function containsForLoop(array, target) {
-  let result = false
+  let result = false// basically the default result unless it finds target
   for(let i = 0; i < array.length; i++) {
     if(array[i] === target){
       result = true;
@@ -172,7 +172,7 @@ function firstIndexFound(array, target) {
     }
     return -1
   }
-
+//if it finds a true value, itll return i. if it doesnt, it will return -1
 /**
  * lastIndexFound()
  * ---------------------
