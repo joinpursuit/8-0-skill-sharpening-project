@@ -160,8 +160,8 @@ function isTruthy(val) {
  *  //> false
  */
 function isFalsy(val) {
-   val = !!false
-  return val
+   result = !val
+  return result
 }
 
 // Do not change the code below.
