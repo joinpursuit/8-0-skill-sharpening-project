@@ -162,7 +162,13 @@ function calculateLetterGrade(grade) {
  *  animalCounts("pig", 1);
  *  //> "1 pig"
  */
-function animalCounts(animal, numberOfAnimals) {}
+function animalCounts(animal, numberOfAnimals) {
+let result = ""
+  if (numberOfAnimals > 1){
+    result = numberOfAnimals + ` ` + animal + 's' 
+  }else { result = numberOfAnimals + ` ` + animal }
+return result
+}
 
 /**
  * evenOrOdd()
