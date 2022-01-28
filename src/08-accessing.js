@@ -201,7 +201,7 @@ function getFlatObject(person) {
   objectFlat['zip'] = person.address.zip;
   objectFlat['street'] = person.address.street;
   objectFlat['numbers'] = person.numbers;
-  return {objectFlat};
+  return objectFlat;
 }
 
 // Do not change the code below.
