@@ -9,13 +9,15 @@
  *  alwaysTrue();
  *  //> true
  */
-function alwaysTrue() {}
+function alwaysTrue() {
+  return true;
+}
 
 /**
  * greet()
  * ---------------------
  * Greets the person by name.
- * HINT: Look at the example closely. 
+ * HINT: Look at the example closely.
  * Capitalization, spacing, spelling, and punctuation count!
  * @param {string} name
  * @returns {string}
@@ -104,7 +106,7 @@ function averageThree() {}
  * @returns {boolean}
  *
  * HINT: What JavaScript function returns the data type of something?
- * 
+ *
  * EXAMPLE:
  *  compareTypes("left", "right");
  *  //> true
@@ -123,7 +125,7 @@ function compareTypes() {}
  *
  * HINT: Using pencil and paper, how would you make a positive number look negative?
  * How could you apply this to a variable?
- * 
+ *
  * EXAMPLE:
  *  flipSign(-10);
  *  //> 10
@@ -146,7 +148,7 @@ function flipSign() {}
  *
  * HINT: You DON'T need fancy methods like `split()` and `join()` to do this.
  * What is the simplest way to combine two strings?
- * 
+ *
  * EXAMPLE:
  *  joinStringsWithSpaces("left", "right", "up", "down", "away");
  *  //> "left right up down away"
