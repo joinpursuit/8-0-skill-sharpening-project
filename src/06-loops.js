@@ -52,18 +52,16 @@ function rangeOdd(min, max) {
  *  //> [ 11, 13, 15, 17 ]
  */
 function rangeEveryOther(min, max) {
-  let i = min, result = [];
-  console.log(min, max)
+  let i      = min, 
+      odd    = [],
+      even   = [],
+      result = [];
   
-  for (let i= min; i < max; i++) {
-    if(i % 2 !== 0) {
-      result.push(i);
-    }else{
-      result.push(i);
-    }
+  for (let i = min; i <= max; i++) {
+    if (i % 2 !== 0) { odd.push(i); }
+    else { even.push(i); }
   }
-  console.log(result)
-  return  result; 
+  return (min % 2 === 0) ? result = even : result = odd; 
 }
 
 /**
