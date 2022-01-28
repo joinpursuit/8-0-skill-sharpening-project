@@ -189,7 +189,8 @@ return `${person.address.street} ${person.address.unit}, ${person.address.city},
       numbers: [7185550921, 7185558611],
     };
  */
-function getFlatObject(person) {
+
+    function getFlatObject(person) {
   let obj = {}
     obj.first = person.names.first;
     obj.middle = person.names.middle;
