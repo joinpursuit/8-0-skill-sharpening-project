@@ -36,13 +36,13 @@ return x
  *  //> [ "A!", "Very!", "Happy!", "Array!" ];
  */
 function shoutWhileLoop(array) {
-  let newArray = []
-  let i = 0
+  let i= 0 
+  let x = []
   while(i<array.length){
-    newArray.push(`${array[i]}!`);
-    i++
+    x.push(array[i] + "!");
+    i++;
   }
-  return newArray
+  return x;
 }
   
 
@@ -61,11 +61,11 @@ function shoutWhileLoop(array) {
  *  //> [ "A!", "Very!", "Happy!", "Array!" ];
  */
 function shoutForOfLoop(array) {
- let newArray = []
- for (idx of array){
-   newArray.push(`${idx}!`)
+ let x = []
+ for (let i of array){
+   x.push(i + "!")
  }
- return newArray
+ return x
 }
 
 /**
@@ -80,11 +80,11 @@ function shoutForOfLoop(array) {
  *  //> 31
  */
 function sumArray(array) {
-  let sum = 0
-  for(idx of array){
-    sum+=idx
-}
-return sum
+  let sum=0;
+  for(let i =0; i< array.length; i++){
+    sum+=array[i];
+  }
+  return sum
 }
 
 /**
@@ -99,13 +99,13 @@ return sum
 //  *  //> [ 11, 15, 37 ]
 //  */
   function oddArray(array) {
-    let newArray=[]
-      for(idx of array){
-        if (idx % 2 ===1){
-          newArray.push(idx)
+    let x=[]
+      for(let i of array){
+        if (i%2){
+          x.push(i)
     }
   }
-  return newArray
+  return x
 }
 
 /**
