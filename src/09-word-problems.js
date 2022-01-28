@@ -1,3 +1,5 @@
+const { containsForLoop } = require("./06-loops");
+
 /**
  * applyDiscount()
  * ---------------------
@@ -21,24 +23,24 @@
  *  //> 700
  */
 function applyDiscount(priceInCents, age, hasMembership) {
-  let applyDisc = false,
-      hasAgeDiscount = false, 
-      ageMin = 10, 
-      ageMax = 65, 
-      priceDiscount = 0,
+  let applyDisc       = false,
+      hasAgeDiscount  = false, 
+      ageMin          = 10, 
+      ageMax          = 65, 
+      priceDiscount   = 0,
       percentDiscount = 0;
   
-  if(age <= ageMin || age >= ageMax){
-    hasAgeDiscount = true; 
-    applyDisc = true;
+  if((age <= ageMin) || (age >= ageMax)){
+    hasAgeDiscount  = true; 
+    applyDisc       = true;
     percentDiscount = 10;
   }
   if(hasMembership){ 
-    applyDisc = true;
+    applyDisc       = true;
     percentDiscount = 20;
   }
   if(hasMembership && hasAgeDiscount){ 
-    applyDisc = true; 
+    applyDisc       = true; 
     percentDiscount = 30;
   } 
 
@@ -119,66 +121,24 @@ function getCartTotal(products) {
     //> "Same city."
  */
 function compareLocations(address1, address2) {
-  let result;
-  //console.log(address1)
-  /**
-   * * - If the street, city, state, and zip for both addresses are the same, return the string "Same building."
- * - If the city, state, and zip are the same, return the string "Same city."
- * - If just the state is the same, return the string "Same state."
- * - If none of those matches occur, return the string "Addresses are not near each other."
-   */
-  let strFullAddress1 = address1.street + " " + address1.city + " " + address1.state + " " + address1.zip;
-  let strFullAddress2 = address2.street + " " + address2.city + " " + address2.state + " " + address2.zip;
-  let strAddress1 = address1.city + " " + address1.state + " " + address1.zip;
-  let strAddress2 = address2.city + " " + address2.state + " " + address2.zip;
-
-  //console.log(strFullAddress1)
-  //console.log(strFullAddress2)
+  let result,
+      strFullAddress1 = address1.street + " " + address1.city + " " + address1.state + " " + address1.zip,
+      strFullAddress2 = address2.street + " " + address2.city + " " + address2.state + " " + address2.zip,
+      strAddress1     = address1.city + " " + address1.state + " " + address1.zip,
+      strAddress2     = address2.city + " " + address2.state + " " + address2.zip;
 
   if((strFullAddress1) === (strFullAddress2)){
     result = 'Same building.';
   }
-  if((strAddress1) === (strAddress2)){
+  else if((strAddress1) === (strAddress2)){
     result = 'Same city.';
   }
-  if(address1.state === address2.state){
+  else if(address1.state === address2.state){
     result = 'Same state.';
   }else{
     result = 'Addresses are not near each other.';
   }
-  /*
-  for(let i = 0; i < address1.length; i++){
-    console.log(address1[i].street)
-    console.log(address1[i].city)
-    console.log(address1[i].state)
-    console.log(address1[i].zip)
-    //totolCart += products[i].priceInCents * products[i].quantity;
-  };
-
-  for(let i = 0; i < address1.length; i++){
-    console.log(address2[i].street)
-    console.log(address2[i].city)
-    console.log(address2[i].state)
-    console.log(address2[i].zip)
-  };
-  */
-  const entries1 = Object.entries(address1);
-  const entries2 = Object.entries(address2);
-  /*
-  if (entries1.length !== entries2.length) {
-    return false;
-  }
-  for (let i = 0; i < entries1.length; ++i) {
-    
-    console.log(entries1[i]['street'])
-    // Values
-    if (entries1[i][1] !== entries2[i][1]) {
-      
-    }
-  }
-  */
-
-
+  
   return result;
 }
 
@@ -234,6 +194,8 @@ function compareLocations(address1, address2) {
 function gradeAssignments(assignments) {
   
   assignments.forEach((element) => {
+    let percentage = ((element.score.received/element.score.max)*100).toFixed(1) + '%';
+
     if(element.kind === 'PASS-FAIL'){ 
       if(element.score.received === element.score.max){
         element.status = 'PASSED';
@@ -242,17 +204,16 @@ function gradeAssignments(assignments) {
       }
     }
     else if(element.kind === 'PERCENTAGE'){ 
-      if(element.score.received >= 8){
-        element.status = 'PASSED: ' + ((element.score.received/element.score.max)*100).toFixed(1) + '%';
-      }else if(element.score.received < 8){
-        element.status = 'FAILED: ' + ((element.score.received/element.score.max)*100).toFixed(1) + '%';
+      if(percentage >= '80.0%'){
+        element.status = 'PASSED: ' + percentage;
+      }else{
+        element.status = 'FAILED: ' + percentage;
       }
     }
     else{ 
       element.status = 'SCORE: ' + element.score.received + '/' + element.score.max;
     }
   }); 
-  
   return assignments;
 }
 
@@ -283,17 +244,16 @@ function gradeAssignments(assignments) {
     //> [ "Ray Anderson", "America Marsh", "Wade Carson", "Patience Patel" ]
  */
 function createLineOrder(people) {
-  let newArray = [];
+  let membership =    [], 
+      nonMembership = [];
   people.forEach((element) => {
-    newArray.push(element.name);
     if(element.hasMembership){
-      newArray.sort();
+      membership.push(element.name);
+    }else{
+      nonMembership.push(element.name);
     }
-
-
-  }); 
-  
-  return newArray;
+  });
+  return membership.concat(nonMembership);
 }
 
 module.exports = {

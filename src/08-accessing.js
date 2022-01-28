@@ -198,16 +198,17 @@ function getFullAddress(person) {
     };
  */
 function getFlatObject(person) {
-  const newObj = {};
-  newObj.first = person.names.first;
-  newObj.middle = person.names.middle;
-  newObj.last = person.names.last;
-  newObj.street = person.address.street;
-  newObj.unit = person.address.unit;
-  newObj.city = person.address.city;
-  newObj.state = person.address.state;
-  newObj.zip = person.address.zip;
+  let newObj = {};
+  newObj.first   = person.names.first;
+  newObj.middle  = person.names.middle;
+  newObj.last    = person.names.last;
+  newObj.street  = person.address.street;
+  newObj.unit    = person.address.unit;
+  newObj.city    = person.address.city;
+  newObj.state   = person.address.state;
+  newObj.zip     = person.address.zip;
   newObj.numbers = [...person.numbers];
+  
   return newObj;
 }
 

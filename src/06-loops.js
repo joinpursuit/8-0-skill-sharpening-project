@@ -55,15 +55,12 @@ function rangeEveryOther(min, max) {
   let i = min, result = [];
   console.log(min, max)
   
-  while(i < max){
-
-    if(min % 2 === 0) {
-      result.push(i); 
+  for (let i= min; i < max; i++) {
+    if(i % 2 !== 0) {
+      result.push(i);
     }else{
-      result.push(i); 
+      result.push(i);
     }
-    i++;
-    
   }
   console.log(result)
   return  result; 
