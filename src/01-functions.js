@@ -9,7 +9,13 @@
  *  alwaysTrue();
  *  //> true
  */
-function alwaysTrue() {}
+function alwaysTrue(){
+  if(true == true) {
+    return true }
+  }
+console.log(alwaysTrue())
+//invoke the function with adding emtpy ()//
+//keep console log ouside of {}//
 
 /**
  * greet()
@@ -24,7 +30,9 @@ function alwaysTrue() {}
  *  greet("Ian");
  *  //> "Hello, Ian."
  */
-function greet() {}
+function greet(name) {
+  return `Hello, ${name}.`; 
+}
 
 /**
  * add()
@@ -39,7 +47,10 @@ function greet() {}
  *  add(10, 20);
  *  //> 30
  */
-function add() {}
+function add(a,b) {
+ let sum = a + b;
+ return sum
+}
 
 /**
  * multiply()
@@ -54,7 +65,11 @@ function add() {}
  *  multiply(2, 5);
  *  //> 10
  */
-function multiply() {}
+function multiply(a, b) {
+
+  let product= a * b;
+  return product
+}
 
 /**
  * average()
@@ -74,7 +89,10 @@ function multiply() {}
  *  average(10, 6);
  *  //> 8 // 10 + 6 = 16; 16/2 = 8;
  */
-function average() {}
+function average(a,b) {
+  let ave = (a+b)/2;
+  return ave
+}
 
 /**
  * averageThree()
@@ -93,7 +111,10 @@ function average() {}
  *  averageThree(10, 11, 19);
  *  //> 10 // 10 + 11 + 19 = 30; 30 / 3 = 10;
  */
-function averageThree() {}
+function averageThree(a,b,c) {
+  let aver = a+b+c
+  return aver / 3
+}
 
 /**
  * compareTypes()
@@ -103,7 +124,7 @@ function averageThree() {}
  * @param {*} b
  * @returns {boolean}
  *
- * HINT: What JavaScript function returns the data type of something?
+ * HINT: What JavaScript function returns the data type of something? 
  * 
  * EXAMPLE:
  *  compareTypes("left", "right");
@@ -112,7 +133,13 @@ function averageThree() {}
  *  compareTypes("left", 10);
  *  //> false
  */
-function compareTypes() {}
+
+function compareTypes(a,b){
+  if (typeof a === typeof b){
+    return true
+  } return false
+}
+  
 
 /**
  * flipSign()
@@ -131,7 +158,9 @@ function compareTypes() {}
  *  flipSign(50);
  *  //> -50
  */
-function flipSign() {}
+function flipSign(a) {
+  return -a;
+}
 
 /**
  * joinStringsWithSpaces()
@@ -151,8 +180,9 @@ function flipSign() {}
  *  joinStringsWithSpaces("left", "right", "up", "down", "away");
  *  //> "left right up down away"
  */
-function joinStringsWithSpaces() {}
-
+function joinStringsWithSpaces(a ,b ,c ,d ,e ){
+return `${a} ${b} ${c} ${d} ${e}`
+}
 /**
  * getFirstAndLastCharacter()
  * ---------------------
@@ -167,8 +197,11 @@ function joinStringsWithSpaces() {}
  * EXAMPLE:
  *  getFirstAndLastCharacter("upwards");
  *  //> "us"
- */
-function getFirstAndLastCharacter() {}
+ */ 
+function getFirstAndLastCharacter(x){
+  return `${x[0]}${x[x.length-1]}`
+}
+
 
 // Do not change the code below.
 module.exports = {
