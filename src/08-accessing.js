@@ -189,21 +189,23 @@ function getFullAddress(person) {
       numbers: [7185550921, 7185558611],
     };
  */
+
 function getFlatObject(person){
-  let objectFlat = {};
-  objectFlat.first = person.names.first;
-  objectFlat.middle = person.names.middle;
-  objectFlat.last = person.names.last;
-  objectFlat.street = person.address.street;
-  objectFlat.unit = person.address.unit;
-  objectFlat.city = person.address.city;
-  objectFlat.state = person.address.state;
-  objectFlat.zip = person.address.zip;
-  objectFlat.street = person.address.street;
-  objectFlat.numbers = person.numbers;
-  return objectFlat;
+  return {
+    first: person.names.first,
+    middle: person.names.middle,
+    last: person.names.last,
+    street: person.address.street,
+    unit: person.address.unit,
+    city: person.address.city,
+    state: person.address.state,
+    zip: person.address.zip,
+    numbers: person.numbers
+  }
 }
-// Do not change the code below.
+
+
+  // Do not change the code below.
 module.exports = {
   getFirstName,
   getLastName,
