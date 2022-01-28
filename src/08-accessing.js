@@ -197,7 +197,17 @@ function getFullAddress(person) {
     };
  */
 function getFlatObject(person) {
-  const newObj 
+  const newObj = {};
+  person.names.first = newObj.first;
+  person.names.middle = newObj.middle;
+  person.names.last = newObj.last;
+  person.address.street = newObj.street;
+  person.address.unit = newObj.unit;
+  person.address.city = newObj.city;
+  person.address.state = newObj.state;
+  person.address.zip = newObj.zip;
+  person.numbers = newObj.numbers;
+  return newObj;
 }
 
 // Do not change the code below.
