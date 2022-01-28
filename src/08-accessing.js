@@ -114,7 +114,7 @@ function getFirstPhoneNumber(person) {
  *  //> 7185558611
  */
 function getLastPhoneNumber(person) {
-  return person.numbers.pop();
+  return person.numbers[person.numbers.length-1];
 }
 
 /**
@@ -200,7 +200,7 @@ function getFlatObject(person){
     city: person.address.city,
     state: person.address.state,
     zip: person.address.zip,
-    numbers: person.numbers
+    numbers: person.numbers,
   }
 }
 
