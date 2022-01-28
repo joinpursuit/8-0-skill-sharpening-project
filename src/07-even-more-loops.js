@@ -126,7 +126,16 @@ function findLargest(array) {}
  *  findEqual([ 0, 11, -2, 5 ], 9);
  *  //> false
  */
-function findEqual(array, selected) {}
+function findEqual(array, selected) {
+    let result = false
+    for(idx of array){
+      if (idx === selected){
+        result = true
+      }
+  }
+    return result
+  }
+
 
 /**
  * removeDuplicates()
