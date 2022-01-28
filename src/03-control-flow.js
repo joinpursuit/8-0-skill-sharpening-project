@@ -92,7 +92,7 @@ function findLargerOrTie(a, b) {
 function positiveNegativeOrZero(a) {
   if (a === 0) {
     return "Zero";
-  } else if (Math.sign(a) === 1) {
+  } else if (a > 0) {
     return "Positive";
   } else {
     return "Negative";
@@ -241,7 +241,7 @@ function animalCounts(animal, numberOfAnimals) {
 function evenOrOdd(a) {
   if (((a % 2) === 0) || ((a % 2) === -0)) {
     return "Even";
-  } else if (((a % 2) === 1) || ((a % 2) === -1)) {
+  } else {
     return "Odd";
   }
 }
