@@ -19,7 +19,32 @@
  *  applyDiscount(1000, 9, true);
  *  //> 700
  */
-function applyDiscount(priceInCents, age, hasMembership) {}
+function applyDiscount(priceInCents, age, hasMembership) {
+  total = priceInCents;
+  if (age <= 10 && hasMembership === false ) {
+    total  =  priceInCents * .90;
+    return total;
+   
+  } else if (age >= 65 && hasMembership === false) {
+    total = priceInCents * .90;
+    return total;
+  }
+    else if (age > 10 && age < 65 && hasMembership === true) {
+      total = priceInCents * .80;
+     return total;
+    }
+    else if (age <= 10 && hasMembership === true) {
+      total = priceInCents * .70;
+      return total;
+    }
+    else if (age >= 65 && hasMembership === true) {
+      total = priceInCents *.70;
+     return total;
+    }
+    else {
+      return total;
+    }
+}
 
 /**
  * getCartTotal()
@@ -40,7 +65,16 @@ function applyDiscount(priceInCents, age, hasMembership) {}
     getCartTotal(cart);
  *  //> "$30.00"
  */
-function getCartTotal(products) {}
+function getCartTotal(products) {
+  total = 0; 
+  for (i = 0; i <= cart.name.length; i++) {
+    if (cart.quantity > 1) {
+     priceInCents =  cart.priceInCents * cart.quantity;
+     total = total + priceInCents;
+    }
+  }
+  return total;
+}
 
 /**
  * compareLocations()
@@ -80,7 +114,9 @@ function getCartTotal(products) {}
     compareLocations(address1, address2);
     //> "Same city."
  */
-function compareLocations(address1, address2) {}
+function compareLocations(address1, address2) {
+
+}
 
 /**
  * gradeAssignments()
@@ -152,7 +188,21 @@ function gradeAssignments(assignments) {}
     createLineOrder(people);
     //> [ "Ray Anderson", "America Marsh", "Wade Carson", "Patience Patel" ]
  */
-function createLineOrder(people) {}
+function createLineOrder(people) {
+  members = [];
+  nonMem = [];
+  for(i = 0 ; i < people.length; i++) {
+  //finalLine = [];
+  if(people.hasMembership === true) {
+    members.push(people)
+  }
+  else if (people.hasMembership === false) {
+    nonMem.push(people)
+  }
+  finalLine = members.concat(nonMem);
+}
+  return finalLine;
+}
 
 module.exports = {
   applyDiscount,
