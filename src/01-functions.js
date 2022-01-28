@@ -199,7 +199,7 @@ function flipSign(number) {
  *  //> "us"
  */
 function getFirstAndLastCharacter(string) {
-  return `${string.slice(0,1)}` + `${string.slice(string.length-1)}`
+  return string.slice(0,1) + string.slice(string.length-1);
 }
 
 // Do not change the code below.
