@@ -33,7 +33,7 @@
  *  //> "Rachel"
  */
 function getFirstName(person) {
-  return person.first();
+  return person.names.first;
 }
 
 /**
@@ -48,7 +48,7 @@ function getFirstName(person) {
  *  //> "Rojas"
  */
 function getLastName(person) {
-  return person.last();
+  return person.names.last;
 }
 
 /**
@@ -63,7 +63,7 @@ function getLastName(person) {
  *  //> "697 Pine Drive"
  */
 function getAddressStreet(person) {
-  return person.street();
+  return person.address.street;
 }
 
 /**
