@@ -231,13 +231,13 @@ function timesIndex(array) {
  *  //> [ 5, 7, 16 ]
  */
 function cumulativeSum(array) {
-  let help = [];
-  let crying = help[0];
-  for (let i = 0; i < help.length; i++){
-    help.push(crying);
-    crying += help[i + 1];
+  let myArray = [];
+  let sum = array[0];
+  for( let n = 0; n < array.length; n++) {
+    myArray.push(sum);
+    sum += array[n + 1];
   }
-  return help
+  return myArray;
 }
 
 // Do not change anything below this line.
