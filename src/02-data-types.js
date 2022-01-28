@@ -9,11 +9,11 @@ const { rangeEveryOther } = require("./06-loops");
  *
  * EXAMPLE:
  *  getLengthOfString("down");
- *  //> 4
+ *  //> 4orgi
  */
 function getLengthOfString(str) {
-  Const getLengthOfString = {
-  console.log("pursuit");
+  Const = getLengthOfString = {
+  console.log('pursuit');
   };
 };
 
