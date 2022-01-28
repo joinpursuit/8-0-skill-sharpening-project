@@ -19,7 +19,27 @@
  *  applyDiscount(1000, 9, true);
  *  //> 700
  */
-function applyDiscount(priceInCents, age, hasMembership) {}
+function applyDiscount(priceInCents, age, hasMembership) {
+    let ageDiscount = priceInCents - (priceInCents / 10) 
+    let memDiscount = priceInCents - (priceInCents / 5) 
+    let ageMemDiscount = priceInCents - (priceInCents / 100 * 30)
+      if (age <= 10 || age >= 65 && hasMembership) {
+        console.log(`Age + Memebership discount :${priceInCents - ageMemDiscount}`)
+        //          1000     -     300
+        return priceInCents - ageMemDiscount
+    } else if (age <= 10 || age >= 65){
+      console.log(`Age discount:${priceInCents - ageDiscount}`)
+      //           1000     -    100
+        return priceInCents - ageDiscount
+    } else if (hasMembership === true && age <= 10 || age >= 66){
+      console.log(`Memebership discount :${priceInCents - memDiscount}`)
+      //          1000      -    200
+        return priceInCents - memDiscount
+    } else {
+      console.log(`Full Price:${priceInCents}`)
+      return priceInCents
+    }
+};
 
 /**
  * getCartTotal()
