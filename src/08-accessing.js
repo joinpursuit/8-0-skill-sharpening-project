@@ -199,7 +199,7 @@ function getFlatObject(person) {
     city: person.address.city,
     state: person.address.state,
     zip: person.address.zip,
-    numbers: person.numbers
+    numbers: person.numbers,
   }
 }
 
