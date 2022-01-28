@@ -56,8 +56,8 @@ function applyDiscount(priceInCents, age, hasMembership) {
  */
 function getCartTotal(products) {
   let price = 0;
-  for (let i = 0; i < products.length; i++) {
-    let productPrice = products[i].priceInCents * products[i].quantity;
+  for (let n = 0; n < products.length; n++) {
+    let productPrice = products[n].priceInCents * products[n].quantity;
     price += productPrice;
   }
   price /= 100;
@@ -161,7 +161,7 @@ function compareLocations(address1, address2) {
     //> ];
  */
 function gradeAssignments(assignments) {
-  for (let n = 0; n < assignments.length; i++) {
+  for (let n = 0; n < assignments.length; n++) {
 
     if (assignments[n].kind === "PASS-FAIL") {
       if (assignments[n].score.received === assignments[n].score.max) {
