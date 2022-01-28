@@ -9,7 +9,10 @@
  *  createEmptyObject()
  *  //> {}
  */
-function createEmptyObject() {}
+function createEmptyObject() {
+  var objectA = {}
+var objectB = new Object()
+}
 
 /**
  * createObjectWithValue()

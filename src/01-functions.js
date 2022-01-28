@@ -3,28 +3,43 @@
  * ---------------------
  * Always returns the value `true`.
  * HINT: What data type do we want to return here?
- * @returns {boolean}
+ * 
+ * 
+ * 
+  // @returns {boolean}
  *
  * EXAMPLE:
  *  alwaysTrue();
  *  //> true
  */
-function alwaysTrue() {}
-
-/**
+  function alwaysTrue() {
+    const solution = true
+      if(solution === true){
+        return true;
+      }
+    } 
+  
+  //else {
+    //return false; 
+  //}
+  
+/*
  * greet()
  * ---------------------
  * Greets the person by name.
  * HINT: Look at the example closely. 
  * Capitalization, spacing, spelling, and punctuation count!
- * @param {string} name
- * @returns {string}
- *
+ 
+  
  * EXAMPLE:
  *  greet("Ian");
  *  //> "Hello, Ian."
  */
-function greet() {}
+
+function greet(name) {
+  let greeting = ''
+  return `Hello, ${name}.`
+};
 
 /**
  * add()
@@ -39,8 +54,10 @@ function greet() {}
  *  add(10, 20);
  *  //> 30
  */
-function add() {}
-
+ function add(a=28, b=4) {
+  return a + b
+}
+ 
 /**
  * multiply()
  * ---------------------
@@ -54,7 +71,9 @@ function add() {}
  *  multiply(2, 5);
  *  //> 10
  */
-function multiply() {}
+ function multiply(a=11, b=22) {
+  return a * b
+  }
 
 /**
  * average()
@@ -74,7 +93,12 @@ function multiply() {}
  *  average(10, 6);
  *  //> 8 // 10 + 6 = 16; 16/2 = 8;
  */
-function average() {}
+  // * converts a & b to
+  function average(a=44, b=11) {
+    const sum = a + b
+    const number =sum/2
+    return number
+  }
 
 /**
  * averageThree()
@@ -93,11 +117,15 @@ function average() {}
  *  averageThree(10, 11, 19);
  *  //> 10 // 10 + 11 + 19 = 30; 30 / 3 = 10;
  */
-function averageThree() {}
-
-/**
+function averageThree(a=11,b=22,c=33) {
+  const sum = a + b + c
+  const number = sum/3
+  return number
+  }
+ 
+/***
  * compareTypes()
- * ---------------------
+ * -----npm test ----------------
  * Returns `true` if `a` and `b` are of the same type. Otherwise, returns `false`. You can check for types with the `typeof` operator.
  * @param {*} a
  * @param {*} b
@@ -112,7 +140,13 @@ function averageThree() {}
  *  compareTypes("left", 10);
  *  //> false
  */
-function compareTypes() {}
+ function compareTypes(a=11,b=12) {
+  if(typeof a == typeof b){
+    return true
+  }else{
+    return false
+  }
+}
 
 /**
  * flipSign()
@@ -131,7 +165,12 @@ function compareTypes() {}
  *  flipSign(50);
  *  //> -50
  */
-function flipSign() {}
+//function flipSign(" ") {
+ // var y = -10;
+//var x =- 50;
+
+//}
+//console.log ("flipSign")
 
 /**
  * joinStringsWithSpaces()
@@ -151,7 +190,11 @@ function flipSign() {}
  *  joinStringsWithSpaces("left", "right", "up", "down", "away");
  *  //> "left right up down away"
  */
-function joinStringsWithSpaces() {}
+ //function joinStringsWithSpaces() {
+  //let  = ['a', 'b', 'c,' 'd,' 'e'];
+
+//console.log(elements.join());
+//}
 
 /**
  * getFirstAndLastCharacter()
@@ -181,5 +224,4 @@ module.exports = {
   compareTypes,
   flipSign,
   joinStringsWithSpaces,
-  getFirstAndLastCharacter,
-};
+  getFirstAndLastCharacter}

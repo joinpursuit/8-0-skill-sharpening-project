@@ -10,7 +10,12 @@
  *  createEmptyArray();
  *  //> []
  */
-function createEmptyArray() {}
+function createEmptyArray() { 
+   // recommended way
+  arr =[];
+  console.log (arr);
+ // recommended way
+}; 
 
 /**
  * createArrayWithTwoElements()
@@ -24,7 +29,9 @@ function createEmptyArray() {}
  *  createArrayWithTwoElements(true, false);
  *  //> [ true, false ]
  */
-function createArrayWithTwoElements(a, b) {}
+function createArrayWithTwoElements() {
+  return [`${a}``${b}`];{}
+}
 
 /**
  * getArrayLength()
@@ -79,7 +86,10 @@ function getLastElementOfArray(array) {}
  *  addElementToEndOfArray([ 10 ], 9);
  *  //> [ 10, 9 ]
  */
-function addElementToEndOfArray(array, element) {}
+function addElementToEndOfArray(line, name) {
+  line [line.getArrayLength] =name;
+  return line;
+}
 
 /**
  * removeElementFromEndOfArray()
@@ -138,7 +148,7 @@ function removeElementFromFrontOfArray(array) {}
 function getMiddleElement(array) {}
 
 // Do not change any code below this line.
-module.exports = {
+module.exports =  {
   createEmptyArray,
   createArrayWithTwoElements,
   getArrayLength,
@@ -148,5 +158,5 @@ module.exports = {
   removeElementFromEndOfArray,
   addElementToFrontOfArray,
   removeElementFromFrontOfArray,
-  getMiddleElement,
-};
+  getMiddleElement,}
+  

@@ -9,7 +9,10 @@
  *  getLengthOfString("down");
  *  //> 4
  */
-function getLengthOfString(str) {}
+function getLengthOfString(str) {
+  const str = "";
+ console.log(`${str} $ {str.length}`);
+}
 
 /**
  * convertToNumber()
@@ -49,7 +52,10 @@ function convertToString(val) {}
  *  convertToShoutingText("Hello There");
  *  //> "HELLO THERE"
  */
-function convertToShoutingText(text) {}
+function convertToShoutingText() {
+  let text = 'Coding!';
+  console.log (text.toUpperCase());
+}
 
 /**
  * convertToWhisperText()
