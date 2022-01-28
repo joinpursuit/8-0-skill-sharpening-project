@@ -11,6 +11,9 @@
  *  //> 25
  *  (3 + 4 + 5 + 6 + 7 = 25)
  */
+// * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *
+// *Abdullah helped me to solve a lot of loops, or guide me into how to solve them. I can explain them if needed.*
+// * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *
 function rangeSum(min, max) {
   let saveNum = 0
     for (let index = min; index <= max; index++){
