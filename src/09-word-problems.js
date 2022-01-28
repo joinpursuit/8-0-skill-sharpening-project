@@ -1,25 +1,44 @@
+const { createArrayWithTwoElements } = require("./04-arrays");
+
 /**
- * applyDiscount()
- * ---------------------
- * A local movie theater has a few different ticket discounts. If the attendee is 10 years old or younger, or 65 years old or older, they receive a 10% discount. If the attendee is viewing the movie with a member, they receive a 20% discount. If both situations apply, they receive a 30% discount.
- *
- * Write an algorithm that will determine the price of a ticket based on the `priceInCents` of the ticket, the `age` of the attendee, and the membership status (i.e. `hasMembership`).
- * @param {number} priceInCents - The price of the ticket, in cents.
- * @param {number} age - The age of the attendee.
- * @param {boolean} hasMembership - Whether or not the person has access to a membership.
- * @returns {number} The total amount, after all discounts have been applied.
- *
- * EXAMPLE:
- *  applyDiscount(1000, 23, false);
- *  //> 1000
- *
- *  applyDiscount(1000, 66, false);
- *  //> 900
- *
- *  applyDiscount(1000, 9, true);
- *  //> 700
- */
-function applyDiscount(priceInCents, age, hasMembership) {}
+//  * applyDiscount()
+//  * ---------------------
+//  * A local movie theater has a few different ticket discounts. If the attendee is 10 years old or younger, or 65 years old or older, they receive a 10% discount. If the attendee is viewing the movie with a member, they receive a 20% discount. If both situations apply, they receive a 30% discount.
+//  *
+//  * Write an algorithm that will determine the price of a ticket based on the `priceInCents` of the ticket, the `age` of the attendee, and the membership status (i.e. `hasMembership`).
+//  * @param {number} priceInCents - The price of the ticket, in cents.
+//  * @param {number} age - The age of the attendee.
+//  * @param {boolean} hasMembership - Whether or not the person has access to a membership.
+//  * @returns {number} The total amount, after all discounts have been applied.
+//  *
+//  * EXAMPLE:
+//  *  applyDiscount(1000, 23, false);
+//  *  //> 1000
+//  *
+//  *  applyDiscount(1000, 66, false);
+//  *  //> 900
+//  *
+//  *  applyDiscount(1000, 9, true);
+//  *  //> 700
+//  */
+ function applyDiscount(priceInCents, age, hasMembership) {
+   let total= 0;
+   let discount= 0;
+   if((!age <= 10 || !age >= 65) && hasMembership){
+     discount=0
+   }
+   if(age <=10 || age >=65){
+     discount=(priceInCents*10)/100;
+   }
+   if(hasMembership) {
+     discount=(priceInCents*20)/100;
+   }
+   if((age <= 10 || age >= 65) && hasMembership) {
+     discount=(priceInCents*30)/100;
+   }
+   total=priceInCents-discount
+   return total
+ }
 
 /**
  * getCartTotal()
@@ -40,7 +59,13 @@ function applyDiscount(priceInCents, age, hasMembership) {}
     getCartTotal(cart);
  *  //> "$30.00"
  */
-function getCartTotal(products) {}
+function getCartTotal(products) {
+  let total=0
+  for(prod of products) {
+    total+=(prod.priceInCents*prod.quantity)/100
+  }
+  return `$${total.toFixed(2)}`
+}
 
 /**
  * compareLocations()
@@ -80,7 +105,25 @@ function getCartTotal(products) {}
     compareLocations(address1, address2);
     //> "Same city."
  */
-function compareLocations(address1, address2) {}
+function compareLocations(address1, address2) {
+  let city= address1.city===address2.city
+  let street= address1.street===address2.street
+  let state= address1.state===address2.state
+  let zip= address1.zip===address2.zip
+
+  let bundle=''
+  if (street && city && state && zip){
+    bundle='Same building.'
+  }else if(city && state && zip){
+    bundle='Same city.'
+  }else if(state){
+    bundle='Same state.'
+  }else{
+    bundle='Addresses are not near each other.'
+  }
+  return bundle
+  }
+
 
 /**
  * gradeAssignments()
@@ -109,25 +152,47 @@ function compareLocations(address1, address2) {}
       { kind: "ESSAY", score: { received: 4, max: 5 } },
     ];
     gradeAssignments(assignments);
-    //> [
-    //>   { 
-    //>     kind: "PASS-FAIL",
-    //>     score: { received: 4, max: 4 },
-    //>     status: "PASSED",
-    //>   },
-    //>   { 
-    //>     kind: "PERCENTAGE",
-    //>     score: { received: 7, max: 9 },
-    //>     status: "FAILED: 77.8%",
-    //>   },
-    //>   { 
-    //>     kind: "ESSAY",
-    //>     score: { received: 4, max: 5 },
-    //>     status: "SCORE: 4/5",
-    //>   },
-    //> ];
+    > [
+    >   { 
+    >     kind: "PASS-FAIL",
+    >     score: { received: 4, max: 4 },
+    >     status: "PASSED",
+    >   },
+    >   { 
+    >     kind: "PERCENTAGE",
+    >     score: { received: 7, max: 9 },
+    >     status: "FAILED: 77.8%",
+    >   },
+    >   { 
+    >     kind: "ESSAY",
+    >     score: { received: 4, max: 5 },
+    >     status: "SCORE: 4/5",
+    >   },
+    > ];
  */
-function gradeAssignments(assignments) {}
+function gradeAssignments(assignments) {
+ for (let i=0; i < assignments.length; i++)
+ if (assignments[i].kind=== "PASS-FAIL"){
+   if(assignments[i].score.received===assignments[i].score.max){
+     assignments[i].status="PASSED"
+   }else {
+     assignments[i].status="FAILED"
+   }
+ }else if(assignments[i].kind === "PERCENTAGE"){
+   let pct= assignments[i].score.received/assignments[i].score.max;
+   pct *= 100;
+   pct = pct.toFixed(1);
+   if(pct >= 80.0){
+   assignments[i].status= `PASSED: ${pct}%`
+   }else{
+    assignments[i].status=`FAILED: ${pct}%`
+   }
+ }else{
+  assignments[i].status=`SCORE: ${assignments[i].score.received}/${assignments[i].score.max}`
+ }
+ return assignments
+}
+
 
 /**
  * createLineOrder()
@@ -152,7 +217,19 @@ function gradeAssignments(assignments) {}
     createLineOrder(people);
     //> [ "Ray Anderson", "America Marsh", "Wade Carson", "Patience Patel" ]
  */
-function createLineOrder(people) {}
+function createLineOrder(people) {
+  let memberArr =[]
+  let nonmemberArr=[]
+  for(let human of people){
+    if(human.hasMembership){
+      memberArr.push(human.name)
+    }else{
+      nonmemberArr.push(human.name)
+    }
+  }
+  let orderedArr= memberArr.concat(nonmemberArr)
+  return orderedArr
+}
 
 module.exports = {
   applyDiscount,
