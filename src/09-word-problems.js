@@ -19,14 +19,7 @@
  *  applyDiscount(1000, 9, true);
  *  //> 700
  */
-function applyDiscount(priceInCents, age, hasMembership) {
-  let discount = true
-  
-  if (age <= 10 || age >= 65) {
-    return discount
-  } else if (age <= 10 || age >= 65 && hasMembership) {
-    return discount * 2
-  } else if 
+function applyDiscount(priceInCents, age, hasMembership) {}
 
 
 /**
