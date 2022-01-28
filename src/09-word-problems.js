@@ -60,9 +60,9 @@ function getCartTotal(products) {
     let productPrice = products[n].priceInCents * products[n].quantity;
     price += productPrice;
   }
-  price /= 100;
-  price = price.toFixed(2);
-  return `$${price}`;
+    price /= 100;
+    price = price.toFixed(2);
+    return `$${price}`;
 }
 
 /**
@@ -104,7 +104,9 @@ function getCartTotal(products) {
     //> "Same city."
  */
 function compareLocations(address1, address2) {
-  if (address1["state"] != address2["state"]) {
+  
+  
+    if (address1["state"] != address2["state"]) {
     return "Addresses are not near each other.";
   } else if (address1["zip"] != address2["zip"]) {
     return "Same state."

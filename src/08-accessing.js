@@ -168,7 +168,6 @@ function getCityAndState(person) {
 function getFullAddress(person) {
 return `${person.address.street} ${person.address.unit}, ${person.address.city}, ${person.address.state}, ${person.address.zip}`
 }
-
 /**
  * getFlatObject()
  * ---------------------
@@ -191,17 +190,17 @@ return `${person.address.street} ${person.address.unit}, ${person.address.city},
     };
  */
 function getFlatObject(person) {
-  let newObj = {}
-  newObj.first = person.names.first;
-  newObj.middle = person.names.middle;
-  newObj.last = person.names.last;
-  newObj.street = person.address.street;
-  newObj.unit = person.address.unit ;
-  newObj.city = person.address.city;
-  newObj.state = person.address.state;
-  newObj.zip = person.address.zip;
-  newObj.numbers = person.numbers;
-  return newObj;
+  let obj = {}
+    obj.first = person.names.first;
+    obj.middle = person.names.middle;
+    obj.last = person.names.last;
+    obj.street = person.address.street;
+    obj.unit = person.address.unit;
+    obj.city = person.address.city;
+    obj.state = person.address.state;
+    obj.zip = person.address.zip;
+    obj.numbers = person.numbers;
+    return obj;
 }
 
 
