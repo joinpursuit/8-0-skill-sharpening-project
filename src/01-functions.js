@@ -9,8 +9,12 @@
  *  alwaysTrue();
  *  //> true
  */
-function alwaysTrue() {}
-
+function alwaysTrue() {
+  if (true === true) {
+    return true
+ }
+}
+console.log(alwaysTrue())
 /**
  * greet()
  * ---------------------
@@ -24,7 +28,12 @@ function alwaysTrue() {}
  *  greet("Ian");
  *  //> "Hello, Ian."
  */
-function greet() {}
+function greet(name) {
+    return `Hello, ${name}.`
+}
+
+console.log(greet())
+
 
 /**
  * add()
@@ -39,8 +48,10 @@ function greet() {}
  *  add(10, 20);
  *  //> 30
  */
-function add() {}
-
+function add(a, b) {
+   return a + b
+}
+console.log(add())
 /**
  * multiply()
  * ---------------------
@@ -54,8 +65,10 @@ function add() {}
  *  multiply(2, 5);
  *  //> 10
  */
-function multiply() {}
-
+function multiply(a, b) {
+    return a * b
+}
+console.log(multiply())
 /**
  * average()
  * ---------------------
@@ -74,8 +87,12 @@ function multiply() {}
  *  average(10, 6);
  *  //> 8 // 10 + 6 = 16; 16/2 = 8;
  */
-function average() {}
+function average(a, b) {
+  sum = a + b
 
+   return sum / 2 
+}
+console.log(average())
 /**
  * averageThree()
  * ---------------------
@@ -93,8 +110,12 @@ function average() {}
  *  averageThree(10, 11, 19);
  *  //> 10 // 10 + 11 + 19 = 30; 30 / 3 = 10;
  */
-function averageThree() {}
+function averageThree(a, b, c) {
+  sum = a + b + c
 
+   return sum / 3   
+}
+console.log(averageThree())
 /**
  * compareTypes()
  * ---------------------
@@ -112,8 +133,14 @@ function averageThree() {}
  *  compareTypes("left", 10);
  *  //> false
  */
-function compareTypes() {}
-
+function compareTypes(a, b) {
+  if (typeof(a) === typeof(b)) {
+    return true
+  } else { 
+    return false
+  }
+}
+console.log(compareTypes())
 /**
  * flipSign()
  * ---------------------
@@ -131,8 +158,16 @@ function compareTypes() {}
  *  flipSign(50);
  *  //> -50
  */
-function flipSign() {}
-
+function flipSign(a) {
+  
+  if ((a * -1) / a === -1) {
+    return -a
+  }  
+  else {
+  return a
+  }
+}
+console.log(flipSign())
 /**
  * joinStringsWithSpaces()
  * ---------------------
@@ -151,8 +186,11 @@ function flipSign() {}
  *  joinStringsWithSpaces("left", "right", "up", "down", "away");
  *  //> "left right up down away"
  */
-function joinStringsWithSpaces() {}
+function joinStringsWithSpaces(a, b ,c , d, e) {
 
+  return a + " " + b + " " + c + " " + d + " " + e
+}
+console.log(joinStringsWithSpaces())
 /**
  * getFirstAndLastCharacter()
  * ---------------------
@@ -168,7 +206,19 @@ function joinStringsWithSpaces() {}
  *  getFirstAndLastCharacter("upwards");
  *  //> "us"
  */
-function getFirstAndLastCharacter() {}
+function getFirstAndLastCharacter(a) {
+
+  return `${a[0]}${a[a.length-1]}`
+}
+  
+ 
+
+
+
+
+
+
+
 
 // Do not change the code below.
 module.exports = {
