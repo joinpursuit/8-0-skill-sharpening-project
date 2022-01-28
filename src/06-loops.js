@@ -33,8 +33,8 @@ function rangeSum(min, max) {
  */
 function rangeOdd(min, max) {
   let array = []
-  for (let i = min; i >= max; i--){
-    if (i%2 === 1) {
+  for (let i = max; i >= min; i--){
+    if (i%2 !== 0) {
       array.push(i);
     }
   }
