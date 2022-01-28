@@ -9,7 +9,13 @@
  *  createEmptyObject()
  *  //> {}
  */
-function createEmptyObject() {}
+function createEmptyObject() {
+  let person = {
+    firstName : "Michelle",
+    lastName : "Ortega",
+    age  28
+  };
+};
 
 /**
  * createObjectWithValue()

@@ -10,7 +10,13 @@
  *  createEmptyArray();
  *  //> []
  */
-function createEmptyArray() {}
+function createEmptyArray() {
+  let myDays = ["Sunday"];
+  let yourDays = myDays;
+  myDays [0] = "Enjoying the weekends";
+  
+  console.log(myDays, yourDays);
+};
 
 /**
  * createArrayWithTwoElements()

@@ -64,7 +64,9 @@ function add(num1, num2) {
  *  multiply(2, 5);
  *  //> 10
  */
-function multiply() {}
+function multiply() {
+  console.log(10 * 20);
+}
 
 /**
  * average()
