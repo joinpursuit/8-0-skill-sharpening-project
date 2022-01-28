@@ -201,9 +201,25 @@ function getFullAddress(person) {
       numbers: [7185550921, 7185558611],
     };
  */
+//1 st atttempt -- learned about the spread operator after googling.  I wonder if there is a way to loop through the array and do this? 
+// used object assign and kept erroring.  Will keep on investigating.
+// function getFlatObject(person) {
+//   const flatCopy = {};
+//   flatCopy.first = person.names.first;
+//   flatCopy.middle = person.names.middle;
+//   flatCopy.last = person.names.last;
+//   flatCopy.street = person.address.street;
+//   flatCopy.unit = person.address.unit
+//   flatCopy.city = person.address.city;
+//   flatCopy.state = person.address.state;
+//   flatCopy.zip = person.address.zip;
+//   flatCopy.numbers = [...person.numbers];
+//   return flatCopy;
+// }
 function getFlatObject(person) {
-  let flatObject = Object.assign(person.name, person.address)
-  return flatObject
+  let flatCopy = {...person.names, ...person.address}
+  flatCopy.numbers = [...person.numbers]
+  return flatCopy
 }
 
 // Do not change the code below.

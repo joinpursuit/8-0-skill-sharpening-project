@@ -101,11 +101,11 @@ function getCartTotal(products) {
     //> "Same city."
  */
 function compareLocations(address1, address2) {
-  for (key in address2){
-    if (address[street] === address2[stret])
-  }
+//   for (key in address2){
+//     if (address[street] === address2[stret])
+//   }
   
-}
+ }
 
 /**
  * gradeAssignments()
@@ -133,6 +133,7 @@ function compareLocations(address1, address2) {
       { kind: "PERCENTAGE", score: { received: 8, max: 10 } },
       { kind: "ESSAY", score: { received: 4, max: 5 } },
     ];
+
     gradeAssignments(assignments);
     //> [
     //>   { 
@@ -152,7 +153,23 @@ function compareLocations(address1, address2) {
     //>   },
     //> ];
  */
-function gradeAssignments(assignments) {}
+function gradeAssignments(assignments) {
+  for (let i = 0; i < assignments.length; i++){
+    let percent = ((assignments[i].score.received / assignments[i].score.max) * 100).toFixed[1]
+    if (assignments[i].kind === "PASS-FAIL" && assignments[i].score.received === assignments[i].score.max){
+      assignments[i].status = "PASSED"
+    } else if (assignments[i].kind === "PASS-FAIL" && assignments[i].score.received < assignments[i].score.max){
+      assignments[i].status = "FAILED"
+    } else if (assignments[i].kind === "PERCENTAGE" && percent >= 80.0){
+      assignments[i].status = `PASSED: ${percent}%`
+    } else if (assignments[i].kind === "PERCENTAGE" && percent < 80.0){
+      assignments[i].status = `FAILED: ${percent}%`
+    } else {
+      assignments[i].status = `SCORE: ${assignments[i].score.received}/${assignments[i].score.max}`
+    }  
+  return assignments
+  }
+}
 
 /**
  * createLineOrder()
@@ -177,8 +194,19 @@ function gradeAssignments(assignments) {}
     createLineOrder(people);
     //> [ "Ray Anderson", "America Marsh", "Wade Carson", "Patience Patel" ]
  */
-function createLineOrder(people) {}
-
+function createLineOrder(people) {
+  let membersOnly = []
+  let notMembers = []
+  let finalLine = []
+  for (let i = 0; i < people.length; i++){
+      if (people[i].hasMembership === true){
+        membersOnly.push(people[i].name)
+      } else if (people[i].hasMembership === false)
+        notMembers.push(people[i].name)
+    }
+  finalLine = membersOnly.concat(notMembers)
+  return finalLine
+}
 module.exports = {
   applyDiscount,
   getCartTotal,
