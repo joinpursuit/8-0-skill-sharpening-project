@@ -36,9 +36,9 @@ function shoutForLoop(array) {
 function shoutWhileLoop(array) {
   let i = 0;
   let arr = []
-  while(i < array.length){
+  // while(i < array.length){
     //arr.push(`${array[i]}!`)
-  } return arr
+  //} return arr
 };
 
 /**
