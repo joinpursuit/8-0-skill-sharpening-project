@@ -114,7 +114,7 @@ function getFirstPhoneNumber(person) {
  *  //> 7185558611
  */
 function getLastPhoneNumber(person) {
-  return person.numbers.pop();
+  return person.numbers[person.numbers.length - 1];
 }
 
 /**
@@ -199,7 +199,7 @@ let allkeys = {};
   allkeys.city = person.address.city;
   allkeys.state = person.address.state;
   allkeys.zip = person.address.zip;
-  allkeys.numbers = [...person[numbers]];
+  allkeys.numbers = [...person.numbers];
   return allkeys;
 }
 
