@@ -71,7 +71,7 @@ function convertToShoutingText(text) {
  *  //> "hello there"
  */
 function convertToWhisperText(text) {
-  return text.toLocaleLowerCase();
+  return text.toLowerCase();
 }
 
 /**
@@ -156,10 +156,10 @@ function isOdd(num) {
  *  //> false
  */
 function isTruthy(val) {
-  if ((val !== false) && (val !== 0) && (val !== -0) && (val !== "") && (val !== null) && (val !== undefined) && (val !== NaN)) {
-    return true
+  if (val) {
+    return true;
   } else {
-    return false
+    return false;
   }
 }
 
@@ -178,10 +178,10 @@ function isTruthy(val) {
  *  //> false
  */
 function isFalsy(val) {
-  if ((val !== false) && (val !== 0) && (val !== -0) && (val !== "") && (val !== null) && (val !== undefined) && (val !== NaN)) {
-    return false
+  if (!val) {
+    return true;
   } else {
-    return true
+    return false;
   }
 }
 
