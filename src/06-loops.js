@@ -11,7 +11,13 @@
  *  //> 25
  *  (3 + 4 + 5 + 6 + 7 = 25)
  */
-function rangeSum(min, max) {}
+function rangeSum(min, max) {
+ let total = 0
+  for (let i = min; i <= max; i++) {
+ total += i
+ }
+return total
+}
 
 /**
  * rangeOdd()
@@ -39,7 +45,9 @@ function rangeOdd(min, max) {}
  *  rangeEveryOther(11, 18);
  *  //> [ 11, 13, 15, 17 ]
  */
-function rangeEveryOther(min, max) {}
+function rangeEveryOther(min, max) {
+
+}
 
 /**
  * containsWhileLoop()
@@ -166,6 +174,7 @@ function timesIndex(array) {}
  *  //> [ 5, 7, 16 ]
  */
 function cumulativeSum(array) {}
+
 
 // Do not change anything below this line.
 module.exports = {
