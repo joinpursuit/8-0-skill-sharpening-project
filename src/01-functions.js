@@ -104,8 +104,8 @@ function average(a, b) {
  *  averageThree(10, 11, 19);
  *  //> 10 // 10 + 11 + 19 = 30; 30 / 3 = 10;
  */
-function averageThree(a,b,c) {
-  let sum = a+b+c;
+function averageThree(a, b, c) {
+  let sum = a + b + c;
   return sum / 3;
 }
 
@@ -126,8 +126,12 @@ function averageThree(a,b,c) {
  *  compareTypes("left", 10);
  *  //> false
  */
-function compareTypes(a,b) {
-
+function compareTypes(a, b) {
+  if (typeof a == typeof b) {
+    return true;
+  } else {
+    return false;
+  }
 }
 
 /**
@@ -147,7 +151,13 @@ function compareTypes(a,b) {
  *  flipSign(50);
  *  //> -50
  */
-function flipSign() {}
+
+// Change a to string
+// Break string into array
+// Check first index : if no '-' sign, add it. IF there is one, remove it
+function flipSign(a) {
+  return a *= -1
+}
 
 /**
  * joinStringsWithSpaces()
@@ -167,7 +177,9 @@ function flipSign() {}
  *  joinStringsWithSpaces("left", "right", "up", "down", "away");
  *  //> "left right up down away"
  */
-function joinStringsWithSpaces() {}
+function joinStringsWithSpaces(a, b, c, d, e) {
+  return a + ' ' + b + ' ' + c + ' ' + d + ' ' + e;
+}
 
 /**
  * getFirstAndLastCharacter()
@@ -184,7 +196,10 @@ function joinStringsWithSpaces() {}
  *  getFirstAndLastCharacter("upwards");
  *  //> "us"
  */
-function getFirstAndLastCharacter() {}
+function getFirstAndLastCharacter(a) {
+  let b = a[0] + a[a.length-1];
+  return b;
+}
 
 // Do not change the code below.
 module.exports = {
