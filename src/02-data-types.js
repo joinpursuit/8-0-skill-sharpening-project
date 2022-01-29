@@ -92,12 +92,9 @@ function convertToWhisperText(text) {
 
  //incomplete
 function checkIfCharacterIsInString(text, character) {
-  let arr = character.split(' ')
-  if(arr.filter() === text){
-    return true
-  }else{
-    return false
-  }
+  return text.includes(character)
+ 
+
 }
 
 /**
@@ -153,11 +150,7 @@ function isOdd(num) {
 
  //incomplete
 function isTruthy(val) {
-  if (val !== true){
-    return false
-  }else{
-    return true
-  }
+  return !!val
 }
 
 /**
@@ -175,8 +168,14 @@ function isTruthy(val) {
  *  //> false
  */
 
- //Incomplete
-function isFalsy(val) {}
+
+function isFalsy(val) {
+   if(!!val){
+     return false
+   }else{
+     return true
+   }
+}
 
 // Do not change the code below.
 module.exports = {
