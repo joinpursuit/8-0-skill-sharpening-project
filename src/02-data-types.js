@@ -130,7 +130,14 @@ function isEven(num) {
  *  isOdd(11);
  *  //> true
  */
-function isOdd(num) {}
+function isOdd(num) {
+  if (num % 2 === 1) {
+    return true;
+  } else {
+    return false;
+  }
+
+}
 
 /**
  * isTruthy()
