@@ -258,7 +258,7 @@ return newArr;
 function cumulativeSum(array) {
 
   newArr = array;
-  for (i =1; i < array.length;i++){
+  for (i = 1; i < array.length;i++){
     newArr[0] = array[0];
     newArr[i] = array[i]  + array[i-1];
 // newArr.push(array[i]+array[i+1]);
