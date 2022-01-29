@@ -231,7 +231,7 @@ function timesIndex(array) {
 function cumulativeSum(array) {
   let newArr = []
   let sum = 0;
-  for (let i in array){
+  for (let i = 0; i < array.length; i++){
     sum += array[i]
     newArr.push(sum)
   }
