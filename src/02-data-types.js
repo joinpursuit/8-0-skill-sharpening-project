@@ -40,7 +40,9 @@ function convertToNumber(val) {
  *  convertToString(99);
  *  //> "99"
  */
-function convertToString(val) {}
+function convertToString(val) {
+  return val.toString();
+}
 
 /**
  * convertToShoutingText()
