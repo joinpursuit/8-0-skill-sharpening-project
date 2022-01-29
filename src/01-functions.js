@@ -9,7 +9,11 @@
  *  alwaysTrue();
  *  //> true
  */
-function alwaysTrue() {}
+function alwaysTrue(x) {
+  x = true;
+
+  return x;
+}
 
 /**
  * greet()
@@ -24,7 +28,9 @@ function alwaysTrue() {}
  *  greet("Ian");
  *  //> "Hello, Ian."
  */
-function greet() {}
+function greet(name) {
+  return `Hello, ${name}.`;
+}
 
 /**
  * add()
@@ -39,7 +45,10 @@ function greet() {}
  *  add(10, 20);
  *  //> 30
  */
-function add() {}
+function add(a, b) {
+  resultAdd = a + b;
+  return resultAdd;
+}
 
 /**
  * multiply()
@@ -54,7 +63,10 @@ function add() {}
  *  multiply(2, 5);
  *  //> 10
  */
-function multiply() {}
+function multiply(a, b) {
+  resultMulti = a * b;
+  return resultMulti;
+}
 
 /**
  * average()
@@ -74,7 +86,10 @@ function multiply() {}
  *  average(10, 6);
  *  //> 8 // 10 + 6 = 16; 16/2 = 8;
  */
-function average() {}
+function average(a, b) {
+  resultAver = ((a + b)/2);
+  return resultAver;
+}
 
 /**
  * averageThree()
@@ -93,7 +108,10 @@ function average() {}
  *  averageThree(10, 11, 19);
  *  //> 10 // 10 + 11 + 19 = 30; 30 / 3 = 10;
  */
-function averageThree() {}
+function averageThree(a, b, c) {
+  resultAverThree = ((a + b + c)/3);
+  return resultAverThree;
+}
 
 /**
  * compareTypes()
@@ -112,7 +130,16 @@ function averageThree() {}
  *  compareTypes("left", 10);
  *  //> false
  */
-function compareTypes() {}
+function compareTypes(a, b) {
+  typeA = typeof a;
+  typeB = typeof b;
+
+  if (typeA === typeB){
+    return true;
+  }else {
+    return false;
+  }
+}
 
 /**
  * flipSign()
@@ -131,7 +158,9 @@ function compareTypes() {}
  *  flipSign(50);
  *  //> -50
  */
-function flipSign() {}
+function flipSign(a) {
+  return (-a);
+}
 
 /**
  * joinStringsWithSpaces()
@@ -151,7 +180,9 @@ function flipSign() {}
  *  joinStringsWithSpaces("left", "right", "up", "down", "away");
  *  //> "left right up down away"
  */
-function joinStringsWithSpaces() {}
+function joinStringsWithSpaces(a, b, c, d, e) {
+  return `${a} ${b} ${c} ${d} ${e}`;
+}
 
 /**
  * getFirstAndLastCharacter()
@@ -168,7 +199,12 @@ function joinStringsWithSpaces() {}
  *  getFirstAndLastCharacter("upwards");
  *  //> "us"
  */
-function getFirstAndLastCharacter() {}
+function getFirstAndLastCharacter(a) {
+  let firstChar = a.charAt(0);
+  let lastChar = a.charAt(a.length -1);
+  
+  return firstChar + lastChar;
+}
 
 // Do not change the code below.
 module.exports = {
