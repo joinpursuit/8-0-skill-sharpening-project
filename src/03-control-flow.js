@@ -35,7 +35,14 @@ function isEqual(a, b) {
  *  findLarger(19, 7);
  *  //> 19
  */
-function findLarger(a, b) {}
+function findLarger(a, b) {
+  if (a > b)  {
+    return a;
+  }
+  if (a < b) {
+    return b;
+  }
+}
 
 /**
  * findLargerOrTie()
