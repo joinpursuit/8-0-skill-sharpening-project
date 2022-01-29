@@ -100,12 +100,28 @@ function getCartTotal(products) {
     compareLocations(address1, address2);
     //> "Same city."
  */
-function compareLocations(address1, address2) {
-//   for (key in address2){
-//     if (address[street] === address2[stret])
+    function compareLocations(address1, address2){
+      if (address1.street === address2.street && address1.city === address2.city && address1.state === address2.state){
+        return "Same building."
+      } else if (address1.city === address2.city && address1.state == address2.state) {
+        return "Same city."
+      } else if (address1.state === address2.state){
+        return "Same state."
+      } else {
+        return "Addresses are not near each other."
+      }
+    }
+
+// function compareLocations(address1, address2) {
+//   let first = Object.values(address1)
+//   let second = Object.values(address2)
+//   for (let i = 0; i < first.length; i++){
+//     for (let j = 0; j < second.length; j++){
+//       if (first[i] !== second[i]){
+//       } 
+//     }
 //   }
-  
- }
+// } thought of convering values into arrays and then running dual loops but was overthinking it. 
 
 /**
  * gradeAssignments()
@@ -155,7 +171,7 @@ function compareLocations(address1, address2) {
  */
 function gradeAssignments(assignments) {
   for (let i = 0; i < assignments.length; i++){
-    let percent = ((assignments[i].score.received / assignments[i].score.max) * 100).toFixed[1]
+    let percent = (assignments[i].score.received / assignments[i].score.max * 100).toFixed(1)
     if (assignments[i].kind === "PASS-FAIL" && assignments[i].score.received === assignments[i].score.max){
       assignments[i].status = "PASSED"
     } else if (assignments[i].kind === "PASS-FAIL" && assignments[i].score.received < assignments[i].score.max){
@@ -166,9 +182,8 @@ function gradeAssignments(assignments) {
       assignments[i].status = `FAILED: ${percent}%`
     } else {
       assignments[i].status = `SCORE: ${assignments[i].score.received}/${assignments[i].score.max}`
-    }  
-  return assignments
-  }
+    }
+  }return assignments
 }
 
 /**
