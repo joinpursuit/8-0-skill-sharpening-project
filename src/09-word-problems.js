@@ -19,7 +19,25 @@
  *  applyDiscount(1000, 9, true);
  *  //> 700
  */
-function applyDiscount(priceInCents, age, hasMembership) {}
+function applyDiscount(priceInCents, age, hasMembership) {
+
+  if ((age <= 10 || age >= 65) && hasMembership === true){
+    priceInCents = priceInCents - (priceInCents*0.30);
+  }
+
+else if (age <= 10 || age >= 65){
+priceInCents = priceInCents - (priceInCents*0.10);
+
+} 
+else if (hasMembership === true){
+  priceInCents = priceInCents - (priceInCents*0.20);
+}
+
+
+
+return priceInCents;
+
+}
 
 /**
  * getCartTotal()
@@ -40,7 +58,16 @@ function applyDiscount(priceInCents, age, hasMembership) {}
     getCartTotal(cart);
  *  //> "$30.00"
  */
-function getCartTotal(products) {}
+function getCartTotal(products) {
+let total = 0;
+
+for (i = 0; i <= products.length-1; i++){
+  total =total + (products[i].priceInCents*products[i].quantity);
+}
+total = total /100;
+
+return `$${total.toFixed(2)}`;
+}
 
 /**
  * compareLocations()
@@ -80,7 +107,27 @@ function getCartTotal(products) {}
     compareLocations(address1, address2);
     //> "Same city."
  */
-function compareLocations(address1, address2) {}
+function compareLocations(address1, address2) {
+   if (address1.state === address2.state && address1.city === address2.city &&address1.zip === address2.zip && address1.street === address2.street) {
+    return "Same building.";
+  }
+  else  if (address1.state === address2.state && address1.city === address2.city &&address1.zip === address2.zip ) {
+    return "Same city.";
+  }
+
+   else if (address1.state === address2.state){
+    return "Same state.";
+  } 
+ else if (address1 !== address2 ) {
+  return "Addresses are not near each other.";
+}   else if (address1.city !== address2.city || address1.state !== address2.state) {
+  return "Addresses are not near each other.";
+}
+
+
+
+
+}
 
 /**
  * gradeAssignments()
@@ -127,7 +174,33 @@ function compareLocations(address1, address2) {}
     //>   },
     //> ];
  */
-function gradeAssignments(assignments) {}
+function gradeAssignments(assignments) {
+for (i=0; i <= assignments.length-1;i++){
+  // assignments[i].status;
+
+  if (assignments[i].kind === "PASS-FAIL" && assignments[i].score.received === assignments[i].score.max){
+    // console.log(assignments[i].score.max);
+    assignments[i].status = "PASSED";
+    } 
+    else if (assignments[i].kind === "PASS-FAIL") {
+      assignments[i].status = "FAILED";
+    }
+    
+     else if (assignments[i].kind === "PERCENTAGE" && assignments[i].score.received/assignments[i].score.max >= 0.80){
+      assignments[i].status = `PASSED: ${(assignments[i].score.received/assignments[i].score.max*100).toFixed(1)}%`;
+      //console.log(assignments[i].score.received/assignments[0].score.max*100);
+      } 
+      else if (assignments[i].kind === "PERCENTAGE") {
+        assignments[i].status = `FAILED: ${(assignments[i].score.received/assignments[i].score.max*100).toFixed(1)}%`;
+      } 
+      else {
+        assignments[i].status = `SCORE: ${assignments[i].score.received}/${assignments[i].score.max}`
+      } 
+
+}
+
+return assignments;
+}
 
 /**
  * createLineOrder()
@@ -152,7 +225,29 @@ function gradeAssignments(assignments) {}
     createLineOrder(people);
     //> [ "Ray Anderson", "America Marsh", "Wade Carson", "Patience Patel" ]
  */
-function createLineOrder(people) {}
+function createLineOrder(people) {
+let newLine = [];
+
+for (i=0; i<= people.length-1;i++){
+  if (people[i].hasMembership === true){
+      newLine.push(people[i].name);
+  
+  }
+}
+
+for (i=0; i<= people.length-1;i++){
+  if (people[i].hasMembership === false) {
+    newLine.push(people[i].name);
+  }
+}
+
+
+//console.log(newLine);
+//console.log(people[0].hasMembership);
+return newLine;
+
+
+}
 
 module.exports = {
   applyDiscount,
