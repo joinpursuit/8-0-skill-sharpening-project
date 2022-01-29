@@ -175,7 +175,14 @@ function isTruthy(val) {
  *  isFalsy(" ");
  *  //> false
  */
-function isFalsy(val) {}
+function isFalsy(val) {
+  if (!val) {
+    return true;
+  } else {
+    return false;
+  }
+
+}
 
 // Do not change the code below.
 module.exports = {
