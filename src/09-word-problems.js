@@ -234,16 +234,12 @@ for (i=0; i<= people.length-1;i++){
   
   }
 }
-
 for (i=0; i<= people.length-1;i++){
   if (people[i].hasMembership === false) {
     newLine.push(people[i].name);
   }
 }
 
-
-//console.log(newLine);
-//console.log(people[0].hasMembership);
 return newLine;
 
 
