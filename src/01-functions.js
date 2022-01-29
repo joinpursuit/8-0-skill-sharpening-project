@@ -45,7 +45,9 @@ function greet(name) {
  *  add(10, 20);
  *  //> 30
  */
-function add() {}
+function add(a, b) {
+  return a + b;
+}
 
 /**
  * multiply()
@@ -60,7 +62,9 @@ function add() {}
  *  multiply(2, 5);
  *  //> 10
  */
-function multiply() {}
+function multiply(a, b) {
+  return a * b;
+}
 
 /**
  * average()
