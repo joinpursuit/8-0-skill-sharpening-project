@@ -9,7 +9,9 @@
  *  alwaysTrue();
  *  //> true
  */
-function alwaysTrue() {}
+function alwaysTrue() {
+ return  true;  
+}
 
 /**
  * greet()
@@ -24,7 +26,9 @@ function alwaysTrue() {}
  *  greet("Ian");
  *  //> "Hello, Ian."
  */
-function greet() {}
+function greet(name) {
+  git
+}
 
 /**
  * add()
