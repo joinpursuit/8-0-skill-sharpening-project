@@ -89,7 +89,9 @@ function convertToWhisperText(text) {
  *  checkIfCharacterIsInString("hello there", "a");
  *  //> false
  */
-function checkIfCharacterIsInString(text, character) {}
+function checkIfCharacterIsInString(text, character) {
+  return text.includes(character);
+}
 
 /**
  * isEven()
