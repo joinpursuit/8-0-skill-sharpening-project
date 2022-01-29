@@ -153,7 +153,13 @@ function isOdd(num) {
  *  isTruthy(null);
  *  //> false
  */
-function isTruthy(val) {}
+function isTruthy(val) {
+  if (val) {
+    return true;
+  } else {
+    return false;
+  }
+}
 
 /**
  * isFalsy()
