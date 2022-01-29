@@ -56,7 +56,7 @@ function convertToString(val) {
  *  //> "HELLO THERE"
  */
 function convertToShoutingText(text) {
-  return text.toLocaleUpperCase();
+  return text.toUpperCase();
 }
 
 /**
@@ -144,7 +144,8 @@ function isOdd(num) {
  *  //> false
  */
 function isTruthy(val) {
-  return val ? true : false;
+  // return val ? true : false;
+  return !!val;
 }
 
 /**
@@ -162,7 +163,8 @@ function isTruthy(val) {
  *  //> false
  */
 function isFalsy(val) {
-  return val ? false : true;
+  // return val ? false : true;
+  return !val;
 }
 
 // Do not change the code below.

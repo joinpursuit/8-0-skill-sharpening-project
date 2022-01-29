@@ -14,8 +14,8 @@
  */
 function shoutForLoop(array) {
   let newArray = [];
-  for (let e of array){
-    newArray.push(`${e}!`);
+  for (let element of array){
+    newArray.push(`${element}!`);
   }
   return newArray;
 }
@@ -37,6 +37,7 @@ function shoutForLoop(array) {
 function shoutWhileLoop(array) {
   let newArray = [];
   while (array.length > 0){
+    //console.log (array.splice(0,1));
     newArray.push(`${array.splice(0,1)[0]}!`)
   }
   return newArray;
@@ -58,8 +59,8 @@ function shoutWhileLoop(array) {
  */
 function shoutForOfLoop(array) {
   let newArray = [];
-  for (let e of array){
-    newArray.push(`${e}!`);
+  for (let element of array){
+    newArray.push(`${element}!`);
   }
   return newArray;
 }
@@ -76,7 +77,7 @@ function shoutForOfLoop(array) {
  *  //> 31
  */
 function sumArray(array) {
-  if (array.length == 0){return 0;}
+  if (!array.length) return 0;
   return array.reduce((a, b) => a + b);
 }
 
@@ -93,9 +94,9 @@ function sumArray(array) {
  */
 function oddArray(array) {
   let newArray = []
-  for (let e of array){
-    if (e % 2){
-      newArray.push(e);
+  for (let element of array){
+    if (element % 2){
+      newArray.push(element);
     }
   }
   return newArray;
@@ -114,9 +115,9 @@ function oddArray(array) {
  */
 function evenArray(array) {
   let newArray = []
-  for (let e of array){
-    if (!(e % 2)){
-      newArray.push(e);
+  for (let element of array){
+    if (!(element % 2)){
+      newArray.push(element);
     }
   }
   return newArray;
@@ -149,7 +150,7 @@ function findSmallest(array) {
  *  //> 11
  */
 function findLargest(array) {
-  return array.sort()[array.length - 1];
+  return array.sort((a,b) => b - a)[0];
 }
 
 /**
@@ -188,9 +189,9 @@ function findEqual(array, selected) {
 
 function removeDuplicates(array) {
   let newArray = [];
-  for (let e of array){
-    if (!newArray.includes(e)){
-      newArray.push(e);
+  for (let element of array){
+    if (!newArray.includes(element)){
+      newArray.push(element);
     }
   }
   return newArray;

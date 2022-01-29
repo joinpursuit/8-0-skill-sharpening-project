@@ -165,7 +165,7 @@ function firstIndexFound(array, target) {
     if (array[i] === target){
       foundIndex = i;
     }
-    if (foundIndex != -1){break}
+    if (foundIndex != -1) break;
   }
   return foundIndex;
 }
@@ -194,7 +194,7 @@ function lastIndexFound(array, target) {
     if (array[i] == target){
       foundIndex = i;
     }
-    if (foundIndex != -1){break}
+    if (foundIndex != -1) break; 
   }
   return foundIndex;
 }

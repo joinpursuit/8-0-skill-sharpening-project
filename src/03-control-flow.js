@@ -15,7 +15,7 @@
  *  //> false
  */
 function isEqual(a, b) {
-  return a === b ? true : false;
+  return a === b;
 }
 
 /**
@@ -94,19 +94,16 @@ function positiveNegativeOrZero(a) {
  *  aroundTheWorldGreeting();
  *  //> "Hello World"
  */
-function aroundTheWorldGreeting(language) {
-  switch (language) {
-    case 'spanish':
-      return 'Hola Mundo';
-      break;
-    case 'german':
-      return 'Hallo Welt';
-      break;
-    default:
-      return 'Hello World';
-      break;
+function aroundTheWorldGreeting(language = 'english') {
+  if(language == 'spanish'){
+    return 'Hola Mundo';
+  }else if(language == 'german'){
+    return 'Hallo Welt';
+  }else{
+    return 'Hello World';
   }
 }
+
 
 /**
  * aroundTheWorldGreetingWithSwitch()
