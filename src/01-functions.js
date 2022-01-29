@@ -30,11 +30,9 @@ const solution = true
  *  greet("Ian");
  *  //> "Hello, Ian."
  */
-function greet(name) {
-
-
-
-  return  'Hello,' + greet(name) 
+ function greet(name) {
+  let saying = ''
+  return `Hello, ${name}.`
 }
 
 /**
