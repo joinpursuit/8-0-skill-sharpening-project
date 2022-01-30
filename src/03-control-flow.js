@@ -242,7 +242,14 @@ function animalCounts(animal, numberOfAnimals) {
  *  evenOrOdd(48);
  *  //> "Even"
  */
-function evenOrOdd(a) {}
+function evenOrOdd(a) {
+  if (a % 2 === 0) {
+    return 'Even';
+  } else {
+    return 'Odd';
+  }
+
+}
 
 /**
  * evenOrOddWithTernary()
