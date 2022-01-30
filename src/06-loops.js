@@ -31,7 +31,15 @@ function rangeSum(min, max) {
  *  rangeOdd(10, 15);
  *  //> [ 15, 13, 11 ]
  */
-function rangeOdd(min, max) {}
+function rangeOdd(min, max) {
+  const numArr = [];
+  for (max; max >= min; max--) {
+    if (max % 2 === 1) {
+      numArr.push(max);
+    }
+  }
+  return numArr;
+}
 
 /**
  * rangeEveryOther()
