@@ -57,7 +57,6 @@ function getCartTotal(products) {
   curTotal = 0;
   for (let product of products) {
     curTotal += ((product.priceInCents * product.quantity));
-    //console.log(product);
   }
   curTotal /= 100;
   return `$${curTotal.toFixed(2)}`;
@@ -219,7 +218,21 @@ function gradeAssignments(assignments) {
     //> [ "Ray Anderson", "America Marsh", "Wade Carson", "Patience Patel" ]
  */
 function createLineOrder(people) {
+  let firstClass = [];
+  let coach = [];
+  let finalLine = [];
 
+  for (let each in people){
+    //console.log(each);
+    if (people[each].hasMembership){
+      firstClass.push(people[each].name);
+    } else {
+      coach.push(people[each].name);
+    }
+  }
+  finalLine = finalLine.concat(firstClass);
+  finalLine = finalLine.concat(coach);
+  return finalLine;
 }
 
 module.exports = {
