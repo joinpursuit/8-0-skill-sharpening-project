@@ -118,7 +118,7 @@ function positiveNegativeOrZero(a) {
  *  aroundTheWorldGreeting();
  *  //> "Hello World"
  */
- function aroundTheWorldGreeting(language = 'english') {
+function aroundTheWorldGreeting(language = 'english') {
   if (language.toLowerCase() === 'english') {
     return 'Hello World';
   } else if (language.toLowerCase() === 'spanish') {
@@ -149,7 +149,23 @@ function positiveNegativeOrZero(a) {
  *  aroundTheWorldGreetingWithSwitch();
  *  //> "Hello World"
  */
-function aroundTheWorldGreetingWithSwitch(language) {}
+function aroundTheWorldGreetingWithSwitch(language='english') {
+  let result;
+  switch(language) {
+    case 'english':
+      result = 'Hello World';
+      break;
+    case 'spanish':
+      result = 'Hola Mundo';
+      break;
+    case 'german':
+      result = 'Hallo Welt';
+      break;
+    default:
+      result = 'Hello World';
+  }
+  return result;
+}
 
 /**
  * calculateLetterGrade()
