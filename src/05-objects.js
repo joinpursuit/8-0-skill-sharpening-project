@@ -9,7 +9,9 @@
  *  createEmptyObject()
  *  //> {}
  */
-function createEmptyObject() {}
+function createEmptyObject() {
+  return {}
+}
 
 /**
  * createObjectWithValue()
@@ -22,7 +24,9 @@ function createEmptyObject() {}
  *  createObjectWithValue(19);
  *  //> { whateverKey: 19 }
  */
-function createObjectWithValue(val) {}
+function createObjectWithValue(val) {
+  return {val}
+}
 
 /**
  * createObjectWithKey()
@@ -35,7 +39,11 @@ function createObjectWithValue(val) {}
  *  createObjectWithKey("left");
  *  //> { left: false }
  */
-function createObjectWithKey(key) {}
+function createObjectWithKey(key) {
+  let object={}
+  object[key]= "any"
+  return object
+}
 
 /**
  * createObjectWithKeyValuePair()
@@ -49,7 +57,12 @@ function createObjectWithKey(key) {}
  *  createObjectWithKeyValuePair("left", "right");
  *  //> { left: "right" }
  */
-function createObjectWithKeyValuePair(key, val) {}
+function createObjectWithKeyValuePair(key, val) {
+  const object = {}
+  object[key]=val
+  return object
+
+}
 
 /**
  * getNameFromObject()
@@ -62,7 +75,9 @@ function createObjectWithKeyValuePair(key, val) {}
  *  getNameFromObject({ name: "Jay" });
  *  //> "Jay"
  */
-function getNameFromObject(object) {}
+function getNameFromObject(object) {
+  return object.name
+}
 
 /**
  * getAgeFromObject()
@@ -75,7 +90,9 @@ function getNameFromObject(object) {}
  *  getAgeFromObject({ age: 30 });
  *  //> 30
  */
-function getAgeFromObject(object) {}
+function getAgeFromObject(object) {
+  return object.age
+}
 
 /**
  * addValueToObject()
@@ -89,7 +106,11 @@ function getAgeFromObject(object) {}
  *  addValueToObject({ left: true }, false);
  *  //> { left: true, key: false }
  */
-function addValueToObject(object, val) {}
+function addValueToObject(object, val) {
+  
+  return object.anything= {val}
+
+}
 
 /**
  * addKeyToObject()
@@ -103,7 +124,10 @@ function addValueToObject(object, val) {}
  *  addKeyToObject({ right: false }, "left");
  *  //> { right: false, left: true }
  */
-function addKeyToObject(object, key) {}
+function addKeyToObject(object, key) {
+   object[key] = "any";
+   return object
+}
 
 /**
  * addKeyValuePairToObject()
@@ -118,7 +142,12 @@ function addKeyToObject(object, key) {}
  *  addKeyValuePairToObject({ up: true }, "left", false);
  *  //> { up: true, left: false }
  */
-function addKeyValuePairToObject(object, key, val) {}
+function addKeyValuePairToObject(object, key, val) {
+  // console.log(object,key,val)
+ object[key] = val
+//  console.log(object)
+ return object 
+}
 
 /**
  * deleteKeyFromObject()
@@ -132,8 +161,13 @@ function addKeyValuePairToObject(object, key, val) {}
  *  deleteKeyFromObject({ left: true, right: false }, "left");
  *  //> { right: false }
  */
-function deleteKeyFromObject(object, key) {}
-
+function deleteKeyFromObject(object, key) {
+  // console.log(object,key)
+  delete object[key]
+  // console.log(object)
+  return object
+}
+// Why we not able to use dot notation ex----> delete object.key
 // Do not change any code below this line.
 module.exports = {
   createEmptyObject,
