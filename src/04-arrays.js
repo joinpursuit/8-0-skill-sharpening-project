@@ -159,7 +159,7 @@ function removeElementFromFrontOfArray(array) {
  *  getMiddleElement([ 10, null, "30" ]);
  *  //> null
  */
- function getMiddleElement(array) {
+function getMiddleElement(array) {
   const indexMid = Math.floor(array.length / 2);
   return array[indexMid];
 }
