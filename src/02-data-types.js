@@ -127,7 +127,6 @@ function isEven(num) {}
  *  isOdd(11);
  *  //> true
  */
-function isOdd(num) {}
 
 /**
  * isTruthy()
