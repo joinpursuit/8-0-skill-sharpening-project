@@ -147,9 +147,8 @@ function addElementToFrontOfArray(array, element) {
  *  //> 10
  */
 function removeElementFromFrontOfArray(array) {
-  // let arr = ["A","B","C"]
-  // arr.shift("A")
-  // return (arr.shift)
+ let result = array.shift()
+ return result
 }
 
 /**
