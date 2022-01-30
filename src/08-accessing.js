@@ -193,7 +193,8 @@ function getFullAddress(person) {
  */
 function getFlatObject(person) {
   let newObj = {};
-  newObj = Object.assign(person.names,person.address,person[numbers]);
+  newObj = Object.assign(person.names,person.address);
+  newObj.numbers = person.numbers;
   return newObj;
 }
 
