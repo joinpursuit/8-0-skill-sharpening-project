@@ -54,9 +54,10 @@ function rangeOdd(min, max) {
  *  rangeEveryOther(11, 18);
  *  //> [ 11, 13, 15, 17 ]
  */
+//didnt pass
 function rangeEveryOther(min, max) {
   let array = [];
-  let min = 0;
+  min = 0;
   for (let i = min; i <= max; i += 2) {
     array.push(i);
   }
@@ -83,7 +84,21 @@ function rangeEveryOther(min, max) {
  *  containsWhileLoop([ "left", "up", "right" ], "down");
  *  //> false
  */
-function containsWhileLoop(array, target) {}
+//didnt pass
+function containsWhileLoop(array, target) {
+  let i = 0;
+  //iterates through the array till the end to look for target
+  while (i <= array.length - 1) {
+    //if the elements [i] in the array === target
+    if (array[i] === target) {
+      return true;
+    }
+    //increment to go through the array
+    i++;
+  }
+  //if target is not in the array return false
+  return false;
+}
 
 /**
  * containsForLoop()
@@ -105,7 +120,14 @@ function containsWhileLoop(array, target) {}
  *  containsForLoop([ "left", "up", "right" ], "down");
  *  //> false
  */
-function containsForLoop(array, target) {}
+function containsForLoop(array, target) {
+  for (let i = 0; i < array.length; i++) {
+    if (array[i] === target) {
+      return true;
+    }
+  }
+  return false;
+}
 
 /**
  * targetCount()
@@ -119,7 +141,18 @@ function containsForLoop(array, target) {}
  *  targetCount([ 10, 20, 10, 20, 30 ], 10);
  *  //> 2
  */
-function targetCount(array, target) {}
+function targetCount(array, target) {
+  //we declare a counter variable to hold the amount of times the target appears, starts at zero
+  let counter = 0;
+  //we want to loop through array to find target
+  for (let i = 0; i < array.length; i++) {
+    //if the target is in the array then we increase counter to count the amount of times it occurs and return countet
+    if (array[i] === target) {
+      counter++;
+    }
+  }
+  return counter;
+}
 
 /**
  * firstIndexFound()
@@ -139,7 +172,17 @@ function targetCount(array, target) {}
  *  firstIndexFound([ "left", "right", "left" ], "up");
  *  //> -1
  */
-function firstIndexFound(array, target) {}
+function firstIndexFound(array, target) {
+  //loop through the array look for target
+  for (let i = 0; i < array.length; i++) {
+    //if the target is in the array then return the index where the target is located
+    if (array[i] === target) {
+      return i;
+    }
+  }
+  //if the index of target is not there return -1
+  return -1;
+}
 
 /**
  * lastIndexFound()
@@ -159,7 +202,18 @@ function firstIndexFound(array, target) {}
  *  lastIndexFound([ "left", "right", "left" ], "up");
  *  //> -1
  */
-function lastIndexFound(array, target) {}
+//didnt pass
+function lastIndexFound(array, target) {
+  //loop through array to the end because we are looking at the last index in the array
+  for (let i = 0; i < array.length - 1; i++) {
+    //check to find the last index in the array is the target if it is there return the last index
+    if (array[i] === target) {
+      return i;
+    }
+  }
+  //if it is not there return -1
+  return -1;
+}
 
 /**
  * timesIndex()
@@ -173,7 +227,16 @@ function lastIndexFound(array, target) {}
  *  //> [ 7 * 0, 10 * 1, 11 * 2 ]
  *  //> [ 0, 10, 22 ]
  */
-function timesIndex(array) {}
+function timesIndex(array) {
+  //declare a new array we are returning this array
+  let newArray = [];
+  //loop through array and its elements
+  for (let i = 0; i < array.length; i++) {
+    //push the elements of the array into the newArray variable and multiply each element by i the index
+    newArray.push(array[i] * i);
+  }
+  return newArray;
+}
 
 /**
  * cumulativeSum()
@@ -187,7 +250,18 @@ function timesIndex(array) {}
  *  //> [ 5, 5 + 2, 5 + 2 + 9 ]
  *  //> [ 5, 7, 16 ]
  */
-function cumulativeSum(array) {}
+function cumulativeSum(array) {
+  //return a new array
+  let newArr = [];
+  //create a variable to hold sum, with a counter at 0
+  let sum = 0;
+  //loop through array to find each element
+  for (let i = 0; i < array.length; i++) {
+    //if elements are in the array then add them up
+    newArr.push((sum += array[i]));
+  }
+  return newArr;
+}
 
 // Do not change anything below this line.
 module.exports = {

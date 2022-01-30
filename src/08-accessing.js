@@ -32,7 +32,9 @@
  *  getFirstName(person);
  *  //> "Rachel"
  */
-function getFirstName(person) {}
+function getFirstName(person) {
+  return person.names.first;
+}
 
 /**
  * getLastName()
@@ -45,7 +47,9 @@ function getFirstName(person) {}
  *  getLastName(person);
  *  //> "Rojas"
  */
-function getLastName(person) {}
+function getLastName(person) {
+  return person.names.last;
+}
 
 /**
  * getAddressStreet()
@@ -58,7 +62,9 @@ function getLastName(person) {}
  *  getAddressStreet(person);
  *  //> "697 Pine Drive"
  */
-function getAddressStreet(person) {}
+function getAddressStreet(person) {
+  return person.address.street;
+}
 
 /**
  * getCountOfPhoneNumbers()
@@ -71,7 +77,13 @@ function getAddressStreet(person) {}
  *  getCountOfPhoneNumbers(person);
  *  //> 2
  */
-function getCountOfPhoneNumbers(person) {}
+function getCountOfPhoneNumbers(person) {
+  let sum = 0;
+  for (let i = 0; i < person.length; i++) {
+    sum += person.numbers[i];
+  }
+  return sum;
+}
 
 /**
  * getFirstPhoneNumber()
@@ -87,7 +99,9 @@ function getCountOfPhoneNumbers(person) {}
  *  getFirstPhoneNumber(person);
  *  //> 7185550921
  */
-function getFirstPhoneNumber(person) {}
+function getFirstPhoneNumber(person) {
+  return person.address.numbers[0];
+}
 
 /**
  * getLastPhoneNumber()
@@ -103,7 +117,9 @@ function getFirstPhoneNumber(person) {}
  *  getLastPhoneNumber(person);
  *  //> 7185558611
  */
-function getLastPhoneNumber(person) {}
+function getLastPhoneNumber(person) {
+  return person.numbers[1];
+}
 
 /**
  * getFullName()
@@ -116,7 +132,12 @@ function getLastPhoneNumber(person) {}
  *  getFullName(person);
  *  //> "Rachel Eleanor Rojas"
  */
-function getFullName(person) {}
+function getFullName(person) {
+  let firstName = person.names.first;
+  let middleName = person.names.middle;
+  let lastName = person.names.last;
+  return firstName + " " + middleName + " " + lastName;
+}
 
 /**
  * getCityAndState()
@@ -132,7 +153,11 @@ function getFullName(person) {}
  *  getCityAndState(person);
  *  //> "Staten Island, NY"
  */
-function getCityAndState(person) {}
+function getCityAndState(person) {
+  let city = person.address.city;
+  let state = person.address.state;
+  return city + "," + " " + state;
+}
 
 /**
  * getFullAddress()
@@ -148,7 +173,16 @@ function getCityAndState(person) {}
  *  getFullAddress(person);
  *  //> "697 Pine Drive 2A, Staten Island, NY, 10306"
  */
-function getFullAddress(person) {}
+function getFullAddress(person) {
+  let street = person.address.street;
+  let unit = person.address.unit;
+  let city = person.address.city;
+  let state = person.address.state;
+  let zip = person.address.zip;
+  return (
+    street + " " + unit + "," + " " + city + "," + " " + state + "," + " " + zip
+  );
+}
 
 /**
  * getFlatObject()
@@ -171,7 +205,24 @@ function getFullAddress(person) {}
       numbers: [7185550921, 7185558611],
     };
  */
-function getFlatObject(person) {}
+function getFlatObject(person) {
+  let obj = {};
+  // let object = {};
+  // let finalObject = {};
+  let firstName = person.names;
+  // let middleName = person.middle;
+  // let lastName = person.last;
+  let street = person.address;
+  // let unit = person.address.unit;
+  // let city = person.address.city;
+  // let state = person.address.state;
+  // let zip = person.address.zip;
+  // obj = firstName + middleName + lastName;
+  // object = street + unit + city + state + state + zip;
+  // finalObject = obj + object;
+  obj = firstName + street;
+  return obj;
+}
 
 // Do not change the code below.
 module.exports = {

@@ -26,7 +26,7 @@ function createEmptyObject() {
  *  //> { whateverKey: 19 }
  */
 function createObjectWithValue(val) {
-  return { number: "val" };
+  return { number: val };
 }
 
 /**
@@ -41,7 +41,7 @@ function createObjectWithValue(val) {
  *  //> { left: false }
  */
 function createObjectWithKey(key) {
-  return { key: "car" };
+  return { key: " " };
 }
 
 /**
@@ -57,7 +57,7 @@ function createObjectWithKey(key) {
  *  //> { left: "right" }
  */
 function createObjectWithKeyValuePair(key, val) {
-  return { key: "val" };
+  return { key: val };
 }
 
 /**
