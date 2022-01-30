@@ -190,7 +190,17 @@ function firstIndexFound(array, target) {
  *  //> -1
  */
 
-function lastIndexFound(array, target) {}
+function lastIndexFound(array, target) {
+  let newArr = [];
+  let result;
+  for (let i = 0; i < array.length; i++) {
+    if (array[i] === target) {
+      newArr.push(i);
+    }
+  }
+  result = (newArr.length > 0) ? newArr[newArr.length-1] : -1;
+  return result;
+}
 
 /**
  * timesIndex()
