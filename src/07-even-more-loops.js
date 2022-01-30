@@ -159,7 +159,7 @@ function findSmallest(array) {
  */
 function findLargest(array) {
   let largest = array[0];
-  for(let i=1;< array.length; i++){
+  for(let i=1; < array.length; i++){
     if(array[i>largest]){
       largest = array[i];
     }
