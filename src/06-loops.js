@@ -214,7 +214,13 @@ function lastIndexFound(array, target) {
  *  //> [ 7 * 0, 10 * 1, 11 * 2 ]
  *  //> [ 0, 10, 22 ]
  */
-function timesIndex(array) {}
+function timesIndex(array) {
+  let newArr = [];
+  for(let i = 0; i < array.length; i++) {
+    newArr.push(array[i] * i)
+  }
+  return newArr;
+}
 
 /**
  * cumulativeSum()
