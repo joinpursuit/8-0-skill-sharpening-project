@@ -114,7 +114,7 @@ function getFirstPhoneNumber(person) {
  *  //> 7185558611
  */
 function getLastPhoneNumber(person) {
-  return person.numbers.pop();
+  return person.numbers[person.numbers.length-1];
 }
 
 /**
@@ -190,6 +190,7 @@ function getFullAddress(person) {
     };
  */
 function getFlatObject(person) {
+ console.log(person)
   let newObj = {
       first: person.names.first,
       middle: person.names.middle,
@@ -201,6 +202,7 @@ function getFlatObject(person) {
       zip: person.address.zip,
       numbers: person["numbers"],
     };
+
   return newObj;
 }
 
