@@ -198,13 +198,23 @@ function getFlatObject(person) {
   let newObj = {}; 
 
 
-for (const a in person.names){
+for (const key in person.names){
+   newObj[key] = person.names[key];
+  };
+for (const key in person.address){
+  newObj[key] = person.address[key];  
+}
 
- newObj.names = person.names[a];
-newObj.names = person.names;
-} 
+  newObj.numbers = person.numbers; 
+
+
+
+
+// console.log(`${a} : ${person.names[a]}`);
+console.log(newObj);
 
 return newObj;
+
 
 }
 
