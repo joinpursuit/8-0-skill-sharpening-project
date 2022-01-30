@@ -184,7 +184,21 @@ function aroundTheWorldGreetingWithSwitch(language='english') {
  *  calculateLetterGrade(99);
  *  //> "A"
  */
-function calculateLetterGrade(grade) {}
+function calculateLetterGrade(grade) {
+  let result;
+  if (grade >= 90) {
+    result = 'A';
+  } else if (grade >= 80) {
+    result = 'B';
+  } else if (grade >= 70) {
+    result = 'C';
+  } else if (grade >= 60) {
+    result = 'D';
+  } else {
+    result = 'F';
+  }
+  return result;
+}
 
 /**
  * animalCounts()
