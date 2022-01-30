@@ -81,7 +81,18 @@ function rangeEveryOther(min, max) {
  *  containsWhileLoop([ "left", "up", "right" ], "down");
  *  //> false
  */
-function containsWhileLoop(array, target) {}
+function containsWhileLoop(array, target) {
+  let i = 0;
+
+  while (i < array.length) {
+    if (array[i] === target) {
+      return true;
+    } 
+    i++;
+  }
+  return false;
+}
+
 
 /**
  * containsForLoop()
