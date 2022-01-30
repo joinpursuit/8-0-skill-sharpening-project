@@ -39,7 +39,12 @@ function createObjectWithValue(val) {
  *  createObjectWithKey("left");
  *  //> { left: false }
  */
-function createObjectWithKey(key) {}
+function createObjectWithKey(key) {
+  const obj = {};
+  obj[key] = true;
+  return obj;
+
+}
 
 /**
  * createObjectWithKeyValuePair()
@@ -53,7 +58,11 @@ function createObjectWithKey(key) {}
  *  createObjectWithKeyValuePair("left", "right");
  *  //> { left: "right" }
  */
-function createObjectWithKeyValuePair(key, val) {}
+function createObjectWithKeyValuePair(key, val) {
+  let obj = {};
+  obj[key] = val;
+  return obj;
+}
 
 /**
  * getNameFromObject()
