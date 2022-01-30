@@ -102,24 +102,16 @@ function getCartTotal(products) {
     //> "Same city."
  */
 function compareLocations(address1, address2) {
-  // 4 = same building
-  // 3 = same city
-  // 1 = same state
-  // 0 = "Addresses are not near each other"
-
-  //console.log(address1);
   let score = 0;
   for (let each in address1) {
-    if (each == 'state'){
-      if (address1[each] != address2[each]){
+    if (each == 'state') {
+      if (address1[each] != address2[each]) {
         return "Addresses are not near each other.";
       }
     }
     if (address1[each] == address2[each]) {
       score++;
-      //console.log(address1[each]);
     }
-    //console.log(`You have ${score} points`);
   }
   switch (score) {
     case 0:
@@ -178,7 +170,30 @@ function compareLocations(address1, address2) {
     //>   },
     //> ];
  */
-function gradeAssignments(assignments) {}
+function gradeAssignments(assignments) {
+  for (let each in assignments) {
+    if (assignments[each].kind !== 'PASS-FAIL' && assignments[each].kind !== "PERCENTAGE") {
+      assignments[each].status = `SCORE: ${assignments[each].score.received}/${assignments[each].score.max}`;
+    } else if (assignments[each].kind == 'PASS-FAIL') {
+      if (assignments[each].score.received == assignments[each].score.max) {
+        assignments[each].status = "PASSED";
+      } else {
+        assignments[each].status = "FAILED";
+      }
+    } else if (assignments[each].kind == 'PERCENTAGE') {
+        let scorePCT = 0;
+        scorePCT = (assignments[each].score.received / assignments[each].score.max)
+        scorePCT *= 100;
+        scorePCT = scorePCT.toFixed(1);
+        if (scorePCT >= 80){
+          assignments[each].status = `PASSED: ${scorePCT}%`;
+        } else {
+          assignments[each].status = `FAILED: ${scorePCT}%`;
+        }
+    }
+  }
+  return assignments;
+}
 
 /**
  * createLineOrder()
@@ -203,7 +218,9 @@ function gradeAssignments(assignments) {}
     createLineOrder(people);
     //> [ "Ray Anderson", "America Marsh", "Wade Carson", "Patience Patel" ]
  */
-function createLineOrder(people) {}
+function createLineOrder(people) {
+
+}
 
 module.exports = {
   applyDiscount,
