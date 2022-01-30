@@ -191,7 +191,7 @@ function getFullAddress(person) {
     };
  */
 function getFlatObject(person) {
-  return {
+  let newPerson = {
     first: person.names.first,
     middle: person.names.middle,
     last: person.names.last,
@@ -200,8 +200,9 @@ function getFlatObject(person) {
     city: person.address.city,
     state: person.address.state,
     zip: person.address.zip,
-    numbers: person.numbers,
+    numbers: numbers,
   }
+  return newPerson
 }
 
 // Do not change the code below.
