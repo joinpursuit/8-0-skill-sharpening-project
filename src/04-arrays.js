@@ -26,7 +26,11 @@ function createEmptyArray() {
  *  createArrayWithTwoElements(true, false);
  *  //> [ true, false ]
  */
-function createArrayWithTwoElements(a, b) {}
+function createArrayWithTwoElements(a, b) {
+  let arr = [];
+  arr.push(a, b);
+  return arr;
+}
 
 /**
  * getArrayLength()
