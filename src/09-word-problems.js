@@ -19,7 +19,20 @@
  *  applyDiscount(1000, 9, true);
  *  //> 700
  */
-function applyDiscount(priceInCents, age, hasMembership) {}
+function applyDiscount(priceInCents, age, hasMembership) {
+  let discount = 1;
+  if (age <= 10 || age >= 65) {
+    if (hasMembership) {
+      discount = 0.70;
+    } else {
+      discount = 0.90;
+    }
+  } else if (hasMembership) {
+    discount = 0.80;
+  }
+  let total = priceInCents * discount;
+  return total;
+}
 
 /**
  * getCartTotal()
@@ -40,7 +53,15 @@ function applyDiscount(priceInCents, age, hasMembership) {}
     getCartTotal(cart);
  *  //> "$30.00"
  */
-function getCartTotal(products) {}
+function getCartTotal(products) {
+  curTotal = 0;
+  for (let product of products) {
+    curTotal += ((product.priceInCents * product.quantity));
+    //console.log(product);
+  }
+  curTotal /= 100;
+  return `$${curTotal.toFixed(2)}`;
+}
 
 /**
  * compareLocations()
@@ -80,7 +101,37 @@ function getCartTotal(products) {}
     compareLocations(address1, address2);
     //> "Same city."
  */
-function compareLocations(address1, address2) {}
+function compareLocations(address1, address2) {
+  // 4 = same building
+  // 3 = same city
+  // 1 = same state
+  // 0 = "Addresses are not near each other"
+
+  //console.log(address1);
+  let score = 0;
+  for (let each in address1) {
+    if (each == 'state'){
+      if (address1[each] != address2[each]){
+        return "Addresses are not near each other.";
+      }
+    }
+    if (address1[each] == address2[each]) {
+      score++;
+      //console.log(address1[each]);
+    }
+    //console.log(`You have ${score} points`);
+  }
+  switch (score) {
+    case 0:
+      return "Address are not near each other";
+    case 1:
+      return "Same state.";
+    case 3:
+      return "Same city.";
+    case 4:
+      return "Same building.";
+  }
+}
 
 /**
  * gradeAssignments()
