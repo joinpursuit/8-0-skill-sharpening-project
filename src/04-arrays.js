@@ -124,7 +124,10 @@ function removeElementFromEndOfArray(array) {
  *  addElementToFrontOfArray([ 10 ], 9);
  *  //> [ 9, 10 ]
  */
-function addElementToFrontOfArray(array, element) {}
+function addElementToFrontOfArray(array, element) {
+  array.unshift(element);
+  return array;
+}
 
 /**
  * removeElementFromFrontOfArray()
