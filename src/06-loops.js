@@ -167,7 +167,6 @@ function firstIndexFound(array, target) {
     if (array[i] === target) {
       return i;
     }
-    i++;
   }
   return -1;
 }
@@ -190,6 +189,7 @@ function firstIndexFound(array, target) {
  *  lastIndexFound([ "left", "right", "left" ], "up");
  *  //> -1
  */
+
 function lastIndexFound(array, target) {}
 
 /**
