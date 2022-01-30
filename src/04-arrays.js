@@ -11,7 +11,7 @@
  *  //> []
  */
 function createEmptyArray() {
-return 
+return [];
 }
 
 /**
@@ -27,7 +27,7 @@ return
  *  //> [ true, false ]
  */
 function createArrayWithTwoElements(a, b) {
-return 
+return [a , b];
 }
 
 /**
@@ -42,7 +42,7 @@ return
  *  //> 3
  */
 function getArrayLength(array) {
-  return 
+  return array.length; 
 }
 
 /**
@@ -57,7 +57,9 @@ function getArrayLength(array) {
  *  getFirstElementOfArray([ 10, 20, 30 ]);
  *  //> 10
  */
-function getFirstElementOfArray(array) {}
+function getFirstElementOfArray(array) {
+  return array[0];
+}
 
 /**
  * getLastElementOfArray()
@@ -71,7 +73,9 @@ function getFirstElementOfArray(array) {}
  *  getLastElementOfArray([ null, undefined ]);
  *  //> undefined
  */
-function getLastElementOfArray(array) {}
+function getLastElementOfArray(array) {
+  return array[array.length -1];
+}
 
 /**
  * addElementToEndOfArray()
@@ -85,7 +89,9 @@ function getLastElementOfArray(array) {}
  *  addElementToEndOfArray([ 10 ], 9);
  *  //> [ 10, 9 ]
  */
-function addElementToEndOfArray(array, element) {}
+function addElementToEndOfArray(array, element) {
+  return array.push();
+}
 
 /**
  * removeElementFromEndOfArray()
@@ -98,7 +104,9 @@ function addElementToEndOfArray(array, element) {}
  *  removeElementFromEndOfArray([ 10, 9, 8 ]);
  *  //> 8
  */
-function removeElementFromEndOfArray(array) {}
+function removeElementFromEndOfArray(array) {
+  return array.pop();
+}
 
 /**
  * addElementToFrontOfArray()
@@ -112,7 +120,9 @@ function removeElementFromEndOfArray(array) {}
  *  addElementToFrontOfArray([ 10 ], 9);
  *  //> [ 9, 10 ]
  */
-function addElementToFrontOfArray(array, element) {}
+function addElementToFrontOfArray(array, element) {
+  return array.unshift();
+}
 
 /**
  * removeElementFromFrontOfArray()
@@ -125,7 +135,9 @@ function addElementToFrontOfArray(array, element) {}
  *  removeElementFromFrontOfArray([ 10, 9, 8 ]);
  *  //> 10
  */
-function removeElementFromFrontOfArray(array) {}
+function removeElementFromFrontOfArray(array) {
+  return array.shift();
+}
 
 /**
  * getMiddleElement()

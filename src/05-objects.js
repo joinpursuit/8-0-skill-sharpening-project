@@ -10,7 +10,7 @@
  *  //> {}
  */
 function createEmptyObject() {
-
+return {}; 
 }
 
 /**
@@ -25,7 +25,7 @@ function createEmptyObject() {
  *  //> { whateverKey: 19 }
  */
 function createObjectWithValue(val) {
-
+return {keys: val};
 }
 
 /**
@@ -40,7 +40,7 @@ function createObjectWithValue(val) {
  *  //> { left: false }
  */
 function createObjectWithKey(key) {
-
+return 
 }
 
 
@@ -57,7 +57,9 @@ function createObjectWithKey(key) {
  *  //> { left: "right" }
  */
 function createObjectWithKeyValuePair(key, val) {
-
+const bag = {
+  key:val 
+}
 }
 
 /**
