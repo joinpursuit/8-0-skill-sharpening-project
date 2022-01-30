@@ -44,7 +44,8 @@ function rangeOdd(min, max) {
 /**
  * rangeEveryOther()
  * ---------------------
- * Takes in range (inclusive) and returns an array in increasing order of only every other element. Start by including the first number.
+ * Takes in range (inclusive) and returns an array in increasing order of only 
+ * every other element. Start by including the first number.
  * @param {number} min
  * @param {number} max
  * @returns {number[]}
@@ -54,11 +55,11 @@ function rangeOdd(min, max) {
  *  //> [ 11, 13, 15, 17 ]
  */
 function rangeEveryOther(min, max) {
-  // let myArray = [];
-  // for (i = min; i < max; i += 2){
-  //   myArray.push(i)
-  // }
-  // return myArray;
+  let myArray = [];
+  for (i = min; i <= max; i+=2){
+    myArray.push(i)
+  }
+  return myArray
 }
 
 /**
@@ -82,10 +83,10 @@ function rangeEveryOther(min, max) {
  *  //> false
  */
 function containsWhileLoop(array, target) {
-  while (array.indexOf(target)){
+  while (array.indexOf(target) !== -1){
     return true;
-    } 
-  return false ; //3
+  }
+  return false;
 }
 
 /**
@@ -108,7 +109,14 @@ function containsWhileLoop(array, target) {
  *  containsForLoop([ "left", "up", "right" ], "down");
  *  //> false
  */
-function containsForLoop(array, target) {}
+function containsForLoop(array, target) {
+  for (i = 0; i < array.length; i++){
+    if (array[i] === target) {
+      return true;
+    }
+  }   
+  return false;
+}
 
 /**
  * targetCount()
@@ -122,7 +130,16 @@ function containsForLoop(array, target) {}
  *  targetCount([ 10, 20, 10, 20, 30 ], 10);
  *  //> 2
  */
-function targetCount(array, target) {}
+function targetCount(array, target) {
+  let count = 0;
+
+  for (i =0; i < array.length; i++){
+    if (array[i] === target){
+      count += 1;
+    }
+  }
+  return count
+}
 
 /**
  * firstIndexFound()
@@ -142,12 +159,18 @@ function targetCount(array, target) {}
  *  firstIndexFound([ "left", "right", "left" ], "up");
  *  //> -1
  */
-function firstIndexFound(array, target) {}
+function firstIndexFound(array, target) {
+  while (array.indexOf(target) !== -1){
+    return array.indexOf(target);
+  }
+  return -1;
+}
 
 /**
  * lastIndexFound()
  * ---------------------
- * Returns the last index that the `target` is found at in the array. If the `target` is not found, it should return `-1`.
+ * Returns the last index that the `target` is found at in the array. 
+ * If the `target` is not found, it should return `-1`.
  *
  * NOTE: You may NOT use the `.indexOf()` method.
  *
@@ -162,7 +185,13 @@ function firstIndexFound(array, target) {}
  *  lastIndexFound([ "left", "right", "left" ], "up");
  *  //> -1
  */
-function lastIndexFound(array, target) {}
+function lastIndexFound(array, target) {
+  while (array.indexOf(target) !== -1){
+    return array.lastIndexOf(target);
+  }
+  return -1;
+}
+
 
 /**
  * timesIndex()
@@ -176,7 +205,14 @@ function lastIndexFound(array, target) {}
  *  //> [ 7 * 0, 10 * 1, 11 * 2 ]
  *  //> [ 0, 10, 22 ]
  */
-function timesIndex(array) {}
+function timesIndex(array) {
+  let total = [];
+
+  for (i = 0; i < array.length; i++){
+    total.push(array[i] * i);
+  }
+  return total
+}
 
 /**
  * cumulativeSum()
@@ -190,7 +226,20 @@ function timesIndex(array) {}
  *  //> [ 5, 5 + 2, 5 + 2 + 9 ]
  *  //> [ 5, 7, 16 ]
  */
-function cumulativeSum(array) {}
+function cumulativeSum(array) {
+  let newArray = [array[0]];
+  //let emptyArray = JSON.parse(JSON.stringify(array));
+  let emptyArray = [];
+  
+  if (!array.length) { 
+    return emptyArray;
+  } 
+  
+  for (i = 1; i < array.length; i++){
+    newArray.push(array[i] + newArray[i - 1]);
+  }
+  return newArray;
+}
 
 // Do not change anything below this line.
 module.exports = {
