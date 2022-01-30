@@ -53,7 +53,13 @@ function rangeOdd(min, max) {
  *  rangeEveryOther(11, 18);
  *  //> [ 11, 13, 15, 17 ]
  */
-function rangeEveryOther(min, max) {}
+function rangeEveryOther(min, max) {
+  const numArr = [];
+  for (min; min <= max; min+=2) {
+      numArr.push(min);
+  }
+  return numArr;
+}
 
 /**
  * containsWhileLoop()
