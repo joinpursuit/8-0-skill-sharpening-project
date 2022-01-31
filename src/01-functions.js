@@ -193,7 +193,6 @@ return `${a} ${b} ${c} ${d} ${e}`;
  */
 function getFirstAndLastCharacter(a) {
   return `${a.charAt(0)}${a.charAt(a.length-1)}`
-  
 }
 
 // Do not change the code below.
