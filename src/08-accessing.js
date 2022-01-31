@@ -102,7 +102,7 @@ function getFirstPhoneNumber(person) {
 /**
  * getLastPhoneNumber()
  * ---------------------
- * Return the first phone number associated with the person.
+ * Return the last phone number associated with the person.
  *
  * NOTE: There will always be at least one phone number.
  *
@@ -113,7 +113,9 @@ function getFirstPhoneNumber(person) {
  *  getLastPhoneNumber(person);
  *  //> 7185558611
  */
-function getLastPhoneNumber(person) {}
+function getLastPhoneNumber(person) {
+  return person.numbers[person.numbers.length-1];
+}
 
 /**
  * getFullName()
