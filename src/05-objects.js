@@ -25,7 +25,6 @@ function createEmptyObject() {
  *  //> { whateverKey: 19 }
  */
 function createObjectWithValue(val) {
-  
   return {key : val};
 }
 
@@ -42,7 +41,6 @@ function createObjectWithValue(val) {
  */
 function createObjectWithKey(key) {
   return {[key]:true};
-  
 }
 
 /**
@@ -123,7 +121,6 @@ function addValueToObject(object, val) {
 function addKeyToObject(object, key) {
   object[key] = "Hello";
   return object;
-  
 }
 
 /**
@@ -140,8 +137,8 @@ function addKeyToObject(object, key) {
  *  //> { up: true, left: false }
  */
 function addKeyValuePairToObject(object, key, val) {
-object[key]=val;
-return object;
+  object[key] = val;
+  return object;
 }
 
 /**

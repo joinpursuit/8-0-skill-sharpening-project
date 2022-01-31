@@ -124,8 +124,8 @@ function removeElementFromEndOfArray(array) {
  *  //> [ 9, 10 ]
  */
 function addElementToFrontOfArray(array, element) {
-   array.unshift(element);
-   return array;
+  array.unshift(element);
+  return array;
 }
 
 /**
@@ -159,11 +159,8 @@ function removeElementFromFrontOfArray(array) {
  */
 function getMiddleElement(array) {
   let size = array.length;
-  let concat = array;
   if (size % 2 == 1) {
-  
    return array[(size/2)-.5];
-
 }
 }
 

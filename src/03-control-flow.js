@@ -15,9 +15,9 @@
  *  //> false
  */
 function isEqual(a, b) {
-  if(a === b){
+  if (a === b) {
     return true;
-  } else{
+  } else {
     return false;
   }
 }
@@ -35,7 +35,7 @@ function isEqual(a, b) {
  *  //> 19
  */
 function findLarger(a, b) {
-  if(a > b){
+  if (a > b) {
     return a;
   } else{
     return b;
@@ -58,13 +58,7 @@ function findLarger(a, b) {
  *  //> "tie"
  */
 function findLargerOrTie(a, b) {
-  if(a > b){
-    return a;
-  } else if(b > a){
-    return b;
-  } else if(a === b){
-    return "tie";
-  }
+  return (a > b) ? a : (a < b) ? b: "tie"; 
 }
 
 /**
@@ -87,11 +81,11 @@ function findLargerOrTie(a, b) {
  */
 function positiveNegativeOrZero(a) {
   let convertToString = a.toString();
-  if(a === 0){
+  if (a === 0) {
     return "Zero";
-  }else if (convertToString.charAt(0) === "-"){
+  } else if (convertToString.charAt(0) === "-") {
     return "Negative";
-  } else{
+  } else {
     return "Positive";
   }
 }
@@ -116,14 +110,13 @@ function positiveNegativeOrZero(a) {
  *  //> "Hello World"
  */
 function aroundTheWorldGreeting(language = "english") {
-  
-  if(language === "english"){
+  if (language === "english") {
     return "Hello World";
-  } if(language === "spanish"){
+  } if (language === "spanish") {
     return "Hola Mundo";
-  } if(language === "german"){
+  } if (language === "german") {
     return "Hallo Welt";
-  } if(language === "" || language === null){
+  } if (language === "" || language === null) {
     return "Hello World";
   }
 }
@@ -154,15 +147,15 @@ function aroundTheWorldGreetingWithSwitch(language = 'english') {
     case 'english':
       return 'Hello World';
       break;
-      case 'spanish':
-        return 'Hola Mundo';
-        break;
-        case 'german':
-          return 'Hallo Welt';
-          break;
-          case '':
-            return 'Hello World';
-            break;
+    case 'spanish':
+      return 'Hola Mundo';
+      break;
+    case 'german':
+      return 'Hallo Welt';
+      break;
+    case '':
+      return 'Hello World';
+      break;
   }
 }
 
@@ -184,15 +177,15 @@ function aroundTheWorldGreetingWithSwitch(language = 'english') {
  *  //> "A"
  */
 function calculateLetterGrade(grade) {
-  if(grade >= 90){
+  if (grade >= 90) {
     return "A";
-  }else if(grade >= 80){
+  } else if (grade >= 80) {
     return "B";
-  }else if(grade >= 70){
+  } else if(grade >= 70) {
     return "C";
-  }else if(grade >= 60){
+  } else if(grade >= 60) {
     return "D";
-  }else if(grade < 60){
+  } else if(grade < 60) {
     return "F";
   }
 }
@@ -214,9 +207,9 @@ function calculateLetterGrade(grade) {
  *  //> "1 pig"
  */
 function animalCounts(animal, numberOfAnimals) {
-  if (numberOfAnimals >1){
+  if (numberOfAnimals >1) {
     return numberOfAnimals +" "+ animal + "s";  
-  } else{
+  } else {
     return numberOfAnimals +" "+ animal;
   }
 }
@@ -259,8 +252,7 @@ function evenOrOdd(a) {
  *  //> "Even"
  */
 function evenOrOddWithTernary(a) {
-  let result = (a % 2 === 0) ? "Even" : "Odd";
-  return result;
+  return (a % 2 === 0) ? "Even" : "Odd";
 }
 
 // Do not change any code below this line.

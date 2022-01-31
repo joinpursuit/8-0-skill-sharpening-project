@@ -17,7 +17,6 @@ function shoutForLoop(array) {
   let arr = [];
   for(let key of array){
   add =  key +"!";
-  //console.log(add);
   arr.push(add);
   }
   return arr;
@@ -38,19 +37,15 @@ function shoutForLoop(array) {
  *  //> [ "A!", "Very!", "Happy!", "Array!" ];
  */
 function shoutWhileLoop(array) {
-  let arr = [];
-  let add;
-  let n = -1;
-
-while (n < array.length-1) {
-  n++;
-  
- add = array[n]+"!";
+ let arr = [];
+ let add;
+ let n = -1;
+ while (n < array.length-1) {
+  n++; 
+  add = array[n]+"!";
   arr.push(add);
-
-}
-return arr;
-
+ }
+ return arr;
 }
 
 /**
@@ -70,10 +65,9 @@ return arr;
 function shoutForOfLoop(array) {
   let add;
   let arr = [];
-  for(let key of array){
-  add =  key +"!";
-  //console.log(add);
-  arr.push(add);
+  for (let key of array) {
+   add = key +"!";
+   arr.push(add);
   }
   return arr;
 }
@@ -91,12 +85,9 @@ function shoutForOfLoop(array) {
  */
 function sumArray(array) {
   let sum = 0;
-  
-  for(let key of array){
-    sum = sum + key;
-  
+  for (let key of array) {
+   sum = sum + key;
   }
-  
   return sum;
 }
 
@@ -112,15 +103,13 @@ function sumArray(array) {
  *  //> [ 11, 15, 37 ]
  */
 function oddArray(array) {
-  let newArr=[];
-  
-  //> [ 11, 15, 37 ]
-for(let key of array){
-if(key %2 !== 0){
-newArr.push(key);
-}
-}
-return newArr;
+ let newArr=[];
+ for (let key of array) {
+  if (key %2 !== 0) {
+  newArr.push(key);
+  }
+ }
+ return newArr;
 }
 
 /**
@@ -136,13 +125,12 @@ return newArr;
  */
 function evenArray(array) {
   let newArr=[];
-  
-for(let key of array){
-if(key %2 === 0){
-newArr.push(key);
-}
-}
-return newArr;
+ for(let key of array){
+  if(key %2 === 0){
+   newArr.push(key);
+  }
+ }
+ return newArr;
 }
 
 /**
@@ -158,12 +146,10 @@ return newArr;
  */
 function findSmallest(array) {
   var min = array[0];
-
   for (var i = 0; i < array.length ; i++) {
-      if (array[i] < min) {
-          console.log('Anterior minimo: ' + min + ', nuevo minimo: ' + array[i]);
-          min = array[i];
-      }
+    if (array[i] < min) {
+      min = array[i];
+    }
   }
   return min;
 }
@@ -180,15 +166,13 @@ function findSmallest(array) {
  *  //> 11
  */
 function findLargest(array) {
-  var min = array[0];
-
-for (var i = 0; i < array.length ; i++) {
-    if (array[i] > min) {
-        console.log('Anterior minimo: ' + min + ', nuevo minimo: ' + array[i]);
-        min = array[i];
-    }
-}
-return min;
+ var max = array[0];
+ for (var i = 0; i < array.length ; i++) {
+  if (array[i] > max) {
+   max = array[i];
+  }
+ }
+ return max;
 }
 
 /**
@@ -208,9 +192,9 @@ return min;
  */
 function findEqual(array, selected) {
   if(array.includes(selected)){
-    return true;
+   return true;
   } else{
-    return false;
+   return false;
   }
 }
 
@@ -230,8 +214,14 @@ function findEqual(array, selected) {
  */
 
 function removeDuplicates(array) {
-  let arr = [...new Set(array)]
-  return arr;
+let newArr = [];
+for(var i = 0; i < array.length; i++) {
+  const element = array[i];
+  if (!newArr.includes(array[i])) {
+    newArr.push(element);
+  }
+}
+return newArr; 
 }
 
 // Do not change any code below this line.

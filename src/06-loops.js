@@ -12,10 +12,9 @@
  *  (3 + 4 + 5 + 6 + 7 = 25)
  */
 function rangeSum(min, max) {
-  let sum=0;
-  for(let i=min; i<=max; i++){
+  let sum = 0;
+  for (let i = min; i <= max; i++) {
     sum = sum + i;
-
   }
   return sum;
 }
@@ -34,12 +33,10 @@ function rangeSum(min, max) {
  */
 function rangeOdd(min, max) {
   let arr = [];
-  for(let i=max; i>=min; i--){
-    if(i%2!==0){
+  for (let i = max; i >= min; i--) {
+    if( i%2 !== 0) {
       arr.push(i);
-    
-    }
-    
+    }   
   }
   return arr;
 }
@@ -57,22 +54,17 @@ function rangeOdd(min, max) {
  *  //> [ 11, 13, 15, 17 ]
  */
 function rangeEveryOther(min, max) {
-  let arr=[];
-  let newArr=[];
+  let arr = [];
+  let newArr = [];
   let everyOther;
-  
-  
-  for(i=min; i<=max; i++){
+  for(i = min; i <= max; i++){
     arr.push(i);
   }
-  for(i=0; i<arr.length; i++){
-    
-   if(i%2===0){
-     console.log(arr[i]);
+  for (i = 0; i < arr.length; i++){   
+   if (i %2 === 0) {
      everyOther = arr[i];
      newArr.push(everyOther);
-   }
-  
+   } 
   }
   return newArr;
 }
@@ -100,16 +92,14 @@ function rangeEveryOther(min, max) {
 function containsWhileLoop(array, target) {
 let result;
 let n = -1;
-while (n < array.length-1){
+ while (n < array.length - 1) {
   n++;
-console.log(n);
-if(array[n] === target){
-result = true;
-break;
-} else{
-  result=false;
-  
-}
+  if (array[n] === target) {
+  result = true;
+  break;
+  } else {
+  result=false; 
+  }
 }
 return result;
 }
@@ -136,14 +126,12 @@ return result;
  */
 function containsForLoop(array, target) {
 let result;
-for(let i=0; i<=array.length; i++){
-console.log(i);
-if(array[i] === target){
+for (let i = 0; i <= array.length; i++) {
+if (array[i] === target) {
 result = true;
 break;
-} else{
-  result=false;
-  
+} else {
+result = false; 
 }
 }
 return result;
@@ -165,13 +153,11 @@ function targetCount(array, target) {
   let result;
   let arr = [];
   let count;
-  for(let i=0; i<=array.length; i++){
-  
-  if(array[i] === target){
-  result = true;
-  console.log(i);
-  arr.push(i);
-  } 
+  for (let i=0; i <= array.length; i++) {
+   if (array[i] === target) {
+    result = true;
+    arr.push(i);
+   } 
   }
   count = arr.length;
   return count;
@@ -197,18 +183,15 @@ function targetCount(array, target) {
  */
 function firstIndexFound(array, target) {
   let result;
-  for(let i=0; i<=array.length; i++){
-  
-  if(array[i] === target){
-  result = true;
-  
-  return i;
-  break;
-  
-  } 
+  for (let i=0; i <= array.length; i++) {
+   if (array[i] === target) {
+    result = true;
+    return i;
+    break;
+   } 
   }
-  if(!result){
-    return -1;
+  if (!result) {
+   return -1;
   }
 }
 
@@ -231,23 +214,20 @@ function firstIndexFound(array, target) {
  *  //> -1
  */
 function lastIndexFound(array, target) {
-let arr = [];
-let count;
-let result;
-for(let i=0; i<=array.length; i++){
-
-if(array[i] === target){
-result = true;
-arr.push(i);
-
-} 
-
-}
-if(result){
-return arr[arr.length-1];
-}if(!result){
+ let arr = [];
+ let count;
+ let result;
+ for(let i=0; i <= array.length; i++){
+  if(array[i] === target){
+   result = true;
+   arr.push(i);
+  } 
+ }
+ if (result) {
+  return arr[arr.length - 1];
+ } if (!result) {
   return -1;
-}
+  }
 }
 
 /**
@@ -263,17 +243,13 @@ return arr[arr.length-1];
  *  //> [ 0, 10, 22 ]
  */
 function timesIndex(array) {
-let arr = [];
-let multiply;
-
-for(let i=0; i<=array.length-1; i++){
-
-multiply = array[i]*i;
-console.log(multiply);
-arr.push(multiply);
-
-} 
-return arr;
+ let arr = [];
+ let multiply;
+ for (let i = 0; i <= array.length - 1; i++) {
+  multiply = array[i] * i;
+  arr.push(multiply);
+ } 
+ return arr;
 }
 
 /**
@@ -289,15 +265,13 @@ return arr;
  *  //> [ 5, 7, 16 ]
  */
 function cumulativeSum(array) {
-let sum = 0;
-let number = [];
-  for(let i=0; i<=array.length-1; i++){
-    sum = sum + array[i];
-    number.push(sum);
-    
-  }
-  return number;
-
+ let sum = 0;
+ let number = [];
+ for (let i = 0; i <= array.length - 1; i++) {
+  sum = sum + array[i];
+  number.push(sum); 
+ }
+ return number;
 }
 
 // Do not change anything below this line.
