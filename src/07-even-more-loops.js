@@ -96,7 +96,15 @@ function sumArray(array) {
  *  oddArray([ 11, 15, 20, 22, 37 ]);
  *  //> [ 11, 15, 37 ]
  */
-function oddArray(array) {}
+function oddArray(array) {
+  let newArray = [];
+  for (let nums of array){
+   if (nums % 2 !==0){
+    newArray.push(nums);
+   }
+  }
+  return newArray;
+};
 
 /**
  * evenArray()
@@ -109,7 +117,15 @@ function oddArray(array) {}
  *  evenArray([ 11, 15, 20, 22, 37 ]);
  *  //> [ 20, 22 ]
  */
-function evenArray(array) {}
+function evenArray(array) {
+  let newArray = [];
+  for (let nums of array){
+   if (nums % 2 === 0){
+    newArray.push(nums);
+   }
+  }
+  return newArray;
+};
 
 /**
  * findSmallest()
@@ -122,7 +138,16 @@ function evenArray(array) {}
  *  findSmallest([ 0, 11, -2, 5 ]);
  *  //> -2
  */
-function findSmallest(array) {}
+function findSmallest(array) {
+  let smallest = array[0];
+
+  for (let i = 0; i < array.length; i++){
+    if (array[i] < smallest){
+      smallest = array[i]
+    }
+  }
+  return smallest;
+};
 
 /**
  * findLargest()
@@ -135,7 +160,16 @@ function findSmallest(array) {}
  *  findLargest([ 0, 11, -2, 5 ]);
  *  //> 11
  */
-function findLargest(array) {}
+function findLargest(array) {
+  let largest = array[array.length-1];
+
+  for (let i = 0; i < array.length; i++){
+    if (array[i] > largest){
+      largest = array[i]
+    }
+  }
+  return largest;
+};
 
 /**
  * findEqual()
@@ -152,7 +186,13 @@ function findLargest(array) {}
  *  findEqual([ 0, 11, -2, 5 ], 9);
  *  //> false
  */
-function findEqual(array, selected) {}
+function findEqual(array, selected) {
+  for (let i = 0; i < array.length; i++){
+    if (array[i] === selected)
+    return true;
+  }
+  return false;
+};
 
 /**
  * removeDuplicates()
@@ -169,7 +209,15 @@ function findEqual(array, selected) {}
  *  //> [ 1, 11, 2, 3, 4, 9 ]
  */
 
-function removeDuplicates(array) {}
+function removeDuplicates(array) {
+  let newArray = [];
+  for (let element of array){
+    if (!newArray.includes(element)) {
+      newArray.push(element);
+    }
+  }
+  return newArray;
+};
 
 // Do not change any code below this line.
 module.exports = {
