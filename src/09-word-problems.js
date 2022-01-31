@@ -115,7 +115,24 @@ function getCartTotal(products) {
     compareLocations(address1, address2);
     //> "Same city."
  */
-function compareLocations(address1, address2) {}
+function compareLocations(address1, address2) {
+  let compareStr = '';
+
+  // Compare the different keys of the two objects to determine what string to assign to `compareStr`.
+  if (JSON.stringify(address1) === JSON.stringify(address2)) {
+    compareStr = 'Same building.';
+  } else if (JSON.stringify(address1.city) === JSON.stringify(address2.city) && 
+  JSON.stringify(address1.state) === JSON.stringify(address2.state) && JSON.stringify(address1.zip) === JSON.stringify(address2.zip)) {
+    compareStr = 'Same city.';
+  } else if (JSON.stringify(address1.state) === JSON.stringify(address2.state)) {
+    compareStr = 'Same state.'
+  } else {
+    compareStr = 'Addresses are not near each other.'
+  }
+  
+  // Return the `compareStr` string after the control flow decision making above.
+  return compareStr;
+}
 
 /**
  * gradeAssignments()
