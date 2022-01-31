@@ -19,7 +19,29 @@
  *  applyDiscount(1000, 9, true);
  *  //> 700
  */
-function applyDiscount(priceInCents, age, hasMembership) {}
+function applyDiscount(priceInCents, age, hasMembership) {
+  let cost = 0
+  if(age <= 10 || age >= 65){
+    if(hasMembership === true){
+      cost = priceInCents * .7
+      return cost
+    }
+    if(hasMembership === false){
+      cost = priceInCents * .9
+      return cost
+    }
+  }
+  if(age > 10 || age < 65){
+    if(hasMembership === true){
+      cost = priceInCents * .8
+      return cost
+    }
+    if(hasMembership === false){
+      cost = priceInCents 
+      return cost
+  }
+  }
+}
 
 /**
  * getCartTotal()
@@ -40,7 +62,13 @@ function applyDiscount(priceInCents, age, hasMembership) {}
     getCartTotal(cart);
  *  //> "$30.00"
  */
-function getCartTotal(products) {}
+function getCartTotal(products) {
+  cost = 0
+  for(i = 0; i < products.length ; i++ ){
+    cost += (products[i].priceInCents * products[i].quantity) / 100;
+  }
+  return `$${cost.toFixed(2)}`;
+}
 
 /**
  * compareLocations()
@@ -80,7 +108,27 @@ function getCartTotal(products) {}
     compareLocations(address1, address2);
     //> "Same city."
  */
-function compareLocations(address1, address2) {}
+function compareLocations(address1, address2) {
+  let result = "";
+  let val1 = Object.values(address1);
+  let val2 = Object.values(address2);
+  for(let i = 0; i < val1.length; i++){
+    for(let j = 0; i < val2.length; i++){
+      if(val1 === val2){
+        result = "Same Building";
+      }
+      else if(val1[1] === val2[1]){
+        if(val1[2] === val2[2])
+        result = "Same city.";
+      }
+      else if(val1[2] === val2[2]){
+        result = "Same state.";
+      }else{
+        result = "Addresses are not near each other.";
+      }
+    }
+  }return result;
+}
 
 /**
  * gradeAssignments()
@@ -127,7 +175,32 @@ function compareLocations(address1, address2) {}
     //>   },
     //> ];
  */
-function gradeAssignments(assignments) {}
+function gradeAssignments(assignments) {
+  let newArr = [];
+  for(let i = 0; i <= assignments.length-1; i++){
+    if(assignments[i].kind === "PASS-FAIL"){
+      if(assignments[i].score.received < assignments[i].score.max){
+            assignments[i].status = "FAILED";
+      } else {
+            assignments[i].status = "PASSED";
+      }
+      newArr.push(assignments[i]);
+    }
+    if(assignments[i].kind === "PERCENTAGE"){
+      if(assignments[i].score.received/assignments[i].score.max < .8){
+            assignment[i].status = `FAILED: ${((assignments[i].score.received/assignments[i].score.max)*100).toFixed(2)}`
+        } else {
+            assignment[i].status = `PASSED: ${((assignments[i].score.received/assignments[i].score.max)*100).toFixed(2)}`
+        }
+          newArr.push(assignments[i])
+        }
+      if(assignments[i].kind === "ESSAY"){
+        assignments[i].status = `SCORE: ${assignments[i].score.received}/${assignments[i].score.max}`
+      }
+      newArr.push(assignments[i])
+      }
+      return newArr;
+    }
 
 /**
  * createLineOrder()
