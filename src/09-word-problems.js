@@ -52,11 +52,13 @@ function applyDiscount(priceInCents, age, hasMembership) {
  *  //> "$30.00"
  */
 function getCartTotal(products) {
-  let total = 0;
+  let totalCost = 0;
+  for (let i = 0; i < products.length; i++)
   if (products.name) {
-   total = products.priceInCents * products.quantity
+   totalCost = products.priceInCents * products.quantity
   } 
-  return total.toFixed(2)
+  return `$${totalCost.toFixed(2)}`
+  
 }
 
 /**
