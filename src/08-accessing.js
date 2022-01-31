@@ -32,7 +32,9 @@
  *  getFirstName(person);
  *  //> "Rachel"
  */
-function getFirstName(person) {}
+function getFirstName(person) {
+  return `${person.names['first']}`;
+}
 
 /**
  * getLastName()
