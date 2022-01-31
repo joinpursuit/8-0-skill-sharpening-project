@@ -190,7 +190,25 @@ function getFullAddress(person) {
     };
  */
 function getFlatObject(person) {
-  
+  // Create a new empty object.
+  let newObj = {};
+  // The final flattened object.
+  let finalObj;
+
+  // Extracting key/value pairs from the old nested object into a new flat object.
+  finalObj = Object.assign(newObj, person.names);
+  finalObj = Object.assign(newObj, person.address);
+
+  // Removing the `person.names` and `person.address` key/value pairs from the old object, so that the `person.numbers` array remains behind and we can assign that to the final flattened object.
+  finalObj = delete person.names;
+  finalObj = delete person.address;
+
+  // Add the `person.numbers` array from the old object to the final object.
+  finalObj = Object.assign(newObj, person);
+
+  // Return the final flattened object.
+  return finalObj;
+
 }
 
 // Do not change the code below.
