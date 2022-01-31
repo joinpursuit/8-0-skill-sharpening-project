@@ -202,22 +202,22 @@ function getFullAddress(person) {
     };
  */
 function getFlatObject(person)  {
-  let person2 =  {};
-  for(flatner in person) {
-    if (typeof person[i] === 'object' && person.numbers.isArray(person[i])) {
-      const temp = getFlatObject(person[i]);
-      for(recur in temp) {
-        person2[i + "." +j] = temp[j];
-      }
+  /*let person2 =  {};
+  for (i = 0; i <= person.length; i++) {
+    if(person.key !== person2.key ) {
+      person2[i] === person[i]
     }
-    else {
-      person2[i] = person[i];
-    }
-
     }
   
   return person2;
-};
+}; */
+let person2 = {};
+for (i= 0; i <= person.length; i++) {
+  person2[i] === person[i];
+  person2.flat(15);
+}
+return 
+}
 // Do not change the code below.
 module.exports = {
   getFirstName,

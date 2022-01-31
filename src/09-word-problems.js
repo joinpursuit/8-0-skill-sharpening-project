@@ -163,7 +163,12 @@ function compareLocations(address1, address2) {
     //>   },
     //> ];
  */
-function gradeAssignments(assignments) {}
+function gradeAssignments(assignments) {
+  //pass-fail 
+  if(assignments.score < gradeAssignments.score.max) {
+
+  }
+}
 
 /**
  * createLineOrder()
@@ -191,6 +196,7 @@ function gradeAssignments(assignments) {}
 function createLineOrder(people) {
   members = [];
   nonMem = [];
+  finalLine = [];
   for(i = 0 ; i < people.length; i++) {
   //finalLine = [];
   if(people.hasMembership === true) {
