@@ -92,11 +92,11 @@ function findLargerOrTie(a, b) {
  *  //> "Positive"
  */
 function positiveNegativeOrZero(a) {
-  if ( a < 0) {
-    "Negative";
+  if ( a > 0) {
+   return "Positive";
   }
-  else if ( a > 0) {
-    return "Positive";
+  else if ( a < 0) {
+    return "Negative";
   }
   else {
     return "Zero";
@@ -122,8 +122,16 @@ function positiveNegativeOrZero(a) {
  *  aroundTheWorldGreeting();
  *  //> "Hello World"
  */
-function aroundTheWorldGreeting(language) {
-   
+function aroundTheWorldGreeting(language = "english") {
+   if (language.toLowerCase() === "english") {
+     return "Hello World";
+   }
+   else if (language.toLowerCase() ==="german") {
+     return "Hallo Welt";
+   }
+   else if (language.toLowerCase()=== "spanish") {
+     return "Hola Mundo";
+   }
 }
 
 /**
@@ -147,7 +155,23 @@ function aroundTheWorldGreeting(language) {
  *  aroundTheWorldGreetingWithSwitch();
  *  //> "Hello World"
  */
-function aroundTheWorldGreetingWithSwitch(language) {}
+function aroundTheWorldGreetingWithSwitch(language="english") {
+  let greeting;
+  switch(language) {
+    case "english":
+      greeting = "Hello World";
+      break;
+    case "spanish":
+      greeting = "Hola Mundo";
+      break;
+    case "german":
+      greeting = "Hallo Welt";
+      break;
+    default:
+      greeting = "Hello World";      
+  }
+  return greeting; 
+}
 
 /**
  * calculateLetterGrade()
@@ -166,7 +190,25 @@ function aroundTheWorldGreetingWithSwitch(language) {}
  *  calculateLetterGrade(99);
  *  //> "A"
  */
-function calculateLetterGrade(grade) {}
+function calculateLetterGrade(grade) {
+  let letterGrade;
+  if (grade >= 90) {
+    letterGrade = "A";
+  }
+  else if ( grade >= 80) {
+    letterGrade = "B";
+  }
+  else if (grade >= 70) {
+    letterGrade = "C";
+  }
+  else if (grade >= 60) {
+    letterGrade ="D"
+  }
+  else {
+    letterGrade = "F"
+  }
+  return letterGrade;
+}
 
 /**
  * animalCounts()
@@ -185,7 +227,14 @@ function calculateLetterGrade(grade) {}
  *  //> "1 pig"
  */
 function animalCounts(animal, numberOfAnimals) {
-  
+  let count;
+  if (numberOfAnimals === 1) {
+    count = numberOfAnimals + animal;
+  }
+  if (numberOfAnimals > 1) {
+      count = numberOfAnimals + animal;
+  }
+    return count 
 }
 
 /**
@@ -204,7 +253,12 @@ function animalCounts(animal, numberOfAnimals) {
  *  //> "Even"
  */
 function evenOrOdd(a) {
-
+if (a % 2 === 0) {
+  return "Even";
+}
+else {
+  return "Odd";
+}
 }
 
 /**
@@ -222,7 +276,8 @@ function evenOrOdd(a) {
  *  //> "Even"
  */
 function evenOrOddWithTernary(a) {
-
+let num = (a % 2 === 0) ? "Even" : "Odd";
+return num;
 }
 
 // Do not change any code below this line.

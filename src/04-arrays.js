@@ -90,7 +90,8 @@ function getLastElementOfArray(array) {
  *  //> [ 10, 9 ]
  */
 function addElementToEndOfArray(array, element) {
-  return array.push();
+ array.push(element);
+  return array 
 }
 
 /**
@@ -121,7 +122,8 @@ function removeElementFromEndOfArray(array) {
  *  //> [ 9, 10 ]
  */
 function addElementToFrontOfArray(array, element) {
-  return array.unshift();
+ array.unshift(element)
+ return array 
 }
 
 /**
@@ -153,7 +155,10 @@ function removeElementFromFrontOfArray(array) {
  *  getMiddleElement([ 10, null, "30" ]);
  *  //> null
  */
-function getMiddleElement(array) {}
+function getMiddleElement(array) {
+  let midEl = Math.floor(array.length / 2);
+  return array [midEl]
+}
 
 // Do not change any code below this line.
 module.exports = {

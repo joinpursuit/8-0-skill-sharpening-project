@@ -40,7 +40,9 @@ return {keys: val};
  *  //> { left: false }
  */
 function createObjectWithKey(key) {
-return 
+  let object = {}
+  object[key] = true;
+return object;
 }
 
 
@@ -57,9 +59,9 @@ return
  *  //> { left: "right" }
  */
 function createObjectWithKeyValuePair(key, val) {
-const bag = {
-  key:val 
-}
+let object = {};
+object.key = val;
+return object;
 }
 
 /**
@@ -74,7 +76,7 @@ const bag = {
  *  //> "Jay"
  */
 function getNameFromObject(object) {
-
+return object.name;
 }
 
 /**
@@ -89,7 +91,7 @@ function getNameFromObject(object) {
  *  //> 30
  */
 function getAgeFromObject(object) {
-
+return object.age
 }
 
 /**
@@ -105,7 +107,8 @@ function getAgeFromObject(object) {
  *  //> { left: true, key: false }
  */
 function addValueToObject(object, val) {
-
+object.key = val;
+return object;
 }
 
 /**
@@ -121,7 +124,8 @@ function addValueToObject(object, val) {
  *  //> { right: false, left: true }
  */
 function addKeyToObject(object, key) {
-
+object[key] = 'house'
+return object;
 }
 
 /**
@@ -138,7 +142,8 @@ function addKeyToObject(object, key) {
  *  //> { up: true, left: false }
  */
 function addKeyValuePairToObject(object, key, val) {
-  
+  object[key] = val;
+  return object;
 }
 
 /**
@@ -153,7 +158,10 @@ function addKeyValuePairToObject(object, key, val) {
  *  deleteKeyFromObject({ left: true, right: false }, "left");
  *  //> { right: false }
  */
-function deleteKeyFromObject(object, key) {}
+function deleteKeyFromObject(object, key) {
+  delete object[key];
+  return object;
+}
 
 // Do not change any code below this line.
 module.exports = {
