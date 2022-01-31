@@ -12,7 +12,14 @@
  *  shoutForLoop([ "A", "Very", "Happy", "Array" ]);
  *  //> [ "A!", "Very!", "Happy!", "Array!" ];
  */
-function shoutForLoop(array) {}
+function shoutForLoop(array) {
+  let newArr = []
+  for(let i = 0; i < array.length; i++){
+    shout = array[i] + "!";
+    newArr.push(shout);
+  }
+  return newArr;
+}
 
 /**
  * shoutWhileLoop()
@@ -28,7 +35,16 @@ function shoutForLoop(array) {}
  *  shoutWhileLoop([ "A", "Very", "Happy", "Array" ]);
  *  //> [ "A!", "Very!", "Happy!", "Array!" ];
  */
-function shoutWhileLoop(array) {}
+function shoutWhileLoop(array) {
+  let newArr = [];
+  let i = 0;
+  while(i <= array.length-1){
+    shout = array[i] + "!"
+    newArr.push(shout);
+    i++;
+    } 
+    return newArr;
+}
 
 /**
  * shoutForOfLoop()
@@ -44,7 +60,13 @@ function shoutWhileLoop(array) {}
  *  shoutForOfLoop([ "A", "Very", "Happy", "Array" ]);
  *  //> [ "A!", "Very!", "Happy!", "Array!" ];
  */
-function shoutForOfLoop(array) {}
+function shoutForOfLoop(array) {
+  newArr = [];
+  for(ele of array){
+   newArr.push(ele + "!")
+ }
+ return newArr;
+}
 
 /**
  * sumArray()
@@ -57,7 +79,13 @@ function shoutForOfLoop(array) {}
  *  sumArray([ 10, 0, 10, 11 ]);
  *  //> 31
  */
-function sumArray(array) {}
+function sumArray(array) {
+  let sum = 0
+  for(i = 0; i <= array.length-1; i++){
+    sum += array[i];
+  }
+  return sum;
+}
 
 /**
  * oddArray()
@@ -70,7 +98,15 @@ function sumArray(array) {}
  *  oddArray([ 11, 15, 20, 22, 37 ]);
  *  //> [ 11, 15, 37 ]
  */
-function oddArray(array) {}
+function oddArray(array) {
+  newArr = [];
+  for(let i = 0; i <= array.length-1; i++){
+    if(array[i] % 2 !== 0){
+    newArr.push(array[i]);
+    }
+  }
+  return newArr;
+}
 
 /**
  * evenArray()
@@ -83,7 +119,15 @@ function oddArray(array) {}
  *  evenArray([ 11, 15, 20, 22, 37 ]);
  *  //> [ 20, 22 ]
  */
-function evenArray(array) {}
+function evenArray(array) {
+  newArr = [];
+    for(let i = 0; i < array.length; i++){
+      if(array[i] % 2 === 0){
+      newArr.push(array[i]);
+      }
+    }
+    return newArr;
+}
 
 /**
  * findSmallest()
@@ -96,7 +140,13 @@ function evenArray(array) {}
  *  findSmallest([ 0, 11, -2, 5 ]);
  *  //> -2
  */
-function findSmallest(array) {}
+function findSmallest(array) {
+  let newArr = [];
+  for(let i = 0; i < array.length; i++){
+    newArr.push(array[i]);
+  }
+  return Math.min(...newArr)
+}
 
 /**
  * findLargest()
@@ -109,7 +159,13 @@ function findSmallest(array) {}
  *  findLargest([ 0, 11, -2, 5 ]);
  *  //> 11
  */
-function findLargest(array) {}
+function findLargest(array) {
+  let newArr = [];
+  for(let i = 0; i < array.length; i++){
+    newArr.push(array[i]);
+  }
+  return Math.max(...newArr)
+}
 
 /**
  * findEqual()
@@ -126,7 +182,16 @@ function findLargest(array) {}
  *  findEqual([ 0, 11, -2, 5 ], 9);
  *  //> false
  */
-function findEqual(array, selected) {}
+function findEqual(array, selected) {
+  let i = 0
+  while(i <= array.length-1){
+    if(array[i] === selected){
+      return true;
+    } 
+    i++
+  } 
+    return false;
+}
 
 /**
  * removeDuplicates()
@@ -143,7 +208,16 @@ function findEqual(array, selected) {}
  *  //> [ 1, 11, 2, 3, 4, 9 ]
  */
 
-function removeDuplicates(array) {}
+function removeDuplicates(array) {
+  let newArr = [];
+  for(let i = 0; i < array.length; i++){
+    if(newArr.includes(array[i])){  
+    } else {
+      newArr.push(array[i]);
+    }
+  }
+  return newArr;
+}
 
 // Do not change any code below this line.
 module.exports = {
