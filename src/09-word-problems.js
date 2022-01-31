@@ -19,7 +19,25 @@
  *  applyDiscount(1000, 9, true);
  *  //> 700
  */
-function applyDiscount(priceInCents, age, hasMembership) {}
+function applyDiscount(priceInCents, age, hasMembership) {
+  let amtDue
+  if (hasMembership){
+    if(age <= 10 || age >= 65 ){
+    amtDue = priceInCents - (priceInCents * .3); 
+    return amtDue;
+    } else {
+    amtDue = priceInCents - (priceInCents * .2);
+    return amtDue;
+    }
+  } if (age <= 10 || age >= 65){
+    amtDue = priceInCents - (priceInCents * .1);
+  
+  } else {
+    amtDue = priceInCents;
+  }
+    return amtDue;
+};
+
 
 /**
  * getCartTotal()
@@ -40,7 +58,12 @@ function applyDiscount(priceInCents, age, hasMembership) {}
     getCartTotal(cart);
  *  //> "$30.00"
  */
-function getCartTotal(products) {}
+function getCartTotal(products) {
+  let cart = [products[quantity]];
+  let cost = cart * priceInCents
+  let fullCost = cost.toFixed(2);
+  return fullCost;
+}
 
 /**
  * compareLocations()
@@ -80,7 +103,17 @@ function getCartTotal(products) {}
     compareLocations(address1, address2);
     //> "Same city."
  */
-function compareLocations(address1, address2) {}
+function compareLocations(address1, address2) {
+  if (address1 === address2) {
+    return `Same Building`;
+  } else if (address1.city === address2.city) {
+    return `Same city`;
+  } else if (address1.state === address2.state) {
+    return `Same state`;
+  } else {
+    return `Addresses are not near each other.`;
+  }
+}
 
 /**
  * gradeAssignments()
