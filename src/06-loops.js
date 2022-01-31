@@ -32,8 +32,8 @@ return total
  *  //> [ 15, 13, 11 ]
  */
 function rangeOdd(min, max) {
-let arr = [];
-  for (let idx = max; idx % 1; i--) {
+const arr = [];
+  for (let idx = max; idx >= min; idx--) {
     if (idx % 2 !== 0)
     arr.push(idx);
   }
@@ -52,7 +52,13 @@ let arr = [];
  *  rangeEveryOther(11, 18);
  *  //> [ 11, 13, 15, 17 ]
  */
-function rangeEveryOther(min, max) {}
+function rangeEveryOther(min, max) {
+  const arr = [];
+  for (let idx = max; idx >= min; idx--) {
+    arr.push(idx);
+  }
+  return arr;
+}
 
 /**
  * containsWhileLoop()
