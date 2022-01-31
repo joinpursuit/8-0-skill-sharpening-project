@@ -19,7 +19,28 @@
  *  applyDiscount(1000, 9, true);
  *  //> 700
  */
-function applyDiscount(priceInCents, age, hasMembership) {}
+function applyDiscount(priceInCents, age, hasMembership) {
+  // Declare and initialize a `totalTicket` variable for final cost of ticket.
+  let totalTicket = 0;
+
+  // Check for various conditions to determine the final cost of ticket.
+  if (age <= 10 || age >= 65) {
+    if (hasMembership === true) {
+      totalTicket = (priceInCents * 0.7); 
+    } else {
+      totalTicket = (priceInCents * 0.9);
+    }
+  } else {
+    if (hasMembership === true) {
+      totalTicket = (priceInCents * 0.8)
+    } else {
+      totalTicket = priceInCents;
+    }
+  }
+
+  // Return the final cost.
+  return totalTicket;
+}
 
 /**
  * getCartTotal()
