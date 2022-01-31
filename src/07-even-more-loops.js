@@ -12,7 +12,9 @@
  *  shoutForLoop([ "A", "Very", "Happy", "Array" ]);
  *  //> [ "A!", "Very!", "Happy!", "Array!" ];
  */
-function shoutForLoop(array) {}
+function shoutForLoop(array) {
+
+}
 
 /**
  * shoutWhileLoop()
@@ -28,7 +30,9 @@ function shoutForLoop(array) {}
  *  shoutWhileLoop([ "A", "Very", "Happy", "Array" ]);
  *  //> [ "A!", "Very!", "Happy!", "Array!" ];
  */
-function shoutWhileLoop(array) {}
+function shoutWhileLoop(array) {
+
+}
 
 /**
  * shoutForOfLoop()
@@ -126,7 +130,12 @@ function findLargest(array) {}
  *  findEqual([ 0, 11, -2, 5 ], 9);
  *  //> false
  */
-function findEqual(array, selected) {}
+function findEqual(array, selected) {
+  if (array.includes(selected) === true){
+    return true}
+    else return false
+  } 
+
 
 /**
  * removeDuplicates()
@@ -143,7 +152,9 @@ function findEqual(array, selected) {}
  *  //> [ 1, 11, 2, 3, 4, 9 ]
  */
 
-function removeDuplicates(array) {}
+function removeDuplicates(array) {
+
+}
 
 // Do not change any code below this line.
 module.exports = {
