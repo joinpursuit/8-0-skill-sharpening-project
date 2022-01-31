@@ -115,7 +115,7 @@ function getFirstPhoneNumber(person) {
  *  //> 7185558611
  */
 function getLastPhoneNumber(person) {
-  return person.numbers.pop()
+  return person.numbers[person.numbers.length -1];
 }
 
 /**
@@ -191,10 +191,19 @@ function getFullAddress(person) {
     };
  */
 function getFlatObject(person) {
-  let newPerson = {...person.names, ...person.address}
-  newPerson.numbers = [...person.numbers]
-  return newPerson
+  let newFlat = {};
+  newFlat["first"] = person.names.first;
+  newFlat["middle"] = person.names.middle;
+  newFlat["last"] = person.names.last;
+  newFlat["street"] = person.address.street;
+  newFlat["unit"] = person.address.unit;
+  newFlat["city"] = person.address.city;
+  newFlat["state"] = person.address.state;
+  newFlat["zip"] = person.address.zip
+  newFlat["numbers"] = person.numbers;
+  return newFlat;
 }
+
 
 // Do not change the code below.
 module.exports = {
