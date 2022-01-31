@@ -115,6 +115,7 @@ function getFirstPhoneNumber(person) {
  *  getLastPhoneNumber(person);
  *  //> 7185558611
  */
+ //incomplete
 function getLastPhoneNumber(person) {
   console.log(person.numbers[numbers.length - 1])
   console.log(numbers.length)
