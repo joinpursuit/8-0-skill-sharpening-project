@@ -19,7 +19,29 @@
  *  applyDiscount(1000, 9, true);
  *  //> 700
  */
-function applyDiscount(priceInCents, age, hasMembership) {}
+function applyDiscount(priceInCents, age, hasMembership) {
+  let cost = 0
+  if(age <= 10 || age >= 65){
+    if(hasMembership === true){
+      cost = priceInCents * .7
+      return cost
+    }
+    if(hasMembership === false){
+      cost = priceInCents * .9
+      return cost
+    }
+  }
+  if(age > 10 || age < 65){
+    if(hasMembership === true){
+      cost = priceInCents * .8
+      return cost
+    }
+    if(hasMembership === false){
+      cost = priceInCents 
+      return cost
+  }
+  }
+}
 
 /**
  * getCartTotal()
@@ -40,7 +62,19 @@ function applyDiscount(priceInCents, age, hasMembership) {}
     getCartTotal(cart);
  *  //> "$30.00"
  */
-function getCartTotal(products) {}
+function getCartTotal(products) {
+  if(address1.street === address2.street && address1.state === address2.state){
+    return "Same building."
+  }
+  if(address1.city === address2.city && address1.state === address2.state && address1.zip === address2.zip){
+    return "Same city."
+  }
+  if(address1.state === address2.state){
+    return "Same state."
+  } else {
+    return "Addresses are not near each other."
+  }
+}
 
 /**
  * compareLocations()
