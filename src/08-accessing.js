@@ -2,22 +2,22 @@
   For all of the functions below, assume each function takes the following `person` object as its input. While the values of the object may change, the structure of it will always be the same.
 
   const person = {
-    names: {
-      first: "Rachel",
-      middle: "Eleanor",
-      last: "Rojas"
-    },
-    address: {
-      street: "697 Pine Drive",
-      unit: "2A",
-      city: "Staten Island",
-      state: "NY",
-      zip: "10306"
-    },
-    numbers: [
-      7185550921,
-      7185558611
-    ]
+                names: {
+                             first: "Rachel",
+                             middle: "Eleanor",
+                             last: "Rojas"
+                            },
+            address: {
+                             street: "697 Pine Drive",
+                             unit: "2A",
+                              city: "Staten Island",
+                              state: "NY",
+                             zip: "10306"
+                             },
+               numbers: [
+                             7185550921,
+                             7185558611
+                              ]
   }
 */
 
@@ -32,7 +32,9 @@
  *  getFirstName(person);
  *  //> "Rachel"
  */
-function getFirstName(person) {}
+function getFirstName(person) {
+  return person.names.first
+}
 
 /**
  * getLastName()
@@ -45,7 +47,9 @@ function getFirstName(person) {}
  *  getLastName(person);
  *  //> "Rojas"
  */
-function getLastName(person) {}
+function getLastName(person) {
+  return person.names.last
+}
 
 /**
  * getAddressStreet()
@@ -58,7 +62,9 @@ function getLastName(person) {}
  *  getAddressStreet(person);
  *  //> "697 Pine Drive"
  */
-function getAddressStreet(person) {}
+function getAddressStreet(person) {
+  return person.address.street
+}
 
 /**
  * getCountOfPhoneNumbers()
@@ -87,7 +93,9 @@ function getCountOfPhoneNumbers(person) {}
  *  getFirstPhoneNumber(person);
  *  //> 7185550921
  */
-function getFirstPhoneNumber(person) {}
+function getFirstPhoneNumber(person) {
+  return person.numbers
+}
 
 /**
  * getLastPhoneNumber()
@@ -103,7 +111,9 @@ function getFirstPhoneNumber(person) {}
  *  getLastPhoneNumber(person);
  *  //> 7185558611
  */
-function getLastPhoneNumber(person) {}
+function getLastPhoneNumber(person) {
+  return person.numbers.pop()
+}
 
 /**
  * getFullName()
@@ -116,7 +126,13 @@ function getLastPhoneNumber(person) {}
  *  getFullName(person);
  *  //> "Rachel Eleanor Rojas"
  */
-function getFullName(person) {}
+function getFullName(person) {
+  let first = person.names.first
+  let middle = person.names.middle
+  let last = person.names.last
+  return `${first} ${middle} ${last}`
+}
+
 
 /**
  * getCityAndState()
@@ -132,7 +148,13 @@ function getFullName(person) {}
  *  getCityAndState(person);
  *  //> "Staten Island, NY"
  */
-function getCityAndState(person) {}
+function getCityAndState(person) {
+  let city = person.address.city
+  let state = person.address.state
+  return `${city}, ${state}`
+
+}
+
 
 /**
  * getFullAddress()
@@ -148,7 +170,15 @@ function getCityAndState(person) {}
  *  getFullAddress(person);
  *  //> "697 Pine Drive 2A, Staten Island, NY, 10306"
  */
-function getFullAddress(person) {}
+function getFullAddress(person) {
+  let street = person.address.street
+  let unit = person.address.unit
+  let city = person.address.city
+  let state = person.address.state
+  let zip = person.address.zip
+  let address = `${street} ${unit}, ${city}, ${state}, ${zip}`
+  return address
+}
 
 /**
  * getFlatObject()
@@ -171,7 +201,26 @@ function getFullAddress(person) {}
       numbers: [7185550921, 7185558611],
     };
  */
-function getFlatObject(person) {}
+    
+    function getFlatObject(person) {
+      let otherPerson =  {
+          first: "Sergio",
+          middle: "Reuben",
+          last: "Burris",
+          street: "47 Ocean Lane",
+          unit: "9B",
+          city: "Apex",
+          state: "NC",
+          zip: "27502",
+          numbers: [ 7185550921, 7185558611],
+      };
+      return otherPerson
+    }
+    
+  
+
+
+
 
 // Do not change the code below.
 module.exports = {
