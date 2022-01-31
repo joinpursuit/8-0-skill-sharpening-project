@@ -34,11 +34,14 @@ return total
 function rangeOdd(min, max) {
 const arr = [];
   for (let idx = max; idx >= min; idx--) {
-    if (idx % 2 !== 0)
+    if (idx % 2 !== 0) {
     arr.push(idx);
   }
-  return arr;
+
 }
+return arr;
+}
+
 
 /**
  * rangeEveryOther()
@@ -54,7 +57,7 @@ const arr = [];
  */
 function rangeEveryOther(min, max) {
   const arr = [];
-  for (let idx = max; idx >= min; idx--) {
+  for (let idx = min; idx <= max; idx+=2) {
     arr.push(idx);
   }
   return arr;
