@@ -9,7 +9,12 @@
  *  alwaysTrue();
  *  //> true
  */
-function alwaysTrue() {}
+function alwaysTrue() {
+  let myName = {};
+  if(myName === true){
+    return myName;
+  }
+}
 
 /**
  * greet()
@@ -24,7 +29,9 @@ function alwaysTrue() {}
  *  greet("Ian");
  *  //> "Hello, Ian."
  */
-function greet() {}
+function greet(name) {
+  return  `Hello, ${name}.`
+}
 
 /**
  * add()
@@ -39,13 +46,19 @@ function greet() {}
  *  add(10, 20);
  *  //> 30
  */
-function add() {}
+function add(a,b) {
+  // Number(a) + Number(b);
+  return a + b
+}
 
 /**
  * multiply()
  * ---------------------
  * Multiplies the two numbers together and returns the product.
- * HINT: How is this similar to add()? How is it different?
+ * HINT: How is this similar to add()? 
+ * Its still comparing two numbers against eachother.
+ * How is it different?
+ * Using multiplication (*) instead of addition (+)
  * @param {number} a
  * @param {number} b
  * @returns {number}
@@ -54,7 +67,12 @@ function add() {}
  *  multiply(2, 5);
  *  //> 10
  */
-function multiply() {}
+function multiply(a,b) {
+// a = 10;
+// b = 20;
+// c = Number(a) * Number(b);
+return a * b
+}
 
 /**
  * average()
@@ -65,6 +83,7 @@ function multiply() {}
  * HINT: How is this problem similar to add()? How is it different?
  * HINT: Use parentheses () to control the order of operations:
  * 6 + 4 / 2 = 8 but (6 + 4) / 2 = 5. Why is this?
+ * PEMDAS the .toFixed method is used to 
  *
  * @param {number} a
  * @param {number} b
@@ -74,7 +93,11 @@ function multiply() {}
  *  average(10, 6);
  *  //> 8 // 10 + 6 = 16; 16/2 = 8;
  */
-function average() {}
+function average(a,b) {
+let avg = ((a + b / 2).toFixed(2))
+return avg
+}
+
 
 /**
  * averageThree()
@@ -93,7 +116,11 @@ function average() {}
  *  averageThree(10, 11, 19);
  *  //> 10 // 10 + 11 + 19 = 30; 30 / 3 = 10;
  */
-function averageThree() {}
+function averageThree(a,b,c) {
+  ((a + b + c / 3).toFixed(2))
+  return a ,b,c
+} ;
+
 
 /**
  * compareTypes()
@@ -112,7 +139,12 @@ function averageThree() {}
  *  compareTypes("left", 10);
  *  //> false
  */
-function compareTypes() {}
+function compareTypes(a,b) {
+  if(typeof[a] === typeof[b]){
+    return true
+  } else (typeof[a] === 0)
+    return false
+}
 
 /**
  * flipSign()
@@ -151,8 +183,13 @@ function flipSign() {}
  *  joinStringsWithSpaces("left", "right", "up", "down", "away");
  *  //> "left right up down away"
  */
-function joinStringsWithSpaces() {}
-
+function joinStringsWithSpaces(a,b,c,d,e,f) {
+  let text1 = "A B C D E F";
+  let text2 = " C C C C C C";
+  return text1 + text2
+   
+return str1
+}
 /**
  * getFirstAndLastCharacter()
  * ---------------------
@@ -168,7 +205,9 @@ function joinStringsWithSpaces() {}
  *  getFirstAndLastCharacter("upwards");
  *  //> "us"
  */
-function getFirstAndLastCharacter() {}
+ function getFirstAndLastCharacter(a) {
+  return a.charAt(0) + a.charAt(a.length - 1)
+ }
 
 // Do not change the code below.
 module.exports = {

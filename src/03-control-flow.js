@@ -3,6 +3,7 @@
  * ---------------------
  * Takes in two values and returns if they are strictly equal or not
  * HINT: The prompt says STRICTLY equal. What does that mean in JavaScript?
+ * if the value is not written the same, and called it will not return as true, STRICLTLY equal means that it has to be EXACTLY the same to be a truthy value
  * @param {*} a
  * @param {*} b
  * @returns {boolean}
@@ -14,7 +15,13 @@
  *  isEqual(10, "10");
  *  //> false
  */
-function isEqual(a, b) {}
+function isEqual(a, b) {
+  if(a === b){
+    return true;
+  } else {
+    return false;
+  }
+}
 
 /**
  * findLarger()
@@ -28,7 +35,20 @@ function isEqual(a, b) {}
  *  findLarger(19, 7);
  *  //> 19
  */
-function findLarger(a, b) {}
+function findLarger(a, b) {
+  if((a >= Number) && (a <= Number) && (b >= Number) && (b <= Number)){
+    if(a === b){
+      return true
+    } else if( a > b){
+      return a 
+    } else {
+      return b
+    }
+  }else{
+    return false
+  }
+    
+}
 
 /**
  * findLargerOrTie()
@@ -45,7 +65,9 @@ function findLarger(a, b) {}
  *  findLargerOrTie(0, 0);
  *  //> "tie"
  */
-function findLargerOrTie(a, b) {}
+function findLargerOrTie(a, b) {
+  
+}
 
 /**
  * positiveNegativeOrZero()
