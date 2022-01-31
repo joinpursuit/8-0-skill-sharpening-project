@@ -13,6 +13,7 @@
  */
 function rangeSum(min, max) {
 let sum
+
 for(let index = min; index <= max; index++){
 sum = sum + Number(index)
 console.log(index)
@@ -122,7 +123,7 @@ function containsForLoop(array, target) {
  *  //> 2
  */
 function targetCount(array, target) {
-  
+
 }
 
 /**
@@ -177,7 +178,13 @@ function lastIndexFound(array, target) {}
  *  //> [ 7 * 0, 10 * 1, 11 * 2 ]
  *  //> [ 0, 10, 22 ]
  */
-function timesIndex(array) {}
+function timesIndex(array) {
+  let times = 1
+  for(let i = 0; i < array.length; i++){
+    times = times * array[i]
+  }
+  return times
+}
 
 /**
  * cumulativeSum()
