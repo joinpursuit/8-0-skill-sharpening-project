@@ -222,6 +222,7 @@ function createLineOrder(people) {
   for (let person of people) {
     if (person.hasMembership) {
       members.push(person.name);
+      // console.log(members)
     }
     else {
       nonMembers.push(person.name);
