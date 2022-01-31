@@ -228,7 +228,21 @@ return assignments;
     createLineOrder(people);
     //> [ "Ray Anderson", "America Marsh", "Wade Carson", "Patience Patel" ]
  */
-function createLineOrder(people) {}
+function createLineOrder(people) {
+  let nameArr = [];
+
+  for(let i = 0; i < people.length; i++){
+    if(people[i].hasMembership){
+      nameArr.unshift(people[i].name)
+    }
+
+    if(!people[i].hasMembership){
+      nameArr.push(people[i].name)
+    }
+    
+  }
+  return nameArr;
+}
 
 module.exports = {
   applyDiscount,
