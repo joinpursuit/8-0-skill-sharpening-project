@@ -9,7 +9,9 @@
  *  alwaysTrue();
  *  //> true
  */
-function alwaysTrue() {}
+function alwaysTrue() {
+  return true
+}
 
 /**
  * greet()
