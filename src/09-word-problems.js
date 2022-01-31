@@ -61,7 +61,21 @@ function applyDiscount(priceInCents, age, hasMembership) {
     getCartTotal(cart);
  *  //> "$30.00"
  */
-function getCartTotal(products) {}
+function getCartTotal(products) {
+  // Declare a variable `subTotal` to keep a running subtotal of prices and quantity multiplied together.
+  let subTotal = 0;
+  // Declare a variable `total` to hold the converted and formatted numerical `subTotal`.
+  let total = '';
+
+  // For loop to loop over the `products` array
+  for (let i = 0; i < products.length; i++) {
+    subTotal += (products[i].priceInCents * 0.01)* products[i].quantity;
+  }
+
+  // Format the total string to be returned by making a string and fixing to 2 decimal places with a dollar sign.
+  total = `$${subTotal.toFixed(2)}`;
+  return total;
+}
 
 /**
  * compareLocations()
