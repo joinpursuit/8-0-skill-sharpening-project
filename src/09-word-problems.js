@@ -47,19 +47,14 @@ function applyDiscount(priceInCents, age, hasMembership) {
  * @returns {string} A formatted representation of the total, rounded to two decimal places.
  * 
  * EXAMPLE:
- *  const cart = [
+ *  const cart = [ 
       { name: "T-Shirt", priceInCents: 1200, quantity: 1 },
       { name: "Socks", priceInCents: 900, quantity: 2 },
     ];
     getCartTotal(cart);
  *  //> "$30.00"
  */
-function getCartTotal(products) {
- for(let product of products){
-   
- }
-  
-}
+function getCartTotal(products) {}
 
 /**
  * compareLocations()
@@ -99,7 +94,41 @@ function getCartTotal(products) {
     compareLocations(address1, address2);
     //> "Same city."
  */
-function compareLocations(address1, address2) {}
+function compareLocations(address1, address2) {
+    if(address1.street === address2.street){
+      if(address1.city === address2.city){
+        if(address1.state === address2.state){
+          if(address1.zip === address2.zip){
+            return "Same building."
+          }
+        }
+      }
+    } else if(address1.city === address2.city){
+      if(address1.state === address2.state){
+        if(address1.zip === address2.zip){
+          return "Same city."
+        }
+      } else {
+        return "Addresses are not near each other."
+      }
+    } else if(address1.state === address2.state){
+      if(address1.state !== address2.state){
+        return "Addresses are not near each other."
+      } else{
+        return "Same state."
+      }
+    } else{
+      if(address1.street !== address2.street){
+        if(address1.city !== address2.city){
+          if(address1.state !== address2.state){
+            if(address1.zip !== address2.zip){
+              return "Addresses are not near each other."
+             }
+            }
+           }
+          }
+        } 
+}
 
 /**
  * gradeAssignments()
@@ -146,7 +175,35 @@ function compareLocations(address1, address2) {}
     //>   },
     //> ];
  */
-function gradeAssignments(assignments) {}
+function gradeAssignments(assignments) {
+  for(i = 0; i < assignments.length; i++){
+    assignments[i].status = '';
+
+    if(assignments[i].kind === 'PASS-FAIL'){
+      if(assignments[i].score.received === assignments[i].score.max){
+        assignments[i].status = 'PASSED';
+      } else{
+        assignments[i].status = 'FAILED';
+      }
+    } else if(assignments[i].kind === 'PERCENTAGE'){
+      let percentage = ((assignments[i].score.received / 10) * 100).toFixed(1);
+      if(percentage >= 80){
+        assignments[i].status = `PASSED: ${percentage}%`;
+      } 
+      if(percentage < 80){
+        assignments[i].status = `FAILED: ${percentage}%`
+      }
+    } else{
+      if(assignments[i].kind !== 'PASS-FAIL' || assignments[i].kind !== 'PERCENTAGE'){
+        //`"SCORE: <received>/<max>"
+        assignments[i].status = `SCORE: ${assignments[i].score.received}/${assignments[i].score.max}`;
+      }
+    }
+  }
+  // console.log(assignments)
+  
+return assignments;
+}
 
 /**
  * createLineOrder()
