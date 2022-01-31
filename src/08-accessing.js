@@ -78,7 +78,7 @@ function getAddressStreet(person) {
  *  //> 2
  */
 function getCountOfPhoneNumbers(person) {
-  return Object.keys(person.numbers).length;
+  
 };
 
 /**
