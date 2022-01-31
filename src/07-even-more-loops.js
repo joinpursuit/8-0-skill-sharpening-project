@@ -109,7 +109,9 @@ function findSmallest(array) {}
  *  findLargest([ 0, 11, -2, 5 ]);
  *  //> 11
  */
-function findLargest(array) {}
+function findLargest(array) {
+return Math.max(...array)
+}
 
 /**
  * findEqual()
