@@ -195,12 +195,9 @@ return fullAddress
     };
  */
 function getFlatObject(person) {
-    let arr = []
-    arr = arr.assign(person.names)  
-    arr = arr.assign(person.address)
-    arr.location = person.location
-  
- return arr
+  const arr = Object.assign(person.names, person.address);
+  arr.numbers = person.numbers
+  return arr
 
 }
 
