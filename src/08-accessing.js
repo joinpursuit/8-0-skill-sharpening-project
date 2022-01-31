@@ -189,7 +189,9 @@ function getFullAddress(person) {
       numbers: [7185550921, 7185558611],
     };
  */
-function getFlatObject(person) {}
+function getFlatObject(person) {
+  
+}
 
 // Do not change the code below.
 module.exports = {
