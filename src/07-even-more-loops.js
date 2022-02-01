@@ -35,7 +35,7 @@ return array;
  *  //> [ "A!", "Very!", "Happy!", "Array!" ];
  */
 function shoutWhileLoop(array) {
-n = 0;
+let n = 0;
   while (n<=array.length-1){
     array[n] = array[n]+"!";
 
@@ -62,7 +62,7 @@ return array;
  *  //> [ "A!", "Very!", "Happy!", "Array!" ];
  */
 function shoutForOfLoop(array) {
-newArr = [];
+let newArr = [];
 for (let element of array){
  newArr.push(element +"!");
   //  stuff = stuff + "!";
@@ -104,7 +104,7 @@ return total;
  *  //> [ 11, 15, 37 ]
  */
 function oddArray(array) {
-newArr=[];
+let newArr=[];
 
   for (i=0; i<= array.length-1;i++){
 if (array[i]%2 ===1){
@@ -129,7 +129,7 @@ return newArr;
  *  //> [ 20, 22 ]
  */
 function evenArray(array) {
-  newArr=[];
+  let newArr=[];
 
   for (i=0; i<= array.length-1;i++){
 if (array[i]%2 ===0){

@@ -108,11 +108,7 @@ function checkIfCharacterIsInString(text, character) {
  *  //> false
  */
 function isEven(num) {
-  if (num%2 === 0){
-    return true;
-  } else {
-    return false;
-  }
+  return num%2 === 0;
 }
 
 /**
@@ -130,11 +126,7 @@ function isEven(num) {
  *  //> true
  */
 function isOdd(num) {
-  if (num%2 === 1){
-    return true;
-  } else {
-    return false;
-  }
+  return num%2 === 1;
 }
 
 /**
@@ -152,11 +144,12 @@ function isOdd(num) {
  *  //> false
  */
 function isTruthy(val) {
-  if (val){
-    return true;
-  } else {
-    return false;
-  }
+  return !!val;
+  // if (val){
+  //   return true;
+  // } else {
+  //   return false;
+  // }
 }
 
 /**
@@ -174,11 +167,12 @@ function isTruthy(val) {
  *  //> false
  */
 function isFalsy(val) {
-  if (!val){
-    return true;
-  } else {
-    return false;
-  }
+  return !val;
+  // if (!val){
+  //   return true;
+  // } else {
+  //   return false;
+  // }
 }
 
 // Do not change the code below.

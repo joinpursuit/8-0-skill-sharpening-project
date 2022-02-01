@@ -15,12 +15,12 @@
  *  //> false
  */
 function isEqual(a, b) {
-if (a === b ){
-return true;
-
-} else {
-  return false;
-}
+return a === b;
+//   if (a === b ){
+// return true;
+// } else {
+//   return false;
+// }
 
 }
 
@@ -119,7 +119,7 @@ if (a >= 1){
  *  aroundTheWorldGreeting();
  *  //> "Hello World"
  */
-function aroundTheWorldGreeting(language) {
+function aroundTheWorldGreeting(language = "english") {
   if (language === "english"){
     return "Hello World";
   } else if (language === "spanish"){

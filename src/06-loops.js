@@ -12,13 +12,13 @@
  *  (3 + 4 + 5 + 6 + 7 = 25)
  */
 function rangeSum(min, max) {
-  let a = 0;
+  let sum = 0;
 for (i=min; i <= max; i++){
   //let a = 0;
-  a = a+i;
+  sum = sum+i;
 }
 
-return a;
+return sum;
 }
 
 /**
@@ -34,7 +34,7 @@ return a;
  *  //> [ 15, 13, 11 ]
  */
 function rangeOdd(min, max) {
-  arr = [];
+  let arr = [];
 for (i = max; i >= min; i--){
 if (i%2!== 0 ){
 arr.push(i);
@@ -59,7 +59,7 @@ return arr;
  */
 function rangeEveryOther(min, max) {
 
-  arr = [];
+  let arr = [];
   for (i = min; i <= max; i+=2){
   arr.push(i);
   }
@@ -88,7 +88,7 @@ function rangeEveryOther(min, max) {
  *  //> false
  */
 function containsWhileLoop(array, target) {
-  n=0;
+  let n=0;
 while (n<array.length-1){
   if (array[n] === target){
     return true;
@@ -234,7 +234,7 @@ function lastIndexFound(array, target) {
  *  //> [ 0, 10, 22 ]
  */
 function timesIndex(array) {
-newArr =[];
+let newArr =[];
   for (i =0; i <= array.length-1;i++){
 newArr.push(array[i]*i);
 
@@ -257,7 +257,7 @@ return newArr;
  */
 function cumulativeSum(array) {
 
-  newArr = array;
+  let newArr = array;
   for (i = 1; i < array.length;i++){
     newArr[0] = array[0];
     newArr[i] = array[i]  + array[i-1];

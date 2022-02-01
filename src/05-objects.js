@@ -40,9 +40,9 @@ function createObjectWithValue(val) {
  *  //> { left: false }
  */
 function createObjectWithKey(key) {
-let a = {};
-a[key] = ""
-  return a;
+let obj= {};
+obj[key] = ""
+  return obj;
 }
 
 /**
@@ -58,9 +58,9 @@ a[key] = ""
  *  //> { left: "right" }
  */
 function createObjectWithKeyValuePair(key, val) {
-let a = {}
-a[key] = val;
-  return a;
+let obj = {}
+obj[key] = val;
+  return obj;
 
 //{key:val};
 
