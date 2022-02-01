@@ -42,6 +42,8 @@ function convertToNumber(val) {
  */
 function convertToString(val) {
   return String(val);
+
+  //ANOTHER WAY - return val.toString();
 }
 
 /**
@@ -113,6 +115,8 @@ function isEven(num) {
   } else {
     return false;
   }
+
+  //SIMPLIFIED - return num % 2 === 0;
 }
 
 /**
@@ -135,7 +139,9 @@ function isOdd(num) {
   } else {
     return false;
   }
+  //SIMPLIFIED - return num % 2 !== 0;
 }
+
 
 /**
  * isTruthy()
@@ -157,6 +163,11 @@ function isTruthy(val) {
   } else {
   return false
   }
+  return 
+
+  //SIMPLIFIED - return Boolean(val);
+  //SIMPLIFIED - return !!val 
+  // '!!' checks for the truthiness of the value
 }
 
 /**
@@ -179,6 +190,8 @@ function isFalsy(val) {
   } else {
   return false;
   }
+  //SIMPLIFIED - return !val ;
+  //checks for the falsiness of the value 
 }
 
 // Do not change the code below.

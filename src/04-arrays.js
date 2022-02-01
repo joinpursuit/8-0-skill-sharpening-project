@@ -12,8 +12,8 @@
  */
 function createEmptyArray() {
   let newArray = [];
-
   return newArray;
+  // SIMPLIFIED - return [];
 }
 
 
@@ -31,7 +31,6 @@ function createEmptyArray() {
  */
 function createArrayWithTwoElements(a, b) {
   let newArrayTwo = [a, b];
-
   return newArrayTwo;
 }
 
@@ -96,7 +95,6 @@ function getLastElementOfArray(array) {
  */
 function addElementToEndOfArray(array, element) {
   array.push(element)
-
   return array;
 }
 
@@ -129,7 +127,6 @@ function removeElementFromEndOfArray(array) {
  */
 function addElementToFrontOfArray(array, element) {
   array.unshift(element);
-
   return array;
 }
 
@@ -163,8 +160,7 @@ function removeElementFromFrontOfArray(array) {
  *  //> null
  */
 function getMiddleElement(array) {
-  let middleValue = Math.floor((array.length - 1) / 2);
-
+  let middleValue = Math.floor(array.length / 2);
   return array[middleValue];
 }
 

@@ -11,12 +11,12 @@
  *  //> 25
  *  (3 + 4 + 5 + 6 + 7 = 25)
  */
-function rangeSum(min, max) {
-  let answer = 0;
-  for (i = min; i <= max; i++){
-    answer += i
-  }
-  return answer;
+function rangeSum(min, max) {    // GIGI EDIT :
+  let answer = 0;                // let answer = 0
+  for (i = min; i <= max; i++){  // for (let i = min; i <= max; i++) {
+    answer += i                  // answer += i;
+  }                              // }
+  return answer;                 // return answer
 }
 
 /**
@@ -32,13 +32,13 @@ function rangeSum(min, max) {
  *  //> [ 15, 13, 11 ]
  */
 function rangeOdd(min, max) {
-  let myArray = [];
-  for (i = max; i >= min; --i){
-    if(i%2 !== 0){
-      myArray.push(i)
-    }
-  }
-  return myArray;
+  let myArray = [];                 // let odd = []
+  for (i = max; i >= min; --i){     // for(let i = max; i >= min; i--){
+    if(i%2 !== 0){                  //  if (i % 2 !===0) {
+      myArray.push(i)               //    odd.push(i) 
+    }                               //  }
+  }                                 // }
+  return myArray;                   // return odd; 
 }
 
 /**
@@ -55,11 +55,11 @@ function rangeOdd(min, max) {
  *  //> [ 11, 13, 15, 17 ]
  */
 function rangeEveryOther(min, max) {
-  let myArray = [];
-  for (i = min; i <= max; i+=2){
-    myArray.push(i)
-  }
-  return myArray
+  let myArray = [];                   // let everyOther = [];
+  for (i = min; i <= max; i+=2){      // for (let i = min; i <= max; i+=2){
+    myArray.push(i)                   //  everyOther.push(i);
+  }                                   // }
+  return myArray                      // return everyOther;
 }
 
 /**
@@ -83,11 +83,15 @@ function rangeEveryOther(min, max) {
  *  //> false
  */
 function containsWhileLoop(array, target) {
-  while (array.indexOf(target) !== -1){
-    return true;
-  }
-  return false;
-}
+  while (array.indexOf(target) !== -1){       // let i = 0 
+    return true;                              // while(i < array.length ){
+  }                                           //    if (array[i] === target){
+  return false;                               //      return true;
+}                                             //    }
+                                              //    i++;
+                                              //  }
+                                              // return false;
+                                              // }
 
 /**
  * containsForLoop()
@@ -110,12 +114,12 @@ function containsWhileLoop(array, target) {
  *  //> false
  */
 function containsForLoop(array, target) {
-  for (i = 0; i < array.length; i++){
-    if (array[i] === target) {
-      return true;
-    }
-  }   
-  return false;
+  for (i = 0; i < array.length; i++){     // for (let element of array){
+    if (array[i] === target) {            //   if (element === target){
+      return true;                        //     return true;
+    }                                     //   }
+  }                                       // }
+  return false;                           // return false
 }
 
 /**
@@ -160,12 +164,12 @@ function targetCount(array, target) {
  *  //> -1
  */
 function firstIndexFound(array, target) {
-  while (array.indexOf(target) !== -1){
-    return array.indexOf(target);
-  }
-  return -1;
-}
-
+  while (array.indexOf(target) !== -1){       // for (let i=0; i < array.length; i++){
+    return array.indexOf(target);             //   if array[i] == target{
+  }                                           //     return i
+  return -1;                                  //   }
+}                                             // }
+                                              // return -1
 /**
  * lastIndexFound()
  * ---------------------
@@ -186,12 +190,12 @@ function firstIndexFound(array, target) {
  *  //> -1
  */
 function lastIndexFound(array, target) {
-  while (array.indexOf(target) !== -1){
-    return array.lastIndexOf(target);
-  }
-  return -1;
-}
-
+  while (array.indexOf(target) !== -1){         // for (let i = array.length; i >= 0; i--){
+    return array.lastIndexOf(target);           //    if (array[i] === target){
+  }                                             //      return i
+  return -1;                                    //    }
+}                                               // }
+                                                // return - 1
 
 /**
  * timesIndex()
@@ -206,12 +210,12 @@ function lastIndexFound(array, target) {
  *  //> [ 0, 10, 22 ]
  */
 function timesIndex(array) {
-  let total = [];
+  let total = [];                         // let multipledNums = [];
 
-  for (i = 0; i < array.length; i++){
-    total.push(array[i] * i);
-  }
-  return total
+  for (i = 0; i < array.length; i++){     // for (let i = 0; i < array.length; i++){
+    total.push(array[i] * i);             //    multipledNums.push(array[i] * 1)
+  }                                       // }
+  return total                            // return multipledNums
 }
 
 /**
@@ -228,7 +232,6 @@ function timesIndex(array) {
  */
 function cumulativeSum(array) {
   let newArray = [array[0]];
-  //let emptyArray = JSON.parse(JSON.stringify(array));
   let emptyArray = [];
   
   if (!array.length) { 
@@ -239,6 +242,16 @@ function cumulativeSum(array) {
     newArray.push(array[i] + newArray[i - 1]);
   }
   return newArray;
+
+  // GIGI Code:
+  // if (!array.length) return [];
+  //
+  // let cumulativeNums = [array[0]];
+  // for (let i = 1; i < array.length; i++) {
+  //    cumulativeNums.push(array[i - 1] + array [i]);
+  // };
+  // return cumulativeNums
+
 }
 
 // Do not change anything below this line.

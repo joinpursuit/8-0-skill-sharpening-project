@@ -13,6 +13,8 @@ function alwaysTrue(x) {
   x = true;
 
   return x;
+
+  //return true;
 }
 
 /**
@@ -48,6 +50,8 @@ function greet(name) {
 function add(a, b) {
   resultAdd = a + b;
   return resultAdd;
+
+  //SIMPLIFIED - return a + b;
 }
 
 /**
@@ -66,6 +70,8 @@ function add(a, b) {
 function multiply(a, b) {
   resultMulti = a * b;
   return resultMulti;
+
+  //SIMPLIFIED - return a * b;
 }
 
 /**
@@ -89,6 +95,8 @@ function multiply(a, b) {
 function average(a, b) {
   resultAver = ((a + b)/2);
   return resultAver;
+
+  //SIMPLIFIED - return  (a + b) / 2;
 }
 
 /**
@@ -111,6 +119,8 @@ function average(a, b) {
 function averageThree(a, b, c) {
   resultAverThree = ((a + b + c)/3);
   return resultAverThree;
+
+  //SIMPLIFIED - return (a + b + c) / 3;
 }
 
 /**
@@ -139,6 +149,9 @@ function compareTypes(a, b) {
   }else {
     return false;
   }
+
+  //SIMPLIFIED - return typeof a === typeof b; 
+  //WORKS because a comparision will only return a boolean value!
 }
 
 /**
@@ -204,6 +217,7 @@ function getFirstAndLastCharacter(a) {
   let lastChar = a.charAt(a.length -1);
   
   return firstChar + lastChar;
+  //SIMPLIFIED - return a[0] + a[a.length -1]
 }
 
 // Do not change the code below.

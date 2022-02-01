@@ -27,9 +27,9 @@ function createEmptyObject() {
 function createObjectWithValue(val) {
   let blankObject = {}; 
   blankObject.whateverKey = val;
-
-
   return blankObject;
+ 
+  //SIMPLIFIED - return {anything: val};
 }
 
 /**
@@ -46,8 +46,9 @@ function createObjectWithValue(val) {
 function createObjectWithKey(key) {
   let object = {};
   object[key] = true;
-
   return object ;
+
+  //SIMPLIFIED - return {[key]: 'anything'} ;
 }
 
 /**
@@ -65,8 +66,9 @@ function createObjectWithKey(key) {
 function createObjectWithKeyValuePair(key, val) {
   let object = {};
   object[key] = val;
-
   return object ;
+
+  //SIMPLIFIED - return {[key]: val}
 }
 
 /**
@@ -81,7 +83,7 @@ function createObjectWithKeyValuePair(key, val) {
  *  //> "Jay"
  */
 function getNameFromObject(object) {
-  return object.name;
+  return object.name; 
 }
 
 /**
@@ -113,7 +115,6 @@ function getAgeFromObject(object) {
  */
 function addValueToObject(object, val) {
   object.key = val;
-
   return object;
 }
 
@@ -131,7 +132,6 @@ function addValueToObject(object, val) {
  */
 function addKeyToObject(object, key) {
   object[key] = 'true'
-
   return object;
 }
 
@@ -149,9 +149,7 @@ function addKeyToObject(object, key) {
  *  //> { up: true, left: false }
  */
 function addKeyValuePairToObject(object, key, val) {
-
   object[key] = val;
-
   return object
 }
 
@@ -170,7 +168,6 @@ function addKeyValuePairToObject(object, key, val) {
  */
 function deleteKeyFromObject(object, key) {
   delete object[key];
-
   return object
 }
 

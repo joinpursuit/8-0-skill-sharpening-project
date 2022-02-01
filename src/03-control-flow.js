@@ -20,6 +20,7 @@ function isEqual(a, b) {
   } else {
     return false;
   }
+  //SIMPLIFIED - return a === b;
 }
 
 /**
@@ -108,7 +109,7 @@ function positiveNegativeOrZero(a) {
  *  aroundTheWorldGreeting();
  *  //> "Hello World"
  */
-function aroundTheWorldGreeting(language) {
+function aroundTheWorldGreeting(language) { //(language = 'english') <- sets the language as default
   if (language === 'spanish') {
     return "Hola Mundo" ;
   } else if (language === 'german'){
@@ -185,7 +186,22 @@ function calculateLetterGrade(grade) {
   } else {
     return "F";
   }
+
+  // if (grade >= 90){
+  //   return "A";
+  // } else if (grade >= 80){
+  //   return "B";
+  // } else if (grade >= 70 {
+  //   return "C";
+  // } else if (grade >= 60){
+  //   return "D"
+  // } else {
+  //   return "F";
+  // }
+  // Not sure why this didnt work for me
+
 }
+
 
 /**
  * animalCounts()
