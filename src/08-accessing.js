@@ -190,16 +190,16 @@ function getFullAddress(person) {
  */
 function getFlatObject(person) {
   let objectFlat = []
-  objectFlat["first"]= person.names.first
-  objectFlat["middle"]= person.names.middle
-  objectFlat["last"]= person.names.last
-  objectFlat["street"]= person.address.street
-  objectFlat["unit"]= person.address.unit
-  objectFlat["city"]= person.address.city
-  objectFlat["state"]= person.address.state
-  objectFlat["city"]= person.address.city
-  objectFlat["state"]= person.address.state
-  objectFlat["zip"]= person.address.zip
+  objectFlat["first"]= person.first
+  objectFlat["middle"]= person.middle
+  objectFlat["last"]= person.last
+  objectFlat["street"]= person.street
+  objectFlat["unit"]= person.unit
+  objectFlat["city"]= person.city
+  objectFlat["state"]= person.state
+  objectFlat["city"]= person.city
+  objectFlat["state"]= person.state
+  objectFlat["zip"]= person.zip
   objectFlat["numbers"]= person.numbers
 }
 
