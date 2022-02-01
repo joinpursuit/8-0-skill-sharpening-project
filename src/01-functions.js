@@ -43,7 +43,7 @@ function greet(name) {
  *  add(10, 20);
  *  //> 30
  */
-function add(a,b) {
+function add(a, b) {
   return a + b;
 }
 
@@ -60,7 +60,7 @@ function add(a,b) {
  *  multiply(2, 5);
  *  //> 10
  */
-function multiply(a,b) {
+function multiply(a, b) {
   return a * b;
 }
 
@@ -82,7 +82,7 @@ function multiply(a,b) {
  *  average(10, 6);
  *  //> 8 // 10 + 6 = 16; 16/2 = 8;
  */
-function average(a,b) {
+function average(a, b) {
   return (a+b)/2;
 }
 
@@ -124,7 +124,7 @@ function averageThree(a, b, c) {
  *  compareTypes("left", 10);
  *  //> false
  */
-function compareTypes(a,b) {
+function compareTypes(a, b) {
   if (typeof a === typeof b) {
     return true;
   } else {
@@ -171,8 +171,8 @@ function flipSign(a) {
  *  joinStringsWithSpaces("left", "right", "up", "down", "away");
  *  //> "left right up down away"
  */
-function joinStringsWithSpaces(a,b,c,d,e) {
-  return a +" "+ b +" "+ c +" "+ d +" "+ e;
+function joinStringsWithSpaces(a, b, c, d, e) {
+  return `${a} ${b} ${c} ${d} ${e}`;
 }
 
 /**
@@ -192,11 +192,11 @@ function joinStringsWithSpaces(a,b,c,d,e) {
  */
 function getFirstAndLastCharacter(a) {
   let size = a.length;
-  if (size >= 2){
+  if (size >= 2) {
    let first = a.charAt(0);
    let last = a.charAt(a.length-1);
    return first+last;
-  }else{
+  } else {
    return false;
   }
 }
