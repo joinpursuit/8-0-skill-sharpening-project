@@ -14,6 +14,8 @@ function createEmptyObject() {
   return newObj;
 }
 
+//return {}
+
 /**
  * createObjectWithValue()
  * ---------------------
@@ -30,6 +32,8 @@ function createObjectWithValue(val) {
   return newObj;
 }
 
+//return {anything: val}
+
 /**
  * createObjectWithKey()
  * ---------------------
@@ -45,6 +49,9 @@ function createObjectWithKey(key) {
   let newObj = {[key]: "value"};
   return newObj;
 }
+
+//return {[key]: "anything"} 
+//(the key goes in brackets because it is a parameter aka a value that already exists; if you were creating one you would acess it but putting it in [] but also wrap it in " ")
 
 /**
  * createObjectWithKeyValuePair()
@@ -63,6 +70,8 @@ function createObjectWithKeyValuePair(key, val) {
   return newObj;
 }
 
+//return {[key]: val}
+
 /**
  * getNameFromObject()
  * ---------------------
@@ -77,6 +86,7 @@ function createObjectWithKeyValuePair(key, val) {
 function getNameFromObject(object) {
   return object.name;
 }
+
 
 /**
  * getAgeFromObject()
@@ -106,7 +116,7 @@ function getAgeFromObject(object) {
  *  //> { left: true, key: false }
  */
 function addValueToObject(object, val) {
-  object.newKey = val;
+  object.newKey = val; //object["anything"] = val
   return object;
 }
 

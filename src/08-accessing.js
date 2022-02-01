@@ -190,7 +190,6 @@ function getFullAddress(person) {
     };
  */
 function getFlatObject(person) {
- console.log(person)
   let newObj = {
       first: person.names.first,
       middle: person.names.middle,

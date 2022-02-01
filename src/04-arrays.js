@@ -15,6 +15,8 @@ function createEmptyArray() {
   return newArr;
 }
 
+//return []
+
 /**
  * createArrayWithTwoElements()
  * ---------------------
@@ -31,6 +33,8 @@ function createArrayWithTwoElements(a, b) {
   let newArr = [a, b];
   return newArr;
 }
+
+//return [a, b] (called an array literal)
 
 /**
  * getArrayLength()
@@ -63,6 +67,8 @@ function getFirstElementOfArray(array) {
   return array.shift();
 }
 
+//return array[0] (says get not remove)
+
 /**
  * getLastElementOfArray()
  * ---------------------
@@ -78,6 +84,8 @@ function getFirstElementOfArray(array) {
 function getLastElementOfArray(array) {
   return array.pop();
 }
+
+//return array[array.length-1]
 
 /**
  * addElementToEndOfArray()
@@ -160,8 +168,9 @@ function removeElementFromFrontOfArray(array) {
 function getMiddleElement(array) {
   let midElement = array[array.length / 2 | 0];
   return midElement;
-  
 }
+
+// let idxMid = Math.floor(array.length/2)
 
 // Do not change any code below this line.
 module.exports = {

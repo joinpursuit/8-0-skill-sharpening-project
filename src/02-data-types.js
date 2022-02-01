@@ -41,7 +41,7 @@ function convertToNumber(val) {
  *  //> "99"
  */
 function convertToString(val) {
-  return val + '';
+  return val + ''; //return val.toString();
 }
 
 /**
@@ -96,6 +96,7 @@ function checkIfCharacterIsInString(text, character) {
     return false;
   }
 }
+//return text.includes(character) // because .includes() returns a boolean you don't need an if/else statement
 
 /**
  * isEven()
@@ -118,6 +119,7 @@ function isEven(num) {
     return false;
   }
 }
+//return num % 2 === 0 
 
 /**
  * isOdd()
@@ -140,6 +142,7 @@ function isOdd(num) {
     return false;
   }
 }
+//return num % 2 !== 0 or return num % 2 === 1
 
 /**
  * isTruthy()
@@ -162,6 +165,7 @@ function isTruthy(val) {
     return false;
   }
 }
+//return !!val (double bang will check the truthiness of any value type) or return Boolean(val)
 
 /**
  * isFalsy()
@@ -184,6 +188,7 @@ function isFalsy(val) {
     return false;
   }
 }
+//return !val (single bang checks for falsiness)
 
 // Do not change the code below.
 module.exports = {

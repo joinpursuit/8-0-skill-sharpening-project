@@ -19,6 +19,15 @@ function rangeSum(min, max) {
   return sum;
 }
 
+//code below also works but the more comfortable is the above
+// function rangeSum(min, max) {
+//   let sum = 0;
+//   for(min; min <= max; min++){
+//     sum += min;
+//   }
+//   return sum;
+// }
+
 /**
  * rangeOdd()
  * ---------------------
@@ -92,6 +101,17 @@ function containsWhileLoop(array, target) {
   }
 }
 
+// function containsWhileLoop(array, target) {
+//   let i = 0
+//   while(i < array.length){
+//     if(array[i] === target){
+//       return true;
+//     }
+//     i++;
+//   }
+//   return false;
+// }
+
 /**
  * containsForLoop()
  * ---------------------
@@ -122,6 +142,15 @@ function containsForLoop(array, target) {
   }
 }
 
+// function containsForLoop(array, target) {
+//   for(let element of array){
+//     if(element === target){
+//       return true;
+//     }
+//   }
+//     return false;
+// }
+
 /**
  * targetCount()
  * ---------------------
@@ -138,7 +167,7 @@ function targetCount(array, target) {
   let sum = 0;
   for(let i = 0; i < array.length; i++){
     if(array[i] === target){
-    sum++
+    sum++ //sum += 1
     }
   }
   return sum;
@@ -212,9 +241,9 @@ function lastIndexFound(array, target) {
  */
 function timesIndex(array) {
   let newArr = [];
-  let sum;
+  let sum; //no need for another variable 
   for(i = 0; i < array.length; i++){
-    sum = array[i] * i;
+    sum = array[i] * i; //newArr.push(array[i] * i)
     newArr.push(sum);
   }
   return newArr;
@@ -241,6 +270,15 @@ function cumulativeSum(array) {
     return newArr;
   }
   
+  // function cumulativeSum(array) {
+    //if(!array.length) return []
+  //  let cumulativeNums = [array[0]];
+
+  //   for(let i = 1; i < array.length; i++){
+  //     cumulativeNums.push(cumulativeNums[i - 1] + array[i]])
+  //   };
+  //   return cumulativeNums
+  // }
 
 // Do not change anything below this line.
 module.exports = {

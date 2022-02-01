@@ -39,8 +39,8 @@ function shoutWhileLoop(array) {
   let newArr = [];
   let i = 0;
   while(i < array.length){
-    i = array[i] + "!";
-    newArr.push(i);
+    let shoutedStr = array[i] + "!";
+    newArr.push(shoutedStr);
     i++
   }
   return newArr;
@@ -212,9 +212,9 @@ function findEqual(array, selected) {
 
 function removeDuplicates(array) {
   let newArr = [];
-  for(let i in array){
-    if(newArr.indexOf(array[i]) === -1){
-      newArr.push(array[i])
+  for(let element of array){
+    if(!newArr.includes(element)){
+      newArr.push(element)
     }
   }
   return newArr;

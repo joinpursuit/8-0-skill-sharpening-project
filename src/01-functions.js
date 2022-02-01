@@ -45,8 +45,8 @@ function greet(name) {
  *  //> 30
  */
 function add(a, b) {
-  let sum = a + b;
-  return sum;
+  let sum = a + b; //variables take up memory space so it is not necessary here
+  return sum; //can simply return a + b
 }
 
 /**
@@ -64,7 +64,7 @@ function add(a, b) {
  */
 function multiply(a, b) {
   let sum = a * b;
-  return sum;
+  return sum; //return a * b
 }
 
 /**
@@ -87,7 +87,7 @@ function multiply(a, b) {
  */
 function average(a, b) {
   let sum = (a + b) / 2;
-  return sum; 
+  return sum; //return (a + b) / 2
 }
 
 /**
@@ -109,7 +109,7 @@ function average(a, b) {
  */
 function averageThree(a, b, c) {
   let sum = (a + b + c) / 3;
-  return sum;
+  return sum; //return (a + b + c) / 3
 }
 
 /**
@@ -136,6 +136,7 @@ function compareTypes(a, b) {
     return false;
   }
 }
+//return typeof a === typeof b; this can be done because a comparison always returns a boolean
 
 /**
  * flipSign()
@@ -156,7 +157,7 @@ function compareTypes(a, b) {
  */
 function flipSign(a) {
   let sum = a * -1;
-  return sum;
+  return sum; //return a * -1 or return -a
 }
 
 /**
@@ -179,7 +180,7 @@ function flipSign(a) {
  */
 function joinStringsWithSpaces(a, b, c, d, e) {
   let str = a + " " + b + " " + c + " " + d + " " + e;
-  return str;
+  return str; //return `${a} ${b} ${c} ${d} ${e}`
 }
 
 /**
@@ -199,7 +200,7 @@ function joinStringsWithSpaces(a, b, c, d, e) {
  */
 function getFirstAndLastCharacter(a) {
   let newStr = a.charAt(0) + a.charAt(a.length -1);
-  return newStr;
+  return newStr; //return a[0] + a[a.length - 1]; dot notation is only for objects
 }
 
 // Do not change the code below.

@@ -21,6 +21,7 @@ function isEqual(a, b) {
     return false;
   }
 }
+//return a === b
 
 /**
  * findLarger()
@@ -114,6 +115,10 @@ function positiveNegativeOrZero(a) {
  *  aroundTheWorldGreeting();
  *  //> "Hello World"
  */
+
+//you can set parameters to defaults so you can set aroundTheWorldGreetings(language = "english")
+//because the question specifically says "if no argument is passed" you do not need the else statement at the end because then it will always return "Hello World" even if they pass in "italian" etc. which is not asked
+//you don't want your code to do things you didn't intend it to do
 function aroundTheWorldGreeting(language) {
   if(language === "spanish"){
     return "Hola Mundo";
@@ -123,6 +128,16 @@ function aroundTheWorldGreeting(language) {
     return "Hello World";
   }
 }
+
+// function aroundTheWorldGreeting(language = "english") {
+//   if(language === "english"){
+//     return "Hello World";
+//   } else if(language === "german"){
+//     return "Hallo Welt";
+//   } else if (language === 'spanish'){
+//     return "Hola Mundo";
+//   }
+// }
 
 /**
  * aroundTheWorldGreetingWithSwitch()
@@ -155,6 +170,24 @@ function aroundTheWorldGreetingWithSwitch(language) {
       return "Hello World";
   }
 }
+
+//best practice is to include the break; shows that you are intentional in stopping the function
+
+// function aroundTheWorldGreetingWithSwitch(language) {
+//   switch (language){
+//     case "spanish":
+//       return "Hola Mundo";
+//       break;
+//     case "german":
+//       return "Hallo Welt";
+//       break;
+//     case "english":
+//       return "Hello World;"
+//       break;
+//     default:
+//       return undefined;
+//   }
+// }
 
 /**
  * calculateLetterGrade()
@@ -205,9 +238,9 @@ function calculateLetterGrade(grade) {
  */
 function animalCounts(animal, numberOfAnimals) {
   if(numberOfAnimals > 1){
-    return `${numberOfAnimals} ${animal}s`
+    return `${numberOfAnimals} ${animal}s`;
   } else{
-    return `${numberOfAnimals} ${animal}`
+    return `${numberOfAnimals} ${animal}`;
   }
 }
 
@@ -251,6 +284,7 @@ function evenOrOdd(a) {
 function evenOrOddWithTernary(a) {
   return (a % 2 === 0) ? "Even" : "Odd";
 }
+//parentheses are not necessary here
 
 // Do not change any code below this line.
 module.exports = {
