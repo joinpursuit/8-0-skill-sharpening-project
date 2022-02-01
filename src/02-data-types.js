@@ -151,6 +151,7 @@ function isOdd(num) {
  //incomplete
 function isTruthy(val) {
   return !!val
+  //return Boolean(val)
 }
 
 /**
@@ -176,6 +177,7 @@ function isFalsy(val) {
      return true
    }
 }
+//return !val
 
 // Do not change the code below.
 module.exports = {

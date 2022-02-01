@@ -28,9 +28,9 @@ function createEmptyArray() {
  */
 function createArrayWithTwoElements(a, b) {
   let arr = []
-  arr.push(a)
+  arr.push(a) 
   arr.push(b)
-  return arr
+  return arr //return [a,b]
 }
 
 /**

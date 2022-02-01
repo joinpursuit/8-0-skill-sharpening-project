@@ -198,6 +198,7 @@ function findEqual(array, selected) {
 for(let i = 0; i < array.length; i++){
   if(array[i] === selected){
     ans = true
+    return ans
 }else if(array[i] !== selected){
     ans = false
   }

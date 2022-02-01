@@ -191,11 +191,13 @@ function lastIndexFound(array, target) {}
  *  //> [ 0, 10, 22 ]
  */
 function timesIndex(array) {
+  let arr = []
   let times = 1
   for(let i = 0; i < array.length; i++){
+    arr = times * array[i]
     times = times * array[i]
   }
-  return times
+  return arr
 }
 
 /**

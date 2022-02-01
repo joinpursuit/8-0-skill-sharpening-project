@@ -114,7 +114,7 @@ function positiveNegativeOrZero(a) {
  *  //> "Hello World"
  */
  
-function aroundTheWorldGreeting(language) {
+function aroundTheWorldGreeting(language)/*default in parameter*/ {
   if(language ==='english' || language === undefined){
     return "Hello World"
   }else if(language === 'spanish'){
