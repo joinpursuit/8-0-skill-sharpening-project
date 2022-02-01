@@ -60,7 +60,7 @@ return object;
  */
 function createObjectWithKeyValuePair(key, val) {
 let object = {};
-object.key = val;
+object[key] = val;
 return object;
 }
 

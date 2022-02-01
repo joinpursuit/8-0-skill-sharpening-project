@@ -229,10 +229,10 @@ function calculateLetterGrade(grade) {
 function animalCounts(animal, numberOfAnimals) {
   let count;
   if (numberOfAnimals === 1) {
-    count = numberOfAnimals + animal;
+    count = `${numberOfAnimals} ${animal}`;
   }
   if (numberOfAnimals > 1) {
-      count = numberOfAnimals + animal;
+      count = `${numberOfAnimals} ${animal}s`;
   }
     return count 
 }

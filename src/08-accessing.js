@@ -173,7 +173,21 @@ function getFullAddress(person) {}
       numbers: [7185550921, 7185558611],
     };
  */
-function getFlatObject(person) {}
+function getFlatObject(person) {
+  let newObj = {};
+  let newObjTwo;
+
+  newObjTwo = Object.assign(newObj, person.names);
+  newObjTwo = Object.assign(newObj, person.address);
+
+  newObjTwo = delete person.names;
+  newObjTwo = delete person.address;
+
+  newObjTwo = Object.assign(newObj, person);
+
+  return newObjTwo;
+
+}
 
 // Do not change the code below.
 module.exports = {
