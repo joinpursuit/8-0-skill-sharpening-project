@@ -229,13 +229,7 @@ function removeDuplicates(array) {
     for (let counter = indx + 1; counter < array.length; ++counter) {
       if (array[indx] === array[counter]) {
         array.splice(counter, 1);
-      }
-    }
-  }
-  for (let indx = 0; indx < array.length; ++indx) {
-    for (let counter = indx + 1; counter < array.length; ++counter) {
-      if (array[indx] === array[counter]) {
-        array.splice(counter, 1);
+        --indx; // Compensates for .splice skipping over the subsequent iteration due to index number shift
       }
     }
   }
