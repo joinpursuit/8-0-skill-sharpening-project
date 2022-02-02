@@ -10,7 +10,6 @@
  *  //> 4
  */
 function getLengthOfString(str) {
-  let str = 'Welcome to the party';
    return str.length;
 }
 
@@ -27,9 +26,7 @@ function getLengthOfString(str) {
  *  //> 111
  */
 function convertToNumber(val) {
-  let str = '42';
-  let val = Number(str);
-  return val;
+    return Number(val);
   }
 
 /**
@@ -45,8 +42,7 @@ function convertToNumber(val) {
  *  //> "99"
  */
 function convertToString(val) {
-  let val = 0;
-  return val.toString();
+    return val.toString();
   }
 
 /**
@@ -61,7 +57,6 @@ function convertToString(val) {
  *  //> "HELLO THERE"
  */
 function convertToShoutingText(text) {
-  let text = "Hello There";
   return text.toUpperCase();
 }
 
@@ -77,8 +72,7 @@ function convertToShoutingText(text) {
  *  //> "hello there"
  */
 function convertToWhisperText(text) {
-  let text = "Hello There";
-  return text.toLowerCase();
+    return text.toLowerCase();
   }
 
 /**
@@ -97,7 +91,7 @@ function convertToWhisperText(text) {
  *  //> false
  */
 function checkIfCharacterIsInString(text, character) {
-  return text.contains(character)
+  return text.includes(character);
 }
 
 /**
@@ -115,10 +109,9 @@ function checkIfCharacterIsInString(text, character) {
  *  //> false
  */
 function isEven(num) {
-  if (num % 2) {
-    return true
+  return num % 2 ===0;
   }
-}
+
 
 /**
  * isOdd()
@@ -135,10 +128,9 @@ function isEven(num) {
  *  //> true
  */
 function isOdd(num) {
-  if (!num % 2) {
-    return true
+  return num % 2 !== 0;
   }
-}
+
 
 /**
  * isTruthy()
@@ -154,11 +146,11 @@ function isOdd(num) {
  *  isTruthy(null);
  *  //> false
  */
+
 function isTruthy(val) {
-  if (val === true){
-    return true
-  }
+  return !!val;
 }
+// return Boolean(val);
 
 /**
  * isFalsy()
@@ -179,6 +171,7 @@ function isFalsy(val) {
     return true;
   }
 }
+//return !val;
 
 // Do not change the code below.
 module.exports = {

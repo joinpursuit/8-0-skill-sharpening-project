@@ -11,8 +11,7 @@
  *  //> []
  */
 function createEmptyArray() {
-  const myArry = []
-  return []
+  return [];
 }
 
 /**
@@ -28,9 +27,7 @@ function createEmptyArray() {
  *  //> [ true, false ]
  */
 function createArrayWithTwoElements(a, b) {
-  let a = [0]
-  let b = [1]
-  return [a,b]
+  return [a, b];
 }
 
 /**
@@ -45,8 +42,7 @@ function createArrayWithTwoElements(a, b) {
  *  //> 3
  */
 function getArrayLength(array) {
-  let myArray = [2,4,6,8]
-  return myArray.length;
+    return array.length;
 }
 
 /**
@@ -62,8 +58,7 @@ function getArrayLength(array) {
  *  //> 10
  */
 function getFirstElementOfArray(array) {
-  const myArray = [1, 2, 3, 4];
-  return myArray[0];
+    return array[0];
 }
 
 /**
@@ -79,8 +74,7 @@ function getFirstElementOfArray(array) {
  *  //> undefined
  */
 function getLastElementOfArray(array) {
-  const myArray = [1, 2, 3, 4];
-  return myArray[3];
+    return array[array.length -1];
 }
 
 /**
@@ -96,8 +90,8 @@ function getLastElementOfArray(array) {
  *  //> [ 10, 9 ]
  */
 function addElementToEndOfArray(array, element) {
-  let myArray = [1, 2, 3, 4];
-  return Element.push(5);
+    array.push(element);
+    return array;
 }
 
 /**
@@ -112,8 +106,7 @@ function addElementToEndOfArray(array, element) {
  *  //> 8
  */
 function removeElementFromEndOfArray(array) {
-  const array = [1, 2, 3, 4];
-  return array.pop(4)
+    return array.pop();
 }
 
 /**
@@ -129,8 +122,8 @@ function removeElementFromEndOfArray(array) {
  *  //> [ 9, 10 ]
  */
 function addElementToFrontOfArray(array, element) {
-  const array = [1, 2, 3];
- return Element.unshift();
+  array.unshift(element);
+  return array;
 }
 
 /**
@@ -145,9 +138,8 @@ function addElementToFrontOfArray(array, element) {
  *  //> 10
  */
 function removeElementFromFrontOfArray(array) {
-  const array = [1, 2, 3]
-  return array.shift();
-}
+    return array.shift();
+  }
 
 /**
  * getMiddleElement()
@@ -164,8 +156,8 @@ function removeElementFromFrontOfArray(array) {
  *  //> null
  */
 function getMiddleElement(array) {
-  const array = [1, 2, 3];
-  return array[1];
+   let idxMid = Math.floor(array.length /2); 
+    return array[idxMid];
 }
 
 // Do not change any code below this line.

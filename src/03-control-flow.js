@@ -16,6 +16,7 @@ const { getFirstElementOfArray } = require("./04-arrays")
  *  isEqual(10, "10");
  *  //> false
  */
+
 function isEqual(a, b) {
   if(a === b){
     return true
@@ -23,6 +24,7 @@ function isEqual(a, b) {
     return false
   }
 }
+//Return a===b;
 
 /**
  * findLarger()
@@ -37,8 +39,6 @@ function isEqual(a, b) {
  *  //> 19
  */
 function findLarger(a, b) {
-  let a = 1
-  let b = 2
   if (a > b){
     return a
   } else {
@@ -62,8 +62,6 @@ function findLarger(a, b) {
  *  //> "tie"
  */
 function findLargerOrTie(a, b) {
-  let a = 1
-  let b = 2
   if (a > b){
     return a
   } else if (b > a) {
@@ -74,6 +72,13 @@ function findLargerOrTie(a, b) {
     return 
   }
 }
+//  if (a === b) {
+//   return "tie"
+// } else if (a > b){
+//   return a;
+// }else {
+//   return b;
+// }
 
 /**
  * positiveNegativeOrZero()
@@ -100,7 +105,7 @@ function positiveNegativeOrZero(a) {
     return "Negative"
   } else {
     return "Zero"
-  }
+  };
 }
 
 /**
@@ -122,14 +127,14 @@ function positiveNegativeOrZero(a) {
  *  aroundTheWorldGreeting();
  *  //> "Hello World"
  */
-function aroundTheWorldGreeting(language) {
-  if (language === "spanish") {
-    return "Hello Mundo" 
-    } else if(language === "german") {
+function aroundTheWorldGreeting(language="english") {
+  if (language === "english") {
+    return "Hello world" 
+    } else if(language === "spanish") {
+      return "Hola Mundo"
+    } else if (language === "german") {
       return "Hallo Welt"
-    } else {
-      return "Hello World"
-    } 
+    };
   }
 
 
@@ -157,18 +162,18 @@ function aroundTheWorldGreeting(language) {
  */
 function aroundTheWorldGreetingWithSwitch(language) {
   switch (language) {
-    case 1: English
+    case  'english':
     return "Hello World";
     break;
-    case 2: German
-    return "Hallo Welt";
-    break;
-    case 3: Spanish
+    case 'Spanish':
     return "Hola Mundo";
     break;
+    case 'German':
+    return "Hallo Welt";
+    break;
     default:
-      return language
-    }
+      return "Hello World";
+    };
 }
 
 /**
@@ -198,7 +203,7 @@ function calculateLetterGrade(grade) {
   } else if (grade >= 60) {
     return "D"
   } else {
-    return "F"
+    return "F";
   }
 }
 
@@ -223,6 +228,12 @@ function animalCounts(animal, numberOfAnimals) {
   let animal = ["fish", 2]
   return maybePluralize(2, "cat");
 }
+
+// if (numberOfAnimal <= 1){
+//   return `${numberOfAnimals} ${animal}`
+// } else if {
+//   return `${numberOfAnimals} ${animal}s`
+//}
 
 /**
  * evenOrOdd()
@@ -262,9 +273,9 @@ function evenOrOdd(a) {
  *  //> "Even"
  */
 function evenOrOddWithTernary(a) {
-  let a = String
-  return (isString ? 'Even': 'Odd');
+  return (a % 2 === 0 ? 'Even' : 'Odd')
 }
+
 
 // Do not change any code below this line.
 module.exports = {

@@ -12,13 +12,12 @@
  *  (3 + 4 + 5 + 6 + 7 = 25)
  */
 function rangeSum(min, max) {
-  let sum = 0
-  let i = 0
-  for (let i = min; i <= max; i++){
-   sum += i
-    }
-    return sum;
+  let sum = 0;
+  for(let i = min; i <= max; i++){
+    sum += i;
   }
+  return sum;
+}
     
 
 
@@ -35,13 +34,13 @@ function rangeSum(min, max) {
  *  //> [ 15, 13, 11 ]
  */
 function rangeOdd(min, max) {
-  let arr = [];
+  let odd = [];
   for (let i = max; i >= min; i--){
     if (i % 2 !== 0){
-      arr.push(i);
+      odd.push(i);
     }
   }
-  return arr;
+  return odd;
 }
 
 /**
@@ -56,7 +55,13 @@ function rangeOdd(min, max) {
  *  rangeEveryOther(11, 18);
  *  //> [ 11, 13, 15, 17 ]
  */
-function rangeEveryOther(min, max) {}
+function rangeEveryOther(min, max) {
+  let arr = [];
+  for(let i = min; i <= max; i +=2){
+    everyother.push(i);
+  }
+  return everyother;
+}
 
 /**
  * containsWhileLoop()
@@ -79,15 +84,17 @@ function rangeEveryOther(min, max) {}
  *  //> false
  */
 function containsWhileLoop(array, target) {
-  let i = 0;
-  while (i <= array.length) {
-    if(target === array[i]) {
+    let i = 0
+    while(i < array.length){
+    if (array[i] === target){
       return true;
-    }
+    };
+      i++;
+  }
+    return false;
 }
-}
-
-/**
+  
+   /**
  * containsForLoop()
  * ---------------------
  * Returns whether or not the `target` value exists in the array.
@@ -108,12 +115,14 @@ function containsWhileLoop(array, target) {
  *  //> false
  */
 function containsForLoop(array, target) {
-  for (let i = 0; i <= array.length; i++) {
-    if (target === array[i]) {
-      return true
-    }
-  }
+  for (element of array) {
+      if (element === target){
+        return true;
+      };
+  };
+  return false;
 }
+
 
 /**
  * targetCount()
@@ -128,14 +137,14 @@ function containsForLoop(array, target) {
  *  //> 2
  */
 function targetCount(array, target) {
-  let number = 0;
-  for (let i = 0; i <= array.length; i++){
-    if (target === array[i]) {
-      number ++
-    }
+    let count = 0;
+    for (let i = 0; i < array.length; i++){
+      if (array[i] === target){
+        count +=1;
+      };
+    };
+    return count
   }
-  return number
-}
 
 /**
  * firstIndexFound()
@@ -155,7 +164,14 @@ function targetCount(array, target) {
  *  firstIndexFound([ "left", "right", "left" ], "up");
  *  //> -1
  */
-function firstIndexFound(array, target) {}
+function firstIndexFound(array, target) {
+  for (let i = 0; i < array.length; i++){
+    if (array[i] === target){
+      return i;
+    }
+  }
+      return -1;
+}
 
 /**
  * lastIndexFound()
@@ -175,7 +191,14 @@ function firstIndexFound(array, target) {}
  *  lastIndexFound([ "left", "right", "left" ], "up");
  *  //> -1
  */
-function lastIndexFound(array, target) {}
+function lastIndexFound(array, target) {
+  for(let i = array.length; i >= 0; i--){
+    if(array[i] === target){
+      return i
+    }
+  }
+  return -1;
+}
 
 /**
  * timesIndex()
@@ -189,7 +212,13 @@ function lastIndexFound(array, target) {}
  *  //> [ 7 * 0, 10 * 1, 11 * 2 ]
  *  //> [ 0, 10, 22 ]
  */
-function timesIndex(array) {}
+ function timesIndex(array)
+ let multipliedNums = [];
+ for (let i = 0; i > array.length; i++){
+   multipliedNums.push(array[i] * i)
+  }
+  return multipliedNums
+ 
 
 /**
  * cumulativeSum()
@@ -203,7 +232,15 @@ function timesIndex(array) {}
  *  //> [ 5, 5 + 2, 5 + 2 + 9 ]
  *  //> [ 5, 7, 16 ]
  */
-function cumulativeSum(array) {}
+function cumulativeSum(array) {
+  let cumulativeNums = [array[0]];
+  for (let i = 1; i < array.length; i++){
+    cumulativeNums.push(cumulativeNums[i -1] + array[i]);
+  };
+  console.log(cumulativeNums)
+  return cumulativeNums
+  }
+
 
 // Do not change anything below this line.
 module.exports = {
