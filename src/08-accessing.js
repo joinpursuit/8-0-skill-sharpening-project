@@ -190,16 +190,16 @@ function getFullAddress(person) {
     };
  */
 function getFlatObject(person) {
-  const flatObj = {}
-  flatObj["first"] = person.names.first;
-  flatObj["middle"] = person.names.middle;
-  flatObj["last"] = person.names.last;
-  flatObj["street"] = person.address.street;
-  flatObj["unit"] = person.address.unit;
-  flatObj["city"] = person.address.city;
-  flatObj["state"] = person.address.state;
-  flatObj["zip"] = person.address.zip;
-  flatObj["numbers"] = person.numbers;
+  const flatObj = {};
+  flatObj.first = person.names.first;
+  flatObj.middle = person.names.middle;
+  flatObj.last = person.names.last;
+  flatObj.street = person.address.street;
+  flatObj.unit = person.address.unit;
+  flatObj.city = person.address.city;
+  flatObj.state = person.address.state;
+  flatObj.zip = person.address.zip;
+  flatObj.numbers = person.numbers;
   return flatObj;
 }
 
