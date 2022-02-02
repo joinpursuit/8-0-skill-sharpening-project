@@ -9,7 +9,10 @@
  *  getLengthOfString("down");
  *  //> 4
  */
-function getLengthOfString(str) {}
+function getLengthOfString(str) {
+  let sLength = str.length
+  return sLength
+}
 
 /**
  * convertToNumber()
@@ -22,7 +25,10 @@ function getLengthOfString(str) {}
  *  convertToNumber("111");
  *  //> 111
  */
-function convertToNumber(val) {}
+function convertToNumber(val) {
+  let convertNum = val.Number()
+  return convertNum
+}
 
 /**
  * convertToString()
@@ -36,7 +42,10 @@ function convertToNumber(val) {}
  *  convertToString(99);
  *  //> "99"
  */
-function convertToString(val) {}
+function convertToString(val) {
+  let convertStr = val.split('')
+  return convertStr
+}
 
 /**
  * convertToShoutingText()
@@ -49,7 +58,10 @@ function convertToString(val) {}
  *  convertToShoutingText("Hello There");
  *  //> "HELLO THERE"
  */
-function convertToShoutingText(text) {}
+function convertToShoutingText(text) {
+  let convertShout = text.toUpperCase()
+  return convertShout
+}
 
 /**
  * convertToWhisperText()
@@ -62,7 +74,11 @@ function convertToShoutingText(text) {}
  *  convertToWhisperText("Hello There");
  *  //> "hello there"
  */
-function convertToWhisperText(text) {}
+function convertToWhisperText(text) {
+  let convertWhisper = text.toLowerCase()
+  console.log(convertWhisper)
+  return convertWhisper
+}
 
 /**
  * checkIfCharacterIsInString()
