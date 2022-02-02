@@ -26,7 +26,7 @@ function getLengthOfString(str) {
  *  //> 111
  */
 function convertToNumber(val) {
-  let convertNum = val.Number()
+  let convertNum = val.toString()
   return convertNum
 }
 
@@ -43,7 +43,7 @@ function convertToNumber(val) {
  *  //> "99"
  */
 function convertToString(val) {
-  let convertStr = val.split('')
+  let convertStr = val + ''
   return convertStr
 }
 
@@ -95,7 +95,9 @@ function convertToWhisperText(text) {
  *  checkIfCharacterIsInString("hello there", "a");
  *  //> false
  */
-function checkIfCharacterIsInString(text, character) {}
+function checkIfCharacterIsInString(text, character) {
+
+}
 
 /**
  * isEven()
@@ -111,7 +113,13 @@ function checkIfCharacterIsInString(text, character) {}
  *  isEven(11);
  *  //> false
  */
-function isEven(num) {}
+function isEven(num) {
+  if (num % 2 == 0){
+    return true
+  } else {
+    return false
+  }
+}
 
 /**
  * isOdd()
@@ -127,7 +135,13 @@ function isEven(num) {}
  *  isOdd(11);
  *  //> true
  */
-function isOdd(num) {}
+function isOdd(num) {
+  if (num % 2 == 0){
+    return false
+  } else {
+    return true
+  }
+}
 
 /**
  * isTruthy()
@@ -143,7 +157,8 @@ function isOdd(num) {}
  *  isTruthy(null);
  *  //> false
  */
-function isTruthy(val) {}
+function isTruthy(val) {
+}
 
 /**
  * isFalsy()
