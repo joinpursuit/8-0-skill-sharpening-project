@@ -9,7 +9,10 @@
  *  getLengthOfString("down");
  *  //> 4
  */
-function getLengthOfString(str) {}
+function getLengthOfString(str) {
+  let length = str.length
+  return length
+}
 
 /**
  * convertToNumber()
@@ -22,7 +25,10 @@ function getLengthOfString(str) {}
  *  convertToNumber("111");
  *  //> 111
  */
-function convertToNumber(val) {}
+function convertToNumber(val) {
+  let number = parseInt(val)
+  return number
+}
 
 /**
  * convertToString()
@@ -36,7 +42,10 @@ function convertToNumber(val) {}
  *  convertToString(99);
  *  //> "99"
  */
-function convertToString(val) {}
+function convertToString(val) {
+  let newText = val.toString()
+  return newText
+}
 
 /**
  * convertToShoutingText()
@@ -49,7 +58,10 @@ function convertToString(val) {}
  *  convertToShoutingText("Hello There");
  *  //> "HELLO THERE"
  */
-function convertToShoutingText(text) {}
+function convertToShoutingText(text) {
+  let result = text.toUpperCase();
+  return result
+}
 
 /**
  * convertToWhisperText()
@@ -62,7 +74,10 @@ function convertToShoutingText(text) {}
  *  convertToWhisperText("Hello There");
  *  //> "hello there"
  */
-function convertToWhisperText(text) {}
+function convertToWhisperText(text) {
+  let result = text.toLowerCase();
+  return result
+}
 
 /**
  * checkIfCharacterIsInString()
@@ -79,7 +94,10 @@ function convertToWhisperText(text) {}
  *  checkIfCharacterIsInString("hello there", "a");
  *  //> false
  */
-function checkIfCharacterIsInString(text, character) {}
+function checkIfCharacterIsInString(text, character) {
+  let result = text.includes(character);
+  return result
+}
 
 /**
  * isEven()
@@ -95,7 +113,10 @@ function checkIfCharacterIsInString(text, character) {}
  *  isEven(11);
  *  //> false
  */
-function isEven(num) {}
+function isEven(num) {
+  return num % 2 === 0;
+}
+
 
 /**
  * isOdd()
@@ -111,7 +132,9 @@ function isEven(num) {}
  *  isOdd(11);
  *  //> true
  */
-function isOdd(num) {}
+function isOdd(num) {
+  return num % 2 !== 0
+}
 
 /**
  * isTruthy()
@@ -127,7 +150,9 @@ function isOdd(num) {}
  *  isTruthy(null);
  *  //> false
  */
-function isTruthy(val) {}
+function isTruthy(val) {
+  
+}
 
 /**
  * isFalsy()
