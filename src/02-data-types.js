@@ -41,7 +41,7 @@ function convertToNumber(val) {
  *  //> "99"
  */
 function convertToString(val) {
-  return val.toString()
+  return val.toString();
 }
 
 /**
@@ -116,7 +116,7 @@ function isEven(num) {
   return false;
 
 }
-
+//alt-----> return num %2 ===0
 /**
  * isOdd()
  * ---------------------
@@ -138,7 +138,7 @@ function isOdd(num) {
     return false;
   
 }
-
+//alt----> return num % 2 !== 0
 /**
  * isTruthy()
  * ---------------------
@@ -159,7 +159,7 @@ function isTruthy(val) {
   else
   return false ;
 }
-
+//alt----> return !!val OR return Boolean(val)
 /**
  * isFalsy()
  * ---------------------

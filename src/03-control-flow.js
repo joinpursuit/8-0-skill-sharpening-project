@@ -66,7 +66,7 @@ function findLargerOrTie(a, b) {
 return `tie`
   }
 }
-
+//Alt---> if 
 /**
  * positiveNegativeOrZero()
  * ---------------------
@@ -157,10 +157,13 @@ function aroundTheWorldGreetingWithSwitch(language) {
   switch (language){
     case`english`:
    return "Hello World";
+   break;
    case `spanish`:
   return "Hola Mundo";
+  break;
   case`german`:
   return "Hallo Welt";
+  break;
   default: 
   return `Hello World`;
  }

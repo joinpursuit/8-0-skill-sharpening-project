@@ -138,7 +138,8 @@ function evenArray(array) {
  *  findSmallest([ 0, 11, -2, 5 ]);
  *  //> -2
  */
-function findSmallest(array) { let smallest = array[0];
+function findSmallest(array) { 
+  let smallest = array[0];
   for (let element of array) {
     if (element < smallest) {
       smallest = element;

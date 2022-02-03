@@ -132,7 +132,7 @@ else {
 return false
 }
 }
-
+// alt---> return typeof(a)===typeof(b)
 /**
  * flipSign()
  * ---------------------
@@ -153,7 +153,7 @@ return false
 function flipSign(a) {
   return -a
 }
-
+//alt---> a * -1 
 /**
  * joinStringsWithSpaces()
  * ---------------------
@@ -194,7 +194,7 @@ function joinStringsWithSpaces(a,b,c,d,e) {
 function getFirstAndLastCharacter(a) {
   return a.charAt(0) + a.charAt(a.length-1)
 }
-
+//alt-----> a[0] + a[a.length -1]
 // Do not change the code below.
 module.exports = {
   alwaysTrue,
