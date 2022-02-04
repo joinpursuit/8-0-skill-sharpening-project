@@ -25,7 +25,7 @@ function getLengthOfString(str) {
  *  //> 111
  */
 function convertToNumber(val) {
-  return parseInt(val);
+  return Number(val);
 }
 
 /**
@@ -91,12 +91,9 @@ function convertToWhisperText(text) {
  *  checkIfCharacterIsInString("hello there", "a");
  *  //> false
  */
+//.incudes returns a boolean
 function checkIfCharacterIsInString(text, character) {
-  if (text.includes(character)) {
-    return true
-  } else {
-    return false
-  }
+  return text.includes(character)
 }
 
 /**
@@ -114,11 +111,7 @@ function checkIfCharacterIsInString(text, character) {
  *  //> false
  */
 function isEven(num) {
-  if (num%2 == 0) {
-    return true
-  } else {
-    return false
-  }
+  return num % 2 === 0
 }
 
 /**
@@ -136,11 +129,8 @@ function isEven(num) {
  *  //> true
  */
 function isOdd(num) {
-  if (num%2 !== 0) {
-    return true
-  } else {
-    return false
-  }
+  return num % 2 !== 0 
+    
 }
 
 /**
@@ -157,12 +147,9 @@ function isOdd(num) {
  *  isTruthy(null);
  *  //> false
  */
+// use !! to test the truthyness of a value
 function isTruthy(val) {
-  if (val) {
-    return true
-  } else {
-    return false
-  }
+  return !! val
 }
 
 /**
@@ -179,12 +166,10 @@ function isTruthy(val) {
  *  isFalsy(" ");
  *  //> false
  */
+// single a ! will test for falsyness
 function isFalsy(val) {
-  if (!val) {
-    return true
-  } else {
-    return false
-  }
+  return ! val
+
 }
 
 // Do not change the code below.

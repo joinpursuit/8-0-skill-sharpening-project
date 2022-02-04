@@ -25,8 +25,7 @@ function createEmptyObject() {
  *  //> { whateverKey: 19 }
  */
 function createObjectWithValue(val) {
-  let obj = {Book: val}
-  return obj
+  return {Book: val}
 }
 
 /**
@@ -44,7 +43,7 @@ function createObjectWithKey(key) {
 const lock = {}
 lock[key] = "unlock"
 return lock
-  
+ //return {[key: "unlock"]} 
 
 }
 
@@ -65,7 +64,7 @@ function createObjectWithKeyValuePair(key, val) {
   lockIn[key] = val
   return lockIn
 }
-
+//return { [key]: val}
 /**
  * getNameFromObject()
  * ---------------------
@@ -113,7 +112,8 @@ function addValueToObject(object, val) {
   addValue.object = val
   return addValue
 }
-
+// object.anything = val
+// return object
 /**
  * addKeyToObject()
  * ---------------------
@@ -127,7 +127,7 @@ function addValueToObject(object, val) {
  *  //> { right: false, left: true }
  */
 function addKeyToObject(object, key) {
-object[key] = true
+object[key] = "anything"
 return object
 }
 

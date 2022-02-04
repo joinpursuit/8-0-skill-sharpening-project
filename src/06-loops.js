@@ -92,7 +92,8 @@ function containsWhileLoop(array, target) {
   while(i < array.length){
     if(array[i] === target){
       return true
-    } i++
+    }
+    i++
   }return false
 
 
@@ -176,7 +177,8 @@ function firstIndexFound(array, target) {
       return i
 
     }
-  } return -1
+  } 
+  return -1
 }
 
 /**
@@ -204,7 +206,8 @@ function lastIndexFound(array, target) {
       return i
     } 
       
-    } return -1
+    } 
+    return -1
     
   }
   
@@ -231,6 +234,10 @@ function timesIndex(array) {
   }
   return arr
 }
+// let multiple = []
+// for(let i = 0; i < array.lenght; i++){
+// multiple.push(array[i]* i)
+
 
 /**
  * cumulativeSum()

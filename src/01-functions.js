@@ -9,9 +9,9 @@
  *  alwaysTrue();
  *  //> true
  */
+//
 function alwaysTrue() {
-let func = true
-return func
+return true
 };
 
 /**
@@ -126,15 +126,10 @@ function averageThree(a,b,c) {
  *  compareTypes("left", 10);
  *  //> false
  */
+// it returns a boolean so it does not have to have if else statement
 function compareTypes(a,b) {
-  if (typeof a == typeof b) {
-    return true; 
-  } else if (typeof a !== typeof b) {
-    return false;
-  }
-  
+  return typeof a == typeof b;
 }
-
 
 /**
  * flipSign()
@@ -153,14 +148,10 @@ function compareTypes(a,b) {
  *  flipSign(50);
  *  //> -50
  */
+// any number multipiled by a negative -1 give you back the number with the sign flipped
 function flipSign(a) {
-  if (a < 0){
-  return Math.abs(a)
- } else if (a > 0){
-   return -Math.abs(a)
- }
- 
-};
+  return a * -1
+}
 
 /**
  * joinStringsWithSpaces()
@@ -200,7 +191,7 @@ function joinStringsWithSpaces(a,b,c,d,e) {
  *  //> "us"
  */
 function getFirstAndLastCharacter(a) {
-  return a.charAt(0) + a.charAt(a.length -1);
+  return a[0] + a[a.length -1];
 }
 
 // Do not change the code below.

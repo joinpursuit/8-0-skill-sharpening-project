@@ -97,7 +97,16 @@ function getCartTotal(products) {
     //> "Same city."
  */
 function compareLocations(address1, address2) {
-  if
+  if (address1.street === address2.street && address1.city === address2.city && address1.state === address2.state && address1.zip === address2.zip){
+    return "Same building."
+  } else if (address1.city === address2.city && address1.state === address2.state && address1.zip === address2.zip){
+    return "Same city."
+  } else if (address1.state === address2.state){
+    return "Same state."
+  } else {
+    return "Addresses are not near each other."
+  } 
+    
 }
 
 /**
@@ -145,8 +154,32 @@ function compareLocations(address1, address2) {
     //>   },
     //> ];
  */
-function gradeAssignments(assignments) {}
+function gradeAssignments(assignments) {
+  for(let assignment of assignments){
+    let percentage = (assignment.score.received/assignment.score.max)*100
 
+    if(assignment.kind === "PASS-FAIL"){
+      if(assignment.score.received === assignment.score.max){
+        assignment["status"] = "PASSED"
+      } else {
+        assignment["status"] = "FAILED"
+      }
+    }
+    else if(assignment.kind === "PERCENTAGE"){
+      if(percentage >= 80.0){
+        assignment["status"] = `PASSED: ${percentage.toFixed(1)}%`
+      } else {
+        assignment["status"] = `FAILED: ${percentage.toFixed(1)}%`
+      }
+    }
+       else {
+         assignment["status"] = `SCORE: ${assignment.score.received}/${assignment.score.max}`
+       }
+       }
+    
+        return assignments
+      }
+      
 /**
  * createLineOrder()
  * ---------------------
@@ -170,7 +203,22 @@ function gradeAssignments(assignments) {}
     createLineOrder(people);
     //> [ "Ray Anderson", "America Marsh", "Wade Carson", "Patience Patel" ]
  */
-function createLineOrder(people) {}
+function createLineOrder(people) {
+let withMembership = []
+let withOutMembership = []
+
+for (let i = 0; i < people.length; i++){
+  if(people[i].hasMembership === true){
+    withMembership.push(people[i].name)
+  } else {
+    withOutMembership.push(people[i].name)
+  }
+}
+return withMembership.concat(withOutMembership)
+}
+
+
+
 
 module.exports = {
   applyDiscount,
