@@ -78,7 +78,7 @@ function getAddressStreet(person) {
  *  //> 2
  */
 function getCountOfPhoneNumbers(person) {
-  
+  return person.numbers.length;
 };
 
 /**
@@ -114,7 +114,7 @@ function getFirstPhoneNumber(person) {
  *  //> 7185558611
  */
 function getLastPhoneNumber(person) {
-  return person.numbers;
+  return person.numbers[person.numbers.length-1];
 };
 
 /**
@@ -189,7 +189,21 @@ function getFullAddress(person) {
       numbers: [7185550921, 7185558611],
     };
  */
-function getFlatObject(person) {}
+function getFlatObject(person) {
+  let flattenedPerson = {};
+
+  flattenedPerson.first = person.names.first;
+  flattenedPerson.middle = person.names.middle;
+  flattenedPerson.last = person.names.last;
+  flattenedPerson.street = person.address.street;
+  flattenedPerson.unit = person.address.unit;
+  flattenedPerson.city = person.address.city;
+  flattenedPerson.state = person.address.state;
+  flattenedPerson.zip = person.address.zip;
+  flattenedPerson.numbers = person.numbers;
+
+  return flattenedPerson;
+};
 
 // Do not change the code below.
 module.exports = {
