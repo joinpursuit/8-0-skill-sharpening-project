@@ -10,7 +10,7 @@
  *  //> true
  */
 function alwaysTrue() {
-return true
+return true;
 }
 
 /**
@@ -44,7 +44,7 @@ function greet(name) {
  *  //> 30
  */
 function add(a,b) {
-  return a + b
+  return a + b;
 }
 
 /**
@@ -61,7 +61,7 @@ function add(a,b) {
  *  //> 10
  */
 function multiply(a, b) {
-  return a * b 
+  return a * b;
 }
 
 /**
@@ -83,7 +83,7 @@ function multiply(a, b) {
  *  //> 8 // 10 + 6 = 16; 16/2 = 8;
  */
 function average(a, b) {
-  return (a + b)/2
+  return (a + b)/2;
 }
 
 /**
@@ -104,7 +104,7 @@ function average(a, b) {
  *  //> 10 // 10 + 11 + 19 = 30; 30 / 3 = 10;
  */
 function averageThree(a, b, c) {
-  return (a + b + c)/3
+  return (a + b + c)/3;
 }
 
 /**
@@ -132,6 +132,8 @@ function compareTypes(a, b) {
 }
 }
 
+//can also be written as: return typeof a === typeof b; because they will be returning booleans which is true or false 
+
 /**
  * flipSign()
  * ---------------------
@@ -157,6 +159,8 @@ function flipSign(a) {
     }
 }
 
+//can also be written as: return a * -1 
+
 /**
  * joinStringsWithSpaces()
  * ---------------------
@@ -179,6 +183,8 @@ function joinStringsWithSpaces(a, b, c, d, e, ) {
   return a + ' ' + b + ' ' + c + ' ' + d + ' ' + e;
 }
 
+//can also be written : return `${a} ${b} ${c} ${d} ${e}`
+
 /**
  * getFirstAndLastCharacter()
  * ---------------------
@@ -197,6 +203,8 @@ function joinStringsWithSpaces(a, b, c, d, e, ) {
 function getFirstAndLastCharacter(a) {
   return a.charAt(0) + a.charAt(a.length - 1);
 }
+
+//can also be written as: return a[0] + a[a.length-1]
 
 // Do not change the code below.
 module.exports = {

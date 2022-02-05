@@ -44,6 +44,8 @@ function convertToString(val) {
   return String(val)
 }
 
+//return value.toString()
+
 /**
  * convertToShoutingText()
  * ---------------------
@@ -96,6 +98,7 @@ function checkIfCharacterIsInString(text, character) {
     return false
   }
 }
+//return text.includes(character); the dot represents a boolean
 
 /**
  * isEven()
@@ -119,7 +122,7 @@ function isEven(num) {
   }
 
 }
-
+//return num % 2 === 0
 /**
  * isOdd()
  * ---------------------
@@ -141,6 +144,8 @@ function isOdd(num) {
     return false;
   }
 }
+
+//return num % 2 !== 0
 
 /**
  * isTruthy()
@@ -164,6 +169,8 @@ function isTruthy(val) {
   }
 }
 
+//return !!val  :or: return Boolean(val) :or: if (val){return true}
+
 /**
  * isFalsy()
  * ---------------------
@@ -186,6 +193,7 @@ function isFalsy(val) {
   }
 }
 
+//return !val 
 
 // Do not change the code below.
 module.exports = {

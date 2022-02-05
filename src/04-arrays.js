@@ -161,6 +161,8 @@ function getMiddleElement(array) {
   return array[Math.floor(array.length/2)];
 }
 
+//
+
 // Do not change any code below this line.
 module.exports = {
   createEmptyArray,

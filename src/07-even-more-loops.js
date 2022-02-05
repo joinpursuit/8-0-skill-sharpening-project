@@ -153,6 +153,9 @@ function findSmallest(array) {
 return smallest;
 }
 
+/*
+
+*/
 /**
  * findLargest()
  * ---------------------

@@ -42,9 +42,11 @@ function createObjectWithValue(val) {
 
 function createObjectWithKey(key) {
   let object = {};
-  object[key] = "keys";
+  object[key] = "keys";//the brackets [] pulls the value of the parameter
   return object;
 };
+
+//return{[key]: "anything"}
 
 /**
  * createObjectWithKeyValuePair()
@@ -65,6 +67,8 @@ function createObjectWithKeyValuePair(key, val) {
    object[key] = val;
    return object; 
 }
+
+// return {[key]: val}
 
 /**
  * getNameFromObject()
@@ -112,6 +116,10 @@ function addValueToObject(object, val) {
   object["icecream"] = val
   return object
 }
+
+/*object.icecream = val
+return object
+*/
 
 /**
  * addKeyToObject()

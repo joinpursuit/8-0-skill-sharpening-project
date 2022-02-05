@@ -95,6 +95,15 @@ function positiveNegativeOrZero(a) {
   }
   }
 
+  /* if (a > 0){
+    return "Positive";
+  } else if (a < 0){
+    return "Negative";
+  } else (a === 0) {
+    return "Zero";
+  } 
+}
+*/
 
 /**
  * aroundTheWorldGreeting()
@@ -154,14 +163,14 @@ function aroundTheWorldGreetingWithSwitch(language) {
     case "english":
       return "Hello World";
       break;
-      case "spanish":
+    case "spanish":
         return "Hola Mundo";
         break;
-        case "german":
+    case "german":
           return "Hallo Welt";
           break;
-          default:
-            return "Hello World";
+    default:
+          return "Hello World";
 }
 }
 

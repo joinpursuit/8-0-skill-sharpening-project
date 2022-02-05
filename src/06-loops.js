@@ -16,7 +16,7 @@ const { add } = require("./01-functions");
 function rangeSum(min, max) { // curly brackets is the opening of the function block 
   let total = 0 //total is a placeholder for the for loop 
   for (i = min; i <= max; i++){
-   total = total + i 
+   total = total + i //total += i
   }
   return total 
 }
@@ -122,7 +122,6 @@ function containsWhileLoop(array, target) {
   while (i < array.length) {
     if (array[i] === target)
     return true; 
-    i++; 
   };
   return false;
 };
