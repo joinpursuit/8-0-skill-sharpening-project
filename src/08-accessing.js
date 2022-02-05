@@ -36,6 +36,8 @@
  */
 function getFirstName(person) {
   return person.names.first.toString();
+  // Other Way = return person.names["first"]
+  // SIMPLE Way = return person.names.first
 }
 
 /**
@@ -193,8 +195,22 @@ function getFullAddress(person) {
  */
 function getFlatObject(person) {
   let flatObject = Object.assign(person.names, person.address)
-  
   flatObject.numbers = person.numbers;
+  
+  // let flattenedPerson = {};
+
+  // flattenedPerson.first = person.names.first;
+  // flattenedPerson.middle = person.names.middle;
+  // flattenedPerson.last = person.names.last;
+  // flattenedPerson.street = person.names.street;
+  // flattenedPerson.unit = person.names.unit;
+  // flattenedPerson.city = person.names.city;
+  // flattenedPerson.state = person.names.state;
+  // flattenedPerson.zip = person.names.zip;
+  // flattenedPerson.numbers = person.numbers;
+
+  // return flattenedPerson
+
 
 return flatObject;
 }

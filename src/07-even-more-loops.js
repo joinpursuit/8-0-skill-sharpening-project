@@ -38,7 +38,7 @@ function shoutWhileLoop(array) {
   let arrayTwo = [];
   let i = 0;
 
-  while (array[i]){
+  while (array[i]){ // INSTEAD: while(i < array.length)
     arrayTwo.push(array[i] + "!");
     i++ ;
   } 
@@ -143,7 +143,17 @@ function evenArray(array) {
  *  //> -2
  */
 function findSmallest(array) {
-  return Math.min(...array);
+  // My Original ANSWER: return Math.min(...array);
+  // Gigi's Answer
+  let smallestNumber = array[0]; //By default, when starting a loop, the first number is the
+                                 // smallest until there is another number to compare it to
+
+  for(let i = 1; i < array.length; i++){ 
+    if(array[i] < smallestNumber){ // Here we compare the values
+      smallestNumber = array[i];
+    };
+  }
+  return smallestNumber;
 }
 
 /**
@@ -158,7 +168,17 @@ function findSmallest(array) {
  *  //> 11
  */
 function findLargest(array) {
-  return Math.max(...array);
+  // My Original ANSWER: return Math.max(...array);
+  // Gigi's Answer:
+  let largestNumber = array[0]; // By default, when starting a loop, the first number is the
+                                // largest until there is another number to compare it to
+  
+  for(let i = 1; i < array.length; i++){ 
+    if(array[i] > largestNumber){ // Here we compare the values
+      largestNumber = array[i];
+    };
+  }
+  return largestNumber;
 }
 
 /**
@@ -177,8 +197,29 @@ function findLargest(array) {
  *  //> false
  */
 function findEqual(array, selected) {
-  return array.includes(selected)
+  // My Original ANSWER: return array.includes(selected)
+  // My Second Answer - CORRECT!
+
+  let foundValue = false;
+
+  for (i = 0; i < array.length; i++){
+    if (array[i] === selected){
+      foundValue = true; 
+    }
+  }
+  return foundValue;
 }
+
+  // ANOTHER WAY - Classmate: Luke!
+  // let i = 0
+  // while (i < array.length){
+  //  if (array[i] === selected){
+  //    return true;
+  //  }
+  // i++;
+  // };
+  //  return false;
+  //};
 
 /**
  * removeDuplicates()
@@ -196,7 +237,17 @@ function findEqual(array, selected) {
  */
 
 function removeDuplicates(array) {
-  return [...new Set(array)];
+  //My ORIGINAL ANSWER: return [...new Set(array)];
+  //Gigi's Answer:
+
+  let duplicateFree = [];
+  
+  for(let element of array){
+    if(!duplicateFree.includes(element)){ //if the new array doesnt already include the current element, 
+      duplicateFree.push(element);        //then we are clear to push the element into the new array.
+    }
+  }
+  return duplicateFree; //here we return a duplicate free array
 }
 
 // Do not change any code below this line.

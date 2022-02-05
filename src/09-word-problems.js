@@ -49,8 +49,26 @@ function applyDiscount(priceInCents, age, hasMembership) {
       return priceInCents;
     }
   }
-  
 }
+
+/*
+Gigi's Solution!!
+
+function applyDiscount(priceInCents, age, hasMembership) {
+  let discountMultiplier = 1;
+  
+  if (age <= 10 || age >= 65){
+    discountMultipler -=.1
+  } 
+
+  if(hasMembership){ 
+    discountMultipler -= .2;
+  }
+  
+  return priceInCents * discountMultipler;
+}
+*/
+
 
 /**
  * getCartTotal()
@@ -76,11 +94,22 @@ function getCartTotal(products) {
   let totalPrice = 0
   for (let i = 0; i < products.length; i++){ 
     totalPrice += products[i].priceInCents * products[i].quantity
-
-    
-  }
-  return `$${(totalPrice/100).toFixed(2)}`;
+  } 
+  return `$${(totalPrice/100).toFixed(2)}`;  
 }
+
+/*
+ Gigi's For..of Loop
+
+function getCartTotal(products) {
+  let cartTotal = 0
+
+  for (let product of products){
+     cartTotal += product.priceInCents * product.quantity
+    }
+  return `$${(cartTotal/100).toFixed(2)}`;
+}
+*/
 
 /**
  * compareLocations()
@@ -136,9 +165,28 @@ function compareLocations(address1, address2) {
       } else {
         return "Addresses are not near each other.";
       }
-    }
-
+  }
 } 
+
+/* 
+Gigi's Solution: 
+
+function compareLocations(address1, address2) {
+  if(address1.street === address2.street
+    && aaddress1.city === address2.city
+    && address1.state === address2.state
+    && address1.zip === address2.zip){
+      return "Same building.";
+    } else if (address1.city === address2.city
+    && aaddress1.state === address2.state
+    && address1.zip === address2.zip){
+      return "Same city.";
+    } else if (address1.state === address2.state){
+      return "Same state.";
+    } else {
+      return "Addresses are not near each other.";
+    }
+}
   
 
 /**
@@ -201,7 +249,7 @@ function compareLocations(address1, address2) {
  * where `<received>` is the `score.received` value and `<max>` is the `score.max` value.
     */
 
-    
+   
 function gradeAssignments(assignments) {
   for (i = 0; i < assignments.length; i++){
     if (assignments[i].kind === 'PASS-FAIL'){
@@ -224,6 +272,32 @@ function gradeAssignments(assignments) {
   }
   return assignments
 }
+
+/* 
+Gigi's Solution:
+
+function gradeAssignments(assignments) {
+  for (let assignment of assignments){
+    if (assignment.kind === "PASS-FAIL"){
+      if (assignment.score.received !== assignment.score.max){
+        assignment.status = "FAILED"
+      } else {
+        assignment.status = "PASSED"
+      }
+    } else if (assignment.kind === "PERCENTAGE"){
+      if(assignment.score.received / assignment.score.max < .8){
+        assignment.status = `FAILED: ${((assignment.score.received / assignment.score.max) * 100).toFixed(1)}%`
+      } else {
+        assignment.status = `PASSED: ${((assignment.score.received / assignment.score.max) * 100).toFixed(1)}%`
+      }
+    } else {
+      assignment.status = `SCORE: ${assignment.score.received}/${assignment.score.max}`
+    }
+  }
+  return assignments
+}
+*/
+
 
 /**
  * createLineOrder()
@@ -265,6 +339,26 @@ function createLineOrder(people) {
   }
   return priorityBoarding.concat(normalBoarding)
 }
+
+/*
+Gigi's Solution:
+
+function createLineOrder(people) {
+  let frequentFlyers = [];
+  let regularFlyers = [];
+
+  for (let person of people){
+    if(person.hasMembership){
+      frequentFlyers.push(person.name)
+    } else {
+      regularFlyers.push(person.name);
+    }
+  }
+  return frequentFlyers.concat(regularGuests);
+}
+
+*/
+
 
 module.exports = {
   applyDiscount,
