@@ -235,7 +235,7 @@ function lastIndexFound(array, target) {
 function cumulativeSum(array) {
   let cumulativeNums = [array[0]];
   for (let i = 1; i < array.length; i++){
-    cumulativeNums.push(cumulativeNums[i -1] + array[i]);
+    cumulativeNums.push(cumulativeNums[i - 1] + array[i]);
   };
   console.log(cumulativeNums)
   return cumulativeNums
