@@ -116,7 +116,9 @@ function getFirstPhoneNumber(person) {
 function getLastPhoneNumber(person) {
   return person.numbers[person.numbers.length-1];
 }
-
+//don't use the pop() method because it mutates the original array and causes a problem in future functions when trying to access original array
+//also the question is not asking you to "remove" anything which is what pop() does
+ 
 /**
  * getFullName()
  * ---------------------
@@ -131,6 +133,7 @@ function getLastPhoneNumber(person) {
 function getFullName(person) {
   return `${person.names.first} ${person.names.middle} ${person.names.last}`;
 }
+
 
 /**
  * getCityAndState()
@@ -204,6 +207,23 @@ function getFlatObject(person) {
 
   return newObj;
 }
+
+// function getFlatObject(person) {
+//   let flattenedPerson = {};
+
+//   flattenedPerson.first = person.names.first;
+//   flattenedPerson.middle = person.names.middle;
+//   flattenedPerson.last = person.names.last;
+//   flattenedPerson.street = person.address.street;
+//   flattenedPerson.unit = person.address.unit;
+//   flattenedPerson.city = person.address.city;
+//   flattenedPerson.state = person.address.state;
+//   flattenedPerson.zip = person.address.zip;
+//   flattenedPerson.numbers = person.numbers;
+
+//   return flattenedPerson;
+// }
+
 
 // Do not change the code below.
 module.exports = {

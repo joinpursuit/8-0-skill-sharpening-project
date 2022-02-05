@@ -21,6 +21,14 @@ function shoutForLoop(array) {
   return newArr;
 }
 
+// function shoutForLoop(array) {
+//  let shoutedWords = [];
+//  for(let i = 0; i < array.length){
+//    shoutedWords.push(array[i] + "!")
+//  }
+//  return shoutedWords;
+// }
+
 /**
  * shoutWhileLoop()
  * ---------------------
@@ -46,6 +54,15 @@ function shoutWhileLoop(array) {
   return newArr;
 }
 
+// function shoutWhileLoop(array) {
+//   let shoutArray = [];
+//   let i = 0;
+//   while(i < array.length){
+//     shoutArray.push(`${array[i]}!`)
+//     i++
+//   }
+//   return shoutArray
+// }
 
 /**
  * shoutForOfLoop()
@@ -143,7 +160,7 @@ function evenArray(array) {
  */
 function findSmallest(array) {
   let smallestNum = array[0];
-  for(let i = 0; i < array.length; i++){
+  for(let i = 1; i < array.length; i++){
     if(array[i] < smallestNum){
       smallestNum = array[i];
     }
@@ -188,12 +205,32 @@ function findLargest(array) {
  *  //> false
  */
 function findEqual(array, selected) {
-  if(array.includes(selected)){
-    return true;
-  } else{
-    return false;
+  for(let i = 0; i < array.length; i++){
+    if(array[i] === selected){
+      return true;
+    }
   }
+  return false;
 }
+
+// let i = 0;
+//   while(i < array.length){
+//     if(array[i] === selected){
+//       return true;
+//     }
+//     i++;
+//   }
+//   return false;
+
+//version 1
+// if(array.includes(selected)){
+  //   return true;
+  // } else{
+  //   return false;
+  // }
+
+//version 2
+//return array.includes(selected);
 
 /**
  * removeDuplicates()

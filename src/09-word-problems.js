@@ -30,10 +30,24 @@ function applyDiscount(priceInCents, age, hasMembership) {
   } else if(age <= 10 || age >= 65){
     return totalPrice = priceInCents - priceInCents * .10;
   } else{
-    return priceInCents
+    return priceInCents;
   }
 }
 
+// function applyDiscount(priceInCents, age, hasMembership) {
+//   let discountMultiplier = 1;
+
+//   if(age <= 10 || age >= 65){
+//     discountMultiplier -= .1;
+//   };
+//discountMultiplier -= .1 is like saying discountMultiplier = discountMultiplier - .1 however it will preform the task but not save it in the variable
+
+//   if(hasMembership){
+//     discountMultiplier -= .2;
+//   };
+
+//   return priceInCents * discountMultiplier;
+// }
 
 /**
  * getCartTotal()
@@ -65,6 +79,16 @@ function getCartTotal(products) {
   }
 return `$${sum.toFixed(2)}`
 }
+
+// function getCartTotal(products) {
+//   let cartTotal = 0;
+
+//   for(let product of products){
+//     cartTotal += product.priceInCents * product.quantity
+//   }
+
+//   return `$${(cartTotal/100).toFixed(2)}`
+// }
 
 /**
  * compareLocations()
@@ -112,11 +136,10 @@ function compareLocations(address1, address2) {
   } else if (address1.state === address2.state){
     return "Same state.";
   } else {
-    return "Addresses are not near each other."
+    return "Addresses are not near each other.";
   }
 }
    
-
 /**
  * gradeAssignments()
  * ---------------------
@@ -162,6 +185,7 @@ function compareLocations(address1, address2) {
     //>   },
     //> ];
  */
+
 function gradeAssignments(assignments) {
   for(i = 0; i < assignments.length; i++){
     assignments[i].status = '';
@@ -186,6 +210,28 @@ function gradeAssignments(assignments) {
   
 return assignments;
 }
+
+
+// function gradeAssignments(assignments){
+//   for(let assignment of assignments){
+//     if(assignment.kind === 'PASS-FAIL'){
+//       if(assignment.score.received !== assignment.score.max){
+//         assignment.status = 'FAILED'
+//       } else{
+//         assignment.status = 'PASSED'
+//       }
+//     } else if(assignment.kind === 'PERCENTAGE'){
+//       if(assignment.score.received / assignment.score.max < .8){
+//         assignment.status = `FAILED: ${((assignment.score.received / assignment.score.max) * 100).toFixed(1)}%`
+//       } else{
+//         assignment.status = `PASSED: ${((assignment.score.received / assignment.score.max) * 100).toFixed(1)}%`
+//       }
+//     } else {
+//       assignment.status = `SCORE: ${assignment.score.received}/${assignment.score.max}`
+//     }
+//   }
+//   return assignments;
+// }
 
 /**
  * createLineOrder()
