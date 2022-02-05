@@ -13,7 +13,7 @@
  *  //> [ "A!", "Very!", "Happy!", "Array!" ];
  */
 function shoutForLoop(array) {
-  current = "";
+  let current = "";
   for (let i = 0; i < array.length; i++) {
     current = array[i];
     current += '!';
@@ -64,7 +64,7 @@ function shoutWhileLoop(array) {
  */
 function shoutForOfLoop(array) {
   let i = 0;
-  for (element of array) {
+  for (let element of array) {
     element += '!';
     array[i] = element;
     i++
@@ -167,7 +167,7 @@ function findSmallest(array) {
  */
 function findLargest(array) {
   let largest = 0;
-  for (number of array) {
+  for (let number of array) { //Missed another
     if (number > largest) {
       largest = number;
     }
