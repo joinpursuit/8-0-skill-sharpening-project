@@ -15,7 +15,7 @@
 function shoutForLoop(array) {
   let arr= []
   for(let i of array) {
-    arr.push([i] + "!")
+    arr.push(i + "!")
   }
   return arr
 }
@@ -35,10 +35,11 @@ function shoutForLoop(array) {
  *  //> [ "A!", "Very!", "Happy!", "Array!" ];
  */
 function shoutWhileLoop(array) {
-  let arr =[]
-  let i = ''
-  while(array[i]) {
-     arr.push([i] + "!")
+  let arr =[];
+  let i = 0;
+  while(i < array.length) {
+     arr.push(array[i] + "!")
+     i++
   } 
   return arr
 }
@@ -79,8 +80,8 @@ function shoutForOfLoop(array) {
  */
 function sumArray(array) {
   let sum = 0
-  for (let i = 0 ; i <= array.length; i++) {
-  sum += i
+  for (let i = 0 ; i < array.length; i++) {
+  sum += array[i]
 }
 return sum
 }
@@ -99,7 +100,9 @@ return sum
 function oddArray(array) {
   let arr = []
   for (let i = 0; i < array.length; i++) {
-    arr.push([i] % 2 !== 0) 
+    if (array[i] % 2 !== 0) {
+      arr.push(array[i])
+    }
   }
   return arr
 }
@@ -118,9 +121,11 @@ function oddArray(array) {
 function evenArray(array) {
   let arr = []
   for (let i = 0; i < array.length; i++) {
-    arr.push([i] % 2 == 0) 
+    if(array[i] % 2 === 0) {
+     arr.push(array[i]) 
   }
-  return arr
+}
+return arr
 }
 
 
@@ -136,9 +141,12 @@ function evenArray(array) {
  *  //> -2
  */
 function findSmallest(array) {
-  for (let i = 0; i < array.length; i++) {
-    return Math.min(array[i])
-  }
+  let smallest = array[0]
+  for (let i = 1; i < array.length; i++) {
+    if (smallest > array[i]) {
+      smallest = array[i]
+    }
+  } return smallest
 }
 
 /**
@@ -153,9 +161,13 @@ function findSmallest(array) {
  *  //> 11
  */
 function findLargest(array) {
-  for (let i = 0; i < array.length; i++) {
-    return Math.min(array[i])
+  let largest = array[0]
+  for (let i = 1; i < array.length; i++) {
+    if (largest < array[i]) {
+      largest = array[i]
+    }
   }
+  return largest
 }
 
 
@@ -201,11 +213,11 @@ function findEqual(array, selected) {
 function removeDuplicates(array) {
   let arr = []
   for (let i = 0; i < array.length; i++) {
-    if(array[i] == array[i]) {
-      array.splice(i,1)
+    if(!arr.includes(array[i])) {
+      arr.push(array[i])
 }
   }
-  return arr.push(array)
+  return arr
 }
 
 // Do not change any code below this line.

@@ -82,15 +82,15 @@ function rangeEveryOther(min, max) {
  *  //> false
  */
 function containsWhileLoop(array, target) {
-  while (array.indexOf(target) == -1) {
-    return false
-} while (array.indexOf(target) !== -1) {
-    return true
+  let i = 0
+  while (i < array.length) {
+    if (array[i] === target){
+      return true;
+    };
+    i++;
+  }
+  return false;
 }
-}
-
-
-
 
 /**
  * containsForLoop()
@@ -119,6 +119,13 @@ function containsForLoop(array, target) {
     }
   } return false
 }
+
+/* for (let element of array) {     
+  if(element === target) {
+    return true;
+  }
+  return false
+} */
 
 /**
  * targetCount()
@@ -189,7 +196,7 @@ function firstIndexFound(array, target) {
  *  //> -1
  */
 function lastIndexFound(array, target) {
-  for (let i = array.length; i < array.length; i--) {
+  for (let i = array.length; i >= 0; i--) {
     if (array[i] === target) {
       return i
     } 
@@ -231,14 +238,26 @@ function timesIndex(array) {
  *  //> [ 5, 7, 16 ]
  */
 function cumulativeSum(array) {
-  let arr = []
-  let sum = 0
-  for (let i = 0; i < array; i++) {
-    sum += i
-    arr.push(sum)
+  if (!array.length) {
+    return [] }
+  
+  let cumNums = [array[0]]
+  
+  for (let i = 1; i < array.length; i++) {
+    cumNums.push(cumNums[i-1] + array[i]);
   }
-   return arr
+   return cumNums
 }
+
+// function cumulativeSum(array) {
+//   let newArr = []
+//   let sum = 0;
+//   for (let i = 0; i < array.length; i++){
+//     sum += array[i]
+//     newArr.push(sum)
+//   }
+//   return newArr
+// }
 
 // Do not change anything below this line.
 module.exports = {
