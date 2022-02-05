@@ -114,7 +114,8 @@ function getFirstPhoneNumber(person) {
  *  //> 7185558611
  */
 function getLastPhoneNumber(person) {
-  return person.numbers.pop();
+  // return person.numbers.pop();
+  return person.numbers[person.numbers.length -1]
 }
 
 /**
@@ -130,6 +131,7 @@ function getLastPhoneNumber(person) {
  */
 function getFullName(person) {
   return person.names.first + " " + person.names.middle + " " + person.names.last;
+  // return `
   
 
 }
@@ -168,6 +170,7 @@ function getCityAndState(person) {
  */
 function getFullAddress(person) {
   return person.address.street + " " + person.address.unit + "," + " " + person.address.city + "," + " " + person.address.state + "," + " " + person.address.zip
+  // return `${person.address.street} $
 }
 
 /**

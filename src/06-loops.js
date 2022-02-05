@@ -243,7 +243,8 @@ function cumulativeSum(array) {
     arr.push(sum);
   }
   return arr;
-}
+} // let  cumulativeNums = [array[0]]
+ // cumulativeNums.push(cumulativeNums)
 
 // Do not change anything below this line.
 module.exports = {

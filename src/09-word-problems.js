@@ -39,6 +39,15 @@ function applyDiscount(priceInCents, age, hasMembership) {
     }else {
       return priceInCents;
     }
+
+    // let discountMultiplier = 1;
+    // if(age <= 10 || age >= 65){
+    //   discountMultiplier -= .1;
+    // }
+    // if(hasMembership){
+    //   discountMultiplier -= .2;
+    // }
+    // return priceInCents * discountMultiplier;
   
 }
 
@@ -68,7 +77,15 @@ function getCartTotal(products) {
      fullCost += products[i].priceInCents * products[i].quantity;
    }
    return `$${(fullCost/100).toFixed(2)}`;
+
+   // let cartTotal = 0;
+//    for(let product of products){
+//      cartTotal += products.priceInCents * product.quantity
+//    }
+//    return `$${(cartTotal / 100).toFixed(2)}`
 }
+
+
 
 /**
  * compareLocations()
@@ -113,12 +130,12 @@ function getCartTotal(products) {
 // same state = state
 // none = addresses are not near each other
 function compareLocations(address1, address2) {
-//   if ((address1.street === address2.street) && (address1.city === address2.city) && (address1.state === address2.state) && (address1.zip === address2.zip)){
+//   if (address1.street === address2.street && address1.city === address2.city && address1.state === address2.state && address1.zip === address2.zip){
 //     return "Same building";
-//   }else{
-//     if ((address1.street !== address2.street) && (address1.city === address2.city) && (address1.state === address2.state) && (address1.zip === address2.zip)){
+//   }else if{
+//     (address1.city === address2.city && address1.state === address2.state && address1.zip === address2.zip){
 //     return "Same city";
-//   }else if ((address1.state === address2.state) && (address1.city !== address2.city)){
+//   }else if (address1.state === address2.state){
 //     return "Same state";
 //   }else {
 //     return "Address are not near each other";
@@ -183,7 +200,7 @@ if ((address1.city === address2.city) && (address1.state === address2.state) && 
     //> ];
  */
 function gradeAssignments(assignments) {
-  let newArr = [];
+  // let newArr = [];
   for(let i = 0; i <= assignments.length-1; i++){
     if(assignments[i].kind === "PASS-FAIL"){
       if(assignments[i].score.received < assignments[i].score.max){
@@ -191,22 +208,22 @@ function gradeAssignments(assignments) {
       } else {
         assignments[i].status = "PASSED";
       }
-      newArr.push(assignments[i]);
+      // newArr.push(assignments[i]);
     }
     if(assignments[i].kind === "PERCENTAGE"){
       if(assignments[i].score.received/assignments[i].score.max < .8){
-        assignment[i].status = `FAILED: ${((assignments[i].score.received/assignments[i].score.max)*100).toFixed(2)}`
+        assignments[i].status = `FAILED: ${((assignments[i].score.received/assignments[i].score.max)*100).toFixed(1)}%`
       } else {
-        assignment[i].status = `PASSED: ${((assignments[i].score.received/assignments[i].score.max)*100).toFixed(2)}`
+        assignments[i].status = `PASSED: ${((assignments[i].score.received/assignments[i].score.max)*100).toFixed(1)}%`
       }
-      newArr.push(assignments[i])
+      // newArr.push(assignments[i])
     }
   if(assignments[i].kind === "ESSAY"){
     assignments[i].status = `SCORE: ${assignments[i].score.received}/${assignments[i].score.max}`
   }
-  newArr.push(assignments[i])
+  // newArr.push(assignments[i])
   }
-  return newArr;
+  return assignments;
 }
 
 
@@ -233,7 +250,24 @@ function gradeAssignments(assignments) {
     createLineOrder(people);
     //> [ "Ray Anderson", "America Marsh", "Wade Carson", "Patience Patel" ]
  */
-function createLineOrder(people) {}
+function createLineOrder(people) {
+  let frequentFlyers = [];
+let regularFlyers = [];
+
+for(let i = 0; i < people.length; i++){
+  if(people[i].hasMembership === true){
+    frequentFlyers.push(people[i].name);
+  }
+}
+
+for(let i = 0; i < people.length; i++){
+  if(people[i].hasMembership === false){
+    regularFlyers.push(people[i].name);
+  }
+}
+
+return frequentFlyers.concat(regularFlyers);
+}
 
 module.exports = {
   applyDiscount,

@@ -71,7 +71,7 @@ function convertToShoutingText(text) {
  *  //> "hello there"
  */
 function convertToWhisperText(text) {
-  return text.toLocaleLowerCase();
+  return text.toLowerCase();
 }
 
 /**
@@ -99,7 +99,7 @@ function checkIfCharacterIsInString(text, character) {
     return false;
   }
 }
-
+// return text.includes(character)
 /**
  * isEven()
  * ---------------------
@@ -169,7 +169,8 @@ function isTruthy(val) {
   else {
     return false;
   }
-
+   // return Boolean(val);
+   // return !!val;
 }
 
 /**
@@ -192,6 +193,7 @@ function isFalsy(val) {
   }else {
     return false;
   }
+  // return !val;
 }
 
 // Do not change the code below.
