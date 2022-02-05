@@ -216,7 +216,7 @@ function findEqual(array, selected) {
 
 function removeDuplicates(array) {
   let newArray = [];
-  count = 0
+  let count = 0; //Correcting global variable (and forgot semicolon);
   for (let num of array) {
     if (!newArray.includes(num)){
       newArray.push(num);
