@@ -169,7 +169,7 @@ function compareLocations(address1, address2) {
     //> ];
  */
 function gradeAssignments(assignments) {
-  let newArr = [];
+
   for(let i = 0; i <= assignments.length-1; i++){
     if(assignments[i].kind === "PASS-FAIL"){
       if(assignments[i].score.received < assignments[i].score.max){
@@ -177,22 +177,19 @@ function gradeAssignments(assignments) {
       } else {
         assignments[i].status = "PASSED";
       }
-      newArr.push(assignments[i]);
     }
     if(assignments[i].kind === "PERCENTAGE"){
       if(assignments[i].score.received/assignments[i].score.max < .8){
-        assignment[i].status = `FAILED: ${((assignments[i].score.received/assignments[i].score.max)*100).toFixed(2)}`
+        assignments[i].status = `FAILED: ${((assignments[i].score.received/assignments[i].score.max)*100).toFixed(1)}%`
       } else {
-        assignment[i].status = `PASSED: ${((assignments[i].score.received/assignments[i].score.max)*100).toFixed(2)}`
+        assignments[i].status = `PASSED: ${((assignments[i].score.received/assignments[i].score.max)*100).toFixed(1)}%`
       }
-      newArr.push(assignments[i])
     }
   if(assignments[i].kind === "ESSAY"){
     assignments[i].status = `SCORE: ${assignments[i].score.received}/${assignments[i].score.max}`
   }
-  newArr.push(assignments[i])
   }
-  return newArr;
+  return assignments;
 }
 
 /**
@@ -218,7 +215,24 @@ function gradeAssignments(assignments) {
     createLineOrder(people);
     //> [ "Ray Anderson", "America Marsh", "Wade Carson", "Patience Patel" ]
  */
-function createLineOrder(people) {}
+  function createLineOrder(people) {
+    let frequentFlyers = [];
+    let regularFlyers = [];
+      
+    for(let i = 0; i < people.length; i++){
+      if(people[i].hasMembership === true){
+        frequentFlyers.push(people[i].name);
+      }
+    }
+      
+    for(let i = 0; i < people.length; i++){
+      if(people[i].hasMembership === false){
+        regularFlyers.push(people[i].name);
+      }
+    }
+      
+    return frequentFlyers.concat(regularFlyers);
+    }
 
 module.exports = {
   applyDiscount,
