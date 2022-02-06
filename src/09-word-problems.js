@@ -180,8 +180,7 @@ function compareLocations(address1, address2) {
     //> ];
  */
 function gradeAssignments(assignments) {
-  let status;
-  let grade;
+  let grade = 0;
 
   for (const assignment of assignments) {
     if (assignment.kind === 'PASS-FAIL') {
