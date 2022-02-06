@@ -34,7 +34,7 @@ function rangeSum(min, max) {    // GIGI EDIT :
 function rangeOdd(min, max) {
   let myArray = [];                 // let odd = []
   for (i = max; i >= min; --i){     // for(let i = max; i >= min; i--){
-    if(i%2 !== 0){                  //  if (i % 2 !===0) {
+    if(i%2 !== 0){                  //  if (i % 2 !== 0) {
       myArray.push(i)               //    odd.push(i) 
     }                               //  }
   }                                 // }
