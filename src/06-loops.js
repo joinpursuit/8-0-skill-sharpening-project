@@ -213,7 +213,7 @@ function timesIndex(array) {
   let total = [];                         // let multipledNums = [];
 
   for (i = 0; i < array.length; i++){     // for (let i = 0; i < array.length; i++){
-    total.push(array[i] * i);             //    multipledNums.push(array[i] * 1)
+    total.push(array[i] * i);             //    multipledNums.push(array[i] * i)
   }                                       // }
   return total                            // return multipledNums
 }
