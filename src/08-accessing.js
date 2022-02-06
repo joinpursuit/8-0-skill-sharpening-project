@@ -2,22 +2,23 @@
   For all of the functions below, assume each function takes the following `person` object as its input. While the values of the object may change, the structure of it will always be the same.
 
   const person = {
-                names: {
-                             first: "Rachel",
-                             middle: "Eleanor",
-                             last: "Rojas"
-                            },
-            address: {
-                             street: "697 Pine Drive",
-                             unit: "2A",
-                              city: "Staten Island",
-                              state: "NY",
-                             zip: "10306"
-                             },
-               numbers: [
-                             7185550921,
-                             7185558611
-                              ]
+   names: {
+    first: "Rachel",
+    middle: "Eleanor",
+    last: "Rojas"
+   },
+   address: {
+    street: "697 Pine Drive",
+    unit: "2A",
+    city: "Staten Island",
+    state: "NY",
+    zip: "10306"
+   },
+    numbers: 
+    [
+     7185550921,
+     7185558611
+    ]
   }
 */
 
@@ -77,7 +78,9 @@ function getAddressStreet(person) {
  *  getCountOfPhoneNumbers(person);
  *  //> 2
  */
-function getCountOfPhoneNumbers(person) {}
+function getCountOfPhoneNumbers(person) {
+  return person.numbers.length
+}
 
 /**
  * getFirstPhoneNumber()
@@ -94,7 +97,7 @@ function getCountOfPhoneNumbers(person) {}
  *  //> 7185550921
  */
 function getFirstPhoneNumber(person) {
-  return person.numbers
+  return person.numbers[0]
 }
 
 /**
@@ -112,7 +115,7 @@ function getFirstPhoneNumber(person) {
  *  //> 7185558611
  */
 function getLastPhoneNumber(person) {
-  return person.numbers.pop()
+  return person.numbers[person.numbers.length -1];
 }
 
 /**
@@ -127,10 +130,7 @@ function getLastPhoneNumber(person) {
  *  //> "Rachel Eleanor Rojas"
  */
 function getFullName(person) {
-  let first = person.names.first
-  let middle = person.names.middle
-  let last = person.names.last
-  return `${first} ${middle} ${last}`
+  return `${person.names.first} ${person.names.middle} ${person.names.last}`
 }
 
 
@@ -149,9 +149,7 @@ function getFullName(person) {
  *  //> "Staten Island, NY"
  */
 function getCityAndState(person) {
-  let city = person.address.city
-  let state = person.address.state
-  return `${city}, ${state}`
+  return `${person.address.city}, ${person.address.state}`
 
 }
 
@@ -171,13 +169,7 @@ function getCityAndState(person) {
  *  //> "697 Pine Drive 2A, Staten Island, NY, 10306"
  */
 function getFullAddress(person) {
-  let street = person.address.street
-  let unit = person.address.unit
-  let city = person.address.city
-  let state = person.address.state
-  let zip = person.address.zip
-  let address = `${street} ${unit}, ${city}, ${state}, ${zip}`
-  return address
+  return `${person.address.street} ${person.address.unit}, ${person.address.city}, ${person.address.state}, ${person.address.zip}`
 }
 
 /**
@@ -203,20 +195,23 @@ function getFullAddress(person) {
  */
     
     function getFlatObject(person) {
-      let otherPerson =  {
-          first: "Sergio",
-          middle: "Reuben",
-          last: "Burris",
-          street: "47 Ocean Lane",
-          unit: "9B",
-          city: "Apex",
-          state: "NC",
-          zip: "27502",
-          numbers: [ 7185550921, 7185558611],
-      };
-      return otherPerson
-    }
-    
+    //   let otherPerson = { first: "Sergio", middle: "Reuben", last: "Burris", street: "47 Ocean Lane", unit: "9B",
+    //       city: "Apex", state: "NC", zip: "27502"},
+    //       {numbers: [ 7185550921, 7185558611]}
+    //   return otherPerson
+    // }
+    getFlatObject = {};
+    getFlatObject.first = person.names.first;
+    getFlatObject.middle = person.names.middle;
+    getFlatObject.last = person.names.last;
+    getFlatObject.street = person.address.street;
+    getFlatObject.unit = person.address.unit;
+    getFlatObject.city = person.address.city;
+    getFlatObject.state = person.address.state;
+    getFlatObject.zip = person.address.zip;
+    getFlatObject.numbers = person.numbers;
+    return getFlatObject
+    };
   
 
 

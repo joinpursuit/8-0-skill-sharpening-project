@@ -36,8 +36,7 @@ function shoutForLoop(array) {
 function shoutWhileLoop(array) {
   let newArr= []
     let i = 0;
-    while (i < array.length) {
-      newArr.push(array[i] + "!")
+    while (i < array.length) {newArr.push(array[i] + "!")
     i++;
   };
   return newArr
@@ -98,7 +97,7 @@ function sumArray(array) {
  function oddArray(array) {
   let newArr = []
   for(let afatip of array){
-    if (afatip% 2 ===1){
+    if (afatip % 2 === 1){
       newArr.push(afatip)
     }
   }
@@ -137,16 +136,15 @@ function evenArray(array) {
  *  //> -2
  */
 
-  function oddArray(array) {
+  function findSmallest(array) {
   let newArray = [];
   for (let i = 0; i < array.length; i++){
-   if (i % 2 !== 0){
+   if (i < 0){
     newArray.push(i);
    }
   }
   return newArray;
 };
- }
 
 /**
  * findLargest()

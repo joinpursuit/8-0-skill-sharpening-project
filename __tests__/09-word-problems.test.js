@@ -189,7 +189,7 @@ describe("compareLocations()", () => {
 });
 
 describe("gradeAssignments()", () => {
-  test("should, for PASS-FAIL assignments, add a `status` of PASSED if the `score.received` equals the `score.max", () => {
+  test.only("should, for PASS-FAIL assignments, add a `status` of PASSED if the `score.received` equals the `score.max", () => {
     const assignments = [{ kind: "PASS-FAIL", score: { received: 4, max: 4 } }];
     const actual = gradeAssignments(assignments);
     const expected = [
@@ -198,7 +198,7 @@ describe("gradeAssignments()", () => {
     expect(actual).toEqual(expected);
   });
 
-  test("should, for PASS-FAIL assignments, add a `status` of FAILED if the `score.received` does not equal the `score.max", () => {
+  test.only("should, for PASS-FAIL assignments, add a `status` of FAILED if the `score.received` does not equal the `score.max", () => {
     const assignments = [{ kind: "PASS-FAIL", score: { received: 3, max: 4 } }];
     const actual = gradeAssignments(assignments);
     const expected = [
@@ -207,7 +207,7 @@ describe("gradeAssignments()", () => {
     expect(actual).toEqual(expected);
   });
 
-  test("should, for PERCENTAGE assignments, add a `status` of PASSED if the `score` is equal to or greater than 80% and include the percentage", () => {
+  test.only("should, for PERCENTAGE assignments, add a `status` of PASSED if the `score` is equal to or greater than 80% and include the percentage", () => {
     const assignments = [
       { kind: "PERCENTAGE", score: { received: 8, max: 10 } },
     ];
@@ -222,7 +222,7 @@ describe("gradeAssignments()", () => {
     expect(actual).toEqual(expected);
   });
 
-  test("should, for PERCENTAGE assignments, add a `status` of FAILED if the `score` is less than 80% and include the percentage", () => {
+  test.only("should, for PERCENTAGE assignments, add a `status` of FAILED if the `score` is less than 80% and include the percentage", () => {
     const assignments = [
       { kind: "PERCENTAGE", score: { received: 7, max: 10 } },
     ];
@@ -237,7 +237,7 @@ describe("gradeAssignments()", () => {
     expect(actual).toEqual(expected);
   });
 
-  test("should, for PERCENTAGE assignments, round to one decimal integer", () => {
+  test.only("should, for PERCENTAGE assignments, round to one decimal integer", () => {
     const assignments = [
       { kind: "PERCENTAGE", score: { received: 6, max: 7 } },
     ];
@@ -252,7 +252,7 @@ describe("gradeAssignments()", () => {
     expect(actual).toEqual(expected);
   });
 
-  test("should, for any other assignment, add a `status` that shows the `score.received` out of the `score.max`", () => {
+  test.only("should, for any other assignment, add a `status` that shows the `score.received` out of the `score.max`", () => {
     const assignments = [{ kind: "ESSAY", score: { received: 4, max: 5 } }];
     const actual = gradeAssignments(assignments);
     const expected = [
@@ -261,7 +261,7 @@ describe("gradeAssignments()", () => {
     expect(actual).toEqual(expected);
   });
 
-  test("should add the `status` key for all assignments in the array", () => {
+  test.only("should add the `status` key for all assignments in the array", () => {
     const assignments = [
       { kind: "PASS-FAIL", score: { received: 4, max: 4 } },
       { kind: "PASS-FAIL", score: { received: 3, max: 4 } },

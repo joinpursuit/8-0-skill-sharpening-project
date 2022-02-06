@@ -1,7 +1,10 @@
 /**
  * applyDiscount()
  * ---------------------
- * A local movie theater has a few different ticket discounts. If the attendee is 10 years old or younger, or 65 years old or older, they receive a 10% discount. If the attendee is viewing the movie with a member, they receive a 20% discount. If both situations apply, they receive a 30% discount.
+ * A local movie theater has a few different ticket discounts. 
+ * If the attendee is 10 years old or younger, or 65 years old or older, they receive a 10% discount. 
+ * If the attendee is viewing the movie with a member, they receive a 20% discount.
+ * If both situations apply, they receive a 30% discount.
  *
  * Write an algorithm that will determine the price of a ticket based on the `priceInCents` of the ticket, the `age` of the attendee, and the membership status (i.e. `hasMembership`).
  * @param {number} priceInCents - The price of the ticket, in cents.
@@ -19,14 +22,25 @@
  *  applyDiscount(1000, 9, true);
  *  //> 700
  */
-function applyDiscount(priceInCents, age, hasMembership) {}
+function applyDiscount(priceInCents, age, hasMembership) {
+  let mult = 1// this number is equall to 100%
+    if (age <= 10 || age >= 65){
+      mult -= .1// This is equal to the 10% that is being deducted
+    }
+    if (hasMembership === true){
+      mult -= .20// This is equal to the 20% that is being deducted
+    }
+    return priceInCents * mult
+  }
 
 /**
  * getCartTotal()
  * ---------------------
- * An online store allows for customers to add products to their cart. Customers can add multiples of each product to the cart.
+ * An online store allows for customers to add products to their cart. 
+ * Customers can add multiples of each product to the cart.
  * 
- * Write an algorithm that will determine the total amount of all items in the cart. Make sure to multiply the `priceInCents` times the `quantity` to get the full cost of each product.
+ * Write an algorithm that will determine the total amount of all items in the cart. 
+ * Make sure to multiply the `priceInCents` times the `quantity` to get the full cost of each product.
  * @param {Object[]} products - An array of products.
  * @param {number} products[].priceInCents - The price of the product, in cents.
  * @param {number} products[].quantity - The number of products being bought.
@@ -40,19 +54,32 @@ function applyDiscount(priceInCents, age, hasMembership) {}
     getCartTotal(cart);
  *  //> "$30.00"
  */
-function getCartTotal(products) {}
+function getCartTotal(products) {
+  cartTotal = 0
+  for (items of products){
+      cartTotal = cartTotal + items.priceInCents * items.quantity
+  }
+return `$${(cartTotal/100).toFixed(2)}`//interpolation returns string
+}
+
 
 /**
  * compareLocations()
  * ---------------------
- * A shipping company is looking to make its deliveries more efficient by comparing the destinations of multiple deliveries. If the locations are similar, the packages may be able to be bundled together.
+ * A shipping company is looking to make its deliveries more efficient by comparing the destinations of multiple deliveries. 
+ * If the locations are similar, the packages may be able to be bundled together.
  * 
- * Write an algorithm that takes in two objects of similar shape, each object representing an address. Then, return a string that describes the relationship between those two addresses.
+ * Write an algorithm that takes in two objects of similar shape, each object representing an address. 
+ * Then, return a string that describes the relationship between those two addresses. //Some sort of interpolation
  * 
- * - If the street, city, state, and zip for both addresses are the same, return the string "Same building."
- * - If the city, state, and zip are the same, return the string "Same city."
- * - If just the state is the same, return the string "Same state."
- * - If none of those matches occur, return the string "Addresses are not near each other."
+ * - If the street, city, state, and zip for both addresses are the same, 
+ *      return the string "Same building."
+ * - If the city, state, and zip are the same, 
+ *      return the string "Same city."
+ * - If just the state is the same, 
+ *      return the string "Same state."
+ * - If none of those matches occur, 
+ *      return the string "Addresses are not near each other."
  * 
  * Keep in mind that an address could have the same street address or the same city but be in a different state. 
  * 
@@ -80,18 +107,35 @@ function getCartTotal(products) {}
     compareLocations(address1, address2);
     //> "Same city."
  */
-function compareLocations(address1, address2) {}
+function compareLocations(address1, address2) {
+ if (address1.street === address2.street && address1.city === address2.city && address1.state === address2.state && address1.zip === address2.zip){
+   return "Same building."
+ }else if (address1.city === address2.city && address1.state === address2.state && address1.zip === address2.zip){
+  return "Same city."
+ }else if (address1.state === address2.state){
+   return "Same state."
+ }else{
+   return "Addresses are not near each other."
+ }
+}
+
 
 /**
  * gradeAssignments()
  * ---------------------
  * An online learning management system needs a way to quickly add the current status to a list of assignments. Depending on the `kind` of assignment, different statuses should be applied.
  *
- * Write an algorithm that adds a key of `status` to each object in an array of objects. Each object represents a single assignment submitted by a student.
+ * Write an algorithm that adds a key of `STATUS` to each object in an array of objects. 
+ * Each object represents a single assignment submitted by a student.
  *
- * - If the assignment has a `kind` of `"PASS-FAIL"`, set the `status` value to `"PASSED"` if the `score.received` equals the `score.max`. Otherwise, set that `status` to be `"FAILED"`.
- * - If the assignment has a `kind` of `"PERCENTAGE"`, set the `status` value to be `"PASSED: <percentage>"` if the student scored at least 80.0%. The `<percentage>` should be set to one decimal place. If the student scored less than 80.0%, set the status to `"FAILED: <percentage>"`.
- * - If the assignment has any other `kind` than the two above, set the `status` value to equal `"SCORE: <received>/<max>"`, where `<received>` is the `score.received` value and `<max>` is the `score.max` value.
+ * - If the assignment has a `kind` of `"PASS-FAIL"`, set the `status` value to `"PASSED"`if the `score.received` equals the `score.max`.  Otherwise, set that `status` to be `"FAILED"`.
+ * 
+ * - If the assignment has a `kind` of `"PERCENTAGE"`, set the `status` value to be `"PASSED: <percentage>"`//interpollation
+ *   if the student scored at least 80.0%. The `<percentage>` should be set to one decimal place.  i.e. 00.0%
+ * 
+ * If the student scored less than 80.0%, set the status to `"FAILED: <percentage>"`. //interpollation
+ * 
+ * - If the assignment has any other `kind` than the two above, set the `status` value to equal `"SCORE: <received> <max>"`, where `<received>` is the `score.received` value and `<max>` is the `score.max` value.
  *
  * Then, return the overall array with all modified assignments.
  *
@@ -127,7 +171,40 @@ function compareLocations(address1, address2) {}
     //>   },
     //> ];
  */
-function gradeAssignments(assignments) {}
+function gradeAssignments(assignments) {
+  for (let i = 0; i < assignments.length; i++){
+    assignments[i].status = " "
+     if (assignments[i].kind === "PASS-FAIL"){
+       if (assignments[i].score.received === assignments[i].score.max){
+        assignments[i].status= "PASSED"
+    }else{
+        assignments[i] .status = "FAILED"
+    }
+}else if (assignments[i].kind === "PERCENTAGE"){
+    let prct = ((assignments[i].score.received / assignments[i].score.max)*100).toFixed(1)
+    if (prct >= 80){
+       assignments[i].status = `PASSED: ${prct}%`
+    }else{
+    assignments[i].status = `FAILED: ${prct}%`
+    }
+}else{
+    assignments[i].status = `SCORE: ${assignments[i].score.received}/${assignments[i].score.max}`
+}
+}
+return assignments
+}
+
+
+
+
+
+
+
+
+
+
+
+
 
 /**
  * createLineOrder()
