@@ -244,8 +244,6 @@ function evenOrOdd(a) {
   return result;
 }
 
-
-
 /**
  * evenOrOddWithTernary()
  * ---------------------
