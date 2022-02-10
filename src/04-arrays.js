@@ -165,8 +165,8 @@ function removeElementFromFrontOfArray(array) {
  *  //> null
  */
 function getMiddleElement(array) {
-  let arr = ["first","middle","last"]
-  return arr[1]
+  let result = (array.length - 1) / 2
+  return array[result] 
 }
 
 // Do not change any code below this line.
