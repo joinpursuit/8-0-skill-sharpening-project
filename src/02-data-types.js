@@ -127,6 +127,14 @@ function isEven(num) {}
  *  isOdd(11);
  *  //> true
  */
+function isOdd(num) {
+  let result = ""
+  if (num % 2 === 1 ){
+    result = true
+  }else { result = false
+  }
+  return result 
+}
 
 /**
  * isTruthy()
