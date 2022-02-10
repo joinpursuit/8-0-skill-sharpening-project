@@ -50,13 +50,13 @@ function findLarger(a, b) {
  *  //> "tie"
  */
 function findLargerOrTie(a, b) {
-  let result = ""
-  if (a > b){
-    result = a
-  }else if (b > a ){
-    result = b
-  }else if (a === b){
-    result = "tie"
+  let result = "";
+  if (a > b) {
+    result = a;
+  } else if (b > a) {
+    result = b;
+  } else if (a === b) {
+    result = "tie";
   }
   return result
 }
