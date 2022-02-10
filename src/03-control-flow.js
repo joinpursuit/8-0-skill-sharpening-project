@@ -154,7 +154,6 @@ function aroundTheWorldGreetingWithSwitch(language) {}
  */
 function calculateLetterGrade(grade) {
 
-}
 
 /**
  * animalCounts()
