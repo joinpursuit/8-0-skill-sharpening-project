@@ -111,8 +111,15 @@ function checkIfCharacterIsInString(text, character) {
  *  isEven(11);
  *  //> false
  */
-function isEven(num) {}
-
+function isEven(num) {
+  let result = ''
+  if (num % 2 === 0 ){
+    result = true
+  }else if (num % 2 === 1){
+    result = false
+  }
+  return result 
+}
 /**
  * isOdd()
  * ---------------------
