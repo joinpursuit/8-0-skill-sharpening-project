@@ -80,13 +80,14 @@ function findLargerOrTie(a, b) {
  *  //> "Positive"
  */
 function positiveNegativeOrZero(a) {
- if (Math.sign(a) === 1){
-   result = "Positive"
- }else if (Math.sign(a) === -1){
-  result = "Negative"
- } else {result = "Zero"
-}
-return result
+  if (Math.sign(a) === 1) {
+    result = "Positive";
+  } else if (Math.sign(a) === -1) {
+    result = "Negative";
+  } else {
+    result = "Zero";
+  }
+  return result;
 }
 
 /**
