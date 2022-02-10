@@ -109,7 +109,15 @@ return result
  *  //> "Hello World"
  */
 function aroundTheWorldGreeting(language) {
-  return 
+  if (language === "english"){
+    return "Hello World"
+  }else if (language === "spanish"){
+    return "Hola Mundo"
+  }else if (language === "german"){
+    return "Hallo Welt"
+  }else if (!language){
+    return "Hello World"
+  }
 }
 
 /**
