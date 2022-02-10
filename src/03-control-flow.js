@@ -58,7 +58,7 @@ function findLargerOrTie(a, b) {
   } else if (a === b) {
     result = "tie";
   }
-  return result
+  return result;
 }
 
 /**
