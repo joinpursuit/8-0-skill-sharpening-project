@@ -136,7 +136,10 @@ return object
  *  addKeyToObject({ right: false }, "left");
  *  //> { right: false, left: true }
  */
-function addKeyToObject(object, key) {}
+function addKeyToObject(object, key) {
+object[key] = 'Fried Shrimp'
+return object
+}
 
 /**
  * addKeyValuePairToObject()
