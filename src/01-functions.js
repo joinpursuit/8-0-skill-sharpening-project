@@ -37,9 +37,9 @@
  */
 
 function greet(name) {
-  let greeting = ''
+  let greeting = ' '
   return `Hello, ${name}.`
-};
+}
 
 /**
  * add()
@@ -55,7 +55,7 @@ function greet(name) {
  *  //> 30
  */
  function add(a=28, b=4) {
-  return a + b
+  return a + b; 
 }
  
 /**
@@ -97,7 +97,7 @@ function greet(name) {
   function average(a=44, b=11) {
     const sum = a + b
     const number =sum/2
-    return number
+    return number;
   }
 
 /**
@@ -120,7 +120,7 @@ function greet(name) {
 function averageThree(a=11,b=22,c=33) {
   const sum = a + b + c
   const number = sum/3
-  return number
+  return number; 
   }
  
 /***
@@ -142,9 +142,9 @@ function averageThree(a=11,b=22,c=33) {
  */
  function compareTypes(a=11,b=12) {
   if(typeof a == typeof b){
-    return true
+    return true;
   }else{
-    return false
+    return false;
   }
 }
 
@@ -165,12 +165,13 @@ function averageThree(a=11,b=22,c=33) {
  *  flipSign(50);
  *  //> -50
  */
-//function flipSign(" ") {
- // var y = -10;
-//var x =- 50;
-
-//}
-//console.log ("flipSign")
+function flipSign(a) {
+  if ( a === (-a)){
+    return a 
+  }if (a === (+a)){
+    return (-a)
+  }
+}
 
 /**
  * joinStringsWithSpaces()
@@ -190,8 +191,10 @@ function averageThree(a=11,b=22,c=33) {
  *  joinStringsWithSpaces("left", "right", "up", "down", "away");
  *  //> "left right up down away"
  */
- //function joinStringsWithSpaces() {
-  //let  = ['a', 'b', 'c,' 'd,' 'e'];
+ function joinStringsWithSpaces(greet1 , greet2, greet3, greet4, greet5) {
+ 
+  return greet1 + ' ' + greet2 + ' ' + greet3 + ' ' + greet4 + ' ' + greet5
+ }
 
 //console.log(elements.join());
 //}
@@ -202,7 +205,7 @@ function averageThree(a=11,b=22,c=33) {
  * Returns the first and last character of a larger string as a single string.
  *
  * NOTE: The inputted string will always have a length of 2 or greater.
- * HINT: How can you find the nth character of any string?
+ * HINT: How can you find the ninth character of any string?
  * How can find out how long a string is? How will this help you solve this problem?
  * @param {string} a
  * @returns {string}
@@ -211,7 +214,11 @@ function averageThree(a=11,b=22,c=33) {
  *  getFirstAndLastCharacter("upwards");
  *  //> "us"
  */
-function getFirstAndLastCharacter() {}
+function getFirstAndLastCharacter(a) { 
+
+  return a.charAt(0) + a.charAt(a.length- 1) 
+  
+}
 
 // Do not change the code below.
 module.exports = {
