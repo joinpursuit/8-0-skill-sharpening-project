@@ -233,13 +233,15 @@ function animalCounts(animal, numberOfAnimals) {
  *  //> "Even"
  */
 function evenOrOdd(a) {
-  let result = ""
-  if (a % 2  === 0 ){
-result = "Even"
-  }else if (!a % 2 === 0){
-     result = "Odd"
-  }else {result = "I don't know."}
- return result
+  let result = "";
+  if (a % 2 === 0) {
+    result = "Even";
+  } else if (!a % 2 === 0) {
+    result = "Odd";
+  } else {
+    result = "I don't know.";
+  }
+  return result;
 }
 
 
