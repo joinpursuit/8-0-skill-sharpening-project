@@ -9,7 +9,7 @@
  *  createEmptyObject()
  *  //> {}
  */
-function createEmptyObject() {
+function createEmptyObject(object) {
   let obj = {}
   return obj
 }
