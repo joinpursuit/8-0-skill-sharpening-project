@@ -66,7 +66,7 @@ return obj
  */
 function createObjectWithKeyValuePair(key, val) {
 let obj = {
-key: "value",
+
 }
 return obj
 }
