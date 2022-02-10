@@ -228,7 +228,7 @@ function animalCounts(animal, numberOfAnimals) {
  * EXAMPLE:
  *  evenOrOdd(11);
  *  //> "Odd"
- * 
+ *
  *  evenOrOdd(48);
  *  //> "Even"
  */
