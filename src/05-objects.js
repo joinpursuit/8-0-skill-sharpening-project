@@ -68,6 +68,7 @@ function createObjectWithKeyValuePair(key, val) {
 let obj = {
 
 }
+obj[key] = val
 return obj
 }
 
