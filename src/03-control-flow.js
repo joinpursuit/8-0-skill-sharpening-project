@@ -153,6 +153,19 @@ function aroundTheWorldGreetingWithSwitch(language) {}
  *  //> "A"
  */
 function calculateLetterGrade(grade) {
+  // let result = ""
+  if (grade > 89){
+    result = "A"
+  }else if (grade > 79 && grade < 90){
+    result = "B"
+  }else if (grade > 69 && grade < 80){
+    result = "C"
+  }else if (grade > 59 && grade < 70){
+  result = "D"
+  }else if (grade < 60)
+  {result = "F"}
+  return result
+  }
 
 
 /**
