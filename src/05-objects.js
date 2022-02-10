@@ -44,9 +44,11 @@ return obj
  *  //> { left: false }
  */
 function createObjectWithKey(key) {
-  let obj = {
-   "my key": true
-  }
+let obj ={
+
+}
+obj[key] = "keys"
+
 return obj
 }
 
