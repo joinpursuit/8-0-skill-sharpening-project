@@ -199,7 +199,11 @@ return a + ` ` + b + ` `  + c + ` ` + d + ` ` + e
  *  getFirstAndLastCharacter("upwards");
  *  //> "us"
  */
-function getFirstAndLastCharacter() {}
+function getFirstAndLastCharacter(a) {
+  let result = a.charAt(0) + a.charAt(a.length-1);
+  return result
+  
+}
 
 // Do not change the code below.
 module.exports = {
