@@ -31,7 +31,7 @@ function isEqual(a, b) {
  *  //> 19
  */
 function findLarger(a, b) {
-  return Math.max(a,b)
+  return Math.max(a, b);
 }
 
 /**
