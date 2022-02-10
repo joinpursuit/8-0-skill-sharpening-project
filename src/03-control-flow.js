@@ -261,14 +261,10 @@ function evenOrOdd(a) {
  *  //> "Even"
  */
 function evenOrOddWithTernary(a) {
+  let result = a % 2 === 0 ? "Even" : "Odd";
 
-
-  let result = a % 2 === 0  ? "Even" : "Odd";
-
-
-return result
+  return result;
 }
-
 
 // Do not change any code below this line.
 module.exports = {
