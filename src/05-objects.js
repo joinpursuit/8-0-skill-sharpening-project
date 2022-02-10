@@ -26,8 +26,10 @@ function createEmptyObject(object) {
  *  //> { whateverKey: 19 }
  */
 function createObjectWithValue(val) {
-
-
+  let obj = {
+    lollipop: val
+  }
+return obj
 }
 
 /**
