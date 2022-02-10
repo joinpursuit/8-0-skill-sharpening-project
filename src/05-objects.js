@@ -99,6 +99,9 @@ function getNameFromObject(object) {
  *  //> 30
  */
 function getAgeFromObject(object) {
+  let obj = {
+    age: "10"
+  }
   return object.age 
 }
 
