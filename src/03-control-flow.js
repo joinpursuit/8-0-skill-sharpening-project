@@ -208,11 +208,13 @@ function calculateLetterGrade(grade) {
  *  //> "1 pig"
  */
 function animalCounts(animal, numberOfAnimals) {
-let result = ""
-  if (numberOfAnimals > 1){
-    result = numberOfAnimals + ` ` + animal + 's' 
-  }else { result = numberOfAnimals + ` ` + animal }
-return result
+  let result = "";
+  if (numberOfAnimals > 1) {
+    result = numberOfAnimals + ` ` + animal + "s";
+  } else {
+    result = numberOfAnimals + ` ` + animal;
+  }
+  return result;
 }
 
 /**
