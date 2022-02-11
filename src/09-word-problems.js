@@ -19,18 +19,21 @@
  *  applyDiscount(1000, 9, true);
  *  //> 700
  */
-function applyDiscount(priceInCents, age, hasMembership) {
 
-  let discountMultiplier = 1;
-
-  if(age <= 10 || age >= 65){
-    discountMultiplier -= .1;
-  };
-
-  if (hasMembership){
-    discountMultiplier -= .2;
-  };
-  return priceInCents * discountMultiplier;
+ function applyDiscount(priceInCents, age, hasMembership) {
+  let price;
+  if ((age <= 10 || age >= 65) && hasMembership) {
+    price = priceInCents - (priceInCents * 0.30);
+    return price;
+  } else if (age <= 10 || age >= 65) {
+    price = priceInCents - (priceInCents * 0.10);
+    return price;
+  } else if (hasMembership) {
+    price = priceInCents - (priceInCents * 0.20);
+    return price;
+  } else {
+    return priceInCents;
+  }
 }
 
 /**
@@ -54,13 +57,16 @@ function applyDiscount(priceInCents, age, hasMembership) {
  */
 function getCartTotal(products) {
 
-  let cartTotal = 0;
-
-  for(let product of products){
-    cartTotal += products.priceInCents * products.quantity;
+  let price = 0;
+  for (let n = 0; n < products.length; n++) {
+    let productPrice = products[n].priceInCents * products[n].quantity;
+    price += productPrice;
   }
-  return `$${(cartTotal / 100).toFixed(2)}.`;
-};
+    price /= 100;
+    price = price.toFixed(2);
+    return `$${price}`;
+}
+
 
 /**
  * compareLocations()
@@ -100,22 +106,19 @@ function getCartTotal(products) {
     compareLocations(address1, address2);
     //> "Same city."
  */
-function compareLocations(address1, address2) {
-  if(address1.street === address2.street
-    && address1.city === address2.city
-    && address1.state === address2.state
-    && address1.zip === address2.zip){
-      return "same building.";
-    } else if(address1.city === address2.city
-      && address1.state === address2.state
-      && address1.zip === address2.zip){
-        return "same city.";
-      }else if (address1.state === address2.state){
-        return "same state.";
-      }else {
-        return "Addresses are not near each other.";
-      };
-    };
+
+    function compareLocations(address1, address2) {
+
+      if (address1["state"] != address2["state"]) {
+      return "Addresses are not near each other.";
+    } else if (address1["zip"] != address2["zip"]) {
+      return "Same state."
+    } else if (address1["street"] != address2["street"]) {
+      return "Same city."
+    } else {
+      return "Same building."
+    }
+  };
 
 
 /**
@@ -163,26 +166,34 @@ function compareLocations(address1, address2) {
     //>   },
     //> ];
  */
+
 function gradeAssignments(assignments) {
-  for (assignment of assignments){
-    if (assignment.kind === "PASS-FAIL"){
-      if(assignment.score.received !== assignments.score.max){
-          assignment.status = "FAILED"
-          } else {
-            assignment.status = "PASSED"
-      };
-    } else if( assignment.kind === "PERCENTAGE"){
-      if(assignment.score.received / assignment.score.max < .8){
-        assignment.status = 'FAILED: ${((assignment.score.received / assignment.score.max) * 100).toFixed(1)}%'
+  for (let i = 0; i < assignments.length; i++) {
+
+    if (assignments[i].kind === "PASS-FAIL") {
+      if (assignments[i].score.received === assignments[i].score.max) {
+        assignments[i].status = "PASSED";
       } else {
-        assignment.status = `PASSED: ${((assignment.score.received / assignment.score.max))}`
+        assignments[i].status = "FAILED";
       }
+    } else if (assignments[i].kind === "PERCENTAGE") {
+      let percentage = (assignments[i].score.received / assignments[i].score.max) * 100;
+      percentage = percentage.toFixed(1);
 
+      if (percentage >= 80.0) {
+        assignments[i].status = `PASSED: ${percentage}%`
+      } else {
+        assignments[i].status = `FAILED: ${percentage}%`
+      }
+    } else {
+      let received = assignments[i].score.received;
+      let max = assignments[i].score.max;
+      assignments[i].status = `SCORE: ${received}/${max}`
     }
-return assignments;
-    }
+
   }
-
+  return assignments;
+}
 
 /**
  * createLineOrder()
@@ -218,7 +229,8 @@ function createLineOrder(people) {
       regularGuests.push(person.name);
     };
   };
-  return frequentFlyers.concat(regularGuests);
+  let lineOrder = frequentFlyers.concat(regularGuests);
+  return lineOrder;
 }
 
 module.exports = {

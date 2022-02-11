@@ -13,13 +13,13 @@
  *  //> [ "A!", "Very!", "Happy!", "Array!" ];
  */
 function shoutForLoop(array) {
-  let shoutArray = [];
-
-  for(let i = 0; i < array.length; i++);{
-  shoutArray.push(array[i] + "!");
-};
-return shoutArray
+  let myArray = []
+for(let i = 0; i < array.length; i++) {
+  myArray.push(`${array[i]}!`);
 }
+  return myArray;
+}
+
 
 /**
  * shoutWhileLoop()
@@ -40,8 +40,8 @@ function shoutWhileLoop(array) {
   let i = 0;
   while(i < array.length){
     shoutArray.push(`${array[i]}!`);
-    i++;
-  };
+    i++
+  }
   return shoutArray;
 }
 
@@ -60,13 +60,13 @@ function shoutWhileLoop(array) {
  *  //> [ "A!", "Very!", "Happy!", "Array!" ];
  */
 function shoutForOfLoop(array) {
-  let shoutedWord = [];
 
-  for(let word of array){
-    shoutedWords.push(word + "!");
+  let myArray = [] 
+    for(let arrays of array) {
+      myArray.push(`${arrays}!`);
+    }
+      return myArray;
   }
-  return shoutedWords;
-}
 
 
 
@@ -82,12 +82,11 @@ function shoutForOfLoop(array) {
  *  //> 31
  */
 function sumArray(array) {
-  let sum = 0;
-
-  for(let i = 0; i < array.length; i++){
-    sum += array[i];;
-  };
-  return sum;
+  let sum = 0
+  for(let number of array) {
+    sum += number
+  }
+    return sum;
 }
 
 /**
@@ -107,8 +106,8 @@ function oddArray(array) {
   for(let i = 0; i < array.length; i++){
     if(array[i] % 2 !== 0){
       oddArray.push(array[i]);
-    };
-  };
+    }
+  }
   return oddArray;
 }
 
@@ -146,7 +145,7 @@ evensArray.push(array[i]);
  *  //> -2
  */
 function findSmallest(array) {
-  let smallestNumber =array[0]; //smallest number -> 0
+  let smallestNumber = array[0]; //smallest number -> 0
 
   for(let i = 1; i < array.length; i++){
     if(array[i] < smallestNumber){
@@ -170,7 +169,7 @@ function findSmallest(array) {
 function findLargest(array) {
   let largestNumber = array[0];
 
-  for (let i = 1; i < array.length; i++){
+  for (let i = 0; i < array.length; i++){
     if(array[i] > largestNumber){
       largestNumber = array[i];
     }
@@ -198,13 +197,12 @@ function findEqual(array, selected) {
 
   let i = 0;
   while(i < array.length){
-    if(array[i] === selected){
+    if(array[i] === selected)
       return true;
-    }
-    i++
-  };
+     i++
+  }
   return false;
-};
+}
 
 /**
  * removeDuplicates()

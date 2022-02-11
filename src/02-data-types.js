@@ -109,7 +109,7 @@ function checkIfCharacterIsInString(text, character) {
  *  //> false
  */
 function isEven(num) {
-  return num % 2 ===0;
+  return num % 2 === 0;
   }
 
 
@@ -148,8 +148,8 @@ function isOdd(num) {
  */
 
 function isTruthy(val) {
-  return !!val;
-}
+  return val ? true : false;
+};
 // return Boolean(val);
 
 /**
@@ -167,11 +167,8 @@ function isTruthy(val) {
  *  //> false
  */
 function isFalsy(val) {
-  if (!Boolean(val)) {
-    return true;
-  }
-}
-//return !val;
+  return val ? false : true;
+};
 
 // Do not change the code below.
 module.exports = {

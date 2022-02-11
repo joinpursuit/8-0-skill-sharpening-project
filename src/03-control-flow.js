@@ -18,10 +18,10 @@ const { getFirstElementOfArray } = require("./04-arrays")
  */
 
 function isEqual(a, b) {
-  if(a === b){
-    return true
-  }else{
-    return false
+  if (a === b){
+    return true;
+  }else {
+    return false;
   }
 }
 //Return a===b;
@@ -40,9 +40,9 @@ function isEqual(a, b) {
  */
 function findLarger(a, b) {
   if (a > b){
-    return a
+    return a;
   } else {
-    return b
+    return b;
   }
 }
 
@@ -61,24 +61,16 @@ function findLarger(a, b) {
  *  findLargerOrTie(0, 0);
  *  //> "tie"
  */
-function findLargerOrTie(a, b) {
-  if (a > b){
-    return a
-  } else if (b > a) {
-    return b
-  } else if (a === b) {
-    return "tie"
-  } else {
-    return 
+
+  function findLargerOrTie(a, b) {
+    if (a > b) {
+      return a;
+    } else if(a < b) {
+      return b
+    } else if(a === b) {
+  } return 'tie';
   }
-}
-//  if (a === b) {
-//   return "tie"
-// } else if (a > b){
-//   return a;
-// }else {
-//   return b;
-// }
+
 
 /**
  * positiveNegativeOrZero()
@@ -99,13 +91,13 @@ function findLargerOrTie(a, b) {
  *  //> "Positive"
  */
 function positiveNegativeOrZero(a) {
-  if (a > 0){
-    return "Positive"
-  } else if(a < 0){
-    return "Negative"
-  } else {
-    return "Zero"
-  };
+  if (a > 0) {
+    return 'Positive'
+  } if (a < 0) {
+    return 'Negative'
+  } else if (a === 0) {
+    return 'Zero'
+  }
 }
 
 /**
@@ -127,15 +119,19 @@ function positiveNegativeOrZero(a) {
  *  aroundTheWorldGreeting();
  *  //> "Hello World"
  */
-function aroundTheWorldGreeting(language="english") {
-  if (language === "english") {
-    return "Hello world" 
-    } else if(language === "spanish") {
-      return "Hola Mundo"
-    } else if (language === "german") {
-      return "Hallo Welt"
-    };
+
+ function aroundTheWorldGreeting(language) {
+  if(language === 'english') {
+    return 'Hello World'
   }
+  if(language === 'spanish') {
+    return 'Hola Mundo'
+  }
+  else if(language === 'german') {
+    return 'Hallo Welt'
+  }
+  else return 'Hello World'
+}
 
 
 
@@ -161,20 +157,19 @@ function aroundTheWorldGreeting(language="english") {
  *  //> "Hello World"
  */
 function aroundTheWorldGreetingWithSwitch(language) {
-  switch (language) {
-    case  'english':
-    return "Hello World";
+  switch(language) {
+    case'german':
+    return ('Hallo Welt')
     break;
-    case 'Spanish':
-    return "Hola Mundo";
+
+    case 'spanish':
+    return ('Hola Mundo')
     break;
-    case 'German':
-    return "Hallo Welt";
-    break;
+
     default:
-      return "Hello World";
-    };
-}
+    return 'Hello World'
+  }
+  };
 
 /**
  * calculateLetterGrade()
@@ -194,18 +189,22 @@ function aroundTheWorldGreetingWithSwitch(language) {
  *  //> "A"
  */
 function calculateLetterGrade(grade) {
-  if (grade >= 90) {
-    return "A"
-  } else if (grade >= 80){
-    return "B"
-  } else if (grade >= 70) {
-    return "C"
-  } else if (grade >= 60) {
-    return "D"
-  } else {
-    return "F";
+  if(grade >= 90) {
+    return 'A'
+  } 
+  if(grade >= 80) {
+    return 'B'
   }
-}
+  if(grade >= 70) {
+    return 'C'
+  }
+  if(grade >= 60) {
+    return 'D'
+  }
+  else if(grade < 60) {
+    return 'F'
+  }
+};
 
 /**
  * animalCounts()
@@ -223,17 +222,15 @@ function calculateLetterGrade(grade) {
  *  animalCounts("pig", 1);
  *  //> "1 pig"
  */
-function animalCounts(animal, numberOfAnimals) {
-  let animal = ["cat", 2];
-  let animal = ["fish", 2]
-  return maybePluralize(2, "cat");
-}
 
-// if (numberOfAnimal <= 1){
-//   return `${numberOfAnimals} ${animal}`
-// } else if {
-//   return `${numberOfAnimals} ${animal}s`
-//}
+ function animalCounts(animal, numberOfAnimals) {
+  if (numberOfAnimals === 1) {
+    return `${numberOfAnimals} ${animal}`
+  } else if (numberOfAnimals > 1) {
+    return `${numberOfAnimals} ${animal}s`
+  }
+};
+
 
 /**
  * evenOrOdd()
@@ -250,12 +247,13 @@ function animalCounts(animal, numberOfAnimals) {
  *  evenOrOdd(48);
  *  //> "Even"
  */
+ 
 function evenOrOdd(a) {
-  if(a === "Even"){
-    return Even
-  }else{
-    return Odd
-  }
+  if (a % 2 === 0) {
+    return 'Even'
+  } else if (a % 2 !== 0) {
+    return 'Odd'
+  };
 }
 
 /**
@@ -273,8 +271,8 @@ function evenOrOdd(a) {
  *  //> "Even"
  */
 function evenOrOddWithTernary(a) {
-  return (a % 2 === 0 ? 'Even' : 'Odd')
-}
+  return a % 2 === 0 ? 'Even' : 'Odd'
+};
 
 
 // Do not change any code below this line.

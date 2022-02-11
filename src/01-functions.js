@@ -10,6 +10,7 @@
  *  //> true
  */
 function alwaysTrue() {
+  let alwaysTrue = true
   return true;
 }
 
@@ -28,8 +29,9 @@ function alwaysTrue() {
  *  //> "Hello, Ian."
  */
 function greet(name) {
+  let greeting = ''
   return `Hello, ${name}.`
-}
+};
 
 /**
  * add()
@@ -105,7 +107,7 @@ function average(a, b) {
  *  //> 10 // 10 + 11 + 19 = 30; 30 / 3 = 10;
  */
 function averageThree(a, b, c) {
-  return (a + b + c) / 3
+  return (a + b + c) / 3;
 }
 
 /**
@@ -126,8 +128,13 @@ function averageThree(a, b, c) {
  *  //> false
  */
 function compareTypes(a, b) {
-  return typeof a === typeof b;
-} 
+  if(typeof a === typeof b) {
+    return true
+  } else {
+    return false
+  }
+  };
+
 
 /**
  * flipSign()
@@ -147,8 +154,16 @@ function compareTypes(a, b) {
  *  //> -50
  */
 function flipSign(a) {
-  return a * -1;
-}
+  if(a === (-a)) {
+    return a;
+  } if(a === (+a)) {
+  
+    return (-a);
+  }
+  }
+  
+  //return a * -1;
+
 
 /**
  * joinStringsWithSpaces()
@@ -168,9 +183,10 @@ function flipSign(a) {
  *  joinStringsWithSpaces("left", "right", "up", "down", "away");
  *  //> "left right up down away"
  */
-function joinStringsWithSpaces(a, b, c, d, e) {
-    return `${a}, ${b}, ${c}, ${d}, ${e}`; 
-  }
+
+ function joinStringsWithSpaces(a, b, c, d, e) {
+  return a + ' ' + b + ' ' + c + ' ' + d + ' ' + e
+};
 
 /**
  * getFirstAndLastCharacter()
@@ -188,8 +204,11 @@ function joinStringsWithSpaces(a, b, c, d, e) {
  *  //> "us"
  */
 function getFirstAndLastCharacter(a) {
-  return a[0] + a[a.length - 1];
-}
+  if(a.length >= 2)
+  return a.charAt(0) + a.charAt(a.length - 1) 
+  
+  // return a[0] + a[a.length - 1];
+};
 
 
 

@@ -165,7 +165,7 @@ function getCityAndState(person) {
  *  //> "697 Pine Drive 2A, Staten Island, NY, 10306"
  */
 function getFullAddress(person) {
-  return `${person.address}, ${person.address.street}, ${person.address.unit}, ${person.address.city}, ${person.address.state}, ${person.address.zip}.`
+  return `${person.address.street} ${person.address.unit}, ${person.address.city}, ${person.address.state}, ${person.address.zip}`
 };
   
 
@@ -191,20 +191,19 @@ function getFullAddress(person) {
     };
  */
 function getFlatObject(person) {
-  let flattenedPerson = {};
+  let obj = {}
+    obj.first = person.names.first;
+    obj.middle = person.names.middle;
+    obj.last = person.names.last;
+    obj.street = person.address.street;
+    obj.unit = person.address.unit;
+    obj.city = person.address.city;
+    obj.state = person.address.state;
+    obj.zip = person.address.zip;
+    obj.numbers = person.numbers;
+    return obj;
+}
 
-  flattenedPerson.first = person.names.first;
-  flattenedPerson.middle = person.names.middle;
-  flattenedPerson.last = person.names.last;
-  flattenedPerson.street = person.names.street;
-  flattenedPerson.unit = person.names.unit;
-  flattenedPerson.city = person.names.city;
-  flattenedPerson.state = person.names.state;
-  flattenedPerson.zip = person.names.zip;
-  flattenedPerson.numbers = person.numbers;
-
-  return flattenedPerson;
-};
 
 // Do not change the code below.
 module.exports = {
