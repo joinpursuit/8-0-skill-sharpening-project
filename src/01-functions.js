@@ -183,12 +183,9 @@ function compareTypes(a,b) {
  */
 function flipSign(a) {
 
-  let num = a;
-  if( num < 0){
-    num *= -1
-  } else {
-  return num
-  }
+ return a*(-1);
+
+
 
 }
 

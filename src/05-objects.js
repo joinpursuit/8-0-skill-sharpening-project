@@ -113,7 +113,11 @@ return object.age
  *  //> { left: true, key: false }
  */
 function addValueToObject(object, val) {
+let obj2 = {}
 
+obj2 = {object,val}
+// obj2.push(object,val)
+return obj2
 
 }
 
@@ -129,7 +133,12 @@ function addValueToObject(object, val) {
  *  addKeyToObject({ right: false }, "left");
  *  //> { right: false, left: true }
  */
-function addKeyToObject(object, key) {}
+function addKeyToObject(object, key) {
+  let obj3 ={}
+obj3[key] = 'Edgy'
+
+return obj3
+}
 
 /**
  * addKeyValuePairToObject()
@@ -144,7 +153,11 @@ function addKeyToObject(object, key) {}
  *  addKeyValuePairToObject({ up: true }, "left", false);
  *  //> { up: true, left: false }
  */
-function addKeyValuePairToObject(object, key, val) {}
+function addKeyValuePairToObject(object, key, val) {
+let obj4={}
+ obj4[key]= val
+return obj4
+}
 
 /**
  * deleteKeyFromObject()
@@ -158,7 +171,11 @@ function addKeyValuePairToObject(object, key, val) {}
  *  deleteKeyFromObject({ left: true, right: false }, "left");
  *  //> { right: false }
  */
-function deleteKeyFromObject(object, key) {}
+function deleteKeyFromObject(object, key) {
+ 
+delete object[key]
+return object
+}
 
 // Do not change any code below this line.
 module.exports = {
