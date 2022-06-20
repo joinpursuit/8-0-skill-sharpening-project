@@ -174,7 +174,11 @@ function isTruthy(val) {
  *  //> false
  */
 function isFalsy(val) {
-  if 
+  if(val){
+    return false
+  }else{
+    return true
+  }
 }
 
 // Do not change the code below.
