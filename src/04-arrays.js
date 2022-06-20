@@ -10,7 +10,10 @@
  *  createEmptyArray();
  *  //> []
  */
-function createEmptyArray() {}
+function createEmptyArray() {
+  let array = []
+  return array
+}
 
 /**
  * createArrayWithTwoElements()
