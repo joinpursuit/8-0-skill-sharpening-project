@@ -9,7 +9,11 @@
  *  getLengthOfString("down");
  *  //> 4
  */
-function getLengthOfString(str) {}
+function getLengthOfString(str) {
+  let abc = str
+  let len = abc.length
+  return len
+}
 
 /**
  * convertToNumber()
