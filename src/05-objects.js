@@ -43,8 +43,8 @@ function createObjectWithValue(val) {
  */
 function createObjectWithKey(key) {
   let obj = {}
-  obj.key = " "
-  return 
+  obj[key] = " "
+  return obj
 }
 
 /**
@@ -59,9 +59,9 @@ function createObjectWithKey(key) {
  *  createObjectWithKeyValuePair("left", "right");
  *  //> { left: "right" }
  */
-function createObjectWithKeyValuePair(key, val) {
+function createObjectWithKeyValuePair(key,val) {
   let obj = {}
-  obj.key = val
+  obj[key] = val
   return obj
 }
 
@@ -125,7 +125,7 @@ function addValueToObject(object, val) {
  *  //> { right: false, left: true }
  */
 function addKeyToObject(object, key) {
-  object["key"] = true
+  object[key] = "yes"
   return object
 }
 
@@ -142,8 +142,8 @@ function addKeyToObject(object, key) {
  *  addKeyValuePairToObject({ up: true }, "left", false);
  *  //> { up: true, left: false }
  */
-function addKeyValuePairToObject(object, key, val) {
-  object["key"] = val
+function addKeyValuePairToObject(object , key , val) {
+  object[key] = val
   return object
 }
 
@@ -152,14 +152,17 @@ function addKeyValuePairToObject(object, key, val) {
  * ---------------------
  * Remove the key from the given object. You may use the `delete` keyword.
  * @param {Object} object
- * @param {string} key
+ * @param {string} _key
  * @returns {Object}
  *
  * EXAMPLE:
  *  deleteKeyFromObject({ left: true, right: false }, "left");
  *  //> { right: false }
  */
-function deleteKeyFromObject(object, key) {}
+function deleteKeyFromObject(object, key) {
+  delete object[key]
+  return object
+}
 
 // Do not change any code below this line.
 module.exports = {
