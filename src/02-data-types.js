@@ -9,7 +9,10 @@
  *  getLengthOfString("down");
  *  //> 4
  */
-function getLengthOfString(str) {}
+function getLengthOfString(str) {
+
+  return str.length
+}
 
 /**
  * convertToNumber()
@@ -22,7 +25,13 @@ function getLengthOfString(str) {}
  *  convertToNumber("111");
  *  //> 111
  */
-function convertToNumber(val) {}
+function convertToNumber(val) {
+
+let conv = parseInt(val);
+
+return conv
+
+}
 
 /**
  * convertToString()
@@ -36,7 +45,12 @@ function convertToNumber(val) {}
  *  convertToString(99);
  *  //> "99"
  */
-function convertToString(val) {}
+function convertToString(val) {
+
+  let toStr = val.toString()
+
+ return toStr
+}
 
 /**
  * convertToShoutingText()
@@ -49,7 +63,15 @@ function convertToString(val) {}
  *  convertToShoutingText("Hello There");
  *  //> "HELLO THERE"
  */
-function convertToShoutingText(text) {}
+function convertToShoutingText(text) {
+
+  let cap = text.toUpperCase();
+
+  return cap
+
+
+
+}
 
 /**
  * convertToWhisperText()
@@ -62,7 +84,11 @@ function convertToShoutingText(text) {}
  *  convertToWhisperText("Hello There");
  *  //> "hello there"
  */
-function convertToWhisperText(text) {}
+function convertToWhisperText(text) {
+let low = text.toLowerCase()
+return low;
+
+}
 
 /**
  * checkIfCharacterIsInString()
@@ -79,7 +105,11 @@ function convertToWhisperText(text) {}
  *  checkIfCharacterIsInString("hello there", "a");
  *  //> false
  */
-function checkIfCharacterIsInString(text, character) {}
+function checkIfCharacterIsInString(text, character) {
+
+return text.includes(character);
+
+}
 
 /**
  * isEven()
@@ -95,7 +125,15 @@ function checkIfCharacterIsInString(text, character) {}
  *  isEven(11);
  *  //> false
  */
-function isEven(num) {}
+function isEven(num) {
+
+if ( num %2 === 0){
+ return true;
+}else {
+  return false;
+}
+
+}
 
 /**
  * isOdd()
@@ -111,7 +149,14 @@ function isEven(num) {}
  *  isOdd(11);
  *  //> true
  */
-function isOdd(num) {}
+function isOdd(num) {
+  if ( num %2 === 0){
+    return false;
+   }
+   else {
+    return true;
+  }
+}
 
 /**
  * isTruthy()
@@ -124,10 +169,30 @@ function isOdd(num) {}
  *  isTruthy(10);
  *  //> true
  *
- *  isTruthy(null);
- *  //> false
- */
-function isTruthy(val) {}
+//  *  isTruthy(null);
+//  *  //> false
+//  */
+function isTruthy(val) {
+if (val === ""){
+return false;
+}
+else if(val === null ){
+return false
+}
+else if(val === 0 ){
+  return false
+  }
+  else if(val === undefined ){
+    return false
+    }
+    else if(val === NaN){
+      return false
+      }
+
+else {
+  return true;
+}
+}
 
 /**
  * isFalsy()
@@ -143,7 +208,14 @@ function isTruthy(val) {}
  *  isFalsy(" ");
  *  //> false
  */
-function isFalsy(val) {}
+function isFalsy(val) {
+
+  if (!val){
+    return true
+  }else {
+    return false
+  }
+}
 
 // Do not change the code below.
 module.exports = {
