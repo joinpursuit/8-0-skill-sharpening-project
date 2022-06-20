@@ -9,7 +9,7 @@
  *  getLengthOfString("down");
  *  //> 4
  */
-function getLengthOfString(str) {}
+function getLengthOfString() {}
 function getLengthOfString(str){
   for (i = 0; 1 <= str.length; i++);
   return str.length;
@@ -25,7 +25,7 @@ function getLengthOfString(str){
  *  convertToNumber("111");
  *  //> 111
  */
-function convertToNumber(val) {}
+function convertToNumber() {}
 function convertToNumber(val) {
    Number(val);
    return Number (val);
@@ -42,7 +42,7 @@ function convertToNumber(val) {
  *  convertToString(99);
  *  //> "99"
  */
-function convertToString(val) {}
+function convertToString() {}
 function convertToString(val) {
     val.toString();
     return val.toString();
@@ -58,7 +58,7 @@ function convertToString(val) {
  *  convertToShoutingText("Hello There");
  *  //> "HELLO THERE"
  */
-function convertToShoutingText(text) {}
+function convertToShoutingText() {}
 function convertToShoutingText(text) {
   return text.toUpperCase();
 }
@@ -73,7 +73,7 @@ function convertToShoutingText(text) {
  *  convertToWhisperText("Hello There");
  *  //> "hello there"
  */
-function convertToWhisperText(text) {}
+function convertToWhisperText() {}
 function convertToWhisperText(text) {
   return text.toLowerCase();
 }
@@ -92,7 +92,7 @@ function convertToWhisperText(text) {
  *  checkIfCharacterIsInString("hello there", "a");
  *  //> false
  */
-function checkIfCharacterIsInString(text, character) {}
+function checkIfCharacterIsInString() {}
 function checkIfCharacterIsInString(text, character) {
   // for (i = 0; i <= tezt.length; i++)
   while(i <= text.length){
@@ -119,7 +119,7 @@ function checkIfCharacterIsInString(text, character) {
  *  isEven(11);
  *  //> false
  */
-function isEven(num) {}
+function isEven() {}
 function isEven(num) {
   if(num % 2 === 0) {
     return true;
@@ -142,7 +142,7 @@ function isEven(num) {
  *  isOdd(11);
  *  //> true
  */
-function isOdd(num) {}
+function isOdd() {}
 function isOdd(num) {
   if(num % 2 !== 0) {
     return true;
@@ -166,7 +166,7 @@ function isOdd(num) {
  *  isTruthy(null);
  *  //> false
  */
-function isTruthy(val) {}
+function isTruthy() {}
 function isTruthy(val) {
   if (!!val) {
     return true;
@@ -194,7 +194,7 @@ else return false;
  *  isFalsy(" ");
  *  //> false
  */
-function isFalsy(val) {}
+function isFalsy() {}
 function isFalsy(val) {
   if(val){
     return true;

@@ -12,7 +12,7 @@
  */
 function createEmptyArray() {}
 function createEmptyArray() {
-  const dummy = []
+  const dummy= []
   return dummy;
 }
 /**
@@ -27,7 +27,7 @@ function createEmptyArray() {
  *  createArrayWithTwoElements(true, false);
  *  //> [ true, false ]
  */
-function createArrayWithTwoElements(a, b) {}
+function createArrayWithTwoElements() {}
 function createArrayWithTwoElements(a, b) {
   let dummy = [a, b]
   return dummy;
@@ -43,7 +43,7 @@ function createArrayWithTwoElements(a, b) {
  *  getArrayLength([ 10, 20, 30 ]);
  *  //> 3
  */
-function getArrayLength(array) {}
+function getArrayLength() {}
 function getArrayLength(array) {
   for(i =0; i <= array.length; i++){
     return array.length;
@@ -61,7 +61,7 @@ function getArrayLength(array) {
  *  getFirstElementOfArray([ 10, 20, 30 ]);
  *  //> 10
  */
-function getFirstElementOfArray(array) {}
+function getFirstElementOfArray() {}
 function getFirstElementOfArray(array) {
   for(i =0; i <= array.length; i++){
     return (array[0]);
@@ -79,7 +79,7 @@ function getFirstElementOfArray(array) {
  *  getLastElementOfArray([ null, undefined ]);
  *  //> undefined
  */
-function getLastElementOfArray(array) {}
+function getLastElementOfArray() {}
 function getLastElementOfArray(array) {
   for(i =0; i <= array.length; i++){
     last = array[array.length];

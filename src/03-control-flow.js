@@ -33,7 +33,7 @@ function isEqual(a, b){
  *  findLarger(19, 7);
  *  //> 19
  */
-function findLarger(a, b) {}
+function findLarger() {}
 function findLarger(a, b) {
   if (a > b){
     return a;
@@ -57,7 +57,7 @@ function findLarger(a, b) {
  *  findLargerOrTie(0, 0);
  *  //> "tie"
  */
-function findLargerOrTie(a, b) {}
+function findLargerOrTie() {}
 function findLargerOrTie(a, b) {
   if (a > b) {
     return a;
@@ -87,7 +87,7 @@ function findLargerOrTie(a, b) {
  *  positiveNegativeOrZero(1);
  *  //> "Positive"
  */
-function positiveNegativeOrZero(a) {}
+function positiveNegativeOrZero() {}
 function positiveNegativeOrZero(a) {
   if (a < 0){
     return ("Negative");
@@ -118,24 +118,37 @@ function positiveNegativeOrZero(a) {
  *  aroundTheWorldGreeting();
  *  //> "Hello World"
  */
-function aroundTheWorldGreeting(language) {}
+function aroundTheWorldGreeting() {}
 function aroundTheWorldGreeting(language) {
-  switch(language) {
-    case `english`:
-      return("Hello World");
-      //break;
+  if (language === english){
+return("Hello World");
+  
+} else 
+ if (language === spanish){
+      return ("Hola Mundo");
+      
+ }else {
+      if (language === german) {
+return  ("Hallo Walt");
 
-      case `spanish`:
-        return ("Hola Mundo");
-        //break;
+      }else{
+        if (!language)
+        return ("Hello World");
+      }
 
-        case `german`:
-          return ("Hallo Welt");
-          //break;
-  default:
-    return("Hello World");        
+
+    } 
+    
   }
-}
+  
+      
+
+  
+
+        
+      
+
+
 /**
  * aroundTheWorldGreetingWithSwitch()
  * ---------------------
