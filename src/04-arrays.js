@@ -11,8 +11,7 @@
  *  //> []
  */
 function createEmptyArray() {
-  let emptyArray = []
-  return emptyArray
+  return []
 }
 
 /**
