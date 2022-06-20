@@ -150,13 +150,13 @@ function aroundTheWorldGreeting(language) {
  */
 function aroundTheWorldGreetingWithSwitch(language) {
   switch(language) {
-    case a: (language === `english`)
+    case `english`: 
     return `Hello World`
       break;
-    case b:(language === `spanish`)
+    case `spanish`:
       return `Hola Mundo`
       break;
-      case c: (language === `german`)
+      case 'german':
       return `Hallo Welt`
     default: 
     return `Hello World`
