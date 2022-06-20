@@ -18,7 +18,7 @@ function alwaysTrue() {
  * greet()
  * ---------------------
  * Greets the person by name.
- * HINT: Look at the example closely. 
+ * HINT: Look at the example closely.
  * Capitalization, spacing, spelling, and punctuation count!
  * @param {string} name
  * @returns {string}
@@ -63,8 +63,8 @@ function add(a, b) {
  *  //> 10
  */
 function multiply(a, b) {
-  total = a *= b;
-  return total;
+  product = a * b;
+  return product;
 }
 
 /**
@@ -86,9 +86,8 @@ function multiply(a, b) {
  *  //> 8 // 10 + 6 = 16; 16/2 = 8;
  */
 function average(a, b) {
-  sum = a + b;
-  total = sum / 2;
-  return total;
+  avg = (a + b) / 2;
+  return avg;
 }
 
 /**
@@ -109,8 +108,8 @@ function average(a, b) {
  *  //> 10 // 10 + 11 + 19 = 30; 30 / 3 = 10;
  */
 function averageThree(a, b, c) {
-  average = (a + b + c) / 3;
-  return average; 
+  avg = (a + b + c) / 3;
+  return avg;
 }
 
 /**
@@ -122,7 +121,7 @@ function averageThree(a, b, c) {
  * @returns {boolean}
  *
  * HINT: What JavaScript function returns the data type of something?
- * 
+ *
  * EXAMPLE:
  *  compareTypes("left", "right");
  *  //> true
@@ -131,10 +130,10 @@ function averageThree(a, b, c) {
  *  //> false
  */
 function compareTypes(a, b) {
-  if (typeof a === typeof b){
+  if (typeof a === typeof b) {
     return true;
-  } else {  
-    return false ;
+  } else {
+    return false;
   }
 }
 
@@ -147,7 +146,7 @@ function compareTypes(a, b) {
  *
  * HINT: Using pencil and paper, how would you make a positive number look negative?
  * How could you apply this to a variable?
- * 
+ *
  * EXAMPLE:
  *  flipSign(-10);
  *  //> 10
@@ -156,7 +155,11 @@ function compareTypes(a, b) {
  *  //> -50
  */
 function flipSign(a) {
-  return a *= -1;
+  if (a < 0) {
+    return Math.abs(a);
+  } else {
+    return -Math.abs(a);
+  }
 }
 
 /**
@@ -172,7 +175,7 @@ function flipSign(a) {
  *
  * HINT: You DON'T need fancy methods like `split()` and `join()` to do this.
  * What is the simplest way to combine two strings?
- * 
+ *
  * EXAMPLE:
  *  joinStringsWithSpaces("left", "right", "up", "down", "away");
  *  //> "left right up down away"
@@ -197,9 +200,9 @@ function joinStringsWithSpaces(a, b, c, d, e) {
  *  //> "us"
  */
 function getFirstAndLastCharacter(a) {
-  let b = a.charAt(0);
-  let c = a[a.length -1];
-  return b + c;
+  firstLetter = a.charAt(0);
+  lastLetter = a.charAt(a.length - 1);
+  return `${firstLetter}${lastLetter}`;
 }
 
 // Do not change the code below.
