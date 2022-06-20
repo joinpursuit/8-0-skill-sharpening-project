@@ -9,7 +9,14 @@
  *  alwaysTrue();
  *  //> true
  */
-function alwaysTrue() {}
+function alwaysTrue(value) {
+  if(value === false){
+    let result = !value 
+  } else {
+    result = true
+  }
+  return result
+}
 
 /**
  * greet()
@@ -24,7 +31,10 @@ function alwaysTrue() {}
  *  greet("Ian");
  *  //> "Hello, Ian."
  */
-function greet() {}
+function greet(name) {
+ let greeting = `Hello, ${name}.`
+  return greeting 
+}
 
 /**
  * add()
@@ -39,7 +49,10 @@ function greet() {}
  *  add(10, 20);
  *  //> 30
  */
-function add() {}
+function add(a,b) {
+  let sum = a + b
+  return sum
+}
 
 /**
  * multiply()
@@ -54,7 +67,10 @@ function add() {}
  *  multiply(2, 5);
  *  //> 10
  */
-function multiply() {}
+function multiply(a,b) {
+  let product = a * b
+  return product
+}
 
 /**
  * average()
@@ -74,7 +90,10 @@ function multiply() {}
  *  average(10, 6);
  *  //> 8 // 10 + 6 = 16; 16/2 = 8;
  */
-function average() {}
+function average(a,b) {
+  let average = (a + b)/2
+  return average
+}
 
 /**
  * averageThree()
@@ -93,7 +112,10 @@ function average() {}
  *  averageThree(10, 11, 19);
  *  //> 10 // 10 + 11 + 19 = 30; 30 / 3 = 10;
  */
-function averageThree() {}
+function averageThree(a,b,c) {
+  let average = (a+b+c)/3
+  return average
+}
 
 /**
  * compareTypes()
@@ -112,7 +134,15 @@ function averageThree() {}
  *  compareTypes("left", 10);
  *  //> false
  */
-function compareTypes() {}
+function compareTypes(a,b) {
+  let result
+  if(typeof(a) == typeof(b)){
+    result = true
+  } else {
+    result = false
+  }
+  return result
+}
 
 /**
  * flipSign()
@@ -131,7 +161,10 @@ function compareTypes() {}
  *  flipSign(50);
  *  //> -50
  */
-function flipSign() {}
+function flipSign(a) {
+  let flippedNum = a * -1
+  return flippedNum
+}
 
 /**
  * joinStringsWithSpaces()
@@ -151,7 +184,10 @@ function flipSign() {}
  *  joinStringsWithSpaces("left", "right", "up", "down", "away");
  *  //> "left right up down away"
  */
-function joinStringsWithSpaces() {}
+function joinStringsWithSpaces(a,b,c,d,e,) {
+  let oneBigString = `${a} ${b} ${c} ${d} ${e}`
+  return oneBigString
+}
 
 /**
  * getFirstAndLastCharacter()
@@ -162,13 +198,19 @@ function joinStringsWithSpaces() {}
  * HINT: How can you find the nth character of any string?
  * How can find out how long a string is? How will this help you solve this problem?
  * @param {string} a
+ * 
  * @returns {string}
  *
  * EXAMPLE:
  *  getFirstAndLastCharacter("upwards");
  *  //> "us"
  */
-function getFirstAndLastCharacter() {}
+function getFirstAndLastCharacter(a) {
+  let newString = a.split("") 
+  let l = a.length
+  newString = a[0] + a[l-1]
+  return newString
+}
 
 // Do not change the code below.
 module.exports = {
