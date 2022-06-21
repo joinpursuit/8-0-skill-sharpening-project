@@ -234,7 +234,7 @@ function createLineOrder(people) {
         }
     }
     return newLine
-  
+    
 }
 
 module.exports = {
