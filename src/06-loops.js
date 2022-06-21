@@ -250,13 +250,15 @@ return value
 //const cumulativeSum = array => array.map((sum => value => sum += value)(0));
 
  function cumulativeSum(array) {
-  let sum = [array[0]];
+  let sum = 0;
+  let arr =[]
 
-  for(let i =1; i< array.length; i++){
-    sum[i] = sum[i - 1] + array[i];
-    
+  for(let i =0; i< array.length; i++){
+    sum += array[i];
+    arr.push(sum)
+
   }
-  return sum
+  return arr
  }
   
 
