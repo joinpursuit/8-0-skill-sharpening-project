@@ -211,7 +211,9 @@ function findEqual(array, selected) {
 function removeDuplicates(array) {
   let newArr = [];
   for (let num of array) {
-    if (!newArr.includes(num)) newArr.push(num);
+    if (!newArr.includes(num)) {
+      newArr.push(num);
+    }
   }
   return newArr;
 }
