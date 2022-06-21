@@ -215,14 +215,14 @@ function timesIndex(array) {
  *  //> [ 5, 7, 16 ]
  */
 function cumulativeSum(array) {
-//   let added = [array[0]];
-//   for(let i=1; i < array.length; i++){
-//     array[i] = array[i-1] + array[i];
-//     added.push(array[i])
-//   }
-//  return added
+let sum = 0
+let arr = []
+for (let i=0; i < array.length; i++){
+  sum += array[i]
+  arr.push(sum)
 }
-// const  cumulativeSum = array => array.map((sum => value => sum += value)(0));
+return arr;
+}
 
 // Do not change anything below this line.
 module.exports = {
