@@ -19,7 +19,27 @@
  *  applyDiscount(1000, 9, true);
  *  //> 700
  */
-function applyDiscount(priceInCents, age, hasMembership) {}
+function applyDiscount(priceInCents, age, hasMembership) {
+  let basePrice = priceInCents
+  let discount1 = priceInCents * .9
+  let discount2 = priceInCents * .8
+  let discount3 = priceInCents * .7
+
+  if(age <= 10 || age >= 65){
+    if(hasMembership){
+      return discount3
+    }
+    else{
+      return discount1
+    }
+  }
+  if (hasMembership){
+    return discount2
+  }
+  else {
+    return basePrice
+  }
+}
 
 /**
  * getCartTotal()
@@ -80,7 +100,26 @@ function getCartTotal(products) {}
     compareLocations(address1, address2);
     //> "Same city."
  */
-function compareLocations(address1, address2) {}
+function compareLocations(address1, address2) {
+  if(address1.state === address2.state){
+    if(address1.city === address2.city){
+      if(address1.street === address2.street){
+        if(address1.zip === address2.zip){
+          return "Same building."
+        }
+      }
+    }
+  }
+  else {
+    return "Addresses are not near each other."
+  }
+  if(address1.city === address2.city){
+    return "Same city."
+  }
+  if(address1.state === address2.state){
+    return "Same state."
+  }
+}
 
 /**
  * gradeAssignments()
