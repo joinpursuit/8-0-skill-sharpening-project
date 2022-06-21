@@ -150,7 +150,7 @@ if ( num %2 === 0){
  *  //> true
  */
 function isOdd(num) {
-  if ( num %2 === 0){
+  if (num %2 === 0){
     return false;
    }
    else {

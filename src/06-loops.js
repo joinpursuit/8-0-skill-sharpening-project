@@ -16,7 +16,7 @@ function rangeSum(min, max) {
   for (let i= min; i<= max; i++){
     sum+=i
   }
-  return sum
+  return sum;
 }
 
 /**
@@ -32,10 +32,21 @@ function rangeSum(min, max) {
  *  //> [ 15, 13, 11 ]
  */
 function rangeOdd(min, max) {
+  let arr =[min, max];
 
-
-  
+  for (let i= min; i<= max; i++){
+    //arr.push(i)
+  } if(arr[i]%2==0){
+return arr[i]
+}else {
+  return arr
 }
+  
+  //return arr.sort().reverse();
+
+}
+
+
 
 /**
  * rangeEveryOther()
