@@ -32,19 +32,18 @@ function rangeSum(min, max) {
  *  //> [ 15, 13, 11 ]
  */
 function rangeOdd(min, max) {
-  let arr =[min, max];
+  let arr =[];
 
-  for (let i= min; i<= max; i++){
-    //arr.push(i)
-  } if(arr[i]%2==0){
-return arr[i]
-}else {
-  return arr
-}
-  
+  for (let i= max; i>= min; i--)
+   if(i%2===1){
+    arr.push(i)
+  }
+    return arr
+  }
   //return arr.sort().reverse();
+  
 
-}
+
 
 
 
@@ -60,7 +59,16 @@ return arr[i]
  *  rangeEveryOther(11, 18);
  *  //> [ 11, 13, 15, 17 ]
  */
-function rangeEveryOther(min, max) {}
+function rangeEveryOther(min, max) {
+  let arr =[];
+
+  for (let i= min; i>= max; i+2){
+   //if(i%2===1){
+    arr.push(i)
+  }
+    return arr.sort()
+  }
+
 
 /**
  * containsWhileLoop()

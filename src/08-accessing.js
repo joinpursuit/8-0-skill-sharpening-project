@@ -99,6 +99,8 @@ function getCountOfPhoneNumbers(person) {
 function getFirstPhoneNumber(person) {
   let firstNum= person.numbers[0]
   return firstNum
+  //Or 
+  return person.numbers[0]
 }
 
 /**
@@ -116,8 +118,9 @@ function getFirstPhoneNumber(person) {
  *  //> 7185558611
  */
 function getLastPhoneNumber(person) {
-  let lastNum= person.numbers.pop()
-  return lastNum
+  //let lastNum= person.numbers.pop()
+ // return lastNum
+ return person.numbers.pop()
 }
 
 /**
@@ -132,11 +135,13 @@ function getLastPhoneNumber(person) {
  *  //> "Rachel Eleanor Rojas"
  */
 function getFullName(person) {
-  let first= person.names.first
-  let mid= person.names.middle
-  let last= person.names.last
- let fullName = first +" " + mid+" " + last
-  return fullName
+//   let first= person.names.first
+//   let mid= person.names.middle
+//   let last= person.names.last
+//  let fullName = first +" " + mid+" " + last
+//   return fullName
+
+  return `${person.names.first} ${person.names.middle} ${person.names.last}`
 }
 
 /**
@@ -154,10 +159,12 @@ function getFullName(person) {
  *  //> "Staten Island, NY"
  */
 function getCityAndState(person) {
-  let cit = person.address.city
-  let sta= person.address.state
+  // let cit = person.address.city
+  // let sta= person.address.state
 
-  return cit+", " + sta
+  // return cit+", " + sta
+
+  return `${person.address.city}, ${person.address.state}`;
 }
 
 /**
@@ -176,9 +183,16 @@ function getCityAndState(person) {
  */
 function getFullAddress(person) {
 
-for (addreSS of person){
-  return person.address
-}
+// let fullAd={...person.address}
+// return fullAd
+  // return person.address.street
+  // person.address.unit
+  // person.address.city
+  // person.address.state
+  // person.address.zip
+
+  return `${person.address.street} ${person.address.unit}, ${person.address.city}, ${person.address.state}, ${person.address.zip}`
+
  
 }
 
@@ -204,8 +218,13 @@ for (addreSS of person){
     };
  */
 function getFlatObject(person) {
-  
-
+  let nameAndAddress= {
+    ...person.names,
+    ...person.address,
+    ...person.numbers
+  } 
+  console.log(nameAndAddress)
+return nameAndAddress
 }
 
 // Do not change the code below.
