@@ -163,7 +163,14 @@ function targetCount(array, target) {
  *  firstIndexFound([ "left", "right", "left" ], "up");
  *  //> -1
  */
-function firstIndexFound(array, target) {}
+function firstIndexFound(array, target) {
+for (let i = 0; i < array.length; i++){
+  if (array[i] === target){
+    return i
+  }
+}
+return -1
+}
 
 /**
  * lastIndexFound()
@@ -183,7 +190,14 @@ function firstIndexFound(array, target) {}
  *  lastIndexFound([ "left", "right", "left" ], "up");
  *  //> -1
  */
-function lastIndexFound(array, target) {}
+function lastIndexFound(array, target) {
+  for (let i = array.length - 1; i >= 0; i--){
+    if (array[i] === target){
+      return i
+    }
+  }
+  return -1
+}
 
 /**
  * timesIndex()
@@ -197,7 +211,12 @@ function lastIndexFound(array, target) {}
  *  //> [ 7 * 0, 10 * 1, 11 * 2 ]
  *  //> [ 0, 10, 22 ]
  */
-function timesIndex(array) {}
+function timesIndex(array) {
+  for (let i = 0; i < array.length; i++){
+    array[i] *= i
+  }
+  return array
+}
 
 /**
  * cumulativeSum()
@@ -211,7 +230,15 @@ function timesIndex(array) {}
  *  //> [ 5, 5 + 2, 5 + 2 + 9 ]
  *  //> [ 5, 7, 16 ]
  */
-function cumulativeSum(array) {}
+function cumulativeSum(array) {
+  let sum = 0
+  let arr = []
+  for (let i = 0; i < array.length; i++){
+  sum += array[i]
+  arr.push(sum)
+  }
+return arr
+}
 
 // Do not change anything below this line.
 module.exports = {

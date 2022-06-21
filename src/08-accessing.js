@@ -190,7 +190,7 @@ function getFullAddress(person) {
     };
  */
 function getFlatObject(person) {
-  // let person2 = {...person.names,...person.address}
+  // let person2 = {...person.names, ...person.address}
   // person2.numbers = person.numbers
   // return person2
   // =======================
