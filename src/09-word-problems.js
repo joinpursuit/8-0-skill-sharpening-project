@@ -164,7 +164,34 @@ function compareLocations(address1, address2) {
     //>   },
     //> ];
  */
-function gradeAssignments(assignments) {}
+function gradeAssignments(assignments) {
+  for (let i = 0; i < assignments.length; i++) {
+    let percentage = (
+      (assignments[i].score.received / assignments[i].score.max) *
+      100
+    ).toFixed(1);
+
+    if (assignments[i].kind !== 'PASS-FAIL' || 'PERCENTAGE') {
+      assignments[i].status =
+        `SCORE: ${assignments[i].score.received}/` +
+        `${assignments[i].score.max}`;
+    }
+    if (assignments[i].kind === 'PASS-FAIL') {
+      assignments[i].status = 'PASSED';
+    }
+    if (
+      assignments[i].kind === 'PASS-FAIL' &&
+      assignments[i].score.received !== assignments[i].score.max
+    ) {
+      assignments[i].status = 'FAILED';
+    } else if (assignments[i].kind === 'PERCENTAGE' && percentage >= 80) {
+      assignments[i].status = `PASSED: ${percentage}%`;
+    } else if (assignments[i].kind === 'PERCENTAGE' && percentage < 80) {
+      assignments[i].status = `FAILED: ${percentage}%`;
+    }
+  }
+  return assignments;
+}
 
 /**
  * createLineOrder()
@@ -189,7 +216,19 @@ function gradeAssignments(assignments) {}
     createLineOrder(people);
     //> [ "Ray Anderson", "America Marsh", "Wade Carson", "Patience Patel" ]
  */
-function createLineOrder(people) {}
+function createLineOrder(people) {
+  let flightList = [];
+  let VIP = [];
+  for (let members of people) {
+    if (members.hasMembership) {
+      VIP.push(members.name);
+    } else {
+      flightList.push(members.name);
+    }
+  }
+  const official = VIP.concat(flightList);
+  return official;
+}
 
 module.exports = {
   applyDiscount,
