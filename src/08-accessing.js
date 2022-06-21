@@ -190,11 +190,11 @@ function getFullAddress(person) {
     };
  */
 function getFlatObject(person) {
-  let obj = {
-
-  }
- return obj
-}
+    let person2 = {...person.names,...person.address}
+    person2[`numbers`] = [...person.numbers]
+    return person2
+    console.log(person2)
+  } 
 
 // Do not change the code below.
 module.exports = {

@@ -19,7 +19,24 @@
  *  applyDiscount(1000, 9, true);
  *  //> 700
  */
-function applyDiscount(priceInCents, age, hasMembership) {}
+function applyDiscount(priceInCents, age, hasMembership) {
+  let newPrice = 0;
+  
+  if(age <= 10 || age >= 65){
+    if(hasMembership){
+      newPrice = priceInCents - (priceInCents * .3)
+  return newPrice
+    } else{
+    newPrice = priceInCents - (priceInCents * .1)
+    return newPrice}
+  }
+  else if(hasMembership){
+    newPrice = priceInCents - (priceInCents  * .2)
+    return newPrice
+  } else{
+  return priceInCents}
+}
+
 
 /**
  * getCartTotal()
@@ -32,7 +49,7 @@ function applyDiscount(priceInCents, age, hasMembership) {}
  * @param {number} products[].quantity - The number of products being bought.
  * @returns {string} A formatted representation of the total, rounded to two decimal places.
  * 
- * EXAMPLE:
+ * EXAMPLE:git
  *  const cart = [
       { name: "T-Shirt", priceInCents: 1200, quantity: 1 },
       { name: "Socks", priceInCents: 900, quantity: 2 },
