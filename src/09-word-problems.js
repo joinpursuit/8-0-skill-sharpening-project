@@ -170,7 +170,33 @@ function getCartTotal(products) {
     //>   },
     //> ];
  */
-function gradeAssignments(assignments) {}
+    function gradeAssignments(assignments) {
+      for (let i = 0; i < assignments.length; i++){
+      
+        if(assignments[i].kind  === `PERCENTAGE`){
+            let percentage = ((assignments[i].score.received / assignments[i].score.max) * 100).toFixed(1)
+            
+            if(percentage >= 80){
+                assignments[i].status = `PASSED: ${percentage}%`
+            }
+            else{
+                assignments[i].status = `FAILED: ${percentage}%`
+            }
+        }
+        else if(assignments[i].kind === `PASS-FAIL`){
+            if(assignments[i].score.received === assignments[i].score.max){
+                assignments[i].status = `PASSED`
+            }
+            else{
+                assignments[i].status = `FAILED`
+            }
+        }
+        else{
+        assignments[i].status = `SCORE: ${assignments[i].score.received}/${assignments[i].score.max}`
+      }
+    }
+    return assignments
+    }
 
 /**
  * createLineOrder()
@@ -195,7 +221,21 @@ function gradeAssignments(assignments) {}
     createLineOrder(people);
     //> [ "Ray Anderson", "America Marsh", "Wade Carson", "Patience Patel" ]
  */
-function createLineOrder(people) {}
+function createLineOrder(people) {
+  let newLine = []
+    for (let i = 0; i < people.length; i++){
+        if(people[i].hasMembership){
+            newLine.push(people[i].name)
+        }
+    }
+    for (let j = 0; j < people.length; j++){
+        if(!people[j].hasMembership){
+            newLine.push(people[j].name)
+        }
+    }
+    return newLine
+  
+}
 
 module.exports = {
   applyDiscount,
