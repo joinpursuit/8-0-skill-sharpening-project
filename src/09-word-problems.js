@@ -58,8 +58,10 @@ return priceInCents}
  */
 function getCartTotal(products) {
 let totalCart=0;
-for(let i=0; i< products.length)
-
+for(let i=0; i< products.length; i++){
+ totalCart += products[i].priceInCents * products[i].quantity;
+}
+return totalCart;
 }
 
 /**
