@@ -192,8 +192,8 @@ function getFullAddress(person) {
 function getFlatObject(person) {
   
     let person2 = {
-      ...person2.names,
-      ...person2.address, 
+      ...person.names,
+      ...person.address, 
       numbers: [...person.numbers]
     }
     return person2;
