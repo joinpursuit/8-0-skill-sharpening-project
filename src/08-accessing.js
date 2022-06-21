@@ -1,6 +1,6 @@
 /*
   For all of the functions below, assume each function takes the following `person` object as its input. While the values of the object may change, the structure of it will always be the same.
-
+*/
   const person = {
     names: {
       first: "Rachel",
@@ -19,7 +19,7 @@
       7185558611
     ]
   }
-*/
+
 
 /**
  * getFirstName()
@@ -32,7 +32,10 @@
  *  getFirstName(person);
  *  //> "Rachel"
  */
-function getFirstName(person) {}
+function getFirstName(person) {
+  return person.names.first;
+}
+// console.log(getFirstName(person));
 
 /**
  * getLastName()
@@ -45,7 +48,10 @@ function getFirstName(person) {}
  *  getLastName(person);
  *  //> "Rojas"
  */
-function getLastName(person) {}
+function getLastName(person) {
+  return person.names.last;
+}
+// console.log(getLastName(person));
 
 /**
  * getAddressStreet()
@@ -58,7 +64,10 @@ function getLastName(person) {}
  *  getAddressStreet(person);
  *  //> "697 Pine Drive"
  */
-function getAddressStreet(person) {}
+function getAddressStreet(person) {
+  return person.address.street;
+}
+// console.log(getAddressStreet(person));
 
 /**
  * getCountOfPhoneNumbers()
@@ -71,7 +80,10 @@ function getAddressStreet(person) {}
  *  getCountOfPhoneNumbers(person);
  *  //> 2
  */
-function getCountOfPhoneNumbers(person) {}
+function getCountOfPhoneNumbers(person) {
+  return person.numbers.length;
+}
+// console.log(getCountOfPhoneNumbers(person));
 
 /**
  * getFirstPhoneNumber()
@@ -87,7 +99,10 @@ function getCountOfPhoneNumbers(person) {}
  *  getFirstPhoneNumber(person);
  *  //> 7185550921
  */
-function getFirstPhoneNumber(person) {}
+function getFirstPhoneNumber(person) {
+  return person.numbers[0];
+}
+// console.log(getFirstPhoneNumber(person));
 
 /**
  * getLastPhoneNumber()
@@ -103,7 +118,10 @@ function getFirstPhoneNumber(person) {}
  *  getLastPhoneNumber(person);
  *  //> 7185558611
  */
-function getLastPhoneNumber(person) {}
+function getLastPhoneNumber(person) {
+  return person.numbers[person.numbers.length-1];
+}
+// console.log(getLastPhoneNumber(person));
 
 /**
  * getFullName()
@@ -116,7 +134,10 @@ function getLastPhoneNumber(person) {}
  *  getFullName(person);
  *  //> "Rachel Eleanor Rojas"
  */
-function getFullName(person) {}
+function getFullName(person) {
+  return `${person.names.first} ${person.names.middle} ${person.names.last}`;
+}
+// console.log(getFullName(person));
 
 /**
  * getCityAndState()
@@ -132,7 +153,10 @@ function getFullName(person) {}
  *  getCityAndState(person);
  *  //> "Staten Island, NY"
  */
-function getCityAndState(person) {}
+function getCityAndState(person) {
+  return `${person.address.city}, ${person.address.state}`;
+}
+// console.log(getCityAndState(person));
 
 /**
  * getFullAddress()
@@ -148,7 +172,20 @@ function getCityAndState(person) {}
  *  getFullAddress(person);
  *  //> "697 Pine Drive 2A, Staten Island, NY, 10306"
  */
-function getFullAddress(person) {}
+function getFullAddress(person) {
+  let arr = [];
+  let arr1 = [];
+  for(const k in person.address){
+    if(arr.length < 2) {
+      arr.push(person[`address`][k]);
+    } else {
+      arr1.push(person[`address`][k]);    
+    }
+  }
+  arr1.unshift(arr.join(` `));
+  return arr1.join(`, `);
+}
+// console.log(getFullAddress(person));
 
 /**
  * getFlatObject()
@@ -171,7 +208,22 @@ function getFullAddress(person) {}
       numbers: [7185550921, 7185558611],
     };
  */
-function getFlatObject(person) {}
+function getFlatObject(person) {
+  let obj = {};
+  for(const k in person ){
+    if(Array.isArray(person[k])){
+      obj[k] = person[k];
+    } else if(typeof person[k] === `object`){
+      for(const iK in person[k]){
+        obj[iK] = person[k][iK];
+      }
+    } else {
+      obj[k] = person[k];
+    }
+  }
+  return obj;
+}
+// console.log(getFlatObject(person));
 
 // Do not change the code below.
 module.exports = {

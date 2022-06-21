@@ -9,7 +9,10 @@
  *  createEmptyObject()
  *  //> {}
  */
-function createEmptyObject() {}
+function createEmptyObject() {
+  return {};
+}
+// console.log(createEmptyObject());
 
 /**
  * createObjectWithValue()
@@ -22,7 +25,10 @@ function createEmptyObject() {}
  *  createObjectWithValue(19);
  *  //> { whateverKey: 19 }
  */
-function createObjectWithValue(val) {}
+function createObjectWithValue(val) {
+  return { random: val };
+}
+// console.log(createObjectWithValue(`hello`));
 
 /**
  * createObjectWithKey()
@@ -35,7 +41,12 @@ function createObjectWithValue(val) {}
  *  createObjectWithKey("left");
  *  //> { left: false }
  */
-function createObjectWithKey(key) {}
+function createObjectWithKey(key) {
+  let obj = {};
+  obj[key] = `add value`;
+  return obj;
+}
+// console.log(createObjectWithKey(`isTired`));
 
 /**
  * createObjectWithKeyValuePair()
@@ -49,7 +60,12 @@ function createObjectWithKey(key) {}
  *  createObjectWithKeyValuePair("left", "right");
  *  //> { left: "right" }
  */
-function createObjectWithKeyValuePair(key, val) {}
+function createObjectWithKeyValuePair(key, val) {
+  let obj = {};
+  obj[key] = val;
+  return obj;
+}
+// console.log(createObjectWithKeyValuePair(`greeting`, `good morning`));
 
 /**
  * getNameFromObject()
@@ -62,7 +78,10 @@ function createObjectWithKeyValuePair(key, val) {}
  *  getNameFromObject({ name: "Jay" });
  *  //> "Jay"
  */
-function getNameFromObject(object) {}
+function getNameFromObject(object) {
+  return object.name;
+}
+// console.log(getNameFromObject({ name: "Jay" }));
 
 /**
  * getAgeFromObject()
@@ -75,7 +94,10 @@ function getNameFromObject(object) {}
  *  getAgeFromObject({ age: 30 });
  *  //> 30
  */
-function getAgeFromObject(object) {}
+function getAgeFromObject(object) {
+  return object.age;
+}
+// console.log(getAgeFromObject({ age: 30 }));
 
 /**
  * addValueToObject()
@@ -89,7 +111,11 @@ function getAgeFromObject(object) {}
  *  addValueToObject({ left: true }, false);
  *  //> { left: true, key: false }
  */
-function addValueToObject(object, val) {}
+function addValueToObject(object, val) {
+  object.newKey = val;
+  return object;
+}
+// console.log(addValueToObject({ left: true }, `yes`));
 
 /**
  * addKeyToObject()
@@ -103,7 +129,11 @@ function addValueToObject(object, val) {}
  *  addKeyToObject({ right: false }, "left");
  *  //> { right: false, left: true }
  */
-function addKeyToObject(object, key) {}
+function addKeyToObject(object, key) {
+  object[key] = `add value`;
+  return object;
+}
+// console.log(addKeyToObject({ right: false }, "left"));
 
 /**
  * addKeyValuePairToObject()
@@ -118,7 +148,11 @@ function addKeyToObject(object, key) {}
  *  addKeyValuePairToObject({ up: true }, "left", false);
  *  //> { up: true, left: false }
  */
-function addKeyValuePairToObject(object, key, val) {}
+function addKeyValuePairToObject(object, key, val) {
+  object[key] = val;
+  return object;
+}
+// console.log(addKeyValuePairToObject({ up: true }, "left", false));
 
 /**
  * deleteKeyFromObject()
@@ -132,7 +166,11 @@ function addKeyValuePairToObject(object, key, val) {}
  *  deleteKeyFromObject({ left: true, right: false }, "left");
  *  //> { right: false }
  */
-function deleteKeyFromObject(object, key) {}
+function deleteKeyFromObject(object, key) {
+  delete object[key];
+  return object;
+}
+// console.log(deleteKeyFromObject({ left: true, right: false }, "left"));
 
 // Do not change any code below this line.
 module.exports = {
