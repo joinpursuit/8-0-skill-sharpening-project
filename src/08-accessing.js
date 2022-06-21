@@ -120,7 +120,7 @@ function getFirstPhoneNumber(person) {
 function getLastPhoneNumber(person) {
   //let lastNum= person.numbers.pop()
  // return lastNum
- return person.numbers.pop()
+ return person.numbers.slice(-1)[0]
 }
 
 /**
@@ -218,20 +218,14 @@ function getFullAddress(person) {
     };
  */
 function getFlatObject(person) {
-//   let nameAndAddress= {
-//     ...person.names,
-//     ...person.address,
-//     ...person.numbers
-//   } 
-//   console.log(nameAndAddress)
-// return nameAndAddress
-let person2 = {
-    
-  ...person.names,...person.address,
-   numbers : person.numbers
+  let nameAndAddress= {
+    ...person.names,
+    ...person.address,
+    numbers : person.numbers
+  } 
+  console.log(nameAndAddress)
+return nameAndAddress
 
-} 
-return person2
 }
 
 

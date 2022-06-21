@@ -57,7 +57,8 @@ return priceInCents}
  *  //> "$30.00"h
  */
 function getCartTotal(products) {
-
+let totalCart=0;
+for(let i=0; i< products.length)
 
 }
 
