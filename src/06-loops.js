@@ -32,9 +32,11 @@ sum += i
  */
 function rangeOdd(min, max) {
   let odd = [];
-  for(let i = min; i <= max; i++){
-    
-  }
+  for(let i = max; i >= min; i--){
+    if(i % 2 === 1){
+      odd.push(i)
+    }
+  } return odd;
 }
 
 /**
@@ -49,7 +51,12 @@ function rangeOdd(min, max) {
  *  rangeEveryOther(11, 18);
  *  //> [ 11, 13, 15, 17 ]
  */
-function rangeEveryOther(min, max) {}
+function rangeEveryOther(min, max) {
+  let arr = [];
+  for(let i = min; i <= max; i+2){
+arr.push(i)
+  } return arr
+}
 
 /**
  * containsWhileLoop()
