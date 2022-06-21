@@ -242,10 +242,22 @@ return arr;
  *  //> [ 5, 5 + 2, 5 + 2 + 9 ]
  *  //> [ 5, 7, 16 ]
  */
-function cumulativeSum(array) {
-  
-
+/* function cumulativeSum(array){
+array.map(sum)
+return value
 }
+*/
+//const cumulativeSum = array => array.map((sum => value => sum += value)(0));
+
+ function cumulativeSum(array) {
+  let sum = [array[0]];
+
+  for(let i =1; i< array.length; i++){
+    sum[i] = sum[i - 1] + array[i];
+    
+  }
+  return sum
+ }
   
 
 // Do not change anything below this line.

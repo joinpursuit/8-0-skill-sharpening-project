@@ -1,7 +1,7 @@
 /**
  * applyDiscount()
  * ---------------------
- * A local movie theater has a few different ticket discounts. If the attendee is 10 years old or younger, or 65 years old or older, they receive a 10% discount. If the attendee is viewing the movie with a member, they receive a 20% discount. If both situations apply, they receive a 30% discount.
+ * A local movie theater has a few different ticket discounts. If the attendee is 10 years old or younger, or 65 years old or older, they receive a 10% discount. If the attendee is viewing the movie with a membership, they receive a 20% discount. If both situations apply, they receive a 30% discount.
  *
  * Write an algorithm that will determine the price of a ticket based on the `priceInCents` of the ticket, the `age` of the attendee, and the membership status (i.e. `hasMembership`).
  * @param {number} priceInCents - The price of the ticket, in cents.
@@ -20,13 +20,21 @@
  *  //> 700
  */
 function applyDiscount(priceInCents, age, hasMembership) {
+let price =0;
 
-// if (age <= 10 || age>=65){
-// //let discountTen = (priceInCents) * .10 
-// }
-// else if ()
-
-
+if(age <= 10 || age >= 65){
+  if(hasMembership){
+    price = priceInCents - (priceInCents * .3)
+return price
+  } else{
+  price = priceInCents - (priceInCents * .1)
+  return price}
+}
+else if(hasMembership){
+  price = priceInCents - (priceInCents  * .2)
+  return price
+} else{
+return priceInCents}
 }
 
 /**
@@ -46,9 +54,12 @@ function applyDiscount(priceInCents, age, hasMembership) {
       { name: "Socks", priceInCents: 900, quantity: 2 },
     ];
     getCartTotal(cart);
- *  //> "$30.00"
+ *  //> "$30.00"h
  */
-function getCartTotal(products) {}
+function getCartTotal(products) {
+
+
+}
 
 /**
  * compareLocations()

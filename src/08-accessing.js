@@ -225,9 +225,12 @@ function getFlatObject(person) {
 //   } 
 //   console.log(nameAndAddress)
 // return nameAndAddress
-let person2 = {...person.names, 
-  ...person.address};
-person2.numbers = [person.numbers]
+let person2 = {
+    
+  ...person.names,...person.address,
+   numbers : person.numbers
+
+} 
 return person2
 }
 

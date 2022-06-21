@@ -57,7 +57,16 @@ function shoutForOfLoop(array) {}
  *  sumArray([ 10, 0, 10, 11 ]);
  *  //> 31
  */
-function sumArray(array) {}
+function sumArray(array) {
+
+  let sum = [array[0]];
+
+  for(let i =1; i< array.length; i++){
+    sum[i] = sum[i - 1] + array[i];
+    
+  }
+  return sum
+ }
 
 /**
  * oddArray()
