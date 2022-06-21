@@ -228,8 +228,6 @@ function cumulativeSum(array) {
    } return array
   }
 
-// console.log(cumulativeSum([1,2,3,4,5]))
-
 // Do not change anything below this line.
 module.exports = {
   rangeSum,
