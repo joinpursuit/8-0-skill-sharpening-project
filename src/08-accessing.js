@@ -114,7 +114,7 @@ function getFirstPhoneNumber(person) {
  *  //> 7185558611
  */
 function getLastPhoneNumber(person) {
-  return person.numbers.pop()
+  return person.numbers.slice(-1)[0]
 }
 
 /**
@@ -122,7 +122,7 @@ function getLastPhoneNumber(person) {
  * ---------------------
  * Combine the `first`, `middle`, and `last` names to return the full name.
  * @param {Object} person
- * @returns {string}
+ * @returns {string}  
  *
  * EXAMPLE:
  *  getFullName(person);
