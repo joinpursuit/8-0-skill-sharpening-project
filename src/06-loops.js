@@ -11,7 +11,16 @@
  *  //> 25
  *  (3 + 4 + 5 + 6 + 7 = 25)
  */
-function rangeSum(min, max) {}
+function rangeSum(min, max) {
+ for (const key in object) {
+  if (Object.hasOwnProperty.call(object, key)) {
+    const element = object[key];
+    
+  }
+ }
+    
+  }
+
 
 /**
  * rangeOdd()
