@@ -141,7 +141,7 @@ function addKeyToObject(object, key) {
  *  //> { up: true, left: false }
  */
 function addKeyValuePairToObject(object, key, val) {
-  object.[key] = val
+  object[key] = val
   return object
 }
 
@@ -158,7 +158,7 @@ function addKeyValuePairToObject(object, key, val) {
  *  //> { right: false }
  */
 function deleteKeyFromObject(object, key) {
-  delete object.[key]
+  delete object[key]
   return object
 }
 
