@@ -123,23 +123,22 @@ function aroundTheWorldGreeting(language) {
   if (language === english){
 return("Hello World");
   
-} else 
- if (language === spanish){
+} else if (language === spanish){
       return ("Hola Mundo");
       
- }else {
-      if (language === german) {
+ }else if (language === german) {
 return  ("Hallo Walt");
 
-      }else{
-        if (!language)
+      }
+      else{
+        
         return ("Hello World");
       }
 
 
     } 
     
-  }
+
   
       
 

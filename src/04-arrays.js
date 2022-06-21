@@ -98,7 +98,7 @@ function getLastElementOfArray(array) {
  *  addElementToEndOfArray([ 10 ], 9);
  *  //> [ 10, 9 ]
  */
-function addElementToEndOfArray(array, element) {}
+function addElementToEndOfArray() {}
 function addElementToEndOfArray(array, element) {
   for (i =0; i <= array.length; i++){
     array.push(element);
@@ -153,7 +153,7 @@ function addElementToFrontOfArray(array, element) {
  *  removeElementFromFrontOfArray([ 10, 9, 8 ]);
  *  //> 10
  */
-function removeElementFromFrontOfArray(array) {}
+function removeElementFromFrontOfArray() {}
 function removeElementFromFrontOfArray(array) {
   for (i =0; i <= array.length; i++){
     element + array.shift()
