@@ -176,7 +176,9 @@ function getCityAndState(person) {
  */
 function getFullAddress(person) {
 
-
+for (addreSS of person){
+  return person.address
+}
  
 }
 
