@@ -190,15 +190,37 @@ function getFullAddress(person) {
     };
  */
 function getFlatObject(person) {
- let person2 = {...person.names,...person.address,};
-person2.numbers= person.numbers
-return person2
+  
+    let person2 = {
+      ...person2.names,
+      ...person2.address, 
+      numbers: [...person.numbers]
+    }
+    return person2;
+}
+
+// let person2 = {
+  //   ...person.names,
+  //   ...person.address,
+  //   numbers : person.numbers}
+
+// person2.first  = person.names.first;
+    // person2.middle = person.names.middle;
+    // person2.last   = person.names.last;
+    // person2.street = person.address.street;
+    // person2.unit   = person.address.unit;
+    // person2.city   = person.address.city;
+    // person2.state  = person.address.state;
+    // person2.zip    = person.address.zip;
+    // person2.numbers= person.numbers;
+// person2.numbers= person.numbers
+
 //   newObj.numbers = []
 // for (const num in person.numbers)
 // newObj.numbers.push(num)
 
 //   console.log(newObj)
-}
+
 
 // Do not change the code below.
 module.exports = {
