@@ -42,7 +42,7 @@ function createObjectWithValue(val) {
  *  //> { left: false }
  */
 function createObjectWithKey(key){
-  let newObj = {key: true}
+  let newObj = {[key]: true}
   return newObj
 }
 
@@ -59,7 +59,7 @@ function createObjectWithKey(key){
  *  //> { left: "right" }
  */
 function createObjectWithKeyValuePair(key, val) {
-  let newObj = {key: val}
+  let newObj = {[key]: val}
   return newObj
 }
 
@@ -123,7 +123,7 @@ function addValueToObject(object, val) {
  *  //> { right: false, left: true }
  */
 function addKeyToObject(object, key) {
-  object.key = true
+  object[key] = true
   return object
 }
 
