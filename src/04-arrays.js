@@ -90,7 +90,8 @@ function getLastElementOfArray(array) {
  *  //> [ 10, 9 ]
  */
 function addElementToEndOfArray(array, element) {
-  return array.push(element)
+  array.push(element)
+  return array
 }
 
 /**
@@ -122,8 +123,8 @@ function removeElementFromEndOfArray(array) {
  *  //> [ 9, 10 ]
  */
 function addElementToFrontOfArray(array, element) {
-   let newArr = array.unshift(element)
-   return newArr 
+   array.unshift(element)
+   return array
 }
 
 /**
