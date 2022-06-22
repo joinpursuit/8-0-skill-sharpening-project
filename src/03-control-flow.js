@@ -120,6 +120,10 @@ function positiveNegativeOrZero(a) {
  */
 function aroundTheWorldGreeting() {}
 function aroundTheWorldGreeting(language) {
+ 
+ let language = english
+ 
+ 
   if (language === english){
 return("Hello World");
   
@@ -130,7 +134,7 @@ return("Hello World");
 return  ("Hallo Walt");
 
       }
-      else{
+      else if (!language) {
         
         return ("Hello World");
       }
@@ -169,7 +173,7 @@ return  ("Hallo Walt");
  *  aroundTheWorldGreetingWithSwitch();
  *  //> "Hello World"
  */
-function aroundTheWorldGreetingWithSwitch(language) {}
+function aroundTheWorldGreetingWithSwitch() {}
 function aroundTheWorldGreetingWithSwitch(language) {
   switch(language) {
     case `english`:
@@ -204,7 +208,7 @@ function aroundTheWorldGreetingWithSwitch(language) {
  *  calculateLetterGrade(99);
  *  //> "A"
  */
-function calculateLetterGrade(grade) {}
+function calculateLetterGrade() {}
 function calculateLetterGrade(grade) {
   if (grade >= 90){
     return("A");
@@ -242,7 +246,7 @@ function calculateLetterGrade(grade) {
  *  animalCounts("pig", 1);
  *  //> "1 pig"
  */
-function animalCounts(animal, numberOfAnimals) {}
+function animalCounts() {}
 function animalCounts(animal, numberOfAnimals) {
   if (numberOfAnimals === 1) {
     return  (`1 ${animal}`)
