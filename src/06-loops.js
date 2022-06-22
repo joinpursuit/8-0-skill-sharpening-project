@@ -11,7 +11,13 @@
  *  //> 25
  *  (3 + 4 + 5 + 6 + 7 = 25)
  */
-function rangeSum(min, max) {}
+function rangeSum(min, max) {
+  let sum = 0
+  for (let num = min; num <= max; num++){
+      sum = sum + num
+  }
+  return sum
+}
 
 /**
  * rangeOdd()
@@ -25,7 +31,15 @@ function rangeSum(min, max) {}
  *  rangeOdd(10, 15);
  *  //> [ 15, 13, 11 ]
  */
-function rangeOdd(min, max) {}
+function rangeOdd(min, max) {
+  number = []
+for(value = max; value >= min; value--){
+  if (value%2 !==0){
+      number.push(value)
+  }
+}
+  return number
+}
 
 /**
  * rangeEveryOther()
@@ -39,7 +53,14 @@ function rangeOdd(min, max) {}
  *  rangeEveryOther(11, 18);
  *  //> [ 11, 13, 15, 17 ]
  */
-function rangeEveryOther(min, max) {}
+//This totally works in a separate replit!  But I can't tell if it full passed the npm test though.
+function rangeEveryOther(min, max) {
+  number = []
+  for(value = min; value <= max; value+=2){
+     number.push(value)
+  }
+  return number
+}
 
 /**
  * containsWhileLoop()
@@ -61,7 +82,20 @@ function rangeEveryOther(min, max) {}
  *  containsWhileLoop([ "left", "up", "right" ], "down");
  *  //> false
  */
-function containsWhileLoop(array, target) {}
+function containsWhileLoop(array, target) {
+  let max = array.length
+  counter = 0
+  let check = false
+  
+    while (counter < max){
+    if(array[counter] === target) { 
+        check = true
+      }
+      counter++
+    }
+    return check
+  }
+
 
 /**
  * containsForLoop()
@@ -83,8 +117,19 @@ function containsWhileLoop(array, target) {}
  *  containsForLoop([ "left", "up", "right" ], "down");
  *  //> false
  */
-function containsForLoop(array, target) {}
-
+function containsForLoop(array, target) {
+let max = array.length
+let check
+  for (let counter = 0; counter <= max; counter ++){
+      if(array[counter] === target) { 
+          check = true
+          return check
+        } else {
+          check = false
+  } 
+}
+return check
+}
 /**
  * targetCount()
  * ---------------------
@@ -97,7 +142,18 @@ function containsForLoop(array, target) {}
  *  targetCount([ 10, 20, 10, 20, 30 ], 10);
  *  //> 2
  */
-function targetCount(array, target) {}
+function targetCount(array, target) {
+let max = array.length-1
+let check
+let total = 0
+
+  for (let counter = 0; counter <= max; counter ++){
+  if(array[counter] === target) { 
+      total = total + 1
+    }
+  }
+      return total
+  }
 
 /**
  * firstIndexFound()
@@ -117,8 +173,19 @@ function targetCount(array, target) {}
  *  firstIndexFound([ "left", "right", "left" ], "up");
  *  //> -1
  */
-function firstIndexFound(array, target) {}
-
+function firstIndexFound(array, target) {
+  let max = array.length-1
+  //let check
+  let notFound = -1
+  let firstFound 
+    for (let counter = 0; counter <= max; counter ++){
+    if(array[counter] === target) { 
+        firstFound = counter
+        return firstFound
+    }  
+  }
+   return notFound
+}
 /**
  * lastIndexFound()
  * ---------------------
@@ -137,7 +204,19 @@ function firstIndexFound(array, target) {}
  *  lastIndexFound([ "left", "right", "left" ], "up");
  *  //> -1
  */
-function lastIndexFound(array, target) {}
+function lastIndexFound(array, target) {
+  let max = array.length-1
+  let notFound = -1
+  let lastFound 
+    for (let counter = max; counter >= 0; counter --){
+    if(array[counter] === target) { 
+        lastFound = counter
+        return lastFound
+    }  
+  }
+   return notFound
+
+}
 
 /**
  * timesIndex()
@@ -151,7 +230,20 @@ function lastIndexFound(array, target) {}
  *  //> [ 7 * 0, 10 * 1, 11 * 2 ]
  *  //> [ 0, 10, 22 ]
  */
-function timesIndex(array) {}
+function timesIndex(array) {
+  let max = array.length - 1
+  let newArr = []
+  let product 
+  for (let counter = 0; counter <= max; counter ++){
+    product = array[counter] * counter
+    //console.log("element is " + array[counter], "counter is " + counter)
+    //console.log("product = " + product)
+    newArr.push(product)  
+  }
+   //console.log(newArr)
+   return newArr
+
+}
 
 /**
  * cumulativeSum()
@@ -165,7 +257,24 @@ function timesIndex(array) {}
  *  //> [ 5, 5 + 2, 5 + 2 + 9 ]
  *  //> [ 5, 7, 16 ]
  */
-function cumulativeSum(array) {}
+function cumulativeSum(array) {
+  let max = array.length - 1
+  let newArr = []
+  let counter = 0
+   let cumSum= 0
+ 
+  while (counter <= max){
+    cumSum = cumSum + array[counter]  
+    console.log("element is " + array[counter], "counter is " + counter)
+  console.log("cumSum = " + cumSum)
+    newArr.push(cumSum) 
+    counter++ 
+    console.log(counter)
+  }
+   console.log(newArr)
+   return newArr
+}
+
 
 // Do not change anything below this line.
 module.exports = {
