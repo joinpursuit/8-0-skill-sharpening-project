@@ -103,7 +103,22 @@ function getCartTotal(products) {
     compareLocations(address1, address2);
     //> "Same city."
  */
-function compareLocations(address1, address2) {}
+function compareLocations(address1, address2) {
+  if(address1.state === address2.state){
+    if (address1.city === address2.city){
+      if(address1.street === address2.street){
+        if(address1.zip === address2.zip){
+          return `Same building.`
+        } 
+      }
+      return `Same city.`
+    } 
+    return `Same state.`
+    
+  }else { 
+    return `Addresses are not near each other.`
+  }
+}
 
 /**
  * gradeAssignments()
@@ -150,7 +165,33 @@ function compareLocations(address1, address2) {}
     //>   },
     //> ];
  */
-function gradeAssignments(assignments) {}
+function gradeAssignments(assignments) {
+  for (let i = 0; i < assignments.length; i ++){
+    if (assignments[i].kind !== "PASS-FAIL" && assignments[i].kind !== "PERCENTAGE"){
+      assignments[i].status = `SCORE: ${assignments[i].score.received}/${assignments[i].score.max}`
+      return assignments;
+    }
+    if (assignments[i].kind === "PASS-FAIL"){
+      if (assignments[i].score.received ===assignments[i].score.max){
+        assignments[i].status = "PASSED"
+        return assignments;
+      }else {
+        assignments[i].status = "FAILED"
+        return assignments;
+      } 
+      } else if (assignments[i].kind === "PERCENTAGE"){
+        let percentage =((`${assignments[i].score.received}/ ${assignments[i].score.max}`) * 100).toFixed(1)
+        if (assignments[i].score.received >= "80.0%"){
+          assignments[i].status = `PASSED: ${percentage}%`
+          return assignments;
+        } else {
+          assignments[i].status = `FAILED: ${percentage}%`
+          return assignments;
+        }
+      }
+    }
+  }
+
 
 /**
  * createLineOrder()
@@ -175,7 +216,23 @@ function gradeAssignments(assignments) {}
     createLineOrder(people);
     //> [ "Ray Anderson", "America Marsh", "Wade Carson", "Patience Patel" ]
  */
-function createLineOrder(people) {}
+function createLineOrder(people) {
+  let newArr = []
+  for (let i = 0; i < people.length; i++){
+    newArr.push(people[i].name)
+    if (people[i].hasMembership){
+      newArr.slice(0,people[i].name)
+    } else if (!people[i].hasMembership){
+      newArr.slice[-1](people[i].name)
+    }
+  } 
+  return newArr
+  }
+  
+  
+
+
+
 
 module.exports = {
   applyDiscount,
