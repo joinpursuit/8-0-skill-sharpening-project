@@ -19,7 +19,24 @@
  *  applyDiscount(1000, 9, true);
  *  //> 700
  */
-function applyDiscount(priceInCents, age, hasMembership) {}
+function applyDiscount(priceInCents, age, hasMembership) {
+  let total;
+  if (age <= 10 || age >= 65){
+    if (hasMembership){
+      total = priceInCents * 0.70
+      return total
+    } else {
+      total = priceInCents * 0.90
+      return total
+    } 
+  } else if (hasMembership){
+      total = priceInCents * 0.80
+      return total
+    } else {
+      total = priceInCents
+      return total
+    }
+  }
 
 /**
  * getCartTotal()
@@ -40,7 +57,13 @@ function applyDiscount(priceInCents, age, hasMembership) {}
     getCartTotal(cart);
  *  //> "$30.00"
  */
-function getCartTotal(products) {}
+function getCartTotal(products) {
+  let total = 0
+  for(let i = 0; i < products.length; i++){
+    total += (products[i].priceInCents / 100) * (products[i].quantity)
+  }
+  return `$${total.toFixed(2)}`
+}
 
 /**
  * compareLocations()
@@ -80,7 +103,21 @@ function getCartTotal(products) {}
     compareLocations(address1, address2);
     //> "Same city."
  */
-function compareLocations(address1, address2) {}
+function compareLocations(address1, address2) {
+  if(address1.state === address2.state){
+    if(address1.city === address2.city){
+      if(address1.street === address2.street){
+        if(address1.zip === address2.zip){
+          return `Same building.`
+        }
+      }
+      return `Same city.`
+    }
+    return `Same state.`
+  } else {
+  return `Addresses are not near each other.`
+}
+}
 
 /**
  * gradeAssignments()
@@ -127,7 +164,19 @@ function compareLocations(address1, address2) {}
     //>   },
     //> ];
  */
-function gradeAssignments(assignments) {}
+function gradeAssignments(assignments) {
+  for (let i = 0; i < assignments.length; i++){
+    if(assignments[i].kind === "PASS-FAIL"){
+      if(assignments[i].score.received === assignments[i].score.max){
+        assignments[i].status = `PASSED`
+        return assignments
+      } else {
+        assignments[i].status = `FAILED`
+        return assignments
+      }
+    }
+  }
+}
 
 /**
  * createLineOrder()
@@ -152,7 +201,13 @@ function gradeAssignments(assignments) {}
     createLineOrder(people);
     //> [ "Ray Anderson", "America Marsh", "Wade Carson", "Patience Patel" ]
  */
-function createLineOrder(people) {}
+function createLineOrder(people) {
+  let arr = []
+  for (let i = 0; i < people.length; i++){
+    arr.push(people[i].name)
+  }
+  return arr;
+}
 
 module.exports = {
   applyDiscount,
