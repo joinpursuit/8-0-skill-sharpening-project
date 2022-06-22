@@ -59,10 +59,11 @@
    *  //> [ "A!", "Very!", "Happy!", "Array!" ];
    */
   function shoutForOfLoop(array) {
+    let newArray = []
     for(let i of array){
-      array[i] = `${array[i]}!`
+      newArray.push(i + "!")
     }
-    return array
+    return newArray
   }
   
   /**

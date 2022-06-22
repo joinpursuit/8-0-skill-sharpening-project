@@ -207,7 +207,13 @@ function gradeAssignments(assignments) {
     createLineOrder(people);
     //> [ "Ray Anderson", "America Marsh", "Wade Carson", "Patience Patel" ]
  */
-function createLineOrder(people) {}
+function createLineOrder(people) {
+  for(let i = people.length; i > 0; i--){
+    if(people[i].hasMembership){
+      return people[i].name
+    }
+  }
+}
 
 module.exports = {
   applyDiscount,
