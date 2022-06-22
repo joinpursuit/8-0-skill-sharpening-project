@@ -13,9 +13,9 @@
  *  //> [ "A!", "Very!", "Happy!", "Array!" ];
  */
 function shoutForLoop(array) {
-  newArray = []
-  for (i = 0; i < array.length; i++){
-newArray.push([i]`!`)
+  let newArray = []
+  for (let i = 0; i < array.length; i++){
+newArray.push(`${array[i]}!`)
   }
   return newArray
 }
@@ -40,7 +40,15 @@ newArray.push([i]`!`)
  *  shoutWhileLoop([ "A", "Very", "Happy", "Array" ]);
  *  //> [ "A!", "Very!", "Happy!", "Array!" ];
  */
-function shoutWhileLoop(array) {}
+function shoutWhileLoop(array) {
+  let newArray = []
+  let i = 0
+  while (i < array.length){
+    newArray.push(`${array[i]}!`)
+    i++
+  }
+return newArray
+}
 
 /**
  * shoutForOfLoop()
@@ -56,7 +64,13 @@ function shoutWhileLoop(array) {}
  *  shoutForOfLoop([ "A", "Very", "Happy", "Array" ]);
  *  //> [ "A!", "Very!", "Happy!", "Array!" ];
  */
-function shoutForOfLoop(array) {}
+function shoutForOfLoop(array) {
+  let newArray = [];
+for (let val of array) {
+  newArray.push(`${val}!`)
+}
+return newArray
+}
 
 /**
  * sumArray()
@@ -72,7 +86,7 @@ function shoutForOfLoop(array) {}
 function sumArray(array) {
   let sumArray = []
   let sum = 0
-  for (i = 0; i < array.length; i ++){
+  for (let i = 0; i < array.length; i ++){
     sum += array[i]
     
   }
@@ -112,7 +126,16 @@ return oddArray
  *  evenArray([ 11, 15, 20, 22, 37 ]);
  *  //> [ 20, 22 ]
  */
-function evenArray(array) {}
+function evenArray(array) {
+  let evenArray = []
+  for (i = 0; i < array.length; i++){
+  if(array[i] % 2 === 0){  
+  evenArray.push(array[i])
+  }
+  }
+  return evenArray
+  }
+
 
 /**
  * findSmallest()
@@ -126,7 +149,13 @@ function evenArray(array) {}
  *  //> -2
  */
 function findSmallest(array) {
-  return array.sort(0)
+  //return array.sort(0)
+let newArray = []
+for (let i = 0; i < array.length; i++){
+  newArray.push(array[i])
+  newArray.sort((a, b) => a - b)
+}
+return newArray[0]
 }
 
 /**
@@ -140,7 +169,12 @@ function findSmallest(array) {
  *  findLargest([ 0, 11, -2, 5 ]);
  *  //> 11
  */
-function findLargest(array) {}
+function findLargest(array) {let newArray = []
+  for (let i = 0; i < array.length; i++){
+    newArray.push(array[i])
+    newArray.sort((a, b) => a - b)
+  }
+  return newArray[newArray.length-1]}
 
 /**
  * findEqual()
@@ -157,7 +191,16 @@ function findLargest(array) {}
  *  findEqual([ 0, 11, -2, 5 ], 9);
  *  //> false
  */
-function findEqual(array, selected) {}
+function findEqual(array, selected) {
+  for (let i = 0; i < array.length; i++){
+    if (array[i] === selected){
+      return true
+    }
+    }
+     if (array[i] !== selected){
+      return false
+  }
+}
 
 /**
  * removeDuplicates()
@@ -174,7 +217,10 @@ function findEqual(array, selected) {}
  *  //> [ 1, 11, 2, 3, 4, 9 ]
  */
 
-function removeDuplicates(array) {}
+function removeDuplicates(array) {
+  let newArray = [...new Set(array)]
+  return newArray
+}
 
 // Do not change any code below this line.
 module.exports = {
