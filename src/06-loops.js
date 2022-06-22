@@ -166,7 +166,7 @@ return duplicate
  */
 function firstIndexFound(array, target) {
   for(let i = 0; i < array.length; i++){
-    if(target === array[i]){
+    if(array[i] === target){
       return i
     }
   }
@@ -192,8 +192,8 @@ function firstIndexFound(array, target) {
  *  //> -1
  */
 function lastIndexFound(array, target) {
-  for(let i = array[array.length - 1]; i < array.length; i--){
-    if(target === array[i]){
+  for(let i = array[array.length - 1]; i > 0; i--){
+    if(array[i] === target ){
       return i
     }
   }
