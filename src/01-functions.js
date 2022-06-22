@@ -128,6 +128,8 @@ function compareTypes(a,b) {
   if (typeof a === typeof b) {
     return true;
 }
+return false;
+}
 
 /**
  * flipSign()
@@ -146,7 +148,10 @@ function compareTypes(a,b) {
  *  flipSign(50);
  *  //> -50
  */
-function flipSign() {}
+function flipSign(a) {
+  let flip = a * -1;
+  return flip;
+}
 
 /**
  * joinStringsWithSpaces()
@@ -166,7 +171,9 @@ function flipSign() {}
  *  joinStringsWithSpaces("left", "right", "up", "down", "away");
  *  //> "left right up down away"
  */
-function joinStringsWithSpaces() {}
+function joinStringsWithSpaces(a, b, c, d, e) {
+  return `${a} ${b} ${c} ${d} ${e}`;
+}
 
 /**
  * getFirstAndLastCharacter()
@@ -183,7 +190,9 @@ function joinStringsWithSpaces() {}
  *  getFirstAndLastCharacter("upwards");
  *  //> "us"
  */
-function getFirstAndLastCharacter() {}
+function getFirstAndLastCharacter(a) {
+  return `${a[0]}${a[a.length - 1]}`;
+}
 
 // Do not change the code below.
 module.exports = {
