@@ -58,7 +58,10 @@ function applyDiscount(priceInCents, age, hasMembership) {
  *  //> "$30.00"
  */
 function getCartTotal(products) {
-  
+  let total = 0;
+  for(let i = 0; i < products.length; i ++){
+    total += (products[i].priceInCents/100) * products[i].quantity
+  } return `$${total.toFixed(2)}`
 }
 
 /**
@@ -99,7 +102,23 @@ function getCartTotal(products) {
     compareLocations(address1, address2);
     //> "Same city."
  */
-function compareLocations(address1, address2) {}
+function compareLocations(address1, address2) {
+
+      if(address1.state === address2.state){ 
+
+        if(address1.street === address2.street){
+          return 'Same building.';
+
+        }if(address1.city === address2.city){
+          return 'Same city.';
+          }
+         else{ 
+          return 'Same state.'}
+      } else{
+        return 'Addresses are not near each other.';
+      }
+    }
+  
 
 /**
  * gradeAssignments()
@@ -146,7 +165,33 @@ function compareLocations(address1, address2) {}
     //>   },
     //> ];
  */
-function gradeAssignments(assignments) {}
+function gradeAssignments(assignments) {
+  for(let i = 0; i < assignments.length; i ++){
+    if(assignments[i].kind === "PASS-FAIL"){
+      if(assignments[i].score.received === assignments[i].score.max){
+        assignments[i].status = "PASSED";
+      } else {
+        assignments[i].status = "FAILED";
+      
+      }
+    } else if(assignments[i].kind === "PERCENTAGE"){
+      let percent = assignments[i].score.received/assignments[i].score.max * 100
+      if(percent >= 80){
+        assignments[i].status = `PASSED: ${percent.toFixed(1)}%`
+        
+      } else {
+        assignments[i].status = `FAILED: ${percent.toFixed(1)}%`
+        
+      }
+   } else{
+    assignments[i].status = `SCORE: ${assignments[i].score.received}/${assignments[i].score.max}`
+  
+}
+    }
+    return assignments
+    }
+
+
 
 /**
  * createLineOrder()
