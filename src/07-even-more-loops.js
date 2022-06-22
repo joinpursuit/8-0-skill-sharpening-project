@@ -187,7 +187,6 @@ function findEqual(array, selected) {
   for (let num of array) {
     if (num === selected) {
       return found;
-    } else {
     }
   }
   return !found;
