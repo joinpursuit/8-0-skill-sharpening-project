@@ -191,9 +191,9 @@ function firstIndexFound(array, target) {
  *  //> -1
  */
 function lastIndexFound(array, target) {
-  for (let i = 0; i < array.length; i++) {
+  for (let i = array.length -1; i >= 0; i--) {
         if(array[i]=== target){
-          return array.length -1
+          return array[i]
         }
      }
      return -1
@@ -211,7 +211,12 @@ function lastIndexFound(array, target) {
  *  //> [ 7 * 0, 10 * 1, 11 * 2 ]
  *  //> [ 0, 10, 22 ]
  */
-function timesIndex(array) {}
+function timesIndex(array) {
+   for (const elements of array) {
+    let 
+     return elements * elements[i]
+   }
+}
 
 /**
  * cumulativeSum()
