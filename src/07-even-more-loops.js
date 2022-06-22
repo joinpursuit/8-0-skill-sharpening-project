@@ -12,7 +12,13 @@
  *  shoutForLoop([ "A", "Very", "Happy", "Array" ]);
  *  //> [ "A!", "Very!", "Happy!", "Array!" ];
  */
-function shoutForLoop(array) {}
+function shoutForLoop(array) {
+  newArray = []
+  for (i = 0; i < array.length; i++){
+newArray.push([i]`!`)
+  }
+  return newArray
+}
   // let 
   // for (let i = 0; i < array.length; i++) {
 //   //   const element = array[i];
@@ -63,7 +69,16 @@ function shoutForOfLoop(array) {}
  *  sumArray([ 10, 0, 10, 11 ]);
  *  //> 31
  */
-function sumArray(array) {}
+function sumArray(array) {
+  let sumArray = []
+  let sum = 0
+  for (i = 0; i < array.length; i ++){
+    sum += array[i]
+    
+  }
+  return sum
+  }
+
 
 /**
  * oddArray()
@@ -76,7 +91,15 @@ function sumArray(array) {}
  *  oddArray([ 11, 15, 20, 22, 37 ]);
  *  //> [ 11, 15, 37 ]
  */
-function oddArray(array) {}
+function oddArray(array) {
+  let oddArray = []
+for (i = 0; i < array.length; i++){
+if(array[i] % 2){  
+oddArray.push(array[i])
+}
+}
+return oddArray
+}
 
 /**
  * evenArray()
@@ -102,7 +125,9 @@ function evenArray(array) {}
  *  findSmallest([ 0, 11, -2, 5 ]);
  *  //> -2
  */
-function findSmallest(array) {}
+function findSmallest(array) {
+  return array.sort(0)
+}
 
 /**
  * findLargest()

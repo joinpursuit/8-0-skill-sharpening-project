@@ -200,8 +200,16 @@ function firstIndexFound(array, target) {
  *  lastIndexFound([ "left", "right", "left" ], "up");
  *  //> -1
  */
-function lastIndexFound(array, target) {}
-
+function lastIndexFound(array, target) {
+  let targIdx = -1;
+  for (let i = 0; i < array.length; i++){
+    if (array[i] === target){
+      targIdx = i;
+      
+  }
+  }
+  return targIdx;
+  }
 /**
  * timesIndex()
  * ---------------------
@@ -215,8 +223,15 @@ function lastIndexFound(array, target) {}
  *  //> [ 0, 10, 22 ]
  */
 function timesIndex(array) {
+ let newArray = []
+  for (let i = 0; i < array.length; i++){
+ newArray.push(array[i] * i)
+  }
+  return newArray
+  }
+ 
+  
 
-}
 
 /**
  * cumulativeSum()
