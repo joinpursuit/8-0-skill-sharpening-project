@@ -60,7 +60,15 @@ function applyDiscount(priceInCents, age, hasMembership) {
     getCartTotal(cart);
  *  //> "$30.00"
  */
-function getCartTotal(products) {}
+function getCartTotal(products) {
+  let sum = 0
+  for(let i = 0; i < products.length; i++){
+    
+    sum += (products[i].priceInCents / 100) * products[i].quantity
+    
+  }
+  return `$${sum.toFixed(2)}`
+}
 
 /**
  * compareLocations()
@@ -166,7 +174,15 @@ function compareLocations(address1, address2) {
     //>   },
     //> ];
  */
-function gradeAssignments(assignments) {}
+function gradeAssignments(assignments) {
+  for(let i = 0; i < assignments.length; i++){
+    if(assignments[i].kind === "PASS-FAIL"){
+      if(assignments[i].score.received >= 80 || assignments[i].score.max){
+        return assignments
+      }
+    }
+  }
+}
 
 /**
  * createLineOrder()
