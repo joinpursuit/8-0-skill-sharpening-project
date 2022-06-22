@@ -56,12 +56,14 @@ return priceInCents}
     getCartTotal(cart);
  *  //> "$30.00"h
  */
-function getCartTotal(products) {
+function getCartTotal(products, priceInCents, quantity) {
 let totalCart=0;
-for(let i=0; i< products.length; i++){
- totalCart += products[i].priceInCents * products[i].quantity;
+//let priceInDollars = priceInCents/100;
+for(let i=0; i < products.length; i++){
+ totalCart += (products[i].priceInCents/100)* products[i].quantity;
 }
-return totalCart;
+return `$${totalCart.toFixed(2)}`;
+console.log(totalCart)
 }
 
 /**
@@ -102,7 +104,27 @@ return totalCart;
     compareLocations(address1, address2);
     //> "Same city."
  */
-function compareLocations(address1, address2) {}
+function compareLocations(address1, address2) {
+
+
+    if( address1.state === address2.state){
+      
+      if ( address1.street === address2.street){
+        return "Same building."
+      } 
+      if (address1.city === address2.city){
+        return "Same city." 
+      }
+      else{
+        return "Same state." 
+      }
+      } 
+      else {
+        return "Addresses are not near each other."
+      }
+  
+  }
+     
 
 /**
  * gradeAssignments()
@@ -149,7 +171,33 @@ function compareLocations(address1, address2) {}
     //>   },
     //> ];
  */
-function gradeAssignments(assignments) {}
+function gradeAssignments(assignments) {
+
+  for(let i =0; i < assignments.length; i ++){
+    if(assignments[i].kind === "PASS-FAIL"){
+      if(assignments[i].score.received === assignments[i].score.max){
+        assignments[i].status = "PASSED";
+        return assignments
+      } else {
+        assignments[i].status = "FAILED";
+        return assignments
+      }
+    } else if(assignments[i].kind === "PERCENTAGE"){
+      let percentage = assignments[i].score.received/assignments[i].score.max * 100
+      if(percentage >= 80){
+        assignments[i].status = `PASSED: ${percentage.toFixed(1)}%`
+        return assignments
+      } else {
+        let percentage = assignments[i].score.received/assignments[i].score.max * 100
+        assignments[i].status = `FAILED: ${percentage.toFixed(1)}%`
+        return assignments
+      }
+   } else{
+    assignments[i].status = `SCORE: ${assignments[i].score.received}/${assignments[i].score.max}`
+  return assignments
+}
+    }
+    }
 
 /**
  * createLineOrder()
@@ -174,7 +222,10 @@ function gradeAssignments(assignments) {}
     createLineOrder(people);
     //> [ "Ray Anderson", "America Marsh", "Wade Carson", "Patience Patel" ]
  */
-function createLineOrder(people) {}
+function createLineOrder(people) {
+// for(let i =0; )
+
+ }
 
 module.exports = {
   applyDiscount,
