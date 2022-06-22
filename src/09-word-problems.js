@@ -19,7 +19,13 @@
  *  applyDiscount(1000, 9, true);
  *  //> 700
  */
-function applyDiscount(priceInCents, age, hasMembership) {}
+function applyDiscount(priceInCents, age, hasMembership) {
+  let discount = 0 ; 
+  if(age <= 10 || age >= 65)  discount += 10
+  if(hasMembership) discount += 20
+  if(discount) priceInCents = priceInCents * (100 - discount) / 100 
+  return priceInCents;
+}
 
 /**
  * getCartTotal()
@@ -40,7 +46,14 @@ function applyDiscount(priceInCents, age, hasMembership) {}
     getCartTotal(cart);
  *  //> "$30.00"
  */
-function getCartTotal(products) {}
+function getCartTotal(products) {
+  let total = 0;
+  for(let item of products){ 
+    total += item.priceInCents * item.quantity
+  }
+  total = (total/100).toFixed(2)
+  return '$'+total
+}
 
 /**
  * compareLocations()
@@ -80,7 +93,36 @@ function getCartTotal(products) {}
     compareLocations(address1, address2);
     //> "Same city."
  */
-function compareLocations(address1, address2) {}
+function compareLocations(address1, address2) {
+   const ad1 = Object.values(address1)
+   const ad2 = Object.values(address2)
+   const isSame = [ ]
+   // compare two arrays if they are the same 
+   for(let i= 0;i<ad1.length; i++ ){ 
+    if(ad1[i] == ad2[i]) isSame.push(true)
+    else isSame.push(false)
+   }
+
+    // all same
+   const sameBuilding = isSame.every(x => x == true) ? 'Same building.' : false;
+   if(sameBuilding) return sameBuilding 
+    // all different
+   const notNear = isSame.every(x => x == false ) ? "Addresses are not near each other." : false;
+   if(notNear) return notNear
+
+   // same st but different city return not near , isSame = [true,false,false,false]
+   if(isSame[0] && !isSame[1]) return "Addresses are not near each other."
+
+   // same st & city but different state , isSame = [true,true,false,false]  
+   if(isSame[0] && isSame[1] && !isSame[2]) return "Addresses are not near each other.";
+
+   //  different st & city, but same state, isSame = [false,false,true,false]
+   if(!isSame[0] && !isSame[1] && isSame[2] ) return 'Same state.'
+
+   // diff st, same city, state & zip => 'same city' , isSame = [false,true,true,true]
+   if(!isSame[0] && isSame[1] && [isSame[2] && isSame[3]]) return 'Same city.' 
+  
+}
 
 /**
  * gradeAssignments()
@@ -127,7 +169,28 @@ function compareLocations(address1, address2) {}
     //>   },
     //> ];
  */
-function gradeAssignments(assignments) {}
+function gradeAssignments(assignments) {
+  
+  for(let item of assignments) { 
+
+    if(item.kind == 'PASS-FAIL') {
+      if(item.score.received == item.score.max)  item.status = 'PASSED'
+      else item.status = 'FAILED'
+    }
+
+    else if(item.kind == 'PERCENTAGE') { 
+       let percent =  ( item.score.received / item.score.max ) * 100 
+       percent = percent.toFixed(1)
+       if(percent >= 80) item.status = `PASSED: ${percent}%`
+       else item.status = `FAILED: ${percent}%`
+    }
+
+    else { 
+      item.status = `SCORE: ${item.score.received}/${item.score.max}`
+    }
+  }
+  return assignments
+}
 
 /**
  * createLineOrder()
@@ -152,7 +215,11 @@ function gradeAssignments(assignments) {}
     createLineOrder(people);
     //> [ "Ray Anderson", "America Marsh", "Wade Carson", "Patience Patel" ]
  */
-function createLineOrder(people) {}
+function createLineOrder(people) {
+  const  members = people.filter(person => person.hasMembership).map(x => x.name)
+  const nonMembers = people.filter(person => !person.hasMembership).map(x => x.name)
+  return [...members, ...nonMembers]
+}
 
 module.exports = {
   applyDiscount,
