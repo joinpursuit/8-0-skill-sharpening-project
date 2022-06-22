@@ -125,7 +125,7 @@ describe("timesIndex", () => {
   });
 });
 
-describe("cumulativeSum", () => {
+describe.only("cumulativeSum", () => {
   test("returns new array with each element is the cumulative sum", () => {
     expect(cumulativeSum([2, 2, 2])).toEqual([2, 4, 6]);
     expect(cumulativeSum([5, 2, 9])).toEqual([5, 7, 16]);
