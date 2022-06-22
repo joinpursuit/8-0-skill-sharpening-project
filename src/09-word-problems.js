@@ -177,27 +177,27 @@ function gradeAssignments(assignments) {
     if(assignments[i].kind === "PASS-FAIL"){
       if(assignments[i].score.received === assignments[i].score.max){
         assignments[i].status = "PASSED";
-        return assignments
+       
       } else {
         assignments[i].status = "FAILED";
-        return assignments
+        
       }
     } else if(assignments[i].kind === "PERCENTAGE"){
       let percentage = assignments[i].score.received/assignments[i].score.max * 100
       if(percentage >= 80){
         assignments[i].status = `PASSED: ${percentage.toFixed(1)}%`
-        return assignments
+        
       } else {
         let percentage = assignments[i].score.received/assignments[i].score.max * 100
         assignments[i].status = `FAILED: ${percentage.toFixed(1)}%`
-        return assignments
+        
       }
    } else{
     assignments[i].status = `SCORE: ${assignments[i].score.received}/${assignments[i].score.max}`
-  return assignments
+  }
 }
-    }
-    }
+return assignments
+}
 
 /**
  * createLineOrder()
@@ -223,7 +223,9 @@ function gradeAssignments(assignments) {
     //> [ "Ray Anderson", "America Marsh", "Wade Carson", "Patience Patel" ]
  */
 function createLineOrder(people) {
-// for(let i =0; )
+//  for(let i=0; i <people.length; i++ ){
+//   if(person[i] === hasMembership )
+//  }
 
  }
 
