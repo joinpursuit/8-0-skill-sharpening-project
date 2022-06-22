@@ -19,7 +19,19 @@
  *  applyDiscount(1000, 9, true);
  *  //> 700
  */
-function applyDiscount(priceInCents, age, hasMembership) {}
+function applyDiscount(priceInCents, age, hasMembership) {
+  let total = priceInCents;
+  if (hasMembership) {
+    if (age <= 10 || age >= 65) {
+      total *= .70;
+    } else {
+      total *= .80;
+    }
+  } else if (!hasMembership && age <= 10 || age >= 65) {
+    total *= .90;
+  }
+  return total;
+}
 
 /**
  * getCartTotal()
@@ -40,7 +52,17 @@ function applyDiscount(priceInCents, age, hasMembership) {}
     getCartTotal(cart);
  *  //> "$30.00"
  */
-function getCartTotal(products) {}
+function getCartTotal(products) {
+  let total = 0;
+  for (let i = 0; i < products.length; i++) {
+    let numQuantity = 0;
+    for (let j = 0; j < products.quantity.length; j++) {
+      numQuantity += products.quantity[j];
+    }
+    total += priceInCents * numQuantity; 
+  }
+  return total;
+}
 
 /**
  * compareLocations()
@@ -80,7 +102,21 @@ function getCartTotal(products) {}
     compareLocations(address1, address2);
     //> "Same city."
  */
-function compareLocations(address1, address2) {}
+function compareLocations(address1, address2) {
+  let sameBuilding = address1.street + address1.city + address1.state + address1.zip;
+  let sameCity = address1.city + address1.state + address1.zip;
+  let sameState = address1.state
+
+  if (address2 === sameBuilding) {
+    return `Same building.`;
+  } else if (address2 === sameCity) {
+    return `Same city.`;
+  } else if (address2 === sameState) {
+    return `Same state.`;
+  } else {
+    return `Addresses are not near each other.`;
+  }
+}
 
 /**
  * gradeAssignments()
