@@ -20,10 +20,11 @@
  *  //> 700
  */
 function applyDiscount(priceInCents, age, hasMembership) {
-  let discount=1;
-  discount-=age>=65||age<=10?0.1:0;
-  discount-=hasMembership?0.2:0;
-  return priceInCents*discount;
+  return priceInCents*(1-(age>=65||age<=10?0.1:0)-(hasMembership?0.2:0));
+  // let discount=1;
+  // discount-=age>=65||age<=10?0.1:0;
+  // discount-=hasMembership?0.2:0;
+  // return priceInCents*discount;
   
 }
 
@@ -164,10 +165,9 @@ function gradeAssignments(assignments) {
       case "PASS-FAIL":
         x['status'] = x.score.received===x.score.max?"PASSED":"FAILED";
       break;
-
       case "PERCENTAGE":
         let tmp =(x.score.received/x.score.max*100).toFixed(1);
-        x['status'] = tmp>=80?`PASSED: ${tmp}%`:`FAILED: ${tmp}%`;
+        x['status'] = Number(tmp)>=80?`PASSED: ${tmp}%`:`FAILED: ${tmp}%`;
       break;
       case "ESSAY":
         x['status'] = `SCORE: ${x.score.received}/${x.score.max}`;
@@ -207,14 +207,15 @@ function createLineOrder(people) {
 
   for(let x of people)
   {
-    if(x.hasMembership)
-    {
-      member.push(x.name);
-    }
-    else
-    {
-      notMember.push(x.name);
-    }
+    x.hasMembership?member.push(x.name):notMember.push(x.name);
+    // if(x.hasMembership)
+    // {
+    //   member.push(x.name);
+    // }
+    // else
+    // {
+    //   notMember.push(x.name);
+    // }
   }
   return member.concat(notMember);
 }
