@@ -136,8 +136,12 @@ function evenArray(array) {
  */
 
 function findSmallest(array) {
-  const min = Math.min(...array)
-  return min
+  let min = array[0]
+  for (let i=1; i < array.length; i++){
+    if (array[i] < min){
+      min = array[i]
+    } 
+  }return min
 }
 
 /**
@@ -152,8 +156,12 @@ function findSmallest(array) {
  *  //> 11
  */
 function findLargest(array) {
-  const max = Math.max(...array)
-  return max
+  let max = array[0]
+  for (let i=1; i < array.length; i++){
+    if (array[i] > max){
+      max = array[i]
+    } 
+  }return max
 }
 
 /**
@@ -172,8 +180,12 @@ function findLargest(array) {
  *  //> false
  */
 function findEqual(array, selected) {
-  return array.includes(selected)
-}
+  for (let i=0; i < array.length; i++){
+    if (array[i] === selected){
+      return true
+      } 
+    } return false
+  }
 
 /**
  * removeDuplicates()
