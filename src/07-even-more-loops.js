@@ -211,7 +211,12 @@ if(array[i] !== selected){
  */
 
 function removeDuplicates(array) {
-
+let arr = [];
+for(let i of array){
+  if(arr.indexOf(i) === -1){
+    arr.push(i)
+  }
+} return arr
 }
 
 // Do not change any code below this line.
