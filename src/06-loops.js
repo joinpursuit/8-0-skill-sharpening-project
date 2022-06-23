@@ -191,13 +191,13 @@ function firstIndexFound(array, target) {
  *  //> -1
  */
 function lastIndexFound(array, target) {
-  for (let i = array.length -1; i >= 0; i--) {
-        if(array[i]=== target){
-          return array[i]
-        }
-     }
-     return -1
-}
+ for(let i = array.length-1; i >= 0; i--){
+    if(array[i] === target){
+      return i
+    }
+   }
+    return -1
+  }
 
 /**
  * timesIndex()
@@ -212,11 +212,15 @@ function lastIndexFound(array, target) {
  *  //> [ 0, 10, 22 ]
  */
 function timesIndex(array) {
-   for (const elements of array) {
-    let 
-     return elements * elements[i]
+   let elements = []
+   let val = 0;
+   for (let i = 0; i < array.length; i++) {
+         val = i * array[i] 
+         elements.push(val)
+     }
+         return elements
    }
-}
+
 
 /**
  * cumulativeSum()
@@ -230,7 +234,17 @@ function timesIndex(array) {
  *  //> [ 5, 5 + 2, 5 + 2 + 9 ]
  *  //> [ 5, 7, 16 ]
  */
-function cumulativeSum(array) {}
+function cumulativeSum(array) {
+let number = []
+let sum = 0
+for (let arr of array) {
+  sum = sum + arr
+  number.push(sum)
+   }
+  return number
+ }
+
+
 
 // Do not change anything below this line.
 module.exports = {
