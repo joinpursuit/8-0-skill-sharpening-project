@@ -145,14 +145,12 @@ function evenArray(array) {
  *  //> -2
  */
 function findSmallest(array) {
-  let num = 0;
   for (let smallest of array) {
-    if(smallest <= 0){
-      num = smallest
+      min = Math.min(...array)
      }
+     return min
    }
-   return num 
-  }
+   
 /**
   findLargest()
  * ---------------------
@@ -215,12 +213,13 @@ function findEqual(array, selected) {
  */
 
 function removeDuplicates(array) {
-let number = 0;
-for(let i = 0; i < array.length; i++){
-  if(array[i]>array.length){
-    
+let number = []
+array.forEach(element => {
+  if(!number.includes(element)){
+    number.push(element)
   }
-  }
+});
+  return number
 }
 
 // Do not change any code below this line.
