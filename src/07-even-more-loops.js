@@ -57,11 +57,12 @@ function shoutWhileLoop(array) {
  *  //> [ "A!", "Very!", "Happy!", "Array!" ];
  */
 function shoutForOfLoop(array) {
-
+let b = []
   for(let shout of array){
-   
+   shout += "!"
+b.push(shout)
   }
-  return array;
+  return b;
 }
 
 /**
