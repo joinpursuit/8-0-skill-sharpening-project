@@ -166,16 +166,24 @@ function compareLocations(address1, address2) {
  */
 function gradeAssignments(assignments) {
   for (let i = 0; i < assignments.length; i++){
-    if(assignments[i].kind === "PASS-FAIL"){
+    if(assignments[i].kind === `PASS-FAIL`){
       if(assignments[i].score.received === assignments[i].score.max){
         assignments[i].status = `PASSED`
-        return assignments
       } else {
         assignments[i].status = `FAILED`
-        return assignments
       }
+    } else if (assignments[i].kind === `PERCENTAGE`){
+      let percentage = ((assignments[i].score.received / assignments[i].score.max) * 100).toFixed(1)
+      if (percentage >= 80){
+        assignments[i].status = `PASSED: ${percentage}%`
+      } else {
+        assignments[i].status = `FAILED: ${percentage}%`
+      }
+    } else {
+      assignments[i].status = `SCORE: ${assignments[i].score.received}/${assignments[i].score.max}`
     }
   }
+  return assignments
 }
 
 /**
@@ -202,11 +210,17 @@ function gradeAssignments(assignments) {
     //> [ "Ray Anderson", "America Marsh", "Wade Carson", "Patience Patel" ]
  */
 function createLineOrder(people) {
-  let arr = []
+  let member = []
+  let notMember = []
+
   for (let i = 0; i < people.length; i++){
-    arr.push(people[i].name)
+    if (people[i].hasMembership){
+      member.push(people[i].name)
+    } else {
+      notMember.push(people[i].name)
+    }
   }
-  return arr;
+  return member.concat(notMember)
 }
 
 module.exports = {
