@@ -9,9 +9,9 @@
  *  getLengthOfString("down");
  *  //> 4
  */
-function getLengthOfString() {}
+function getLengthOfString(str) {}
 function getLengthOfString(str){
-  for (i = 0; 1 <= str.length; i++);
+  for (i = 0; i <= str.length; i++);
   return str.length;
 }
 /**

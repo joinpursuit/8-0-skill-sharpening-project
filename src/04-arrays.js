@@ -174,7 +174,7 @@ function removeElementFromFrontOfArray(array) {
  *  getMiddleElement([ 10, null, "30" ]);
  *  //> null
  */
-function getMiddleElement(array) {}
+function getMiddleElement() {}
 function getMiddleElement(array) {
   return array[Math.floor(array.length/2)];
 }
