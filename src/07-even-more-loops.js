@@ -200,11 +200,7 @@ function findLargest(array) {
  */
 function findEqual(array, selected) {
 
- for(let i=0; i<array.length; i++){
-
-  array[i] === selected ? true : false
-
-  }
+ return array.includes(selected) ? true : false
 
 }
 
@@ -225,16 +221,9 @@ function findEqual(array, selected) {
 
 function removeDuplicates(array) {
 
-  // withoutDup = []
+  let noDup = [...new Set(array)];
 
-  // for(nums of array){
-    
-  //  if(!nums === nums.includes(nums)){
-
-  //   withoutDup.push(nums)
-  //  }
-  // }
-  // return nums
+  return noDup
 }
 
 // Do not change any code below this line.

@@ -14,7 +14,10 @@
  *  isEqual(10, "10");
  *  //> false
  */
-function isEqual(a, b) {}
+function isEqual(a, b) {
+
+  return a===b ? true : false
+}
 
 /**
  * findLarger()
@@ -28,7 +31,10 @@ function isEqual(a, b) {}
  *  findLarger(19, 7);
  *  //> 19
  */
-function findLarger(a, b) {}
+function findLarger(a, b) {
+
+  return a > b? a : b
+}
 
 /**
  * findLargerOrTie()
@@ -45,7 +51,10 @@ function findLarger(a, b) {}
  *  findLargerOrTie(0, 0);
  *  //> "tie"
  */
-function findLargerOrTie(a, b) {}
+function findLargerOrTie(a, b) {
+
+  return a>b ? a : a===b ? 'tie' : b
+}
 
 /**
  * positiveNegativeOrZero()
@@ -65,7 +74,19 @@ function findLargerOrTie(a, b) {}
  *  positiveNegativeOrZero(1);
  *  //> "Positive"
  */
-function positiveNegativeOrZero(a) {}
+function positiveNegativeOrZero(a) {
+
+  if(a===a){
+    return 'Positive'
+  }
+  else if(a === -a){
+    return 'Negative'
+  }
+  
+  else if(a === 0){
+    return 'Zero'
+  }
+}
 
 /**
  * aroundTheWorldGreeting()
