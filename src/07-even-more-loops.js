@@ -59,7 +59,7 @@ function shoutWhileLoop(array) {
 function shoutForOfLoop(array) {
 
   for(let shout of array){
-   array = shout + "!"
+   
   }
   return array;
 }
@@ -203,10 +203,9 @@ function findEqual(array, selected) {
     if(array[i] === selected){
       return true
     }
-    else{
-      return false
-    }
+   
   } 
+  return false
 
 }
 
@@ -225,7 +224,26 @@ function findEqual(array, selected) {
  *  //> [ 1, 11, 2, 3, 4, 9 ]
  */
 
-function removeDuplicates(array) {}
+//sorting the array from least to greatest.
+// let newArr = [...array].sort()
+// console.log(newArr)
+
+
+//for(let i=0; i<array.length; i++){
+  //     if(array[i]=== array[i+1])
+  //     remove.push(array[i])  }
+  
+  // return remove;
+  function removeDuplicates(array) {
+  let remove = [];
+  for( let dup of array){
+    if(remove.indexOf(dup) === -1 ){
+remove.push(dup)
+    }
+  }
+  return remove
+} 
+
 
 // Do not change any code below this line.
 module.exports = {
