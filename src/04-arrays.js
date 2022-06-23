@@ -159,8 +159,8 @@ function removeElementFromFrontOfArray(array) {
  *  //> null
  */
 function getMiddleElement(array) {
-  let middle = Math.floor(array.length/2);
-  return array[middle];
+  let middleElement = Math.floor(array.length/2);
+  return array[middleElement];
 }
 
 // Do not change any code below this line.
