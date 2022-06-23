@@ -223,11 +223,18 @@ return assignments
     //> [ "Ray Anderson", "America Marsh", "Wade Carson", "Patience Patel" ]
  */
 function createLineOrder(people) {
-//  for(let i=0; i <people.length; i++ ){
-//   if(person[i] === hasMembership )
-//  }
-
+  let arr =[];
+  let newArr=[];
+ for(let i=0; i <people.length; i++ ){
+  if(people[i].hasMembership === true ){
+    arr.push(people[i].name)
  }
+ else {
+  newArr.push(people[i].name)
+ }
+}
+return arr.concat(newArr)
+}
 
 module.exports = {
   applyDiscount,
