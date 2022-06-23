@@ -190,7 +190,7 @@ function createLineOrder(people) {
   let member = [];
   let notMember = [];
   people.filter(person => person.hasMembership ? member.push(person.name) : notMember.push(person.name));
-  return member .concat(notMember);
+  return member.concat(notMember);
 }
 
 module.exports = {

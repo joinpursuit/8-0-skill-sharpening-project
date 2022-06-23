@@ -41,7 +41,7 @@ function shoutWhileLoop(array) {
   while (i < array.length) {
     arr.push(array[i] + "!");
     i++;
-}
+  }
   return arr;
 }
 /**
@@ -62,8 +62,8 @@ function shoutForOfLoop(array) {
   let arr = [];
   for (let element of array) {
     arr.push(element + "!"); 
-}
-return arr;
+  }
+  return arr;
 }
 /**
  * sumArray()
@@ -100,9 +100,9 @@ function oddArray(array) {
   array.forEach(number => {
     if (number % 2 !== 0) {
       arr.push(number);
-  }
-});
-return arr;
+    }
+  });
+  return arr;
 }
 
 /**
@@ -121,9 +121,9 @@ function evenArray(array) {
   array.forEach(number => {
     if (number % 2 === 0) {
       arr.push(number);
-  }
-});
-return arr;
+    }
+  });
+  return arr;
 }
 
 /**
@@ -216,7 +216,7 @@ function removeDuplicates(array) {
       removedDuplicates.push(array[i]);
     }
   }
-    return removedDuplicates;
+  return removedDuplicates;
 }
 
 

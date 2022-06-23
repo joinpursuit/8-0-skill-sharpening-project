@@ -13,7 +13,6 @@
  */
 function rangeSum(min, max) {
   let sum = 0;
-
   while (min <= max) {
     sum += min;
     min++; 
@@ -38,9 +37,9 @@ function rangeOdd(min, max) {
   for (let i = max; i >= min; i--) {
     if (i % 2 !== 0) {
       range.push(i);
-}
-}
-return range;
+    }
+  }
+  return range;
 }
 
 /**
@@ -59,8 +58,8 @@ function rangeEveryOther(min, max) {
   let range = [];
   for (let i = min; i <= max; i+=2) {
     range.push(i);
-}
-return range;
+  }
+  return range;
 }
 
 /**
@@ -90,8 +89,8 @@ function containsWhileLoop(array, target) {
       return true;
     } 
     i++; 
-}
-return false;
+  }
+  return false;
 }
 
 /**
@@ -119,8 +118,8 @@ function containsForLoop(array, target) {
     if (array[i] === target) {
       return true;
     }
-}
-return false;
+  }
+  return false;
 }
 /**
  * targetCount()
@@ -136,12 +135,11 @@ return false;
  */
 function targetCount(array, target) {
   let count = 0;
-
-array.forEach(number => {
-  if (number === target) {
-    count += 1;
-  }
-});
+  array.forEach(number => {
+    if (number === target) {
+      count += 1;
+    }
+  });
   return count;
 }
 
@@ -216,7 +214,7 @@ function timesIndex(array) {
   let arr = [];
   for (let i = 0; i < array.length; i++) {
     arr.push(array[i] * i);
-}
+  }
   return arr;
 }
 /**
@@ -238,7 +236,6 @@ function cumulativeSum(array) {
     sum += array[i];
     arr.push(sum);
   }
-
   return arr;
 }
 
