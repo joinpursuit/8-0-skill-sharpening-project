@@ -57,11 +57,12 @@ function shoutWhileLoop(array) {
  *  //> [ "A!", "Very!", "Happy!", "Array!" ];
  */
 function shoutForOfLoop(array) {
+  let arr = [];
   for (let i of array) {
-    array[i] = array[i] + "!";
-    i++;
+    i += "!";
+    arr.push(i);
   }
-  return array;
+  return arr;
 }
 
 /**
@@ -133,10 +134,14 @@ function evenArray(array) {
  *  //> -2
  */
 function findSmallest(array) {
+  let num = array[0];
   for (let i = 0; i < array.length; i++) {
-    array.sort();
+    if (array[i] < num) {
+      num = array[i];
+    }
+    // array.sort();
   }
-  return array[0];
+  return num;
 }
 
 /**
