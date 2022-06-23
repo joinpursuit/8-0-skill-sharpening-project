@@ -167,29 +167,28 @@ function compareLocations(address1, address2) {
  */
 function gradeAssignments(assignments) {
   for (let i = 0; i < assignments.length; i ++){
-    if (assignments[i].kind !== "PASS-FAIL" && assignments[i].kind !== "PERCENTAGE"){
-      assignments[i].status = `SCORE: ${assignments[i].score.received}/${assignments[i].score.max}`
-      return assignments;
-    }
     if (assignments[i].kind === "PASS-FAIL"){
       if (assignments[i].score.received ===assignments[i].score.max){
         assignments[i].status = "PASSED"
-        return assignments;
+
       }else {
         assignments[i].status = "FAILED"
-        return assignments;
+
       } 
       } else if (assignments[i].kind === "PERCENTAGE"){
-        let percentage =((`${assignments[i].score.received}/ ${assignments[i].score.max}`) * 100).toFixed(1)
-        if (assignments[i].score.received >= "80.0%"){
+        let percentage =((assignments[i].score.received/ assignments[i].score.max) * 100).toFixed(1)
+        if (percentage >= 80){
           assignments[i].status = `PASSED: ${percentage}%`
-          return assignments;
+  
         } else {
           assignments[i].status = `FAILED: ${percentage}%`
-          return assignments;
+  
         }
+      } else {
+        assignments[i].status = `SCORE: ${assignments[i].score.received}/${assignments[i].score.max}`
       }
     }
+    return assignments
   }
 
 
@@ -217,16 +216,18 @@ function gradeAssignments(assignments) {
     //> [ "Ray Anderson", "America Marsh", "Wade Carson", "Patience Patel" ]
  */
 function createLineOrder(people) {
-  let newArr = []
+  let hasMembership = []
+  let noMembership = []
   for (let i = 0; i < people.length; i++){
-    newArr.push(people[i].name)
+    // newArr.push(people[i].name)
     if (people[i].hasMembership){
-      newArr.slice(0,people[i].name)
+      hasMembership.push(people[i].name)
     } else if (!people[i].hasMembership){
-      newArr.slice[-1](people[i].name)
+      noMembership.push(people[i].name)
     }
+    
   } 
-  return newArr
+  return hasMembership.concat(noMembership)
   }
   
   
