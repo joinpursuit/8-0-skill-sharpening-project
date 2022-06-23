@@ -198,7 +198,6 @@ function getFlatObject(person) {
     ...address,
    numbers: person.numbers
   };
-
 }
 
 // Do not change the code below.
