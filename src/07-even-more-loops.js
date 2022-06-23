@@ -139,7 +139,6 @@ function evenArray(array) {
  *  //> -2
  */
 function findSmallest(array) {
-  let i = 0
   let sm = array[0]
   for(i= 0; i < array.length; i++){
     if(array[i] < sm){
@@ -161,7 +160,6 @@ function findSmallest(array) {
  *  //> 11
  */
 function findLargest(array) {
-  let i = 0
   let LG = array[0]
   for(i= 0; i < array.length; i++){
     if(array[i] > LG){
@@ -187,7 +185,7 @@ function findLargest(array) {
  *  //> false
  */
 function findEqual(array, selected) {
-  for(i=0; i < array.length; i++){
+  for(i= 0; i < array.length; i++){
     if(array[i] === selected){
       return true 
     }
@@ -212,7 +210,7 @@ function findEqual(array, selected) {
 
 function removeDuplicates(array) {
   let newA = []
-  for(i=0; i < array.length; i++){
+  for(i= 0; i < array.length; i++){
     if(!newA.includes(array[i])){
       newA.push(array[i])
     }
