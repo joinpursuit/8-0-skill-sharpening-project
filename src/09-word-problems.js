@@ -52,14 +52,15 @@ if (finalAge === true && hasMembership === true){
  *  //> "$30.00"
  */
 function getCartTotal(products) {
+  let cart = 0
   for (let i = 0; i < products.length; i++) {
-    let multiple = (products[i].priceInCents * products.quantity) 
-    if(products.quantity > 1){
-      return `$${multiple.toFixed(2)}`
+    if(products[i].quantity > 1){
+      cart += (products[i].priceInCents * products[i].quantity) 
     }else {
-      return products[i] + products.priceInCents
+      cart+= products[i].priceInCents
     }
   }
+  return `$${(cart/100).toFixed(2)}`
 }
 
 /**
@@ -158,11 +159,19 @@ function compareLocations(address1, address2) {
     //> ];
  */
 function gradeAssignments(assignments) {
-  if (assignments.kind === "PASS-FAIL" && assignments.received === assignments.max){
-    return "PASSED"
-  }if (assignments. kind === "PERCENTAGE" && assignments.score >= assignments.received/assignments.max){
-    return "PASSED"
+  console.log(assignments)
+  // let percentage = assignments.score.received % assignments.max
+  // console.log(percentage)
+  for (let i = 0; i < array.length; i++) {
+    if (assignments[i].kind === "PASS-FAIL" && assignments.received === assignments.max){
+      return "PASSED"
+    }if (assignments[i].kind === "PERCENTAGE" && assignments.score >= assignments.received/assignments.max){
+      return `Passed ${percentage}`
+    }if (assignments[i].kind !== "PASS-FAIL" && assignments.kind !== "PERCENTAGE"){
+      return `SCORE: ${percentage}`
+    }
   }
+    
 }
 
 /**
@@ -189,11 +198,21 @@ function gradeAssignments(assignments) {
     //> [ "Ray Anderson", "America Marsh", "Wade Carson", "Patience Patel" ]
  */
 function createLineOrder(people) {
-  let arr = []
-  if (people.hasMembership){
-    return arr.push(people.names)
+  let arr = [people[0].hasMembership]
+  let array = [!people.hasMembership]
+  for (let i = 0; i < array.length; i++) {
+   
+    
+  }
+  console.log(arr)
+  console.log (array)
+  if (array){
+   return array.push(people.names)
+//     return arr.unshift(people.names)
+//   }else{
   }
 }
+// } hint 2 array and put together at end look spread operator 
 
 module.exports = {
   applyDiscount,
