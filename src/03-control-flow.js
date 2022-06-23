@@ -120,27 +120,25 @@ function positiveNegativeOrZero(a) {
  */
 function aroundTheWorldGreeting() {}
 function aroundTheWorldGreeting(language) {
- 
- let language = english
- 
- 
-  if (language === english){
-return("Hello World");
-  
-} else if (language === spanish){
-      return ("Hola Mundo");
+  switch(language) {
+    case `english`:
+      return("Hello World");
+      //break;
+
+      case `spanish`:
+        return ("Hola Mundo");
+        //break;
+
+        case `german`:
+          return("Hallo Welt");
+          //break;
+
+  default:
+    return("Hello World");        
+  }
+}
+
       
- }else if (language === german) {
-return  ("Hallo Walt");
-
-      }
-      else if (!language) {
-        
-        return ("Hello World");
-      }
-
-
-    } 
     
 
   
