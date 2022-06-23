@@ -1,7 +1,7 @@
 /**
  * applyDiscount()
  * ---------------------
- * A local movie theater has a few different ticket discounts. If the attendee is 10 years old or younger, or 65 years old or older, they receive a 10% discount. If the attendee is viewing the movie with a member, they receive a 20% discount. If both situations apply, they receive a 30% discount.
+ * A local movie theater has a few different ticket discounts. If the attendee is 10 years old or younger, or 65 years old or older, they receive a 10% discount. If the attendee is viewing the movie with a membership, they receive a 20% discount. If both situations apply, they receive a 30% discount.
  *
  * Write an algorithm that will determine the price of a ticket based on the `priceInCents` of the ticket, the `age` of the attendee, and the membership status (i.e. `hasMembership`).
  * @param {number} priceInCents - The price of the ticket, in cents.
@@ -19,7 +19,23 @@
  *  applyDiscount(1000, 9, true);
  *  //> 700
  */
-function applyDiscount(priceInCents, age, hasMembership) {}
+function applyDiscount(priceInCents, age, hasMembership) {
+let price =0;
+
+if(age <= 10 || age >= 65){
+  if(hasMembership){
+    price = priceInCents - (priceInCents * .3)
+return price
+  } else{
+  price = priceInCents - (priceInCents * .1)
+  return price}
+}
+else if(hasMembership){
+  price = priceInCents - (priceInCents  * .2)
+  return price
+} else{
+return priceInCents}
+}
 
 /**
  * getCartTotal()
@@ -38,9 +54,17 @@ function applyDiscount(priceInCents, age, hasMembership) {}
       { name: "Socks", priceInCents: 900, quantity: 2 },
     ];
     getCartTotal(cart);
- *  //> "$30.00"
+ *  //> "$30.00"h
  */
-function getCartTotal(products) {}
+function getCartTotal(products, priceInCents, quantity) {
+let totalCart=0;
+//let priceInDollars = priceInCents/100;
+for(let i=0; i < products.length; i++){
+ totalCart += (products[i].priceInCents/100)* products[i].quantity;
+}
+return `$${totalCart.toFixed(2)}`;
+console.log(totalCart)
+}
 
 /**
  * compareLocations()
@@ -80,7 +104,27 @@ function getCartTotal(products) {}
     compareLocations(address1, address2);
     //> "Same city."
  */
-function compareLocations(address1, address2) {}
+function compareLocations(address1, address2) {
+
+
+    if( address1.state === address2.state){
+      
+      if ( address1.street === address2.street){
+        return "Same building."
+      } 
+      if (address1.city === address2.city){
+        return "Same city." 
+      }
+      else{
+        return "Same state." 
+      }
+      } 
+      else {
+        return "Addresses are not near each other."
+      }
+  
+  }
+     
 
 /**
  * gradeAssignments()
@@ -127,7 +171,33 @@ function compareLocations(address1, address2) {}
     //>   },
     //> ];
  */
-function gradeAssignments(assignments) {}
+function gradeAssignments(assignments) {
+
+  for(let i =0; i < assignments.length; i ++){
+    if(assignments[i].kind === "PASS-FAIL"){
+      if(assignments[i].score.received === assignments[i].score.max){
+        assignments[i].status = "PASSED";
+       
+      } else {
+        assignments[i].status = "FAILED";
+        
+      }
+    } else if(assignments[i].kind === "PERCENTAGE"){
+      let percentage = assignments[i].score.received/assignments[i].score.max * 100
+      if(percentage >= 80){
+        assignments[i].status = `PASSED: ${percentage.toFixed(1)}%`
+        
+      } else {
+        let percentage = assignments[i].score.received/assignments[i].score.max * 100
+        assignments[i].status = `FAILED: ${percentage.toFixed(1)}%`
+        
+      }
+   } else{
+    assignments[i].status = `SCORE: ${assignments[i].score.received}/${assignments[i].score.max}`
+  }
+}
+return assignments
+}
 
 /**
  * createLineOrder()
@@ -152,7 +222,19 @@ function gradeAssignments(assignments) {}
     createLineOrder(people);
     //> [ "Ray Anderson", "America Marsh", "Wade Carson", "Patience Patel" ]
  */
-function createLineOrder(people) {}
+function createLineOrder(people) {
+  let arr =[];
+  let newArr=[];
+ for(let i=0; i <people.length; i++ ){
+  if(people[i].hasMembership === true ){
+    arr.push(people[i].name)
+ }
+ else {
+  newArr.push(people[i].name)
+ }
+}
+return arr.concat(newArr)
+}
 
 module.exports = {
   applyDiscount,
