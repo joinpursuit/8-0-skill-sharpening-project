@@ -179,34 +179,26 @@ function gradeAssignments(assignments) {
     if(assignments[i].kind === "PASS-FAIL"){
       if(assignments[i].score.received === assignments[i].score.max){
         assignments[i].status = "PASSED"
-        return assignments 
       }
-      assignments[i].status = "FAILED"
-      return assignments
-    }
-    if (assignments[i].kind === "PERCENTAGE"){
-      if(assignments[i].score.received >= .80){
-        assignments[i].status = "PASSED: 80.0%"
-        return assignments
+      else {
+        assignments[i].status = "FAILED"
       }
-      if(assignments[i].score.received < .80){
-      assignments[i].status = "FAILED: 70.0%"
-        return assignments
     }
-   
-    }
-    if(assignments[i].kind === "ESSAY"){
-      if(assignments[i].score.received / assignments[i].score.max){
-        assignments[i].status = `SCORE: 4/5`
-        return assignments 
+    else if(assignments[i].kind === "PERCENTAGE"){
+      let score = ((assignments[i].score.received / assignments[i].score.max) * 100).toFixed(1)
+      if (score >= 80){
+        assignments[i].status = `PASSED: ${score}%`
+      }
+      else {
+        assignments[i].status = `FAILED: ${score}%`
       }
     }
     else {
-      return [assignments]
+      assignments[i].status = `SCORE: ${assignments[i].score.received}/${assignments[i].score.max}`
     }
-    
   }
-}
+  return assignments
+  }
 
 
 /**
@@ -233,14 +225,22 @@ function gradeAssignments(assignments) {
     //> [ "Ray Anderson", "America Marsh", "Wade Carson", "Patience Patel" ]
  */
 function createLineOrder(people) {
-  for(let i = 0; i < people.length; i++){
-  }
-  for(let j = 0; j < people.length; j++){
-    if(people[j].hasMembership){
-      return people[j].name
+  
+    let newArray = []
+    let array1 =[
+      ...people.filter(({hasMembership}) => hasMembership),
+      ...people.filter(({hasMembership}) => !hasMembership)
+    ]
+    for(let i = 0; i < array1.length; i++){
+      newArray.push(array1[i].name)
     }
-}
-}
+    return newArray
+  }
+  
+
+    
+  
+
 module.exports = {
   applyDiscount,
   getCartTotal,
