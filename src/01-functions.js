@@ -94,7 +94,7 @@ function multiply (a, b, result){
  *  average(10, 6);
  *  //> 8 // 10 + 6 = 16; 16/2 = 8;
  */
-function average() {}
+
 function average(a,b, result){
   result = a + b;
   result = result / 2;
@@ -211,7 +211,7 @@ function joinStringsWithSpaces(a, b, c, d, e) {
  */
 
 function getFirstAndLastCharacter(a){
-  for (i = 0; i <= a.length-1; 1++){
+  for (i = 0; i <= a.length-1; i++){
     firstChar = a[0];
     lastChar = a.charAt((a.length-1));
     return (`${firstChar}${lastChar}`);
