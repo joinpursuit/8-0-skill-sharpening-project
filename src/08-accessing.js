@@ -216,7 +216,9 @@ function getFlatObject(person) {
   flatObject.city = person.address.city;
   flatObject.state = person.address.state;
   flatObject.zip = person.address.zip;
-  flatObject.numbers = person.numbers;
+  flatObject.numbers = [...person.numbers];
+  console.log(person.numbers)
+  console.log(flatObject)
   return flatObject;
   // I also hard coded it and it still does not work so I am very confused. For some reason my numbers array always returns as empty.
 }
