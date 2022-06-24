@@ -19,7 +19,18 @@
  *  applyDiscount(1000, 9, true);
  *  //> 700
  */
-function applyDiscount(priceInCents, age, hasMembership) {}
+function applyDiscount(priceInCents, age, hasMembership) {
+  let finalAge = age <= 10 || age >= 65
+if (finalAge === true && hasMembership === true){
+ return priceInCents * .70
+}if (finalAge){
+  return priceInCents * .90
+  } if (hasMembership){
+    return priceInCents * .80
+   }else {
+    return priceInCents
+   }
+}
 
 /**
  * getCartTotal()
@@ -40,7 +51,17 @@ function applyDiscount(priceInCents, age, hasMembership) {}
     getCartTotal(cart);
  *  //> "$30.00"
  */
-function getCartTotal(products) {}
+function getCartTotal(products) {
+  let cart = 0
+  for (let i = 0; i < products.length; i++) {
+    if(products[i].quantity > 1){
+      cart += (products[i].priceInCents * products[i].quantity) 
+    }else {
+      cart+= products[i].priceInCents
+    }
+  }
+  return `$${(cart/100).toFixed(2)}`
+}
 
 /**
  * compareLocations()
@@ -80,7 +101,17 @@ function getCartTotal(products) {}
     compareLocations(address1, address2);
     //> "Same city."
  */
-function compareLocations(address1, address2) {}
+function compareLocations(address1, address2) {
+  if (address1.street === address2.street && address1.city === address2.city && address1.state === address2.state && address1.zip === address2.zip){
+ return "Same building."
+  }if (address1.city === address2.city && address1.state === address2.state && address1.zip === address2.zip){
+ return "Same city."
+  } if (address1.state === address2.state){
+ return "Same state."
+  } else {
+    return "Addresses are not near each other."
+  }
+}
 
 /**
  * gradeAssignments()
@@ -90,7 +121,7 @@ function compareLocations(address1, address2) {}
  * Write an algorithm that adds a key of `status` to each object in an array of objects. Each object represents a single assignment submitted by a student.
  *
  * - If the assignment has a `kind` of `"PASS-FAIL"`, set the `status` value to `"PASSED"` if the `score.received` equals the `score.max`. Otherwise, set that `status` to be `"FAILED"`.
- * - If the assignment has a `kind` of `"PERCENTAGE"`, set the `status` value to be `"PASSED: <percentage>"` if the student scored at least 80.0%. The `<percentage>` should be set to one decimal place. If the student scored less than 80.0%, set the status to `"FAILED: <percentage>"`.
+ * - If the assignment has a `kind` of `"PERCENTAGE"`, set the `status` value to be `"PASSED: <percentage>"` if the student scored at least 80.0%. The `<percentage>` should be  . If the student scored less than 80.0%, set the status to `"FAILED: <percentage>"`.
  * - If the assignment has any other `kind` than the two above, set the `status` value to equal `"SCORE: <received>/<max>"`, where `<received>` is the `score.received` value and `<max>` is the `score.max` value.
  *
  * Then, return the overall array with all modified assignments.
@@ -127,7 +158,30 @@ function compareLocations(address1, address2) {}
     //>   },
     //> ];
  */
-function gradeAssignments(assignments) {}
+function gradeAssignments(assignments) {
+  for(let i = 0; i < assignments.length; i++) {
+    if(assignments[i].kind === "PASS-FAIL"){
+     if(assignments[i].score.received === assignments[i].score.max){
+        assignments[i].status = "PASSED"
+      }else{
+         assignments[i].status = 'FAILED'
+     } 
+    }else if(assignments[i].kind === "PERCENTAGE"){
+     if(assignments[i].score.received/assignments[i].score.max * 100 >= 80){
+      assignments[i].status = `PASSED: ${(assignments[i].score.received/assignments[i].score.max * 100).toFixed(1)}%`
+     }else{
+      assignments[i].status = `FAILED: ${(assignments[i].score.received/assignments[i].score.max * 100).toFixed(1)}%`
+    }
+  }else{
+    assignments[i].status = `SCORE: ${assignments[i].score.received}/${assignments[i].score.max}`
+  }
+    
+}
+return assignments
+}
+
+// assignments[i].score >= assignments[i].received/assignments[i].max
+
 
 /**
  * createLineOrder()
@@ -152,7 +206,23 @@ function gradeAssignments(assignments) {}
     createLineOrder(people);
     //> [ "Ray Anderson", "America Marsh", "Wade Carson", "Patience Patel" ]
  */
-function createLineOrder(people) {}
+function createLineOrder(people) {
+  // console.log(people)
+  let person = []
+  let members = []
+  let nonMember = []
+  for (let i = 0; i < people.length; i++) {
+    person = people[i]
+    if (person.hasMembership) {
+      members.push(person.name)
+    } else{
+      nonMember.push(person.name)
+    }
+  }
+  let line = members.concat(nonMember)
+  return line
+}
+// } hint 2 array and put together at end look spread operator 
 
 module.exports = {
   applyDiscount,
