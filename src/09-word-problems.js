@@ -121,7 +121,7 @@ function compareLocations(address1, address2) {
  * Write an algorithm that adds a key of `status` to each object in an array of objects. Each object represents a single assignment submitted by a student.
  *
  * - If the assignment has a `kind` of `"PASS-FAIL"`, set the `status` value to `"PASSED"` if the `score.received` equals the `score.max`. Otherwise, set that `status` to be `"FAILED"`.
- * - If the assignment has a `kind` of `"PERCENTAGE"`, set the `status` value to be `"PASSED: <percentage>"` if the student scored at least 80.0%. The `<percentage>` should be set to one decimal place. If the student scored less than 80.0%, set the status to `"FAILED: <percentage>"`.
+ * - If the assignment has a `kind` of `"PERCENTAGE"`, set the `status` value to be `"PASSED: <percentage>"` if the student scored at least 80.0%. The `<percentage>` should be  . If the student scored less than 80.0%, set the status to `"FAILED: <percentage>"`.
  * - If the assignment has any other `kind` than the two above, set the `status` value to equal `"SCORE: <received>/<max>"`, where `<received>` is the `score.received` value and `<max>` is the `score.max` value.
  *
  * Then, return the overall array with all modified assignments.
@@ -159,20 +159,29 @@ function compareLocations(address1, address2) {
     //> ];
  */
 function gradeAssignments(assignments) {
-  console.log(assignments)
-  // let percentage = assignments.score.received % assignments.max
-  // console.log(percentage)
-  for (let i = 0; i < array.length; i++) {
-    if (assignments[i].kind === "PASS-FAIL" && assignments.received === assignments.max){
-      return "PASSED"
-    }if (assignments[i].kind === "PERCENTAGE" && assignments.score >= assignments.received/assignments.max){
-      return `Passed ${percentage}`
-    }if (assignments[i].kind !== "PASS-FAIL" && assignments.kind !== "PERCENTAGE"){
-      return `SCORE: ${percentage}`
+  for(let i = 0; i < assignments.length; i++) {
+    if(assignments[i].kind === "PASS-FAIL"){
+     if(assignments[i].score.received === assignments[i].score.max){
+        assignments[i].status = "PASSED"
+      }else{
+         assignments[i].status = 'FAILED'
+     } 
+    }else if(assignments[i].kind === "PERCENTAGE"){
+     if(assignments[i].score.received/assignments[i].score.max * 100 >= 80){
+      assignments[i].status = `PASSED: ${(assignments[i].score.received/assignments[i].score.max * 100).toFixed(1)}%`
+     }else{
+      assignments[i].status = `FAILED: ${(assignments[i].score.received/assignments[i].score.max * 100).toFixed(1)}%`
     }
+  }else{
+    assignments[i].status = `SCORE: ${assignments[i].score.received}/${assignments[i].score.max}`
   }
     
 }
+return assignments
+}
+
+// assignments[i].score >= assignments[i].received/assignments[i].max
+
 
 /**
  * createLineOrder()
@@ -198,19 +207,20 @@ function gradeAssignments(assignments) {
     //> [ "Ray Anderson", "America Marsh", "Wade Carson", "Patience Patel" ]
  */
 function createLineOrder(people) {
-  let arr = [people[0].hasMembership]
-  let array = [!people.hasMembership]
-  for (let i = 0; i < array.length; i++) {
-   
-    
+  // console.log(people)
+  let person = []
+  let members = []
+  let nonMember = []
+  for (let i = 0; i < people.length; i++) {
+    person = people[i]
+    if (person.hasMembership) {
+      members.push(person.name)
+    } else{
+      nonMember.push(person.name)
+    }
   }
-  console.log(arr)
-  console.log (array)
-  if (array){
-   return array.push(people.names)
-//     return arr.unshift(people.names)
-//   }else{
-  }
+  let line = members.concat(nonMember)
+  return line
 }
 // } hint 2 array and put together at end look spread operator 
 
