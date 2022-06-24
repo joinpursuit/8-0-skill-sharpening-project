@@ -217,7 +217,7 @@ function getFlatObject(person) {
     person2[i] === person[i];
     person2.flats(15);
   }
-  return
+  return getFlatObject;
 }
 
 

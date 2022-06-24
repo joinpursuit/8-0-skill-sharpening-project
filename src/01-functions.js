@@ -9,7 +9,7 @@
  *  alwaysTrue();
  *  //> true
  */
-function alwaysTrue() {}
+
 function alwaysTrue(number){
   number = 1 ;
   if (number === 1) {

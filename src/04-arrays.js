@@ -10,7 +10,7 @@
  *  createEmptyArray();
  *  //> []
  */
-function createEmptyArray() {}
+
 function createEmptyArray() {
   const dummy= []
   return dummy;

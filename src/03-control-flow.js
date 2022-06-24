@@ -14,7 +14,7 @@
  *  isEqual(10, "10");
  *  //> false
  */
-function isEqual(a, b) {}
+
 function isEqual(a, b){
   if(a===b){
     return true;
@@ -57,7 +57,7 @@ function findLarger(a, b) {
  *  findLargerOrTie(0, 0);
  *  //> "tie"
  */
-function findLargerOrTie() {}
+
 function findLargerOrTie(a, b) {
   if (a > b) {
     return a;
@@ -87,7 +87,7 @@ function findLargerOrTie(a, b) {
  *  positiveNegativeOrZero(1);
  *  //> "Positive"
  */
-function positiveNegativeOrZero() {}
+
 function positiveNegativeOrZero(a) {
   if (a < 0){
     return ("Negative");
@@ -118,7 +118,7 @@ function positiveNegativeOrZero(a) {
  *  aroundTheWorldGreeting();
  *  //> "Hello World"
  */
-function aroundTheWorldGreeting() {}
+
 function aroundTheWorldGreeting(language) {
   switch(language) {
     case `english`:
@@ -171,7 +171,7 @@ function aroundTheWorldGreeting(language) {
  *  aroundTheWorldGreetingWithSwitch();
  *  //> "Hello World"
  */
-function aroundTheWorldGreetingWithSwitch() {}
+
 function aroundTheWorldGreetingWithSwitch(language) {
   switch(language) {
     case `english`:
@@ -206,7 +206,7 @@ function aroundTheWorldGreetingWithSwitch(language) {
  *  calculateLetterGrade(99);
  *  //> "A"
  */
-function calculateLetterGrade() {}
+
 function calculateLetterGrade(grade) {
   if (grade >= 90){
     return("A");
@@ -244,7 +244,7 @@ function calculateLetterGrade(grade) {
  *  animalCounts("pig", 1);
  *  //> "1 pig"
  */
-function animalCounts() {}
+
 function animalCounts(animal, numberOfAnimals) {
   if (numberOfAnimals === 1) {
     return  (`1 ${animal}`)
@@ -271,7 +271,7 @@ function animalCounts(animal, numberOfAnimals) {
  *  evenOrOdd(48);
  *  //> "Even"
  */
-function evenOrOdd(a) {}
+
 function evenOrOdd(a) {
   if (a % 2 !==0 ) {
     return("Odd")
@@ -294,7 +294,7 @@ function evenOrOdd(a) {
  *  evenOrOddWithTernary(8);
  *  //> "Even"
  */
-function evenOrOddWithTernary(a) {}
+
 function evenOrOddWithTernary(a) {
   return (a % 2 === 0) ? "Even" : "Odd";
 }

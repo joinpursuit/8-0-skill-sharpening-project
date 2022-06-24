@@ -9,7 +9,7 @@
  *  getLengthOfString("down");
  *  //> 4
  */
-function getLengthOfString(str) {}
+
 function getLengthOfString(str){
   for (i = 0; i <= str.length; i++);
   return str.length;
@@ -25,10 +25,10 @@ function getLengthOfString(str){
  *  convertToNumber("111");
  *  //> 111
  */
-function convertToNumber() {}
+
 function convertToNumber(val) {
-   Number(val);
-   return Number (val);
+   number(val);
+   return number (val);
 }
 /**
  * convertToString()
@@ -94,7 +94,7 @@ function convertToWhisperText(text) {
  */
 function checkIfCharacterIsInString() {}
 function checkIfCharacterIsInString(text, character) {
-  // for (i = 0; i <= tezt.length; i++)
+  // for (i = 0; i <= text.length; i++)
   while(i <= text.length){
     if (text[i] === character){
       i++;
