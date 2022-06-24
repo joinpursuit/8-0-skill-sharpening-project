@@ -42,7 +42,7 @@ function convertToNumber(val) {
  *  convertToString(99);
  *  //> "99"
  */
-function convertToString() {}
+
 function convertToString(val) {
     val.toString();
     return val.toString();
@@ -58,7 +58,7 @@ function convertToString(val) {
  *  convertToShoutingText("Hello There");
  *  //> "HELLO THERE"
  */
-function convertToShoutingText() {}
+
 function convertToShoutingText(text) {
   return text.toUpperCase();
 }
@@ -73,7 +73,7 @@ function convertToShoutingText(text) {
  *  convertToWhisperText("Hello There");
  *  //> "hello there"
  */
-function convertToWhisperText() {}
+
 function convertToWhisperText(text) {
   return text.toLowerCase();
 }
@@ -92,7 +92,7 @@ function convertToWhisperText(text) {
  *  checkIfCharacterIsInString("hello there", "a");
  *  //> false
  */
-function checkIfCharacterIsInString() {}
+
 function checkIfCharacterIsInString(text, character) {
   // for (i = 0; i <= text.length; i++)
   while(i <= text.length){
@@ -119,7 +119,7 @@ function checkIfCharacterIsInString(text, character) {
  *  isEven(11);
  *  //> false
  */
-function isEven() {}
+
 function isEven(num) {
   if(num % 2 === 0) {
     return true;
@@ -142,7 +142,7 @@ function isEven(num) {
  *  isOdd(11);
  *  //> true
  */
-function isOdd() {}
+
 function isOdd(num) {
   if(num % 2 !== 0) {
     return true;
@@ -166,7 +166,7 @@ function isOdd(num) {
  *  isTruthy(null);
  *  //> false
  */
-function isTruthy() {}
+
 function isTruthy(val) {
   if (!!val) {
     return true;
@@ -194,7 +194,7 @@ else return false;
  *  isFalsy(" ");
  *  //> false
  */
-function isFalsy() {}
+
 function isFalsy(val) {
   if(val){
     return true;

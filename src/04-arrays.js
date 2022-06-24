@@ -12,7 +12,7 @@
  */
 
 function createEmptyArray() {
-  const dummy= []
+  const dummy= [];
   return dummy;
 }
 /**
@@ -27,9 +27,9 @@ function createEmptyArray() {
  *  createArrayWithTwoElements(true, false);
  *  //> [ true, false ]
  */
-function createArrayWithTwoElements() {}
+
 function createArrayWithTwoElements(a, b) {
-  let dummy = [a, b]
+  let dummy = [a, b];
   return dummy;
 }
 /**
@@ -43,7 +43,7 @@ function createArrayWithTwoElements(a, b) {
  *  getArrayLength([ 10, 20, 30 ]);
  *  //> 3
  */
-function getArrayLength() {}
+
 function getArrayLength(array) {
   for(i =0; i <= array.length; i++){
     return array.length;
@@ -61,7 +61,7 @@ function getArrayLength(array) {
  *  getFirstElementOfArray([ 10, 20, 30 ]);
  *  //> 10
  */
-function getFirstElementOfArray() {}
+
 function getFirstElementOfArray(array) {
   for(i =0; i <= array.length; i++){
     return (array[0]);
@@ -79,7 +79,7 @@ function getFirstElementOfArray(array) {
  *  getLastElementOfArray([ null, undefined ]);
  *  //> undefined
  */
-function getLastElementOfArray() {}
+
 function getLastElementOfArray(array) {
   for(i =0; i <= array.length; i++){
     last = array[array.length];
@@ -98,7 +98,7 @@ function getLastElementOfArray(array) {
  *  addElementToEndOfArray([ 10 ], 9);
  *  //> [ 10, 9 ]
  */
-function addElementToEndOfArray() {}
+
 function addElementToEndOfArray(array, element) {
   for (i =0; i <= array.length; i++){
     array.push(element);
@@ -116,7 +116,7 @@ function addElementToEndOfArray(array, element) {
  *  removeElementFromEndOfArray([ 10, 9, 8 ]);
  *  //> 8
  */
-function removeElementFromEndOfArray(array) {}
+
 function removeElementFromEndOfArray(array) {
   for(i =0; i <= array.length; i++){
     element = array.pop()
@@ -135,7 +135,7 @@ function removeElementFromEndOfArray(array) {
  *  addElementToFrontOfArray([ 10 ], 9);
  *  //> [ 9, 10 ]
  */
-function addElementToFrontOfArray(array, element) {}
+
 function addElementToFrontOfArray(array, element) {
   for (i =0; i <= array.length; i++){
     array.unshift(element)
@@ -153,7 +153,7 @@ function addElementToFrontOfArray(array, element) {
  *  removeElementFromFrontOfArray([ 10, 9, 8 ]);
  *  //> 10
  */
-function removeElementFromFrontOfArray() {}
+
 function removeElementFromFrontOfArray(array) {
   for (i =0; i <= array.length; i++){
     element + array.shift()
@@ -174,7 +174,7 @@ function removeElementFromFrontOfArray(array) {
  *  getMiddleElement([ 10, null, "30" ]);
  *  //> null
  */
-function getMiddleElement() {}
+
 function getMiddleElement(array) {
   return array[Math.floor(array.length/2)];
 }

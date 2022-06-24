@@ -33,10 +33,10 @@ function alwaysTrue(number){
  *  greet("Ian");
  *  //> "Hello, Ian."
  */
-function greet() {}
+
 function greet(name) {
 
- name.UpperCase([0]);
+ name.toUpperCase([0]);
  return(`Hello, ${name}.`); 
 }
 /**
@@ -52,7 +52,7 @@ function greet(name) {
  *  add(10, 20);
  *  //> 30
  */
-function add() {}
+
 function add(a,b, result ){
   result = a + b;
   return result;
@@ -71,7 +71,7 @@ function add(a,b, result ){
  *  multiply(2, 5);
  *  //> 10
  */
-function multiply() {}
+
 function multiply (a, b, result){
   result = a * b;
   return result;
@@ -118,7 +118,7 @@ function average(a,b, result){
  *  averageThree(10, 11, 19);
  *  //> 10 // 10 + 11 + 19 = 30; 30 / 3 = 10;
  */
-function averageThree() {}
+
 function averageThree(a,b,c, result){
   result = (a + b + c);
   result = result / 3
@@ -142,7 +142,7 @@ function averageThree(a,b,c, result){
  *  compareTypes("left", 10);
  *  //> false
  */
-function compareTypes() {}
+
 function compareTypes(a,b){
   if (typeof a === typeof b){
     return true
@@ -167,7 +167,7 @@ function compareTypes(a,b){
  *  flipSign(50);
  *  //> -50
  */
-function flipSign() {}
+
 function flipSign(a){
   result = -(a);
   return result;
@@ -190,7 +190,7 @@ function flipSign(a){
  *  joinStringsWithSpaces("left", "right", "up", "down", "away");
  *  //> "left right up down away"
  */
-function joinStringsWithSpaces() {}
+
 function joinStringsWithSpaces(a, b, c, d, e) {
   return(`${a}`+" "+ `${b}`+" "+ `${c}`+" "+`${d}`+" "+`${e}`)
 }
@@ -209,7 +209,7 @@ function joinStringsWithSpaces(a, b, c, d, e) {
  *  getFirstAndLastCharacter("upwards");
  *  //> "us"
  */
-function getFirstAndLastCharacter() {}
+
 function getFirstAndLastCharacter(a){
   for (i = 0; i <= a.length-1; 1++){
     firstChar = a[0];
