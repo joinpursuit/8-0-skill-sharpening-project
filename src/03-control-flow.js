@@ -76,16 +76,8 @@ function findLargerOrTie(a, b) {
  */
 function positiveNegativeOrZero(a) {
 
-  if(a===a){
-    return 'Positive'
-  }
-  else if(a === -a){
-    return 'Negative'
-  }
-  
-  else if(a === 0){
-    return 'Zero'
-  }
+ 
+  return a > 0 ? 'Positive' : a < 0 ? 'Negative' : 'Zero'
 }
 
 /**
@@ -107,7 +99,13 @@ function positiveNegativeOrZero(a) {
  *  aroundTheWorldGreeting();
  *  //> "Hello World"
  */
-function aroundTheWorldGreeting(language) {}
+function aroundTheWorldGreeting(language) {
+
+
+
+
+  
+}
 
 /**
  * aroundTheWorldGreetingWithSwitch()
