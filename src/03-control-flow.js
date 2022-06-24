@@ -142,13 +142,13 @@ return 'Hallo Welt' ;
  */
 function aroundTheWorldGreetingWithSwitch(language) {
   switch (language) {
-    case 'spanish' : console.log('Hola Mundo')
+    case 'spanish' : return 'Hola Mundo'
     break ;
-    case 'german' : console.log('Hallo Welt')
+    case 'german' : return 'Hallo Welt'
     break ;
-    case 'english' : console.log('Hello World')
+    case 'english' : return 'Hello World'
     break ;
-    default : console.log ('Hello World')
+    default : return 'Hello World'
     break ;
   }
 }
@@ -219,7 +219,11 @@ function animalCounts(animal, numberOfAnimals) {
  *  evenOrOdd(48);
  *  //> "Even"
  */
-function evenOrOdd(a) {}
+function evenOrOdd(a) {
+  if (a%2===0) {
+    return 'Even'
+  } else return 'Odd'
+}
 
 /**
  * evenOrOddWithTernary()
@@ -235,7 +239,9 @@ function evenOrOdd(a) {}
  *  evenOrOddWithTernary(8);
  *  //> "Even"
  */
-function evenOrOddWithTernary(a) {}
+function evenOrOddWithTernary(a) {
+  return (a%2 === 0 ? 'Even' : 'Odd')
+}
 
 // Do not change any code below this line.
 module.exports = {
