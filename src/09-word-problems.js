@@ -19,8 +19,22 @@
  *  applyDiscount(1000, 9, true);
  *  //> 700
  */
-function applyDiscount(priceInCents, age, hasMembership) {}
+function applyDiscount(priceInCents, age, hasMembership) {
+  let ageDiscount = .10
+  let memberDiscount = .20
+  let cost = priceInCents
 
+  if(age <=10 || age >= 65){
+    if(hasMembership){
+      return cost * (1 - (ageDiscount + memberDiscount))
+    }else{
+      return cost * (1 - ageDiscount)
+    }
+  }if(hasMembership){
+    return cost * (1 - memberDiscount)
+  }
+  return cost
+  }
 /**
  * getCartTotal()
  * ---------------------
@@ -40,7 +54,15 @@ function applyDiscount(priceInCents, age, hasMembership) {}
     getCartTotal(cart);
  *  //> "$30.00"
  */
-function getCartTotal(products) {}
+function getCartTotal(products) {
+  let total = 0
+  for(i = 0; i < products.length; i++){
+  let cost = products[i].priceInCents
+  let items = products[i].quantity
+   total += cost * items
+  }
+  return `$${(total/100).toFixed(2)}`
+}
 
 /**
  * compareLocations()
@@ -80,7 +102,34 @@ function getCartTotal(products) {}
     compareLocations(address1, address2);
     //> "Same city."
  */
-function compareLocations(address1, address2) {}
+function compareLocations(address1, address2) {
+  let relationship =  "Addresses are not near each other."
+  if(address1.street === address2.street && address1.city === address2.city && address1.state === address2.state && address1.zip === address2.zip){
+    return relationship = "Same building."
+  }if(address1.city === address2.city && address1.state === address2.state && address1.zip === address2.zip){
+    return relationship =  "Same city."
+  } if (address1.state === address2.state){
+   return  relationship = "Same state."
+  }
+  return relationship
+ 
+  // Passing Code:
+  
+  //   let relationship =  "Addresses are not near each other."
+  
+  //    if (address1.state === address2.state) {
+  //     relationship = "Same state."
+  //     if (address1.city === address2.city) {
+  //       relationship = "Same city."
+  //       if (address1.street === address2.street) {
+  //         relationship = "Same building."
+  //         console.log(address1,address2)
+  //       }
+  //     }
+  //   }
+  //   return relationship
+}
+
 
 /**
  * gradeAssignments()
@@ -127,8 +176,21 @@ function compareLocations(address1, address2) {}
     //>   },
     //> ];
  */
-function gradeAssignments(assignments) {}
-
+function gradeAssignments(assignments) {
+  let grades = assignments
+ 
+  for(i = 0; i < grades.length; i++){
+    if (grades[i].kind === "PASS-FAIL"){
+      grades[i].status = grades[i].score.received === grades[i].score.max ? "PASSED" : "FAILED"
+    }else if (grades[i].kind === "PERCENTAGE"){
+      let percentage = grades[i].score.received / grades[i].score.max
+      grades[i].status = percentage >= .8 ? `PASSED: ${(percentage * 100).toFixed(1)}%` : `FAILED: ${(percentage * 100).toFixed(1)}%`
+    }else if (grades[i].kind !== "PASS-FAIL" && grades[i].kind !== "PERCENTAGE"){
+      grades[i].status = `SCORE: ${grades[i].score.received}/${grades[i].score.max}`
+    }
+  }
+  return grades;
+}
 /**
  * createLineOrder()
  * ---------------------
@@ -152,7 +214,22 @@ function gradeAssignments(assignments) {}
     createLineOrder(people);
     //> [ "Ray Anderson", "America Marsh", "Wade Carson", "Patience Patel" ]
  */
-function createLineOrder(people) {}
+function createLineOrder(people) {
+  let person = []
+  let member = []
+  let nonMember = []
+  for(i =0; i < people.length; i++){
+    person = people[i]
+    if(person.hasMembership){
+      member.push(person.name)
+    }else{
+      nonMember.push(person.name)
+    }
+  }
+  member.push(...nonMember)
+  //I used a spread here because I just don't want do extra coding and need everyone on the list
+  return member
+}
 
 module.exports = {
   applyDiscount,
