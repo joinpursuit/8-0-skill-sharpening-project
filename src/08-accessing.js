@@ -191,7 +191,34 @@ function getFullAddress(person) {
     };
  */
 function getFlatObject(person) {
-  return person
+  // let flatObject = {}
+  // let objectKeys = [...Object.keys(person.address)]
+  // let objectValues = [...Object.values(person.address)]
+  // let objectNamesKeys = [...Object.keys(person.names)]
+  // let objectNamesValues = [...Object.values(person.names)]
+  // for (let i = 0; i < objectKeys.length; i++) {
+  //   flatObject[objectKeys[i]] = objectValues[i] 
+    
+  // }
+  // for (let i = 0; i < objectNamesKeys.length; i++) {
+  //   flatObject[objectNamesKeys[i]] = objectNamesValues[i] 
+    
+  // }
+  // flatObject["numbers"] = person.numbers
+  // return flatObject
+  // I tried to make the code dynamic but it did not work.
+  let flatObject = {};
+  flatObject.first = person.names.first;
+  flatObject.middle = person.names.middle;
+  flatObject.last = person.names.last;
+  flatObject.street = person.address.street;
+  flatObject.unit = person.address.unit;
+  flatObject.city = person.address.city;
+  flatObject.state = person.address.state;
+  flatObject.zip = person.address.zip;
+  flatObject.numbers = person.numbers;
+  return flatObject;
+  // I also hard coded it and it still does not work so I am very confused. For some reason my numbers array always returns as empty.
 }
 
 // Do not change the code below.
