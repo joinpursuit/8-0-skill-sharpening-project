@@ -149,8 +149,7 @@ function gradeAssignments(assignments) {
   assignments.forEach(assignment => {
     switch (assignment.kind){
       case "PASS-FAIL":
-        let status = assignment.score.received === assignment .score.max ? "PASSED" : "FAILED";
-        assignment.status = status;
+        assignment.status = assignment.score.received === assignment .score.max ? "PASSED" : "FAILED";
         break;
       case "PERCENTAGE":
         let percentage = (assignment.score.received / assignment.score.max) * 100;
