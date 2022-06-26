@@ -27,7 +27,7 @@ function getLengthOfString(str){
  */
 
 function convertToNumber(val) {
-   number(val);
+   let number= (val);
    return number (val);
 }
 /**

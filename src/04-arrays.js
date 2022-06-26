@@ -81,8 +81,8 @@ function getFirstElementOfArray(array) {
  */
 
 function getLastElementOfArray(array) {
-  for(i =0; i <= array.length; i++){
-    last = array[array.length];
+  for(i =0; i <= array.length-1; i++){
+    last = array[array.length-1];
     return last;
   }
 }
@@ -156,7 +156,7 @@ function addElementToFrontOfArray(array, element) {
 
 function removeElementFromFrontOfArray(array) {
   for (i =0; i <= array.length; i++){
-    element + array.shift()
+    element = array.shift();
     return element;
   }
 }
