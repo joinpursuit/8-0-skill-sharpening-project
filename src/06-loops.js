@@ -33,16 +33,16 @@ function rangeSum(min, max) {
  *  //> [ 15, 13, 11 ]
  */
 function rangeOdd(min, max) {
-  oddNum = [];
+  odd = [];
   let num;
   while(min<= max) {
-    if(num =(oddNum % 2 ===1)){
-      oddNum.push(num)
+    if(num =(odd % 2 ===1)){
+      odd.push(num)
     
     min++;
   }
 }
-  return oddNum;
+  return odd;
 }
 
 /**

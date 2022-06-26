@@ -197,7 +197,7 @@ else return false;
 
 function isFalsy(val) {
   if(val){
-    return true;
+    return false;
   }
   else if (!val){
     return true;
