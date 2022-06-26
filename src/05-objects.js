@@ -47,10 +47,9 @@ const newObj = {}
  */
 function createObjectWithKey(key) {
 
-  let obj = {oldKey: 'thisKey'}
-  obj.oldKey = key
-
-    return obj
+  const obj = {}
+  obj[key] = 'a key'
+  return obj
 }
 
 /**
@@ -65,7 +64,13 @@ function createObjectWithKey(key) {
  *  createObjectWithKeyValuePair("left", "right");
  *  //> { left: "right" }
  */
-function createObjectWithKeyValuePair(key, val) {}
+function createObjectWithKeyValuePair(key, val) {
+
+  const obj = {}
+  obj[key] = val
+
+  return obj
+}
 
 /**
  * getNameFromObject()
@@ -80,9 +85,9 @@ function createObjectWithKeyValuePair(key, val) {}
  */
 function getNameFromObject(object) {
 
-  let name = object.name
+  
 
-    return name
+    return object.name
 }
 
 /**
@@ -138,11 +143,8 @@ const obj = {thisKey: 'this'}
  */
 function addKeyToObject(object, key) {
 
-  const obj = {thisKey: 'value'}
-
-   obj['thisKey'] = key
-
-   return obj
+object[key] = 'Unusaul Key'
+  return object
 }
 
 /**
@@ -160,7 +162,7 @@ function addKeyToObject(object, key) {
  */
 function addKeyValuePairToObject(object, key, val) {
 
-  object.key = val
+  object[key]= val
   return object
 }
 
@@ -178,7 +180,7 @@ function addKeyValuePairToObject(object, key, val) {
  */
 function deleteKeyFromObject(object, key) {
 
-    delete object.key
+    delete object[key]
     return object
 }
 
