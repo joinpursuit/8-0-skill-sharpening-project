@@ -9,7 +9,13 @@
  *  createEmptyObject()
  *  //> {}
  */
-function createEmptyObject() {}
+function createEmptyObject() {
+  let person = {
+    firstName : "name1",
+    lastName : "name2",
+    age  28
+  };
+};
 
 /**
  * createObjectWithValue()
@@ -22,7 +28,11 @@ function createEmptyObject() {}
  *  createObjectWithValue(19);
  *  //> { whateverKey: 19 }
  */
-function createObjectWithValue(val) {}
+function createObjectWithValue(val) {
+  const val = {
+    object
+  } return object
+}
 
 /**
  * createObjectWithKey()
@@ -35,7 +45,10 @@ function createObjectWithValue(val) {}
  *  createObjectWithKey("left");
  *  //> { left: false }
  */
-function createObjectWithKey(key) {}
+function createObjectWithKey(key) {
+  let newObj = {key: start}
+  return newObj
+}
 
 /**
  * createObjectWithKeyValuePair()
@@ -49,7 +62,10 @@ function createObjectWithKey(key) {}
  *  createObjectWithKeyValuePair("left", "right");
  *  //> { left: "right" }
  */
-function createObjectWithKeyValuePair(key, val) {}
+function createObjectWithKeyValuePair(key, val) {
+  let newObj = {start}
+  return newObj
+}
 
 /**
  * getNameFromObject()
@@ -62,7 +78,9 @@ function createObjectWithKeyValuePair(key, val) {}
  *  getNameFromObject({ name: "Jay" });
  *  //> "Jay"
  */
-function getNameFromObject(object) {}
+function getNameFromObject(object) {
+  
+}
 
 /**
  * getAgeFromObject()

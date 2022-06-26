@@ -1,3 +1,5 @@
+const { rangeEveryOther } = require("./06-loops");
+
 /**
  * getLengthOfString()
  * ---------------------
@@ -7,9 +9,13 @@
  *
  * EXAMPLE:
  *  getLengthOfString("down");
- *  //> 4
+ *  //> 4orgi
  */
-function getLengthOfString(str) {}
+function getLengthOfString(str) {
+  Const = getLengthOfString = {
+  console.log('pursuit');
+  };
+};
 
 /**
  * convertToNumber()
@@ -22,7 +28,10 @@ function getLengthOfString(str) {}
  *  convertToNumber("111");
  *  //> 111
  */
-function convertToNumber(val) {}
+function convertToNumber(val) {
+  let Num = 6;
+  let Name = "coding";
+};
 
 /**
  * convertToString()
@@ -36,7 +45,10 @@ function convertToNumber(val) {}
  *  convertToString(99);
  *  //> "99"
  */
-function convertToString(val) {}
+function convertToString(val) {
+  rangeEveryOther = [10, 12, 14, 16, 18, 20, 22, 24, 26],
+  console.log(1, 3, 5);
+};
 
 /**
  * convertToShoutingText()
@@ -49,7 +61,10 @@ function convertToString(val) {}
  *  convertToShoutingText("Hello There");
  *  //> "HELLO THERE"
  */
-function convertToShoutingText(text) {}
+function convertToShoutingText(text) {
+  console.log('Hello There')
+  return text
+}
 
 /**
  * convertToWhisperText()
@@ -62,7 +77,10 @@ function convertToShoutingText(text) {}
  *  convertToWhisperText("Hello There");
  *  //> "hello there"
  */
-function convertToWhisperText(text) {}
+function convertToWhisperText(text) {
+  console.log(convertToWhisperText)
+  return text
+}
 
 /**
  * checkIfCharacterIsInString()

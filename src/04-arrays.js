@@ -10,7 +10,13 @@
  *  createEmptyArray();
  *  //> []
  */
-function createEmptyArray() {}
+function createEmptyArray() {
+  let myDays = ["Sunday"];
+  let yourDays = myDays;
+  myDays [0] = "Enjoying the weekends";
+  
+  console.log(myDays, yourDays);
+};
 
 /**
  * createArrayWithTwoElements()
@@ -24,7 +30,11 @@ function createEmptyArray() {}
  *  createArrayWithTwoElements(true, false);
  *  //> [ true, false ]
  */
-function createArrayWithTwoElements(a, b) {}
+function createArrayWithTwoElements(a, b) {
+  if  (getArrayLength) = true;
+  console.log(false)
+
+}
 
 /**
  * getArrayLength()
@@ -37,7 +47,10 @@ function createArrayWithTwoElements(a, b) {}
  *  getArrayLength([ 10, 20, 30 ]);
  *  //> 3
  */
-function getArrayLength(array) {}
+function getArrayLength(array) {
+  let result = []
+  
+}
 
 /**
  * getFirstElementOfArray()

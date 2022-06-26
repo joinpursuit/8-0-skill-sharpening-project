@@ -9,7 +9,11 @@
  *  alwaysTrue();
  *  //> true
  */
-function alwaysTrue() {}
+function alwaysTrue(True) {
+    return true;
+  } if(true) {
+    return false;
+ };
 
 /**
  * greet()
@@ -24,7 +28,10 @@ function alwaysTrue() {}
  *  greet("Ian");
  *  //> "Hello, Ian."
  */
-function greet() {}
+function greet(name) {
+  greet( "Reed", "Hello");
+
+};
 
 /**
  * add()
@@ -39,7 +46,10 @@ function greet() {}
  *  add(10, 20);
  *  //> 30
  */
-function add() {}
+function add(num1, num2) {
+  let num1 = 10;
+  const num2 = 20;
+}
 
 /**
  * multiply()
@@ -54,7 +64,9 @@ function add() {}
  *  multiply(2, 5);
  *  //> 10
  */
-function multiply() {}
+function multiply() {
+  console.log(10 * 20);
+}
 
 /**
  * average()
@@ -74,7 +86,11 @@ function multiply() {}
  *  average(10, 6);
  *  //> 8 // 10 + 6 = 16; 16/2 = 8;
  */
-function average() {}
+function average() {
+  if (number) {
+    return average
+  }
+}
 
 /**
  * averageThree()
@@ -93,7 +109,11 @@ function average() {}
  *  averageThree(10, 11, 19);
  *  //> 10 // 10 + 11 + 19 = 30; 30 / 3 = 10;
  */
-function averageThree() {}
+function averageThree() {
+  if (number) 
+  console.log(average)
+  return number
+}
 
 /**
  * compareTypes()
@@ -112,7 +132,12 @@ function averageThree() {}
  *  compareTypes("left", 10);
  *  //> false
  */
-function compareTypes() {}
+function compareTypes() {
+  if (left > 0 && right > 0) {
+    return left * right;
+  }
+  return 0;
+}
 
 /**
  * flipSign()
@@ -131,7 +156,9 @@ function compareTypes() {}
  *  flipSign(50);
  *  //> -50
  */
-function flipSign() {}
+function flipSign() {
+  flipSign.pop = 'paper';
+} return flipSign
 
 /**
  * joinStringsWithSpaces()
