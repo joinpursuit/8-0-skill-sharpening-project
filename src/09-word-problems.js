@@ -18,8 +18,42 @@
  *
  *  applyDiscount(1000, 9, true);
  *  //> 700
- */
-function applyDiscount(priceInCents, age, hasMembership) {}
+ */ 
+// 
+function applyDiscount(priceInCents, age, hasMembership) {
+    let ticketPrice
+    
+     if( (age <= 10) && (hasMembership === true) ) {
+      ticketPrice = priceInCents - (priceInCents * .3)
+     } 
+     else
+     if( (age <= 10) && (hasMembership === false) ) {
+      ticketPrice = priceInCents - (priceInCents * .1)
+     // console.log(ticketPrice)
+     }
+     else
+     if((age >= 65) && (hasMembership === true) ) {
+     ticketPrice = priceInCents - (priceInCents * .3)
+     //console.log(ticketPrice)
+     }
+     else
+     if((age >= 65) && (hasMembership === false) ) {
+     ticketPrice = priceInCents - (priceInCents * .1)
+     //console.log(ticketPrice)
+     }
+     else
+     if((age > 10) && (age < 65)  && (hasMembership === true) ) {
+     ticketPrice = priceInCents - (priceInCents * .2)
+    // console.log(ticketPrice)
+     } 
+     
+     else {
+      ticketPrice = priceInCents
+     }
+      return ticketPrice
+     
+   }
+  
 
 /**
  * getCartTotal()
@@ -40,7 +74,16 @@ function applyDiscount(priceInCents, age, hasMembership) {}
     getCartTotal(cart);
  *  //> "$30.00"
  */
-function getCartTotal(products) {}
+function getCartTotal(products) {
+  let total = 0
+    //multiplies the price * quantity of each product in each object (the for of loop - selects one object at a time to access the data and do the calclation. Since the objects are inside of an array, the for of loop is used (rather than the for in loop, which is used for looping through objects))
+    for(let product of products){
+     total = total + (product.priceInCents * product.quantity)
+    }
+    //formats total price to 2 decimals
+    total = total/100
+    return `$${total.toFixed(2)}`
+  } 
 
 /**
  * compareLocations()
@@ -80,8 +123,58 @@ function getCartTotal(products) {}
     compareLocations(address1, address2);
     //> "Same city."
  */
-function compareLocations(address1, address2) {}
+function compareLocations(address1, address2) {
 
+  if ((address1.street) === (address2.street)
+  && (address1.city) === (address2.city)
+  && (address1.state) ===(address2.state)
+  && (address1.zip) === (address2.zip)) {
+  //console.log("Same building.")
+  return "Same building."
+  }
+else 
+  if ((address1.street) !== (address2.street)
+  && (address1.city) === (address2.city)
+  && (address1.state) ===(address2.state)
+  && (address1.zip) === (address2.zip)) {
+  //console.log("Same city.")
+  return "Same city."
+  }
+
+  if ((address1.street) !== (address2.street)
+  && (address1.city) !== (address2.city)
+  && (address1.state) === (address2.state)
+  && (address1.zip) !== (address2.zip)) {
+  //console.log("Same state.")
+  return "Same state."
+  }
+
+  if ((address1.street) !== (address2.street)
+  && (address1.city) !== (address2.city)
+  && (address1.state) !== (address2.state)
+  && (address1.zip) !== (address2.zip)) {
+ // console.log("Addresses are not near each other.")
+  return "Addresses are not near each other."
+  }
+
+  if ((address1.city) !== (address2.city)
+  && ((address1.street) === (address2.street) || (address1.street) !== (address2.street))
+  && ((address1.state) === (address2.state) || (address1.state) !== (address2.state))
+  && ((address1.zip) === (address2.zip) || (address1.zip) !== (address2.zip))){
+  //console.log("The addresses are different.")
+   return "Addresses are not near each other."
+  }
+
+ if  ((address1.street) === (address2.street)
+  && (address1.city) === (address2.city)
+  && (address1.zip) === (address2.zip)
+  && (address1.state) !== (address2.state)) {
+  //console.log("The addresses are different.")
+  return "Addresses are not near each other."
+  }
+
+
+}
 /**
  * gradeAssignments()
  * ---------------------
@@ -127,7 +220,48 @@ function compareLocations(address1, address2) {}
     //>   },
     //> ];
  */
-function gradeAssignments(assignments) {}
+function gradeAssignments(assignments) {
+  let finalScore
+  let formattedScore 
+  //let newArray = assignments
+  //newArray.status = "test"
+
+  //console.log(assignments)
+  
+  for (let grade of assignments){
+    finalScore =( (  (grade.score.received) / (grade.score.max) *100))
+    formattedScore = finalScore.toFixed(1)
+  
+    if((grade.kind === "PASS-FAIL") 
+        && (grade.score.received === grade.score.max) ){
+        grade.status = "PASSED"
+      } 
+   
+    if((grade.kind === "PASS-FAIL") 
+      && (grade.score.received !== grade.score.max) ){
+      grade.status = "FAILED"
+    }
+
+    if( (grade.kind === 'PERCENTAGE')
+        && (formattedScore >= 80)   ){
+        grade.status = "PASSED: " + formattedScore + "%"
+      }
+        
+    if( (grade.kind === 'PERCENTAGE') 
+        && (formattedScore < 80)      ) {
+        grade.status = "FAILED: " + formattedScore + "%"
+      }
+
+    if( (grade.kind !== "PASS-FAIL") &&  (grade.kind !== "PERCENTAGE") ) {
+      grade.status = "SCORE: " + grade.score.received + "/" + grade.score.max
+    }
+  } 
+  return assignments
+}
+
+
+
+
 
 /**
  * createLineOrder()
@@ -152,7 +286,21 @@ function gradeAssignments(assignments) {}
     createLineOrder(people);
     //> [ "Ray Anderson", "America Marsh", "Wade Carson", "Patience Patel" ]
  */
-function createLineOrder(people) {}
+
+ //this works perfectly in replit - don't know why it doesn't in npm test   
+function createLineOrder(people) {
+  alist = []
+  blist = []
+
+  for (let person of people){
+      if(person.hasMembership === true){
+        alist.push(person.name)
+      } else {
+        blist.push(person.name)
+      }
+  }  
+  return alist.concat(blist)
+}  
 
 module.exports = {
   applyDiscount,
