@@ -38,9 +38,10 @@ function rangeOdd(min, max) {
   while(min<= max) {
     if(num =(oddNum % 2 ===1)){
       oddNum.push(num)
-    }
+    
     min++;
   }
+}
   return oddNum;
 }
 

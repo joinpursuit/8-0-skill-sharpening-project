@@ -204,22 +204,22 @@ function getFullAddress(person) {
     };
  */
 function getFlatObject(person) {
-  // let person2 = {};
-  // for (i=0; i <= person.length; i++){
-    // if (person.key !== person2.key) {
-      //person2[i]=== person[i]
-      // }
-      //}
+ //  let person2 = {};
+ //  for (i=0; i <= person.length; i++){
+ //    if (person.key !== person2.key) {
+ //   person2[i]=== person[i]
+  //     }
+  //    }
 //return person2;
-    //}
+  //  }
   let person2 = {};
   for (i =0; i <= person.length; i++){
     person2[i] === person[i];
-    person2.flats(15);
+    person2.flats(15);                                                      
   }
   return getFlatObject;
-}
 
+}  
 
 // Do not change the code below.
 module.exports = {
