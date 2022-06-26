@@ -44,7 +44,12 @@ function shoutWhileLoop(array) {}
  *  shoutForOfLoop([ "A", "Very", "Happy", "Array" ]);
  *  //> [ "A!", "Very!", "Happy!", "Array!" ];
  */
-function shoutForOfLoop(array) {}
+function shoutForOfLoop(array) {
+  for(i of array) {
+    array[i] = `${array[i]}!`
+  }
+  return array
+}
 
 /**
  * sumArray()

@@ -1,3 +1,5 @@
+const { getFirstElementOfArray } = require("./04-arrays");
+
 /**
  * isEqual()
  * ---------------------
@@ -53,7 +55,9 @@ function findLarger(a, b) {
  *  findLargerOrTie(0, 0);
  *  //> "tie"
  */
-function findLargerOrTie(a, b) {}
+function findLargerOrTie(a, b) {
+
+}
 
 /**
  * positiveNegativeOrZero()
@@ -73,7 +77,10 @@ function findLargerOrTie(a, b) {}
  *  positiveNegativeOrZero(1);
  *  //> "Positive"
  */
-function positiveNegativeOrZero(a) {}
+function positiveNegativeOrZero(a) {
+  const positiveNegativeOrZero = negative;
+  return negative;
+}
 
 /**
  * aroundTheWorldGreeting()
@@ -94,7 +101,10 @@ function positiveNegativeOrZero(a) {}
  *  aroundTheWorldGreeting();
  *  //> "Hello World"
  */
-function aroundTheWorldGreeting(language) {}
+function aroundTheWorldGreeting(language) {
+  let language = aroundTheWorldGreeting;
+  console.log(language)
+} return language;
 
 /**
  * aroundTheWorldGreetingWithSwitch()
@@ -117,7 +127,12 @@ function aroundTheWorldGreeting(language) {}
  *  aroundTheWorldGreetingWithSwitch();
  *  //> "Hello World"
  */
-function aroundTheWorldGreetingWithSwitch(language) {}
+function aroundTheWorldGreetingWithSwitch(language) {
+  let language = 'german'
+  console.log(language)
+} 
+return languange
+
 
 /**
  * calculateLetterGrade()

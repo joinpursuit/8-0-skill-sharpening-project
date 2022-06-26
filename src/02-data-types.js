@@ -61,7 +61,10 @@ function convertToString(val) {
  *  convertToShoutingText("Hello There");
  *  //> "HELLO THERE"
  */
-function convertToShoutingText(text) {}
+function convertToShoutingText(text) {
+  console.log('Hello There')
+  return text
+}
 
 /**
  * convertToWhisperText()
@@ -74,7 +77,10 @@ function convertToShoutingText(text) {}
  *  convertToWhisperText("Hello There");
  *  //> "hello there"
  */
-function convertToWhisperText(text) {}
+function convertToWhisperText(text) {
+  console.log(convertToWhisperText)
+  return text
+}
 
 /**
  * checkIfCharacterIsInString()
