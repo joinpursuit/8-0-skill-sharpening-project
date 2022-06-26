@@ -219,9 +219,9 @@ function getFullAddress(person) {
  */
 function getFlatObject(person) {
 
-  // const flatten=(person) => Object.values(person).flat();
-
-  // return flatten(person)
+const obj = {...person.names, ...person.address}
+obj.numbers =  person.numbers
+return obj
 
 }
 
