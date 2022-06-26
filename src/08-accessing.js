@@ -32,7 +32,9 @@
  *  getFirstName(person);
  *  //> "Rachel"
  */
-function getFirstName(person) {}
+function getFirstName(person) {
+  return person.names.first;
+}
 
 /**
  * getLastName()
@@ -45,7 +47,9 @@ function getFirstName(person) {}
  *  getLastName(person);
  *  //> "Rojas"
  */
-function getLastName(person) {}
+function getLastName(person) {
+  return person.names.last;
+}
 
 /**
  * getAddressStreet()
@@ -58,7 +62,9 @@ function getLastName(person) {}
  *  getAddressStreet(person);
  *  //> "697 Pine Drive"
  */
-function getAddressStreet(person) {}
+function getAddressStreet(person) {
+  return person.address.street;
+}
 
 /**
  * getCountOfPhoneNumbers()
@@ -71,7 +77,9 @@ function getAddressStreet(person) {}
  *  getCountOfPhoneNumbers(person);
  *  //> 2
  */
-function getCountOfPhoneNumbers(person) {}
+function getCountOfPhoneNumbers(person) {
+  return person.numbers.length;
+}
 
 /**
  * getFirstPhoneNumber()
@@ -87,7 +95,9 @@ function getCountOfPhoneNumbers(person) {}
  *  getFirstPhoneNumber(person);
  *  //> 7185550921
  */
-function getFirstPhoneNumber(person) {}
+function getFirstPhoneNumber(person) {
+  return person.numbers[0];
+}
 
 /**
  * getLastPhoneNumber()
@@ -103,7 +113,9 @@ function getFirstPhoneNumber(person) {}
  *  getLastPhoneNumber(person);
  *  //> 7185558611
  */
-function getLastPhoneNumber(person) {}
+function getLastPhoneNumber(person) {
+  return person.numbers[person.numbers.length -1];
+}
 
 /**
  * getFullName()
@@ -116,7 +128,9 @@ function getLastPhoneNumber(person) {}
  *  getFullName(person);
  *  //> "Rachel Eleanor Rojas"
  */
-function getFullName(person) {}
+function getFullName(person) {
+  return `${getFirstName(person)} ${person.names.middle} ${getLastName(person)}`
+}
 
 /**
  * getCityAndState()
@@ -132,7 +146,9 @@ function getFullName(person) {}
  *  getCityAndState(person);
  *  //> "Staten Island, NY"
  */
-function getCityAndState(person) {}
+function getCityAndState(person) {
+  return `${person.address.city}, ${person.address.state}`;
+}
 
 /**
  * getFullAddress()
@@ -148,7 +164,9 @@ function getCityAndState(person) {}
  *  getFullAddress(person);
  *  //> "697 Pine Drive 2A, Staten Island, NY, 10306"
  */
-function getFullAddress(person) {}
+function getFullAddress(person) {
+  return `${person.address.street} ${person.address.unit}, ${getCityAndState(person)}, ${person.address.zip}`
+}
 
 /**
  * getFlatObject()
@@ -171,7 +189,106 @@ function getFullAddress(person) {}
       numbers: [7185550921, 7185558611],
     };
  */
-function getFlatObject(person) {}
+function getFlatObject(person) {
+let gloriousFlatObject = {};
+Object.keys(person).forEach(item => {
+   Array.isArray(person[item]) ? gloriousFlatObject[item] = person[item] : gloriousFlatObject = {...gloriousFlatObject, ...person[item]};
+});
+return gloriousFlatObject;
+}
+
+// below, a record of failure.     also, the reason why I'm reviewing the objects recording on the 26th.
+// let gloriousFlatObject = {};
+// let keys = Object.keys(person);
+
+// for (let item of keys){
+//   // console.log(person[item]);
+//    Array.isArray(person[item]) ? gloriousFlatObject[item] = person[item] : gloriousFlatObject = {...gloriousFlatObject, ...person[item]};
+// }
+// // console.log(gloriousFlatObject);
+// return gloriousFlatObject;
+// }
+
+
+//   let gloriousFlatObject = {
+//   };
+
+//   return gloriousFlatObject;
+// }
+//   let keys = Object.keys(person);
+//   let keys2 = [];
+//   let random;
+//   for (let item of keys){
+//     // console.log(person[item]);
+//     // gloriousFlatObject[item] = 
+//     // person[item].length > 1 ? gloriousFlatObject = {
+//     //   ...person[item]
+//     // } : gloriousFlatObject[item] = { ...person[item]};
+
+// //     // console.log(person[item]);
+//   keys2 = Object.keys(person[item]);
+//   for (let entry of keys2){
+//     random = person[item][entry];
+//     // console.log(person[item][entry]);
+//     // gloriousFlatObject[entry] = person[item][entry];
+//     random.length - 1 > 1 ? gloriousFlatObject[entry] = {
+//       ...random
+//   } : gloriousFlatObject[item] = {
+//     ...person[item]
+// };
+//   }
+//   console.log(gloriousFlatObject);
+// return gloriousFlatObject;
+// }
+
+
+// REEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEE
+//   // for (let item in person){
+//   //   console.log(item);
+//   //   // for (let entry of item){   TESTING:  double for loop just splits string!
+//   //   //   console.log(entry);
+//   //   // }
+//   //   console.log(Object.keys(item)); // returns array of numbers
+//   // }  RESTART.
+// // let gloriousFlatObject = {}; //sleep deprived.   working at 2AM.  not because of the date, but because I genuinely enjoy this, and I hate to lose
+// //   let keys = Object.keys(person); //Starting from the top.  new logic.
+// //   // console.log(keys); //Properly lists the major keys in person object.
+// // for (i = 0; i > keys.length; i++){
+// //   // console.log(person[keys[i]]); //progress.  is undefined when there isn't a lower path
+// // typeof(person[keys[i]]) === "undefined" ? gloriousFlatObject[keys[i]] = person[keys[i]] : gloriousFlatObject[keys] = person[keys];
+// // // if (gloriousFlatObject[keys] === 'undefined') {  Grrrrr...
+// // //   delete gloriousFlatObject[keys];
+// // // }
+// // console.log(gloriousFlatObject[keys]); //what the fresh hell is this?
+// // }
+// // return gloriousFlatObject;
+// // }
+// let gloriousFlatObject = {};
+// let keys = Object.keys(person);
+// let count = 0;
+// while (keys.length > count){
+//   // gloriousFlatObject = person[keys[count]];
+//   // console.log(person[keys[count]]);
+//   // count++;
+//   for (let item in person[keys[count]]){
+//     gloriousFlatObject[item] = person[keys[count]][item];
+//   }
+// }
+// // console.log(keys);
+// // for (let obj of keys){
+// //   // gloriousFlatObject[obj] = person[obj];
+// //   console.log(gloriousFlatObject)
+// //   if (person[obj].keys.length > 1){
+
+// //   }
+// //   for (let item in obj){
+// //     gloriousFlatObject[item] = person[item];
+// //   }
+// // }
+// // return gloriousFlatObject;
+// return gloriousFlatObject;
+// }
+
 
 // Do not change the code below.
 module.exports = {
