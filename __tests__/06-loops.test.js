@@ -11,7 +11,7 @@ const {
   cumulativeSum,
 } = require("../src/06-loops");
 
-describe("rangeSum", () => {
+describe ("rangeSum", () => {
   test("returns sum of all numbers between min and max inclusive", () => {
     expect(rangeSum(2, 3)).toBe(5);
     expect(rangeSum(10, 12)).toBe(33);
