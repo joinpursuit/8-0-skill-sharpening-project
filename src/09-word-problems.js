@@ -1,7 +1,9 @@
 /**
  * applyDiscount()
  * ---------------------
- * A local movie theater has a few different ticket discounts. If the attendee is 10 years old or younger, or 65 years old or older, they receive a 10% discount. If the attendee is viewing the movie with a member, they receive a 20% discount. If both situations apply, they receive a 30% discount.
+ * A local movie theater has a few different ticket discounts. If the attendee is 10 years old or younger, or 65 years old or older, they receive a 10% discount. 
+ * If the attendee is viewing the movie with a member, they receive a 20% discount. 
+ * If both situations apply, they receive a 30% discount.
  *
  * Write an algorithm that will determine the price of a ticket based on the `priceInCents` of the ticket, the `age` of the attendee, and the membership status (i.e. `hasMembership`).
  * @param {number} priceInCents - The price of the ticket, in cents.
@@ -19,7 +21,10 @@
  *  applyDiscount(1000, 9, true);
  *  //> 700
  */
-function applyDiscount(priceInCents, age, hasMembership) {}
+function applyDiscount(priceInCents, age, hasMembership) {
+  return priceInCents * (1 - (age >= 65 || age <= 10 ? 0.1 : 0) - (hasMembership ? 0.2 : 0))
+
+}
 
 /**
  * getCartTotal()
@@ -40,19 +45,30 @@ function applyDiscount(priceInCents, age, hasMembership) {}
     getCartTotal(cart);
  *  //> "$30.00"
  */
-function getCartTotal(products) {}
+function getCartTotal(products) {
+  let total = 0;
+  for(let i of products) {
+    total += i.priceInCents * i.quantity;
+  }
+  return `$${(total/100).toFixed(2)}`
+}
 
 /**
  * compareLocations()
  * ---------------------
- * A shipping company is looking to make its deliveries more efficient by comparing the destinations of multiple deliveries. If the locations are similar, the packages may be able to be bundled together.
+ * A shipping company is looking to make its deliveries more efficient by comparing the destinations of multiple deliveries. 
+ * 
+ * If the locations are similar, the packages may be able to be bundled together.
  * 
  * Write an algorithm that takes in two objects of similar shape, each object representing an address. Then, return a string that describes the relationship between those two addresses.
  * 
  * - If the street, city, state, and zip for both addresses are the same, return the string "Same building."
+ * 
  * - If the city, state, and zip are the same, return the string "Same city."
- * - If just the state is the same, return the string "Same state."
- * - If none of those matches occur, return the string "Addresses are not near each other."
+ * 
+ * -- If just the state is the same, return the string "Same state."
+ * 
+ * -- If none of those matches occur, return the string "Addresses are not near each other."
  * 
  * Keep in mind that an address could have the same street address or the same city but be in a different state. 
  * 
@@ -80,7 +96,20 @@ function getCartTotal(products) {}
     compareLocations(address1, address2);
     //> "Same city."
  */
-function compareLocations(address1, address2) {}
+function compareLocations(address1, address2) {
+  let answer = 'Addresses are not near each other.';
+
+  if (address1.state === address2.state) {
+    return `Same state.`;
+   if (address1.street === address2.street) {
+    return `Same building.`;
+  if (address1.city === address2.city) {
+    return `Same city.`;
+      }
+    }
+  }
+  return answer;
+}
 
 /**
  * gradeAssignments()
@@ -127,7 +156,9 @@ function compareLocations(address1, address2) {}
     //>   },
     //> ];
  */
-function gradeAssignments(assignments) {}
+function gradeAssignments(assignments) {
+
+}
 
 /**
  * createLineOrder()
@@ -152,7 +183,9 @@ function gradeAssignments(assignments) {}
     createLineOrder(people);
     //> [ "Ray Anderson", "America Marsh", "Wade Carson", "Patience Patel" ]
  */
-function createLineOrder(people) {}
+function createLineOrder(people) {
+
+}
 
 module.exports = {
   applyDiscount,
