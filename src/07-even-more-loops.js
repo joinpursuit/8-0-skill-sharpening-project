@@ -153,8 +153,8 @@ function findSmallest(array) {
 let newArray = []
 for (let i = 0; i < array.length; i++){
   newArray.push(array[i])
-  newArray.sort((a, b) => a - b)
 }
+newArray.sort((a, b) => a - b)
 return newArray[0]
 }
 
@@ -197,10 +197,9 @@ function findEqual(array, selected) {
       return true
     }
     }
-     if (array[i] !== selected){
       return false
   }
-}
+
 
 /**
  * removeDuplicates()

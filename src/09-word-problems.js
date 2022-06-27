@@ -20,7 +20,19 @@
  *  //> 700
  */
 function applyDiscount(priceInCents, age, hasMembership) {
-  
+  let youngSeniorDiscount = (10/100) * priceInCents
+  let memberDiscount = (20 /100) * priceInCents
+  let twoDiscounts = (30 /100) * priceInCents
+  if (hasMembership && age >= 65){
+      return priceInCents - youngSeniorDiscount - memberDiscount
+  }if (hasMembership && age <= 10){
+    return priceInCents - youngSeniorDiscount - memberDiscount
+  }if (age <= 10 || age >= 65 ){
+      return priceInCents - youngSeniorDiscount
+    } if (hasMembership) {
+      return priceInCents - memberDiscount
+    } 
+  return priceInCents
 }
 
 /**
@@ -42,8 +54,15 @@ function applyDiscount(priceInCents, age, hasMembership) {
     getCartTotal(cart);
  *  //> "$30.00"
  */
-function getCartTotal(products) {}
-
+function getCartTotal(products,) {
+  let totalCost = 0
+for (let i = 0; i < products.length; i++){
+   totalCost += products[i].priceInCents * products[i].quantity  
+  
+  //console.log(totalCost)
+}
+  return `$${(totalCost/100).toFixed(2)}`
+  }
 /**
  * compareLocations()
  * ---------------------
@@ -82,8 +101,31 @@ function getCartTotal(products) {}
     compareLocations(address1, address2);
     //> "Same city."
  */
-function compareLocations(address1, address2) {}
+function compareLocations(address1, address2) {
+  //STATE
+if (address1.city === address2.city && address1.street === address2.street && address1.state !== address2.state && address1.street === address2.street && address1.zip === address2.zip){
+  return `Addresses are not near each other.`
+}
+  //CITY
+// } 
+if (address1.street === address2.street && address1.state === address2.state){ 
+  if (address1.city !== address2.city){ //have no idea y this one won't run, as its an inverse of the above statement thats working, just bang op. in diff place. Evrn tried nested if to se if that halped.
+    return `Addresses are not near each other.`
+  }
+// } 
+  if (address1.state === address2.state && address1.street === address2.street){
+    return `Same building.`
+  }
+// if (address1.street == address2.street && address1.state === address1.state && address1.zip && address2.zip){
+//     return `Same building.`
 
+  } if (address1.city === address2.city){
+    return `Same city.`
+  } if (address1.state === address2.state){
+    return `Same state.`
+  }
+  return `Addresses are not near each other.`
+}
 /**
  * gradeAssignments()
  * ---------------------
@@ -129,8 +171,33 @@ function compareLocations(address1, address2) {}
     //>   },
     //> ];
  */
-function gradeAssignments(assignments) {}
-
+function gradeAssignments(assignments) {
+  
+  for (let i = 0; i < assignments.length; i++){
+    if(assignments[i].kind === "PASS-FAIL"){ 
+     if (assignments[i].score.received === assignments[i].score.max){
+      assignments[i].status = "PASSED";
+    } else {
+      assignments[i].status = "FAILED"}
+    }  
+     else if (assignments[i].kind === "PERCENTAGE"){ 
+      let scorePercent =  assignments[i].score.received / assignments[i].score.max * 100
+         if (scorePercent >= 80){
+       assignments[i].status = `PASSED: ${scorePercent.toFixed(1)}%`;
+     }else 
+     {
+      assignments[i].status = `FAILED: ${scorePercent.toFixed(1)}%`;
+    }   
+    } 
+    else { 
+    assignments[i].status = `SCORE: ${assignments[i].score.received}/${assignments[i].score.max}`
+    //console.log(assignments.status)
+      }   
+  
+  }
+return assignments
+}
+// if(assignments[i].kind !== "PERCENTAGE" || "PASS-FAIL")
 /**
  * createLineOrder()
  * ---------------------
@@ -154,8 +221,21 @@ function gradeAssignments(assignments) {}
     createLineOrder(people);
     //> [ "Ray Anderson", "America Marsh", "Wade Carson", "Patience Patel" ]
  */
-function createLineOrder(people) {}
-
+function createLineOrder(people) {
+  let memArray = []
+  let peopleArray =[]
+// console.log(people.hasMembership)
+  for (let i = 0; i < people.length; i++){
+    if (people[i].hasMembership){
+      memArray.push(people[i].name)
+    } else if (!people[i].hasMembership){
+       peopleArray.push(people[i].name)
+    }
+  // console.log(peopleArray)
+  }
+  
+  return memArray.concat(peopleArray)
+}
 module.exports = {
   applyDiscount,
   getCartTotal,
