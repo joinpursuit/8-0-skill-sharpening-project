@@ -32,7 +32,10 @@
  *  getFirstName(person);
  *  //> "Rachel"
  */
-function getFirstName(person) {}
+function getFirstName(person) {
+  const fullName = person.split(" ");
+  return [`first`].join(" ");
+}
 
 /**
  * getLastName()
