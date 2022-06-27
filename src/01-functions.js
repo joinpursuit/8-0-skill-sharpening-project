@@ -26,7 +26,9 @@ function alwaysTrue() {
  *  greet("Ian");
  *  //> "Hello, Ian."
  */
-function greet() {}
+function greet(name) {
+  return "Hello" + name;
+}
 
 /**
  * add()
