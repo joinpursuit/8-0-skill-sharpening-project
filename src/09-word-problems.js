@@ -19,7 +19,53 @@
  *  applyDiscount(1000, 9, true);
  *  //> 700
  */
-function applyDiscount(priceInCents, age, hasMembership) {}
+function applyDiscount(priceInCents, age, hasMembership) {
+  if ((age <= 10 || age >= 65) && (!hasMembership)){
+    let percent = 10
+    let discountAmount = priceInCents*(percent/100).toFixed(2) // 10 percent
+    let newPriceInCents = priceInCents - discountAmount
+    return newPriceInCents
+  } else if ((age <= 10 || age >= 65) && (hasMembership)){
+    let percent = 30
+    let discountAmount = priceInCents*(percent/100).toFixed(2) // 30 percent
+    let newPriceInCents = priceInCents - discountAmount
+    return newPriceInCents
+  } else if ((age > 10 || age < 65) && (hasMembership)){
+    let percent = 20
+    let discountAmount = priceInCents*(percent/100).toFixed(2) // 20 percent
+    let newPriceInCents = priceInCents - discountAmount
+    return newPriceInCents
+  } else {
+    return priceInCents
+  }
+
+  // if ((age <= 10 && age >= 65) && (hasMembership)){
+  //   percent = 30
+  //   let discountAmount = priceInCents*(percent/100).toFixed(2) // 20 percent
+  //   let newPriceInCents = priceInCents - discountAmount
+  //   return newPriceInCents
+  // }
+
+
+  // let discountAmount = null
+  // let newPriceInCents = null
+  // if (age < 10){
+  //     discountAmount = priceInCents*(10/100).toFixed(2) // 30 percent
+  //     newPriceInCents = priceInCents - discountAmount
+  // }
+  // // if ((age < 10 || age > 65) && hasMembership){
+  // //   //  need to convert the percentage discount to a decimal using toFixed
+  // //   discountAmount = priceInCents*(30/100).toFixed(2) // 30 percent
+  // //   newPriceInCents = priceInCents - discountAmount
+  // // } else if (age < 10 || age > 65){
+  // //   discountAmount = priceInCents*(10/100).toFixed(2) // 10 percent
+  // //   newPriceInCents = priceInCents - discountAmount
+  // // } else if (hasMembership && age < 65){
+  // //   if(age > 10){x
+  // //   discountAmount = priceInCents*(20/100).toFixed(2) // 30 percent
+  // //   newPriceInCents = priceInCents - discountAmount
+  // // }}
+}
 
 /**
  * getCartTotal()
@@ -40,7 +86,9 @@ function applyDiscount(priceInCents, age, hasMembership) {}
     getCartTotal(cart);
  *  //> "$30.00"
  */
-function getCartTotal(products) {}
+function getCartTotal(products) {
+  
+}
 
 /**
  * compareLocations()

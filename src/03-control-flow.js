@@ -14,7 +14,13 @@
  *  isEqual(10, "10");
  *  //> false
  */
-function isEqual(a, b) {}
+function isEqual(a, b) {
+  if (a === b){
+    return true 
+  } else {
+    return false 
+  }
+}
 
 /**
  * findLarger()
@@ -28,7 +34,15 @@ function isEqual(a, b) {}
  *  findLarger(19, 7);
  *  //> 19
  */
-function findLarger(a, b) {}
+function findLarger(a, b) {
+// let number1
+// let number2 ( wanted to be creative :D , was gonna use if)
+// checks the numbers with tenary operator
+let larger
+larger = ((a > b) ? a : b)
+return larger
+}
+
 
 /**
  * findLargerOrTie()
@@ -45,7 +59,14 @@ function findLarger(a, b) {}
  *  findLargerOrTie(0, 0);
  *  //> "tie"
  */
-function findLargerOrTie(a, b) {}
+function findLargerOrTie(a, b) {
+  let larger
+  larger = ((a > b) ? a : b)
+  if((a === b)){
+  return 'tie'
+  }
+  return larger
+}
 
 /**
  * positiveNegativeOrZero()
@@ -65,7 +86,39 @@ function findLargerOrTie(a, b) {}
  *  positiveNegativeOrZero(1);
  *  //> "Positive"
  */
-function positiveNegativeOrZero(a) {}
+function positiveNegativeOrZero(a) {
+  let number = null
+  if (a > 0){
+    number = 'Positive'
+    return number
+  } else if (a < 0){
+    number = 'Negative'
+    return number
+  } else {
+    number = 'Zero'
+    return number
+  }
+  //is postiive
+  // didnt work... asking on stacks overflow. and using what i know; if statement.
+  // let ourNumber = a
+  // switch (a) {
+  //   case (a > 0):
+  //     ourNumber = ('Positive') // different syntax then if; no kurlys. why ?
+  //     return ourNumber
+  //     case (a < 0):
+  //       ourNumber = ('Negative')
+  //       return ourNumber
+  //     // case (a === 0):
+  //     //   ourNumber = ('Zero')
+  //     //   break;
+  //     default:
+  //       ourNumber = ('Zero')
+  //   }
+  // return 'Postive'
+  // return 'Negative'
+  // return 'Zero'
+  return ourNumber
+}
 
 /**
  * aroundTheWorldGreeting()
@@ -86,7 +139,27 @@ function positiveNegativeOrZero(a) {}
  *  aroundTheWorldGreeting();
  *  //> "Hello World"
  */
-function aroundTheWorldGreeting(language) {}
+function aroundTheWorldGreeting(language) {
+  let defaultReturn = 'Hello World'
+  let germanReturn = 'Hallo Welt'
+  let spanishReturn = 'Hola Mundo'
+  let eng = null
+  eng = ('english')
+  let spa = null
+  spa = 'spanish'
+  let ger = null
+  ger = 'german'
+  if (language === eng){
+    return defaultReturn
+  } else if (language === spa){
+    return spanishReturn
+  } else if (language === ger){
+    return germanReturn
+  } else {
+    return defaultReturn
+  }
+
+}
 
 /**
  * aroundTheWorldGreetingWithSwitch()
@@ -109,7 +182,20 @@ function aroundTheWorldGreeting(language) {}
  *  aroundTheWorldGreetingWithSwitch();
  *  //> "Hello World"
  */
-function aroundTheWorldGreetingWithSwitch(language) {}
+function aroundTheWorldGreetingWithSwitch(language) {
+  let defaultReturn = null
+  let germanReturn = null
+  let spanishReturn = null
+   defaultReturn = 'Hello World'
+   germanReturn = 'Hallo Welt'
+   spanishReturn = 'Hola Mundo'
+  let eng = null
+  eng = 'english'
+  let spa = null
+  spa = 'spanish'
+  let ger = null
+  ger = 'german'
+}
 
 /**
  * calculateLetterGrade()
@@ -128,7 +214,24 @@ function aroundTheWorldGreetingWithSwitch(language) {}
  *  calculateLetterGrade(99);
  *  //> "A"
  */
-function calculateLetterGrade(grade) {}
+function calculateLetterGrade(grade) {
+  if (grade >= 90){
+    let letterGrade = 'A'
+    return letterGrade
+  } else if(grade >= 80){
+    let letterGrade = 'B'
+    return letterGrade
+  } else if (grade >= 70){
+    let letterGrade = 'C'
+    return letterGrade
+  } else if (grade >= 60){
+    let letterGrade = 'D'
+    return letterGrade
+  } else {
+    let letterGrade = 'F'
+    return letterGrade
+  }
+}
 
 /**
  * animalCounts()
@@ -146,7 +249,16 @@ function calculateLetterGrade(grade) {}
  *  animalCounts("pig", 1);
  *  //> "1 pig"
  */
-function animalCounts(animal, numberOfAnimals) {}
+function animalCounts(animal, numberOfAnimals) {
+  if (numberOfAnimals === 1){
+    output =`1 ${animal}`
+    return output
+  } else if (numberOfAnimals > 1){
+    output = `${numberOfAnimals} ${animal}s`
+    return output
+  }
+
+}
 
 /**
  * evenOrOdd()
@@ -163,7 +275,13 @@ function animalCounts(animal, numberOfAnimals) {}
  *  evenOrOdd(48);
  *  //> "Even"
  */
-function evenOrOdd(a) {}
+function evenOrOdd(a) {
+  if ((a % 2) === 0){ //even
+    return 'Even'
+  } else {
+    return 'Odd'
+  }
+}
 
 /**
  * evenOrOddWithTernary()
@@ -179,7 +297,9 @@ function evenOrOdd(a) {}
  *  evenOrOddWithTernary(8);
  *  //> "Even"
  */
-function evenOrOddWithTernary(a) {}
+function evenOrOddWithTernary(a) {
+  return (a % 2 === 0 ? 'Even' : 'Odd');
+}
 
 // Do not change any code below this line.
 module.exports = {
