@@ -19,7 +19,19 @@
  *  applyDiscount(1000, 9, true);
  *  //> 700
  */
-function applyDiscount(priceInCents, age, hasMembership) {}
+function applyDiscount(priceInCents, age, hasMembership) {
+  if(hasMembership === true)  { 
+    return priceInCents * 0.8
+  } if(age <= 10, age => 65) {
+      return priceInCents * 0.9
+    } if(age <=10, age => 65, hasMembership === true) {
+      return priceInCents * 0.7
+    } else if(hasMembership === false) {
+      return priceInCents
+    }
+  }
+// I struggled with the setup for this one quite a bit. As always I understant the logic but need to practice more execution. 
+
 
 /**
  * getCartTotal()
@@ -40,7 +52,9 @@ function applyDiscount(priceInCents, age, hasMembership) {}
     getCartTotal(cart);
  *  //> "$30.00"
  */
-function getCartTotal(products) {}
+function getCartTotal(products) {
+  const cart = {products}
+}
 
 /**
  * compareLocations()
