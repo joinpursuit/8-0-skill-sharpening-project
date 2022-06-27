@@ -13,17 +13,11 @@
  *  //> [ "A!", "Very!", "Happy!", "Array!" ];
  */
 function shoutForLoop(array) {
-  x=[]
-let mark=`!`
-  for(let i = 0; i <array.length; i++){
-   
-    mark= array[i]+mark
-    x.push(mark)
-  
-    
+  newArray = []
+  for (i = 0; i < array.length; i++){
+newArray.push([i]`!`)
   }
-  return x
-  
+  return newArray
 
 }
 
