@@ -40,7 +40,30 @@ function applyDiscount(priceInCents, age, hasMembership) {}
     getCartTotal(cart);
  *  //> "$30.00"
  */
-function getCartTotal(products) {}
+function getCartTotal(products) {
+
+  const products = [
+    { name: "T-Shirt", 
+     priceInCents: 1200, 
+     quantity: 1 },
+
+    { name: "Socks", 
+     priceInCents: 900,
+     quantity: 2 },
+  ];
+
+shirtInCents= (products[0].priceInCents / 100) * products[0].quantity
+
+socksInCents = (products[1].priceInCents / 100)* products[1].quantity
+
+
+x=shirtInCents + socksInCents 
+
+productsTotal= x.toFixed(2)
+
+return `$${productsTotal}`
+
+}
 
 /**
  * compareLocations()
@@ -80,7 +103,11 @@ function getCartTotal(products) {}
     compareLocations(address1, address2);
     //> "Same city."
  */
-function compareLocations(address1, address2) {}
+function compareLocations(address1, address2) {
+  if(address1 === address2){
+    return "Same building."
+  }
+}
 
 /**
  * gradeAssignments()
