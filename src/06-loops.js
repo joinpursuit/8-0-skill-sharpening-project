@@ -11,7 +11,15 @@
  *  //> 25
  *  (3 + 4 + 5 + 6 + 7 = 25)
  */
-function rangeSum(min, max) {}
+function rangeSum(min, max) {
+  return ((max-min)+1) * (min + max) / 2;
+//   found this answer @ https://stackoverflow.com/questions/30386084/sum-all-numbers-between-two-integers
+// 
+
+}
+
+
+
 
 /**
  * rangeOdd()
@@ -25,7 +33,33 @@ function rangeSum(min, max) {}
  *  rangeOdd(10, 15);
  *  //> [ 15, 13, 11 ]
  */
-function rangeOdd(min, max) {}
+function rangeOdd(min, max) {
+  let arr = [];
+  let i = Number;
+  a = min;
+  b = max;
+    if(i % 2 === 1) {
+       arr.sort((a, b)=>b-a);
+  } 
+  return arr;
+} 
+
+  // for (let min = 0; i < arr.length; i++) {
+  //   if (i % 2 === 1){
+  //     for (let x = min + 1; x < arr.length; x++) {
+  //       if (arr[i] < arr[x]){
+  //         start = arr[i];
+  //         arr[i] = arr[x];
+  //         arr[x] = start;
+  //       }
+  //   }
+    
+  //   }
+  
+
+  
+  
+
 
 /**
  * rangeEveryOther()
@@ -61,7 +95,12 @@ function rangeEveryOther(min, max) {}
  *  containsWhileLoop([ "left", "up", "right" ], "down");
  *  //> false
  */
-function containsWhileLoop(array, target) {}
+function containsWhileLoop(array, target) {
+  while (target in array === true ) {
+    return true;
+  }
+  return false;
+}
 
 /**
  * containsForLoop()
@@ -83,7 +122,12 @@ function containsWhileLoop(array, target) {}
  *  containsForLoop([ "left", "up", "right" ], "down");
  *  //> false
  */
-function containsForLoop(array, target) {}
+function containsForLoop(array, target) {
+  for (i = target; i < array.length; i++) {
+    return true;
+  }
+  return false;
+}
 
 /**
  * targetCount()
@@ -97,7 +141,16 @@ function containsForLoop(array, target) {}
  *  targetCount([ 10, 20, 10, 20, 30 ], 10);
  *  //> 2
  */
-function targetCount(array, target) {}
+function targetCount(array, target) {
+  let i = target;
+  let count = i;
+  for (target of array) {
+    if (target in array === true) {
+      count++;
+    }
+    return count;
+  }
+}
 
 /**
  * firstIndexFound()
