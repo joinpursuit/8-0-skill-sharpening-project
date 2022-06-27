@@ -22,20 +22,8 @@
  *  //> 700
  */
 function applyDiscount(priceInCents, age, hasMembership) {
-  let memDiscount1 = 0.10;
-  let memDiscount2 = 0.20;
-  let memDiscount3 = 0.30;
-  let endingPrice = priceInCents;
-  
-  if ((age <= 10 || age >= 65) && hasMembership) {
-    endingPrice = (priceInCents - priceInCents * memDiscount3);
-  } else if (hasMembership) { 
-    endingPrice = (priceInCents - priceInCents * memDiscount2);
-  } else if (age <= 10 || age >= 65)  {
-    endingPrice = (priceInCents - priceInCents * memDiscount1);
-  
-}
-  return endingPrice;
+  return priceInCents * (1 - (age >= 65 || age <= 10 ? 0.1 : 0) - (hasMembership ? 0.2 : 0))
+
 }
 
 /**
@@ -58,7 +46,11 @@ function applyDiscount(priceInCents, age, hasMembership) {
  *  //> "$30.00"
  */
 function getCartTotal(products) {
-
+  let total = 0;
+  for(let i of products) {
+    total += i.priceInCents * i.quantity;
+  }
+  return `$${(total/100).toFixed(2)}`
 }
 
 /**
@@ -105,15 +97,18 @@ function getCartTotal(products) {
     //> "Same city."
  */
 function compareLocations(address1, address2) {
-  
+  let answer = 'Addresses are not near each other.';
+
   if (address1.state === address2.state) {
     return `Same state.`;
-  } else if (address1 === address2) {
+   if (address1.street === address2.street) {
     return `Same building.`;
-  } else if ((address1.city === address2.city) && (address1.state === address2.state) && (address1.zip === address2.zip)) {
+  if (address1.city === address2.city) {
     return `Same city.`;
+      }
+    }
   }
-  else return `Addresses are not near each other.`
+  return answer;
 }
 
 /**

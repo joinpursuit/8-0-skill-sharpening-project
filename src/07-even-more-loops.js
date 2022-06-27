@@ -13,12 +13,10 @@
  *  //> [ "A!", "Very!", "Happy!", "Array!" ];
  */
 function shoutForLoop(array) {
-  let newArray;
-  for (let i = array[0]; i , array.length; i += 1) {
-    newArray = [...newArray, [i]]
-    return `${newArray}!`;
+  for (let i = 0; i < array.length; i ++) {
+    array[i] += '!';
   }
-  // array++
+  return array;
 }
 
 /**
@@ -36,11 +34,12 @@ function shoutForLoop(array) {
  *  //> [ "A!", "Very!", "Happy!", "Array!" ];
  */
 function shoutWhileLoop(array) {
-  let i = array[0];
+  let i = 0;
   while (i < array.length) {
-    return `${array}!`;
+    array[i] += '!';
+    i++;
   }
-  i++
+  return array;
 }
 
 /**
