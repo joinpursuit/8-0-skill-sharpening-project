@@ -19,7 +19,21 @@
  *  applyDiscount(1000, 9, true);
  *  //> 700
  */
-function applyDiscount(priceInCents, age, hasMembership) {}
+function applyDiscount(priceInCents, age, hasMembership) {
+  let ageDiscount = .10
+  let memberDiscount = .20
+
+  if(age <= 10 || age >= 65){
+    if (hasMembership){
+      return priceInCents * (1 - (ageDiscount + memberDiscount))
+    }else{
+      return priceInCents * (1 - ageDiscount)
+    }
+  }if (hasMembership){
+    return priceInCents * (1 - memberDiscount)
+  }
+  return priceInCents
+}
 
 /**
  * getCartTotal()
@@ -40,7 +54,13 @@ function applyDiscount(priceInCents, age, hasMembership) {}
     getCartTotal(cart);
  *  //> "$30.00"
  */
-function getCartTotal(products) {}
+function getCartTotal(products) {
+  let total = 0
+  for (let i = 0; i < products.length; i++){
+    total += products[i].priceInCents * products[i].quantity
+  }
+  return `$${(total/100).toFixed(2)}`
+}
 
 /**
  * compareLocations()
@@ -127,7 +147,26 @@ function compareLocations(address1, address2) {}
     //>   },
     //> ];
  */
-function gradeAssignments(assignments) {}
+function gradeAssignments(assignments) {
+  for (i = 0; i < assignments.length; i++){
+    if (assignments[i].kind === "PASS-FAIL"){
+      if(assignments[i].score.received === assignments[i].score.max){
+        assignments[i].status = "PASSED"
+      }else{
+        assignments[i].status = "FAILED"
+      }
+    }else if (assignments[i.kind === "PERCENTAGE"]){
+      if (assignments[i].score.received/assignments[i].score.max * 100 > 80){
+        assignments[i].status = `PASSED: ${(assignments[i].score.received/assignments[i].score.max * 100).toFixed(1)}%`
+      }else{
+        assignments[i].status = `FAILED: ${(assignments[i].score.received/assignments[i].score.max * 100).toFixed(1)}%`
+      }
+    }else{
+      assignments[i].status = `SCORE: ${assignments[i].score.received}/${assignments[i].score.max}`
+    }
+  }
+  return assignments
+}
 
 /**
  * createLineOrder()
