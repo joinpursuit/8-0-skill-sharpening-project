@@ -19,14 +19,29 @@
  *  applyDiscount(1000, 9, true);
  *  //> 700
  */
-function applyDiscount(priceInCents, age, hasMembership) {}
+function applyDiscount(priceInCents, age, hasMembership) {
+  if (age <= 10 || age >= 65){
+    if (hasMembership){
+      return priceInCents * .70
+  } else {
+    return priceInCents * .90
+  }
+  } if (hasMembership){
+    return priceInCents * .80
+  } else {
+    return priceInCents
+  } 
+
+}
 
 /**
  * getCartTotal()
  * ---------------------
- * An online store allows for customers to add products to their cart. Customers can add multiples of each product to the cart.
+ * An online store allows for customers to add products to their cart. 
+ * Customers can add multiples of each product to the cart.
  * 
- * Write an algorithm that will determine the total amount of all items in the cart. Make sure to multiply the `priceInCents` times the `quantity` to get the full cost of each product.
+ * Write an algorithm that will determine the total amount of all items in the cart. 
+ * Make sure to multiply the `priceInCents` times the `quantity` to get the full cost of each product.
  * @param {Object[]} products - An array of products.
  * @param {number} products[].priceInCents - The price of the product, in cents.
  * @param {number} products[].quantity - The number of products being bought.
@@ -40,7 +55,12 @@ function applyDiscount(priceInCents, age, hasMembership) {}
     getCartTotal(cart);
  *  //> "$30.00"
  */
-function getCartTotal(products) {}
+function getCartTotal(products) {
+let a = products.priceInCents
+let b = products.quantity
+let totalCost = (a * b)/100
+ return totalCost.toFixed(2)
+}
 
 /**
  * compareLocations()
