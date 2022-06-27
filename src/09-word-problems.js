@@ -19,7 +19,19 @@
  *  applyDiscount(1000, 9, true);
  *  //> 700
  */
-function applyDiscount(priceInCents, age, hasMembership) {}
+function applyDiscount(priceInCents, age, hasMembership) {
+  let total = 0
+  if(age <= 10 && age >= 65 && hasMembership == false){
+    total = priceInCents - 0.10
+    return total
+  }
+  else if(age <= 10 && age >= 65 && hasMembership == true){
+    total = priceInCents - 0.30
+    return total
+  }
+
+
+}
 
 /**
  * getCartTotal()
