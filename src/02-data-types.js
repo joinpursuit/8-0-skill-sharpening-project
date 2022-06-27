@@ -27,8 +27,9 @@ function getLengthOfString(str){
  */
 
 function convertToNumber(val) {
-   let number= (val);
-   return number (val);
+  // val = []
+   let number = (val);
+   return number ;
 }
 /**
  * convertToString()
@@ -197,6 +198,7 @@ else return false;
 
 function isFalsy(val) {
   if(val){
+  
     return false;
   }
   else if (!val){

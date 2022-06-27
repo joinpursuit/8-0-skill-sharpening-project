@@ -215,7 +215,7 @@ function getFlatObject(person) {
   let person2 = {};
   for (i =0; i <= person.length; i++){
     person2[i] === person[i];
-    person2.flats(15);                                                      
+  person2.flats(15);                                                    
   }
   return getFlatObject;
 
