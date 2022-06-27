@@ -103,7 +103,7 @@ function compareLocations(address1, address2) {
   if(address1.street === address2.street && address1.city === address2.city && address1.state === address2.state && address1.zip === address2.zip){
     return "Same building." 
   }
-  if(address1.city === address2.city && address1.state === address2.state && address1.zip === address2.zip){
+  if(address1.street !== address2.street && address1.city === address2.city && address1.state === address2.state && address1.zip === address2.zip){
     return "Same city."
   }
   if(address1.state === address2.state && address1.street !== address2.street && address1.city !== address2.city && address1.zip !== address2.zip){
@@ -112,7 +112,7 @@ function compareLocations(address1, address2) {
   if(address1.city !== address2.city && address1.street === address2.street && address1.state === address2.state && address1.zip === address2.zip){
     return "Addresses are not near each other."
   }
-  if(address1.state !== address2.state && address1.street === address2.street && address1.city === address2.city && address1.zip === address2.zip) {
+  if(address1.state !== address2.state && address1.street === address2.street && address1.city === address2.city && address1.zip === address2.zip){
     return "Addresses are not near each other."
   }
   if(address1.state !== address2.state && address1.street !== address2.street && address1.city !== address2.city && address1.zip !== address2.zip){
@@ -165,7 +165,31 @@ function compareLocations(address1, address2) {
     //>   },
     //> ];
  */
-function gradeAssignments(assignments) {}
+function gradeAssignments(assignments) {
+  let totalScore =;
+  for(let i = 0; i < assignments.length; i++) {
+  if(assignments[i].kind === 'PASS-FAIL'){
+    if(assignments[i].score.received === assignments[i].score.max){
+        assignments[i].status = 'PASSED'
+      }else{
+        assignments[i].status = 'FAILED'
+      }
+    }
+
+      if(assignments[i].kind === 'PERCENTAGE'){
+        if(assignments[i].score <= 80){
+           assignments[i] = "PASSED: <percentage>"
+        }else{
+            assignments[i] = 'FAILED: <PERCENT>'
+        }
+      }
+     
+      if(assignments[i] !== 'PASS-FAIL' && assignments[i] !== 'PERCENTAGE'){
+        assignments[i].status = 'Score:' + assignments[i].score.received +'/'+ assignments[i].score.max
+      }
+    }
+    return assignments
+}
 
 /**
  * createLineOrder()
