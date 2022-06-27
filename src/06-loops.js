@@ -11,7 +11,33 @@
  *  //> 25
  *  (3 + 4 + 5 + 6 + 7 = 25)
  */
-function rangeSum(min, max) {}
+function rangeSum(min, max) {
+  let arr = [min,max] // creating the empty array
+  if (arr[0] > arr[1]){ // checking if the highest number on the left of our operator is larger then the number on the right; then sorts it accordingly
+    arr.sort((min, max) => min - max)
+  }
+    let sum = 0 // initalizes our sum  var
+
+    for (let i = arr[0]; i <= arr[1]; i++){
+      sum += i
+    }
+    return sum
+}
+
+
+
+
+
+
+
+
+
+  // let sum = min
+  // for (let index = min; index > max; index++) { 
+  //   sum = sum + index
+  // }
+  // return sum
+
 
 /**
  * rangeOdd()
@@ -25,8 +51,31 @@ function rangeSum(min, max) {}
  *  rangeOdd(10, 15);
  *  //> [ 15, 13, 11 ]
  */
-function rangeOdd(min, max) {}
+function rangeOdd(min, max) {
+  let outputArray = []
+  let arr = [min,max] // creating the empty array
+  if (arr[0] > arr[1]){ // checking if the highest number on the left of our operator is larger then the number on the right; then sorts it accordingly
+    arr.sort((min, max) => min - max)
+  }
+    let sum = 0 // initalizes our sum  var
+    for (let i = arr[0]; i <= arr[1]; i++){
+    // for (let i = min; i <= max; i++){
+      if(i % 2 == 1){
+        sum += i
+        outputArray.push(sum)
+      }
+    }
+    return outputArray
+  }
 
+//   let sum = null
+//   for (let index = min; index < max; index++) { 
+//     if (i % 2 == 1){
+//       sum = min++
+//     } // essentially checks if the next number is odd; if so it iterates then runs the additive script
+// }
+// return sum
+// }
 /**
  * rangeEveryOther()
  * ---------------------
