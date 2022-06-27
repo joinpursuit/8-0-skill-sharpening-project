@@ -18,8 +18,16 @@
  *
  *  applyDiscount(1000, 9, true);
  *  //> 700
- */
-function applyDiscount(priceInCents, age, hasMembership) {}
+ *//*
+ */ 
+function applyDiscount(priceInCents, age, hasMembership) {
+
+if(hasMembership){
+  return age <= 10 || age >= 65 ? (priceInCents) * .7 : (priceInCents) * .8
+}else{
+  return age <= 10 || age >= 65 ? (priceInCents) * .9 : priceInCents
+}
+}
 
 /**
  * getCartTotal()
@@ -40,7 +48,15 @@ function applyDiscount(priceInCents, age, hasMembership) {}
     getCartTotal(cart);
  *  //> "$30.00"
  */
-function getCartTotal(products) {}
+function getCartTotal(products) {
+
+  let cartTotal = 0
+  for(let i=0; i < products.length ;i++){
+    cartTotal += (products[i].priceInCents * products[i].quantity) / 100
+
+  }
+  return `$${cartTotal.toFixed(2)}`
+}
 
 /**
  * compareLocations()
@@ -80,7 +96,23 @@ function getCartTotal(products) {}
     compareLocations(address1, address2);
     //> "Same city."
  */
-function compareLocations(address1, address2) {}
+function compareLocations(address1, address2) {
+ 
+  let forSameBuilding = (address1.street === address2.street) && (address1.city === address2.city) && (address1.state === address2.state) && (address1.zip === address2.zip)
+let  forSameCity = (address1.city === address2.city) && (address1.state === address2.state) && (address1.zip === address2.zip)
+let forSameState = (address1.state === address2.state)
+
+if(forSameBuilding){
+  return 'Same building.'
+}else if(forSameCity){
+  return 'Same city.'
+}else if(forSameState){
+  return 'Same state.'
+}
+
+return 'Addresses are not near each other.'
+
+}
 
 /**
  * gradeAssignments()
@@ -127,7 +159,29 @@ function compareLocations(address1, address2) {}
     //>   },
     //> ];
  */
-function gradeAssignments(assignments) {}
+ //set the `status` value to `"PASSED"` if the `score.received` equals the `score.max`. Otherwise, set that `status` to be `"FAILED"`.
+function gradeAssignments(assignments) {
+
+// let pf = assignments.kind 'PASSED'
+// let ps = assignments.score
+// let sf = assignments.status
+
+assignments.forEach(assignment => {
+ 
+  if(assignment.kind === 'PASS-FAIL'){
+    assignment.status = assignment.score.received === assignment.score.max ? 'PASSED' : 'FAILED'
+  }else if(assignment.kind === 'PERCENTAGE'){
+    let percentage = (assignment.score.received / assignment.score.max) * 100
+    assignment.status = percentage >= 80 ? `PASSED: ${percentage.toFixed(1)}%` : `FAILED: ${percentage.toFixed(1)}%`
+  }else{
+    assignment.status = `SCORE: ${assignment.score.received}/${assignment.score.max}`
+  }
+})
+  return assignments
+}
+
+
+
 
 /**
  * createLineOrder()
@@ -152,7 +206,26 @@ function gradeAssignments(assignments) {}
     createLineOrder(people);
     //> [ "Ray Anderson", "America Marsh", "Wade Carson", "Patience Patel" ]
  */
-function createLineOrder(people) {}
+function createLineOrder(people) {
+
+let priority = []
+let nonPriority = []
+people.forEach(person => {
+
+  if(person.hasMembership){
+ priority.push(person.name)
+  }else{
+    nonPriority.push(person.name)
+  }
+
+
+})
+return [...priority, ...nonPriority]
+
+}
+
+
+
 
 module.exports = {
   applyDiscount,
