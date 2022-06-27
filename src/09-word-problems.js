@@ -19,7 +19,16 @@
  *  applyDiscount(1000, 9, true);
  *  //> 700
  */
-function applyDiscount(priceInCents, age, hasMembership) {}
+function applyDiscount(priceInCents, age, hasMembership) {
+  let priceMem = 1; 
+  if(hasMembership){
+    priceMem -= 0.2; 
+  }
+  if(age < 11 || age > 64){
+    priceMem -= 0.1; 
+  }
+  return Number((priceInCents * priceMem).toFixed());
+}
 
 /**
  * getCartTotal()
@@ -40,7 +49,13 @@ function applyDiscount(priceInCents, age, hasMembership) {}
     getCartTotal(cart);
  *  //> "$30.00"
  */
-function getCartTotal(products) {}
+function getCartTotal(products) {
+  let total = 0; 
+  for(const item in products) {
+    total += products[item][`priceInCents`] * products[item][`quantity`];
+  }
+  return `$${((total / 100).toFixed(2))}`
+}
 
 /**
  * compareLocations()
@@ -80,8 +95,31 @@ function getCartTotal(products) {}
     compareLocations(address1, address2);
     //> "Same city."
  */
-function compareLocations(address1, address2) {}
+function compareLocations(address1, address2) {
+   let compare = []
+  if(address1.state === address2.state){
+    compare.push(`state`)
+  }
+    if(address1.city === address2.city){
+      compare.push(`city`)
+    }
+     if (address1.zip === address2.zip){
+       compare.push(`zip`)
 
+      if(address1.street === address2.street){
+        compare.push(`street`)
+      }
+      if(compare.length < 2 && compare.includes(`state`)){
+        return `Same state.`
+      }
+        if(compare.includes(`zip`)){
+          if(compare.includes(`street`)){
+            return `Same Building.`
+          }
+        }
+        return `Same city.`
+     }
+    }
 /**
  * gradeAssignments()
  * ---------------------
@@ -127,7 +165,13 @@ function compareLocations(address1, address2) {}
     //>   },
     //> ];
  */
-function gradeAssignments(assignments) {}
+function gradeAssignments(assignments) {
+  for(let i = 0; i < assignments.length; i++){
+
+  }
+}
+  
+
 
 /**
  * createLineOrder()
@@ -152,7 +196,22 @@ function gradeAssignments(assignments) {}
     createLineOrder(people);
     //> [ "Ray Anderson", "America Marsh", "Wade Carson", "Patience Patel" ]
  */
-function createLineOrder(people) {}
+function createLineOrder(people) {
+  let inLine = [];
+  
+  for(let i = 0; i < people.length; i++){
+    if(person[i].hasMembership){
+      inLine.push(person[i].name);
+    }
+  }
+  for(let j = 0; j < people.length; j++){
+    if(!people[j].hasMembership){
+ inLine.push(people[j].name)
+    }
+  }
+  return inLine; 
+}
+  
 
 module.exports = {
   applyDiscount,
