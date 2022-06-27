@@ -87,7 +87,29 @@ function applyDiscount(priceInCents, age, hasMembership) {
  *  //> "$30.00"
  */
 function getCartTotal(products) {
-  
+  // putting objects into an arrow using map.prototpye
+  let result = products.map(({ priceInCents }) => priceInCents)
+  let result2 = products.map(({ quantity }) => quantity)
+  // calculation
+  // below is putting the number of multiplication operations we gonna do in array
+  let numberOfCalc = result.length
+  let numbersOfCalc = []
+  for (let index = 1; index <= numberOfCalc; index++) {
+    numbersOfCalc.push(index)
+  }
+  let actCal = null
+  let resultArr = []
+  for (let index = 0; index < numberOfCalc; index++) {
+    actCal = (result[index]) * (result2[index])
+    resultArr.push(actCal)
+  }
+  // at this point we have an array with cents amount of each cart item. time to add
+  let addedResultInCents = (resultArr[0]+resultArr[1]+resultArr[2]+resultArr[3])
+  // return addedResultInCents
+  // now all we need to do is convert our integer into a decimal using tofixed.
+  let addedResultsInDollars = addedResultInCents / 100
+  addedResultsInDollars = addedResultsInDollars.toFixed(2)
+  return `$${addedResultsInDollars}`
 }
 
 /**
