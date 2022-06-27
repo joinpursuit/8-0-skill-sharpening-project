@@ -166,21 +166,22 @@ function compareLocations(address1, address2) {
     //> ];
  */
 function gradeAssignments(assignments) {
-  let totalScorePercentage = ((assignments.score.received/assignments.score.max) * 100).toFixed(1) 
+  
   for(let i = 0; i < assignments.length; i++) {
   if(assignments[i].kind === 'PASS-FAIL' && assignments[i].score.received === assignments[i].score.max){
         assignments[i].status = 'PASSED'
       }else{
         assignments[i].status = 'FAILED'
       }
+      let totalScorePercentage = ((assignments[i].score.received/assignments[i].score.max) * 100).toFixed(1)  
       if(assignments[i].kind === 'PERCENTAGE' && totalScorePercentage >= 80){
-           assignments[i] = "PASSED:" `${totalScorePercentage}`
+           assignments[i].status = "PASSED:" + `${totalScorePercentage}`
         }else{
-            assignments[i] = "FAILED:" +`${totalScorePercentage}`
+            assignments[i].status = "FAILED:" +`${totalScorePercentage}`
         }
      
       if(assignments[i] !== 'PASS-FAIL' && assignments[i] !== 'PERCENTAGE'){
-        assignments[i].status = 'Score:' + assignments[i].score.received +'/'+ assignments[i].score.max
+        assignments[i].status = 'SCORE:'+ ` ` + totalScorePercentage
       }
     }
     return assignments
@@ -188,7 +189,7 @@ function gradeAssignments(assignments) {
 
 /**
  * createLineOrder()
- * ---------------------
+ * -------------------
  * An airline wants to build an application that improves the boarding process for its customers. They want to have customers sign up in order of arrival, but prioritize those customers who have a membership.
  * 
  * Build an algorithm that takes in an array of objects, where each object represents a person. The order of the array is important; the person at index `0` arrived first while the person at index `1` arrived afterwards.
