@@ -19,7 +19,18 @@
  *  applyDiscount(1000, 9, true);
  *  //> 700
  */
-function applyDiscount(priceInCents, age, hasMembership) {}
+function applyDiscount(priceInCents, age, hasMembership) {
+  let discount = 0;
+   if (age <= 10 || age > 64 ){
+       discount += 0.10 
+   }
+    
+   if(hasMembership){
+       discount += 0.20
+   } 
+    total = priceInCents - (discount * priceInCents)
+   return total
+}
 
 /**
  * getCartTotal()
@@ -40,7 +51,14 @@ function applyDiscount(priceInCents, age, hasMembership) {}
     getCartTotal(cart);
  *  //> "$30.00"
  */
-function getCartTotal(products) {}
+function getCartTotal(products) {
+  let totalCost = 0;
+for (let i = 0; i < products.length; i++){
+  totalCost += products[i].priceInCents * products[i].quantity
+}
+return `$${(totalCost/100).toFixed(2)}`
+}
+
 
 /**
  * compareLocations()
@@ -66,7 +84,7 @@ function getCartTotal(products) {}
  * 
  * EXAMPLE:
  *  const address1 = {
-      street: "8785 Trenton St.",
+      street: "8785 Trenton St.",qqq111
       city: "Melbourne",
       state: "FL",
       zip: "32904",
@@ -80,7 +98,27 @@ function getCartTotal(products) {}
     compareLocations(address1, address2);
     //> "Same city."
  */
-function compareLocations(address1, address2) {}
+function compareLocations(address1, address2) {
+  
+  if(address1.street === address2.street && address1.city === address2.city && address1.state === address2.state && address1.zip === address2.zip){
+    return "Same building." 
+  }
+  if(address1.city === address2.city && address1.state === address2.state && address1.zip === address2.zip){
+    return "Same city."
+  }
+  if(address1.state === address2.state && address1.street !== address2.street && address1.city !== address2.city && address1.zip !== address2.zip){
+    return "Same state."
+  }
+  if(address1.city !== address2.city && address1.street === address2.street && address1.state === address2.state && address1.zip === address2.zip){
+    return "Addresses are not near each other."
+  }
+  if(address1.state !== address2.state && address1.street === address2.street && address1.city === address2.city && address1.zip === address2.zip) {
+    return "Addresses are not near each other."
+  }
+  if(address1.state !== address2.state && address1.street !== address2.street && address1.city !== address2.city && address1.zip !== address2.zip){
+      return "Addresses are not near each other." 
+    }
+  }
 
 /**
  * gradeAssignments()
