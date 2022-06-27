@@ -9,7 +9,9 @@
  *  alwaysTrue();
  *  //> true
  */
-function alwaysTrue() {}
+function alwaysTrue() {
+  return true;
+}
 
 /**
  * greet()
@@ -24,7 +26,10 @@ function alwaysTrue() {}
  *  greet("Ian");
  *  //> "Hello, Ian."
  */
-function greet() {}
+function greet(name) {
+return `Hello, ${name}.`;
+}
+
 
 /**
  * add()
@@ -39,7 +44,10 @@ function greet() {}
  *  add(10, 20);
  *  //> 30
  */
-function add() {}
+function add(a,b) {
+  result = a + b;
+  return result;
+}
 
 /**
  * multiply()
@@ -54,7 +62,10 @@ function add() {}
  *  multiply(2, 5);
  *  //> 10
  */
-function multiply() {}
+function multiply(a,b) {
+  result = a * b;
+  return result;
+}
 
 /**
  * average()
@@ -74,7 +85,10 @@ function multiply() {}
  *  average(10, 6);
  *  //> 8 // 10 + 6 = 16; 16/2 = 8;
  */
-function average() {}
+function average(a,b) {
+  result = (a+b)/2;
+  return result;
+}
 
 /**
  * averageThree()
@@ -93,7 +107,10 @@ function average() {}
  *  averageThree(10, 11, 19);
  *  //> 10 // 10 + 11 + 19 = 30; 30 / 3 = 10;
  */
-function averageThree() {}
+function averageThree(a,b,c) {
+  result = (a+b+c)/3;
+  return result;
+}
 
 /**
  * compareTypes()
@@ -112,7 +129,12 @@ function averageThree() {}
  *  compareTypes("left", 10);
  *  //> false
  */
-function compareTypes() {}
+function compareTypes(a,b) {
+  if (typeof a === typeof b) {
+    return true;
+  }
+    return false;
+}
 
 /**
  * flipSign()
@@ -131,7 +153,9 @@ function compareTypes() {}
  *  flipSign(50);
  *  //> -50
  */
-function flipSign() {}
+function flipSign(a) {
+  return -a;
+}
 
 /**
  * joinStringsWithSpaces()
@@ -151,7 +175,10 @@ function flipSign() {}
  *  joinStringsWithSpaces("left", "right", "up", "down", "away");
  *  //> "left right up down away"
  */
-function joinStringsWithSpaces() {}
+function joinStringsWithSpaces(a,b,c,d,e) {
+string = a +" "+ b +" "+ c +" " + d +" "+ e;
+return string;
+}
 
 /**
  * getFirstAndLastCharacter()
@@ -161,14 +188,18 @@ function joinStringsWithSpaces() {}
  * NOTE: The inputted string will always have a length of 2 or greater.
  * HINT: How can you find the nth character of any string?
  * How can find out how long a string is? How will this help you solve this problem?
- * @param {string} a
+ * @param {string} 
  * @returns {string}
  *
  * EXAMPLE:
  *  getFirstAndLastCharacter("upwards");
  *  //> "us"
  */
-function getFirstAndLastCharacter() {}
+function getFirstAndLastCharacter(string) {
+  let firstChar = string.charAt(0);
+  let lastChar = string.charAt(string.length-1);
+  return firstChar + lastChar;
+}
 
 // Do not change the code below.
 module.exports = {
