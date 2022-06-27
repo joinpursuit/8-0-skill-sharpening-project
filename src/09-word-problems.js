@@ -166,14 +166,14 @@ function compareLocations(address1, address2) {
     //> ];
  */
 function gradeAssignments(assignments) {
+  let totalScorePercentage = ((assignments.score.received/assignments.score.max) * 100).toFixed(1) 
   for(let i = 0; i < assignments.length; i++) {
   if(assignments[i].kind === 'PASS-FAIL' && assignments[i].score.received === assignments[i].score.max){
         assignments[i].status = 'PASSED'
       }else{
         assignments[i].status = 'FAILED'
       }
-      let totalScorePercentage = ((assignments[i].score.received/assignments[i].score.max) * 100).toFixed(1)
-      if(assignments[i].kind === 'PERCENTAGE' && assignments[i].score <= totalScorePercentage){
+      if(assignments[i].kind === 'PERCENTAGE' && totalScorePercentage >= 80){
            assignments[i] = "PASSED:" `${totalScorePercentage}`
         }else{
             assignments[i] = "FAILED:" +`${totalScorePercentage}`
@@ -209,7 +209,9 @@ function gradeAssignments(assignments) {
     createLineOrder(people);
     //> [ "Ray Anderson", "America Marsh", "Wade Carson", "Patience Patel" ]
  */
-function createLineOrder(people) {}
+function createLineOrder(people) {
+
+}
 
 module.exports = {
   applyDiscount,
