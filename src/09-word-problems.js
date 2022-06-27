@@ -166,22 +166,23 @@ function compareLocations(address1, address2) {
     //> ];
  */
 function gradeAssignments(assignments) {
-  
+  let totalScorePercentage = 0;
   for(let i = 0; i < assignments.length; i++) {
   if(assignments[i].kind === 'PASS-FAIL' && assignments[i].score.received === assignments[i].score.max){
         assignments[i].status = 'PASSED'
       }else{
         assignments[i].status = 'FAILED'
       }
-      let totalScorePercentage = ((assignments[i].score.received/assignments[i].score.max) * 100).toFixed(1)  
+  
       if(assignments[i].kind === 'PERCENTAGE' && totalScorePercentage >= 80){
-           assignments[i].status = "PASSED:" + `${totalScorePercentage}`
+         totalScorePercentage += ((assignments[i].score.received/assignments[i].score.max) * 100).toFixed(1)  
+           assignments[i].status = `PASSED:` + `${totalScorePercentage}`
         }else{
-            assignments[i].status = "FAILED:" +`${totalScorePercentage}`
+            assignments[i].status = "FAILED:" + `${totalScorePercentage}`
         }
      
       if(assignments[i] !== 'PASS-FAIL' && assignments[i] !== 'PERCENTAGE'){
-        assignments[i].status = 'SCORE:'+ ` ` + totalScorePercentage
+        assignments[i].status = 'SCORE:'+ ` ` +  (`${assignments[i].score.received}/${assignments[i].score.max}`)
       }
     }
     return assignments
