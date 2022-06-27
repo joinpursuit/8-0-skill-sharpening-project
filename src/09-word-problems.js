@@ -166,7 +166,7 @@ function compareLocations(address1, address2) {
     //> ];
  */
 function gradeAssignments(assignments) {
-  let totalScorePercentage = (80/100) * assignments.score
+  let totalScorePercentage = (received/max) * 100
   for(let i = 0; i < assignments.length; i++) {
   if(assignments[i].kind === 'PASS-FAIL'){
     if(assignments[i].score.received === assignments[i].score.max){
