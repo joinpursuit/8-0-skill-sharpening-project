@@ -173,14 +173,12 @@ function gradeAssignments(assignments) {
       }else{
         assignments[i].status = 'FAILED'
       }
-    }
 
       if(assignments[i].kind === 'PERCENTAGE' && assignments[i].score <= totalScorePercentage){
            assignments[i] = "PASSED:" `${totalScorePercentage}`
         }else{
             assignments[i] = "FAILED:" +`${totalScorePercentage}`
         }
-      }
      
       if(assignments[i] !== 'PASS-FAIL' && assignments[i] !== 'PERCENTAGE'){
         assignments[i].status = 'Score:' + assignments[i].score.received +'/'+ assignments[i].score.max
