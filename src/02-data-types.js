@@ -9,7 +9,10 @@
  *  getLengthOfString("down");
  *  //> 4
  */
-function getLengthOfString(str) {}
+ function getLengthOfString(str) {
+  output = str.length
+  return output
+}
 
 /**
  * convertToNumber()
@@ -22,7 +25,10 @@ function getLengthOfString(str) {}
  *  convertToNumber("111");
  *  //> 111
  */
-function convertToNumber(val) {}
+function convertToNumber(val) {
+  output = Number(val)
+  return output
+}
 
 /**
  * convertToString()
@@ -36,7 +42,9 @@ function convertToNumber(val) {}
  *  convertToString(99);
  *  //> "99"
  */
-function convertToString(val) {}
+function convertToString(val) {
+return `${val}`
+}
 
 /**
  * convertToShoutingText()
@@ -49,7 +57,12 @@ function convertToString(val) {}
  *  convertToShoutingText("Hello There");
  *  //> "HELLO THERE"
  */
-function convertToShoutingText(text) {}
+function convertToShoutingText(text) {
+  let output
+  output = String(text.toUpperCase())
+  // let output = `${text.toUpperCase}`*WHY DIDNT THIS WORK?*
+  return output
+}
 
 /**
  * convertToWhisperText()
@@ -62,7 +75,10 @@ function convertToShoutingText(text) {}
  *  convertToWhisperText("Hello There");
  *  //> "hello there"
  */
-function convertToWhisperText(text) {}
+function convertToWhisperText(text) {
+  let output = `${text.toLowerCase()}`
+  return output
+}
 
 /**
  * checkIfCharacterIsInString()
@@ -79,7 +95,20 @@ function convertToWhisperText(text) {}
  *  checkIfCharacterIsInString("hello there", "a");
  *  //> false
  */
-function checkIfCharacterIsInString(text, character) {}
+function checkIfCharacterIsInString(text, character) {
+// let splitString
+// let charString
+// splitString = text.split
+// charString = splitString[character]
+// if (character)
+// return charString {almost went into a rabbit hole of overcomplciation; through a simple google search, a simpler solution existed. Thanks}
+test = text.includes(character)
+if (test){
+return true
+} else {
+  return false
+}
+}
 
 /**
  * isEven()
@@ -95,7 +124,15 @@ function checkIfCharacterIsInString(text, character) {}
  *  isEven(11);
  *  //> false
  */
-function isEven(num) {}
+function isEven(num) {
+  let evenCalc
+  evenCalc = num % 2
+  if (evenCalc === 0){
+    return true
+  } else {
+    return false
+  }
+}
 
 /**
  * isOdd()
@@ -111,7 +148,15 @@ function isEven(num) {}
  *  isOdd(11);
  *  //> true
  */
-function isOdd(num) {}
+function isOdd(num) {
+  let oddCalc
+  oddCalc = num % 2
+  if (oddCalc === 0){
+    return false
+  } else {
+    return true
+  }
+}
 
 /**
  * isTruthy()
@@ -127,7 +172,13 @@ function isOdd(num) {}
  *  isTruthy(null);
  *  //> false
  */
-function isTruthy(val) {}
+function isTruthy(val) {
+  if (val){
+return true
+  } else {
+    return false
+  }
+}
 
 /**
  * isFalsy()
@@ -143,7 +194,13 @@ function isTruthy(val) {}
  *  isFalsy(" ");
  *  //> false
  */
-function isFalsy(val) {}
+function isFalsy(val) {
+  if (!val){
+    return true
+      } else {
+        return false
+      }
+}
 
 // Do not change the code below.
 module.exports = {
