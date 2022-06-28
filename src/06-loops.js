@@ -11,9 +11,18 @@
  *  //> 25
  *  (3 + 4 + 5 + 6 + 7 = 25)
  */
-function rangeSum(min, max) {}
+function rangeSum(min, max) {
+let mySum = 0;
+for(let i = min ; i <= max; i++) {
+  mySum += i;
+}
+return mySum
+  // return ((max-min)+1) * (min + max) / 2;
+}
 
-/**
+/** STUDY THIS ONE MORE
+ * 
+ * 
  * rangeOdd()
  * ---------------------
  * Takes in range (inclusive) and returns an array in decreasing order of only the odd numbers in that range.
@@ -25,9 +34,19 @@ function rangeSum(min, max) {}
  *  rangeOdd(10, 15);
  *  //> [ 15, 13, 11 ]
  */
-function rangeOdd(min, max) {}
+function rangeOdd(min, max) {
+  let oddNumbers = [];
+  for(let i = max; i >= min; i --) {
+    if(i % 2 === 1) {
+      oddNumbers.push(i)
+    }
+  }
+  return oddNumbers;
+}
 
-/**
+/** STUDY THIS ONE MORE
+ * 
+ * 
  * rangeEveryOther()
  * ---------------------
  * Takes in range (inclusive) and returns an array in increasing order of only every other element. Start by including the first number.
@@ -39,9 +58,17 @@ function rangeOdd(min, max) {}
  *  rangeEveryOther(11, 18);
  *  //> [ 11, 13, 15, 17 ]
  */
-function rangeEveryOther(min, max) {}
+function rangeEveryOther(min, max) {
+  let numbers = [];
+  for(let i = min; i <= max; i += 2) {
+    numbers.push(i);
+  }
+  return numbers;
+}
 
-/**
+/** STUDY THIS ONE MORE
+ * 
+ * 
  * containsWhileLoop()
  * ---------------------
  * Returns whether or not the `target` value exists in the array.
@@ -61,7 +88,16 @@ function rangeEveryOther(min, max) {}
  *  containsWhileLoop([ "left", "up", "right" ], "down");
  *  //> false
  */
-function containsWhileLoop(array, target) {}
+function containsWhileLoop(array, target) {
+  let searchIndex = 0;
+  while(searchIndex < array.length) {
+    if(araay[searchIndex] === target) {
+      return true;
+    }
+    searchIndex ++;
+  }
+  return false;
+}
 
 /**
  * containsForLoop()
@@ -83,9 +119,18 @@ function containsWhileLoop(array, target) {}
  *  containsForLoop([ "left", "up", "right" ], "down");
  *  //> false
  */
-function containsForLoop(array, target) {}
+function containsForLoop(array, target) {
+  for(let value of array) {
+    if(value === target) {
+      return true;
+    }
+  }
+  return false;
+}
 
-/**
+/** STUDY THIS ONE MORE
+ * 
+ * 
  * targetCount()
  * ---------------------
  * Returns how many times the `target` occurs in the array.
@@ -97,7 +142,11 @@ function containsForLoop(array, target) {}
  *  targetCount([ 10, 20, 10, 20, 30 ], 10);
  *  //> 2
  */
-function targetCount(array, target) {}
+function targetCount(array, target) {
+  let targetCount = 0;
+
+  for(let value of array) {}
+}
 
 /**
  * firstIndexFound()
@@ -117,7 +166,15 @@ function targetCount(array, target) {}
  *  firstIndexFound([ "left", "right", "left" ], "up");
  *  //> -1
  */
-function firstIndexFound(array, target) {}
+function firstIndexFound(array, target) {
+  for(let i = 0; i < array.length; i ++) {
+    let element = array[i];
+    if(element === target) {
+      return i;
+    }
+  }
+  return -1;
+}
 
 /**
  * lastIndexFound()
@@ -137,7 +194,15 @@ function firstIndexFound(array, target) {}
  *  lastIndexFound([ "left", "right", "left" ], "up");
  *  //> -1
  */
-function lastIndexFound(array, target) {}
+function lastIndexFound(array, target) {
+  for(let i = array.length -1; i >= 0; i --) {
+    let element = array[i];
+    if(element === target) {
+      return i;
+    }
+  }
+  return -1;
+}
 
 /**
  * timesIndex()
@@ -151,7 +216,13 @@ function lastIndexFound(array, target) {}
  *  //> [ 7 * 0, 10 * 1, 11 * 2 ]
  *  //> [ 0, 10, 22 ]
  */
-function timesIndex(array) {}
+function timesIndex(array) {
+  let timesArray = [];
+  for(let i = 0; i <array.length; i ++) {
+    timesArray. push(array[i] * i);
+  }
+  return timesArray;
+}
 
 /**
  * cumulativeSum()
@@ -165,7 +236,9 @@ function timesIndex(array) {}
  *  //> [ 5, 5 + 2, 5 + 2 + 9 ]
  *  //> [ 5, 7, 16 ]
  */
-function cumulativeSum(array) {}
+function cumulativeSum(array) {
+
+}
 
 // Do not change anything below this line.
 module.exports = {
