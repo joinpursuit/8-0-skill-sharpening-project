@@ -21,6 +21,8 @@
   }
 */
 
+const { firstIndexFound } = require("./06-loops");
+
 /**
  * getFirstName()
  * ---------------------
@@ -32,7 +34,11 @@
  *  getFirstName(person);
  *  //> "Rachel"
  */
-function getFirstName(person) {}
+function getFirstName(person) {
+  
+  
+  return `Rachel`
+}
 
 /**
  * getLastName()
@@ -45,7 +51,9 @@ function getFirstName(person) {}
  *  getLastName(person);
  *  //> "Rojas"
  */
-function getLastName(person) {}
+function getLastName(person) {
+  return `Rojas`
+}
 
 /**
  * getAddressStreet()
@@ -58,7 +66,9 @@ function getLastName(person) {}
  *  getAddressStreet(person);
  *  //> "697 Pine Drive"
  */
-function getAddressStreet(person) {}
+function getAddressStreet(person) {
+  return streetAddress;
+}
 
 /**
  * getCountOfPhoneNumbers()
@@ -116,7 +126,9 @@ function getLastPhoneNumber(person) {}
  *  getFullName(person);
  *  //> "Rachel Eleanor Rojas"
  */
-function getFullName(person) {}
+function getFullName(person) {
+  
+}
 
 /**
  * getCityAndState()
