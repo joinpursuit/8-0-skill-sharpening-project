@@ -12,9 +12,11 @@
  *  (3 + 4 + 5 + 6 + 7 = 25)
  */
 function rangeSum(min, max) {
-  for (let i = min ; i < max ; i++) {
-i++
+  let sum = 0 ;
+  for (let i = min ; i <= max ; i++) {
+    sum += i ;
   }
+  return sum ;
 }
 
 /**
@@ -29,7 +31,15 @@ i++
  *  rangeOdd(10, 15);
  *  //> [ 15, 13, 11 ]
  */
-function rangeOdd(min, max) {}
+function rangeOdd(min, max) {
+  let numArr = [] ;
+  for (let i = max; i >= min; i--) {
+    if (i%2 !== 0) {
+numArr.push(i);
+    }
+  }
+  return numArr;
+}
 
 /**
  * rangeEveryOther()
@@ -43,7 +53,13 @@ function rangeOdd(min, max) {}
  *  rangeEveryOther(11, 18);
  *  //> [ 11, 13, 15, 17 ]
  */
-function rangeEveryOther(min, max) {}
+function rangeEveryOther(min, max) {
+  let numArr = [];
+  for (let i = min; i <= max; i+=2) {
+    numArr.push(i);
+  }
+  return numArr;
+} 
 
 /**
  * containsWhileLoop()
@@ -65,7 +81,17 @@ function rangeEveryOther(min, max) {}
  *  containsWhileLoop([ "left", "up", "right" ], "down");
  *  //> false
  */
-function containsWhileLoop(array, target) {}
+function containsWhileLoop(array, target) {
+  let i = 0
+  while (i <= array.length-1 ) {
+    if (target === array[i]) {
+    return true;
+    } else {
+      i++;
+    }
+  } 
+  return false;
+}
 
 /**
  * containsForLoop()
@@ -87,7 +113,14 @@ function containsWhileLoop(array, target) {}
  *  containsForLoop([ "left", "up", "right" ], "down");
  *  //> false
  */
-function containsForLoop(array, target) {}
+function containsForLoop(array, target) {
+  for (let i = 0; i<= array.length-1; i++) {
+    if (target === array[i]) {
+      return true;
+    } else i++;
+  }
+  return false;
+}
 
 /**
  * targetCount()
@@ -101,7 +134,16 @@ function containsForLoop(array, target) {}
  *  targetCount([ 10, 20, 10, 20, 30 ], 10);
  *  //> 2
  */
-function targetCount(array, target) {}
+function targetCount(array, target) {
+  let repeatedTimes = 0;
+  for (let i = 0; i <= array.length-1; i++) {
+    if (array[i] === target) {
+
+      repeatedTimes++;
+    }
+  } 
+  return repeatedTimes;
+}
 
 /**
  * firstIndexFound()
@@ -121,7 +163,14 @@ function targetCount(array, target) {}
  *  firstIndexFound([ "left", "right", "left" ], "up");
  *  //> -1
  */
-function firstIndexFound(array, target) {}
+function firstIndexFound(array, target) {
+for(let i = 0; i <= array.length-1; i++) {
+  if (target === array[i]) {
+    return i;
+  }
+ }
+ return -1;
+};
 
 /**
  * lastIndexFound()
@@ -141,7 +190,29 @@ function firstIndexFound(array, target) {}
  *  lastIndexFound([ "left", "right", "left" ], "up");
  *  //> -1
  */
-function lastIndexFound(array, target) {}
+function lastIndexFound(array, target) {
+  const numArrIndex = [];
+  for (let i = 0; i <= array.length-1; i++) {
+    if (array[i] === target) {
+    numArrIndex.push(i);
+     } 
+  }
+  if (numArrIndex.length === 0 ) {
+    return -1;
+  }
+  return numArrIndex[numArrIndex.length-1];
+} 
+/**
+ * 1. declare new array
+ * 2. create for loop iterating through the index of given parameter array
+ * 3. create condition where if the array[i]=== target then push the i variable into new array 
+ * 4.  
+ * 
+ * 
+ * possible cleaner solution if lastIndex = false; (never found anything) 
+ * 
+ */
+
 
 /**
  * timesIndex()
@@ -155,7 +226,14 @@ function lastIndexFound(array, target) {}
  *  //> [ 7 * 0, 10 * 1, 11 * 2 ]
  *  //> [ 0, 10, 22 ]
  */
-function timesIndex(array) {}
+function timesIndex(array) {
+  const newArr = [];
+  for (let i = 0; i <= array.length-1; i++) {
+    let result = i * array[i];
+    newArr.push(result)
+  }
+  return newArr;
+}
 
 /**
  * cumulativeSum()
@@ -169,7 +247,23 @@ function timesIndex(array) {}
  *  //> [ 5, 5 + 2, 5 + 2 + 9 ]
  *  //> [ 5, 7, 16 ]
  */
-function cumulativeSum(array) {}
+
+function cumulativeSum(array) {
+  let sumArr = [];
+if (array.length > 0) { sumArr.push(array[0])
+ }
+  for(let i =1; i<= array.length-1; i++) {
+  sumArr[i] = sumArr[i-1] + array[i];
+  }
+  return sumArr; 
+}
+
+// this function creates sumArr with 5 , 7 but not 16
+/**
+ * 1. create blank array sumArr 
+ * 2.push first element of param array into sumArr
+ * 3.for loop that automatically pushes all iterations after already adding
+ */
 
 // Do not change anything below this line.
 module.exports = {
