@@ -142,6 +142,7 @@ function targetCount(array, target) {
   });
   return count;
 }
+ 
 
 /**
  * firstIndexFound()

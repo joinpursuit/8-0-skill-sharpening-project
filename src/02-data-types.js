@@ -144,7 +144,7 @@ function isOdd(num) {
  *  //> false
  */
 function isTruthy(val) {
-  return val ? true : false;
+  return val ? true : false; // return !!val;
 }
 
 /**

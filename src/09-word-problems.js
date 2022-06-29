@@ -93,11 +93,20 @@ function getCartTotal(products) {
     //> "Same city."
  */
 function compareLocations(address1, address2) {
-  let sameBuilding = (address1.street === address2.street) && (address1.city === address2.city) && (address1.state === address2.state) && (address1.zip === address2.zip);
-  let sameCity = (address1.city === address2.city) && (address1.state === address2.state) && (address1.zip === address2.zip);
-  let sameState = address1.state === address2.state;
-  
+  let sameBuilding = JSON.stringify(address1) === JSON.stringify(address2);
+  let sameCity = JSON.stringify(address1.city) === JSON.stringify(address2.city) && JSON.stringify(address1.state) === JSON.stringify(address2.state);
+  let sameState = JSON.stringify(address1.state) === JSON.stringify(address2.state);
   return sameBuilding ? "Same building." : sameCity ? "Same city." : sameState ? "Same state." : "Addresses are not near each other.";
+  
+  // if (JSON.stringify(address1) === JSON.stringify(address2)){
+  //   return "Same building.";
+  // } else if (JSON.stringify(address1.city) === JSON.stringify(address2.city) && JSON.stringify(address1.state) === JSON.stringify(address2.state)){
+  //   return "Same city.";
+  // } else if (JSON.stringify(address1.state) === JSON.stringify(address2.state)) {
+  //   return "Same state.";
+  // } else {
+  //   return "Addresses are not near each other."
+  // }
 }
 
 /**
@@ -189,7 +198,7 @@ function createLineOrder(people) {
   let member = [];
   let notMember = [];
   people.filter(person => person.hasMembership ? member.push(person.name) : notMember.push(person.name));
-  return member.concat(notMember);
+  return [...member, ...notMember];
 }
 
 module.exports = {

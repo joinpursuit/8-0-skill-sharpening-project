@@ -77,7 +77,7 @@ function positiveNegativeOrZero(a) {
   } else if (a < 0) {
     return "Negative";
   } 
-  return "Zero";  
+  return "Zero"; 
 }
 
 /**
