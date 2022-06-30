@@ -165,6 +165,7 @@ function compareLocations(address1, address2) {
     //>   },
     //> ];
  */
+
 function gradeAssignments(assignments) {
   let totalScorePercentage = 0;
   for(let i = 0; i < assignments.length; i++) {
@@ -208,12 +209,20 @@ function gradeAssignments(assignments) {
       { name: "America Marsh", hasMembership: true },
       { name: "Patience Patel", hasMembership: false },
     ];
-    createLineOrder(people);
+    createLineOrder(people); 
     //> [ "Ray Anderson", "America Marsh", "Wade Carson", "Patience Patel" ]
  */
 function createLineOrder(people) {
-
-}
+  let customers = []
+  for (let i = 0; i < people.length; i++) {
+     if(people[i].name === people[i].hasMembership){
+      let mysort = people[i].name.sort()
+      customers.push(mysort)
+     }
+   } 
+    return customers
+  }
+  
 
 module.exports = {
   applyDiscount,
