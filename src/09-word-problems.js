@@ -24,9 +24,9 @@ function applyDiscount(priceInCents, age, hasMembership) {
     priceInCents -= priceInCents * 0.10
   } else if (hasMembership){
     priceInCents -= priceInCents * 0.20
-  } if (age <= 10 && hasMembership === true){
+  }  if (age <= 10 && hasMembership === true){
     priceInCents = 700
-  } if (age >= 65 && hasMembership === true){
+  }  if (age >= 65 && hasMembership === true){
     priceInCents = 700
   }
   return priceInCents;
@@ -52,7 +52,11 @@ function applyDiscount(priceInCents, age, hasMembership) {
  *  //> "$30.00"
  */
 function getCartTotal(products) {
-  console.log(products)
+  let prod = 0;
+  for (sroduct of products){
+    prod += sroduct.priceInCents * sroduct.quantity
+  }
+  return `$${(prod / 100).toFixed(2)}`
 }
 
 /**
@@ -95,16 +99,31 @@ function getCartTotal(products) {
  */
 function compareLocations(address1, address2) {
   let result;
- if (address1 !== address2){
-   result = 'Addresses are not near each other.'
- } else if (address1.state.city.zip === address2.state.city.zip){
-   result = 'Same building.'
- }
- return result;
+if (address1.street === address2.street){
+  if (address1.city === address2.city){
+    if(address1.state === address2.state){
+      if(address1.zip === address2.zip){
+        result = 'Same building.'
+      } else if (address1.city === address2.city){
+        if (address1.state === address2.state){
+          if (address1.zip === address2.zip){
+            result = 'Same city.'
+          } else if (address1.state === address2.state){
+            result = 'Same state.'
+          } else {
+            result = 'Addresses are not near each other.'
+          }
+        }
+      }
+    }
+  }
+}
+return result;
+ 
 }
 /**
  * gradeAssignments()
- * ---------------------
+ * ---------------------a
  * An online learning management system needs a way to quickly add the current status to a list of assignments. Depending on the `kind` of assignment, different statuses should be applied.
  *
  * Write an algorithm that adds a key of `status` to each object in an array of objects. Each object represents a single assignment submitted by a student.
@@ -172,7 +191,21 @@ function gradeAssignments(assignments) {}
     createLineOrder(people);
     //> [ "Ray Anderson", "America Marsh", "Wade Carson", "Patience Patel" ]
  */
-function createLineOrder(people) {}
+function createLineOrder(people) {
+  memArr = []
+  noMemArr = []
+  for (let i = 0; i < people.length; i++){
+    if (people[i] === hasMembership){
+      memArr.push(people[i])
+    }
+    for (person of people){
+      if (person !== hasMembership){
+        noMemArr.push(person)
+      }
+      return memArr.Concat(noMemArr)
+    }
+  }
+}
 
 module.exports = {
   applyDiscount,
