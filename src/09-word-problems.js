@@ -19,7 +19,37 @@
  *  applyDiscount(1000, 9, true);
  *  //> 700
  */
-function applyDiscount(priceInCents, age, hasMembership) {}
+
+const { getFirstAndLastCharacter } = require("./01-functions");
+
+
+
+// discounts 10% for ages <10 
+// disconts 10% for ages 65>
+// discounts 20% if attending with member 
+
+
+priceInCents =1000;
+age =10;
+hasMemberShip = true;
+
+function applyDiscount(priceInCents, age, hasMembership) {
+  if (priceInCents === 1000 && age <=10){
+  return (priceInCents *.90);
+  }else if(priceInCents === 1000 && age >=65){
+    return priceInCents *.90;
+  } else if(priceInCents === 1000 && age && hasMembership === true){
+    return priceInCents * .80;
+  } else if (priceInCents === 1000 && age == 10 && hasMembership === true){
+    return priceInCents * .70;
+  } else if (priceInCents === 1000 && age == 65 && hasMembership === true){
+    return priceInCents * .70;
+  } else ( priceInCents === 1000 && age === 30  && hasMembership === false)
+    return priceInCents;
+    } 
+
+
+
 
 /**
  * getCartTotal()
@@ -40,7 +70,16 @@ function applyDiscount(priceInCents, age, hasMembership) {}
     getCartTotal(cart);
  *  //> "$30.00"
  */
-function getCartTotal(products) {}
+
+  const cart = [
+    {name: "Slacks", priceIncents:1000, quantity: 1},
+    {name: "boxers", priceInCents:1050, quantity: 2},
+    {name: "Skimask", priceInCents:2000, quantity:1}
+  ]
+function getCartTotal(products) {
+  
+
+}
 
 /**
  * compareLocations()
@@ -80,7 +119,35 @@ function getCartTotal(products) {}
     compareLocations(address1, address2);
     //> "Same city."
  */
-function compareLocations(address1, address2) {}
+
+    const address1 = {
+      street: "8785 Trenton St.",
+      city: "Melbourne",
+      state: "FL",
+      zip: "32904",
+    };
+    const address2 = {
+      street: "2 Lees Creek Ave.",
+      city: "Melbourne",
+      state: "FL",
+      zip: "32904",
+    };
+  
+    //> "Same city."
+function compareLocations(address1, address2) {
+  if (address1.city && address1.state & address1.zip === address2.city && address2.state & address2.zip){
+    return `same city`;
+  } else if (address1.state === address2.state) {
+    return `Same state.`;
+  } else if (address1.city !== address2.city){
+    return `Addresses are not near each other.`;
+  } else if (address1.state !== address2.state){
+    return `Addresses are not near each other.`;
+  } else if (address1.street && address1.city && address1.state & address1.zip === address1.street && address2.city && address2.state & address2.zip){
+    return `same building.`
+  }
+
+}
 
 /**
  * gradeAssignments()
@@ -152,7 +219,17 @@ function gradeAssignments(assignments) {}
     createLineOrder(people);
     //> [ "Ray Anderson", "America Marsh", "Wade Carson", "Patience Patel" ]
  */
-function createLineOrder(people) {}
+
+const airlinePoeple =[
+  {name: "Tucker", hasMembership:true},
+  {name: "Jason", hasMembership:false},
+  {name: "Kim", hasMembership:true},
+  {name: "Zack", hasMembership:false},
+]
+
+function createLineOrder(people) {
+  
+}
 
 module.exports = {
   applyDiscount,
