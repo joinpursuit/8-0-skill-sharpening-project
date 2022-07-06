@@ -12,7 +12,15 @@
  *  shoutForLoop([ "A", "Very", "Happy", "Array" ]);
  *  //> [ "A!", "Very!", "Happy!", "Array!" ];
  */
-function shoutForLoop(array) {}
+function shoutForLoop(array) {
+  let newArr = [];
+  for (let i = 0; i < array.length; i++) {
+   newArr.push(array[i]+'!');
+  }
+  return newArr;
+}
+shoutForLoop([ "A", "Very", "Happy", "Array" ])
+// ran debugger to realize I was not making the function inclusive and the loop would stop one index early
 
 /**
  * shoutWhileLoop()
@@ -28,7 +36,15 @@ function shoutForLoop(array) {}
  *  shoutWhileLoop([ "A", "Very", "Happy", "Array" ]);
  *  //> [ "A!", "Very!", "Happy!", "Array!" ];
  */
-function shoutWhileLoop(array) {}
+function shoutWhileLoop(array) {
+  let i = 0;
+  let newArr = [];
+  while (i < array.length) {
+    newArr.push(array[i]+'!');
+    i++;
+  }
+  return newArr;
+}
 
 /**
  * shoutForOfLoop()
@@ -44,7 +60,14 @@ function shoutWhileLoop(array) {}
  *  shoutForOfLoop([ "A", "Very", "Happy", "Array" ]);
  *  //> [ "A!", "Very!", "Happy!", "Array!" ];
  */
-function shoutForOfLoop(array) {}
+function shoutForOfLoop(array) {
+  let newArr = [];
+  for (let elemsArr of array) {
+    newArr.push(elemsArr + '!');
+  }
+  return newArr;
+}
+// shoutForOfLoop([ "A", "Very", "Happy", "Array" ]);
 
 /**
  * sumArray()
@@ -57,7 +80,14 @@ function shoutForOfLoop(array) {}
  *  sumArray([ 10, 0, 10, 11 ]);
  *  //> 31
  */
-function sumArray(array) {}
+function sumArray(array) {
+  let total = 0;
+  for (let i = 0; i<array.length; i++) {
+   total += array[i];
+  }
+  return total;
+}
+
 
 /**
  * oddArray()
@@ -70,7 +100,16 @@ function sumArray(array) {}
  *  oddArray([ 11, 15, 20, 22, 37 ]);
  *  //> [ 11, 15, 37 ]
  */
-function oddArray(array) {}
+function oddArray(array) {
+  let newArr =[];
+  for (let i = 0; i<array.length; i++) {
+    if (array[i]%2 !== 0) {
+      newArr.push(array[i]);
+    }
+  }
+  return newArr;
+}
+
 
 /**
  * evenArray()
@@ -83,7 +122,15 @@ function oddArray(array) {}
  *  evenArray([ 11, 15, 20, 22, 37 ]);
  *  //> [ 20, 22 ]
  */
-function evenArray(array) {}
+function evenArray(array) {
+  let newArr = [];
+  for (let i=0; i< array.length; i++) {
+    if (array[i]%2 ===0) {
+      newArr.push(array[i]);
+    }
+  }
+  return newArr;
+}
 
 /**
  * findSmallest()
@@ -96,7 +143,16 @@ function evenArray(array) {}
  *  findSmallest([ 0, 11, -2, 5 ]);
  *  //> -2
  */
-function findSmallest(array) {}
+function findSmallest(array) {
+  let smallestNum = array[0]; 
+  for (let i = 1; i < array.length; i++) {
+    const currentNum = array[i];
+    if (currentNum < smallestNum) {
+      smallestNum = currentNum;
+    }
+  }
+  return smallestNum;
+}
 
 /**
  * findLargest()
@@ -109,7 +165,16 @@ function findSmallest(array) {}
  *  findLargest([ 0, 11, -2, 5 ]);
  *  //> 11
  */
-function findLargest(array) {}
+function findLargest(array) {
+  let largestNum = array[0];
+  for (let i = 1; i<array.length; i++) {
+    const currentNum = array[i];
+    if (currentNum > largestNum) {
+      largestNum = currentNum;
+    }
+  }
+  return largestNum;
+}
 
 /**
  * findEqual()
@@ -126,7 +191,14 @@ function findLargest(array) {}
  *  findEqual([ 0, 11, -2, 5 ], 9);
  *  //> false
  */
-function findEqual(array, selected) {}
+function findEqual(array, selected) {
+  for (let i=0; i< array.length; i++) {
+    if (array[i] === selected) {
+      return true;
+    }
+  }
+  return false;
+}
 
 /**
  * removeDuplicates()
@@ -143,7 +215,55 @@ function findEqual(array, selected) {}
  *  //> [ 1, 11, 2, 3, 4, 9 ]
  */
 
-function removeDuplicates(array) {}
+function removeDuplicates(array) {
+  let newArr = [];
+  for (let i = 0; i < array.length; i++) {
+    if (newArr.includes(array[i])===false) {
+      newArr.push(array[i]);
+    }
+  }
+  return newArr;
+}
+
+
+
+
+  removeDuplicates([ 11, 11, 2, 3, 4, 4, 2, 11, 9 ]);
+//   let firstElem = array[0];
+//   let newArr = [];
+//   for (let i = 1; i < array.length; i++) {
+//     const secondElem = array[i];
+//     if (firstElem !== secondElem) {
+//       newArr.push(firstElem);
+//       firstElem = secondElem;
+//     } else {
+//       firstElem = secondElem;
+//     }
+//   }
+//   return newArr;
+// }
+//-------------------------------------------------------------
+//   const copyArray = [];
+//   for (let i=0; i < array.length; i++) {
+//     if (array[i]===array[i+1]) {
+//     copyArray.push(array[i+1]);
+//     } 
+//   } 
+// return copyArray;
+
+//   for (let i = 0; i<array.length; i++) {
+//     copyArray.push(array[i])
+//       if (copyArray[i] === array[i+1]) {
+//       copyArray.push(array[i+1]);
+//       copyArray.pop();
+//       }
+//     // }
+//   }
+//   return copyArray;
+// }
+
+
+
 
 // Do not change any code below this line.
 module.exports = {
