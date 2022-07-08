@@ -41,8 +41,8 @@ function isEqual(a, b) {
  *  //> 19
  */
 function findLarger(a, b) {
-  if ( a>b){
-    return;
+  if ( (a > 10) && (a<20) && (b>10 && b<20)){
+    return
   }
   }
 
@@ -91,11 +91,11 @@ function findLarger(a, b) {
  *  //> "Positive"
  */
  function positiveNegativeOrZero(a) {
-  if (a = -1){
+  if (a == -1){
     return `Negative`
-  } else if ( a = 0){
+  } else if ( a == 0){
     return `Zero`
-  } else (a = 1)
+  } else (a == 1)
     return `Positive`
 }
 
@@ -220,11 +220,13 @@ calculateLetterGrade(`90`);
  *  animalCounts("pig", 1);
  *  //> "1 pig"
  */
+
+
 function animalCounts(animal, numberOfAnimals){
   if (animal && numberOfAnimals){
     return `${numberOfAnimals} ${animal}`;
-  } else if (animal && numberOfAnimals === 2){
-    return `${numberOfAnimals}`+ `${animal}`+`s`;
+  } else if (animal && numberOfAnimals == 2){
+    return `${numberOfAnimals}`+ `${animal}/s`;
   } 
 }
 
@@ -246,14 +248,13 @@ function animalCounts(animal, numberOfAnimals){
  *  //> "Even"
  */
 function evenOrOdd(a) {
-  let even = true;
-  let odd = false;
 
-  if (!a){
-    return even;
-  } else (a)
-    return odd;
-}
+  if (a % 2 == 0){
+    return "Even";
+  } else 
+    return "Odd";
+  }
+  
 
 /**
  * evenOrOddWithTernary()
@@ -270,10 +271,7 @@ function evenOrOdd(a) {
  *  //> "Even"
  */
 function evenOrOddWithTernary(a) {
-  if (a %2 == 0){
-    return `number is even.`;
-  } else 
-    return `number is odd`;
+  return (a % 2 == 0) ? "Even" : "Odd"
   }
 
 

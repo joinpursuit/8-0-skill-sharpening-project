@@ -164,9 +164,9 @@ function isOdd(num) {
  *  //> false
  */
 function isTruthy(val) {
-  if ( val === 1){
+  if ( val && val){
     return true;
-  } else ( val === NaN)
+  } else ( val && NaN)
     return false;
 }
 
@@ -185,10 +185,10 @@ function isTruthy(val) {
  *  //> false
  */
 function isFalsy(val) {
-  if ( val === 0){
-    return true;
-  } else (val === "")
+  if ( val && val){
     return false;
+  } else (val && 1)
+    return true;
 }
 
 // Do not change the code below.

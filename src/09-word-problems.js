@@ -135,16 +135,16 @@ function getCartTotal(products) {
   
     //> "Same city."
 function compareLocations(address1, address2) {
-  if (address1.city && address1.state & address1.zip === address2.city && address2.state & address2.zip){
-    return `same city`;
+  if (address1.city && address1.state && address1.zip === address2.city && address2.state && address2.zip){
+    return `Same city`;
   } else if (address1.state === address2.state) {
     return `Same state.`;
   } else if (address1.city !== address2.city){
     return `Addresses are not near each other.`;
   } else if (address1.state !== address2.state){
     return `Addresses are not near each other.`;
-  } else if (address1.street && address1.city && address1.state & address1.zip === address1.street && address2.city && address2.state & address2.zip){
-    return `same building.`
+  } else if (address1.street && address1.city && address1.state && address1.zip === address1.street && address2.city && address2.state && address2.zip){
+    return `Same building`;
   }
 
 }

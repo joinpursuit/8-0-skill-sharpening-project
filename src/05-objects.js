@@ -44,7 +44,8 @@ function createObjectWithValue(val) {
  *  //> { left: false }
  */
 function createObjectWithKey(key) {
-  return object.key = "my key";
+  object.key()
+  return key;
 }
 
 
@@ -107,9 +108,10 @@ function getAgeFromObject(object) {
  *  //> { left: true, key: false }
  */
 function addValueToObject(object, val) {
-   object[`val`];
+   object[`val`] = val
    return object;
-}
+
+  }
 
 
 
