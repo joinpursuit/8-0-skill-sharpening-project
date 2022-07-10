@@ -19,7 +19,44 @@
  *  applyDiscount(1000, 9, true);
  *  //> 700
  */
-function applyDiscount(priceInCents, age, hasMembership) {}
+
+const { getFirstAndLastCharacter, add } = require("./01-functions");
+
+
+
+// discounts 10% for ages <10 
+// disconts 10% for ages 65>
+// discounts 20% if attending with member 
+
+
+
+
+function applyDiscount(priceInCents, age, hasMembership) {
+  // if (priceInCents === 1000 && age <=10){
+  // return (priceInCents *.90);
+  // }else if(priceInCents === 1000 && age >=65){
+  //   return priceInCents *.90;
+  // } else if(priceInCents === 1000 && age && hasMembership === true){
+  //   return priceInCents * .80;
+  // } else if (priceInCents === 1000 && age <=10 && hasMembership === true){
+  //   return priceInCents * .70;
+  // } else if (priceInCents === 1000 && age >=65 && hasMembership === true){
+  //   return priceInCents * .70;
+  // } else ( priceInCents === 1000 && age === 30  && hasMembership === false)
+  //   return priceInCents;
+  //   
+ let discount = 0;
+ if(age <=10 || age >= 65){
+  discount += 0.1;
+ }
+ if(hasMembership){
+  discount += 0.2;
+ }
+ return priceInCents * (1 - discount);
+
+}
+
+
 
 /**
  * getCartTotal()
@@ -40,7 +77,16 @@ function applyDiscount(priceInCents, age, hasMembership) {}
     getCartTotal(cart);
  *  //> "$30.00"
  */
-function getCartTotal(products) {}
+
+function getCartTotal(products) {
+  let totalCost = 0;
+
+  for(let item of products) {
+    totalCost += item.priceInCents * item.quantity;
+  }
+  return "$" + (totalCost / 100).toFixed(2);
+}
+
 
 /**
  * compareLocations()
@@ -80,7 +126,43 @@ function getCartTotal(products) {}
     compareLocations(address1, address2);
     //> "Same city."
  */
-function compareLocations(address1, address2) {}
+
+  
+
+function compareLocations(address1, address2) {
+  let buildingKeys = ["city", "state", "street", "zip"]
+
+  let matchFound = true;
+  for(let key of buildingKeys) {
+    if(address1[key] !== address2[key]) {
+      matchFound = false;
+    }
+  }
+  if(matchFound) {
+    return "Same building.";
+  }
+  if( address1.city === address2.city && address1.state === address2.state && address1.zip === address2.zip){
+    return "Same city.";
+   }
+   if (address1.state === address2.state ) {
+    return "Same state.";
+   }
+   return "Addresses are not near each other.";
+  }
+
+  // if (address1.city && address1.state && address1.zip === address2.city && address2.state && address2.zip){
+  //   return `Same city`;
+  // } else if (address1.state == address2.state) {
+  //   return `Same state.`;
+  // } else if (address1.city !== address2.city){
+  //   return `Addresses are not near each other.`;
+  // } else if (address1.state !== address2.state){
+  //   return `Addresses are not near each other.`;
+  // } else if (address1.street && address1.city && address1.state && address1.zip === address1.street && address2.city && address2.state && address2.zip){
+  //   return `Same building`;
+  // }
+
+
 
 /**
  * gradeAssignments()
@@ -127,7 +209,23 @@ function compareLocations(address1, address2) {}
     //>   },
     //> ];
  */
-function gradeAssignments(assignments) {}
+function gradeAssignments(assignments) {
+  for(let assignment of assignments) {
+    let score = assignment.score;
+    
+    if(assignment.kind === "PASS-FAIL") {
+      assignment.status = score.received === score.max ? "PASSED" : "FAILED";
+    }
+    else if(assignment.kind === "PERCENTAGE") {
+      let percentage = score.received / score.max * 100;
+      assignment.status = percentage >= 80 ? `PASSED: ${percentage.toFixed(1)}%` : `FAILED: ${percentage.toFixed(1)}%`;
+    }
+    else{
+      assignment.status = `SCORE: ${score.received}/${score.max}`;
+    }
+  }
+  return assignments;
+}
 
 /**
  * createLineOrder()
@@ -152,7 +250,30 @@ function gradeAssignments(assignments) {}
     createLineOrder(people);
     //> [ "Ray Anderson", "America Marsh", "Wade Carson", "Patience Patel" ]
  */
-function createLineOrder(people) {}
+
+const airlinePoeple =[
+  {name: "Tucker", hasMembership:true},
+  {name: "Jason", hasMembership:false},
+  {name: "Kim", hasMembership:true},
+  {name: "Zack", hasMembership:false},
+]
+
+function createLineOrder(people) {
+  const line = [];
+
+  for(let customer of people) {
+    if( customer.hasMembership) {
+      line.push(customer.name);
+    }
+  }
+  for(let customer of people) {
+    if(!customer.hasMembership) {
+      line.push(customer.name);
+    }
+  }
+  return line;
+}
+
 
 module.exports = {
   applyDiscount,
