@@ -196,9 +196,18 @@ function getCityAndState(person) {
       numbers: [7185550921, 7185558611],
     };
  */
-function getFlatObject(person) {
-  return Object.create(person);
+
+    function getFlatObject(person) {
+  return {
+    ...person.names,
+    ...person.address,
+    numbers: person.numbers,
+  }
 }
+  
+   
+
+
 
 // Do not change the code below.
 module.exports = {

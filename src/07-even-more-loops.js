@@ -13,8 +13,12 @@
  *  //> [ "A!", "Very!", "Happy!", "Array!" ];
  */
 function shoutForLoop(array) {
-  
-}
+  let shouts = [];
+  for(let value of array) {
+    shouts.push(value + "!")
+  }
+  return shouts;
+  }
 
 /**
  * shoutWhileLoop()
@@ -30,7 +34,16 @@ function shoutForLoop(array) {
  *  shoutWhileLoop([ "A", "Very", "Happy", "Array" ]);
  *  //> [ "A!", "Very!", "Happy!", "Array!" ];
  */
-function shoutWhileLoop(array) {}
+function shoutWhileLoop(array) {
+  let index = 0;
+  let shouts = [];
+
+  while(index < array.length) {
+    shouts.push(array[index] + "!");
+    index ++;
+  }
+  return shouts;
+}
 
 /**
  * shoutForOfLoop()
@@ -46,7 +59,14 @@ function shoutWhileLoop(array) {}
  *  shoutForOfLoop([ "A", "Very", "Happy", "Array" ]);
  *  //> [ "A!", "Very!", "Happy!", "Array!" ];
  */
-function shoutForOfLoop(array) {}
+function shoutForOfLoop(array) {
+  let shouts = [];
+
+  for(let value of array) {
+    shouts.push(value + "!");
+  }
+  return shouts;
+}
 
 /**
  * sumArray()
@@ -59,7 +79,13 @@ function shoutForOfLoop(array) {}
  *  sumArray([ 10, 0, 10, 11 ]);
  *  //> 31
  */
-function sumArray(array) {}
+function sumArray(array) {
+  let totalSum= 0;
+  for(let value of array){
+    totalSum += value;
+  }
+return totalSum;
+}
 
 /**
  * oddArray()
@@ -72,7 +98,16 @@ function sumArray(array) {}
  *  oddArray([ 11, 15, 20, 22, 37 ]);
  *  //> [ 11, 15, 37 ]
  */
-function oddArray(array) {}
+function oddArray(array) {
+  let oddNum= [];
+
+  for(let value of array){
+    if( value % 2 === 1) {
+      oddNum.push(value);
+    }
+  }
+  return oddNum;
+}
 
 /**
  * evenArray()
@@ -85,7 +120,16 @@ function oddArray(array) {}
  *  evenArray([ 11, 15, 20, 22, 37 ]);
  *  //> [ 20, 22 ]
  */
-function evenArray(array) {}
+function evenArray(array) {
+  let evenNum= [];
+
+  for(let value of array){
+    if( value % 2 === 0) {
+      evenNum.push(value);
+    }
+  }
+  return evenNum;
+}
 
 /**
  * findSmallest()
@@ -98,7 +142,16 @@ function evenArray(array) {}
  *  findSmallest([ 0, 11, -2, 5 ]);
  *  //> -2
  */
-function findSmallest(array) {}
+function findSmallest(array) {
+  let smallNum = array[0];
+
+  for(let value of array) {
+    if(value < smallNum) {
+      smallNum = value;
+    }
+  }
+  return smallNum;
+}
 
 /**
  * findLargest()
@@ -111,7 +164,16 @@ function findSmallest(array) {}
  *  findLargest([ 0, 11, -2, 5 ]);
  *  //> 11
  */
-function findLargest(array) {}
+function findLargest(array) {
+  let bigNum= array[0];
+
+  for(let value of array) {
+    if(value > bigNum){
+      bigNum = value;
+    }
+  }
+  return bigNum;
+}
 
 /**
  * findEqual()
@@ -128,7 +190,14 @@ function findLargest(array) {}
  *  findEqual([ 0, 11, -2, 5 ], 9);
  *  //> false
  */
-function findEqual(array, selected) {}
+function findEqual(array, selected) {
+  for(let value of array) {
+    if( value === selected){
+      return true;
+    }
+  }
+  return false;
+}
 
 /**
  * removeDuplicates()
@@ -145,7 +214,17 @@ function findEqual(array, selected) {}
  *  //> [ 1, 11, 2, 3, 4, 9 ]
  */
 
-function removeDuplicates(array) {}
+function removeDuplicates(array) {
+  let notdouble = [];
+
+  for(let value of array){
+    if(!notdouble.includes(value)){
+      notdouble.push(value);
+    }
+  }
+  return notdouble;
+}
+
 
 // Do not change any code below this line.
 module.exports = {

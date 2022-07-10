@@ -137,7 +137,7 @@ function containsForLoop(array, target) {
  *  //> 2
  */
 function targetCount(array, target) {
-  let searchIndex = 0;
+  let targetCount = 0;
 
   for(let i =0 ; i < array.length; i++) {
     let element = array[i];
@@ -166,7 +166,15 @@ function targetCount(array, target) {
  *  firstIndexFound([ "left", "right", "left" ], "up");
  *  //> -1
  */
-function firstIndexFound(array, target) {}
+function firstIndexFound(array, target) {
+  for(let i = 0; i< array.length; i ++){
+    let element = array[i];
+    if(element === target){
+      return i;
+    }
+  }
+  return -1;
+}
 
 /**
  * lastIndexFound()
@@ -186,7 +194,15 @@ function firstIndexFound(array, target) {}
  *  lastIndexFound([ "left", "right", "left" ], "up");
  *  //> -1
  */
-function lastIndexFound(array, target) {}
+function lastIndexFound(array, target) {
+  for(let i = array.length- 1; i >= 0 ; i --){
+    let element = array[i];
+    if(element === target){
+      return i;
+    }
+  }
+  return -1;
+}
 
 /**
  * timesIndex()
@@ -200,7 +216,11 @@ function lastIndexFound(array, target) {}
  *  //> [ 7 * 0, 10 * 1, 11 * 2 ]
  *  //> [ 0, 10, 22 ]
  */
-function timesIndex(array) {}
+function timesIndex(array) {
+  return array.map((element, index) => {
+    return element * index;})
+  }
+  
 
 /**
  * cumulativeSum()
@@ -214,7 +234,18 @@ function timesIndex(array) {}
  *  //> [ 5, 5 + 2, 5 + 2 + 9 ]
  *  //> [ 5, 7, 16 ]
  */
-function cumulativeSum(array) {}
+function cumulativeSum(array) {
+  let sum0fA= [];
+  for(let i= 0 ; i < array.length; i ++){
+    if (sum0fA.length === 0){
+      sum0fA.push(array[i]);
+    }
+    else {
+      sum0fA.push(array[i]+ sum0fA[i - 1]);
+    }
+  }
+  return sum0fA;
+}
 
 // Do not change anything below this line.
 module.exports = {

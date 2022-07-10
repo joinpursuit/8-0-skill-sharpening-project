@@ -20,7 +20,7 @@
  *  //> 700
  */
 
-const { getFirstAndLastCharacter } = require("./01-functions");
+const { getFirstAndLastCharacter, add } = require("./01-functions");
 
 
 
@@ -32,20 +32,29 @@ const { getFirstAndLastCharacter } = require("./01-functions");
 
 
 function applyDiscount(priceInCents, age, hasMembership) {
-  if (priceInCents === 1000 && age <=10){
-  return (priceInCents *.90);
-  }else if(priceInCents === 1000 && age >=65){
-    return priceInCents *.90;
-  } else if(priceInCents === 1000 && age && hasMembership === true){
-    return priceInCents * .80;
-  } else if (priceInCents === 1000 && age <=10 && hasMembership === true){
-    return priceInCents * .70;
-  } else if (priceInCents === 1000 && age >=65 && hasMembership === true){
-    return priceInCents * .70;
-  } else ( priceInCents === 1000 && age === 30  && hasMembership === false)
-    return priceInCents;
-    } 
+  // if (priceInCents === 1000 && age <=10){
+  // return (priceInCents *.90);
+  // }else if(priceInCents === 1000 && age >=65){
+  //   return priceInCents *.90;
+  // } else if(priceInCents === 1000 && age && hasMembership === true){
+  //   return priceInCents * .80;
+  // } else if (priceInCents === 1000 && age <=10 && hasMembership === true){
+  //   return priceInCents * .70;
+  // } else if (priceInCents === 1000 && age >=65 && hasMembership === true){
+  //   return priceInCents * .70;
+  // } else ( priceInCents === 1000 && age === 30  && hasMembership === false)
+  //   return priceInCents;
+  //   
+ let discount = 0;
+ if(age <=10 || age >= 65){
+  discount += 0.1;
+ }
+ if(hasMembership){
+  discount += 0.2;
+ }
+ return priceInCents * (1 - discount);
 
+}
 
 
 
@@ -69,14 +78,13 @@ function applyDiscount(priceInCents, age, hasMembership) {
  *  //> "$30.00"
  */
 
-  const prodcuts = [
-    {name: "Slacks", priceIncents:1000, quantity: 1},
-    {name: "boxers", priceInCents:1050, quantity: 2},
-    {name: "Skimask", priceInCents:2000, quantity:1}
-  ]
 function getCartTotal(products) {
-  let totalPrice = products.name.priceInCents * products.name.quantity;
-  return `$`+totalPrice;
+  let totalCost = 0;
+
+  for(let item of products) {
+    totalCost += item.priceInCents * item.quantity;
+  }
+  return "$" + (totalCost / 100).toFixed(2);
 }
 
 
@@ -119,34 +127,42 @@ function getCartTotal(products) {
     //> "Same city."
  */
 
-    const address1 = {
-      street: "8785 Trenton St.",
-      city: "Melbourne",
-      state: "FL",
-      zip: "32904",
-    };
-    const address2 = {
-      street: "2 Lees Creek Ave.",
-      city: "Melbourne",
-      state: "FL",
-      zip: "32904",
-    };
   
-    //> "Same city."
+
 function compareLocations(address1, address2) {
-  if (address1.city && address1.state && address1.zip === address2.city && address2.state && address2.zip){
-    return `Same city`;
-  } else if (address1.state == address2.state) {
-    return `Same state.`;
-  } else if (address1.city !== address2.city){
-    return `Addresses are not near each other.`;
-  } else if (address1.state !== address2.state){
-    return `Addresses are not near each other.`;
-  } else if (address1.street && address1.city && address1.state && address1.zip === address1.street && address2.city && address2.state && address2.zip){
-    return `Same building`;
+  let buildingKeys = ["city", "state", "street", "zip"]
+
+  let matchFound = true;
+  for(let key of buildingKeys) {
+    if(address1[key] !== address2[key]) {
+      matchFound = false;
+    }
+  }
+  if(matchFound) {
+    return "Same building.";
+  }
+  if( address1.city === address2.city && address1.state === address2.state && address1.zip === address2.zip){
+    return "Same city.";
+   }
+   if (address1.state === address2.state ) {
+    return "Same state.";
+   }
+   return "Addresses are not near each other.";
   }
 
-}
+  // if (address1.city && address1.state && address1.zip === address2.city && address2.state && address2.zip){
+  //   return `Same city`;
+  // } else if (address1.state == address2.state) {
+  //   return `Same state.`;
+  // } else if (address1.city !== address2.city){
+  //   return `Addresses are not near each other.`;
+  // } else if (address1.state !== address2.state){
+  //   return `Addresses are not near each other.`;
+  // } else if (address1.street && address1.city && address1.state && address1.zip === address1.street && address2.city && address2.state && address2.zip){
+  //   return `Same building`;
+  // }
+
+
 
 /**
  * gradeAssignments()
@@ -193,7 +209,23 @@ function compareLocations(address1, address2) {
     //>   },
     //> ];
  */
-function gradeAssignments(assignments) {}
+function gradeAssignments(assignments) {
+  for(let assignment of assignments) {
+    let score = assignment.score;
+    
+    if(assignment.kind === "PASS-FAIL") {
+      assignment.status = score.received === score.max ? "PASSED" : "FAILED";
+    }
+    else if(assignment.kind === "PERCENTAGE") {
+      let percentage = score.received / score.max * 100;
+      assignment.status = percentage >= 80 ? `PASSED: ${percentage.toFixed(1)}%` : `FAILED: ${percentage.toFixed(1)}%`;
+    }
+    else{
+      assignment.status = `SCORE: ${score.received}/${score.max}`;
+    }
+  }
+  return assignments;
+}
 
 /**
  * createLineOrder()
@@ -227,8 +259,21 @@ const airlinePoeple =[
 ]
 
 function createLineOrder(people) {
-  
+  const line = [];
+
+  for(let customer of people) {
+    if( customer.hasMembership) {
+      line.push(customer.name);
+    }
+  }
+  for(let customer of people) {
+    if(!customer.hasMembership) {
+      line.push(customer.name);
+    }
+  }
+  return line;
 }
+
 
 module.exports = {
   applyDiscount,
