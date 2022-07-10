@@ -41,9 +41,12 @@ function isEqual(a, b) {
  *  //> 19
  */
 function findLarger(a, b) {
-  if ( (a > 10) && (a<20) && (b>10 && b<20)){
-    return
+  if (a > b) {
+    return a;
   }
+    else {
+    return b
+    }
   }
 
 /**
@@ -64,14 +67,8 @@ function findLarger(a, b) {
 
 
  function findLargerOrTie(a,b) {
-  if (a<b){
-    return a;
-  } else if (a>b){
-    return b;
-  }else (a === b)
-    return `tie`
-}
-
+  return a > b ? a: (a === b ? "tie" : b);
+ }
 /**
  * positiveNegativeOrZero()
  * ---------------------
@@ -91,12 +88,12 @@ function findLarger(a, b) {
  *  //> "Positive"
  */
  function positiveNegativeOrZero(a) {
-  if (a == -1){
-    return `Negative`
-  } else if ( a == 0){
-    return `Zero`
-  } else (a == 1)
-    return `Positive`
+  if (a > 0){
+    return `Positive`;
+  } else if ( a < 0){
+    return `Negative`;
+  } else 
+    return `Zero`;
 }
 
 
@@ -223,11 +220,13 @@ calculateLetterGrade(`90`);
 
 
 function animalCounts(animal, numberOfAnimals){
-  if (animal && numberOfAnimals){
-    return `${numberOfAnimals} ${animal}`;
-  } else if (animal && numberOfAnimals == 2){
-    return `${numberOfAnimals}`+ `${animal}/s`;
-  } 
+  if ( numberOfAnimals <= 1){
+    return numberOfAnimals + " " + animal;
+  
+  } else if (numberOfAnimals > 1){
+    return numberOfAnimals  +  " " +  animal  + "s";
+  }
+
 }
 
 

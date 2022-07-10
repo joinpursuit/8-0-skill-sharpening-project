@@ -44,8 +44,7 @@ function createObjectWithValue(val) {
  *  //> { left: false }
  */
 function createObjectWithKey(key) {
-  object.key()
-  return key;
+  return { [key]: "Value"};
 }
 
 

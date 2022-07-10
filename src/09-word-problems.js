@@ -29,9 +29,7 @@ const { getFirstAndLastCharacter } = require("./01-functions");
 // discounts 20% if attending with member 
 
 
-priceInCents =1000;
-age =10;
-hasMemberShip = true;
+
 
 function applyDiscount(priceInCents, age, hasMembership) {
   if (priceInCents === 1000 && age <=10){
@@ -40,9 +38,9 @@ function applyDiscount(priceInCents, age, hasMembership) {
     return priceInCents *.90;
   } else if(priceInCents === 1000 && age && hasMembership === true){
     return priceInCents * .80;
-  } else if (priceInCents === 1000 && age == 10 && hasMembership === true){
+  } else if (priceInCents === 1000 && age <=10 && hasMembership === true){
     return priceInCents * .70;
-  } else if (priceInCents === 1000 && age == 65 && hasMembership === true){
+  } else if (priceInCents === 1000 && age >=65 && hasMembership === true){
     return priceInCents * .70;
   } else ( priceInCents === 1000 && age === 30  && hasMembership === false)
     return priceInCents;
@@ -71,15 +69,16 @@ function applyDiscount(priceInCents, age, hasMembership) {
  *  //> "$30.00"
  */
 
-  const cart = [
+  const prodcuts = [
     {name: "Slacks", priceIncents:1000, quantity: 1},
     {name: "boxers", priceInCents:1050, quantity: 2},
     {name: "Skimask", priceInCents:2000, quantity:1}
   ]
 function getCartTotal(products) {
-  
-
+  let totalPrice = products.name.priceInCents * products.name.quantity;
+  return `$`+totalPrice;
 }
+
 
 /**
  * compareLocations()
@@ -137,7 +136,7 @@ function getCartTotal(products) {
 function compareLocations(address1, address2) {
   if (address1.city && address1.state && address1.zip === address2.city && address2.state && address2.zip){
     return `Same city`;
-  } else if (address1.state === address2.state) {
+  } else if (address1.state == address2.state) {
     return `Same state.`;
   } else if (address1.city !== address2.city){
     return `Addresses are not near each other.`;

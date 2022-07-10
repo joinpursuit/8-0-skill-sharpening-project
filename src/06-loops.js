@@ -12,11 +12,11 @@
  *  (3 + 4 + 5 + 6 + 7 = 25)
  */
 function rangeSum(min, max) {
-  var range = [];
-  for (let i = min ; i<max; i++){
-    range.push(i);
+  let sum = 0;
+  for (let i = min ; i <= max; i++){
+    sum += i;
   }
-  return range;
+  return sum;
 }
 
 
@@ -33,13 +33,14 @@ function rangeSum(min, max) {
  *  //> [ 15, 13, 11 ]
  */
 function rangeOdd(min, max) {
-  var odd= ""
-  for (leti=0; i<number; i--){
-    if(i%2 !=0){
-      odd.push(i)
+  let odd = [];
+  
+  for (let i = max ; i >= min; i--){
+    if ( i % 2 === 1) {
+      odd.push(i);
     }
   }
-  return rangeOdd;
+  return odd;
 }
  
 
@@ -55,7 +56,13 @@ function rangeOdd(min, max) {
  *  rangeEveryOther(11, 18);
  *  //> [ 11, 13, 15, 17 ]
  */
-function rangeEveryOther(min, max) {}
+function rangeEveryOther(min, max) {
+  let everyNum = [];
+  for (let i = min; i<= max; i += 2) {
+  everyNum.push(i);
+  }
+  return everyNum;
+}
 
 /**
  * containsWhileLoop()
@@ -78,7 +85,14 @@ function rangeEveryOther(min, max) {}
  *  //> false
  */
 function containsWhileLoop(array, target) {
-  
+  let searchIndex = 0;
+  while (searchIndex < array.length) {
+    if(array[searchIndex] === target) {
+      return true;
+    }
+    searchIndex ++;
+  }
+  return false;
 }
 
 /**
@@ -101,7 +115,14 @@ function containsWhileLoop(array, target) {
  *  containsForLoop([ "left", "up", "right" ], "down");
  *  //> false
  */
-function containsForLoop(array, target) {}
+function containsForLoop(array, target) {
+  for(let value of array){
+    if(value === target){
+      return true;
+    }
+  }
+  return false;
+}
 
 /**
  * targetCount()
@@ -115,7 +136,17 @@ function containsForLoop(array, target) {}
  *  targetCount([ 10, 20, 10, 20, 30 ], 10);
  *  //> 2
  */
-function targetCount(array, target) {}
+function targetCount(array, target) {
+  let searchIndex = 0;
+
+  for(let i =0 ; i < array.length; i++) {
+    let element = array[i];
+    if(element === target){
+      targetCount ++;
+    }
+  }
+  return targetCount;
+}
 
 /**
  * firstIndexFound()
