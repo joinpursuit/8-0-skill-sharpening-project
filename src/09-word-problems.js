@@ -19,7 +19,18 @@
  *  applyDiscount(1000, 9, true);
  *  //> 700
  */
-function applyDiscount(priceInCents, age, hasMembership) {}
+function applyDiscount(priceInCents, age, hasMembership) {
+  let discount = 0;
+   if (age <= 10 || age > 64 ){
+       discount += 0.10 
+   }
+    
+   if(hasMembership){
+       discount += 0.20
+   } 
+    total = priceInCents - (discount * priceInCents)
+   return total
+}
 
 /**
  * getCartTotal()
@@ -40,7 +51,14 @@ function applyDiscount(priceInCents, age, hasMembership) {}
     getCartTotal(cart);
  *  //> "$30.00"
  */
-function getCartTotal(products) {}
+function getCartTotal(products) {
+  let totalCost = 0;
+for (let i = 0; i < products.length; i++){
+  totalCost += products[i].priceInCents * products[i].quantity
+}
+return `$${(totalCost/100).toFixed(2)}`
+}
+
 
 /**
  * compareLocations()
@@ -66,7 +84,7 @@ function getCartTotal(products) {}
  * 
  * EXAMPLE:
  *  const address1 = {
-      street: "8785 Trenton St.",
+      street: "8785 Trenton St.",qqq111
       city: "Melbourne",
       state: "FL",
       zip: "32904",
@@ -80,7 +98,27 @@ function getCartTotal(products) {}
     compareLocations(address1, address2);
     //> "Same city."
  */
-function compareLocations(address1, address2) {}
+function compareLocations(address1, address2) {
+  
+  if(address1.street === address2.street && address1.city === address2.city && address1.state === address2.state && address1.zip === address2.zip){
+    return "Same building." 
+  }
+  if(address1.street !== address2.street && address1.city === address2.city && address1.state === address2.state && address1.zip === address2.zip){
+    return "Same city."
+  }
+  if(address1.state === address2.state && address1.street !== address2.street && address1.city !== address2.city && address1.zip !== address2.zip){
+    return "Same state."
+  }
+  if(address1.city !== address2.city && address1.street === address2.street && address1.state === address2.state && address1.zip === address2.zip){
+    return "Addresses are not near each other."
+  }
+  if(address1.state !== address2.state && address1.street === address2.street && address1.city === address2.city && address1.zip === address2.zip){
+    return "Addresses are not near each other."
+  }
+  if(address1.state !== address2.state && address1.street !== address2.street && address1.city !== address2.city && address1.zip !== address2.zip){
+      return "Addresses are not near each other." 
+    }
+  }
 
 /**
  * gradeAssignments()
@@ -127,11 +165,33 @@ function compareLocations(address1, address2) {}
     //>   },
     //> ];
  */
-function gradeAssignments(assignments) {}
+
+function gradeAssignments(assignments) {
+  let totalScorePercentage = 0;
+  for(let i = 0; i < assignments.length; i++) {
+  if(assignments[i].kind === 'PASS-FAIL' && assignments[i].score.received === assignments[i].score.max){
+        assignments[i].status = 'PASSED'
+      }else{
+        assignments[i].status = 'FAILED'
+      }
+  
+      if(assignments[i].kind === 'PERCENTAGE' && totalScorePercentage >= 80){
+         totalScorePercentage += ((assignments[i].score.received/assignments[i].score.max) * 100).toFixed(1)  
+           assignments[i].status = `PASSED:` + `${totalScorePercentage}`
+        }else{
+            assignments[i].status = "FAILED:" + `${totalScorePercentage}`
+        }
+     
+      if(assignments[i] !== 'PASS-FAIL' && assignments[i] !== 'PERCENTAGE'){
+        assignments[i].status = 'SCORE:'+ ` ` +  (`${assignments[i].score.received}/${assignments[i].score.max}`)
+      }
+    }
+    return assignments
+}
 
 /**
  * createLineOrder()
- * ---------------------
+ * -------------------
  * An airline wants to build an application that improves the boarding process for its customers. They want to have customers sign up in order of arrival, but prioritize those customers who have a membership.
  * 
  * Build an algorithm that takes in an array of objects, where each object represents a person. The order of the array is important; the person at index `0` arrived first while the person at index `1` arrived afterwards.
@@ -149,10 +209,20 @@ function gradeAssignments(assignments) {}
       { name: "America Marsh", hasMembership: true },
       { name: "Patience Patel", hasMembership: false },
     ];
-    createLineOrder(people);
+    createLineOrder(people); 
     //> [ "Ray Anderson", "America Marsh", "Wade Carson", "Patience Patel" ]
  */
-function createLineOrder(people) {}
+function createLineOrder(people) {
+  let customers = []
+  for (let i = 0; i < people.length; i++) {
+     if(people[i].name === people[i].hasMembership){
+      let mysort = people[i].name.sort()
+      customers.push(mysort)
+     }
+   } 
+    return customers
+  }
+  
 
 module.exports = {
   applyDiscount,
