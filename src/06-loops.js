@@ -13,10 +13,12 @@
  */
 function rangeSum(min, max) {
   let sum = 0;
-  for(let i = min; i<= max; i++) {
-    mySum +=i;}
-  return mySum
+  for (let i = min; i <= max; i++) {
+    sum += i;
+  }
+  return sum;
 }
+
 
 /**
  * rangeOdd()
@@ -162,12 +164,12 @@ function targetCount(array, target) {
  *  //> -1
  */
 function firstIndexFound(array, target) {
-  for( let i = 0; i < array.length; i ++) {
-    let element = array[i];
-  if(element === target) {
-    return i;
+  for (let i = 0; i < array.length; i++) {
+    if (array[i] === target) {
+      return i;
+    }
   }
-  }
+  return -1;
 }
 
 /**
@@ -211,12 +213,13 @@ function lastIndexFound(array, target) {
  *  //> [ 0, 10, 22 ]
  */
 function timesIndex(array) {
-  let timesArray = [];
-  for(let i = 0; i < array.length; i ++) {
-    timesArray.push(array[i] * 1);
+  let newArray = [];
+  for (let i = 0; i < array.length; i++) {
+    newArray.push(array[i]*i);
   }
-  return timesArray
+  return newArray;
 }
+
 
 /**
  * cumulativeSum()

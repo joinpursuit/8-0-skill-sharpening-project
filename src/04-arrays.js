@@ -10,7 +10,9 @@
  *  createEmptyArray();
  *  //> []
  */
-function createEmptyArray() {}
+function createEmptyArray() {
+  return [];
+}
 
 /**
  * createArrayWithTwoElements()
@@ -24,7 +26,9 @@ function createEmptyArray() {}
  *  createArrayWithTwoElements(true, false);
  *  //> [ true, false ]
  */
-function createArrayWithTwoElements(a, b) {}
+function createArrayWithTwoElements(a, b) {
+  return [a, b];
+}
 
 /**
  * getArrayLength()
@@ -37,7 +41,9 @@ function createArrayWithTwoElements(a, b) {}
  *  getArrayLength([ 10, 20, 30 ]);
  *  //> 3
  */
-function getArrayLength(array) {}
+function getArrayLength(array) {
+  return array.length;
+}
 
 /**
  * getFirstElementOfArray()
@@ -53,7 +59,6 @@ function getArrayLength(array) {}
  */
 function getFirstElementOfArray(array) {
   return array[0];
-  return array.shift();
 }
 
 /**
@@ -68,7 +73,9 @@ function getFirstElementOfArray(array) {
  *  getLastElementOfArray([ null, undefined ]);
  *  //> undefined
  */
-function getLastElementOfArray(array) {}
+function getLastElementOfArray(array) {
+  return array[array.length -1];
+}
 
 /**
  * addElementToEndOfArray()
@@ -115,7 +122,7 @@ function removeElementFromEndOfArray(array) {
  *  //> [ 9, 10 ]
  */
 function addElementToFrontOfArray(array, element) {
-  return array.unshift(element);
+  array.unshift(element);
   return array;
 }
 

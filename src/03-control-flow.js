@@ -111,6 +111,7 @@ function aroundTheWorldGreeting(language) {
       default :
       return "Hello World"
   }
+  return language
 }
 
 /**
@@ -191,7 +192,12 @@ function calculateLetterGrade(grade) {
  *  //> "1 pig"
  */
 function animalCounts(animal, numberOfAnimals) {
-  return ``
+  if (numberOfAnimals === 1) {
+    return `1 ${animal}`;
+  }
+  else {
+    return `${numberOfAnimals} ${animal}s`
+  }
 }
 
 /**
@@ -210,8 +216,12 @@ function animalCounts(animal, numberOfAnimals) {
  *  //> "Even"
  */
 function evenOrOdd(a) {
-  return isOdd(a) ? "Odd" : "Even";
-  return isEven(a) ? "Even" : "Odd";
+  if (a % 2 === 0) {
+    return "Even";
+  }
+  else {
+    return "Odd";
+  }
 }
 
 /**
@@ -228,7 +238,9 @@ function evenOrOdd(a) {
  *  evenOrOddWithTernary(8);
  *  //> "Even"
  */
-function evenOrOddWithTernary(a) {}
+function evenOrOddWithTernary(a) {
+  return a % 2 === 0 ? "Even" : "Odd";
+}
 
 // Do not change any code below this line.
 module.exports = {

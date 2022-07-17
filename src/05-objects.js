@@ -10,7 +10,8 @@
  *  //> {}
  */
 function createEmptyObject() {
-  return {};
+  let emptyObject = {};
+  return emptyObject;;
 }
 
 /**
@@ -121,7 +122,8 @@ function addValueToObject(object, val) {
  *  //> { right: false, left: true }
  */
 function addKeyToObject(object, key) {
-
+  object[key] = "value";
+  return object;
 }
 
 /**

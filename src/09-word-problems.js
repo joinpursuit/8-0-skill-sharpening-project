@@ -94,9 +94,9 @@ function getCartTotal(products) {
 function compareLocations(address1, address2) {
   let result = "Addresses are not near each other."
   if (address1.state === address2.state) {
-    result = "Same state";
+    result = "Same state.";
     if (address1.city === address2.city) {
-      result = "Same city";
+      result = "Same city.";
       if (address1.street === address2.street) {
         result = "Same building.";
       }
