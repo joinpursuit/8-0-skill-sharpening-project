@@ -194,10 +194,6 @@ function getFlatObject(person) {
   let theone = {...person.names, ...person.address}
   theone.numbers = person.numbers;
   return theone;
-
-  ...person.names,
-  ...person.address,
-  numbers: person.numbers
 }
 
 // Do not change the code below.

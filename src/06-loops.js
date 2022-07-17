@@ -13,9 +13,8 @@
  */
 function rangeSum(min, max) {
   let sum = 0;
-  for(let i = min; i<= max; i++) (
-    mySum +=i;
-  )
+  for(let i = min; i<= max; i++) {
+    mySum +=i;}
   return mySum
 }
 
@@ -190,10 +189,13 @@ function firstIndexFound(array, target) {
  *  //> -1
  */
 function lastIndexFound(array, target) {
-  for(let i = array.length -1; i >= 0; i --) {
-    let element = array[i]
-    if(element)
+  let lastIndex = -1;
+  for(let i = 0; i < array.length; i++){
+    if(array[i] === target){
+      lastIndex = i;
+    }
   }
+  return lastIndex;
 }
 
 /**
