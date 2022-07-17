@@ -53,8 +53,14 @@ function applyDiscount(priceInCents, age, hasMembership) {
  *  //> "$30.00"
  */
 function getCartTotal(products) {
-  const cart = {products}
-}
+  let totalCost = 0
+
+  for(const item of cart) {
+    totalCost += (item.priceInCents * item.quantity)
+  } 
+  return totalCost
+} 
+// I'm very lost with this one. I dont know what I'm missing here. 
 
 /**
  * compareLocations()

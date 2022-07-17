@@ -12,7 +12,10 @@
  *  (3 + 4 + 5 + 6 + 7 = 25)
  */
 function rangeSum(min, max) {
-
+  let sum = 0
+  for(let i = min; i <= max; i++) {
+    sum = sum + i
+  } return sum
 }
 
 
@@ -29,7 +32,17 @@ function rangeSum(min, max) {
  *  rangeOdd(10, 15);
  *  //> [ 15, 13, 11 ]
  */
-function rangeOdd(min, max) {}
+function rangeOdd(min, max) {
+ let oddArray = []
+
+ for(let i = max; i >= min; i--) {
+  if(i % 2 !== 0) {
+    oddArray.push(i)
+  }
+ } return oddArray
+ }
+
+
 /**
  * rangeEveryOther()
  * ---------------------
@@ -43,11 +56,13 @@ function rangeOdd(min, max) {}
  *  //> [ 11, 13, 15, 17 ]
  */
 function rangeEveryOther(min, max) {
-  // while(min < max) {
-  //  return min + 2
-  // } 
-}
-
+  let rangedArray = [];
+  
+  for(let i = min; i <= max; i += 2) {
+    rangedArray.push(i)
+  }
+  return rangedArray
+} 
 /**
  * containsWhileLoop()
  * ---------------------
@@ -68,7 +83,19 @@ function rangeEveryOther(min, max) {
  *  containsWhileLoop([ "left", "up", "right" ], "down");
  *  //> false
  */
-function containsWhileLoop(array, target) {}
+function containsWhileLoop(array, target) {
+  let indexFinder = 0
+
+  while(indexFinder < array.length) {
+    if(array[indexFinder] === target) {
+      return true
+    }
+    indexFinder++
+  }
+  return false
+}
+
+
 
 /**
  * containsForLoop()
@@ -91,8 +118,15 @@ function containsWhileLoop(array, target) {}
  *  //> false
  */
 function containsForLoop(array, target) {
+  for(let num of array) {
+    if(num === target) {
+      return true
+    } else {
+      return false
+    }
+  }
+  }
 
-}
 
 /**
  * targetCount()
@@ -107,10 +141,14 @@ function containsForLoop(array, target) {
  *  //> 2
  */
 function targetCount(array, target) {
-  while(array.includes(target)) {
-    return
-  }
-}
+  let count = 0
+
+  for(let num of array) {
+    if(num === target) {
+      count += 1
+    }
+  } return count
+} 
 
 /**
  * firstIndexFound()
@@ -130,7 +168,16 @@ function targetCount(array, target) {
  *  firstIndexFound([ "left", "right", "left" ], "up");
  *  //> -1
  */
-function firstIndexFound(array, target) {}
+function firstIndexFound(array, target) {
+
+  for(let num of array) {
+    if(num === target) {
+      return array[target]
+    } else {
+      return -1
+    }
+  }
+}
 
 /**
  * lastIndexFound()
