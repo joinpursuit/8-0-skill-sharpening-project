@@ -20,11 +20,14 @@ function alwaysTrue() {}
  * @param {string} name
  * @returns {string}
  *
+ *
  * EXAMPLE:
  *  greet("Ian");
  *  //> "Hello, Ian."
  */
-function greet() {}
+function greet(name) {
+  return `Hello, ${name}.`
+}
 
 /**
  * add()
@@ -39,7 +42,9 @@ function greet() {}
  *  add(10, 20);
  *  //> 30
  */
-function add() {}
+function add(a, b) {
+  return (a+b)
+}
 
 /**
  * multiply()
@@ -131,7 +136,9 @@ function compareTypes() {}
  *  flipSign(50);
  *  //> -50
  */
-function flipSign() {}
+function flipSign(a) {
+  return -a
+}
 
 /**
  * joinStringsWithSpaces()
@@ -151,7 +158,9 @@ function flipSign() {}
  *  joinStringsWithSpaces("left", "right", "up", "down", "away");
  *  //> "left right up down away"
  */
-function joinStringsWithSpaces() {}
+function joinStringsWithSpaces(a, b, c, d, e) {
+  return [a, b, c, d, e].join(" ");
+}
 
 /**
  * getFirstAndLastCharacter()
@@ -168,7 +177,9 @@ function joinStringsWithSpaces() {}
  *  getFirstAndLastCharacter("upwards");
  *  //> "us"
  */
-function getFirstAndLastCharacter() {}
+function getFirstAndLastCharacter(a) {
+  return a[0] + a[a.length -1];
+}
 
 // Do not change the code below.
 module.exports = {
