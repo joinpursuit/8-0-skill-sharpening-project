@@ -39,7 +39,7 @@ describe("createObjectWithValue()", () => {
   });
 });
 
-describe.only("createObjectWithKey()", () => {
+describe("createObjectWithKey()", () => {
   test("should create an object with the give key; the value can be anything", () => {
     const actual = createObjectWithKey("my key");
     const expected = "my key";

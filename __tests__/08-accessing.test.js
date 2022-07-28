@@ -170,7 +170,7 @@ describe("getFullAddress()", () => {
   });
 });
 
-describe.only("getFlatObject()", () => {
+describe("getFlatObject()", () => {
   test("should flatten all of the objects, but keep the numbers array", () => {
     const actual = getFlatObject(person);
     const expected = {

@@ -101,7 +101,7 @@ describe("aroundTheWorldGreetingWithSwitch()", () => {
   });
 });
 
-describe.only("calculateLetterGrade()", () => {
+describe("calculateLetterGrade()", () => {
   test("returns the correct grade", () => {
     expect(calculateLetterGrade(90)).toEqual("A");
     expect(calculateLetterGrade(80)).toEqual("B");
