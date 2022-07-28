@@ -1,9 +1,13 @@
 /**
  * applyDiscount()
  * ---------------------
- * A local movie theater has a few different ticket discounts. If the attendee is 10 years old or younger, or 65 years old or older, they receive a 10% discount. If the attendee is viewing the movie with a member, they receive a 20% discount. If both situations apply, they receive a 30% discount.
+ * A local movie theater has a few different ticket discounts.
+ *  If the attendee is 10 years old or younger, or 65 years old or older, they receive a 10% discount.
+ *  If the attendee is viewing the movie with a member, they receive a 20% discount.
+ *  If both situations apply, they receive a 30% discount.
  *
- * Write an algorithm that will determine the price of a ticket based on the `priceInCents` of the ticket, the `age` of the attendee, and the membership status (i.e. `hasMembership`).
+ * Write an algorithm that will determine the price of a ticket based on the `priceInCents` of the ticket,
+ *  the `age` of the attendee, and the membership status (i.e. `hasMembership`).
  * @param {number} priceInCents - The price of the ticket, in cents.
  * @param {number} age - The age of the attendee.
  * @param {boolean} hasMembership - Whether or not the person has access to a membership.
@@ -19,7 +23,26 @@
  *  applyDiscount(1000, 9, true);
  *  //> 700
  */
-function applyDiscount(priceInCents, age, hasMembership) {}
+function applyDiscount(priceInCents, age, hasMembership) {
+  if (age <= 10 || age >= 65) {
+   if (hasMembership) {
+   return priceInCents * 0.7
+   }
+   if (!hasMembership) {
+   return priceInCents * 0.9
+   }
+  } else if (age > 10 || age < 65) {
+    if (hasMembership) {
+    return priceInCents * 0.8
+     }
+     if (!hasMembership) {
+      return priceInCents
+     }
+  }
+  else {
+    return priceInCents
+  }
+}
 
 /**
  * getCartTotal()
@@ -40,7 +63,9 @@ function applyDiscount(priceInCents, age, hasMembership) {}
     getCartTotal(cart);
  *  //> "$30.00"
  */
-function getCartTotal(products) {}
+function getCartTotal(products) {
+  
+}
 
 /**
  * compareLocations()
