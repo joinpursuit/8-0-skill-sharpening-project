@@ -54,7 +54,7 @@ function add() {}
  *  multiply(2, 5);
  *  //> 10
  */
-function multiply(a,b) {
+function multiply(a, b) {
   return a * b;
 }
 
@@ -76,7 +76,9 @@ function multiply(a,b) {
  *  average(10, 6);
  *  //> 8 // 10 + 6 = 16; 16/2 = 8;
  */
-function average() {}
+function average(a, b) {
+  return (a + b) / 2;
+}
 
 /**
  * averageThree()
@@ -95,7 +97,9 @@ function average() {}
  *  averageThree(10, 11, 19);
  *  //> 10 // 10 + 11 + 19 = 30; 30 / 3 = 10;
  */
-function averageThree() {}
+function averageThree(a, b, c) {
+  return (a + b + c) / 3;
+}
 
 /**
  * compareTypes()
