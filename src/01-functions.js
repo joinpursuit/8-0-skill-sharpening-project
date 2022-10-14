@@ -9,7 +9,10 @@
  *  alwaysTrue();
  *  //> true
  */
-function alwaysTrue() {}
+function alwaysTrue() {
+return true
+}
+//dont need to use ===//
 
 /**
  * greet()
@@ -24,8 +27,10 @@ function alwaysTrue() {}
  *  greet("Ian");
  *  //> "Hello, Ian."
  */
-function greet() {}
-
+function greet(name) {
+  return `Hello, ${name}.`
+}
+//be careful of punctuation
 /**
  * add()
  * ---------------------
@@ -39,7 +44,10 @@ function greet() {}
  *  add(10, 20);
  *  //> 30
  */
-function add() {}
+function add(a,b) {
+  let sum = a + b;
+  return sum
+}
 
 /**
  * multiply()
