@@ -112,7 +112,16 @@ function averageThree() {}
  *  compareTypes("left", 10);
  *  //> false
  */
-function compareTypes() {}
+function compareTypes(a, b) {
+ /*
+  if (typeof(a) === typeof(b)){
+    return true 
+  }else {
+    return false
+  }
+  */
+return typeof(a) === typeof(b)
+}
 
 /**
  * flipSign()
@@ -131,7 +140,14 @@ function compareTypes() {}
  *  flipSign(50);
  *  //> -50
  */
-function flipSign() {}
+function flipSign(a) {
+
+  if (a > 0){
+    return -Math.abs(a)
+  } else if (a < 0) {
+    return Math.abs(a)
+  }
+}
 
 /**
  * joinStringsWithSpaces()
@@ -151,7 +167,10 @@ function flipSign() {}
  *  joinStringsWithSpaces("left", "right", "up", "down", "away");
  *  //> "left right up down away"
  */
-function joinStringsWithSpaces() {}
+function joinStringsWithSpaces(a, b, c, d, e) {
+  //let string = CONCAT(a, " ", b, " ", c, " ", d, " ", e)
+  return a + " " + b + " " + c + " " + d + " " + e 
+}
 
 /**
  * getFirstAndLastCharacter()
