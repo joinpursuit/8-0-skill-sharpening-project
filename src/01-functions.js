@@ -138,7 +138,14 @@ function compareTypes(a,b) {
  *  flipSign(50);
  *  //> -50
  */
-function flipSign() {}
+function flipSign(a) {
+  if (a < 0){
+    return (a * -1)
+  }
+  else if (a > 0){
+    return (a * -1)
+  }
+}
 
 /**
  * joinStringsWithSpaces()
