@@ -47,7 +47,15 @@ function findLarger(a, b) {
  *  findLargerOrTie(0, 0);
  *  //> "tie"
  */
-function findLargerOrTie(a, b) {}
+function findLargerOrTie(a, b) {
+  if ( a > b ){
+    return a;
+  } else if (b > a){
+    return b;
+  } else{
+    return "tie";
+  }
+}
 
 /**
  * positiveNegativeOrZero()
