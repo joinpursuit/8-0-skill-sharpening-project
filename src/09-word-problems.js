@@ -1,9 +1,13 @@
 /**
  * applyDiscount()
  * ---------------------
- * A local movie theater has a few different ticket discounts. If the attendee is 10 years old or younger, or 65 years old or older, they receive a 10% discount. If the attendee is viewing the movie with a member, they receive a 20% discount. If both situations apply, they receive a 30% discount.
+ * A local movie theater has a few different ticket discounts. If the attendee is 10 years old or younger, or 65 years old or older, 
+ * they receive a 10% discount. If the attendee is viewing the movie with a member, they receive a 20% discount.
+ *  If both situations apply, they receive a 30% discount.
  *
- * Write an algorithm that will determine the price of a ticket based on the `priceInCents` of the ticket, the `age` of the attendee, and the membership status (i.e. `hasMembership`).
+ * Write an algorithm that will determine the price of a ticket based on the `priceInCents` of the ticket, the `age` of the attendee,
+ *  and the membership status (i.e. `hasMembership`).
+ * 
  * @param {number} priceInCents - The price of the ticket, in cents.
  * @param {number} age - The age of the attendee.
  * @param {boolean} hasMembership - Whether or not the person has access to a membership.
@@ -19,14 +23,29 @@
  *  applyDiscount(1000, 9, true);
  *  //> 700
  */
-function applyDiscount(priceInCents, age, hasMembership) {}
+function applyDiscount(priceInCents, age, hasMembership) {
+  discount = 0
+  let totalPrice = 0
+  if (age <= 10 || age >= 65){
+    discount += 0.1
+  }
+
+  if(hasMembership){
+    discount += 0.2
+  }
+
+    totalPrice = priceInCents - (priceInCents * discount)
+  return totalPrice
+}
 
 /**
  * getCartTotal()
  * ---------------------
  * An online store allows for customers to add products to their cart. Customers can add multiples of each product to the cart.
  * 
- * Write an algorithm that will determine the total amount of all items in the cart. Make sure to multiply the `priceInCents` times the `quantity` to get the full cost of each product.
+ * Write an algorithm that will determine the total amount of all items in the cart. Make sure to multiply the `priceInCents` times 
+ * the `quantity` to get the full cost of each product.
+ * 
  * @param {Object[]} products - An array of products.
  * @param {number} products[].priceInCents - The price of the product, in cents.
  * @param {number} products[].quantity - The number of products being bought.
@@ -40,14 +59,23 @@ function applyDiscount(priceInCents, age, hasMembership) {}
     getCartTotal(cart);
  *  //> "$30.00"
  */
-function getCartTotal(products) {}
+function getCartTotal(products) {
+  let totalAmount = 0
+
+  for(let i = 0; i < products.length; i++){
+    totalAmount += (products[i].priceInCents * products[i].quantity)/100
+  }
+  return `$${totalAmount.toFixed(2)}`
+}
 
 /**
  * compareLocations()
  * ---------------------
- * A shipping company is looking to make its deliveries more efficient by comparing the destinations of multiple deliveries. If the locations are similar, the packages may be able to be bundled together.
+ * A shipping company is looking to make its deliveries more efficient by comparing the destinations of multiple deliveries. 
+ * If the locations are similar, the packages may be able to be bundled together.
  * 
- * Write an algorithm that takes in two objects of similar shape, each object representing an address. Then, return a string that describes the relationship between those two addresses.
+ * Write an algorithm that takes in two objects of similar shape, each object representing an address. Then, return a string that 
+ * describes the relationship between those two addresses.
  * 
  * - If the street, city, state, and zip for both addresses are the same, return the string "Same building."
  * - If the city, state, and zip are the same, return the string "Same city."
@@ -80,7 +108,32 @@ function getCartTotal(products) {}
     compareLocations(address1, address2);
     //> "Same city."
  */
-function compareLocations(address1, address2) {}
+function compareLocations(address1, address2) {
+  if (address1.state === address2.state){
+    if(address1.city === address2.city && address1.zip === address1.zip){
+      if(address1.street === address2.street){
+        return `Same building.`
+      }
+      return `Same city.`
+    }
+    return `Same state.`
+  }
+  else {
+    return `Addresses are not near each other.`
+  }
+}
+
+
+
+
+
+
+
+
+
+
+
+
 
 /**
  * gradeAssignments()
