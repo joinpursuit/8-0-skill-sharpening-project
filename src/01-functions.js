@@ -120,7 +120,7 @@ function compareTypes(a,b) {
 
   // this function returns true if same datatype
   
-  if (typeof a === typeof b){ // checking for same datatype, suing typeof
+  if (typeof a === typeof b){ // checking for same datatype, using typeof
     return true
   }
   else{
@@ -146,13 +146,12 @@ function compareTypes(a,b) {
  *  //> -50
  */
 function flipSign(a) {
-  if (a < 0){
+  // if (a < 0){        // multiplying the given number with -1, whether positive or negative will flip
+  //   return (a * -1)
+  // }
+  // else if (a > 0){
     return (a * -1)
   }
-  else if (a > 0){
-    return (a * -1)
-  }
-}
 
 /**
  * joinStringsWithSpaces()
@@ -173,9 +172,11 @@ function flipSign(a) {
  *  //> "left right up down away"
  */
 function joinStringsWithSpaces(a,b,c,d,e) {
-  return `${a} ${b} ${c} ${d} ${e}`
+  return `${a} ${b} ${c} ${d} ${e}`         // concatenating all the strings into one string
   //return a + " " + b + " " + c + " " + d + " " + e
 }
+
+/********************************* VANDHANA MOHAN *******************************/
 
 /**
  * getFirstAndLastCharacter()
