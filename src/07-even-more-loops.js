@@ -59,7 +59,7 @@ return newArr;
  *  shoutForOfLoop([ "A", "Very", "Happy", "Array" ]);
  *  //> [ "A!", "Very!", "Happy!", "Array!" ];
  */
-function shoutForOfLoop(array) {}
+function shoutForOfLoop() {}
 
 /**
  * sumArray()
@@ -141,7 +141,15 @@ function findLargest(array) {}
  *  findEqual([ 0, 11, -2, 5 ], 9);
  *  //> false
  */
-function findEqual(array, selected) {}
+function findEqual(array, selected) {
+  for (let i = 0; i< array.length; i++) {
+    if(array.includes(selected)) {
+      return true 
+    } else {
+      return false
+    }
+  }
+}
 
 /**
  * removeDuplicates()
@@ -158,7 +166,15 @@ function findEqual(array, selected) {}
  *  //> [ 1, 11, 2, 3, 4, 9 ]
  */
 
-function removeDuplicates(array) {}
+function removeDuplicates(array) {
+  let newArr = []
+  for (let i =0; i < array.length; i++) {
+    if(!(newArr.includes(array[i]))) {
+      newArr.push(array[i])
+    }
+  }
+  return newArr
+}
 
 // Do not change any code below this line.
 module.exports = {
