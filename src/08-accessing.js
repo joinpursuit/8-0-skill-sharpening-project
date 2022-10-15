@@ -1,5 +1,6 @@
 /*
-  For all of the functions below, assume each function takes the following `person` object as its input. While the values of the object may change, the structure of it will always be the same.
+  For all of the functions below, assume each function takes the following `person` object as its input. 
+  While the values of the object may change, the structure of it will always be the same.
 
   const person = {
     names: {
@@ -32,7 +33,9 @@
  *  getFirstName(person);
  *  //> "Rachel"
  */
-function getFirstName(person) {}
+function getFirstName(person) {
+  return person.names.first
+}
 
 /**
  * getLastName()
