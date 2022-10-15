@@ -37,7 +37,7 @@ function convertToNumber(val) {}
  *  //> "99"
  */
 function convertToString(val) {
-  return toString(val)
+  return val.toString()
 }
 
 /**
@@ -52,7 +52,7 @@ function convertToString(val) {
  *  //> "HELLO THERE"
  */
 function convertToShoutingText(text) {
-  return text.toUpperCase
+  return text.toUpperCase()
 }
 
 /**
@@ -67,7 +67,7 @@ function convertToShoutingText(text) {
  *  //> "hello there"
  */
 function convertToWhisperText(text) {
-  return text.toLowerCase
+  return text.toLowerCase()
 }
 
 /**
