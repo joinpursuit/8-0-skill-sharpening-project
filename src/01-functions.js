@@ -95,6 +95,10 @@ function average() {}
  */
 function averageThree() {}
 
+
+/********************************* VANDHANA MOHAN *******************************/
+
+
 /**
  * compareTypes()
  * ---------------------
@@ -113,7 +117,10 @@ function averageThree() {}
  *  //> false
  */
 function compareTypes(a,b) {
-  if (typeof a === typeof b){
+
+  // this function returns true if same datatype
+  
+  if (typeof a === typeof b){ // checking for same datatype, suing typeof
     return true
   }
   else{
@@ -167,6 +174,7 @@ function flipSign(a) {
  */
 function joinStringsWithSpaces(a,b,c,d,e) {
   return `${a} ${b} ${c} ${d} ${e}`
+  //return a + " " + b + " " + c + " " + d + " " + e
 }
 
 /**
