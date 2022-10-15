@@ -35,7 +35,7 @@ function greet(name) {
   return greet;
   
 
-}// end of funtion
+}// end of function
 
 /**
  * add()
@@ -125,9 +125,9 @@ function averageThree() {}
  *
  *  compareTypes("left", 10);
  *  //> false
- */
-function compareTypes() {}
-
+*/
+function compareTypes(a, b) {}
+  
 /**
  * flipSign()
  * ---------------------
