@@ -70,7 +70,8 @@ function positiveNegativeOrZero(a) {}
 /**
  * aroundTheWorldGreeting()
  * ---------------------
- * Takes in a `language` (e.g "english", "spanish", or "german") and returns "Hello World" in that language. Must work for at least "english", "spanish", and "german". It should default to English if no argument is passed in.
+ * Takes in a `language` (e.g "english", "spanish", or "german") and returns "Hello World" in that language. 
+ * Must work for at least "english", "spanish", and "german". It should default to English if no argument is passed in.
  *
  * TRANSLATIONS: english -> "Hello World"
  *               spanish -> "Hola Mundo"
@@ -86,7 +87,20 @@ function positiveNegativeOrZero(a) {}
  *  aroundTheWorldGreeting();
  *  //> "Hello World"
  */
-function aroundTheWorldGreeting(language) {}
+function aroundTheWorldGreeting(language) {
+  if (language === "english"){
+    return "Hello World"
+  }
+  else if (language === "spanish"){
+    return "Hola Mundo"
+  }
+  else if (language === "german"){
+    return "Hallo Welt"
+  }
+  else{
+    return "Hello World"
+  }
+}
 
 /**
  * aroundTheWorldGreetingWithSwitch()
@@ -109,7 +123,22 @@ function aroundTheWorldGreeting(language) {}
  *  aroundTheWorldGreetingWithSwitch();
  *  //> "Hello World"
  */
-function aroundTheWorldGreetingWithSwitch(language) {}
+function aroundTheWorldGreetingWithSwitch(language) {
+  switch (language){
+    case "english" :
+      return "Hello World";
+      break;
+    case "spanish":
+      return "Hola Mundo"
+      break;
+    case "german":
+      return "Hallo Welt"
+      break;
+    default:
+      return "Hello World"
+      break;
+  }
+}
 
 /**
  * calculateLetterGrade()
@@ -128,7 +157,23 @@ function aroundTheWorldGreetingWithSwitch(language) {}
  *  calculateLetterGrade(99);
  *  //> "A"
  */
-function calculateLetterGrade(grade) {}
+function calculateLetterGrade(grade) {
+  if (grade >= 90){
+    return "A"
+  }
+  else if (grade >= 80){
+    return "B"
+  }
+  else if (grade >= 70){
+    return "C"
+  }
+  else if (grade >= 60){
+    return "D"
+  }
+  else{
+    return "F"
+  }
+}
 
 /**
  * animalCounts()
@@ -185,8 +230,7 @@ function evenOrOddWithTernary(a) {}
 module.exports = {
   isEqual,
   findLarger,
-  findLargerOrTie,
-  positiveNegativeOrZero,
+  findLargerOrTie,  positiveNegativeOrZero,
   aroundTheWorldGreeting,
   aroundTheWorldGreetingWithSwitch,
   calculateLetterGrade,
