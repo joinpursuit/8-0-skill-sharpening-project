@@ -79,8 +79,15 @@ function convertToWhisperText(text) {}
  *  checkIfCharacterIsInString("hello there", "a");
  *  //> false
  */
+
+
+
+/********************************* VANDHANA MOHAN *******************************/
+
+
+
 function checkIfCharacterIsInString(text, character) {
-  if (text.includes(character)){
+  if (text.includes(character)){      // checking if character is inside the text
         return true
   }
   else{
@@ -102,7 +109,7 @@ function checkIfCharacterIsInString(text, character) {
  *  isEven(11);
  *  //> false
  */
-function isEven(num) {
+function isEven(num) { // checking if the number is even
   if (num % 2 === 0){
     return true
   }
@@ -126,13 +133,19 @@ function isEven(num) {
  *  //> true
  */
 function isOdd(num) {
-  if (num % 2 !== 0){
+  if (num % 2 !== 0){   // checking whether number is odd
     return true
   }
   else {
     return false
   }
 }
+
+
+
+/********************************* VANDHANA MOHAN *******************************/
+
+
 
 /**
  * isTruthy()
