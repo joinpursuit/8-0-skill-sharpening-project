@@ -30,7 +30,8 @@ function rangeOdd(min, max) {}
 /**
  * rangeEveryOther()
  * ---------------------
- * Takes in range (inclusive) and returns an array in increasing order of only every other element. Start by including the first number.
+ * Takes in range (inclusive) and returns an array in increasing order of only every other element. 
+ * Start by including the first number.
  * @param {number} min
  * @param {number} max
  * @returns {number[]}
@@ -39,7 +40,14 @@ function rangeOdd(min, max) {}
  *  rangeEveryOther(11, 18);
  *  //> [ 11, 13, 15, 17 ]
  */
-function rangeEveryOther(min, max) {}
+function rangeEveryOther(min, max) {
+  let newrangeEveryOther = []
+  for(let i = min; i <= max; i+=2){
+   
+      newrangeEveryOther.push(i)
+    }
+  return newrangeEveryOther
+}
 
 /**
  * containsWhileLoop()
@@ -61,7 +69,16 @@ function rangeEveryOther(min, max) {}
  *  containsWhileLoop([ "left", "up", "right" ], "down");
  *  //> false
  */
-function containsWhileLoop(array, target) {}
+function containsWhileLoop(array, target) {
+  let i = 0;
+  while(i < array.length){
+   if (array[i] === target){
+    return true 
+   }
+    i++
+   }
+  return false
+}
 
 /**
  * containsForLoop()
@@ -83,7 +100,14 @@ function containsWhileLoop(array, target) {}
  *  containsForLoop([ "left", "up", "right" ], "down");
  *  //> false
  */
-function containsForLoop(array, target) {}
+function containsForLoop(array, target) {
+  for(let i = 0; i < array.length; i++){
+    if(array[i] === target){
+      return true
+    }
+  }
+  return false
+}
 
 /**
  * targetCount()
