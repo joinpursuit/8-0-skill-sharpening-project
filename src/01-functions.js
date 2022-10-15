@@ -143,7 +143,9 @@ function averageThree(a, b, c) {
  *  compareTypes("left", 10);
  *  //> false
  */
-function compareTypes() {}
+function compareTypes(a, b) {
+  
+
 
 /**
  * flipSign()
