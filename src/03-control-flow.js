@@ -101,8 +101,7 @@ function positiveNegativeOrZero(a) {
  */
 function aroundTheWorldGreeting(language) {
   switch (language) {
-    case "english":
-        return "Hello World" 
+ 
     case "spanish":
       return "Hola Mundo";
     case "german":
@@ -134,7 +133,18 @@ function aroundTheWorldGreeting(language) {
  *  aroundTheWorldGreetingWithSwitch();
  *  //> "Hello World"
  */
-function aroundTheWorldGreetingWithSwitch(language) {}
+function aroundTheWorldGreetingWithSwitch(language) {
+  switch (language) {
+ 
+    case "spanish":
+      return "Hola Mundo";
+    case "german":
+       return "Hallo Welt";
+
+     default:
+       return "Hello World"    
+  }
+}
 
 /**
  * calculateLetterGrade()
