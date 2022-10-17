@@ -195,7 +195,10 @@ function timesIndex(array) {}
  *  //> [ 5, 5 + 2, 5 + 2 + 9 ]
  *  //> [ 5, 7, 16 ]
  */
-function cumulativeSum(array) {}
+function cumulativeSum(array) {
+ 
+    
+}
 
 // Do not change anything below this line.
 module.exports = {
