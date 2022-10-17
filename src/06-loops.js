@@ -17,7 +17,7 @@ function rangeSum(min, max) {
     sum += i
   }
   return sum;
-}
+} // end of function
 /**
  * rangeOdd()
  * ---------------------
@@ -39,7 +39,7 @@ function rangeOdd(min, max) {
      }
  }
    return newArr;
-}
+} // end of function
 
 /**
  * rangeEveryOther()
@@ -60,7 +60,7 @@ function rangeEveryOther(min, max) {
     //i++
   }
  return newArr
-}
+} // end of function
 
 /**
  * containsWhileLoop()
