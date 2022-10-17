@@ -11,7 +11,13 @@
  *  //> 25
  *  (3 + 4 + 5 + 6 + 7 = 25)
  */
-function rangeSum(min, max) {}
+function rangeSum(min, max) {
+  let sum = 0;
+  for (let i = min; i <= max; i++) {
+    sum +=i;
+  }
+  return sum
+}
 
 /**
  * rangeOdd()
@@ -25,11 +31,17 @@ function rangeSum(min, max) {}
  *  rangeOdd(10, 15);
  *  //> [ 15, 13, 11 ]
  */
-function rangeOdd(min, max) {}
+function rangeOdd(min, max) {
+  let newArr = [];
+  for (let i = max; i >= min; i--) {
+    if (i % 2 === 1) {newArr.push(i)}
+  }
+  return newArr
+}
 
 /**
  * rangeEveryOther()
- * ---------------------
+ * --------------------- 
  * Takes in range (inclusive) and returns an array in increasing order of only every other element. Start by including the first number.
  * @param {number} min
  * @param {number} max
@@ -39,7 +51,13 @@ function rangeOdd(min, max) {}
  *  rangeEveryOther(11, 18);
  *  //> [ 11, 13, 15, 17 ]
  */
-function rangeEveryOther(min, max) {}
+function rangeEveryOther(min, max) {
+  let newArr = [];
+  for (let i = min; i <= max; i +=2) {
+    newArr.push(i);
+  }
+  return newArr
+}
 
 /**
  * containsWhileLoop()
