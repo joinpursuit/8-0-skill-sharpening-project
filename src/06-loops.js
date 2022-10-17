@@ -11,7 +11,11 @@
  *  //> 25
  *  (3 + 4 + 5 + 6 + 7 = 25)
  */
-function rangeSum(min, max) {}
+function rangeSum(min, max) {
+
+
+
+}
 
 /**
  * rangeOdd()
@@ -61,7 +65,19 @@ function rangeEveryOther(min, max) {}
  *  containsWhileLoop([ "left", "up", "right" ], "down");
  *  //> false
  */
-function containsWhileLoop(array, target) {}
+function containsWhileLoop(array, target) {
+let i = 0;
+while (i < array.length) {
+   if (array[i] === target) 
+   return true;
+
+   i++;
+}
+    return false;
+   
+} 
+ 
+
 
 /**
  * containsForLoop()
@@ -83,7 +99,15 @@ function containsWhileLoop(array, target) {}
  *  containsForLoop([ "left", "up", "right" ], "down");
  *  //> false
  */
-function containsForLoop(array, target) {}
+function containsForLoop(array, target) {
+
+   for (let i = 0; i < array.length; i++) {
+    if(array[i] === target) 
+        return true; 
+   }
+   return false;
+ 
+}
 
 /**
  * targetCount()
@@ -97,7 +121,17 @@ function containsForLoop(array, target) {}
  *  targetCount([ 10, 20, 10, 20, 30 ], 10);
  *  //> 2
  */
-function targetCount(array, target) {}
+function targetCount(array, target) {
+  let count = 0;
+for (let i = 0; i < array.length; i++) {
+  if(array[i] === target) {
+  
+   count++;
+  }
+  
+}
+return count;
+}
 
 /**
  * firstIndexFound()
