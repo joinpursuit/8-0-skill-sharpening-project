@@ -177,7 +177,13 @@ function findLargest(array) {
  *  findEqual([ 0, 11, -2, 5 ], 9);
  *  //> false
  */
-function findEqual(array, selected) {}
+function findEqual(array, selected) {
+  for( let i = 0; i < array.length; i++ ){
+    if ( array[i] === selected )
+      return true;
+  }
+  return false;
+}
 
 /**
  * removeDuplicates()
