@@ -142,7 +142,9 @@ function findLargest(array) {
  *  findEqual([ 0, 11, -2, 5 ], 9);
  *  //> false
  */
-function findEqual(array, selected) {}
+function findEqual(array, selected) {
+  return array.includes(selected);
+}
 
 /**
  * removeDuplicates()
