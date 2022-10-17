@@ -93,7 +93,14 @@ function sumArray(array) {
  *  oddArray([ 11, 15, 20, 22, 37 ]);
  *  //> [ 11, 15, 37 ]
  */
-function oddArray(array) {}
+function oddArray(array) {
+  let newOddArray = [];
+  for( let i = 0; i < array.length; i++ ){
+    if( array[i] % 2 !== 0 )
+      newOddArray.push( array[i] );
+  }
+  return newOddArray;
+}
 
 /**
  * evenArray()
@@ -106,7 +113,14 @@ function oddArray(array) {}
  *  evenArray([ 11, 15, 20, 22, 37 ]);
  *  //> [ 20, 22 ]
  */
-function evenArray(array) {}
+function evenArray(array) {
+  let newEvenArray = [];
+  for( let i = 0; i < array.length; i++ ){
+    if( array[i] % 2 === 0 )
+      newEvenArray.push( array[i] );
+  }
+  return newEvenArray;
+}
 
 /**
  * findSmallest()
