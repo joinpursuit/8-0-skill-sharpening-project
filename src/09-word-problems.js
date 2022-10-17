@@ -85,22 +85,36 @@ function compareLocations(address1, address2) {}
 /**
  * gradeAssignments()
  * ---------------------
- * An online learning management system needs a way to quickly add the current status to a list of assignments. Depending on the `kind` of assignment, different statuses should be applied.
+ * An online learning management system needs a way to quickly add the 
+ * current status to a list of assignments. Depending on the `kind` of assignment, 
+ * different statuses should be applied.
  *
- * Write an algorithm that adds a key of `status` to each object in an array of objects. Each object represents a single assignment submitted by a student.
+ * Write an algorithm that adds a key of `status` to each object in an array of
+ *  objects. Each object represents a single assignment submitted by a student.
  *
- * - If the assignment has a `kind` of `"PASS-FAIL"`, set the `status` value to `"PASSED"` if the `score.received` equals the `score.max`. Otherwise, set that `status` to be `"FAILED"`.
- * - If the assignment has a `kind` of `"PERCENTAGE"`, set the `status` value to be `"PASSED: <percentage>"` if the student scored at least 80.0%. The `<percentage>` should be set to one decimal place. If the student scored less than 80.0%, set the status to `"FAILED: <percentage>"`.
- * - If the assignment has any other `kind` than the two above, set the `status` value to equal `"SCORE: <received>/<max>"`, where `<received>` is the `score.received` value and `<max>` is the `score.max` value.
+ * - If the assignment has a `kind` of `"PASS-FAIL"`, set the `status` value 
+ * to `"PASSED"` if the `score.received` equals the `score.max`. 
+ * Otherwise, set that `status` to be `"FAILED"`.
+ * - If the assignment has a `kind` of `"PERCENTAGE"`, 
+ * set the `status` value to be `"PASSED: <percentage>"` if the student scored at 
+ * least 80.0%. The `<percentage>` should be set to one decimal place.
+ *  If the student scored less than 80.0%, set the status to `"FAILED: <percentage>"`.
+ * - If the assignment has any other `kind` than the two above, set the `status` 
+ * value to equal `"SCORE: <received>/<max>"`, where `<received>` is the `score.received` value and `<max>`
+ *  is the `score.max` value.
  *
  * Then, return the overall array with all modified assignments.
  *
  * @param {Object[]} assignments - An array of assignment objects.
- * @param {string} assignments[].kind - The type of assignment. Could be "PASS-FAIL", "PERCENTAGE", or another value.
- * @param {Object} assignments[].score - An object that contains the scores of the assignment.
+ * @param {string} assignments[].kind - The type of assignment. Could be "PASS-FAIL",
+ *  "PERCENTAGE", or another value.
+ * @param {Object} assignments[].score - An object that contains the scores of 
+ * the assignment.
  * @param {number} assignments[].score.received - The score received on the assignment.
- * @param {number} assignments[].score.max - The maximum score that could be received on the assignment.
- * @returns {Object[]} The original array of assignment objects, with a new key of `status` added to each object.
+ * @param {number} assignments[].score.max - The maximum score that could
+ *  be received on the assignment.
+ * @returns {Object[]} The original array of assignment objects, with
+ *  a new key of `status` added to each object.
  * 
  * EXAMPLE:
  *  const assignments = [
@@ -127,14 +141,32 @@ function compareLocations(address1, address2) {}
     //>   },
     //> ];
  */
-function gradeAssignments(assignments) {}
+function gradeAssignments(assignments) {
+let perc = 0.0
+for(let i = 0; i < assignments.length; i++){
+  if(assignments[i].kind === "PASS-FAIL"){
+    if(assignments[i].score.received === assignments[i].score.max){
+      assignments[i].status = "PASSED"
+    }else{
+      assignments[i].status = "FAILED"
+    }
+  }else if(assignments[i].kind === "PERCENTAGE"){
+     perc = ((assignments[i].score.received / assignments[i].score.max)*100).toFixed(1)
+    if(perc >= 80.0){assignments[i].status = `PASSED: ${perc}%`}
+    else {assignments[i].status = `FAILED: ${perc}%`}
+  }else assignments[i].status = `SCORE: ${assignments[i].score.received}/${assignments[i].score.max}`
+}
+  return assignments
+}
 
 /**
  * createLineOrder()
  * ---------------------
- * An airline wants to build an application that improves the boarding process for its customers. They want to have customers sign up in order of arrival, but prioritize those customers who have a membership.
+ * An airline wants to build an application that improves the boarding process for its customers. 
+ * They want to have customers sign up in order of arrival, but prioritize those customers who have a membership.
  * 
- * Build an algorithm that takes in an array of objects, where each object represents a person. The order of the array is important; the person at index `0` arrived first while the person at index `1` arrived afterwards.
+ * Build an algorithm that takes in an array of objects, where each object represents a person.
+ *  The order of the array is important; the person at index `0` arrived first while the person at index `1` arrived afterwards.
  * 
  * Return an array that includes only the names of each person, but reordered to account for whether or not each person has a membership. Everyone who has a membership should be at the front of the line in the same order they arrived. Everyone without a membership should be in the same order they arrived but after those with a membership.
  * @param {Object[]} people - An array of people objects.
@@ -152,7 +184,17 @@ function gradeAssignments(assignments) {}
     createLineOrder(people);
     //> [ "Ray Anderson", "America Marsh", "Wade Carson", "Patience Patel" ]
  */
-function createLineOrder(people) {}
+function createLineOrder(people) {
+  let hasMem = []
+  let noMem = []
+for (let i = 0; i < people.length; i++){
+  if(people[i].hasMembership){
+    hasMem.push(people[i].name)
+  }else {noMem.push(people[i].name)}
+}
+people.name = hasMem.concat(noMem)
+return people.name
+}
 
 module.exports = {
   applyDiscount,
