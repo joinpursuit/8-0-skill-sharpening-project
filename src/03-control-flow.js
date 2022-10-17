@@ -14,7 +14,8 @@
  *  isEqual(10, "10");
  *  //> false
  */
-function isEqual(a, b) {}
+function isEqual() {
+}
 
 /**
  * findLarger()
@@ -28,7 +29,8 @@ function isEqual(a, b) {}
  *  findLarger(19, 7);
  *  //> 19
  */
-function findLarger(a, b) {}
+function findLarger() {
+}
 
 /**
  * findLargerOrTie()
@@ -45,7 +47,8 @@ function findLarger(a, b) {}
  *  findLargerOrTie(0, 0);
  *  //> "tie"
  */
-function findLargerOrTie(a, b) {}
+function findLargerOrTie() {
+}
 
 /**
  * positiveNegativeOrZero()
@@ -65,7 +68,8 @@ function findLargerOrTie(a, b) {}
  *  positiveNegativeOrZero(1);
  *  //> "Positive"
  */
-function positiveNegativeOrZero(a) {}
+function positiveNegativeOrZero() {
+}
 
 /**
  * aroundTheWorldGreeting()
@@ -86,7 +90,8 @@ function positiveNegativeOrZero(a) {}
  *  aroundTheWorldGreeting();
  *  //> "Hello World"
  */
-function aroundTheWorldGreeting(language) {}
+function aroundTheWorldGreeting() {
+}
 
 /**
  * aroundTheWorldGreetingWithSwitch()
@@ -109,7 +114,8 @@ function aroundTheWorldGreeting(language) {}
  *  aroundTheWorldGreetingWithSwitch();
  *  //> "Hello World"
  */
-function aroundTheWorldGreetingWithSwitch(language) {}
+function aroundTheWorldGreetingWithSwitch() {
+}
 
 /**
  * calculateLetterGrade()
@@ -128,7 +134,8 @@ function aroundTheWorldGreetingWithSwitch(language) {}
  *  calculateLetterGrade(99);
  *  //> "A"
  */
-function calculateLetterGrade(grade) {}
+function calculateLetterGrade() {
+}
 
 /**
  * animalCounts()
@@ -146,7 +153,8 @@ function calculateLetterGrade(grade) {}
  *  animalCounts("pig", 1);
  *  //> "1 pig"
  */
-function animalCounts(animal, numberOfAnimals) {}
+function animalCounts() {
+}
 
 /**
  * evenOrOdd()
@@ -163,7 +171,8 @@ function animalCounts(animal, numberOfAnimals) {}
  *  evenOrOdd(48);
  *  //> "Even"
  */
-function evenOrOdd(a) {}
+function evenOrOdd() {
+}
 
 /**
  * evenOrOddWithTernary()
@@ -179,7 +188,8 @@ function evenOrOdd(a) {}
  *  evenOrOddWithTernary(8);
  *  //> "Even"
  */
-function evenOrOddWithTernary(a) {}
+function evenOrOddWithTernary() {
+}
 
 // Do not change any code below this line.
 module.exports = {
