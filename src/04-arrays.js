@@ -119,7 +119,9 @@ function addElementToFrontOfArray(array, element) {}
  *  removeElementFromFrontOfArray([ 10, 9, 8 ]);
  *  //> 10
  */
-function removeElementFromFrontOfArray(array) {}
+function removeElementFromFrontOfArray(array) {
+return array.shift()
+}
 
 /**
  * getMiddleElement()
@@ -135,7 +137,10 @@ function removeElementFromFrontOfArray(array) {}
  *  getMiddleElement([ 10, null, "30" ]);
  *  //> null
  */
-function getMiddleElement(array) {}
+function getMiddleElement(array) {
+return array[(array.length -1) / 2]
+
+} 
 
 // Do not change any code below this line.
 module.exports = {
