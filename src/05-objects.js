@@ -9,7 +9,9 @@
  *  createEmptyObject()
  *  //> {}
  */
-function createEmptyObject() {}
+function createEmptyObject() {
+  return {};
+}
 
 /**
  * createObjectWithValue()
