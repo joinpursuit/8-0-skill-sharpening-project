@@ -86,7 +86,15 @@ function positiveNegativeOrZero(a) {}
  *  aroundTheWorldGreeting();
  *  //> "Hello World"
  */
-function aroundTheWorldGreeting(language) {}
+function aroundTheWorldGreeting(language = "english") {
+  if (language === "english"){
+    return "Hello World"
+  }if (language === "spanish"){
+    return "Hola Mundo"
+  }  if (language === "german"){
+    return "Hallo Welt"
+  } 
+}
 
 /**
  * aroundTheWorldGreetingWithSwitch()
@@ -109,7 +117,21 @@ function aroundTheWorldGreeting(language) {}
  *  aroundTheWorldGreetingWithSwitch();
  *  //> "Hello World"
  */
-function aroundTheWorldGreetingWithSwitch(language) {}
+function aroundTheWorldGreetingWithSwitch(language) {
+  switch(language){
+    case "english": 
+    return "Hello World"
+    break;
+    case "spanish":
+    return "Hola Mundo"
+    break;
+    case "german":
+    return "Hallo Welt"
+    break;
+    default: 
+    return "Hello World" 
+  }
+}
 
 /**
  * calculateLetterGrade()
@@ -128,7 +150,19 @@ function aroundTheWorldGreetingWithSwitch(language) {}
  *  calculateLetterGrade(99);
  *  //> "A"
  */
-function calculateLetterGrade(grade) {}
+function calculateLetterGrade(grade) {
+  if (grade >= 90){
+    return "A"
+  } else if (grade >= 80){
+    return "B"
+  } else if (grade >= 70){
+    return "C"
+  } else if (grade >= 60){
+    return "D"
+  } else {
+    return "F"
+  }
+}
 
 /**
  * animalCounts()
