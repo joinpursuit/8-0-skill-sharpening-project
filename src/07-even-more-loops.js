@@ -200,7 +200,17 @@ function findEqual(array, selected) {
  *  //> [ 1, 11, 2, 3, 4, 9 ]
  */
 
-function removeDuplicates(array) {}
+function removeDuplicates(array) {
+  
+  let duplicate = [];
+  for( let i = 0; i < array.length; i++ ){
+    duplicate = array[i];
+    if( array[i + 1] === duplicate )
+      array.splice(i, 1, array[i + 1])
+  }
+
+  return array;
+}
 
 // Do not change any code below this line.
 module.exports = {
