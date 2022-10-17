@@ -154,7 +154,12 @@ function findSmallest(array) {
  *  //> 11
  */
 function findLargest(array) {
-
+  let largest = array[0];
+  for( let i = 1; i < array.length; i++){
+    if( largest < array[i] )
+      largest = array[i]
+  }
+  return largest;
 }
 
 /**
