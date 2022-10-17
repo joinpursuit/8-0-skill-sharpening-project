@@ -96,7 +96,15 @@ function evenArray(array) {}
  *  findSmallest([ 0, 11, -2, 5 ]);
  *  //> -2
  */
-function findSmallest(array) {}
+function findSmallest(array) {
+  smallest = array[0];
+  for (num of array){
+    if (num < smallest){
+      smallest = num;
+    }
+  }
+  return smallest;
+}
 
 /**
  * findLargest()
