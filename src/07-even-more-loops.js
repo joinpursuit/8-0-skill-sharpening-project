@@ -201,15 +201,7 @@ function findEqual(array, selected) {
  */
 
 function removeDuplicates(array) {
-  
-  let duplicate = [];
-  for( let i = 0; i < array.length; i++ ){
-    duplicate = array[i];
-    if( array[i + 1] === duplicate )
-      array.splice(i, 1, array[i + 1])
-  }
-
-  return array;
+  return array.filter( (duplicate, i) => { return array.indexOf(duplicate) === i });
 }
 
 // Do not change any code below this line.
