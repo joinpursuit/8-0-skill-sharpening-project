@@ -56,7 +56,12 @@ function shoutWhileLoop(array) {
  *  shoutForOfLoop([ "A", "Very", "Happy", "Array" ]);
  *  //> [ "A!", "Very!", "Happy!", "Array!" ];
  */
-function shoutForOfLoop(array) {}
+function shoutForOfLoop(array) {
+  for( let element of array ){
+    array[array.indexOf(element)] = `${array[array.indexOf(element)]}!`;
+  }
+  return array;
+}
 
 /**
  * sumArray()
