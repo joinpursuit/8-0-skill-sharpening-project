@@ -76,7 +76,6 @@ function rangeEveryOther(min, max) {}
  *  //> false
  */
 function containsWhileLoop(array, target) {}
-
 /**
  * containsForLoop()
  * ---------------------
@@ -112,6 +111,7 @@ function containsForLoop(array, target) {}
  *  //> 2
  */
 function targetCount(array, target) {}
+
 
 /**
  * firstIndexFound()
