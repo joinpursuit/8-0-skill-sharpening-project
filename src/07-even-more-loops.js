@@ -143,7 +143,13 @@ function findLargest(array) {
  *  //> false
  */
 function findEqual(array, selected) {
-  return array.includes(selected);
+  //return array.includes(selected);
+  for (val of array){
+    if (val === selected){
+      return true;
+    }
+  }
+  return false;
 }
 
 /**
