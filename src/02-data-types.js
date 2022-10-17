@@ -95,7 +95,10 @@ function checkIfCharacterIsInString(text, character) {}
  *  isEven(11);
  *  //> false
  */
-function isEven(num) {}
+function isEven(num) {
+   return num % 2 === 0 ? true : false;
+  
+}
 
 /**
  * isOdd()
@@ -111,7 +114,10 @@ function isEven(num) {}
  *  isOdd(11);
  *  //> true
  */
-function isOdd(num) {}
+function isOdd(num) {
+  return num % 2 !== 0 ? true : false; 
+
+}
 
 /**
  * isTruthy()
@@ -127,7 +133,9 @@ function isOdd(num) {}
  *  isTruthy(null);
  *  //> false
  */
-function isTruthy(val) {}
+function isTruthy(val) {
+  return val ? true : false;
+}
 
 /**
  * isFalsy()
@@ -143,7 +151,9 @@ function isTruthy(val) {}
  *  isFalsy(" ");
  *  //> false
  */
-function isFalsy(val) {}
+function isFalsy(val) {
+  return val ? false : true;
+}
 
 // Do not change the code below.
 module.exports = {
