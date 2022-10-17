@@ -29,13 +29,9 @@ function alwaysTrue() {
  */
 function greet(name) {
   const greet = `Hello, ${name}.`
-  
-  console.log(name)
 
   return greet;
-  
-
-}// end of function
+} // end of function
 
 /**
  * add()
