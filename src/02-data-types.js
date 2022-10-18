@@ -113,7 +113,12 @@ function checkIfCharacterIsInString(text, character) {
  *  isEven(11);
  *  //> false
  */
-function isEven(num) {}
+function isEven(num) {
+  //check if number has a remainder after dividing
+  let result = (num % 2 === 0);
+  //return the result
+  return result;
+}
 
 /**
  * isOdd()
