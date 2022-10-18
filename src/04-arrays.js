@@ -39,6 +39,18 @@ function createArrayWithTwoElements(a, b) {}
  */
 function getArrayLength(array) {}
 
+
+
+
+
+/********************************* VANDHANA MOHAN *******************************/
+
+
+
+
+
+
+
 /**
  * getFirstElementOfArray()
  * ---------------------
@@ -51,7 +63,7 @@ function getArrayLength(array) {}
  *  getFirstElementOfArray([ 10, 20, 30 ]);
  *  //> 10
  */
-function getFirstElementOfArray(array) {
+function getFirstElementOfArray(array) { // return element in first index
   return array[0]
 }
 
@@ -67,7 +79,7 @@ function getFirstElementOfArray(array) {
  *  getLastElementOfArray([ null, undefined ]);
  *  //> undefined
  */
-function getLastElementOfArray(array) {
+function getLastElementOfArray(array) { // return element in the last index
   return array[array.length-1]
 }
 
@@ -83,10 +95,21 @@ function getLastElementOfArray(array) {
  *  addElementToEndOfArray([ 10 ], 9);
  *  //> [ 10, 9 ]
  */
-function addElementToEndOfArray(array, element) {
+function addElementToEndOfArray(array, element) { // add element to existing array
   array.push(element)
   return array
 }
+
+
+
+
+
+/********************************* VANDHANA MOHAN *******************************/
+
+
+
+
+
 
 /**
  * removeElementFromEndOfArray()
