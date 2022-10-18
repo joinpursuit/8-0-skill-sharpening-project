@@ -23,6 +23,20 @@
  *  applyDiscount(1000, 9, true);
  *  //> 700
  */
+
+
+
+
+
+
+/********************************* VANDHANA MOHAN *******************************/
+
+
+
+
+
+
+
 function applyDiscount(priceInCents, age, hasMembership) {
   discount = 0
   let totalPrice = 0
@@ -126,11 +140,7 @@ function compareLocations(address1, address2) {
 
 
 
-
-
-
-
-
+/********************************* VANDHANA MOHAN *******************************/
 
 
 
@@ -138,13 +148,21 @@ function compareLocations(address1, address2) {
 /**
  * gradeAssignments()
  * ---------------------
- * An online learning management system needs a way to quickly add the current status to a list of assignments. Depending on the `kind` of assignment, different statuses should be applied.
+ * An online learning management system needs a way to quickly add the current status to a list of assignments. 
+ * Depending on the `kind` of assignment, different statuses should be applied.
  *
- * Write an algorithm that adds a key of `status` to each object in an array of objects. Each object represents a single assignment submitted by a student.
+ * Write an algorithm that adds a key of `status` to each object in an array of objects. Each object represents a 
+ * single assignment submitted by a student.
  *
- * - If the assignment has a `kind` of `"PASS-FAIL"`, set the `status` value to `"PASSED"` if the `score.received` equals the `score.max`. Otherwise, set that `status` to be `"FAILED"`.
- * - If the assignment has a `kind` of `"PERCENTAGE"`, set the `status` value to be `"PASSED: <percentage>"` if the student scored at least 80.0%. The `<percentage>` should be set to one decimal place. If the student scored less than 80.0%, set the status to `"FAILED: <percentage>"`.
- * - If the assignment has any other `kind` than the two above, set the `status` value to equal `"SCORE: <received>/<max>"`, where `<received>` is the `score.received` value and `<max>` is the `score.max` value.
+ * - If the assignment has a `kind` of `"PASS-FAIL"`, set the `status` value to `"PASSED"` if the `score.received` equals the `score.max`. 
+ * Otherwise, set that `status` to be `"FAILED"`.
+ * 
+ * - If the assignment has a `kind` of `"PERCENTAGE"`, set the `status` value to be `"PASSED: <percentage>"` if the student scored 
+ * at least 80.0%. The `<percentage>` should be set to one decimal place. If the student scored less than 80.0%, 
+ * set the status to `"FAILED: <percentage>"`.
+ * 
+ * - If the assignment has any other `kind` than the two above, set the `status` value to equal `"SCORE: <received>/<max>"`,
+ *  where `<received>` is the `score.received` value and `<max>` is the `score.max` value.
  *
  * Then, return the overall array with all modified assignments.
  *
