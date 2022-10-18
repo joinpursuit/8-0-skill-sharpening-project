@@ -58,7 +58,10 @@ function convertToString(val) {
  *  convertToShoutingText("Hello There");
  *  //> "HELLO THERE"
  */
-function convertToShoutingText(text) {}
+function convertToShoutingText(text) {
+  //convert and return uppercase string
+  return text.toUpperCase();
+}
 
 /**
  * convertToWhisperText()
