@@ -46,7 +46,7 @@ function greet(name) {
  *  //> 30
  */
 function add(a, b) {
-  //return th result of addition
+  //return the result of addition
   return a + b;
 }
 
@@ -63,7 +63,10 @@ function add(a, b) {
  *  multiply(2, 5);
  *  //> 10
  */
-function multiply() {}
+function multiply(a, b) {
+  //return the result of multiplying
+  return a * b;
+}
 
 /**
  * average()
