@@ -45,7 +45,10 @@ function greet(name) {
  *  add(10, 20);
  *  //> 30
  */
-function add() {}
+function add(a, b) {
+  //return th result of addition
+  return a + b;
+}
 
 /**
  * multiply()
