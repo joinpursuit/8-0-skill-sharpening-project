@@ -134,7 +134,12 @@ function isEven(num) {
  *  isOdd(11);
  *  //> true
  */
-function isOdd(num) {}
+function isOdd(num) {
+    //check if number has a remainder after dividing
+    let result = (num % 2 !== 0);
+    //return the result
+    return result;
+}
 
 /**
  * isTruthy()
