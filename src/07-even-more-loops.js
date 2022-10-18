@@ -30,6 +30,17 @@ function shoutForLoop(array) {}
  */
 function shoutWhileLoop(array) {}
 
+
+
+
+
+
+/********************************* VANDHANA MOHAN *******************************/
+
+
+
+
+
 /**
  * shoutForOfLoop()
  * ---------------------
@@ -65,15 +76,17 @@ function shoutForOfLoop(array) {
  *  //> 31
  */
 
-function sumArray(array){
-  //console.log(array)
+function sumArray(array){ // both methods work
+  // method 1
+
   // let sumValue = array[0]
-  
   // for(let i = 1; i < array.length; i++){
   //   sumValue += array[i]
   // }
-  
   // return sumValue
+
+// method 2 using reduce()
+
 let sum = 0;
 for(let i = 0; i < array.length; i++){
   sum = array.reduce((x,y) => x + y)
@@ -92,6 +105,7 @@ return sum
  *  oddArray([ 11, 15, 20, 22, 37 ]);
  *  //> [ 11, 15, 37 ]
  */
+
 function oddArray(array) {
   let newArray = []
   for(let i = 0; i < array.length; i++){
@@ -101,6 +115,15 @@ function oddArray(array) {
   }
   return newArray
 }
+
+
+
+
+/********************************* VANDHANA MOHAN *******************************/
+
+
+
+
 
 /**
  * evenArray()
