@@ -67,8 +67,7 @@ function createObjectWithKeyValuePair(key, val) {
  *  //> "Jay"
  */
 function getNameFromObject(object) {
-  //return object["name"]
-  return object.name
+  return object["name"]
 }
 
 /**
