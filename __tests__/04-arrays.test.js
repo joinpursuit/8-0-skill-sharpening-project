@@ -92,7 +92,7 @@ describe("getLastElementOfArray()", () => {
   });
 });
 
-describe("addElementToEndOfArray()", () => {
+describe.only("addElementToEndOfArray()", () => {
   test("should add an element to the end of the array and return the array", () => {
     const array = [10];
     const actual = addElementToEndOfArray(array, "A");
