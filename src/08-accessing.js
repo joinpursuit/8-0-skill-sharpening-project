@@ -34,6 +34,16 @@
  */
 function getFirstName(person) {}
 
+
+
+
+/********************************* VANDHANA MOHAN *******************************/
+
+
+
+
+
+
 /**
  * getLastName()
  * ---------------------
@@ -78,6 +88,15 @@ function getAddressStreet(person) {
 function getCountOfPhoneNumbers(person) {
   return person.numbers.length
 }
+
+
+
+
+/********************************* VANDHANA MOHAN *******************************/
+
+
+
+
 
 /**
  * getFirstPhoneNumber()
