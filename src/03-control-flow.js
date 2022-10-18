@@ -152,7 +152,22 @@ function aroundTheWorldGreeting(language) {
  *  aroundTheWorldGreetingWithSwitch();
  *  //> "Hello World"
  */
-function aroundTheWorldGreetingWithSwitch(language) {}
+function aroundTheWorldGreetingWithSwitch(language) {
+    //switch statment
+    switch (language){
+      //check if spanish
+      case "spanish":
+        return "Hola Mundo";
+        break;
+      //check if german
+      case "german":
+        return "Hallo Welt";
+        break;
+      //if anything else do english
+      default:
+        return "Hello World";
+    }
+}
 
 /**
  * calculateLetterGrade()
