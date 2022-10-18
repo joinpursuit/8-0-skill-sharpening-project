@@ -74,7 +74,10 @@ function convertToShoutingText(text) {
  *  convertToWhisperText("Hello There");
  *  //> "hello there"
  */
-function convertToWhisperText(text) {}
+function convertToWhisperText(text) {
+  //convert and return lowercase string
+  return text.toLowerCase();
+}
 
 /**
  * checkIfCharacterIsInString()
