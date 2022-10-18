@@ -40,7 +40,11 @@ function rangeOdd(min, max) {}
  *  rangeEveryOther(11, 18);
  *  //> [ 11, 13, 15, 17 ]
  */
-function rangeEveryOther(min, max) {
+
+/********************************* VANDHANA MOHAN *******************************/
+
+
+function rangeEveryOther(min, max) { // return odd numbers
   let newrangeEveryOther = []
   for(let i = min; i <= max; i+=2){
    
@@ -108,6 +112,10 @@ function containsForLoop(array, target) {
   }
   return false
 }
+
+
+/********************************* VANDHANA MOHAN *******************************/
+
 
 /**
  * targetCount()
