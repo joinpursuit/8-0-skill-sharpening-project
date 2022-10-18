@@ -174,7 +174,10 @@ function isTruthy(val) {
  *  isFalsy(" ");
  *  //> false
  */
-function isFalsy(val) {}
+function isFalsy(val) {
+  //convert value to opposite boolean, and return the boolean
+  return !val;
+}
 
 // Do not change the code below.
 module.exports = {
