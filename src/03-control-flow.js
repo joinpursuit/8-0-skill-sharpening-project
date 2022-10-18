@@ -186,7 +186,28 @@ function aroundTheWorldGreetingWithSwitch(language) {
  *  calculateLetterGrade(99);
  *  //> "A"
  */
-function calculateLetterGrade(grade) {}
+function calculateLetterGrade(grade) {
+  //check if grade is 90 or more
+  if (grade >= 90){
+    //return A for letter grade
+    return "A";
+    //check if grade is 80 or more
+  } else if (grade >= 80){
+    //return B for letter grade
+    return "B";
+    //check if grade is 70 or more
+  } else if (grade >= 70){
+    //return C for letter grade
+    return "C";
+    //check if grade is 60 or more
+  } else if (grade >= 60){
+    //return D for letter grade
+    return "D";
+    //anything else gets F
+  } else {
+    return "F";
+  }
+}
 
 /**
  * animalCounts()
