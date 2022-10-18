@@ -71,7 +71,9 @@ function getFirstElementOfArray(array) {}
  *  getLastElementOfArray([ null, undefined ]);
  *  //> undefined
  */
-function getLastElementOfArray(array) {}
+function getLastElementOfArray(array) {
+  
+}
 
 /**
  * addElementToEndOfArray()
@@ -141,8 +143,10 @@ function removeElementFromFrontOfArray(array) {}
  *  getMiddleElement([ 10, null, "30" ]);
  *  //> null
  */
-function getMiddleElement(array) {}
-
+function getMiddleElement(array) {
+  let arr = [Math.floor(array.length/2)]
+  return array[arr]
+}
 // Do not change any code below this line.
 module.exports = {
   createEmptyArray,

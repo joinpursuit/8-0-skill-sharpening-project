@@ -9,7 +9,10 @@
  *  createEmptyObject()
  *  //> {}
  */
-function createEmptyObject() {}
+function createEmptyObject() {
+  return {}
+
+}
 
 /**
  * createObjectWithValue()
@@ -22,11 +25,12 @@ function createEmptyObject() {}
  *  createObjectWithValue(19);
  *  //> { whateverKey: 19 }
  */
-function createObjectWithValue(val) {}
+function createObjectWithValue(val) {
+  return {Spongebob: val}
+}
 
 /**
- * createObjectWithKey()
- * ---------------------
+ * createObjectWithKey() * ---------------------
  * Creates an object with the input as a key. The value can be anything.
  * @param {*} key
  * @returns {Object}
