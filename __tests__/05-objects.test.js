@@ -110,7 +110,7 @@ describe("addValueToObject()", () => {
   });
 });
 
-describe.only("addKeyToObject()", () => {
+describe("addKeyToObject()", () => {
   test("should add a key to an existing object and then return the object; the value can be anything", () => {
     const actual = addKeyToObject({ a: 10 }, "my key");
     const expected = "my key";
