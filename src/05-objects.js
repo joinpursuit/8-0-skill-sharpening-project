@@ -37,6 +37,16 @@ function createObjectWithValue(val) {}
  */
 function createObjectWithKey(key) {}
 
+
+
+
+
+/********************************* VANDHANA MOHAN *******************************/
+
+
+
+
+
 /**
  * createObjectWithKeyValuePair()
  * ---------------------
@@ -49,7 +59,7 @@ function createObjectWithKey(key) {}
  *  createObjectWithKeyValuePair("left", "right");
  *  //> { left: "right" }
  */
-function createObjectWithKeyValuePair(key, val) {
+function createObjectWithKeyValuePair(key, val) { // using bracket notation
   const people = {}
   people[key] = val
   return people
@@ -66,7 +76,7 @@ function createObjectWithKeyValuePair(key, val) {
  *  getNameFromObject({ name: "Jay" });
  *  //> "Jay"
  */
-function getNameFromObject(object) {
+function getNameFromObject(object) { // return object name
   return object.name
 }
 
@@ -81,9 +91,19 @@ function getNameFromObject(object) {
  *  getAgeFromObject({ age: 30 });
  *  //> 30
  */
-function getAgeFromObject(object) {
+function getAgeFromObject(object) { // returning object age
   return object.age
 }
+
+
+
+
+/********************************* VANDHANA MOHAN *******************************/
+
+
+
+
+
 
 /**
  * addValueToObject()
