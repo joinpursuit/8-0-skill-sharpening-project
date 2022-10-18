@@ -14,7 +14,10 @@
  *  isEqual(10, "10");
  *  //> false
  */
-function isEqual(a, b) {}
+function isEqual(a, b) {
+  //compare the values strictly
+  return (a === b);
+}
 
 /**
  * findLarger()
