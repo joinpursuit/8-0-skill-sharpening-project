@@ -9,7 +9,10 @@
  *  getLengthOfString("down");
  *  //> 4
  */
-function getLengthOfString(str) {}
+function getLengthOfString(str) {
+  //return the length
+  return str.length;
+}
 
 /**
  * convertToNumber()
