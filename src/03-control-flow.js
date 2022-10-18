@@ -67,6 +67,17 @@ function findLargerOrTie(a, b) {}
  */
 function positiveNegativeOrZero(a) {}
 
+
+
+
+
+/********************************* VANDHANA MOHAN *******************************/
+
+
+
+
+
+
 /**
  * aroundTheWorldGreeting()
  * ---------------------
@@ -87,7 +98,7 @@ function positiveNegativeOrZero(a) {}
  *  aroundTheWorldGreeting();
  *  //> "Hello World"
  */
-function aroundTheWorldGreeting(language) {
+function aroundTheWorldGreeting(language) { // if condition
   if (language === "english"){
     return "Hello World"
   }
@@ -123,7 +134,7 @@ function aroundTheWorldGreeting(language) {
  *  aroundTheWorldGreetingWithSwitch();
  *  //> "Hello World"
  */
-function aroundTheWorldGreetingWithSwitch(language) {
+function aroundTheWorldGreetingWithSwitch(language) { // using switch
   switch (language){
     case "english" :
       return "Hello World";
@@ -157,7 +168,7 @@ function aroundTheWorldGreetingWithSwitch(language) {
  *  calculateLetterGrade(99);
  *  //> "A"
  */
-function calculateLetterGrade(grade) {
+function calculateLetterGrade(grade) { // if else
   if (grade >= 90){
     return "A"
   }
@@ -174,6 +185,14 @@ function calculateLetterGrade(grade) {
     return "F"
   }
 }
+
+
+
+/********************************* VANDHANA MOHAN *******************************/
+
+
+
+
 
 /**
  * animalCounts()
