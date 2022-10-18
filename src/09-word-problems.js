@@ -80,7 +80,19 @@ function getCartTotal(products) {}
     compareLocations(address1, address2);
     //> "Same city."
  */
-function compareLocations(address1, address2) {}
+function compareLocations(address1, address2) {
+  if (address1.state === address2.state) {
+     if( (address1.city === address2.city) && (address1.zip === address2.zip)) {
+      if (address1.street === address2.street) {
+        return "Same building."
+      }
+      return "Same city."
+     }
+      return "Same state."
+  }
+  return "Addresses are not near each other."
+
+}
 
 /**
  * gradeAssignments()
@@ -127,7 +139,26 @@ function compareLocations(address1, address2) {}
     //>   },
     //> ];
  */
-function gradeAssignments(assignments) {}
+function gradeAssignments(assignments) {
+for (let i= 0; i < assignments.length; i++) {
+  
+   switch(assignments[i].kind) { 
+    case "PASS-FAIL":
+                    if(assignments[i].score.received === assignments[i].score.max) {
+                      assignments[i].status = "PASSED"
+                    } else {assignments[i].status = "FAILED" }
+                    break
+    case "PERCENTAGE": 
+                    if(((assignments[i].score.received * 100)/assignments[i].score.max).toFixed(1) >= 80) {
+                            assignments[i].status = `PASSED: ${((assignments[i].score.received * 100)/ assignments[i].score.max).toFixed(1)}%` 
+                    } else {assignments[i].status = `FAILED: ${((assignments[i].score.received * 100)/ assignments[i].score.max).toFixed(1)}%`
+                           }
+                    break 
+    default:
+    
+}
+return assignments
+}
 
 /**
  * createLineOrder()
