@@ -86,7 +86,12 @@ function multiply(a, b) {
  *  average(10, 6);
  *  //> 8 // 10 + 6 = 16; 16/2 = 8;
  */
-function average() {}
+function average(a, b) {
+  //create result variable
+  let result = (a + b) / 2;
+  //return result
+  return result;
+}
 
 /**
  * averageThree()
