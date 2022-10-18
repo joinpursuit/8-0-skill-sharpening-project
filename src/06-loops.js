@@ -12,6 +12,7 @@
  *  (3 + 4 + 5 + 6 + 7 = 25)
  */
 function rangeSum(min, max) {}
+ 
 
 /**
  * rangeOdd()
@@ -117,7 +118,14 @@ function targetCount(array, target) {}
  *  firstIndexFound([ "left", "right", "left" ], "up");
  *  //> -1
  */
-function firstIndexFound(array, target) {}
+function firstIndexFound(array, target) {
+  for (let i = 0; i < array.length; i++){
+    if (array[i] === target){
+        return i;
+    }
+  } 
+  return -1;
+}
 
 /**
  * lastIndexFound()
@@ -137,7 +145,14 @@ function firstIndexFound(array, target) {}
  *  lastIndexFound([ "left", "right", "left" ], "up");
  *  //> -1
  */
-function lastIndexFound(array, target) {}
+function lastIndexFound(array, target) {
+  for (let i = array.length - 1; i >= 0; i--){
+    if (array[i] === target){
+      return i;
+    }
+  }
+  return -1;
+}
 
 /**
  * timesIndex()
@@ -151,7 +166,16 @@ function lastIndexFound(array, target) {}
  *  //> [ 7 * 0, 10 * 1, 11 * 2 ]
  *  //> [ 0, 10, 22 ]
  */
-function timesIndex(array) {}
+function timesIndex(array) {
+  let arr = [];
+  for (let i = 0; i < array.length; i++){
+   arr.push(array[i] * i)
+  }
+
+
+
+  return arr;
+}
 
 /**
  * cumulativeSum()
@@ -165,7 +189,15 @@ function timesIndex(array) {}
  *  //> [ 5, 5 + 2, 5 + 2 + 9 ]
  *  //> [ 5, 7, 16 ]
  */
-function cumulativeSum(array) {}
+function cumulativeSum(array) {
+  let arr = [];
+  let sum = 0; 
+  for (let i = 0; i < array.length; i++){
+    arr.push(sum += array[i])
+  }
+
+  return arr;
+}
 
 // Do not change anything below this line.
 module.exports = {
