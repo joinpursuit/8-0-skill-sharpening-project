@@ -155,7 +155,10 @@ function isOdd(num) {
  *  isTruthy(null);
  *  //> false
  */
-function isTruthy(val) {}
+function isTruthy(val) {
+  //convert value to opposite boolean then again, and return the boolean
+  return !!val;
+}
 
 /**
  * isFalsy()
