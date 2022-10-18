@@ -156,7 +156,10 @@ function compareTypes(a, b) {
  *  flipSign(50);
  *  //> -50
  */
-function flipSign() {}
+function flipSign(a) {
+  //return the flipped number
+  return -a;
+}
 
 /**
  * joinStringsWithSpaces()
