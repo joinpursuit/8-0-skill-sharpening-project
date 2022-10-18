@@ -134,7 +134,10 @@ function averageThree(a, b, c) {
  *  compareTypes("left", 10);
  *  //> false
  */
-function compareTypes() {}
+function compareTypes(a, b) {
+  //compare types of 2 values and return
+  return (typeof a === typeof b);
+}
 
 /**
  * flipSign()
