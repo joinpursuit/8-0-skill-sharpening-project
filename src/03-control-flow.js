@@ -118,7 +118,18 @@ function positiveNegativeOrZero(a) {
  *  aroundTheWorldGreeting();
  *  //> "Hello World"
  */
-function aroundTheWorldGreeting(language) {}
+function aroundTheWorldGreeting(language) {
+  //check if spanish
+  if (language === "spanish"){
+    return "Hola Mundo";
+    //check if german
+  } else if (language === "german"){
+    return "Hallo Welt";
+    //if anything else do english
+  } else {
+    return "Hello World";
+  }
+}
 
 /**
  * aroundTheWorldGreetingWithSwitch()
