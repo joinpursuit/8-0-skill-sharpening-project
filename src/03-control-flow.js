@@ -93,6 +93,7 @@ function positiveNegativeOrZero(a) {}
  */
 function aroundTheWorldGreeting(language) {}
 
+
 /**
  * aroundTheWorldGreetingWithSwitch()
  * ---------------------
@@ -126,6 +127,7 @@ function aroundTheWorldGreetingWithSwitch(language) {}
  *          70 and above is a C
  *          60 and above is a D
  *          Anything lower than 60 is an F
+ * 
  * @param {number} grade
  * @returns {string}
  *
@@ -151,7 +153,13 @@ function calculateLetterGrade(grade) {}
  *  animalCounts("pig", 1);
  *  //> "1 pig"
  */
-function animalCounts(animal, numberOfAnimals) {}
+function animalCounts(animal, numberOfAnimals) {
+  if (numberOfAnimals > 1) {
+    return `${numberOfAnimals} ${animal}s`
+  } else if (numberOfAnimals === 1) {
+    return `${numberOfAnimals} ${animal}`
+  }
+}
 
 /**
  * evenOrOdd()
@@ -168,7 +176,13 @@ function animalCounts(animal, numberOfAnimals) {}
  *  evenOrOdd(48);
  *  //> "Even"
  */
-function evenOrOdd(a) {}
+function evenOrOdd(a) {
+  if (a % 2 === 0) {
+    return "Even"
+  } else if (!a % 2 === 0) {
+    return "Odd"
+  }
+}
 
 /**
  * evenOrOddWithTernary()
@@ -176,6 +190,7 @@ function evenOrOdd(a) {}
  * Takes in a number and returns whether that number is even or odd.
  *
  * NOTE: You must use a ternary to solve this.
+ * //condition ? exprIfTrue : exprIfFalse
  *
  * @param {number} a
  * @returns {string}
@@ -184,7 +199,9 @@ function evenOrOdd(a) {}
  *  evenOrOddWithTernary(8);
  *  //> "Even"
  */
-function evenOrOddWithTernary(a) {}
+function evenOrOddWithTernary(a) {
+  return a % 2 === 0 ?  "Even" : "Odd";
+}
 
 // Do not change any code below this line.
 module.exports = {
