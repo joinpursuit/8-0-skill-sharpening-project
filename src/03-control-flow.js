@@ -229,10 +229,10 @@ function animalCounts(animal, numberOfAnimals) {
   //check if multiple animals
   if (numberOfAnimals > 1){
     //pluralize the message
-    return `${numberOfAnimals} ${animal}s`
+    return `${numberOfAnimals} ${animal}s`;
     //single animal message
   } else {
-    return `${numberOfAnimals} ${animal}`
+    return `${numberOfAnimals} ${animal}`;
   }
 }
 
@@ -251,7 +251,16 @@ function animalCounts(animal, numberOfAnimals) {
  *  evenOrOdd(48);
  *  //> "Even"
  */
-function evenOrOdd(a) {}
+function evenOrOdd(a) {
+  //check if theres no remainder
+  if (a % 2 === 0){
+    //even number
+    return "Even";
+  } else {
+    //odd number
+    return "Odd";
+  }
+}
 
 /**
  * evenOrOddWithTernary()
