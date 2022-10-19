@@ -68,7 +68,19 @@ function shoutWhileLoop(array) {
  *  shoutForOfLoop([ "A", "Very", "Happy", "Array" ]);
  *  //> [ "A!", "Very!", "Happy!", "Array!" ];
  */
-function shoutForOfLoop(array) {}
+function shoutForOfLoop(array) {
+  //create new array
+  let newArr = [];
+  let i = 0;
+  //loop through array
+  for (let word of array){
+    //put the word with ! into new array
+    newArr[i] = word + "!";
+    i++;
+  }
+  //return the new array
+  return newArr;
+}
 
 /**
  * sumArray()
