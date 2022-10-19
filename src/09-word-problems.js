@@ -55,7 +55,17 @@ function applyDiscount(priceInCents, age, hasMembership) {
     getCartTotal(cart);
  *  //> "$30.00"
  */
-function getCartTotal(products) {}
+function getCartTotal(products) {
+  //create total variable
+  let totalPrice = 0;
+  //loop through the items in the cart
+  for(let i = 0; i < products.length; i++){
+    //add items cost to cart
+    totalPrice += products[i].priceInCents * products[i].quantity;
+  }
+  //return the total price
+  return `$${(totalPrice / 100).toFixed(2)}`;
+}
 
 /**
  * compareLocations()
