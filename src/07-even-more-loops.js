@@ -193,10 +193,10 @@ function findEqual(array, selected) {
 function removeDuplicates(array) {
   let result = [];
 
-  for (const i of array) {
-    let noRepeat = true;
+  for (let i of array) {
+     noRepeat = true;
 
-    for (const j of result) {
+    for (let j of result) {
       if (i === j) {
         noRepeat = false;
         break;
