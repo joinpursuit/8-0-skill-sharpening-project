@@ -96,7 +96,17 @@ function evenArray(array) {}
  *  findSmallest([ 0, 11, -2, 5 ]);
  *  //> -2
  */
-function findSmallest(array) {}
+function findSmallest(array) {
+  let min = array[0]
+  for (let i = 1; i < array.length; i++){
+    if (min > array[i]){
+      min = array[i]
+    }
+  } return min
+
+}
+
+
 
 /**
  * findLargest()
@@ -109,7 +119,15 @@ function findSmallest(array) {}
  *  findLargest([ 0, 11, -2, 5 ]);
  *  //> 11
  */
-function findLargest(array) {}
+function findLargest(array) {
+  let max = array[0]
+  for(let i = 1; i < array.length; i++){
+    if (max < array[i]){
+      max = array[i]
+    }
+  } return max
+
+}
 
 /**
  * findEqual()
@@ -126,7 +144,13 @@ function findLargest(array) {}
  *  findEqual([ 0, 11, -2, 5 ], 9);
  *  //> false
  */
-function findEqual(array, selected) {}
+function findEqual(array, selected) {
+ for(let i = 0; i < array.length; i++){
+  if (selected === array[i]){
+    return true } 
+  } 
+  return false  
+}
 
 /**
  * removeDuplicates()
@@ -143,7 +167,13 @@ function findEqual(array, selected) {}
  *  //> [ 1, 11, 2, 3, 4, 9 ]
  */
 
-function removeDuplicates(array) {}
+function removeDuplicates(array) {
+   return array.filter((a,b) => array.indexOf(a) === b)
+}
+  
+
+
+
 
 // Do not change any code below this line.
 module.exports = {
