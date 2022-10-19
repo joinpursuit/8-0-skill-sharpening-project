@@ -174,12 +174,15 @@ function gradeAssignments(assignments) {
       } else {
         assignments[i].status = "FAILED";
       }
+      //check if percentage kind
     } else if (assignments[i].kind === "PERCENTAGE"){
+      //if at least 80%
       if ((assignments[i].score.received / assignments[i].score.max) >= .8){
         assignments[i].status = `PASSED: ${((assignments[i].score.received/assignments[i].score.max)*100).toFixed(1)}%`;
       } else {
         assignments[i].status = `FAILED: ${((assignments[i].score.received/assignments[i].score.max)*100).toFixed(1)}%`;
       }
+      //otherwise just post score
     } else {
       assignments[i].status = `SCORE: ${assignments[i].score.received}/${assignments[i].score.max}`;
     }
