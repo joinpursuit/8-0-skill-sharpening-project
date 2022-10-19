@@ -12,7 +12,13 @@
  *  shoutForLoop([ "A", "Very", "Happy", "Array" ]);
  *  //> [ "A!", "Very!", "Happy!", "Array!" ];
  */
-function shoutForLoop(array) {}
+function shoutForLoop(array) {
+  let subString = "!"
+  for (i = 0; i < array.length; i++){
+    array[i] = array[i] + subString
+  }
+  return array
+}
 
 /**
  * shoutWhileLoop()
@@ -28,7 +34,15 @@ function shoutForLoop(array) {}
  *  shoutWhileLoop([ "A", "Very", "Happy", "Array" ]);
  *  //> [ "A!", "Very!", "Happy!", "Array!" ];
  */
-function shoutWhileLoop(array) {}
+function shoutWhileLoop(array) {
+  let subString = "!"
+  i = 0
+  while(i < array.length){
+    array[i] = array[i] + subString
+    i++
+  }
+  return array
+}
 
 /**
  * shoutForOfLoop()
@@ -44,7 +58,15 @@ function shoutWhileLoop(array) {}
  *  shoutForOfLoop([ "A", "Very", "Happy", "Array" ]);
  *  //> [ "A!", "Very!", "Happy!", "Array!" ];
  */
-function shoutForOfLoop(array) {}
+function shoutForOfLoop(array) {
+  let text = "!"
+  let index = 0
+  for (let element of array){
+    array[index] = array[index] + text
+    index++
+  }
+  return array
+}
 
 /**
  * sumArray()
