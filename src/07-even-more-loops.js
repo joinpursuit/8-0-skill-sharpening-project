@@ -57,7 +57,15 @@ function shoutForOfLoop(array) {}
  *  sumArray([ 10, 0, 10, 11 ]);
  *  //> 31
  */
-function sumArray(array) {}
+function sumArray(array) {
+  let sum = 0;
+
+  for (let ele of array) {
+    sum += ele;  
+  }
+
+  return sum;
+}
 
 /**
  * oddArray()
@@ -70,7 +78,16 @@ function sumArray(array) {}
  *  oddArray([ 11, 15, 20, 22, 37 ]);
  *  //> [ 11, 15, 37 ]
  */
-function oddArray(array) {}
+function oddArray(array) {
+  let arr = [];
+  for (let ele of array) {
+    if (ele % 2 !== 0) {
+      arr.push(ele);
+    }
+  }
+  
+  return arr;
+} 
 
 /**
  * evenArray()
@@ -83,7 +100,16 @@ function oddArray(array) {}
  *  evenArray([ 11, 15, 20, 22, 37 ]);
  *  //> [ 20, 22 ]
  */
-function evenArray(array) {}
+function evenArray(array) {
+  let arr = [];
+  for (let ele of array) {
+    if (ele % 2 === 0) {
+      arr.push(ele);
+    }
+  }
+  
+  return arr;
+}
 
 /**
  * findSmallest()
