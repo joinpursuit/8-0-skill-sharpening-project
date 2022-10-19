@@ -48,7 +48,10 @@ function getFirstName(person) {
  *  getLastName(person);
  *  //> "Rojas"
  */
-function getLastName(person) {}
+function getLastName(person) {
+  //return persons last name
+  return person.names.last;
+}
 
 /**
  * getAddressStreet()
