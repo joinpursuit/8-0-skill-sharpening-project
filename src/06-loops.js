@@ -275,7 +275,21 @@ function timesIndex(array) {
  *  //> [ 5, 5 + 2, 5 + 2 + 9 ]
  *  //> [ 5, 7, 16 ]
  */
-function cumulativeSum(array) {}
+function cumulativeSum(array) {
+  //create a new array 
+  let multipliedArr = [];
+  //variable for adding
+  let addResult = 0;
+  //loop through the original array
+  for (let i = 0; i < array.length; i++){
+    //add the original array value to the result variable
+    addResult += array[i];
+    //set the new array values equal to the calculations
+    multipliedArr[i]= addResult;
+  }
+  //return the new array
+  return multipliedArr;
+}
 
 // Do not change anything below this line.
 module.exports = {
