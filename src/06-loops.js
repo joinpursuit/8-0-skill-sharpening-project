@@ -55,12 +55,12 @@ function rangeOdd(min, max) {
  *  //> [ 11, 13, 15, 17 ]
  */
 function rangeEveryOther(min, max) {
-  let sum = [];
+  let arr = [];
   for (let i = min; i <= max; i += 2) {
-    sum.push(i);
+    arr.push(i);
   }
 
-  return sum;
+  return arr;
 }
 
 /**

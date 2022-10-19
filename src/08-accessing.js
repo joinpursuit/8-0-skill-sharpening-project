@@ -58,8 +58,8 @@ function getLastName(person) {
  * @param {Object} person
  * @returns {string}
  *
- * EXAMPLE:
  *  getAddressStreet(person);
+ * EXAMPLE:
  *  //> "697 Pine Drive"
  */
 function getAddressStreet(person) {
