@@ -239,14 +239,15 @@ function timesIndex(array) {
 function cumulativeSum(array) {
   let sum = 0;
   const arr = [];
-  for (let i = 0; i < array.length; i++) {
-    for (let x = 0; x < i; x++) {
-      sum += array[x];
-    }
-    arr.push(sum);
+  if (array[0] == undefined) {
+    return [];
+  } else {
+      arr.push(array[0]);
+      for (let i = 1; i < array.length; i++) {
+        arr.push(array[i] + arr[i-1]);
+      }
+      return arr;
   }
-  console.log(arr);
-  return arr;
 }
 
 // Do not change anything below this line.
