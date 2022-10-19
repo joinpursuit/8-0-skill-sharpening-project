@@ -44,7 +44,8 @@ function createArrayWithTwoElements(a, b) {
  *  //> 3
  */
 function getArrayLength(array) {
-
+  //get array length and return
+  return array.length;
 }
 
 /**
