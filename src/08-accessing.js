@@ -32,7 +32,9 @@
  *  getFirstName(person);
  *  //> "Rachel"
  */
-function getFirstName(person) {}
+function getFirstName(person) {
+  return person.names.first;
+}
 
 /**
  * getLastName()
@@ -45,7 +47,9 @@ function getFirstName(person) {}
  *  getLastName(person);
  *  //> "Rojas"
  */
-function getLastName(person) {}
+function getLastName(person) {
+  return person.names.last;
+}
 
 /**
  * getAddressStreet()
@@ -58,7 +62,9 @@ function getLastName(person) {}
  *  getAddressStreet(person);
  *  //> "697 Pine Drive"
  */
-function getAddressStreet(person) {}
+function getAddressStreet(person) {
+  return person.address.street;
+}
 
 /**
  * getCountOfPhoneNumbers()
@@ -71,7 +77,9 @@ function getAddressStreet(person) {}
  *  getCountOfPhoneNumbers(person);
  *  //> 2
  */
-function getCountOfPhoneNumbers(person) {}
+function getCountOfPhoneNumbers(person) {
+  return person.numbers.length;
+}
 
 /**
  * getFirstPhoneNumber()
@@ -87,12 +95,14 @@ function getCountOfPhoneNumbers(person) {}
  *  getFirstPhoneNumber(person);
  *  //> 7185550921
  */
-function getFirstPhoneNumber(person) {}
+function getFirstPhoneNumber(person) {
+  return person.numbers[0];
+}
 
 /**
  * getLastPhoneNumber()
  * ---------------------
- * Return the first phone number associated with the person.
+ * Return the first phone number associated with the person. // probably "last"
  *
  * NOTE: There will always be at least one phone number.
  *
@@ -103,7 +113,9 @@ function getFirstPhoneNumber(person) {}
  *  getLastPhoneNumber(person);
  *  //> 7185558611
  */
-function getLastPhoneNumber(person) {}
+function getLastPhoneNumber(person) {
+  return person.numbers[person.numbers.length-1];
+}
 
 /**
  * getFullName()
@@ -116,7 +128,9 @@ function getLastPhoneNumber(person) {}
  *  getFullName(person);
  *  //> "Rachel Eleanor Rojas"
  */
-function getFullName(person) {}
+function getFullName(person) {
+  return `${person.names.first} ${person.names.middle} ${person.names.last}`;
+}
 
 /**
  * getCityAndState()
@@ -132,7 +146,9 @@ function getFullName(person) {}
  *  getCityAndState(person);
  *  //> "Staten Island, NY"
  */
-function getCityAndState(person) {}
+function getCityAndState(person) {
+  return `${person.address.city}, ${person.address.state}`;
+}
 
 /**
  * getFullAddress()
@@ -148,7 +164,9 @@ function getCityAndState(person) {}
  *  getFullAddress(person);
  *  //> "697 Pine Drive 2A, Staten Island, NY, 10306"
  */
-function getFullAddress(person) {}
+function getFullAddress(person) {
+  return `${person.address.street} ${person.address.unit}, ${person.address.city}, ${person.address.state}, ${person.address.zip}`;
+}
 
 /**
  * getFlatObject()
@@ -171,7 +189,42 @@ function getFullAddress(person) {}
       numbers: [7185550921, 7185558611],
     };
  */
-function getFlatObject(person) {}
+function getFlatObject(person) {
+  let hamster = {
+    /* ought to put in conditionals to check if first name value really is linked to first name key, but eh.
+     like, .includes and .indexOf and all sorts of fun stuff.
+     */
+    [Object.keys(person.names)[0]]: person.names.first,
+    [Object.keys(person.names)[1]]: person.names.middle,
+    [Object.keys(person.names)[2]]: person.names.last,
+    [Object.keys(person.address)[0]]: person.address.street,
+    [Object.keys(person.address)[1]]: person.address.unit,
+    [Object.keys(person.address)[2]]: person.address.city,
+    [Object.keys(person.address)[3]]: person.address.state,
+    [Object.keys(person.address)[4]]: person.address.zip,
+    [Object.keys(person)[2]]: person.numbers
+  }
+  return hamster;
+}
+
+const person = {
+  names: {
+    first: "Rachel",
+    middle: "Eleanor",
+    last: "Rojas"
+  },
+  address: {
+    street: "697 Pine Drive",
+    unit: "2A",
+    city: "Staten Island",
+    state: "NY",
+    zip: "10306"
+  },
+  numbers: [
+    7185550921,
+    7185558611
+  ]
+}
 
 // Do not change the code below.
 module.exports = {
