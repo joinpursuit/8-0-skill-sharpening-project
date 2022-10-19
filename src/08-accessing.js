@@ -99,7 +99,10 @@ function getCountOfPhoneNumbers(person) {
  *  getFirstPhoneNumber(person);
  *  //> 7185550921
  */
-function getFirstPhoneNumber(person) {}
+function getFirstPhoneNumber(person) {
+  //return persons first phone number
+  return person.numbers[0];
+}
 
 /**
  * getLastPhoneNumber()
