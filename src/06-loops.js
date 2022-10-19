@@ -225,7 +225,19 @@ function firstIndexFound(array, target) {
  *  lastIndexFound([ "left", "right", "left" ], "up");
  *  //> -1
  */
-function lastIndexFound(array, target) {}
+function lastIndexFound(array, target) {
+  let count = 0;
+  //loop through the array
+  for (let i = array.length - 1; i >= 0; i --){
+    //check if target value exists
+    if (array[i] === target){
+      //return the index
+      return i;
+    } 
+  }
+  //return -1
+  return -1;
+}
 
 /**
  * timesIndex()
