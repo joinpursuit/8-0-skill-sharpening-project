@@ -188,8 +188,32 @@ function getFullAddress(person) {
       zip: "10306",
       numbers: [7185550921, 7185558611],
     };
+    const person = {
+    names: {
+      first: "Rachel",
+      middle: "Eleanor",
+      last: "Rojas"
+    },
+    address: {
+      street: "697 Pine Drive",
+      unit: "2A",
+      city: "Staten Island",
+      state: "NY",
+      zip: "10306"
+    },
+    numbers: [
+      7185550921,
+      7185558611
+    ]
+  }
  */
-function getFlatObject(person) {}
+function getFlatObject(person) {
+  const newObj = {}
+  Object.assign(newObj, person.names);
+  Object.assign(newObj, person.address);
+  newObj.numbers = person.numbers;
+  return newObj;
+}
 
 // Do not change the code below.
 module.exports = {
