@@ -19,8 +19,23 @@
  *  applyDiscount(1000, 9, true);
  *  //> 700
  */
-function applyDiscount(priceInCents, age, hasMembership) {}
+function applyDiscount(priceInCents, age, hasMembership) {
+  // if age !<=10...10%
+  // =>65 10%
+  //11 - 64 no discount
+  //check for membership first
 
+  if (!hasMembership && (age <= 10 || age >= 65)){
+    return priceInCents * 0.9
+  }else if (hasMembership){
+    if (age <= 10 || age >= 65)
+      return priceInCents * 0.7
+
+    return priceInCents * 0.8
+  } else {
+    return priceInCents
+}
+}
 /**
  * getCartTotal()
  * ---------------------
@@ -127,7 +142,33 @@ function compareLocations(address1, address2) {}
     //>   },
     //> ];
  */
-function gradeAssignments(assignments) {}
+
+//  function getStatus(kind,received,max) {
+//   const percentage = (100 * received)/max;
+//   if(kind === "PASS-FAIL") return received === max ? "PASSED" : "FAILED"
+//   if(kind === "PERGENTAGE")
+//   return `${percentage >= 80? "PASSED" : "FAILED"}: ${[percentage.toFixed(1)]}%`;
+//   return `SCORE : ${received}/${max}`;
+// }
+ 
+// function gradeAssignments(assignments) {
+//   return assignments.map(a => ({...a,status:getStatus(a.kind,a.score.received,a.score.max)});
+// }
+function getStatus(kind, received, max) {
+  const percentage = (100 * received) / max;
+  if (kind === 'PASS-FAIL') return received === max ? 'PASSED' : 'FAILED';
+  if (kind === 'PERCENTAGE')
+    return `${percentage >= 80 ? 'PASSED' : 'FAILED'}: ${percentage.toFixed(1,)}%`;
+    return `SCORE: ${received}/${max}`;
+}
+function gradeAssignments(assignments) {
+   return assignments.map((a) => 
+  ({...a,status: getStatus(a.kind, a.score.received, a.score.max),}));
+}
+
+    
+  
+
 
 /**
  * createLineOrder()
