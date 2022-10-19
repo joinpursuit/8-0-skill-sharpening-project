@@ -97,7 +97,24 @@ function rangeEveryOther(min, max) {
  *  containsWhileLoop([ "left", "up", "right" ], "down");
  *  //> false
  */
-function containsWhileLoop(array, target) {}
+function containsWhileLoop(array, target) {
+  //create increment variable
+  let i = 0;
+  //loop through the array
+  while (i < array.length){
+    //check if target value exists
+    if (array[i] === target){
+      //return true
+      return true;
+    } 
+    //increment i
+    i++;
+  }
+  //return false otherwise
+  return false;
+}
+  
+
 
 /**
  * containsForLoop()
