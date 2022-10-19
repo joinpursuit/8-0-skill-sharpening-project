@@ -10,7 +10,10 @@
  *  createEmptyArray();
  *  //> []
  */
-function createEmptyArray() {}
+function createEmptyArray() {
+  //return an empty array
+  return [];
+}
 
 /**
  * createArrayWithTwoElements()
