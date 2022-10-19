@@ -27,7 +27,10 @@ function createEmptyArray() {
  *  createArrayWithTwoElements(true, false);
  *  //> [ true, false ]
  */
-function createArrayWithTwoElements(a, b) {}
+function createArrayWithTwoElements(a, b) {
+  //return an array with the two elements
+  return [a, b];
+}
 
 /**
  * getArrayLength()
@@ -40,7 +43,9 @@ function createArrayWithTwoElements(a, b) {}
  *  getArrayLength([ 10, 20, 30 ]);
  *  //> 3
  */
-function getArrayLength(array) {}
+function getArrayLength(array) {
+
+}
 
 /**
  * getFirstElementOfArray()
