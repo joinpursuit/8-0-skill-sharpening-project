@@ -115,7 +115,12 @@ function getAgeFromObject(object) {
  *  addValueToObject({ left: true }, false);
  *  //> { left: true, key: false }
  */
-function addValueToObject(object, val) {}
+function addValueToObject(object, val) {
+  //adds a value to an object
+  object.newKey = val;
+  //return the object
+  return object;
+}
 
 /**
  * addKeyToObject()
