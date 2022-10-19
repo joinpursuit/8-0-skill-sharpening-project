@@ -26,6 +26,7 @@ function createEmptyObject() {
  *  //> { whateverKey: 19 }
  */
 function createObjectWithValue(val) {
+  //create an object with a key 
   return {theKey : val};
 }
 
@@ -40,7 +41,14 @@ function createObjectWithValue(val) {
  *  createObjectWithKey("left");
  *  //> { left: false }
  */
-function createObjectWithKey(key) {}
+function createObjectWithKey(key) {
+  //create an object
+  let newObject = {};
+  //set the variable as the key
+  newObject[key] = "yay";
+  //return the object
+  return newObject;
+}
 
 /**
  * createObjectWithKeyValuePair()
