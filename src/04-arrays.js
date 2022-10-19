@@ -60,7 +60,10 @@ function getArrayLength(array) {
  *  getFirstElementOfArray([ 10, 20, 30 ]);
  *  //> 10
  */
-function getFirstElementOfArray(array) {}
+function getFirstElementOfArray(array) {
+  //return first element
+  return array[0];
+}
 
 /**
  * getLastElementOfArray()
