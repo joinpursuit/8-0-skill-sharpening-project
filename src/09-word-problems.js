@@ -1,9 +1,12 @@
 /**
  * applyDiscount()
  * ---------------------
- * A local movie theater has a few different ticket discounts. If the attendee is 10 years old or younger, or 65 years old or older, they receive a 10% discount. If the attendee is viewing the movie with a member, they receive a 20% discount. If both situations apply, they receive a 30% discount.
+ * A local movie theater has a few different ticket discounts. If the attendee is 10 years old or younger, 
+ * or 65 years old or older, they receive a 10% discount. If the attendee is viewing the movie with a member, 
+ * they receive a 20% discount. If both situations apply, they receive a 30% discount.
  *
- * Write an algorithm that will determine the price of a ticket based on the `priceInCents` of the ticket, the `age` of the attendee, and the membership status (i.e. `hasMembership`).
+ * Write an algorithm that will determine the price of a ticket based on the `priceInCents` of the ticket, 
+ * the `age` of the attendee, and the membership status (i.e. `hasMembership`).
  * @param {number} priceInCents - The price of the ticket, in cents.
  * @param {number} age - The age of the attendee.
  * @param {boolean} hasMembership - Whether or not the person has access to a membership.
@@ -19,14 +22,24 @@
  *  applyDiscount(1000, 9, true);
  *  //> 700
  */
-function applyDiscount(priceInCents, age, hasMembership) {}
+function applyDiscount(priceInCents, age, hasMembership) {
+  let discount = 0
+if (age <= 10 || age >= 65){
+   discount += 0.1 
+}
+ if (hasMembership){
+  discount += .20
+ }
+ return priceInCents - (discount * priceInCents)
+}// end of function
 
 /**
  * getCartTotal()
  * ---------------------
  * An online store allows for customers to add products to their cart. Customers can add multiples of each product to the cart.
  * 
- * Write an algorithm that will determine the total amount of all items in the cart. Make sure to multiply the `priceInCents` times the `quantity` to get the full cost of each product.
+ * Write an algorithm that will determine the total amount of all items in the cart. 
+ * Make sure to multiply the `priceInCents` times the `quantity` to get the full cost of each product.
  * @param {Object[]} products - An array of products.
  * @param {number} products[].priceInCents - The price of the product, in cents.
  * @param {number} products[].quantity - The number of products being bought.
@@ -40,14 +53,21 @@ function applyDiscount(priceInCents, age, hasMembership) {}
     getCartTotal(cart);
  *  //> "$30.00"
  */
-function getCartTotal(products) {}
+function getCartTotal(products) {
+ let cost = 0
+ for (let i = 0; i < products.length; i++)
+ cost = cost + (products[i].priceInCents * products[i].quantity)/100;
+ return `$${cost.toFixed(2)}`
+}// end of function
 
 /**
  * compareLocations()
  * ---------------------
- * A shipping company is looking to make its deliveries more efficient by comparing the destinations of multiple deliveries. If the locations are similar, the packages may be able to be bundled together.
+ * A shipping company is looking to make its deliveries more efficient by comparing the destinations of multiple deliveries. 
+ * If the locations are similar, the packages may be able to be bundled together.
  * 
- * Write an algorithm that takes in two objects of similar shape, each object representing an address. Then, return a string that describes the relationship between those two addresses.
+ * Write an algorithm that takes in two objects of similar shape, each object representing an address. 
+ * Then, return a string that describes the relationship between those two addresses.
  * 
  * - If the street, city, state, and zip for both addresses are the same, return the string "Same building."
  * - If the city, state, and zip are the same, return the string "Same city."
@@ -132,11 +152,15 @@ function gradeAssignments(assignments) {}
 /**
  * createLineOrder()
  * ---------------------
- * An airline wants to build an application that improves the boarding process for its customers. They want to have customers sign up in order of arrival, but prioritize those customers who have a membership.
+ * An airline wants to build an application that improves the boarding process for its customers. 
+ * They want to have customers sign up in order of arrival, but prioritize those customers who have a membership.
  * 
- * Build an algorithm that takes in an array of objects, where each object represents a person. The order of the array is important; the person at index `0` arrived first while the person at index `1` arrived afterwards.
+ * Build an algorithm that takes in an array of objects, where each object represents a person. 
+ * The order of the array is important; the person at index `0` arrived first while the person at index `1` arrived afterwards.
  * 
- * Return an array that includes only the names of each person, but reordered to account for whether or not each person has a membership. Everyone who has a membership should be at the front of the line in the same order they arrived. Everyone without a membership should be in the same order they arrived but after those with a membership.
+ * Return an array that includes only the names of each person, but reordered to account for whether or not each person has a membership. 
+ * Everyone who has a membership should be at the front of the line in the same order they arrived. 
+ * Everyone without a membership should be in the same order they arrived but after those with a membership.
  * @param {Object[]} people - An array of people objects.
  * @param {string} people[].name - The name of the person.
  * @param {boolean} people[].hasMembership - Whether or not the person has a membership.
