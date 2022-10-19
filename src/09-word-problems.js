@@ -108,13 +108,13 @@ function getCartTotal(products) {
 function compareLocations(address1, address2) {
   //compare street city state and zip
   if (address1.street === address2.street && address1.city === address2.city && address1.state === address2.state && address1.zip === address2.zip){
-    return "Same building."
+    return "Same building.";
   } else if (address1.city === address2.city && address1.state === address2.state && address1.zip === address2.zip){
-    return "Same city."
+    return "Same city.";
   } else if (address1.state === address2.state){
-    return "Same state."
+    return "Same state.";
   } else {
-    return "Addresses are not near each other."
+    return "Addresses are not near each other.";
   }
 }
 
@@ -163,7 +163,30 @@ function compareLocations(address1, address2) {
     //>   },
     //> ];
  */
-function gradeAssignments(assignments) {}
+function gradeAssignments(assignments) {
+  //loop through assignments
+  for (i = 0; i < assignments.length; i++){
+    //check if pass fail
+    if (assignments[i].kind === "PASS-FAIL"){
+      //check if scored max
+      if (assignments[i].score.received === assignments[i].score.max){
+        assignments[i].status = "PASSED";
+      } else {
+        assignments[i].status = "FAILED";
+      }
+    } else if (assignments[i].kind === "PERCENTAGE"){
+      if ((assignments[i].score.received / assignments[i].score.max) >= .8){
+        assignments[i].status = `PASSED: ${((assignments[i].score.received/assignments[i].score.max)*100).toFixed(1)}%`;
+      } else {
+        assignments[i].status = `FAILED: ${((assignments[i].score.received/assignments[i].score.max)*100).toFixed(1)}%`;
+      }
+    } else {
+      assignments[i].status = `SCORE: ${assignments[i].score.received}/${assignments[i].score.max}`;
+    }
+  }
+  //return assignments array
+  return assignments;
+}
 
 /**
  * createLineOrder()
