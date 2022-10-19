@@ -134,7 +134,10 @@ function getLastPhoneNumber(person) {
  *  getFullName(person);
  *  //> "Rachel Eleanor Rojas"
  */
-function getFullName(person) {}
+function getFullName(person) {
+  //return the persons full name
+  return `${person.names.first} ${person.names.middle} ${person.names.last}`;
+}
 
 /**
  * getCityAndState()
