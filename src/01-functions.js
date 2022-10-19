@@ -51,7 +51,7 @@ function greet() {
  *  add(10, 20);
  *  //> 30
  */
-function add() {
+function add(a,b) {
 
 
 }
@@ -143,7 +143,7 @@ function averageThree(a, b, c) {
  *  compareTypes("left", 10);
  *  //> false
  */
-function compareTypes(a, b) {
+function compareTypes(a, b) {}
   
 
 
