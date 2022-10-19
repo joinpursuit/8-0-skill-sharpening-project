@@ -67,7 +67,7 @@ describe("createObjectWithKeyValuePair()", () => {
   });
 });
 
-describe.only("getNameFromObject()", () => {
+describe("getNameFromObject()", () => {
   test("should access the value of the `name` key from the given object", () => {
     const actual = getNameFromObject({ name: "Marshall" });
     const expected = "Marshall";
