@@ -154,7 +154,12 @@ function addKeyToObject(object, key) {
  *  addKeyValuePairToObject({ up: true }, "left", false);
  *  //> { up: true, left: false }
  */
-function addKeyValuePairToObject(object, key, val) {}
+function addKeyValuePairToObject(object, key, val) {
+  //adds the key value pair
+  object[key] = val;
+  //return object
+  return object;
+}
 
 /**
  * deleteKeyFromObject()
