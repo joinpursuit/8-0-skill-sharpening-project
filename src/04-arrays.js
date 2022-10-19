@@ -77,7 +77,10 @@ function getFirstElementOfArray(array) {
  *  getLastElementOfArray([ null, undefined ]);
  *  //> undefined
  */
-function getLastElementOfArray(array) {}
+function getLastElementOfArray(array) {
+  //get the length minus 1 to find the last element
+  return array[array.length - 1];
+}
 
 /**
  * addElementToEndOfArray()
