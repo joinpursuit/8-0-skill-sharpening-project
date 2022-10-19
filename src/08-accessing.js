@@ -144,7 +144,12 @@ return `${person.names.first} ${person.names.middle} ${person.names.last}`
  *  getCityAndState(person);
  *  //> "Staten Island, NY"
  */
-function getCityAndState(person) {}
+function getCityAndState(person) {
+return 
+
+
+
+}
 
 /**
  * getFullAddress()
