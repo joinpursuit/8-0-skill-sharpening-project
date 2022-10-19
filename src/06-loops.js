@@ -136,7 +136,18 @@ function containsWhileLoop(array, target) {
  *  containsForLoop([ "left", "up", "right" ], "down");
  *  //> false
  */
-function containsForLoop(array, target) {}
+function containsForLoop(array, target) {
+    //loop through the array
+    for (let i = 0; i < array.length; i ++){
+      //check if target value exists
+      if (array[i] === target){
+        //return true
+        return true;
+      } 
+    }
+    //return false otherwise
+    return false;
+}
 
 /**
  * targetCount()
