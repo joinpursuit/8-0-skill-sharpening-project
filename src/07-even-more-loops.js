@@ -220,7 +220,18 @@ function findLargest(array) {//create a variable equal to the first array elemen
  *  findEqual([ 0, 11, -2, 5 ], 9);
  *  //> false
  */
-function findEqual(array, selected) {}
+function findEqual(array, selected) {
+  //loop through array
+  for (let i = 0; i < array.length; i++){
+    //check if the number is there
+    if (selected === array[i]){
+      //return true
+      return true;
+    }
+  }
+  //otherwise return false
+  return false;
+}
 
 /**
  * removeDuplicates()
