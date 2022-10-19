@@ -129,7 +129,12 @@ function removeElementFromEndOfArray(array) {
  *  addElementToFrontOfArray([ 10 ], 9);
  *  //> [ 9, 10 ]
  */
-function addElementToFrontOfArray(array, element) {}
+function addElementToFrontOfArray(array, element) {
+  //add element in front of array
+  array.unshift(element);
+  //return the array
+  return array;
+}
 
 /**
  * removeElementFromFrontOfArray()
