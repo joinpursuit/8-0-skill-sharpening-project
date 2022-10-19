@@ -118,7 +118,10 @@ function getFirstPhoneNumber(person) {
  *  getLastPhoneNumber(person);
  *  //> 7185558611
  */
-function getLastPhoneNumber(person) {}
+function getLastPhoneNumber(person) {
+  //return persons last phone number
+  return person.numbers[person.numbers.length - 1];
+}
 
 /**
  * getFullName()
