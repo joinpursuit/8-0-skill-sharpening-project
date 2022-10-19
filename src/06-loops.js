@@ -47,6 +47,7 @@ function rangeOdd(min, max) {
     //decrement max
     max-- ;
   }
+  //return the array
   return numArr;
 }
 
@@ -62,7 +63,19 @@ function rangeOdd(min, max) {
  *  rangeEveryOther(11, 18);
  *  //> [ 11, 13, 15, 17 ]
  */
-function rangeEveryOther(min, max) {}
+function rangeEveryOther(min, max) {
+  //create an array
+  let numArr = [];
+  //loop through the numbers
+  while (min <= max){
+    //put min into array
+    numArr.push(min);
+    //increment min by 2
+    min += 2;
+  }
+  //return the number array
+  return numArr;
+}
 
 /**
  * containsWhileLoop()
