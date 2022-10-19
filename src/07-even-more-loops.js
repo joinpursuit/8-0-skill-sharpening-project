@@ -38,7 +38,21 @@ function shoutForLoop(array) {
  *  shoutWhileLoop([ "A", "Very", "Happy", "Array" ]);
  *  //> [ "A!", "Very!", "Happy!", "Array!" ];
  */
-function shoutWhileLoop(array) {}
+function shoutWhileLoop(array) {
+  //create new array
+  let newArr = [];
+  //create increment variable
+  let i = 0;
+  //loop through array
+  while (i < array.length){
+    //assign value to new array
+    newArr[i] = `${array[i]}!`;
+    //increment 
+    i++;
+  }
+  //return new array
+  return newArr;
+}
 
 /**
  * shoutForOfLoop()
