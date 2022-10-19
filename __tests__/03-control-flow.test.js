@@ -123,7 +123,7 @@ describe("animalCounts()", () => {
   });
 });
 
-describe("evenOrOdd()", () => {
+describe.only("evenOrOdd()", () => {
   test("works for even numbers", () => {
     expect(evenOrOdd(0)).toEqual("Even");
     expect(evenOrOdd(2)).toEqual("Even");
