@@ -152,7 +152,31 @@ function compareLocations(address1, address2) {
     //>   },
     //> ];
  */
-function gradeAssignments(assignments) {}
+function gradeAssignments(assignments) {
+  for (let i = 0; i < assignments.length; i++) {
+    if (assignments[i].kind == 'PASS-FAIL') {
+      if (assignments[i].score.received == assignments[i].score.max) {
+        assignments[i].status = 'PASSED';
+      } else {
+        assignments[i].status = 'FAILED';
+      }
+    } else if (assignments[i].kind == 'PERCENTAGE') {
+        if ((assignments[i].score.received / assignments[i].score.max) >= 0.8) {
+          assignments[i].status = `PASSED: ${((assignments[i].score.received / assignments[i].score.max) * 100).toFixed(1)}%`;
+        } else {
+          assignments[i].status = `FAILED: ${((assignments[i].score.received / assignments[i].score.max) * 100).toFixed(1)}%`;
+          }
+      } else {
+        assignments[i].status = `SCORE: ${assignments[i].score.received}/${assignments[i].score.max}`;
+      }
+  }
+  return assignments;
+}
+
+// - If the assignment has any other `kind` than the two above, set the `status` value to equal `"SCORE: <received>/<max>"`, 
+// where `<received>` is the `score.received` value and `<max>` is the `score.max` value.
+
+
 
 /**
  * createLineOrder()
