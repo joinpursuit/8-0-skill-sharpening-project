@@ -116,7 +116,20 @@ function sumArray(array) {
  *  oddArray([ 11, 15, 20, 22, 37 ]);
  *  //> [ 11, 15, 37 ]
  */
-function oddArray(array) {}
+function oddArray(array) {
+  //create new array
+  let newArr = [];
+  //loop through array
+  for (let i = 0; i < array.length; i++){
+    //check if value is odd
+    if (array[i] % 2 !== 0){
+      //put in new array
+      newArr.push(array[i]);
+    }
+  }
+  //return the new array
+  return newArr;
+}
 
 /**
  * evenArray()
