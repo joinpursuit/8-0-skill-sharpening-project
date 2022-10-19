@@ -11,7 +11,17 @@
  *  //> 25
  *  (3 + 4 + 5 + 6 + 7 = 25)
  */
-function rangeSum(min, max) {}
+function rangeSum(min, max) {
+  //create a variable for the result
+  let result = 0;
+  //loop through the numbers
+  while (min <= max){
+    result += min;
+    min++;
+  }
+  //return the result
+  return result;
+}
 
 /**
  * rangeOdd()
