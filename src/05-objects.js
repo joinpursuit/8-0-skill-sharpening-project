@@ -25,7 +25,9 @@ function createEmptyObject() {
  *  createObjectWithValue(19);
  *  //> { whateverKey: 19 }
  */
-function createObjectWithValue(val) {}
+function createObjectWithValue(val) {
+  return {theKey : val};
+}
 
 /**
  * createObjectWithKey()
