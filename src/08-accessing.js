@@ -64,7 +64,10 @@ function getLastName(person) {
  *  getAddressStreet(person);
  *  //> "697 Pine Drive"
  */
-function getAddressStreet(person) {}
+function getAddressStreet(person) {
+  //return persons address street
+  return person.address.street;
+}
 
 /**
  * getCountOfPhoneNumbers()
