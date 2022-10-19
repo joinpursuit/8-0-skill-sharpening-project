@@ -173,7 +173,7 @@ function findSmallest(array) {
   let num = array[0];
   //loop through array
   for (let i = 1; i < array.length; i++){
-    //check whcih number is bigger
+    //check which number is bigger
     if (num > array[i]){
       //assign smaller number to variable
       num = array[i];
@@ -193,7 +193,17 @@ function findSmallest(array) {
  *  findLargest([ 0, 11, -2, 5 ]);
  *  //> 11
  */
-function findLargest(array) {}
+function findLargest(array) {//create a variable equal to the first array element
+  let num = array[0];
+  //loop through array
+  for (let i = 1; i < array.length; i++){
+    //check which number is bigger
+    if (num < array[i]){
+      //assign bigger number to variable
+      num = array[i];
+    }
+  }
+  return num;}
 
 /**
  * findEqual()
