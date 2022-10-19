@@ -49,7 +49,7 @@ describe("shoutWhileLoop", () => {
   });
 });
 
-describe("shoutForOfLoop", () => {
+describe.only("shoutForOfLoop", () => {
   test("adds an ! to the end of each element", () => {
     expect(shoutForOfLoop([])).toEqual([]);
     expect(shoutForOfLoop(["I", "am", "a", "happy", "array"])).toEqual([

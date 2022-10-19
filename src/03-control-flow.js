@@ -91,14 +91,16 @@ function aroundTheWorldGreeting(language) {
   const spanMsg = "Hola Mundo";
   const gerMsg = "Hallo Welt";
   if (language === 'spanish') {
-    return spanMsg; }
-    else if (language === 'german'){
-    return gerMsg; }
-    else if (language === 'english') {
-      return engMsg;
-    } else if (language !== 'spanish' || language !== 'german' || language !== 'english') {
-      return engMsg;
-    }
+    return spanMsg;
+  }
+  else if (language === 'german') {
+    return gerMsg;
+  }
+  else if (language === 'english') {
+    return engMsg;
+  } else if (language !== 'spanish' || language !== 'german' || language !== 'english') {
+    return engMsg;
+  }
 }
 
 
@@ -130,7 +132,7 @@ function aroundTheWorldGreetingWithSwitch(language) {
     case 'german':
       return 'Hallo Welt';
     default:
-     return 'Hello World';
+      return 'Hello World';
   }
 }
 
@@ -152,18 +154,18 @@ function aroundTheWorldGreetingWithSwitch(language) {
  *  //> "A"
  */
 function calculateLetterGrade(grade) {
- let gradeLetter = '';
- if ( grade >= 90){
-  return "A";
- } else if (grade >= 80){
-  return "B";
- } else if (grade >= 70){
-  return "C";
- } else if (grade >= 60){
-  return "D";
- } else {
-  return "F";
- }
+  let gradeLetter = '';
+  if (grade >= 90) {
+    return "A";
+  } else if (grade >= 80) {
+    return "B";
+  } else if (grade >= 70) {
+    return "C";
+  } else if (grade >= 60) {
+    return "D";
+  } else {
+    return "F";
+  }
 }
 
 

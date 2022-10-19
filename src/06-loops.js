@@ -84,11 +84,7 @@ function containsWhileLoop(array, target) {
   return false;
 }
 
-//array[i] === target 
-/*while (i < 10) {
-  text += "The number is " + i;
-  i++;
-}
+
 /**
  * containsForLoop()
  * ---------------------
@@ -177,7 +173,9 @@ function lastIndexFound(array, target) {}
  *  //> [ 7 * 0, 10 * 1, 11 * 2 ]
  *  //> [ 0, 10, 22 ]
  */
-function timesIndex(array) {}
+function timesIndex(array){}
+
+
 
 /**
  * cumulativeSum()
@@ -191,7 +189,8 @@ function timesIndex(array) {}
  *  //> [ 5, 5 + 2, 5 + 2 + 9 ]
  *  //> [ 5, 7, 16 ]
  */
-function cumulativeSum(array) {}
+function cumulativeSum(array){}
+
 
 // Do not change anything below this line.
 module.exports = {
