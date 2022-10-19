@@ -35,7 +35,20 @@ function rangeSum(min, max) {
  *  rangeOdd(10, 15);
  *  //> [ 15, 13, 11 ]
  */
-function rangeOdd(min, max) {}
+function rangeOdd(min, max) {
+  let numArr = [];
+  //loop through the numbers
+  while (max >= min){
+    //check if max isnt evenly dividible by zero
+    if (max % 2 !== 0){
+      //put max into array
+      numArr.push(max);
+    }
+    //decrement max
+    max-- ;
+  }
+  return numArr;
+}
 
 /**
  * rangeEveryOther()
