@@ -98,7 +98,10 @@ function getNameFromObject(object) {
  *  getAgeFromObject({ age: 30 });
  *  //> 30
  */
-function getAgeFromObject(object) {}
+function getAgeFromObject(object) {
+  //return the age value 
+  return object.age;
+}
 
 /**
  * addValueToObject()
