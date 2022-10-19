@@ -44,7 +44,7 @@ describe("applyDiscount()", () => {
   });
 });
 
-describe("getCartTotal()", () => {
+describe.only("getCartTotal()", () => {
   let cart;
   beforeEach(() => {
     cart = [
