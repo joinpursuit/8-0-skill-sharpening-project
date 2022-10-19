@@ -137,16 +137,16 @@ function containsWhileLoop(array, target) {
  *  //> false
  */
 function containsForLoop(array, target) {
-    //loop through the array
-    for (let i = 0; i < array.length; i ++){
-      //check if target value exists
-      if (array[i] === target){
-        //return true
-        return true;
-      } 
-    }
-    //return false otherwise
-    return false;
+  //loop through the array
+  for (let i = 0; i < array.length; i ++){
+    //check if target value exists
+    if (array[i] === target){
+      //return true
+      return true;
+    } 
+  }
+  //return false otherwise
+  return false;
 }
 
 /**
@@ -161,7 +161,20 @@ function containsForLoop(array, target) {
  *  targetCount([ 10, 20, 10, 20, 30 ], 10);
  *  //> 2
  */
-function targetCount(array, target) {}
+function targetCount(array, target) {
+  let count = 0;
+  //loop through the array
+  for (let i = 0; i < array.length; i ++){
+    //check if target value exists
+    if (array[i] === target){
+      //add to the count
+      count ++;
+    } 
+  }
+  //return false otherwise
+  return count;
+}
+
 
 /**
  * firstIndexFound()
