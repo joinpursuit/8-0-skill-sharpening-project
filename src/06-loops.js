@@ -171,7 +171,7 @@ function targetCount(array, target) {
       count ++;
     } 
   }
-  //return false otherwise
+  //return count
   return count;
 }
 
@@ -194,7 +194,18 @@ function targetCount(array, target) {
  *  firstIndexFound([ "left", "right", "left" ], "up");
  *  //> -1
  */
-function firstIndexFound(array, target) {}
+function firstIndexFound(array, target) {
+  //loop through the array
+  for (let i = 0; i < array.length; i ++){
+    //check if target value exists
+    if (array[i] === target){
+      //return the index
+      return i;
+    } 
+  }
+  //return -1
+  return -1;
+}
 
 /**
  * lastIndexFound()
