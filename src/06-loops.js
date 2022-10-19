@@ -251,7 +251,17 @@ function lastIndexFound(array, target) {
  *  //> [ 7 * 0, 10 * 1, 11 * 2 ]
  *  //> [ 0, 10, 22 ]
  */
-function timesIndex(array) {}
+function timesIndex(array) {
+  //create a new array 
+  let multipliedArr = [];
+  //loop through the original array
+  for (let i = 0; i < array.length; i++){
+    //set the new array values equal to the calculations
+    multipliedArr[i]= array[i] * i;
+  }
+  //return the new array
+  return multipliedArr;
+}
 
 /**
  * cumulativeSum()
