@@ -134,7 +134,12 @@ function addValueToObject(object, val) {
  *  addKeyToObject({ right: false }, "left");
  *  //> { right: false, left: true }
  */
-function addKeyToObject(object, key) {}
+function addKeyToObject(object, key) {
+  //adds a key to the object
+  object[key] = "yes";
+  //return the object
+  return object;
+}
 
 /**
  * addKeyValuePairToObject()
