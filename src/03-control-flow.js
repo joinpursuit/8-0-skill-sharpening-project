@@ -202,7 +202,11 @@ function calculateLetterGrade(grade) {
  *  animalCounts("pig", 1);
  *  //> "1 pig"
  */
-function animalCounts(animal, numberOfAnimals) {}
+function animalCounts(animal, numberOfAnimals) {
+   let count = numberOfAnimals > 2 ? `${numberOfAnimals} ${animal}s`: `${numberOfAnimals} ${animal}`
+
+  return count
+}
 
 /**
  * evenOrOdd()
@@ -219,7 +223,13 @@ function animalCounts(animal, numberOfAnimals) {}
  *  evenOrOdd(48);
  *  //> "Even"
  */
-function evenOrOdd(a) {}
+function evenOrOdd(a) {
+  if (a % 2 === 0 || a ===0 ) {
+    return "Even"
+  } else {
+    return "Odd"
+  }
+}
 
 /**
  * evenOrOddWithTernary()
@@ -235,7 +245,10 @@ function evenOrOdd(a) {}
  *  evenOrOddWithTernary(8);
  *  //> "Even"
  */
-function evenOrOddWithTernary(a) {}
+function evenOrOddWithTernary(a) {
+  let number = a % 2 === 0 ? "Even" : "Odd"
+  return number
+}
 
 // Do not change any code below this line.
 module.exports = {
