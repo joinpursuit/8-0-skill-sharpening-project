@@ -153,7 +153,10 @@ function getFullName(person) {
  *  getCityAndState(person);
  *  //> "Staten Island, NY"
  */
-function getCityAndState(person) {}
+function getCityAndState(person) {
+  //return the persons city and state
+  return `${person.address.city}, ${person.address.state}`;
+}
 
 /**
  * getFullAddress()
