@@ -214,7 +214,27 @@ function gradeAssignments(assignments) {
     createLineOrder(people);
     //> [ "Ray Anderson", "America Marsh", "Wade Carson", "Patience Patel" ]
  */
-function createLineOrder(people) {}
+function createLineOrder(people) {
+  //create a new array
+  let correctOrder = [];
+  //create a place holder variable for the members 
+  let endOfMembers = 0;
+    //loop through array
+    for (let i = 0; i < people.length; i++){
+      //check for membership
+      if (people[i].hasMembership){
+        //put member name behind other members, but in front of non members
+        correctOrder.splice(endOfMembers, 0, people[i].name);
+        //move to next spot in line
+        endOfMembers++;
+      } else {
+        //put non members at the end of the line
+        correctOrder.push(people[i].name);
+      }
+    }
+  //return the new array
+  return correctOrder;
+}
 
 module.exports = {
   applyDiscount,
