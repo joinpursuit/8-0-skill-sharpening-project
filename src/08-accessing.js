@@ -80,7 +80,10 @@ function getAddressStreet(person) {
  *  getCountOfPhoneNumbers(person);
  *  //> 2
  */
-function getCountOfPhoneNumbers(person) {}
+function getCountOfPhoneNumbers(person) {
+  //return number of persons phone numbers
+  return person.numbers.length;
+}
 
 /**
  * getFirstPhoneNumber()
