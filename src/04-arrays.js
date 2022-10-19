@@ -94,7 +94,12 @@ function getLastElementOfArray(array) {
  *  addElementToEndOfArray([ 10 ], 9);
  *  //> [ 10, 9 ]
  */
-function addElementToEndOfArray(array, element) {}
+function addElementToEndOfArray(array, element) {
+  //add the element to the array
+  array.push(element);
+  //return the array
+  return array;
+}
 
 /**
  * removeElementFromEndOfArray()
