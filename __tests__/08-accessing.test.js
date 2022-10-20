@@ -100,7 +100,7 @@ describe("getCountOfPhoneNumbers()", () => {
   });
 });
 
-describe("getFirstPhoneNumber()", () => {
+describe.only("getFirstPhoneNumber()", () => {
   test("should return the first phone number listed", () => {
     const actual = getFirstPhoneNumber(person);
     const expected = 7185550921;
