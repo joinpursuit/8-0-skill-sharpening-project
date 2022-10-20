@@ -14,7 +14,9 @@
  *  isEqual(10, "10");
  *  //> false
  */
-function isEqual(a, b) {}
+function isEqual(a, b) {
+  return a ===b
+}
 
 /**
  * findLarger()
@@ -28,7 +30,9 @@ function isEqual(a, b) {}
  *  findLarger(19, 7);
  *  //> 19
  */
-function findLarger(a, b) {}
+function findLarger(a, b) {
+  return Math.max(a , b)
+}
 
 /**
  * findLargerOrTie()
@@ -45,7 +49,15 @@ function findLarger(a, b) {}
  *  findLargerOrTie(0, 0);
  *  //> "tie"
  */
-function findLargerOrTie(a, b) {}
+function findLargerOrTie(a, b) {
+  if (Math.max(a) > Math.max(b)) {
+    return a
+  } else if(Math.max(a) < Math.max(b)) {
+    return b
+  } else {
+    return "tie"
+  } 
+}   
 
 /**
  * positiveNegativeOrZero()
@@ -65,7 +77,16 @@ function findLargerOrTie(a, b) {}
  *  positiveNegativeOrZero(1);
  *  //> "Positive"
  */
-function positiveNegativeOrZero(a) {}
+function positiveNegativeOrZero(a) {
+  let i = 0
+  if (i > a) {
+    return "Negative"
+  } else if(i < a) {
+    return "Positive"
+  } else {
+    return "Zero"
+  } 
+}
 
 /**
  * aroundTheWorldGreeting()
@@ -86,7 +107,13 @@ function positiveNegativeOrZero(a) {}
  *  aroundTheWorldGreeting();
  *  //> "Hello World"
  */
-function aroundTheWorldGreeting(language) {}
+function aroundTheWorldGreeting(language) {
+  if (language == `spanish`){
+    return `Hola Mundo`
+  } else if(language == `german`){
+    return `Hallo Welt`
+  } else return `Hello World`
+}
 
 /**
  * aroundTheWorldGreetingWithSwitch()
@@ -109,7 +136,9 @@ function aroundTheWorldGreeting(language) {}
  *  aroundTheWorldGreetingWithSwitch();
  *  //> "Hello World"
  */
-function aroundTheWorldGreetingWithSwitch(language) {}
+function aroundTheWorldGreetingWithSwitch(language) {
+  
+}
 
 /**
  * calculateLetterGrade()
@@ -179,7 +208,9 @@ function evenOrOdd(a) {}
  *  evenOrOddWithTernary(8);
  *  //> "Even"
  */
-function evenOrOddWithTernary(a) {}
+function evenOrOddWithTernary(a) {
+  return (a % 2 === 0 ? 'Even' : 'Odd');
+}
 
 // Do not change any code below this line.
 module.exports = {

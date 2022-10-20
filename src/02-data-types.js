@@ -90,9 +90,12 @@ function convertToWhisperText(text) {
  *  //> false
  */
 function checkIfCharacterIsInString(text, character) {
-  if (text !== character)
-  console.log
-}
+  // if (text === character){
+  //   return true
+  // } else if (text !== character)
+  //   return false
+  return text.includes(character)
+} 
 
 /**
  * isEven()
@@ -108,7 +111,9 @@ function checkIfCharacterIsInString(text, character) {
  *  isEven(11);
  *  //> false
  */
-function isEven(num) {}
+function isEven(num) {
+  return (num % 2 === 0)
+}
 
 /**
  * isOdd()
@@ -124,7 +129,13 @@ function isEven(num) {}
  *  isOdd(11);
  *  //> true
  */
-function isOdd(num) {}
+function isOdd(num) {
+  if (num % 2 === 0) {
+    return false;
+  } else {
+    return true;
+  }
+}
 
 /**
  * isTruthy()
@@ -140,7 +151,13 @@ function isOdd(num) {}
  *  isTruthy(null);
  *  //> false
  */
-function isTruthy(val) {}
+function isTruthy(val) {
+  if (!!val == false){
+    return false;
+  } else {
+    return true;
+  }   
+}
 
 /**
  * isFalsy()
@@ -156,7 +173,13 @@ function isTruthy(val) {}
  *  isFalsy(" ");
  *  //> false
  */
-function isFalsy(val) {}
+function isFalsy(val) {
+  if (!val == true){
+    return true;
+  } else {
+    return false;
+  }   
+}
 
 // Do not change the code below.
 module.exports = {
