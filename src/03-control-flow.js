@@ -87,14 +87,16 @@ function positiveNegativeOrZero(a) {}
  *  //> "Hello World"
  */
 function aroundTheWorldGreeting(language) {
-  if (!language || language === "english") {
-    return "Hello World"
-  } else if (language === "spanish") {
-    return "Hola Mundo"
-  } if (language === "german") {
-    return "Hallo Welt"
-  }
+  // if (!language || language === "english") {
+  //   return "Hello World"
+  // } else if (language === "spanish") {
+  //   return "Hola Mundo"
+  // } if (language === "german") {
+  //   return "Hallo Welt"
+  // }
+  return (language === "spanish") ? "Hola Mundo" : (language === "german") ? "Hallo Welt" : "Hello World"
 }
+
 
 /**
  * aroundTheWorldGreetingWithSwitch()
@@ -148,16 +150,17 @@ function aroundTheWorldGreetingWithSwitch(language) {
  *  //> "A"
  */
 function calculateLetterGrade(grade) {
-  if ( grade < 60) {
-    return 'F'
-  } else if (grade < 70) {
-    return 'D'
-  } else if (grade < 80) {
-    return 'C'
-  } else if (grade < 90) {
-    return 'B'
-  } 
-  return 'A'
+  // if ( grade < 60) {
+  //   return 'F'
+  // } else if (grade < 70) {
+  //   return 'D'
+  // } else if (grade < 80) {
+  //   return 'C'
+  // } else if (grade < 90) {
+  //   return 'B'
+  // } 
+  // return 'A'
+  return (grade < 60) ? 'F' : (grade < 70) ? 'D' : (grade < 80) ? 'C' : (grade < 90) ? 'B' : 'A'
 }
 
 /**

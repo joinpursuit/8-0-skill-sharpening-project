@@ -113,10 +113,11 @@ function averageThree() {}
  *  //> false
  */
 function compareTypes(a, b) {
-if (typeof a === typeof b) {
-return true;
-  } 
-  return false; 
+// if (typeof a === typeof b) {
+// return true;
+//   } 
+//   return false; 
+return (typeof a === typeof b ? true : false)
 }
 
 /**
@@ -139,7 +140,6 @@ return true;
 function flipSign(a) {
   return a * -1
 }
-
 /**
  * joinStringsWithSpaces()
  * ---------------------

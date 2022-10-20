@@ -98,12 +98,14 @@ function checkIfCharacterIsInString(text, character) {
  *  //> false
  */
 function isEven(num) {
-  if (num % 2 === 0) {
-    return true
-  } else {
-    return false
-  }
+  // if (num % 2 === 0) {
+  //   return true
+  // } else {
+  //   return false
+  // }
+  return (num % 2 === 0) ? true : false
 }
+
 
 /**
  * isOdd()
@@ -120,11 +122,12 @@ function isEven(num) {
  *  //> true
  */
 function isOdd(num) {
-  if (num % 2 !== 0) {
-    return true
-  } else {
-    return false
-  }
+  // if (num % 2 !== 0) {
+  //   return true
+  // } else {
+  //   return false
+  // }
+  return (num % 2 !== 0) ? true : false
 }
 
 /**
