@@ -58,7 +58,7 @@ describe("getFirstName()", () => {
   });
 });
 
-describe.only("getLastName()", () => {
+describe("getLastName()", () => {
   test("should", () => {
     const actual = getLastName(person);
     const expected = "Rojas";

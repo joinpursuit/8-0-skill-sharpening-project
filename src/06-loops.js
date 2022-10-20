@@ -82,7 +82,7 @@ function containsWhileLoop(array, target) {
   return true;
   i++;} 
   return false;
-}
+} 
 
 
 /**
