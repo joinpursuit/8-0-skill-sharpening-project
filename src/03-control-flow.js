@@ -14,7 +14,9 @@
  *  isEqual(10, "10");
  *  //> false
  */
-function isEqual(a, b) {}
+function isEqual(a, b) {
+  return a === b;
+}
 
 /**
  * findLarger()
@@ -86,7 +88,18 @@ function positiveNegativeOrZero(a) {}
  *  aroundTheWorldGreeting();
  *  //> "Hello World"
  */
-function aroundTheWorldGreeting(language) {}
+function aroundTheWorldGreeting(language) {
+  let greet = ""
+  if  (language === 'spanish') {
+    return 'Hola Mundo'
+  }
+  else if (language === 'german') {
+    return 'Hallo Welt'
+  }
+  else {
+    return "Hello World"
+  }
+}
 
 /**
  * aroundTheWorldGreetingWithSwitch()
@@ -109,7 +122,20 @@ function aroundTheWorldGreeting(language) {}
  *  aroundTheWorldGreetingWithSwitch();
  *  //> "Hello World"
  */
-function aroundTheWorldGreetingWithSwitch(language) {}
+function aroundTheWorldGreetingWithSwitch(language) {
+  let greet = ''
+  switch (language) {
+    case 'spanish':
+    greet = 'Hola Mundo'
+    break
+    case 'german':
+    greet = 'Hallo Welt'
+    break
+    default:
+      greet = 'Hello World'
+  }
+  return greet
+}
 
 /**
  * calculateLetterGrade()
@@ -128,7 +154,25 @@ function aroundTheWorldGreetingWithSwitch(language) {}
  *  calculateLetterGrade(99);
  *  //> "A"
  */
-function calculateLetterGrade(grade) {}
+function calculateLetterGrade(grade) {
+  result = ""
+  if (grade >= 90) {
+    result = "A"
+  }
+  else if (grade >= 80) {
+    result = "B"
+  }
+  else if (grade >= 70) {
+    result = "C"
+  }
+  else if (grade >= 60) {
+    result = "D"
+  }
+  else {
+    result = "F"
+  }
+  return result
+}
 
 /**
  * animalCounts()
