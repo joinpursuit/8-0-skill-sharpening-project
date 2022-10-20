@@ -159,8 +159,13 @@ function firstIndexFound(array, target) {
  *  lastIndexFound([ "left", "right", "left" ], "up");
  *  //> -1
  */
-function lastIndexFound(array, target) {}
-
+function lastIndexFound(array, target) { 
+  for(let i = 0; i < array.length; i++){
+  if( array[i].length-1 === target){
+    return array[i]
+  }
+  }
+}
 /**
  * timesIndex()
  * ---------------------
