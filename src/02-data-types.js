@@ -41,7 +41,10 @@ return parseInt(val);
  *  convertToString(99);
  *  //> "99"
  */
-function convertToString(val) {}
+function convertToString(val) {
+  //return val + ""
+  return String(val) 
+}
 
 /**
  * convertToShoutingText()
@@ -54,7 +57,9 @@ function convertToString(val) {}
  *  convertToShoutingText("Hello There");
  *  //> "HELLO THERE"
  */
-function convertToShoutingText(text) {}
+function convertToShoutingText(text) {
+  return text.toUpperCase()
+}
 
 /**
  * convertToWhisperText()
@@ -67,7 +72,9 @@ function convertToShoutingText(text) {}
  *  convertToWhisperText("Hello There");
  *  //> "hello there"
  */
-function convertToWhisperText(text) {}
+function convertToWhisperText(text) {
+  return text.toLowerCase()
+}
 
 /**
  * checkIfCharacterIsInString()

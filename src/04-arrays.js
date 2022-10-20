@@ -26,7 +26,9 @@ function createEmptyArray() {
  *  createArrayWithTwoElements(true, false);
  *  //> [ true, false ]
  */
-function createArrayWithTwoElements(a, b) {}
+function createArrayWithTwoElements(a, b) {
+  return [a,b]
+}
 
 /**
  * getArrayLength()
@@ -39,7 +41,9 @@ function createArrayWithTwoElements(a, b) {}
  *  getArrayLength([ 10, 20, 30 ]);
  *  //> 3
  */
-function getArrayLength(array) {}
+function getArrayLength(array) {
+  return array.length
+}
 
 /**
  * getFirstElementOfArray()
@@ -151,7 +155,9 @@ function removeElementFromFrontOfArray(array) {
  *  getMiddleElement([ 10, null, "30" ]);
  *  //> null
  */
-function getMiddleElement(array) {}
+function getMiddleElement(array) {
+  return array[Math.ceil((array.length/2)-1)]
+}
 
 // Do not change any code below this line.
 module.exports = {

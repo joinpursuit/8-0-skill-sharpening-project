@@ -145,7 +145,19 @@ function evenArray(array) {
  *  findSmallest([ 0, 11, -2, 5 ]);
  *  //> -2
  */
-function findSmallest(array) {}
+function findSmallest(array) {
+  let smallNum = array[0]
+  let secSmallNum = 0
+  for(let i = 1; i < array.length; i++){
+    if (array[i] < smallNum){
+      secSmallNum = smallNum
+      smallNum = array[i]
+    } else if (array[i] !== smallNum && array[i] < secSmallNum){
+      secSmallNum = array[i]
+    }
+  } 
+  return smallNum
+}
 
 /**
  * findLargest()
@@ -158,7 +170,19 @@ function findSmallest(array) {}
  *  findLargest([ 0, 11, -2, 5 ]);
  *  //> 11
  */
-function findLargest(array) {}
+function findLargest(array) {
+  let largeNum = array[0]
+  let secLargeNum = 0
+  for(let i = 1; i < array.length; i++){
+    if (array[i] > largeNum){
+      secLargeNum = largeNum
+      largeNum = array[i]
+    } else if (array[i] !== largeNum && array[i] > secLargeNum){
+      secLargeNum = array[i]
+    }
+  } 
+  return largeNum
+}
 
 /**
  * findEqual()
@@ -175,8 +199,29 @@ function findLargest(array) {}
  *  findEqual([ 0, 11, -2, 5 ], 9);
  *  //> false
  */
-function findEqual(array, selected) {}
-
+function findEqual(array, selected) {
+  for (let i = 0;i < array.length; i++){
+    if(array.includes(selected)){
+      return true
+    } 
+  }
+    return false
+  } 
+  // let i = 0 
+  // while (i < array.length){
+  //   if(array[i] === target){
+  //     return true
+  //   } 
+  //   i++
+  //   }
+  //   return false
+  //or you can do 
+  // for (let i = 0;i < array.length; i++){
+  //   if(array[i]===selected){
+  //     return true
+  //   } 
+  // }
+  //   return false
 /**
  * removeDuplicates()
  * ---------------------

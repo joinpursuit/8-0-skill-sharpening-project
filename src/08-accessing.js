@@ -113,7 +113,9 @@ function getFirstPhoneNumber(person) {
  *  getLastPhoneNumber(person);
  *  //> 7185558611
  */
-function getLastPhoneNumber(person) {}
+function getLastPhoneNumber(person) {
+  return person.numbers[person.numbers.length-1];
+}
 
 /**
  * getFullName()
@@ -126,7 +128,10 @@ function getLastPhoneNumber(person) {}
  *  getFullName(person);
  *  //> "Rachel Eleanor Rojas"
  */
-function getFullName(person) {}
+function getFullName(person) {
+  return `${person.names.first} ${person.names.middle} ${person.names.last}`
+ // return person.names.first + " " + person.names.middle + " " + person.names.last
+}
 
 /**
  * getCityAndState()
@@ -142,7 +147,9 @@ function getFullName(person) {}
  *  getCityAndState(person);
  *  //> "Staten Island, NY"
  */
-function getCityAndState(person) {}
+function getCityAndState(person) {
+  return `${person.address.city}, ${person.address.state}`
+}
 
 /**
  * getFullAddress()
