@@ -10,7 +10,7 @@
  *  //> true
  */
 function alwaysTrue() {
-  true
+  return true
 }
 
 /**
@@ -27,7 +27,7 @@ function alwaysTrue() {
  *  //> "Hello, Ian."
  */
 function greet(name) {
-  return "Hello," + name + "."
+  return "Hello, " + name + "."
 }
 
 /**
@@ -125,7 +125,7 @@ function averageThree(a, b, c) {
  *  //> false
  */
 function compareTypes(a, b) {
-  if (a === b) {return true}
+  if (typeof a === typeof b) {return true}
   else {return false}
 }
 
@@ -148,7 +148,7 @@ function compareTypes(a, b) {
  */
 function flipSign(a) {
   if (a >= 0) {return -a}
-  else if (a < 0) {return (a * a) + a}
+  else if (a < 0) {return Math.abs(a)}
 }
 
 /**
@@ -189,8 +189,10 @@ function joinStringsWithSpaces(a, b, c, d, e) {
  *  //> "us"
  */
 function getFirstAndLastCharacter(a) {
-  let arrayA = a.split(" ")
-  return arrayA[0] + arrayA[-1]
+  //let arrayA = a.split(" ")
+  //return arrayA[0, 0] + arrayA[-1]
+  let lastA = a[a.length - 1]
+  return a[0] + lastA
 }
 
 // Do not change the code below.
