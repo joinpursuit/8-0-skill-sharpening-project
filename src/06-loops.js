@@ -54,24 +54,14 @@ function rangeEveryOther(min, max) {}
  * @param {number|string} target
  * @returns {boolean}
  *
- * EXAMPLE:             0  1  2
+ * EXAMPLE:
  *  containsWhileLoop([ 5, 2, 4 ], 4);
- *    5                    3
- * arr[0] === 4
  *  //> true
  *
  *  containsWhileLoop([ "left", "up", "right" ], "down");
  *  //> false
  */
-function containsWhileLoop(array, target) {
-  let i = 0
-  while (i < array.length){
-    if (array[i] === target)
-      return true
-    i++
-  }
-  return false
-}
+function containsWhileLoop(array, target) {}
 
 /**
  * containsForLoop()
@@ -93,15 +83,7 @@ function containsWhileLoop(array, target) {
  *  containsForLoop([ "left", "up", "right" ], "down");
  *  //> false
  */
-function containsForLoop(array, target) {
-  for (let i = 0; i < array.length; i++){
-    if (array[i]===target){
-      return true
-    }
-  }
-  return false
-
-}
+function containsForLoop(array, target) {}
 
 /**
  * targetCount()
@@ -111,19 +93,11 @@ function containsForLoop(array, target) {
  * @param {number|string} target
  * @returns {number}
  *
-* EXAMPLE:
+ * EXAMPLE:
  *  targetCount([ 10, 20, 10, 20, 30 ], 10);
  *  //> 2
  */
-function targetCount(array, target) {
-  let count = 0
-  for (let i = 0; i <array.length; i++){
-    if (array[i] === target){
-      count++
-    }
-  }
-  return count
-}
+function targetCount(array, target) {}
 
 /**
  * firstIndexFound()
@@ -143,7 +117,13 @@ function targetCount(array, target) {
  *  firstIndexFound([ "left", "right", "left" ], "up");
  *  //> -1
  */
-function firstIndexFound(array, target) {}
+function firstIndexFound(array, target) {
+  for (let i =0; i<array.length; i++){
+    if(array[i]=== target)
+    return i
+  } 
+  return -1
+}
 
 /**
  * lastIndexFound()
@@ -163,7 +143,13 @@ function firstIndexFound(array, target) {}
  *  lastIndexFound([ "left", "right", "left" ], "up");
  *  //> -1
  */
-function lastIndexFound(array, target) {}
+function lastIndexFound(array, target) {
+  for(let i=array.length-1; i>=0; i--){
+    if(array[i]===target) 
+    return i
+      }
+      return -1
+}
 
 /**
  * timesIndex()
@@ -177,7 +163,12 @@ function lastIndexFound(array, target) {}
  *  //> [ 7 * 0, 10 * 1, 11 * 2 ]
  *  //> [ 0, 10, 22 ]
  */
-function timesIndex(array) {}
+function timesIndex(array) {
+  for(let i=0; i<array.length; i++){
+    array[i] *= i
+  }
+  return array
+}
 
 /**
  * cumulativeSum()
