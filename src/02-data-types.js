@@ -156,11 +156,13 @@ function isOdd(num) {
  *  //> false
  */
 function isTruthy(val) {
-  if(val != 0n||false ||0||""||NaN||null||undefined||-0){
-    return true
-  } else{
-    return false
-  }
+  // if(val != 0n||false ||0||""||NaN||null||undefined||-0){
+  //   return true
+  // } else{
+  //   return false
+  // }
+  trueOrFalse = (val !== true) ? false:true;
+  return trueOrFalse
 }
 
 /**
