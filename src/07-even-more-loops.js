@@ -38,9 +38,6 @@ function shoutWhileLoop(array) {}
 /********************************* VANDHANA MOHAN *******************************/
 
 
-
-
-
 /**
  * shoutForOfLoop()
  * ---------------------
@@ -63,6 +60,8 @@ function shoutForOfLoop(array) {
   }
   return newArray
 }
+
+/********************************* VANDHANA MOHAN *******************************/
 
 /**
  * sumArray()
@@ -155,6 +154,7 @@ function findLargest(array) {
   let num = Math.max(...array)
   return num
 }
+/********************************* VANDHANA MOHAN *******************************/
 
 /**
  * findEqual()
