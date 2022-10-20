@@ -19,7 +19,22 @@
  *  applyDiscount(1000, 9, true);
  *  //> 700
  */
-function applyDiscount(priceInCents, age, hasMembership) {}
+function applyDiscount(priceInCents, age, hasMembership) {
+  if (age <= 10 || age >= 65) {
+    return priceInCents - ((10 * priceInCents) / 100);
+  }
+  else if (hasMembership == true) {
+    return priceInCents - ((20 * priceInCents) / 100);
+  }
+  else if ((hasMembership === 0) && age <= 10) {
+    return priceInCents - ((30 * priceInCents) / 100);
+  }
+  else if ((hasMembership === 0) && age >= 65) {
+    return priceInCents - ((30 * priceInCents) / 100);
+  }
+  else {
+  return priceInCents}
+}
 
 /**
  * getCartTotal()
@@ -40,7 +55,10 @@ function applyDiscount(priceInCents, age, hasMembership) {}
     getCartTotal(cart);
  *  //> "$30.00"
  */
-function getCartTotal(products) {}
+function getCartTotal(products) {
+  let theTotal = priceInCents  * quantity
+  return theTotal.toFixed()
+}
 
 /**
  * compareLocations()
