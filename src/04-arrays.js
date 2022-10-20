@@ -12,7 +12,7 @@
  */
 function createEmptyArray() {
   return [];
-}
+}//SC420
 
 /**
  * createArrayWithTwoElements()
@@ -28,7 +28,7 @@ function createEmptyArray() {
  */
 function createArrayWithTwoElements(a, b) {
   return [a, b];
-}
+}//SC420
 
 /**
  * getArrayLength()
@@ -43,7 +43,7 @@ function createArrayWithTwoElements(a, b) {
  */
 function getArrayLength(array) {
   return array.length;
-}
+}//SC420
 
 /**
  * getFirstElementOfArray()
@@ -143,7 +143,7 @@ function removeElementFromFrontOfArray(array) {}
  */
 function getMiddleElement(array) {
   return array[Math.floor(array.length/2)];
-}
+}//SC420
 
 // Do not change any code below this line.
 module.exports = {

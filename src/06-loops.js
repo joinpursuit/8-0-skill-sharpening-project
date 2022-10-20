@@ -126,7 +126,7 @@ function firstIndexFound(array, target) {
     
   }
   return -1;
-}
+}//SC420
 
 /**
  * lastIndexFound()
@@ -153,7 +153,7 @@ function lastIndexFound(array, target) {
     }
   }
   return -1;
-}
+}//SC420
 
 /**
  * timesIndex()
@@ -174,7 +174,7 @@ function timesIndex(array) {
 
   }
   return newArr
-}
+}//SC420
 
 /**
  * cumulativeSum()

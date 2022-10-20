@@ -91,7 +91,7 @@ function evenArray(array) {
     }
    } 
    return newArr
-  }
+  }//SC420
   
 
 /**
@@ -115,7 +115,7 @@ function findSmallest(array) {
   }
   return smallest;
   
-}
+}//SC420
 
 /**
  * findLargest()
@@ -137,7 +137,7 @@ function findLargest(array) {
    
   }
   return largest;
-}
+}//SC420
 
 /**
  * findEqual()
@@ -180,7 +180,7 @@ function removeDuplicates(array) {
     return newArr;   
 }
 
-  }
+  }//SC420
 
 
 // Do not change any code below this line.

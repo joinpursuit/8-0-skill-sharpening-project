@@ -21,6 +21,7 @@
  */
 function applyDiscount(priceInCents, age, hasMembership) {}
 
+
 /**
  * getCartTotal()
  * ---------------------
@@ -40,7 +41,16 @@ function applyDiscount(priceInCents, age, hasMembership) {}
     getCartTotal(cart);
  *  //> "$30.00"
  */
-function getCartTotal(products) {}
+function getCartTotal(products) {
+  let result = 0;
+
+  for (let i = 0; i < products.length; i++){
+
+    result += products[i].priceInCents * products[i].quantity
+    
+  }
+  return '$'+ (result/100).toFixed(2)
+}//SC420
 
 /**
  * compareLocations()
@@ -152,7 +162,21 @@ function gradeAssignments(assignments) {}
     createLineOrder(people);
     //> [ "Ray Anderson", "America Marsh", "Wade Carson", "Patience Patel" ]
  */
-function createLineOrder(people) {}
+function createLineOrder(people) {
+
+  const result = people.filter(people => people.hasMembership === false);
+  const newArr = people.filter(people => people.hasMembership === true);
+  let lineOrder = newArr.concat(result)
+  let finalOrder = [];
+  for (let i = 0; i < lineOrder.length; i++) {
+    finalOrder.push(lineOrder[i].name)
+  }
+  console.log(lineOrder)
+  console.log(finalOrder)
+
+   ;
+  return finalOrder;
+}//SC420
 
 module.exports = {
   applyDiscount,

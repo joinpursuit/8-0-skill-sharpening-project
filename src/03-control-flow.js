@@ -30,7 +30,8 @@ function isEqual(a, b) {}
  */
 function findLarger(a, b) {
   return Math.max(a, b);
-}
+  
+}//SC420
 
 /**
  * findLargerOrTie()
@@ -52,7 +53,7 @@ function findLargerOrTie(a, b) {
     return 'tie';
   }
     return Math.max(a, b);
-}
+}// (a === b) ? "tie": Math.max(a,b); //SC420
 
 /**
  * positiveNegativeOrZero()
@@ -73,16 +74,21 @@ function findLargerOrTie(a, b) {
  *  //> "Positive"
  */
 function positiveNegativeOrZero(a) {
-  if(a === 0) {
-    return 'Zero';
-  }
-  if (a > 0) {
-    return 'Positive';
-  }
-  if (a < 0) {
-    return 'Negative';
-  }
-}
+  // if(a === 0) {
+  //   return 'Zero';
+  // }
+  // if (a > 0) {
+  //   return 'Positive';
+  // }
+  // if (a < 0) {
+  //   return 'Negative';
+  // }
+return (a === 0) ? "Zero": (a > 0) ? "Positive" : "Negative"
+}//SC420
+
+// : condition2 ? value2
+// : condition3 ? value3
+// : value4;
 
 /**
  * aroundTheWorldGreeting()

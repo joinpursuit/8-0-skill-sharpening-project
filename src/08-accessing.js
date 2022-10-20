@@ -89,7 +89,7 @@ function getCountOfPhoneNumbers(person) {}
  */
 function getFirstPhoneNumber(person) {
   return person.numbers[0];
-}
+}//SC420
 
 /**
  * getLastPhoneNumber()
@@ -107,7 +107,7 @@ function getFirstPhoneNumber(person) {
  */
 function getLastPhoneNumber(person) {
   return person.numbers[person.numbers.length-1];
-}
+}//SC420
 
 /**
  * getFullName()
@@ -123,7 +123,7 @@ function getLastPhoneNumber(person) {
 function getFullName(person) {
 
   return `${person.names.first} ${person.names.middle} ${person.names.last}`;
-}
+}//SC420
 
 /**
  * getCityAndState()

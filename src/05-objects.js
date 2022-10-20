@@ -11,7 +11,7 @@
  */
 function createEmptyObject() {
   return {};
-}
+}//SC420
 
 /**
  * createObjectWithValue()
@@ -26,7 +26,7 @@ function createEmptyObject() {
  */
 function createObjectWithValue(val) {
   return {val};
-}
+}//SC420
 
 /**
  * createObjectWithKey()
@@ -110,7 +110,7 @@ function addValueToObject(object, val) {}
 function addKeyToObject(object, key) {
   object[key] = key;
   return object;
-}
+}//SC420
 
 /**
  * addKeyValuePairToObject()
@@ -128,7 +128,7 @@ function addKeyToObject(object, key) {
 function addKeyValuePairToObject(object, key, val) {
   object[key] = val;
   return object;
-}
+}//SC420
 
 /**
  * deleteKeyFromObject()
@@ -145,7 +145,7 @@ function addKeyValuePairToObject(object, key, val) {
 function deleteKeyFromObject(object, key) {
   delete object[key];
   return object;
-}
+}//SC420
 
 // Do not change any code below this line.
 module.exports = {
