@@ -118,7 +118,10 @@ function averageThree() {}
  *  compareTypes("left", 10);
  *  //> false
  */
-function compareTypes() {}
+function compareTypes(a, b) {
+  return typeof a === typeof b ;
+  
+}
 
 /**
  * flipSign()
@@ -137,7 +140,9 @@ function compareTypes() {}
  *  flipSign(50);
  *  //> -50
  */
-function flipSign() {}
+function flipSign(a) {
+  return a * -1;
+}
 
 /**
  * joinStringsWithSpaces()
@@ -157,7 +162,10 @@ function flipSign() {}
  *  joinStringsWithSpaces("left", "right", "up", "down", "away");
  *  //> "left right up down away"
  */
-function joinStringsWithSpaces() {}
+function joinStringsWithSpaces(a, b, c, d, e) {
+  string = `${a} ${b} ${c} ${d} ${e}`;
+  return string
+}
 
 /**
  * getFirstAndLastCharacter()

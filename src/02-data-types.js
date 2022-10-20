@@ -83,7 +83,9 @@ function convertToWhisperText(text) {}
  *  checkIfCharacterIsInString("hello there", "a");
  *  //> false
  */
-function checkIfCharacterIsInString(text, character) {}
+function checkIfCharacterIsInString(text, character) {
+  return text.includes(character)
+}
 
 /**
  * isEven()
@@ -99,7 +101,9 @@ function checkIfCharacterIsInString(text, character) {}
  *  isEven(11);
  *  //> false
  */
-function isEven(num) {}
+function isEven(num) {
+  return num % 2 === 0 
+}
 
 /**
  * isOdd()
@@ -115,7 +119,9 @@ function isEven(num) {}
  *  isOdd(11);
  *  //> true
  */
-function isOdd(num) {}
+function isOdd(num) {
+  return num % 2 !== 0
+}
 
 /**
  * isTruthy()

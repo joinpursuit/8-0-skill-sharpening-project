@@ -12,7 +12,13 @@
  *  shoutForLoop([ "A", "Very", "Happy", "Array" ]);
  *  //> [ "A!", "Very!", "Happy!", "Array!" ];
  */
-function shoutForLoop(array) {}
+function shoutForLoop(array) {
+  for (let i = 0; i < array.length; i++) {
+    array[i]=`${array[i]}!`
+  }
+  return array
+  
+}
 
 /**
  * shoutWhileLoop()
@@ -28,7 +34,14 @@ function shoutForLoop(array) {}
  *  shoutWhileLoop([ "A", "Very", "Happy", "Array" ]);
  *  //> [ "A!", "Very!", "Happy!", "Array!" ];
  */
-function shoutWhileLoop(array) {}
+function shoutWhileLoop(array) {
+  let i = 0
+  while (i < array.length) {
+    array[i] = `${array[i]}!`
+    i++
+  }
+  return array 
+}
 
 /**
  * shoutForOfLoop()
@@ -44,7 +57,13 @@ function shoutWhileLoop(array) {}
  *  shoutForOfLoop([ "A", "Very", "Happy", "Array" ]);
  *  //> [ "A!", "Very!", "Happy!", "Array!" ];
  */
-function shoutForOfLoop(array) {}
+function shoutForOfLoop(array) {
+  arr3 = []
+  for (let i of array) {
+    arr3.push(`${i}!`)
+  }
+  return arr3
+}
 
 /**
  * sumArray()
@@ -143,7 +162,15 @@ function findEqual(array, selected) {}
  *  //> [ 1, 11, 2, 3, 4, 9 ]
  */
 
-function removeDuplicates(array) {}
+function removeDuplicates(array) {
+  let arr4 = []
+  for (let i of array) {
+    if (!arr4.includes(i)) {
+      arr4.push(i)
+    }
+  }
+  return arr4
+}
 
 // Do not change any code below this line.
 module.exports = {
