@@ -139,26 +139,7 @@ function compareLocations(address1, address2) {
     //>   },
     //> ];
  */
-function gradeAssignments(assignments) {
-for (let i= 0; i < assignments.length; i++) {
-  
-   switch(assignments[i].kind) { 
-    case "PASS-FAIL":
-                    if(assignments[i].score.received === assignments[i].score.max) {
-                      assignments[i].status = "PASSED"
-                    } else {assignments[i].status = "FAILED" }
-                    break
-    case "PERCENTAGE": 
-                    if(((assignments[i].score.received * 100)/assignments[i].score.max).toFixed(1) >= 80) {
-                            assignments[i].status = `PASSED: ${((assignments[i].score.received * 100)/ assignments[i].score.max).toFixed(1)}%` 
-                    } else {assignments[i].status = `FAILED: ${((assignments[i].score.received * 100)/ assignments[i].score.max).toFixed(1)}%`
-                           }
-                    break 
-    default:
-    
-}
-return assignments
-}
+function gradeAssignments(assignments) {}
 
 /**
  * createLineOrder()
