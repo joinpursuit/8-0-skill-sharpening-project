@@ -12,7 +12,13 @@
  *  shoutForLoop([ "A", "Very", "Happy", "Array" ]);
  *  //> [ "A!", "Very!", "Happy!", "Array!" ];
  */
-function shoutForLoop(array) {}
+function shoutForLoop(array) {
+  for (let i = 0; i < array.length; i++) {
+    array[i]=`${array[i]}!`
+  }
+  return array
+  
+}
 
 /**
  * shoutWhileLoop()
@@ -28,7 +34,14 @@ function shoutForLoop(array) {}
  *  shoutWhileLoop([ "A", "Very", "Happy", "Array" ]);
  *  //> [ "A!", "Very!", "Happy!", "Array!" ];
  */
-function shoutWhileLoop(array) {}
+function shoutWhileLoop(array) {
+  let i = 0
+  while (i < array.length) {
+    array[i] = `${array[i]}!`
+    i++
+  }
+  return array 
+}
 
 /**
  * shoutForOfLoop()
@@ -44,7 +57,13 @@ function shoutWhileLoop(array) {}
  *  shoutForOfLoop([ "A", "Very", "Happy", "Array" ]);
  *  //> [ "A!", "Very!", "Happy!", "Array!" ];
  */
-function shoutForOfLoop(array) {}
+function shoutForOfLoop(array) {
+  arr3 = []
+  for (let i of array) {
+    arr3.push(`${i}!`)
+  }
+  return arr3
+}
 
 /**
  * sumArray()
@@ -96,15 +115,7 @@ function evenArray(array) {}
  *  findSmallest([ 0, 11, -2, 5 ]);
  *  //> -2
  */
-function findSmallest(array) {
-  smallest = array[0];
-  for (num of array){
-    if (num < smallest){
-      smallest = num;
-    }
-  }
-  return smallest;
-}
+function findSmallest(array) {}
 
 /**
  * findLargest()
@@ -117,15 +128,7 @@ function findSmallest(array) {
  *  findLargest([ 0, 11, -2, 5 ]);
  *  //> 11
  */
-function findLargest(array) {
-  largest = array[0];
-  for (num of array){
-    if (num > largest){
-      largest = num;
-    }
-  }
-  return largest;
-}
+function findLargest(array) {}
 
 /**
  * findEqual()
@@ -142,15 +145,7 @@ function findLargest(array) {
  *  findEqual([ 0, 11, -2, 5 ], 9);
  *  //> false
  */
-function findEqual(array, selected) {
-  //return array.includes(selected);
-  for (val of array){
-    if (val === selected){
-      return true;
-    }
-  }
-  return false;
-}
+function findEqual(array, selected) {}
 
 /**
  * removeDuplicates()
@@ -167,7 +162,15 @@ function findEqual(array, selected) {
  *  //> [ 1, 11, 2, 3, 4, 9 ]
  */
 
-function removeDuplicates(array) {}
+function removeDuplicates(array) {
+  let arr4 = []
+  for (let i of array) {
+    if (!arr4.includes(i)) {
+      arr4.push(i)
+    }
+  }
+  return arr4
+}
 
 // Do not change any code below this line.
 module.exports = {

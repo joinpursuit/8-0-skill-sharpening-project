@@ -19,7 +19,23 @@
  *  applyDiscount(1000, 9, true);
  *  //> 700
  */
-function applyDiscount(priceInCents, age, hasMembership) {}
+function applyDiscount(priceInCents, age, hasMembership) {
+  let total = 0;
+  let discount= 0;
+
+  if (hasMembership && (age <= 10 || age >= 65)) {
+    discount = (priceInCents * 0.3);
+  } else if (hasMembership) {
+    discount = (priceInCents * 0.2);
+  } else if (!hasMembership && (age <=10 || age >= 65)) {
+    discount = (priceInCents * 0.1)
+  } else {
+    discount = 0;
+  }
+  total = priceInCents- discount;
+  return total;
+
+}
 
 /**
  * getCartTotal()
@@ -152,19 +168,7 @@ function gradeAssignments(assignments) {}
     createLineOrder(people);
     //> [ "Ray Anderson", "America Marsh", "Wade Carson", "Patience Patel" ]
  */
-function createLineOrder(people) {
-  let membersLine = [];
-  let everyoneElse = [];
-  for (person of people){
-    if (person.hasMembership){
-      membersLine.push(person.name);
-    }
-    else{
-      everyoneElse.push(person.name);
-    }
-  }
-  return membersLine.concat(everyoneElse);
-}
+function createLineOrder(people) {}
 
 module.exports = {
   applyDiscount,
