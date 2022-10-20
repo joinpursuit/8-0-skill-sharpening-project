@@ -12,7 +12,12 @@
  *  shoutForLoop([ "A", "Very", "Happy", "Array" ]);
  *  //> [ "A!", "Very!", "Happy!", "Array!" ];
  */
-function shoutForLoop(array) {}
+function shoutForLoop(array) {
+  for(let i=0; i<array.length;i++){
+    array[i] = array[i] + '!'
+  }
+  return array
+}
 
 /**
  * shoutWhileLoop()
@@ -28,7 +33,14 @@ function shoutForLoop(array) {}
  *  shoutWhileLoop([ "A", "Very", "Happy", "Array" ]);
  *  //> [ "A!", "Very!", "Happy!", "Array!" ];
  */
-function shoutWhileLoop(array) {}
+function shoutWhileLoop(array) {
+  let i = 0
+  while (i<array.length){
+    array[i]+= '!'
+  i++
+  }
+  return array
+}
 
 /**
  * shoutForOfLoop()
@@ -170,14 +182,22 @@ function findLargest(array) {
  *  findEqual([ 0, 11, -2, 5 ], 9);
  *  //> false
  */
-function findEqual(array, selected) {}
+function findEqual(array, selected) {
+  for(let i=0; i <array.length;i++){
+    if(array[i]===selected){
+      return true
+
+    }
+  }
+  return false
+}
 
 /**
  * removeDuplicates()
  * ---------------------
  * Returns a new array like the original array except there are no duplicates. The numbers in the array should be ordered similarly.
  *
- * HINT: The `.includes()` method could help here.
+ * HINT: The `.includes()` method could help here. //yayyy
  *
  * @param {number[]} array
  * @returns {number[]}
@@ -187,7 +207,15 @@ function findEqual(array, selected) {}
  *  //> [ 1, 11, 2, 3, 4, 9 ]
  */
 
-function removeDuplicates(array) {}
+function removeDuplicates(array) {
+let newarr = []
+for(let i=0;i<array.length;i++){
+  if (!newarr.includes(array[i])){
+ newarr.push(array[i])
+  }
+}
+return newarr
+}
 
 // Do not change any code below this line.
 module.exports = {
