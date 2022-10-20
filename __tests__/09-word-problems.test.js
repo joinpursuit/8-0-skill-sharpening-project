@@ -44,7 +44,7 @@ describe("applyDiscount()", () => {
   });
 });
 
-describe.only("getCartTotal()", () => {
+describe("getCartTotal()", () => {
   let cart;
   beforeEach(() => {
     cart = [
@@ -72,7 +72,7 @@ describe.only("getCartTotal()", () => {
   });
 });
 
-describe("compareLocations()", () => {
+describe.only("compareLocations()", () => {
   test("should say that the addresses are not near each other if there is no matching component", () => {
     const address1 = {
       street: "8785 Trenton St.",
