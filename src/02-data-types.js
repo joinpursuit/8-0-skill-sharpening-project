@@ -36,9 +36,7 @@ function convertToNumber(val) {}
  *  convertToString(99);
  *  //> "99"
  */
-function convertToString(val) {
-  return String(val);
-}
+function convertToString(val) {}
 
 /**
  * convertToShoutingText()
@@ -51,9 +49,7 @@ function convertToString(val) {
  *  convertToShoutingText("Hello There");
  *  //> "HELLO THERE"
  */
-function convertToShoutingText(text) {
-  return text.toUpperCase();
-}
+function convertToShoutingText(text) {}
 
 /**
  * convertToWhisperText()
@@ -66,9 +62,7 @@ function convertToShoutingText(text) {
  *  convertToWhisperText("Hello There");
  *  //> "hello there"
  */
-function convertToWhisperText(text) {
-  return text.toLowerCase();
-}
+function convertToWhisperText(text) {}
 
 /**
  * checkIfCharacterIsInString()
