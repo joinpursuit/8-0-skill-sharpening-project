@@ -115,7 +115,14 @@ let i = 0
  *  containsForLoop([ "left", "up", "right" ], "down");
  *  //> false
  */
-function containsForLoop(array, target) {}
+function containsForLoop(array, target) {
+  for (let i = 0; i < array.length; i++) {
+     if (array[i] === target) {
+      return true; 
+     }
+  } //end of loop
+  return false;
+} // end of function
 
 /**
  * targetCount()
@@ -129,7 +136,15 @@ function containsForLoop(array, target) {}
  *  targetCount([ 10, 20, 10, 20, 30 ], 10);
  *  //> 2
  */
-function targetCount(array, target) {}
+function targetCount(array, target) {
+  let count = 0;
+  for (let i = 0; i < array.length; i++) {
+    if (array[i] === target) {
+    ++count
+    }
+  }
+  return count
+}
 
 /**
  * firstIndexFound()
@@ -149,7 +164,14 @@ function targetCount(array, target) {}
  *  firstIndexFound([ "left", "right", "left" ], "up");
  *  //> -1
  */
-function firstIndexFound(array, target) {}
+function firstIndexFound(array, target) {
+  for (let i = 0; i < array.length; i++) {
+    if (array[i] === target) {
+      return i
+    }
+  } // end of loop
+     return -1
+} // end of function
 
 /**
  * lastIndexFound()

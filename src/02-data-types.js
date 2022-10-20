@@ -9,7 +9,10 @@
  *  getLengthOfString("down");
  *  //> 4
  */
-function getLengthOfString(str) {}
+function getLengthOfString(str) {
+  return str.length;
+ 
+}
 
 /**
  * convertToNumber()
@@ -22,7 +25,9 @@ function getLengthOfString(str) {}
  *  convertToNumber("111");
  *  //> 111
  */
-function convertToNumber(val) {}
+function convertToNumber(val) {
+return parseInt(val);
+}
 
 /**
  * convertToString()
@@ -145,8 +150,14 @@ function isOdd(num) {
  *  isTruthy(null);
  *  //> false
  */
-function isTruthy(val) {}
+function isTruthy(val) {
+if(val) {
+  return true;
+}else {
+  return false;
+}
 
+}
 /**
  * isFalsy()
  * ---------------------
@@ -161,7 +172,13 @@ function isTruthy(val) {}
  *  isFalsy(" ");
  *  //> false
  */
-function isFalsy(val) {}
+function isFalsy(val) {
+if (val) {
+ return false
+}else {
+  return true
+}
+}
 
 // Do not change the code below.
 module.exports = {
