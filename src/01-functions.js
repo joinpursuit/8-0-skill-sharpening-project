@@ -9,7 +9,9 @@
  *  alwaysTrue();
  *  //> true
  */
-function alwaysTrue() {}
+function alwaysTrue() {
+  return true;
+}
 
 /**
  * greet()
@@ -24,7 +26,9 @@ function alwaysTrue() {}
  *  greet("Ian");
  *  //> "Hello, Ian."
  */
-function greet() {}
+function greet(name) {
+  return `Hello, ${name}.`
+}
 
 /**
  * add()
@@ -39,7 +43,9 @@ function greet() {}
  *  add(10, 20);
  *  //> 30
  */
-function add() {}
+function add(a ,b) {
+  return a + b; 
+}
 
 /**
  * multiply()
@@ -176,7 +182,9 @@ function joinStringsWithSpaces(a, b, c, d, e) {
  *  getFirstAndLastCharacter("upwards");
  *  //> "us"
  */
-function getFirstAndLastCharacter() {}
+function getFirstAndLastCharacter(a) {
+  return a[0] + a[a.length-1]
+}
 
 // Do not change the code below.
 module.exports = {
