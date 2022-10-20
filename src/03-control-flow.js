@@ -15,7 +15,7 @@
  *  //> false
  */
 function isEqual(a, b) {
-  
+  return a === b
 }
 
 /**
@@ -30,7 +30,9 @@ function isEqual(a, b) {
  *  findLarger(19, 7);
  *  //> 19
  */
-function findLarger(a, b) {}
+function findLarger(a, b) {
+  return Math.max(a, b)
+}
 
 /**
  * findLargerOrTie()
@@ -214,7 +216,7 @@ function evenOrOdd(a) {}
  *  //> "Even"
  */
 function evenOrOddWithTernary(a) {
-  
+  return (a%2===0 ? "Even": "Odd") 
 }
 
 // Do not change any code below this line.

@@ -54,7 +54,9 @@ function add() {}
  *  multiply(2, 5);
  *  //> 10
  */
-function multiply() {}
+function multiply(a,b) {
+  return a * b
+}
 
 /**
  * average()
@@ -74,7 +76,9 @@ function multiply() {}
  *  average(10, 6);
  *  //> 8 // 10 + 6 = 16; 16/2 = 8;
  */
-function average() {}
+function average(a,b) {
+  return (a + b) / 2
+}
 
 /**
  * averageThree()
@@ -93,7 +97,9 @@ function average() {}
  *  averageThree(10, 11, 19);
  *  //> 10 // 10 + 11 + 19 = 30; 30 / 3 = 10;
  */
-function averageThree() {}
+function averageThree(a,b,c) {
+  return (a + b + c) / 3
+}
 
 /**
  * compareTypes()
@@ -127,7 +133,7 @@ function compareTypes() {}
  * EXAMPLE:
  *  flipSign(-10);
  *  //> 10
- *
+ * 
  *  flipSign(50);
  *  //> -50
  */
@@ -168,7 +174,9 @@ function joinStringsWithSpaces() {}
  *  getFirstAndLastCharacter("upwards");
  *  //> "us"
  */
-function getFirstAndLastCharacter() {}
+function getFirstAndLastCharacter(a) {
+  return a[0] + a[a.length-1]
+}
 
 // Do not change the code below.
 module.exports = {
