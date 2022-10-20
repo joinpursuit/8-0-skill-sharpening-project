@@ -45,9 +45,11 @@ function getCartTotal(products) {}
 /**
  * compareLocations()
  * ---------------------
- * A shipping company is looking to make its deliveries more efficient by comparing the destinations of multiple deliveries. If the locations are similar, the packages may be able to be bundled together.
+ * A shipping company is looking to make its deliveries more efficient by comparing the destinations of 
+ * multiple deliveries. If the locations are similar, the packages may be able to be bundled together.
  * 
- * Write an algorithm that takes in two objects of similar shape, each object representing an address. Then, return a string that describes the relationship between those two addresses.
+ * Write an algorithm that takes in two objects of similar shape, each object representing an address. 
+ * Then, return a string that describes the relationship between those two addresses.
  * 
  * - If the street, city, state, and zip for both addresses are the same, return the string "Same building."
  * - If the city, state, and zip are the same, return the string "Same city."
