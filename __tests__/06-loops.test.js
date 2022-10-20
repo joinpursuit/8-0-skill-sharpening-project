@@ -83,7 +83,7 @@ describe("containsForLoop", () => {
   });
 });
 
-describe("targetCount", () => {
+describe.only("targetCount", () => {
   test("returns the accurate count", () => {
     expect(targetCount([5, 2, 3, 5, 9], 5)).toBe(2);
     expect(targetCount([5, 2, 3, 5, 9], 6)).toBe(0);

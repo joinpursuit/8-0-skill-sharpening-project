@@ -11,7 +11,20 @@
  *  //> 25
  *  (3 + 4 + 5 + 6 + 7 = 25)
  */
-function rangeSum(min, max) {}
+function rangeSum(min, max) {
+
+  let total = 0
+
+  for(let num = min; num <= max; num++){
+
+    total = total + num
+  }
+
+  return total
+}
+
+//crete a loop to begin from min & end at max
+// return sum of all numbers of range created
 
 /**
  * rangeOdd()
@@ -25,7 +38,22 @@ function rangeSum(min, max) {}
  *  rangeOdd(10, 15);
  *  //> [ 15, 13, 11 ]
  */
-function rangeOdd(min, max) {}
+function rangeOdd(min, max) {
+
+  let decreasingOdd = []
+
+  for(let num = max; num >= min; num--){
+
+    if(num % 2 !== 0){
+
+      decreasingOdd.push(num)
+    }
+   
+  }
+
+  return decreasingOdd
+
+}
 
 /**
  * rangeEveryOther()
@@ -39,7 +67,18 @@ function rangeOdd(min, max) {}
  *  rangeEveryOther(11, 18);
  *  //> [ 11, 13, 15, 17 ]
  */
-function rangeEveryOther(min, max) {}
+function rangeEveryOther(min, max) {
+
+let everyOtherArr = []
+
+  for(num = min; num <= max; num += 2){
+
+    everyOtherArr.push(num)
+  }
+
+
+  return everyOtherArr
+}
 
 /**
  * containsWhileLoop()
@@ -61,8 +100,25 @@ function rangeEveryOther(min, max) {}
  *  containsWhileLoop([ "left", "up", "right" ], "down");
  *  //> false
  */
-function containsWhileLoop(array, target) {}
+function containsWhileLoop(array, target) {
 
+  let i = 0
+
+  while (i < array.length){
+
+    i++
+
+    if(target = array[i]){
+
+      return true
+    
+    } else {
+
+      return false
+    }
+  
+  }
+}
 /**
  * containsForLoop()
  * ---------------------
@@ -83,7 +139,20 @@ function containsWhileLoop(array, target) {}
  *  containsForLoop([ "left", "up", "right" ], "down");
  *  //> false
  */
-function containsForLoop(array, target) {}
+function containsForLoop(array, target) {
+
+  for(let i = 0; i < array.length; i++){
+
+    if(target = array[i]){
+
+      return true
+    
+    }else {
+
+      return false
+    }
+  }
+}
 
 /**
  * targetCount()
