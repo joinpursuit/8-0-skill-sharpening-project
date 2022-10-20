@@ -85,7 +85,9 @@ function getNameFromObject(object) {
  *  getAgeFromObject({ age: 30 });
  *  //> 30
  */
-function getAgeFromObject(object) {}
+function getAgeFromObject(object) {
+  return object.age
+}
 
 /**
  * addValueToObject()
@@ -99,7 +101,10 @@ function getAgeFromObject(object) {}
  *  addValueToObject({ left: true }, false);
  *  //> { left: true, key: false }
  */
-function addValueToObject(object, val) {}
+function addValueToObject(object, val) {
+  object.val = val
+  return object
+}
 
 /**
  * addKeyToObject()
@@ -113,7 +118,10 @@ function addValueToObject(object, val) {}
  *  addKeyToObject({ right: false }, "left");
  *  //> { right: false, left: true }
  */
-function addKeyToObject(object, key) {}
+function addKeyToObject(object, key) {
+  object[key] = key
+  return object
+}
 
 /**
  * addKeyValuePairToObject()
