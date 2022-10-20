@@ -124,12 +124,12 @@ describe("animalCounts()", () => {
 });
 
 describe("evenOrOdd()", () => {
-  test("works for even numbers", () => {
+  test.only("works for even numbers", () => {
     expect(evenOrOdd(0)).toEqual("Even");
     expect(evenOrOdd(2)).toEqual("Even");
     expect(evenOrOdd(-2)).toEqual("Even");
   });
-  test("works for odd numbers", () => {
+  test.only("works for odd numbers", () => {
     expect(evenOrOdd(-1)).toEqual("Odd");
     expect(evenOrOdd(3)).toEqual("Odd");
     expect(evenOrOdd(9)).toEqual("Odd");
