@@ -80,12 +80,30 @@ function getCartTotal(products) {}
     compareLocations(address1, address2);
     //> "Same city."
  */
-function compareLocations(address1, address2) {}
+function compareLocations(address1, address2) {
+  if(address1.state === address2.state) {
+    if(address1.city === address2.city && address1.zip === address2.zip) {
+      if(address1.street === address2.street) {
+        return 'Same building.'
+      }
+      return 'Same city.'
+    }
+    return 'Same state.'
+  } else {
+    return `Addresses are not near each other.`
+  }
+
+
+
+
+
+}
 
 /**
  * gradeAssignments()
  * ---------------------
- * An online learning management system needs a way to quickly add the current status to a list of assignments. Depending on the `kind` of assignment,
+ * An online learning management system needs a way to quickly add the current status to a list of assignments. 
+ * Depending on the `kind` of assignment,
  *  different statuses should be applied.
  *
  * Write an algorithm that adds a key of `status` to each object in an array of objects. Each object represents a single assignment submitted by a student.
