@@ -9,9 +9,7 @@
  *  alwaysTrue();
  *  //> true
  */
-function alwaysTrue() {
-  return true
-}
+function alwaysTrue() {}
 
 /**
  * greet()
@@ -26,9 +24,7 @@ function alwaysTrue() {
  *  greet("Ian");
  *  //> "Hello, Ian."
  */
-function greet(name) {
-  return `Hello, ${name}.`
-}
+function greet() {}
 
 /**
  * add()
@@ -43,9 +39,7 @@ function greet(name) {
  *  add(10, 20);
  *  //> 30
  */
-function add(a,b) {
-  return a+b
-}
+function add() {}
 
 /**
  * multiply()
@@ -118,12 +112,7 @@ function averageThree() {}
  *  compareTypes("left", 10);
  *  //> false
  */
- function compareTypes(a,b) {
-  if (typeof a === typeof b )
-    return true
-  else
-    return false
-}
+function compareTypes() {}
 
 /**
  * flipSign()
@@ -142,14 +131,7 @@ function averageThree() {}
  *  flipSign(50);
  *  //> -50
  */
- function flipSign(a) {
-  if (a > 0){
-    return -(a)
-  }
-  if (a < 0) {
-    return a * -1
-  }
-}
+function flipSign() {}
 
 /**
  * joinStringsWithSpaces()
@@ -169,9 +151,7 @@ function averageThree() {}
  *  joinStringsWithSpaces("left", "right", "up", "down", "away");
  *  //> "left right up down away"
  */
- function joinStringsWithSpaces(a,b,c,d,e) {
-  return `${a} ${b} ${c} ${d} ${e}`
-}
+function joinStringsWithSpaces() {}
 
 /**
  * getFirstAndLastCharacter()

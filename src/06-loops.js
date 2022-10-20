@@ -11,7 +11,13 @@
  *  //> 25
  *  (3 + 4 + 5 + 6 + 7 = 25)
  */
-function rangeSum(min, max) {}
+function rangeSum(min, max) {
+  let sum = 0
+  for (let i = min; i <= max; i++){
+    sum += i
+  }
+  return sum
+}
 
 /**
  * rangeOdd()
@@ -25,7 +31,14 @@ function rangeSum(min, max) {}
  *  rangeOdd(10, 15);
  *  //> [ 15, 13, 11 ]
  */
-function rangeOdd(min, max) {}
+function rangeOdd(min, max) {
+  let arr = []
+  for(let i = max; i >= min; i--){
+    if(i % 2 === 1)
+    {arr.push(i)}
+  }
+  return arr
+}
 
 /**
  * rangeEveryOther()
@@ -39,7 +52,13 @@ function rangeOdd(min, max) {}
  *  rangeEveryOther(11, 18);
  *  //> [ 11, 13, 15, 17 ]
  */
-function rangeEveryOther(min, max) {}
+function rangeEveryOther(min, max) {
+  let arr = []
+  for(let i = min; i <= max;i +=2){
+  arr.push(i)
+  }
+return arr
+}
 
 /**
  * containsWhileLoop()
@@ -54,24 +73,14 @@ function rangeEveryOther(min, max) {}
  * @param {number|string} target
  * @returns {boolean}
  *
- * EXAMPLE:             0  1  2
+ * EXAMPLE:
  *  containsWhileLoop([ 5, 2, 4 ], 4);
- *    5                    3
- * arr[0] === 4
  *  //> true
  *
  *  containsWhileLoop([ "left", "up", "right" ], "down");
  *  //> false
  */
-function containsWhileLoop(array, target) {
-  let i = 0
-  while (i < array.length){
-    if (array[i] === target)
-      return true
-    i++
-  }
-  return false
-}
+function containsWhileLoop(array, target) {}
 
 /**
  * containsForLoop()
@@ -93,15 +102,7 @@ function containsWhileLoop(array, target) {
  *  containsForLoop([ "left", "up", "right" ], "down");
  *  //> false
  */
-function containsForLoop(array, target) {
-  for (let i = 0; i < array.length; i++){
-    if (array[i]===target){
-      return true
-    }
-  }
-  return false
-
-}
+function containsForLoop(array, target) {}
 
 /**
  * targetCount()
@@ -111,19 +112,11 @@ function containsForLoop(array, target) {
  * @param {number|string} target
  * @returns {number}
  *
-* EXAMPLE:
+ * EXAMPLE:
  *  targetCount([ 10, 20, 10, 20, 30 ], 10);
  *  //> 2
  */
-function targetCount(array, target) {
-  let count = 0
-  for (let i = 0; i <array.length; i++){
-    if (array[i] === target){
-      count++
-    }
-  }
-  return count
-}
+function targetCount(array, target) {}
 
 /**
  * firstIndexFound()
@@ -191,7 +184,12 @@ function timesIndex(array) {}
  *  //> [ 5, 5 + 2, 5 + 2 + 9 ]
  *  //> [ 5, 7, 16 ]
  */
-function cumulativeSum(array) {}
+function cumulativeSum(array) {
+  for(let i =1; i <array.length; i++){
+    array[i] = array[i] + array[i-1]
+  }
+return array
+}
 
 // Do not change anything below this line.
 module.exports = {

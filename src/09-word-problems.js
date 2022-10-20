@@ -19,16 +19,7 @@
  *  applyDiscount(1000, 9, true);
  *  //> 700
  */
-function applyDiscount(priceInCents, age, hasMembership) {
-  let discount = 0
-  if (hasMembership){
-    discount+= .20
-  }
-  if (age <= 10 || age >= 65) {
-    discount+= .10
-  }
-  return priceInCents - (priceInCents * discount)
-}
+function applyDiscount(priceInCents, age, hasMembership) {}
 
 /**
  * getCartTotal()
@@ -49,20 +40,16 @@ function applyDiscount(priceInCents, age, hasMembership) {
     getCartTotal(cart);
  *  //> "$30.00"
  */
-function getCartTotal(products) {
-  let sum = 0
-  for (let i =0; i < products.length; i++){
-    sum += products[i].priceInCents * products[i].quantity
-  }
-  return `$${(sum/100).toFixed(2)}`
-}
+function getCartTotal(products) {}
 
 /**
  * compareLocations()
  * ---------------------
- * A shipping company is looking to make its deliveries more efficient by comparing the destinations of multiple deliveries. If the locations are similar, the packages may be able to be bundled together.
+ * A shipping company is looking to make its deliveries more efficient by comparing the destinations of 
+ * multiple deliveries. If the locations are similar, the packages may be able to be bundled together.
  * 
- * Write an algorithm that takes in two objects of similar shape, each object representing an address. Then, return a string that describes the relationship between those two addresses.
+ * Write an algorithm that takes in two objects of similar shape, each object representing an address. 
+ * Then, return a string that describes the relationship between those two addresses.
  * 
  * - If the street, city, state, and zip for both addresses are the same, return the string "Same building."
  * - If the city, state, and zip are the same, return the string "Same city."
@@ -95,21 +82,8 @@ function getCartTotal(products) {
     compareLocations(address1, address2);
     //> "Same city."
  */
-function compareLocations(address1, address2) {
-  let string = ""
-  if (address1.state === address2.state){
-    string = "Same state."
-    if (address1.city === address2.city && address1.zip === address2.zip){
-      string = "Same city."
-      if (address1.street===address2.street){
-        string = "Same building."
-      }
-    }
-  } else {
-    string = "Addresses are not near each other."
-  }
-  return string
-}
+function compareLocations(address1, address2) {}
+
 /**
  * gradeAssignments()
  * ---------------------
