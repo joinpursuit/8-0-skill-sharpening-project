@@ -144,7 +144,8 @@ function firstIndexFound(array, target) {
 /**
  * lastIndexFound()
  * ---------------------
- * Returns the last index that the `target` is found at in the array. If the `target` is not found, it should return `-1`.
+ * Returns the last index that the `target` is found at in the array. 
+ * If the `target` is not found, it should return `-1`.
  *
  * NOTE: You may NOT use the `.indexOf()` method.
  *
@@ -159,12 +160,14 @@ function firstIndexFound(array, target) {
  *  lastIndexFound([ "left", "right", "left" ], "up");
  *  //> -1
  */
-function lastIndexFound(array, target) { 
-  for(let i = 0; i < array.length; i++){
-  if( array[i].length-1 === target){
-    return array[i]
-  }
-  }
+function lastIndexFound(array, target) {
+  let num = -1
+  for(let i = 0; i <= array.length-1; i++){
+    if( array[i] === target){
+      num = i
+    }
+    }
+    return num;
 }
 /**
  * timesIndex()
