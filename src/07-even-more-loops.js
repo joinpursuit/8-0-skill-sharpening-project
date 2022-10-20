@@ -76,7 +76,7 @@ function shoutForOfLoop(array) {
  *  //> 31
  */
 
-function sumArray(array){ // both methods work
+function sumArray(array){} // both methods work
   // method 1
 
   // let sumValue = array[0]
@@ -87,12 +87,12 @@ function sumArray(array){ // both methods work
 
 // method 2 using reduce()
 
-let sum = 0;
-for(let i = 0; i < array.length; i++){
-  sum = array.reduce((x,y) => x + y)
-}
-return sum
-}
+// let sum = 0;
+// for(let i = 0; i < array.length; i++){
+//   sum = array.reduce((x,y) => x + y)
+// }
+// return sum
+// }
 
 /**
  * oddArray()
@@ -106,23 +106,7 @@ return sum
  *  //> [ 11, 15, 37 ]
  */
 
-function oddArray(array) {
-  let newArray = []
-  for(let i = 0; i < array.length; i++){
-    if (array[i] % 2 !== 0){
-      newArray.push(array[i])
-    }
-  }
-  return newArray
-}
-
-
-
-
-/********************************* VANDHANA MOHAN *******************************/
-
-
-
+function oddArray(array) {}
 
 
 /**
@@ -138,6 +122,8 @@ function oddArray(array) {
  */
 function evenArray(array) {}
 
+/********************************* VANDHANA MOHAN *******************************/
+
 /**
  * findSmallest()
  * ---------------------
@@ -149,7 +135,10 @@ function evenArray(array) {}
  *  findSmallest([ 0, 11, -2, 5 ]);
  *  //> -2
  */
-function findSmallest(array) {}
+function findSmallest(array) {
+  let num = Math.min(...array)
+  return num
+}
 
 /**
  * findLargest()
@@ -162,7 +151,10 @@ function findSmallest(array) {}
  *  findLargest([ 0, 11, -2, 5 ]);
  *  //> 11
  */
-function findLargest(array) {}
+function findLargest(array) {
+  let num = Math.max(...array)
+  return num
+}
 
 /**
  * findEqual()
