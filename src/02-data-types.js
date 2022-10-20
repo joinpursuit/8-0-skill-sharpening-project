@@ -55,9 +55,7 @@ function convertToString(val) {
  *  convertToShoutingText("Hello There");
  *  //> "HELLO THERE"
  */
-function convertToShoutingText(text) {
-  return text.toUpperCase()
-}
+function convertToShoutingText(text) {}
 
 /**
  * convertToWhisperText()
@@ -70,9 +68,7 @@ function convertToShoutingText(text) {
  *  convertToWhisperText("Hello There");
  *  //> "hello there"
  */
-function convertToWhisperText(text) {
-  return text.toLowerCase()
-}
+function convertToWhisperText(text) {}
 
 /**
  * checkIfCharacterIsInString()
@@ -89,9 +85,7 @@ function convertToWhisperText(text) {
  *  checkIfCharacterIsInString("hello there", "a");
  *  //> false
  */
-function checkIfCharacterIsInString(text, character) {
-  return text.includes(character)
-}
+function checkIfCharacterIsInString(text, character) {}
 
 /**
  * isEven()
@@ -107,9 +101,9 @@ function checkIfCharacterIsInString(text, character) {
  *  isEven(11);
  *  //> false
  */
-
-function isEven(num) {}
-
+function isEven(num) {
+  return num % 2 === 0
+}
 
 /**
  * isOdd()
@@ -125,9 +119,9 @@ function isEven(num) {}
  *  isOdd(11);
  *  //> true
  */
-
-function isOdd(num) {}
-
+function isOdd(num) {
+  return num % 2 === 1
+}
 
 /**
  * isTruthy()
@@ -143,8 +137,9 @@ function isOdd(num) {}
  *  isTruthy(null);
  *  //> false
  */
-
-function isTruthy(val) {}
+function isTruthy(val) {
+  return !!val
+}
 
 /**
  * isFalsy()

@@ -12,12 +12,7 @@
  *  shoutForLoop([ "A", "Very", "Happy", "Array" ]);
  *  //> [ "A!", "Very!", "Happy!", "Array!" ];
  */
-function shoutForLoop(array) {
-  for(let i=0; i<array.length;i++){
-    array[i] = array[i] + '!'
-  }
-  return array
-}
+function shoutForLoop(array) {}
 
 /**
  * shoutWhileLoop()
@@ -33,14 +28,7 @@ function shoutForLoop(array) {
  *  shoutWhileLoop([ "A", "Very", "Happy", "Array" ]);
  *  //> [ "A!", "Very!", "Happy!", "Array!" ];
  */
-function shoutWhileLoop(array) {
-  let i = 0
-  while (i<array.length){
-    array[i]+= '!'
-  i++
-  }
-  return array
-}
+function shoutWhileLoop(array) {}
 
 /**
  * shoutForOfLoop()
@@ -56,8 +44,13 @@ function shoutWhileLoop(array) {
  *  shoutForOfLoop([ "A", "Very", "Happy", "Array" ]);
  *  //> [ "A!", "Very!", "Happy!", "Array!" ];
  */
-
-function shoutForOfLoop(array) {}
+function shoutForOfLoop(array) {
+let newArr = []
+for (const element of array) {
+  newArr.push(element+"!")
+}
+return newArr
+}
 
 /**
  * sumArray()
@@ -70,7 +63,13 @@ function shoutForOfLoop(array) {}
  *  sumArray([ 10, 0, 10, 11 ]);
  *  //> 31
  */
-function sumArray(array) {}
+function sumArray(array) {
+  let sum = 0
+  for (let i = 0; i < array.length; i++){
+    sum += array[i]
+  }
+  return sum
+}
 
 /**
  * oddArray()
@@ -83,7 +82,15 @@ function sumArray(array) {}
  *  oddArray([ 11, 15, 20, 22, 37 ]);
  *  //> [ 11, 15, 37 ]
  */
-function oddArray(array) {}
+function oddArray(array) {
+  let newArr = []
+  for (let i = 0; i < array.length; i++){
+    if (array[i]%2 === 1){
+      newArr.push(array[i])
+    }
+  }
+  return newArr
+}
 
 /**
  * evenArray()
@@ -163,22 +170,14 @@ function findLargest(array) {
  *  findEqual([ 0, 11, -2, 5 ], 9);
  *  //> false
  */
-function findEqual(array, selected) {
-  for(let i=0; i <array.length;i++){
-    if(array[i]===selected){
-      return true
-      
-    }
-  }
-  return false
-}
+function findEqual(array, selected) {}
 
 /**
  * removeDuplicates()
  * ---------------------
  * Returns a new array like the original array except there are no duplicates. The numbers in the array should be ordered similarly.
  *
- * HINT: The `.includes()` method could help here. //yayyy
+ * HINT: The `.includes()` method could help here.
  *
  * @param {number[]} array
  * @returns {number[]}
@@ -188,15 +187,7 @@ function findEqual(array, selected) {
  *  //> [ 1, 11, 2, 3, 4, 9 ]
  */
 
-function removeDuplicates(array) {
-let newarr = []
-for(let i=0;i<array.length;i++){
-  if (!newarr.includes(array[i])){
- newarr.push(array[i])
-  }
-}
-return newarr
-}
+function removeDuplicates(array) {}
 
 // Do not change any code below this line.
 module.exports = {
