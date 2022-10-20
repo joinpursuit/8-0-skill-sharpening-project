@@ -11,7 +11,13 @@
  *  //> 25
  *  (3 + 4 + 5 + 6 + 7 = 25)
  */
-function rangeSum(min, max) {}
+function rangeSum(min, max) {
+  let totalA = 0;
+   for (let a = min; a < (max+1) ; a++) {
+     totalA =  totalA + a;
+}
+     return totalA
+}
 
 /**
  * rangeOdd()
@@ -25,7 +31,9 @@ function rangeSum(min, max) {}
  *  rangeOdd(10, 15);
  *  //> [ 15, 13, 11 ]
  */
-function rangeOdd(min, max) {}
+function rangeOdd(min, max) {
+  
+}
 
 /**
  * rangeEveryOther()
