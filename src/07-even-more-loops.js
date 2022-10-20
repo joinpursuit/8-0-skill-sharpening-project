@@ -64,26 +64,26 @@ function shoutForOfLoop(array) {
   i++ 
   } return newArr;
 }
-/*function shoutForOfLoop(array) {
-  let newArr = [];
-  let i = 0;
-  for (let arr of array){
-  newArr.push(array[i] +'!') 
-  i++
-  } return newArr
-}
+
 /**
  * sumArray()
  * ---------------------
  * Returns the sum of all values in the array.
  * @param {number[]} array
  * @returns {number}
- *
+ * 
  * EXAMPLE:
  *  sumArray([ 10, 0, 10, 11 ]);
  *  //> 31
  */
 function sumArray(array) {}
+ 
+ 
+  /* let sum = 0;
+  for (i=0; i<array.length; i++ ){
+    sum += array[i];
+  } return sum 
+}
 
 /**
  * oddArray()
@@ -123,7 +123,6 @@ function evenArray(array) {}
  *  //> -2
  */
 function findSmallest(array) {}
-
 /**
  * findLargest()
  * ---------------------
@@ -169,7 +168,13 @@ function findEqual(array, selected) {}
  *  //> [ 1, 11, 2, 3, 4, 9 ]
  */
 
-function removeDuplicates(array) {}
+function removeDuplicates(array) {
+  let newArr = [];
+  for (let element of array){
+if (!newArr.includes(element)){
+newArr.push(element);
+}} return newArr
+}
 
 // Do not change any code below this line.
 module.exports = {

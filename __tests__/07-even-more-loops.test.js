@@ -49,7 +49,7 @@ describe("shoutWhileLoop", () => {
   });
 });
 
-describe.only("shoutForOfLoop", () => {
+describe("shoutForOfLoop", () => {
   test("adds an ! to the end of each element", () => {
     expect(shoutForOfLoop([])).toEqual([]);
     expect(shoutForOfLoop(["I", "am", "a", "happy", "array"])).toEqual([
@@ -123,7 +123,7 @@ describe("findEqual()", () => {
   });
 });
 
-describe("removeDuplicates", () => {
+describe.only("removeDuplicates", () => {
   test("returns an array without any of the duplicates", () => {
     expect(removeDuplicates([4, 2, 6, 2, 2, 6, 4, 9, 2, 1])).toEqual([
       4, 2, 6, 9, 1,
