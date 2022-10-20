@@ -84,6 +84,8 @@ function containsWhileLoop(array, target) {
   return false
 }
 
+/********************************* VANDHANA MOHAN *******************************/
+
 /**
  * containsForLoop()
  * ---------------------
@@ -104,18 +106,7 @@ function containsWhileLoop(array, target) {
  *  containsForLoop([ "left", "up", "right" ], "down");
  *  //> false
  */
-function containsForLoop(array, target) {
-  for(let i = 0; i < array.length; i++){
-    if(array[i] === target){
-      return true
-    }
-  }
-  return false
-}
-
-
-/********************************* VANDHANA MOHAN *******************************/
-
+function containsForLoop(array, target) {}
 
 /**
  * targetCount()
