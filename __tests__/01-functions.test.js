@@ -139,7 +139,7 @@ describe("joinStringsWithSpaces()", () => {
   });
 });
 
-describe("getFirstAndLastCharacter()", () => {
+describe.only("getFirstAndLastCharacter()", () => {
   test("should return the first and last character of a string, joined together", () => {
     const input = "pursuit";
     const actual = getFirstAndLastCharacter(input);

@@ -11,13 +11,7 @@
  *  //> 25
  *  (3 + 4 + 5 + 6 + 7 = 25)
  */
-function rangeSum(min, max) {
-  let sum = min;
-  for (let i = min + 1; i <= max; i++){
-    sum += i;
-  }
-  return sum;
-}
+function rangeSum(min, max) {}
 
 /**
  * rangeOdd()
@@ -143,14 +137,7 @@ function firstIndexFound(array, target) {}
  *  lastIndexFound([ "left", "right", "left" ], "up");
  *  //> -1
  */
-function lastIndexFound(array, target) {
-  for (let i = array.length-1; i >= 0; i--){
-    if (array[i] === target){
-      return i;
-    }
-  }
-  return -1;
-}
+function lastIndexFound(array, target) {}
 
 /**
  * timesIndex()
@@ -164,12 +151,7 @@ function lastIndexFound(array, target) {
  *  //> [ 7 * 0, 10 * 1, 11 * 2 ]
  *  //> [ 0, 10, 22 ]
  */
-function timesIndex(array) {
-  for (let i = 0; i < array.length; i++){
-    array[i] = i*array[i];
-  }
-  return array;
-}
+function timesIndex(array) {}
 
 /**
  * cumulativeSum()
@@ -183,12 +165,7 @@ function timesIndex(array) {
  *  //> [ 5, 5 + 2, 5 + 2 + 9 ]
  *  //> [ 5, 7, 16 ]
  */
-function cumulativeSum(array) {
-  for (let i = 1; i < array.length; i++){
-    array[i] = array[i] + array[i-1];
-  }
-  return array;
-}
+function cumulativeSum(array) {}
 
 // Do not change anything below this line.
 module.exports = {
