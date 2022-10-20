@@ -9,7 +9,9 @@
  *  getLengthOfString("down");
  *  //> 4
  */
-function getLengthOfString(str) {}
+function getLengthOfString(str) {
+  return str.length;
+}
 
 /**
  * convertToNumber()
@@ -22,7 +24,9 @@ function getLengthOfString(str) {}
  *  convertToNumber("111");
  *  //> 111
  */
-function convertToNumber(val) {}
+function convertToNumber(val) {
+  return Number(val);
+}
 
 /**
  * convertToString()
@@ -36,9 +40,7 @@ function convertToNumber(val) {}
  *  convertToString(99);
  *  //> "99"
  */
-function convertToString(val) {
-  return String(val);
-}
+function convertToString(val) {}
 
 /**
  * convertToShoutingText()
@@ -51,9 +53,7 @@ function convertToString(val) {
  *  convertToShoutingText("Hello There");
  *  //> "HELLO THERE"
  */
-function convertToShoutingText(text) {
-  return text.toUpperCase();
-}
+function convertToShoutingText(text) {}
 
 /**
  * convertToWhisperText()
@@ -66,9 +66,7 @@ function convertToShoutingText(text) {
  *  convertToWhisperText("Hello There");
  *  //> "hello there"
  */
-function convertToWhisperText(text) {
-  return text.toLowerCase();
-}
+function convertToWhisperText(text) {}
 
 /**
  * checkIfCharacterIsInString()
@@ -133,7 +131,9 @@ function isOdd(num) {}
  *  isTruthy(null);
  *  //> false
  */
-function isTruthy(val) {}
+function isTruthy(val) {
+  return !!val
+}
 
 /**
  * isFalsy()
@@ -149,7 +149,9 @@ function isTruthy(val) {}
  *  isFalsy(" ");
  *  //> false
  */
-function isFalsy(val) {}
+function isFalsy(val) {
+  return !val;
+}
 
 // Do not change the code below.
 module.exports = {
