@@ -128,7 +128,19 @@ function aroundTheWorldGreetingWithSwitch(language) {}
  *  calculateLetterGrade(99);
  *  //> "A"
  */
-function calculateLetterGrade(grade) {}
+function calculateLetterGrade(grade) {
+  if(grade < 60) {
+    return "F"
+  } if(grade >= 60 && grade < 70) {
+    return "D"
+  } if (grade >= 70 && grade < 80 ) {
+    return "C"
+  }if (grade >= 80 && grade < 90 ) {
+    return "B" 
+  }if (grade >= 90  ) {
+    return "A"
+  }
+}
 
 /**
  * animalCounts()
@@ -146,7 +158,12 @@ function calculateLetterGrade(grade) {}
  *  animalCounts("pig", 1);
  *  //> "1 pig"
  */
-function animalCounts(animal, numberOfAnimals) {}
+function animalCounts(animal, numberOfAnimals) {
+  if(numberOfAnimals >= 2){
+    return `${numberOfAnimals} ${animal}s`
+  }
+  return `${numberOfAnimals} ${animal}`
+}
 
 /**
  * evenOrOdd()
@@ -163,7 +180,11 @@ function animalCounts(animal, numberOfAnimals) {}
  *  evenOrOdd(48);
  *  //> "Even"
  */
-function evenOrOdd(a) {}
+function evenOrOdd(a) {
+  if(a % 2 === 0) {
+    return "Even"
+  } return "Odd"
+}
 
 /**
  * evenOrOddWithTernary()
@@ -179,7 +200,9 @@ function evenOrOdd(a) {}
  *  evenOrOddWithTernary(8);
  *  //> "Even"
  */
-function evenOrOddWithTernary(a) {}
+function evenOrOddWithTernary(a) {
+  return a % 2 == 0 ? "Even" : "Odd"
+}
 
 // Do not change any code below this line.
 module.exports = {
