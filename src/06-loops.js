@@ -1,3 +1,6 @@
+const yargs = require("yargs");
+const { array, number } = require("yargs");
+
 /**
  * rangeSum()
  * ---------------------
@@ -11,7 +14,19 @@
  *  //> 25
  *  (3 + 4 + 5 + 6 + 7 = 25)
  */
-function rangeSum(min, max) {}
+function rangeSum(min, max)
+ {
+  let i = min
+  let arr= []; 
+
+  while (min <= max) { 
+    min++
+    arr.push(min)
+    
+  }
+  return min
+  //return (max - min + 1) * (min + max) / 2
+}
 
 /**
  * rangeOdd()
@@ -25,7 +40,16 @@ function rangeSum(min, max) {}
  *  rangeOdd(10, 15);
  *  //> [ 15, 13, 11 ]
  */
-function rangeOdd(min, max) {}
+function rangeOdd(min, max) {
+  let arr = [ ];
+  let i;
+  for (i = min; i <= max; i++) 
+  {
+    if (i % 2 != 0)
+    arr.push(i)
+  }
+  return arr;
+}
 
 /**
  * rangeEveryOther()
@@ -39,7 +63,9 @@ function rangeOdd(min, max) {}
  *  rangeEveryOther(11, 18);
  *  //> [ 11, 13, 15, 17 ]
  */
-function rangeEveryOther(min, max) {}
+function rangeEveryOther(min, max) {
+
+}
 
 /**
  * containsWhileLoop()
