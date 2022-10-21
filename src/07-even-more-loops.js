@@ -12,7 +12,9 @@
  *  shoutForLoop([ "A", "Very", "Happy", "Array" ]);
  *  //> [ "A!", "Very!", "Happy!", "Array!" ];
  */
-function shoutForLoop(array) {}
+function shoutForLoop(array) {
+  
+}
 
 /**
  * shoutWhileLoop()
@@ -57,7 +59,17 @@ function shoutForOfLoop(array) {}
  *  sumArray([ 10, 0, 10, 11 ]);
  *  //> 31
  */
-function sumArray(array) {}
+function sumArray(array) {
+let sum = 0;
+let newArr = [];
+
+for (let i = 0; i < array.length; i++) {
+   newArr.push(array[i])
+sum = newArr.reduce((a, b) => a + b);
+console.log(sum);
+} //end of loop
+  return sum;
+}// end of function
 
 /**
  * oddArray()
@@ -70,7 +82,20 @@ function sumArray(array) {}
  *  oddArray([ 11, 15, 20, 22, 37 ]);
  *  //> [ 11, 15, 37 ]
  */
-function oddArray(array) {}
+function oddArray(array) {
+
+let newArr = [];
+
+for (let i = 0; i < array.length; i++) {
+  if (array[i] % 2 === 1) {
+  newArr.push(array[i])
+} 
+
+} // end of loop
+return newArr;
+
+}// end of function
+  
 
 /**
  * evenArray()
@@ -83,7 +108,16 @@ function oddArray(array) {}
  *  evenArray([ 11, 15, 20, 22, 37 ]);
  *  //> [ 20, 22 ]
  */
-function evenArray(array) {}
+function evenArray(array) {
+let newArr = [];
+
+for (let i = 0; i < array.length; i++) {
+  if (array[i] % 2 === 0) {
+  newArr.push(array[i]);
+}
+}// end of loop
+return newArr;
+}// end of function
 
 /**
  * findSmallest()
@@ -96,7 +130,11 @@ function evenArray(array) {}
  *  findSmallest([ 0, 11, -2, 5 ]);
  *  //> -2
  */
-function findSmallest(array) {}
+function findSmallest(array) {
+
+
+  
+}
 
 /**
  * findLargest()
