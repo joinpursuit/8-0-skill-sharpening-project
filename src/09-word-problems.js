@@ -14,6 +14,7 @@
  *  //> 1000
  *
  *  applyDiscount(1000, 66, false);
+ * 
  *  //> 900
  *
  *  applyDiscount(1000, 9, true);
@@ -97,7 +98,7 @@ function compareLocations(address1, address2) {
 
 
 
-}
+}code 
 
 /**
  * gradeAssignments()
