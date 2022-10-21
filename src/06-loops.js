@@ -105,7 +105,6 @@ function containsForLoop(array, target) {}
  *  //> 2
  */
 function targetCount(array, target) {}
-
 /**
  * firstIndexFound()
  * ---------------------
