@@ -173,6 +173,19 @@ function getFullAddress(person) {}
  */
 function getFlatObject(person) {}
 
+
+// const newPerson = {}
+//  newPerson.first = person.names.first;
+//  newPerson.middle = person.names.middle;
+//  newPerson.last = person.names.last;
+//  newPerson.street = person.address.street;
+//  newPerson.unit = person.address.unit;
+//  newPerson.city = person.address.city;
+//  newPerson.state = person.address.state;
+//  newPerson.zip = person.address.zip;
+//  newPerson.numbers = person.numbers;
+//  return newPerson
+
 // Do not change the code below.
 module.exports = {
   getFirstName,
