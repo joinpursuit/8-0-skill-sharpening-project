@@ -122,7 +122,10 @@ function getLastPhoneNumber(person) {}
  *  getFullName(person);
  *  //> "Rachel Eleanor Rojas"
  */
-function getFullName(person) {}
+function getFullName(person) {
+  fullName = `${person.name.first} ${person.name.middle} ${person.name.last}`
+return fullName
+}
 
 /**
  * getCityAndState()

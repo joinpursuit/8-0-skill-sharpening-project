@@ -40,7 +40,12 @@ function applyDiscount(priceInCents, age, hasMembership) {}
     getCartTotal(cart);
  *  //> "$30.00"
  */
-function getCartTotal(products) {}
+function getCartTotal(products) {
+  let total = 0;
+  for (let product of products){
+    total += product.priceInCents * product.quantity;
+  } return `$${((total / 100).toFixed(2))}`
+}
 
 /**
  * compareLocations()
@@ -80,7 +85,18 @@ function getCartTotal(products) {}
     compareLocations(address1, address2);
     //> "Same city."
  */
-function compareLocations(address1, address2) {}
+function compareLocations(address1, address2) {
+  if (address1.state === address2.state){
+  if (address1.street === address2.street){
+    return "Same building."
+} if (address1.city === address2.city) {
+    return "Same city."
+} 
+  return "Same state."
+} else { 
+  return "Addresses are not near each other."
+}
+}
 
 /**
  * gradeAssignments()
@@ -127,7 +143,26 @@ function compareLocations(address1, address2) {}
     //>   },
     //> ];
  */
-function gradeAssignments(assignments) {}
+function gradeAssignments(assignments) {
+  for(let grade of assignments) {
+    if (grade.kind === 'PASS-FAIL'){
+      if (grade.score.received === grade.score.max){
+        grade.status = 'PASSED'
+      } else {
+        grade.status = 'FAILED'
+      }
+    } else if (grade.kind === 'PERCENTAGE') {
+      const gradeToPercent = (grade.score.received / grade.score.max) * 100;
+      if (gradeToPercent >= 80){
+        grade.status = `PASSED: ${(gradeToPercent.toFixed(1))}%`;
+      } else {
+        grade.status = `FAILED: ${(gradeToPercent.toFixed(1))}%`;
+      } 
+    } else {
+      grade.status = `SCORE: ${grade.score.received}/${grade.score.max}`
+    }
+  } return assignments;
+}
 
 /**
  * createLineOrder()
