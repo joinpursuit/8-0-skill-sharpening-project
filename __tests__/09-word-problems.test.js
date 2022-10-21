@@ -6,7 +6,7 @@ const {
   createLineOrder,
 } = require("../src/09-word-problems");
 
-describe.only("applyDiscount()", () => {
+describe("applyDiscount()", () => {
   test("should not apply any discount if the person does not meet the requirements", () => {
     const actual = applyDiscount(1000, 30, false);
     const expected = 1000;
