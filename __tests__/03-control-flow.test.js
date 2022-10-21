@@ -11,7 +11,7 @@ const {
   evenOrOddWithTernary,
 } = require("../src/03-control-flow");
 
-describe("isEqual()", () => {
+xdescribe("isEqual()", () => {
   test("returns true when numbers are equal", () => {
     expect(isEqual(-1, -1)).toEqual(true);
     expect(isEqual(0, 0)).toEqual(true);

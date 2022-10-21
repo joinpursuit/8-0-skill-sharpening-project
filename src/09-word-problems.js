@@ -80,7 +80,19 @@ function getCartTotal(products) {}
     compareLocations(address1, address2);
     //> "Same city."
  */
-function compareLocations(address1, address2) {}
+function compareLocations(address1, address2) {
+  if (address1.state === address2.state) {
+     if( (address1.city === address2.city) && (address1.zip === address2.zip)) {
+      if (address1.street === address2.street) {
+        return "Same building."
+      }
+      return "Same city."
+     }
+      return "Same state."
+  }
+  return "Addresses are not near each other."
+
+}
 
 /**
  * gradeAssignments()

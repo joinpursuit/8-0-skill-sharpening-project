@@ -188,7 +188,7 @@ describe("compareLocations()", () => {
   });
 });
 
-describe("gradeAssignments()", () => {
+describe.only("gradeAssignments()", () => {
   test("should, for PASS-FAIL assignments, add a `status` of PASSED if the `score.received` equals the `score.max", () => {
     const assignments = [{ kind: "PASS-FAIL", score: { received: 4, max: 4 } }];
     const actual = gradeAssignments(assignments);
