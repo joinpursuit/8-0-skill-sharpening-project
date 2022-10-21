@@ -178,7 +178,7 @@ function isFalsy(val) {
   } else {
     return false
   }
-
+}
 // Do not change the code below.
 module.exports = {
   getLengthOfString,
