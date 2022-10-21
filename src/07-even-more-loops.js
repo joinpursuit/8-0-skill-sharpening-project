@@ -12,7 +12,14 @@
  *  shoutForLoop([ "A", "Very", "Happy", "Array" ]);
  *  //> [ "A!", "Very!", "Happy!", "Array!" ];
  */
-function shoutForLoop(array) {}
+function shoutForLoop(array) {
+  let newArray = []
+  let symb = "!"
+  for (let i = 0; i < array.length; i ++) {
+    newArray.push(array[i].concat(symb))
+  }
+  return newArray
+}
 
 /**
  * shoutWhileLoop()
@@ -28,7 +35,16 @@ function shoutForLoop(array) {}
  *  shoutWhileLoop([ "A", "Very", "Happy", "Array" ]);
  *  //> [ "A!", "Very!", "Happy!", "Array!" ];
  */
-function shoutWhileLoop(array) {}
+function shoutWhileLoop(array) {
+  let newArray =[];
+  let symb = "!";
+  let i = 0;
+  while (i < array.length) {
+    newArray.push(array[i].concat(symb))
+    i++
+  }
+return newArray
+}
 
 /**
  * shoutForOfLoop()
@@ -126,7 +142,14 @@ function findLargest(array) {}
  *  findEqual([ 0, 11, -2, 5 ], 9);
  *  //> false
  */
-function findEqual(array, selected) {}
+function findEqual(array, selected) {
+  for (let i = 0; i < array.length; i++) {
+    if (array[i] === selected) {
+      return true
+    }
+  }
+  return false
+}
 
 /**
  * removeDuplicates()
@@ -143,7 +166,15 @@ function findEqual(array, selected) {}
  *  //> [ 1, 11, 2, 3, 4, 9 ]
  */
 
-function removeDuplicates(array) {}
+function removeDuplicates(array) {
+  let newArr = [];
+  for (let i = 0; i < array.length; i++) {
+    if (!newArr.includes(array[i])) {
+      newArr.push(array[i])
+    }
+  }
+  return newArr
+}
 
 // Do not change any code below this line.
 module.exports = {
