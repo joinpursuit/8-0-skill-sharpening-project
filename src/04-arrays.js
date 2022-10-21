@@ -126,7 +126,6 @@ function addElementToFrontOfArray(array, element) {
  */
 function removeElementFromFrontOfArray(array) {
   return array.shift(array[0]);
-  
 }
 
 /**

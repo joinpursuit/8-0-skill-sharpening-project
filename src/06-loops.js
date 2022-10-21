@@ -25,9 +25,7 @@ function rangeSum(min, max) {}
  *  rangeOdd(10, 15);
  *  //> [ 15, 13, 11 ]
  */
-function rangeOdd(min, max) {
-
-}
+function rangeOdd(min, max) {}
 
 /**
  * rangeEveryOther()
@@ -111,7 +109,6 @@ function targetCount(array, target) {
     times += 1
   }
     return times;
-  
 }
 
 /**

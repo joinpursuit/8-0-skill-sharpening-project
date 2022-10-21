@@ -159,9 +159,7 @@ function flipSign() {}
  *  joinStringsWithSpaces("left", "right", "up", "down", "away");
  *  //> "left right up down away"
  */
-function joinStringsWithSpaces() {
-
-}
+function joinStringsWithSpaces() {}
 
 /**
  * getFirstAndLastCharacter()
@@ -179,7 +177,6 @@ function joinStringsWithSpaces() {
  *  //> "us"
  */
 function getFirstAndLastCharacter(a) {
- 
   newString = a.charAt(0) + a.charAt(a.length-1)
   return newString
 }
