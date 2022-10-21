@@ -30,7 +30,8 @@ function createObjectWithValue(val) {
 }
 
 /**
- * createObjectWithKey() * ---------------------
+ * createObjectWithKey() 
+ * * ---------------------
  * Creates an object with the input as a key. The value can be anything.
  * @param {*} key
  * @returns {Object}
