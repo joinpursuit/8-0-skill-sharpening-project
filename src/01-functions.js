@@ -12,8 +12,9 @@
 function alwaysTrue() {
 return true
 }
-//dont need to use ===//
-
+//dont need to use === //
+//one return is fine //
+//Jyoti Singh
 /**
  * greet()
  * ---------------------
@@ -28,7 +29,9 @@ return true
  *  //> "Hello, Ian."
  */
 function greet(name) {
-  return `Hello, ${name}.`
+  return `Hello, ${name}.`;
+  // return "Hello, " + name + "." alternate method!
+  //Jyoti Singh
 }
 //be careful of punctuation
 /**
@@ -46,8 +49,11 @@ function greet(name) {
  */
 function add(a,b) {
   let sum = a + b;
-  return sum
+  return sum;
+  // return a +  b alternate method!
+  //Jyoti Singh
 }
+
 
 /**
  * multiply()
@@ -177,8 +183,9 @@ function joinStringsWithSpaces() {}
  *  //> "us"
  */
 function getFirstAndLastCharacter(a) {
-  return `${a[0]}${a[a.length-1]}`
-//no spaces!
+  return `${a[0]}${a[a.length - 1]}`;
+  //no spaces!
+  //Jyoti Singh
 }
 
 // Do not change the code below.

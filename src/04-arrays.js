@@ -112,6 +112,7 @@ function addElementToFrontOfArray(array, element) {
   array.unshift(element)
 return array;
 }
+//Jyoti Singh
 
 /**
  * removeElementFromFrontOfArray()
@@ -127,6 +128,7 @@ return array;
 function removeElementFromFrontOfArray(array) {
   return array.shift();
 }
+//Jyoti Singh
 
 /**
  * getMiddleElement()

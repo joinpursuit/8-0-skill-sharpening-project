@@ -19,8 +19,11 @@ function isEqual(a, b) {
     return true
   }
     return false
+ 
   }
+  //Jyoti Singh
 // no need for an else
+// return (a === b) ? true : false  ... solving with ternary method
 /**
  * findLarger()
  * ---------------------
@@ -156,7 +159,9 @@ function animalCounts(animal, numberOfAnimals) {
     return `${numberOfAnimals} ${animal}s`
   }
   return `${numberOfAnimals} ${animal}`;
+  // return (numberOfAnimals > 1) ? `${numberOfAnimals} ${animal}s` : `${numberOfAnimals} ${animal}` ... method using ternary operator
 }
+//Jyoti Singh
 
 /**
  * evenOrOdd()
@@ -180,6 +185,7 @@ function evenOrOdd(a) {
   // else if (a % 2 !==0){
     return "Odd"
   }
+  //Jyoti Singh
 // }
 //dont need the else if//
 
@@ -200,6 +206,7 @@ function evenOrOdd(a) {
 function evenOrOddWithTernary(a) {
   return a % 2 === 0? "Even" : "Odd"
 }
+//Jyoti Singh
 
 // Do not change any code below this line.
 module.exports = {

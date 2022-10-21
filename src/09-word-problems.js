@@ -27,15 +27,19 @@ function applyDiscount(priceInCents, age, hasMembership) {
 
   if (!hasMembership && (age <= 10 || age >= 65)){
     return priceInCents * 0.9
+    //10% discount
   }else if (hasMembership){
     if (age <= 10 || age >= 65)
       return priceInCents * 0.7
 
-    return priceInCents * 0.8
+      return priceInCents * 0.8
+    // 20% discount 
   } else {
     return priceInCents
+    //if there are no discounts just get regular price
 }
 }
+//Jyoti Singh
 /**
  * getCartTotal()
  * ---------------------
@@ -165,8 +169,7 @@ function gradeAssignments(assignments) {
    return assignments.map((a) => 
   ({...a,status: getStatus(a.kind, a.score.received, a.score.max),}));
 }
-
-    
+//Jyoti Singh
   
 
 

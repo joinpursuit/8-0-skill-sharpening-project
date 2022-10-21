@@ -48,6 +48,7 @@ function getFirstName(person) {}
 function getLastName(person) {
   return person.names.last
 }
+//Jyoti Singh
 
 /**
  * getAddressStreet()
@@ -63,6 +64,7 @@ function getLastName(person) {
 function getAddressStreet(person) {
   return person.address.street 
 }
+//Jyoti Singh
 
 /**
  * getCountOfPhoneNumbers()
@@ -78,6 +80,7 @@ function getAddressStreet(person) {
 function getCountOfPhoneNumbers(person) {
   return person.numbers.length
 }
+//Jyoti Singh
 
 /**
  * getFirstPhoneNumber()

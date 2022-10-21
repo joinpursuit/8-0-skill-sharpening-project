@@ -71,6 +71,7 @@ function containsWhileLoop(array, target) {
   }
   return false
 }
+//Jyoti Singh
 
 /**
  * containsForLoop()
@@ -100,6 +101,7 @@ function containsForLoop(array, target) {
   }
   return false;
 }
+//Jyoti Singh
 
 /**
  * targetCount()
@@ -114,12 +116,14 @@ function containsForLoop(array, target) {
  *  //> 2
  */
 function targetCount(array, target) {
-  let num = 0
-  for (i=0; i < array.length;i++){
-    if(target === array[i])
-    num++
+  let num = 0;
+  for (i = 0; i < array.length; i++) {
+    if (target === array[i]) num++;
+    //counting the target ^
   }
   return num;
+  //return the count of the target
+  //Jyoti Singh
 }
 
 /**

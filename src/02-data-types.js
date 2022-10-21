@@ -10,7 +10,8 @@
  *  //> 4
  */
 function getLengthOfString(str) {
-  return str.length
+  return str.length;
+  //Jyoti Singh
 }
 
 /**
@@ -24,7 +25,11 @@ function getLengthOfString(str) {
  *  convertToNumber("111");
  *  //> 111
  */
-function convertToNumber(val) {}
+function convertToNumber(val) {
+  return Number(val);
+  // return + val;    alternate method
+  //Jyoti Singh
+}
 
 /**
  * convertToString()
@@ -130,7 +135,8 @@ function isOdd(num) {}
  *  //> false
  */
 function isTruthy(val) {
-  return !!val 
+  return !!val;
+  //Jyoti Singh
 }
 
 /**
@@ -148,7 +154,8 @@ function isTruthy(val) {
  *  //> false
  */
 function isFalsy(val) {
-  return !val
+  return !val;
+  //Jyoti Singh
 }
 
 // Do not change the code below.

@@ -51,6 +51,7 @@ function shoutForOfLoop(array) {
   }
   return newArr
 }
+//Jyoti Singh
 
 /**
  * sumArray()
@@ -70,7 +71,7 @@ function sumArray(array) {
   }
   return sum;
 }
-
+//Jyoti Singh
 /**
  * oddArray()
  * ---------------------
@@ -91,6 +92,7 @@ function oddArray(array) {
   }
   return newArr;
 }
+//Jyoti Singh
 
 /**
  * evenArray()
