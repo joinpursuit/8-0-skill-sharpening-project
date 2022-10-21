@@ -9,7 +9,8 @@
  *  alwaysTrue();
  *  //> true
  */
-function alwaysTrue() {}
+function alwaysTrue() {
+}
 
 /**
  * greet()
@@ -24,7 +25,8 @@ function alwaysTrue() {}
  *  greet("Ian");
  *  //> "Hello, Ian."
  */
-function greet() {}
+function greet() {
+}
 
 /**
  * add()
@@ -39,7 +41,8 @@ function greet() {}
  *  add(10, 20);
  *  //> 30
  */
-function add() {}
+function add() {
+}
 
 /**
  * multiply()
@@ -54,7 +57,8 @@ function add() {}
  *  multiply(2, 5);
  *  //> 10
  */
-function multiply() {}
+function multiply() {
+}
 
 /**
  * average()
@@ -74,7 +78,8 @@ function multiply() {}
  *  average(10, 6);
  *  //> 8 // 10 + 6 = 16; 16/2 = 8;
  */
-function average() {}
+function average() {
+}
 
 /**
  * averageThree()
@@ -93,7 +98,8 @@ function average() {}
  *  averageThree(10, 11, 19);
  *  //> 10 // 10 + 11 + 19 = 30; 30 / 3 = 10;
  */
-function averageThree() {}
+function averageThree() {
+}
 
 /**
  * compareTypes()
@@ -112,7 +118,8 @@ function averageThree() {}
  *  compareTypes("left", 10);
  *  //> false
  */
-function compareTypes() {}
+function compareTypes() {
+}
 
 /**
  * flipSign()
@@ -131,7 +138,8 @@ function compareTypes() {}
  *  flipSign(50);
  *  //> -50
  */
-function flipSign() {}
+function flipSign() {
+}
 
 /**
  * joinStringsWithSpaces()
@@ -151,7 +159,8 @@ function flipSign() {}
  *  joinStringsWithSpaces("left", "right", "up", "down", "away");
  *  //> "left right up down away"
  */
-function joinStringsWithSpaces() {}
+function joinStringsWithSpaces() {
+}
 
 /**
  * getFirstAndLastCharacter()
@@ -168,7 +177,8 @@ function joinStringsWithSpaces() {}
  *  getFirstAndLastCharacter("upwards");
  *  //> "us"
  */
-function getFirstAndLastCharacter() {}
+function getFirstAndLastCharacter() {
+}
 
 // Do not change the code below.
 module.exports = {
