@@ -107,9 +107,9 @@ function checkIfCharacterIsInString(text, character) {
  *  isEven(11);
  *  //> false
  */
-
-function isEven(num) {}
-
+function isEven(num) {
+  return num % 2 === 0
+}
 
 /**
  * isOdd()
@@ -125,9 +125,9 @@ function isEven(num) {}
  *  isOdd(11);
  *  //> true
  */
-
-function isOdd(num) {}
-
+function isOdd(num) {
+  return num % 2 === 1
+}
 
 /**
  * isTruthy()
@@ -143,8 +143,9 @@ function isOdd(num) {}
  *  isTruthy(null);
  *  //> false
  */
-
-function isTruthy(val) {}
+function isTruthy(val) {
+  return !!val
+}
 
 /**
  * isFalsy()

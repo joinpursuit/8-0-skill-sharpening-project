@@ -47,7 +47,9 @@ return person.names.first
  *  getLastName(person);
  *  //> "Rojas"
  */
-function getLastName(person) {}
+function getLastName(person) {
+  return person.names.last
+}
 
 /**
  * getAddressStreet()
@@ -60,7 +62,9 @@ function getLastName(person) {}
  *  getAddressStreet(person);
  *  //> "697 Pine Drive"
  */
-function getAddressStreet(person) {}
+function getAddressStreet(person) {
+  return person.address.street
+}
 
 /**
  * getCountOfPhoneNumbers()
@@ -73,7 +77,9 @@ function getAddressStreet(person) {}
  *  getCountOfPhoneNumbers(person);
  *  //> 2
  */
-function getCountOfPhoneNumbers(person) {}
+function getCountOfPhoneNumbers(person) {
+  return person.numbers.length
+}
 
 /**
  * getFirstPhoneNumber()
@@ -167,9 +173,9 @@ function getFullAddress(person) {
  * getFlatObject()
  * ---------------------
  * Create a new object where all of the keys from the `names` and `address` objects are in the same object. You may leave the `numbers` array as is.
- * @param {Object} person 
+ * @param {Object} person
  * @returns {Object}
- * 
+ *
  * EXAMPLE:
  *  getFlatObject(person);
  *  //> {
@@ -191,7 +197,7 @@ function getFlatObject(person) {
   Object.assign(newobj,names,address)
   newobj.numbers=person.numbers
   return newobj
-  
+
 
 }
 

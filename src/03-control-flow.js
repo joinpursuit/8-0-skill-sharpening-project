@@ -49,9 +49,7 @@ function findLarger(a, b) {
  *  findLargerOrTie(0, 0);
  *  //> "tie"
  */
-function findLargerOrTie(a, b) {
-
-}
+function findLargerOrTie(a, b) {}
 
 /**
  * positiveNegativeOrZero()
@@ -142,7 +140,7 @@ function aroundTheWorldGreetingWithSwitch(language) {
     case "german":
       return "Hallo Welt"
       break;
-    default: 
+    default:
     return "Hello World"
   }
 }
@@ -164,7 +162,19 @@ function aroundTheWorldGreetingWithSwitch(language) {
  *  calculateLetterGrade(99);
  *  //> "A"
  */
-function calculateLetterGrade(grade) {}
+function calculateLetterGrade(grade) {
+   if (grade >= 90) 
+   return "A"
+   else if (grade >= 80)
+   return "B"
+   else if (grade >= 70)
+   return "C"
+   else if (grade >= 60)
+   return "D"
+   else 
+   return "F"
+   
+}
 
 /**
  * animalCounts()
@@ -182,7 +192,12 @@ function calculateLetterGrade(grade) {}
  *  animalCounts("pig", 1);
  *  //> "1 pig"
  */
-function animalCounts(animal, numberOfAnimals) {}
+function animalCounts(animal, numberOfAnimals) {
+  if (numberOfAnimals === 1)
+  return `${numberOfAnimals} ${animal}`
+  else
+  return `${numberOfAnimals} ${animal}s`
+}
 
 /**
  * evenOrOdd()
@@ -199,7 +214,12 @@ function animalCounts(animal, numberOfAnimals) {}
  *  evenOrOdd(48);
  *  //> "Even"
  */
-function evenOrOdd(a) {}
+function evenOrOdd(a) {
+  if (a%2===0)
+  return "Even"
+  else
+  return "Odd"
+}
 
 /**
  * evenOrOddWithTernary()
