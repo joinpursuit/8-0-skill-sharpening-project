@@ -58,12 +58,14 @@ function rangeOdd(min, max) {
  */
 function rangeEveryOther(min, max) {
   let output = [];
-  for (let i = min; i <= max; i++) {
-    output.push(i);
-    console.log(output);
-   
+  for (let i = min; i <= max; i+=2) {
+    output.push(i)
+   // i++ incrementing i by one again
+    
+    // if ( i % 2 !== 0) {
+    //   output.pop();
+    // } 
   }
-  
   return output;
 }
 
@@ -120,10 +122,11 @@ function containsWhileLoop(array, target) {
  */
 function containsForLoop(array, target) {
   for (let i = 0; i < array.length; i++) {
-    if (array[i] === target ) {
+    if (array[i] === target) {
       return true;
-    } 
-  } return false
+    }
+  }
+  return false;
 }
 
 /**
@@ -167,13 +170,12 @@ function targetCount(array, target) {
  *  //> -1
  */
 function firstIndexFound(array, target) {
-
   for (let i = 0; i < array.length; i++) {
-    if(array[i] === target) {
-      return i
-    } 
+    if (array[i] === target) {
+      return i;
+    }
   }
-  return - 1
+  return -1;
 }
 
 /**
@@ -195,7 +197,12 @@ function firstIndexFound(array, target) {
  *  //> -1
  */
 function lastIndexFound(array, target) {
-  //for loop
+  for (let i = array.length - 1; i >= 0; i--) {
+    if (array[i] === target) {
+      return i;
+    }
+  }
+  return  -1
 }
 
 /**
@@ -211,13 +218,13 @@ function lastIndexFound(array, target) {
  *  //> [ 0, 10, 22 ]
  */
 function timesIndex(array) {
-  let output = []
-  let total = 0
-  // for (let i = 0; i < array.length; i++) {
-  //   total *= i
-  //   array.push(total)
-  // }
-  // return output
+  let output = [];
+  let total = 0;
+  for (let i = 0; i < array.length; i++) {
+    total = array[i] * i;
+    output.push(total);
+  }
+  return output;
 }
 
 /**
@@ -232,7 +239,15 @@ function timesIndex(array) {
  *  //> [ 5, 5 + 2, 5 + 2 + 9 ]
  *  //> [ 5, 7, 16 ]
  */
-function cumulativeSum(array) {}
+function cumulativeSum(array) {
+  let output = [];
+  let sum = 0;
+  for (let i = 0; i < array.length; i++) {
+    sum += array[i];
+    output.push(sum);
+  }
+  return output;
+}
 
 // Do not change anything below this line.
 module.exports = {
