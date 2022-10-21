@@ -154,7 +154,9 @@ function findLargest(array) {
  *  findEqual([ 0, 11, -2, 5 ], 9);
  *  //> false
  */
-function findEqual(array, selected) {}
+function findEqual(array, selected) {
+  
+}
 
 /**
  * removeDuplicates()
@@ -171,16 +173,7 @@ function findEqual(array, selected) {}
  *  //> [ 1, 11, 2, 3, 4, 9 ]
  */
 
-function removeDuplicates(array) {
-  let newArr = [];
-  for (let element of array) {
-    if(!array.includes(element)){
-      newArr.push(element)
-    }
-    return newArr;   
-}
-
-  }//SC420
+function removeDuplicates(array) {}
 
 
 // Do not change any code below this line.
