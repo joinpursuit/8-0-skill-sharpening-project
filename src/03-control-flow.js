@@ -49,7 +49,12 @@ function findLarger(a, b) {
  *  findLargerOrTie(0, 0);
  *  //> "tie"
  */
-function findLargerOrTie(a, b) {}
+function findLargerOrTie(a, b) {
+  if (a===b) {
+    return "tie"
+  }
+  return Math.max(a,b)
+}
 
 /**
  * positiveNegativeOrZero()

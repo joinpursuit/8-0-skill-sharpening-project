@@ -41,7 +41,7 @@ function convertToNumber(val) {
  *  //> "99"
  */
 function convertToString(val) {
-
+  return val.toString()
 }
 
 /**
