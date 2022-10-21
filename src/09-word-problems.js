@@ -19,7 +19,12 @@
  *  applyDiscount(1000, 9, true);
  *  //> 700
  */
-function applyDiscount(priceInCents, age, hasMembership) {}
+function applyDiscount(priceInCents, age, hasMembership) {
+  let totalDiscount = 0;
+  ((age <= 10) || (age >= 65)) ? totalDiscount+= 0.1 : 0;
+  hasMembership ? totalDiscount += 0.2 : 0;
+  return (priceInCents * (1 - totalDiscount));
+}
 
 /**
  * getCartTotal()
@@ -40,7 +45,13 @@ function applyDiscount(priceInCents, age, hasMembership) {}
     getCartTotal(cart);
  *  //> "$30.00"
  */
-function getCartTotal(products) {}
+function getCartTotal(products) {
+  let chipmunk = 0;
+  for (let nut of products) {
+    chipmunk += nut.priceInCents * nut.quantity;
+  }
+   return `$${(chipmunk/100).toFixed(2)}`;
+}
 
 /**
  * compareLocations()
@@ -80,7 +91,19 @@ function getCartTotal(products) {}
     compareLocations(address1, address2);
     //> "Same city."
  */
-function compareLocations(address1, address2) {}
+function compareLocations(address1, address2) {
+  let streetM = address1.street === address2.street;
+  let cityM = address1.city === address2.city;
+  let stateM = address1.state === address2.state;
+  let zipM = address1.state === address2.state;
+  let retString = "Addresses are not near each other.";
+  stateM ? retString = "Same state." : 0;
+  if (cityM && stateM && zipM) {
+    retString = "Same city."
+    streetM ? retString = "Same building." : 0;
+  }
+  return retString;
+}
 
 /**
  * gradeAssignments()
@@ -127,7 +150,21 @@ function compareLocations(address1, address2) {}
     //>   },
     //> ];
  */
-function gradeAssignments(assignments) {}
+function gradeAssignments(assignments) {
+  let hamsterKind = "";
+  for (let nut of assignments) {
+    if (nut.kind === "PASS-FAIL") {
+      nut.score.received === nut.score.max ? nut.status = "PASSED" : nut.status = "FAILED";
+    } else if (nut.kind === "PERCENTAGE") {
+      let nutScore = ((nut.score.received / nut.score.max)*100).toFixed(1);
+      let nutCriteria = 80;
+      nutScore >= nutCriteria ? nut.status = `PASSED: ${nutScore}%` : nut.status = `FAILED: ${nutScore}%`
+    } else {
+      nut.status = `SCORE: ${nut.score.received}/${nut.score.max}`
+    }
+  }
+  return assignments;
+}
 
 /**
  * createLineOrder()
@@ -152,7 +189,15 @@ function gradeAssignments(assignments) {}
     createLineOrder(people);
     //> [ "Ray Anderson", "America Marsh", "Wade Carson", "Patience Patel" ]
  */
-function createLineOrder(people) {}
+function createLineOrder(people) {
+  let regularChipmunk = [];
+  let fancyChipmunk = [];
+  let coolNutCount = 0;
+   for (let nut of people) {
+    nut.hasMembership ? fancyChipmunk.push(nut.name) : regularChipmunk.push(nut.name);
+   }
+   return fancyChipmunk.concat(regularChipmunk)
+}
 
 module.exports = {
   applyDiscount,
