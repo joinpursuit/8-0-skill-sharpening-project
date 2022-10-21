@@ -9,7 +9,18 @@
  *  alwaysTrue();
  *  //> true
  */
-function alwaysTrue() {}
+function alwaysTrue() {
+  return true;
+}
+
+
+
+// if (true === true) {
+//   return true
+// } else if {
+//   if(true === false) {
+//   return false
+// }
 
 /**
  * greet()
@@ -24,9 +35,12 @@ function alwaysTrue() {}
  *  greet("Ian");
  *  //> "Hello, Ian."
  */
-function greet() {}
+function greet(name) {
+  //return "Hello," + name + "."
+  return `Hello, ` + name + `.`;
+}
 
-/**
+/** 
  * add()
  * ---------------------
  * Adds two numbers together and returns the sum.
@@ -39,7 +53,9 @@ function greet() {}
  *  add(10, 20);
  *  //> 30
  */
-function add() {}
+function add(a, b) {
+  return a + b;
+}
 
 /**
  * multiply()
@@ -54,7 +70,9 @@ function add() {}
  *  multiply(2, 5);
  *  //> 10
  */
-function multiply() {}
+function multiply(a, b) {
+  return a * b
+}
 
 /**
  * average()
@@ -74,7 +92,12 @@ function multiply() {}
  *  average(10, 6);
  *  //> 8 // 10 + 6 = 16; 16/2 = 8;
  */
-function average() {}
+function average(a, b) {
+  //const result = [ ];
+  const arr = [a, b];
+  const average = arr.reduce((a, b) => a + b, 0) / arr.length;
+  return average
+}
 
 /**
  * averageThree()
@@ -93,7 +116,10 @@ function average() {}
  *  averageThree(10, 11, 19);
  *  //> 10 // 10 + 11 + 19 = 30; 30 / 3 = 10;
  */
-function averageThree() {}
+function averageThree(a, b, c) {
+  const average = (a + b + c) / 3;
+  return average
+}
 
 /**
  * compareTypes()
@@ -109,10 +135,29 @@ function averageThree() {}
  *  compareTypes("left", "right");
  *  //> true
  *
- *  compareTypes("left", 10);
+ *  compareTypes("left", 10)
  *  //> false
  */
-function compareTypes() {}
+function compareTypes(a, b) {
+  if (typeof a == typeof b)
+    return true
+  else (typeof a !== typeof b)
+  return false
+
+
+}
+
+
+
+
+//Brainstorm---V
+//  const index = (a, b)
+//   const result = (typeof index === 'number');
+//   Object.is(a, b);
+//   return typeof 
+
+
+
 
 /**
  * flipSign()
@@ -131,8 +176,14 @@ function compareTypes() {}
  *  flipSign(50);
  *  //> -50
  */
-function flipSign() {}
+function flipSign(a) {
 
+  return a *= -1
+}
+//Brainstorming ---V
+//return Math.abs(a)//>positive
+//return Math.abs(-a)//>positive
+//return Math.abs(-(a))//>positive
 /**
  * joinStringsWithSpaces()
  * ---------------------
@@ -151,7 +202,18 @@ function flipSign() {}
  *  joinStringsWithSpaces("left", "right", "up", "down", "away");
  *  //> "left right up down away"
  */
-function joinStringsWithSpaces() {}
+function joinStringsWithSpaces(a, b, c, d, e) {
+
+  return `${a} ${b} ${c} ${d} ${e}`
+  //return ['a', 'b', 'c', 'd', 'e'].join()
+
+}
+//Brainstorming Attempt---V
+//const result = ["a ", "b ", "c ", "d ", "e"].join(" ");
+//`${a, b, c, d, e}`
+//return 
+//["a ", "b ", "c ", "d ", "e"].join(" ");
+//return result
 
 /**
  * getFirstAndLastCharacter()
@@ -168,8 +230,14 @@ function joinStringsWithSpaces() {}
  *  getFirstAndLastCharacter("upwards");
  *  //> "us"
  */
-function getFirstAndLastCharacter() {}
+function getFirstAndLastCharacter(a) {
+  return a[0] + a[a.length - 1]
 
+}
+//`${a[0]}${a.length - }`
+//getFirstAndLastCharacter(a.length - 1)
+
+// `${a[0]}${a.length - 1}`
 // Do not change the code below.
 module.exports = {
   alwaysTrue,

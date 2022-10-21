@@ -9,10 +9,56 @@
  * EXAMPLE:
  *  rangeSum(3, 7);
  *  //> 25
- *  (3 + 4 + 5 + 6 + 7 = 25)
+ *  (3 + 4 + 5 + 6 + 7 = 25)//add to the 
  */
-function rangeSum(min, max) {}
+function rangeSum(min, max) {
+  //const result = { number }
+  let i = min;
+  let arr = [];
 
+
+  while (min <= max) {
+    arr.push(max)
+    min++
+  }
+  return min;
+
+
+}
+
+//Brainstorming--V 
+
+
+// // //const result = newSum;
+// const newSum = 0;
+// for (let i = 0; i < arr.length; i++) {
+//   newSum += Math.max(arr[i]) + Math.min(arr[i]);
+// }
+// return newSum
+
+// min = arr[0];
+// max = arr[1];
+// if (arr[0] > arr[1]) {
+//   min = arr[1];
+//   max = arr[0]
+// }
+// return result
+
+// while (min <= max) {
+//   result.push(min)
+//   min++
+// }
+// return result;
+
+//let sum = 0;
+// for (let i = 0; i < arr.length; i++) {
+//   sum += Math.max(arr[i]) + Math.min(arr[i]);
+
+// }
+// return sum 
+
+//pass the test but not a loop =>return (max - min + 1) * (min + max) / 2
+//how many # there are^____how many in the middle^
 /**
  * rangeOdd()
  * ---------------------
@@ -25,8 +71,29 @@ function rangeSum(min, max) {}
  *  rangeOdd(10, 15);
  *  //> [ 15, 13, 11 ]
  */
-function rangeOdd(min, max) {}
 
+//hit every other number
+function rangeOdd(min, max) {
+  // const result = [];
+  // let i = min % 2 ? min : ++min;
+  // while (i <= max) {
+  //   return i
+  // }
+  // return result
+}
+//Brainstorming----V
+// let oddNums = [];
+// for (let i = 0; i < array.length; i++) {
+//   if (array[i] % 2 !== 0) {
+//     oddNums.push(array[i]);
+//   }
+// }
+// oddNums = oddNums.sort((min, max) => min - max);
+// array.concatI(oddNums);
+// array = array.sort((min, max) => a - b);
+// return []
+
+//arr.sort((min, max) => min % 2 && max % 2 ? min - max : 0)
 /**
  * rangeEveryOther()
  * ---------------------
@@ -39,7 +106,7 @@ function rangeOdd(min, max) {}
  *  rangeEveryOther(11, 18);
  *  //> [ 11, 13, 15, 17 ]
  */
-function rangeEveryOther(min, max) {}
+function rangeEveryOther(min, max) { }
 
 /**
  * containsWhileLoop()
@@ -61,7 +128,7 @@ function rangeEveryOther(min, max) {}
  *  containsWhileLoop([ "left", "up", "right" ], "down");
  *  //> false
  */
-function containsWhileLoop(array, target) {}
+function containsWhileLoop(array, target) { }
 
 /**
  * containsForLoop()
@@ -83,7 +150,7 @@ function containsWhileLoop(array, target) {}
  *  containsForLoop([ "left", "up", "right" ], "down");
  *  //> false
  */
-function containsForLoop(array, target) {}
+function containsForLoop(array, target) { }
 
 /**
  * targetCount()
@@ -97,7 +164,7 @@ function containsForLoop(array, target) {}
  *  targetCount([ 10, 20, 10, 20, 30 ], 10);
  *  //> 2
  */
-function targetCount(array, target) {}
+function targetCount(array, target) { }
 
 /**
  * firstIndexFound()
@@ -117,7 +184,7 @@ function targetCount(array, target) {}
  *  firstIndexFound([ "left", "right", "left" ], "up");
  *  //> -1
  */
-function firstIndexFound(array, target) {}
+function firstIndexFound(array, target) { }
 
 /**
  * lastIndexFound()
@@ -137,7 +204,7 @@ function firstIndexFound(array, target) {}
  *  lastIndexFound([ "left", "right", "left" ], "up");
  *  //> -1
  */
-function lastIndexFound(array, target) {}
+function lastIndexFound(array, target) { }
 
 /**
  * timesIndex()
@@ -151,7 +218,7 @@ function lastIndexFound(array, target) {}
  *  //> [ 7 * 0, 10 * 1, 11 * 2 ]
  *  //> [ 0, 10, 22 ]
  */
-function timesIndex(array) {}
+function timesIndex(array) { }
 
 /**
  * cumulativeSum()
@@ -165,7 +232,7 @@ function timesIndex(array) {}
  *  //> [ 5, 5 + 2, 5 + 2 + 9 ]
  *  //> [ 5, 7, 16 ]
  */
-function cumulativeSum(array) {}
+function cumulativeSum(array) { }
 
 // Do not change anything below this line.
 module.exports = {
