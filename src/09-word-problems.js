@@ -80,7 +80,10 @@ function getCartTotal(products) {}
     compareLocations(address1, address2);
     //> "Same city."
  */
-function compareLocations(address1, address2) {}
+  function compareLocations(address1, address2) {}
+  
+ 
+    
 
 /**
  * gradeAssignments()
