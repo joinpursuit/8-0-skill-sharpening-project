@@ -117,7 +117,7 @@ describe("lastIndexFound", () => {
   });
 });
 
-describe.only("timesIndex", () => {
+describe("timesIndex", () => {
   test("returns new array with each element multiplied by its index", () => {
     expect(timesIndex([2, 2, 2])).toEqual([0, 2, 4]);
     expect(timesIndex([1, 2, 3, 4, 5])).toEqual([0, 2, 6, 12, 20]);

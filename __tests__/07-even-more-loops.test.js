@@ -123,7 +123,7 @@ describe("findEqual()", () => {
   });
 });
 
-describe.only("removeDuplicates", () => {
+describe("removeDuplicates", () => {
   test("returns an array without any of the duplicates", () => {
     expect(removeDuplicates([4, 2, 6, 2, 2, 6, 4, 9, 2, 1])).toEqual([
       4, 2, 6, 9, 1,
