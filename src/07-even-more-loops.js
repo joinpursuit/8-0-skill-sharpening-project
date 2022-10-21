@@ -12,7 +12,12 @@
  *  shoutForLoop([ "A", "Very", "Happy", "Array" ]);
  *  //> [ "A!", "Very!", "Happy!", "Array!" ];
  */
-function shoutForLoop(array) {}
+function shoutForLoop(array) {
+  let newArr = [];
+  for (i = 0 ; i < array.length ; i++){
+    newArr.push(array[i]+'!');
+  } return newArr;
+}
 
 /**
  * shoutWhileLoop()
@@ -28,7 +33,14 @@ function shoutForLoop(array) {}
  *  shoutWhileLoop([ "A", "Very", "Happy", "Array" ]);
  *  //> [ "A!", "Very!", "Happy!", "Array!" ];
  */
-function shoutWhileLoop(array) {}
+function shoutWhileLoop(array) {
+  let newArr = [];
+  let i = 0; 
+  while (i < array.length) {
+   newArr.push(array[i]+'!');
+   i++ ; 
+  } return newArr;
+}
 
 /**
  * shoutForOfLoop()
@@ -44,7 +56,14 @@ function shoutWhileLoop(array) {}
  *  shoutForOfLoop([ "A", "Very", "Happy", "Array" ]);
  *  //> [ "A!", "Very!", "Happy!", "Array!" ];
  */
-function shoutForOfLoop(array) {}
+function shoutForOfLoop(array) {
+  let newArr = [];
+  let i = 0; 
+  for (let val of array) {
+  newArr.push(array[i]+'!');
+  i++ 
+  } return newArr;
+}
 
 /**
  * sumArray()
@@ -52,12 +71,19 @@ function shoutForOfLoop(array) {}
  * Returns the sum of all values in the array.
  * @param {number[]} array
  * @returns {number}
- *
+ * 
  * EXAMPLE:
  *  sumArray([ 10, 0, 10, 11 ]);
  *  //> 31
  */
 function sumArray(array) {}
+ 
+ 
+  /* let sum = 0;
+  for (i=0; i<array.length; i++ ){
+    sum += array[i];
+  } return sum 
+}
 
 /**
  * oddArray()
@@ -97,7 +123,6 @@ function evenArray(array) {}
  *  //> -2
  */
 function findSmallest(array) {}
-
 /**
  * findLargest()
  * ---------------------
@@ -143,7 +168,13 @@ function findEqual(array, selected) {}
  *  //> [ 1, 11, 2, 3, 4, 9 ]
  */
 
-function removeDuplicates(array) {}
+function removeDuplicates(array) {
+  let newArr = [];
+  for (let element of array){
+if (!newArr.includes(element)){
+newArr.push(element);
+}} return newArr
+}
 
 // Do not change any code below this line.
 module.exports = {
