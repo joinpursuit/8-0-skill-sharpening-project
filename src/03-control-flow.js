@@ -14,7 +14,14 @@
  *  isEqual(10, "10");
  *  //> false
  */
-function isEqual(a, b) {}
+function isEqual(a, b) {
+  if (a === b) {
+  return true;
+} else if (a !== b) {
+  return false;
+}
+
+}// end of function 
 
 /**
  * findLarger()
@@ -28,7 +35,13 @@ function isEqual(a, b) {}
  *  findLarger(19, 7);
  *  //> 19
  */
-function findLarger(a, b) {}
+function findLarger(a, b) {
+  if (a > b){
+    return a; 
+ } else {
+  return b;
+ }
+  }// end of function
 
 /**
  * findLargerOrTie()
@@ -45,7 +58,18 @@ function findLarger(a, b) {}
  *  findLargerOrTie(0, 0);
  *  //> "tie"
  */
-function findLargerOrTie(a, b) {}
+function findLargerOrTie(a, b) {
+  if (a > b){
+    return a;
+  } else {
+    if (a < b)
+    return b; 
+ }
+    if (a === b) {
+      return "tie"
+    }
+  }// end of function
+
 
 /**
  * positiveNegativeOrZero()
@@ -110,6 +134,7 @@ function aroundTheWorldGreeting(language) {}
  *  //> "Hello World"
  */
 function aroundTheWorldGreetingWithSwitch(language) {}
+   
 
 /**
  * calculateLetterGrade()
