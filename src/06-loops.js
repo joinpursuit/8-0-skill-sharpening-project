@@ -125,7 +125,6 @@ function targetCount(array, target) {}
  */
 function firstIndexFound(array, target) {}
 
-
 /**
  * lastIndexFound()
  * ---------------------
