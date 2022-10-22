@@ -148,7 +148,7 @@ describe("removeElementFromFrontOfArray()", () => {
   });
 });
 
-describe.only("getMiddleElement()", () => {
+describe("getMiddleElement()", () => {
   test("should return the middle element of the array", () => {
     const actual = getMiddleElement(["first", "middle", "last"]);
     const expected = "middle";

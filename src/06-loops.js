@@ -166,7 +166,24 @@ function containsForLoop(array, target) {
  *  targetCount([ 10, 20, 10, 20, 30 ], 10);
  *  //> 2
  */
-function targetCount(array, target) {}
+function targetCount(array, target) {
+
+  let numTarget = 0
+
+  for(let i = 0; i < array.length; i++){
+
+    if(array[i] === target){
+
+      numTarget += 1
+    
+    }  
+  }
+
+  return numTarget
+
+}
+
+//
 
 /**
  * firstIndexFound()
@@ -186,7 +203,23 @@ function targetCount(array, target) {}
  *  firstIndexFound([ "left", "right", "left" ], "up");
  *  //> -1
  */
-function firstIndexFound(array, target) {}
+function firstIndexFound(array, target) {
+
+  let notFound = -1
+
+  for(let i = 0; i < array.length; i++){
+
+    if(array[i] === target){
+
+      return i
+    
+    }
+  
+  
+  }
+
+}
+  
 
 /**
  * lastIndexFound()
@@ -206,7 +239,10 @@ function firstIndexFound(array, target) {}
  *  lastIndexFound([ "left", "right", "left" ], "up");
  *  //> -1
  */
-function lastIndexFound(array, target) {}
+function lastIndexFound(array, target) {
+
+
+}
 
 /**
  * timesIndex()
@@ -234,7 +270,15 @@ function timesIndex(array) {}
  *  //> [ 5, 5 + 2, 5 + 2 + 9 ]
  *  //> [ 5, 7, 16 ]
  */
-function cumulativeSum(array) {}
+function cumulativeSum(array) {
+
+  let newArray = []
+
+  for(let i = 0; i < array.length; i++){
+
+    array[i] = 
+  }
+}
 
 // Do not change anything below this line.
 module.exports = {
