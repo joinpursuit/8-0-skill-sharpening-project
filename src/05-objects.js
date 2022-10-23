@@ -9,7 +9,9 @@
  *  createEmptyObject()
  *  //> {}
  */
-function createEmptyObject() {}
+function createEmptyObject() {
+  return {}
+}
 
 /**
  * createObjectWithValue()
@@ -22,7 +24,9 @@ function createEmptyObject() {}
  *  createObjectWithValue(19);
  *  //> { whateverKey: 19 }
  */
-function createObjectWithValue(val) {}
+function createObjectWithValue(val) {
+  return {Knicks : val}
+}
 
 /**
  * createObjectWithKey()
@@ -35,7 +39,11 @@ function createObjectWithValue(val) {}
  *  createObjectWithKey("left");
  *  //> { left: false }
  */
-function createObjectWithKey(key) {}
+function createObjectWithKey(key) {
+  let team = {}
+  team[key] = 0
+  return team
+}
 
 /**
  * createObjectWithKeyValuePair()
@@ -49,7 +57,11 @@ function createObjectWithKey(key) {}
  *  createObjectWithKeyValuePair("left", "right");
  *  //> { left: "right" }
  */
-function createObjectWithKeyValuePair(key, val) {}
+function createObjectWithKeyValuePair(key, val) {
+  let team = {}
+  team[key] = val//creates the inputs as a key-value pair
+  return team;
+}
 
 /**
  * getNameFromObject()
@@ -62,7 +74,10 @@ function createObjectWithKeyValuePair(key, val) {}
  *  getNameFromObject({ name: "Jay" });
  *  //> "Jay"
  */
-function getNameFromObject(object) {}
+function getNameFromObject(object) {
+  [key] = object
+  return key.object;
+}
 
 /**
  * getAgeFromObject()
@@ -132,7 +147,10 @@ function addKeyValuePairToObject(object, key, val) {}
  *  deleteKeyFromObject({ left: true, right: false }, "left");
  *  //> { right: false }
  */
-function deleteKeyFromObject(object, key) {}
+function deleteKeyFromObject(object, key) {
+  delete object.key
+  return (Object.entries(key))
+}
 
 // Do not change any code below this line.
 module.exports = {
