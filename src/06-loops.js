@@ -134,7 +134,12 @@ function containsForLoop(array, target) {
  *  //> 2
  */
 function targetCount(array, target) {
-  
+  let targetCnt = 0
+  for(i=0; i < array.length; i++){
+    if (array[i] === target){
+      targetCnt ++
+    }
+  }return targetCnt
 }
 
 /**
@@ -155,7 +160,15 @@ function targetCount(array, target) {
  *  firstIndexFound([ "left", "right", "left" ], "up");
  *  //> -1
  */
-function firstIndexFound(array, target) {}
+function firstIndexFound(array, target) {
+  firstIndex = 0
+  for(i = 0; i <array.length; i++){
+    if (array[i] === target){
+      firstIndex = i
+      return firstIndex
+    }
+  } return -1
+}
 
 /**
  * lastIndexFound()
@@ -175,7 +188,15 @@ function firstIndexFound(array, target) {}
  *  lastIndexFound([ "left", "right", "left" ], "up");
  *  //> -1
  */
-function lastIndexFound(array, target) {}
+function lastIndexFound(array, target) {
+  let lastIndex = 0
+  for(i= array.length; i >0; i--){
+    if (array[i] === target){
+      lastIndex = i
+      return lastIndex
+    }
+  }return -1
+}
 
 /**
  * timesIndex()
@@ -189,7 +210,12 @@ function lastIndexFound(array, target) {}
  *  //> [ 7 * 0, 10 * 1, 11 * 2 ]
  *  //> [ 0, 10, 22 ]
  */
-function timesIndex(array) {}
+function timesIndex(array) {
+  multiIindex = []
+  for (i=0; i<array.length; i++){
+    multiIindex.push(array[i]* i)
+  }return multiIindex
+}
 
 /**
  * cumulativeSum()
@@ -203,7 +229,14 @@ function timesIndex(array) {}
  *  //> [ 5, 5 + 2, 5 + 2 + 9 ]
  *  //> [ 5, 7, 16 ]
  */
-function cumulativeSum(array) {}
+function cumulativeSum(array) {
+  newArray = []
+  newNumber = 0
+  for(i=0; i < array.length;i++){
+    newNumber += array[i]
+    newArray.push(newNumber)
+  }return newArray
+}
 
 // Do not change anything below this line.
 module.exports = {
