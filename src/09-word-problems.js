@@ -21,7 +21,10 @@
  */
 function applyDiscount(priceInCents, age, hasMembership) {
   let discountPrice = 0;
-  if (hasMembership === true && age <= 10 || age >= 65 && hasMembership === true) {
+  if (
+    (hasMembership === true && age <= 10) ||
+    (age >= 65 && hasMembership === true)
+  ) {
     discountPrice = priceInCents - priceInCents * 0.3;
   } else if (age <= 10 || age >= 65) {
     discountPrice = priceInCents - priceInCents * 0.1;
@@ -53,9 +56,11 @@ function applyDiscount(priceInCents, age, hasMembership) {
  *  //> "$30.00"
  */
 function getCartTotal(products) {
-  
-  console.log(products)
-
+  let total = 0;
+    products.forEach((el) => {
+    total += el.priceInCents * el.quantity * 0.01;
+  });
+  return `$${total.toFixed(2)}`;
 }
 
 /**
@@ -96,7 +101,18 @@ function getCartTotal(products) {
     compareLocations(address1, address2);
     //> "Same city."
  */
-function compareLocations(address1, address2) {}
+function compareLocations(address1, address2) {
+  if (address1.street === address2.street && address1.city === address2.city && address1.state === address2.state && address1.zip === address2.zip) {
+    return "Same building."
+  } else if (address1.street !== address2.street && address1.city === address2.city && address1.state === address2.state && address1.zip === address2.zip) {
+    return "Same city."
+  } else if (address1.street !== address2.street && address1.city !== address2.city && address1.state === address2.state && address1.zip === address2.zip) {
+    return "Same state."
+  } else {
+    return "Addresses are not near each other."
+  }
+
+}
 
 /**
  * gradeAssignments()
@@ -143,7 +159,9 @@ function compareLocations(address1, address2) {}
     //>   },
     //> ];
  */
-function gradeAssignments(assignments) {}
+function gradeAssignments(assignments) {
+  
+}
 
 /**
  * createLineOrder()
