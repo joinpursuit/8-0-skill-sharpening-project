@@ -12,7 +12,14 @@
  *  shoutForLoop([ "A", "Very", "Happy", "Array" ]);
  *  //> [ "A!", "Very!", "Happy!", "Array!" ];
  */
-function shoutForLoop(array) {}
+function shoutForLoop(array) {
+  let newArray = []
+  for (let i = 0; i < array.length; i ++){
+  newArray.push(array[i] + "!")
+ 
+  }
+  return (newArray)
+}
 
 /**
  * shoutWhileLoop()
@@ -28,7 +35,14 @@ function shoutForLoop(array) {}
  *  shoutWhileLoop([ "A", "Very", "Happy", "Array" ]);
  *  //> [ "A!", "Very!", "Happy!", "Array!" ];
  */
-function shoutWhileLoop(array) {}
+function shoutWhileLoop(array) {
+  let newArray = []
+  while ( i = 0){ i < array.length; i ++
+  newArray.push(array[i] + "!")
+ 
+  }
+  return (newArray)
+}
 
 /**
  * shoutForOfLoop()
@@ -44,7 +58,9 @@ function shoutWhileLoop(array) {}
  *  shoutForOfLoop([ "A", "Very", "Happy", "Array" ]);
  *  //> [ "A!", "Very!", "Happy!", "Array!" ];
  */
-function shoutForOfLoop(array) {}
+function shoutForOfLoop(array) {
+
+}
 
 /**
  * sumArray()
@@ -143,7 +159,16 @@ function findEqual(array, selected) {}
  *  //> [ 1, 11, 2, 3, 4, 9 ]
  */
 
-function removeDuplicates(array) {}
+function removeDuplicates(array) {
+  let newArr = []
+  for ( let i = 0; i < array.length; i++){
+    newArr.push (array[i])
+ if (! newArr.includes(array[i])){
+      newArr.push(array[i])
+    }
+  }
+  return newArr
+}
 
 // Do not change any code below this line.
 module.exports = {
