@@ -34,14 +34,18 @@ return array
  *  //> [ "A!", "Very!", "Happy!", "Array!" ];
  */
 function shoutWhileLoop(array) {
-  // let i = 0
+  let i = 0
+  while(i < array.length) {
+    array[i] += `!`
+  i++
+  } return array
+}
+// let i = 0
   // exArr = []
   // while(i < array.length) {
   // if(exArr.values().push(`${array}!`) i++;
   // }
   // return exArr
-}
-
 //  let i = 0
 //   exArr = []
 //   while(i < array.length) {
@@ -65,7 +69,14 @@ function shoutWhileLoop(array) {
  *  shoutForOfLoop([ "A", "Very", "Happy", "Array" ]);
  *  //> [ "A!", "Very!", "Happy!", "Array!" ];
  */
-function shoutForOfLoop(array) {}
+function shoutForOfLoop(array) {
+  let newArray = []
+  for (let value of array) {
+    value += `!`;
+    newArray.push(value)
+  } return newArray
+
+}
 
 /**
  * sumArray()
@@ -126,7 +137,12 @@ return array;
  *  //> [ 20, 22 ]
  */
 function evenArray(array) {
-
+let evenArray = []
+for (let i = 0; i < array.length; i++) {
+  if (array[i] % 2 === 0) {
+    evenArray.push(array[i])
+  }
+} return evenArray
   }
 
     // let evenArray = []
@@ -194,7 +210,9 @@ function findLargest(array) {
  *  findEqual([ 0, 11, -2, 5 ], 9);
  *  //> false
  */
-function findEqual(array, selected) {}
+function findEqual(array, selected) {
+ return array.includes(selected)
+}
 
 /**
  * removeDuplicates()

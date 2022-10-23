@@ -195,15 +195,33 @@ function getFullAddress(person) {
     };
  */
 function getFlatObject(person) {
+let first = person.names.first
+let middle = person.names.middle
+let last = person.names.last
+let street = person.address.street
+let unit = person.address.unit
+let city = person.address.city
+let state = person.address.state
+let zip = person.address.zip
+let numbers = person.numbers
 
-  
-  // const flatten=(person)=>Object.values(person).flat()
-  // const x={first}
+let newObj = {}
+newObj.first = first
+newObj.middle = middle
+newObj.last = last
+newObj.street = street
+newObj.unit = unit
+newObj.city = city
+newObj.state = state
+newObj.zip = zip
+newObj.numbers = numbers
 
-                  
+return newObj
+}
 
-  }
   //`${person.numbers}`}
+ // const flatten=(person)=>Object.values(person).flat()
+  // const x={first}
 
 // Do not change the code below.
 module.exports = {
