@@ -32,8 +32,14 @@ function rangeSum(min, max) {
  *  //> [ 15, 13, 11 ]
  */
 function rangeOdd(min, max) {
-  let array = []
-  
+  let array = [] //asking for an array that is not established nor created
+  let i = 0
+  for(i = max; i >= min; i-- ) //decreasing so you want to go from the highest # to lowest #
+  if(i % 2 === 1){ // if whatever # i is, divisible by 2 has to strictly have a remainder of 1, thats how we would know its odd
+    array.push(i) //grabbing the new array we established and pushing the result from i
+  }
+  return array
+
 }
 
 /**
@@ -48,7 +54,13 @@ function rangeOdd(min, max) {
  *  rangeEveryOther(11, 18);
  *  //> [ 11, 13, 15, 17 ]
  */
-function rangeEveryOther(min, max) {}
+function rangeEveryOther(min, max) {
+  let array = []
+  for(i = min; i <= max; i += 2){ // whatever number i is we add the sum = sum + value
+    array.push(i)
+  }
+ return array
+}
 
 /**
  * containsWhileLoop()
