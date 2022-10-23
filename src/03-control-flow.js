@@ -137,7 +137,19 @@ function aroundTheWorldGreeting(language) {
  *  //> "Hello World"
  */
 function aroundTheWorldGreetingWithSwitch(language) {
+  let myDefault = "Hello World"
 
+  switch (language){
+    case "english": 
+    myDefault = "Hello World";
+    break;
+    case "spanish":
+      myDefault = "Hola Mundo";
+      break;
+    case "german":
+      myDefault = "Hallo Welt";
+      break;
+  } return myDefault
 }
 
 /**
@@ -157,7 +169,19 @@ function aroundTheWorldGreetingWithSwitch(language) {
  *  calculateLetterGrade(99);
  *  //> "A"
  */
-function calculateLetterGrade(grade) {}
+function calculateLetterGrade(grade) {
+  if (grade >= 90){
+    return "A"
+  } else if (grade >= 80){
+    return "B"
+  } else if (grade >= 70){
+    return "C"
+  } else if (grade >= 60){
+    return "D"
+  } else if (grade >= 60){
+    return "E"
+  } else return "F"
+}
 
 /**
  * animalCounts()
@@ -175,7 +199,11 @@ function calculateLetterGrade(grade) {}
  *  animalCounts("pig", 1);
  *  //> "1 pig"
  */
-function animalCounts(animal, numberOfAnimals) {}
+function animalCounts(animal, numberOfAnimals) {
+  if (numberOfAnimals > 1){
+    return `${numberOfAnimals} ${animal}s`
+  } else return `${numberOfAnimals} ${animal}`
+}
 
 /**
  * evenOrOdd()
@@ -192,7 +220,11 @@ function animalCounts(animal, numberOfAnimals) {}
  *  evenOrOdd(48);
  *  //> "Even"
  */
-function evenOrOdd(a) {}
+function evenOrOdd(a) {
+  if (a % 2 === 0){
+    return `Even`
+  } else return "Odd"
+}
 
 /**
  * evenOrOddWithTernary()
