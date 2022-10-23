@@ -40,7 +40,13 @@ function applyDiscount(priceInCents, age, hasMembership) {}
     getCartTotal(cart);
  *  //> "$30.00"
  */
-function getCartTotal(products) {}
+function getCartTotal(products) {
+  let total = o 
+  for ( let i = 0; i < products.length; i ++){
+    total = ( products[i].priceInCents * products[i].quantity) * 0.1
+  }
+  return `$${total}`
+}
 
 /**
  * compareLocations()
@@ -152,7 +158,9 @@ function gradeAssignments(assignments) {}
     createLineOrder(people);
     //> [ "Ray Anderson", "America Marsh", "Wade Carson", "Patience Patel" ]
  */
-function createLineOrder(people) {}
+function createLineOrder(people) {
+  
+}
 
 module.exports = {
   applyDiscount,
