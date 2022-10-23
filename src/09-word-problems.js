@@ -19,7 +19,23 @@
  *  applyDiscount(1000, 9, true);
  *  //> 700
  */
-function applyDiscount(priceInCents, age, hasMembership) {}
+function applyDiscount(priceInCents, age, hasMembership) {
+  let tikPrice = 0;
+  if (age >= 65 || age <= 10) {
+    if (hasMembership) {
+      tikPrice = priceInCents * .7;
+    } else {
+      tikPrice = priceInCents * .9;
+    }
+  } else {
+    if (hasMembership) {
+      tikPrice = priceInCents * .8;
+    } else {
+      tikPrice = priceInCents;
+    }
+  }
+  return tikPrice;
+}
 
 /**
  * getCartTotal()
@@ -40,7 +56,15 @@ function applyDiscount(priceInCents, age, hasMembership) {}
     getCartTotal(cart);
  *  //> "$30.00"
  */
-function getCartTotal(products) {}
+function getCartTotal(products) {
+  let priceFull = 0;  //new var to update throughout loop
+  for (i = 0; i < products.length; i++) {  //loop for array index
+    priceFull += products[i].priceInCents * products[i].quantity  //setting the priceFull var to new amt
+  }
+  let priceDollar = priceFull / 100;  //new var that holds price in $
+  // console.log (priceDollar)
+  return `$${priceDollar.toFixed(2)}`  //toFixed lets us choose length after decimal
+}
 
 /**
  * compareLocations()
@@ -80,7 +104,30 @@ function getCartTotal(products) {}
     compareLocations(address1, address2);
     //> "Same city."
  */
-function compareLocations(address1, address2) {}
+function compareLocations(address1, address2) {
+  // Made new var for each outcome, so I could use these variables to easily reassing the grouping var which will return my outcome at end  of code
+  let build = "Same building.";
+  let city = "Same city.";
+  let state = "Same state.";
+  let notClose = "Addresses are not near each other."
+  let grouping = " "
+  // I decided to go with nested if statements to check for equality and find more matches as we go down.
+  // Started with state bc thats biggest either/or
+  if (address1.state === address2.state) {
+    if (address1.city === address2.city && address1.zip === address2.zip) {
+      if (address1.street === address2.street) {
+        grouping = build;
+      } else {
+        grouping = city;
+      }
+    } else {
+      grouping = state;
+    }
+  } else {
+    grouping = notClose;
+  }
+  return grouping
+}
 
 /**
  * gradeAssignments()
@@ -127,7 +174,30 @@ function compareLocations(address1, address2) {}
     //>   },
     //> ];
  */
-function gradeAssignments(assignments) {}
+function gradeAssignments(assignments) {
+  // New var to hold the PASS & FAIL words, used for PASS/FAIL & PERCENT types
+  let pass = 'PASSED';
+  let fail = 'FAILED';
+  for (i = 0; i < assignments.length; i++) {  //loop for ASSIGNMENT index
+    if (assignments[i].kind === "PASS-FAIL") {  //conditional for kind check
+      if (assignments[i].score.received === assignments[i].score.max) {
+        assignments[i].status = pass;
+      } else {
+        assignments[i].status = fail;
+      }
+    } else if (assignments[i].kind === "PERCENTAGE") {
+      let score = ((assignments[i].score.received / assignments[i].score.max) * 100).toFixed(1);  //dividing score:rec / score:max, times 100 and then fixed to 1 decimal
+      if (score >= 80) {
+        assignments[i].status = `${pass}: ${score}%`;
+      } else {
+        assignments[i].status = `${fail}: ${score}%`;
+      }
+    } else {
+      assignments[i].status = `SCORE: ${assignments[i].score.received}/${assignments[i].score.max}`
+    }
+  }
+  return assignments
+}
 
 /**
  * createLineOrder()
@@ -152,7 +222,23 @@ function gradeAssignments(assignments) {}
     createLineOrder(people);
     //> [ "Ray Anderson", "America Marsh", "Wade Carson", "Patience Patel" ]
  */
-function createLineOrder(people) {}
+function createLineOrder(people) {
+  
+  // Made 2 empty arrays to track members & nonmembers with the goal of merging these two at the end of the loop
+  let memArr = [];
+  let nonMemArr = [];
+  for (i = 0; i < people.length; i++) {  //Index loop
+    if (people[i].hasMembership === true) {  //memebership check
+      memArr.push(people[i].name);  // push to MEMEBER array
+    } else {
+      nonMemArr.push(people[i].name);  //push to NONMEMBER array
+    }
+  }
+  let boardingOrder = [
+    ...memArr, ...nonMemArr  //spread operator to combine both arrays and keep their contents
+  ]
+  return boardingOrder
+}
 
 module.exports = {
   applyDiscount,
