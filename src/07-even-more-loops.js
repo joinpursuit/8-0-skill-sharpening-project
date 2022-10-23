@@ -12,7 +12,12 @@
  *  shoutForLoop([ "A", "Very", "Happy", "Array" ]);
  *  //> [ "A!", "Very!", "Happy!", "Array!" ];
  */
-function shoutForLoop(array) {}
+function shoutForLoop(array) {
+for (let i = 0; i < array.length; i++) {
+  array[i] += `!`
+}
+return array
+}
 
 /**
  * shoutWhileLoop()
@@ -28,7 +33,27 @@ function shoutForLoop(array) {}
  *  shoutWhileLoop([ "A", "Very", "Happy", "Array" ]);
  *  //> [ "A!", "Very!", "Happy!", "Array!" ];
  */
-function shoutWhileLoop(array) {}
+function shoutWhileLoop(array) {
+  let i = 0
+  while(i < array.length) {
+    array[i] += `!`
+  i++
+  } return array
+}
+// let i = 0
+  // exArr = []
+  // while(i < array.length) {
+  // if(exArr.values().push(`${array}!`) i++;
+  // }
+  // return exArr
+//  let i = 0
+//   exArr = []
+//   while(i < array.length) {
+//   if(exArr.values().push(`${array}!`) {  i++;
+//   }
+//   return exArr
+// exArr.toString(`${array}!`)
+//     exArr.push(`${array}!`)
 
 /**
  * shoutForOfLoop()
@@ -44,7 +69,14 @@ function shoutWhileLoop(array) {}
  *  shoutForOfLoop([ "A", "Very", "Happy", "Array" ]);
  *  //> [ "A!", "Very!", "Happy!", "Array!" ];
  */
-function shoutForOfLoop(array) {}
+function shoutForOfLoop(array) {
+  let newArray = []
+  for (let value of array) {
+    value += `!`;
+    newArray.push(value)
+  } return newArray
+
+}
 
 /**
  * sumArray()
@@ -57,7 +89,13 @@ function shoutForOfLoop(array) {}
  *  sumArray([ 10, 0, 10, 11 ]);
  *  //> 31
  */
-function sumArray(array) {}
+function sumArray(array) {
+  let arr = 0
+  for (let i = 0; i < array.length; i++) {
+    arr += array[i]
+  }
+return arr
+}
 
 /**
  * oddArray()
@@ -70,8 +108,23 @@ function sumArray(array) {}
  *  oddArray([ 11, 15, 20, 22, 37 ]);
  *  //> [ 11, 15, 37 ]
  */
-function oddArray(array) {}
-
+function oddArray(array) {
+for(let i = 0; i < array.length; i++) {
+  while (array[i] % 2 === 0) {
+    array.splice(i, 1);
+  }
+}
+return array;
+}
+//   for(let i = 0; i <= array.length; i++) {
+//   if(i % 2 === 0)
+//   arrZ.push(i)
+// return array
+//   }
+// }
+// if(!(array[i] % 2)) {
+    //   arrZ.push(array[i]);
+    // } 
 /**
  * evenArray()
  * ---------------------
@@ -83,8 +136,23 @@ function oddArray(array) {}
  *  evenArray([ 11, 15, 20, 22, 37 ]);
  *  //> [ 20, 22 ]
  */
-function evenArray(array) {}
+function evenArray(array) {
+let evenArray = []
+for (let i = 0; i < array.length; i++) {
+  if (array[i] % 2 === 0) {
+    evenArray.push(array[i])
+  }
+} return evenArray
+  }
 
+    // let evenArray = []
+  // for(let i = 0; i < array.length; i++)
+  //   while (array[i] % 2 === 1) {
+  //     evenArray.push(array[i])
+  //   // if(i % 2 = 1) { 
+   //     evenArray.push(array[i]);
+    // }
+    // return evenArray
 /**
  * findSmallest()
  * ---------------------
@@ -96,7 +164,15 @@ function evenArray(array) {}
  *  findSmallest([ 0, 11, -2, 5 ]);
  *  //> -2
  */
-function findSmallest(array) {}
+function findSmallest(array) {
+  let smallNum = array[0]
+  for(let i=0; i < array.length; i++) {
+    if (smallNum > array[i]) {
+      smallNum = array[i]
+    }
+  }
+  return smallNum
+}
 
 /**
  * findLargest()
@@ -109,7 +185,15 @@ function findSmallest(array) {}
  *  findLargest([ 0, 11, -2, 5 ]);
  *  //> 11
  */
-function findLargest(array) {}
+function findLargest(array) {
+  let largNum = array[0]
+  for(let i=0; i < array.length; i++) {
+    if (largNum < array[i]) {
+      largNum = array[i]
+    }
+  }
+  return largNum
+}
 
 /**
  * findEqual()
@@ -126,7 +210,9 @@ function findLargest(array) {}
  *  findEqual([ 0, 11, -2, 5 ], 9);
  *  //> false
  */
-function findEqual(array, selected) {}
+function findEqual(array, selected) {
+ return array.includes(selected)
+}
 
 /**
  * removeDuplicates()
@@ -143,7 +229,16 @@ function findEqual(array, selected) {}
  *  //> [ 1, 11, 2, 3, 4, 9 ]
  */
 
-function removeDuplicates(array) {}
+function removeDuplicates(array) {
+  let numArray = []
+  array.forEach((element) => {
+    if (!numArray.includes(element)) {
+      numArray.push(element)
+    }
+  });
+  return numArray
+
+}
 
 // Do not change any code below this line.
 module.exports = {
