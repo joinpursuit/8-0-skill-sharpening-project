@@ -1,5 +1,3 @@
-const { isEven } = require("./02-data-types")
-
 /**
  * isEqual()
  * ---------------------
@@ -123,14 +121,13 @@ return "Zero"
  *  //> "Hello World"
  */
 function aroundTheWorldGreeting(language) {
-  if (language === "german"){
+  if (language === 'german'){
     return "Hallo Welt"
-  }
-  else if (language === "spanish"){
+  } else if (language === 'spanish'){
     return "Hola Mundo"
+  } else {
+    return "Hello World"
   }
-else{ return "Hello World"
-}
 }
 
 /**
@@ -183,19 +180,7 @@ function aroundTheWorldGreetingWithSwitch(language) {
  *  calculateLetterGrade(99);
  *  //> "A"
  */
-function calculateLetterGrade(grade) {
-  if (grade >= 90){
-  return "A"
-} else if (grade >=80) {
-  return "B"
-} else if (grade >=70) {  
-return "C"
-} else if (grade >=60){
-return "D"
-} else {return "F"
-}
-}
-
+function calculateLetterGrade(grade) {}
 
 /**
  * animalCounts()
@@ -213,13 +198,7 @@ return "D"
  *  animalCounts("pig", 1);
  *  //> "1 pig"
  */
-function animalCounts(animal, numberOfAnimals) {
-if (numberOfAnimals>1){
-  return `${numberOfAnimals} ${animal}s`}
-else {
-  return `${numberOfAnimals} ${animal}`
-}
-}
+function animalCounts(animal, numberOfAnimals) {}
 
 /**
  * evenOrOdd()
@@ -236,12 +215,7 @@ else {
  *  evenOrOdd(48);
  *  //> "Even"
  */
-function evenOrOdd(a) {
-  if (a %2 !== 0 ) {
-    return "Odd"
-} else {
-  return "Even"
-}}
+function evenOrOdd(a) {}
 
 /**
  * evenOrOddWithTernary()
@@ -257,9 +231,7 @@ function evenOrOdd(a) {
  *  evenOrOddWithTernary(8);
  *  //> "Even"
  */
-function evenOrOddWithTernary(a) {
-  return ((a%2!==0)?  "Odd": "Even")
-}
+function evenOrOddWithTernary(a) {}
 
 // Do not change any code below this line.
 module.exports = {
