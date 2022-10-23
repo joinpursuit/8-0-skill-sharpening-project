@@ -179,7 +179,7 @@ function findLargest(array) {
  *  //> false
  */
 function findEqual(array, selected) {
- return array.includes(selected)
+  return array.includes(selected);
 }
 
 /**
@@ -198,13 +198,13 @@ function findEqual(array, selected) {
  */
 
 function removeDuplicates(array) {
-  const arr = []
-  for(let i = 0; i<array.length;i++){
-    if(!arr.includes(array[i])){
-      arr.push(array[i])
+  const arr = [];
+  for (let i = 0; i < array.length; i++) {
+    if (!arr.includes(array[i])) {
+      arr.push(array[i]);
     }
   }
-  return arr
+  return arr;
 }
 
 // Do not change any code below this line.

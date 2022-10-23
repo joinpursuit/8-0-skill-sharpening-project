@@ -129,7 +129,7 @@ function getLastPhoneNumber(person) {
  *  //> "Rachel Eleanor Rojas"
  */
 function getFullName(person) {
-  return `${person.names.first} ${person.names.middle} ${person.names.last}`
+  return `${person.names.first} ${person.names.middle} ${person.names.last}`;
 }
 
 /**
@@ -147,7 +147,7 @@ function getFullName(person) {
  *  //> "Staten Island, NY"
  */
 function getCityAndState(person) {
-  return `${person.address.city}, ${person.address.state}`
+  return `${person.address.city}, ${person.address.state}`;
 }
 
 /**
@@ -165,7 +165,7 @@ function getCityAndState(person) {
  *  //> "697 Pine Drive 2A, Staten Island, NY, 10306"
  */
 function getFullAddress(person) {
-  return `${person.address.street} ${person.address.unit}, ${person.address.city}, ${person.address.state}, ${person.address.zip}`
+  return `${person.address.street} ${person.address.unit}, ${person.address.city}, ${person.address.state}, ${person.address.zip}`;
 }
 
 /**
@@ -190,20 +190,19 @@ function getFullAddress(person) {
     };
  */
 function getFlatObject(person) {
-  let newPerson = {}
+  let newPerson = {};
   for (const key in person) {
     if (!Array.isArray(person[key])) {
       Object.keys(person[key]).forEach((item) => {
-        newPerson[item] = person[key][item]
-      })
-    }else{
-      newPerson[key] = []
-      person[key].forEach((i)=>newPerson[key].push(i))
+        newPerson[item] = person[key][item];
+      });
+    } else {
+      newPerson[key] = [];
+      person[key].forEach((i) => newPerson[key].push(i));
     }
   }
-  return newPerson
+  return newPerson;
 }
-
 
 // Do not change the code below.
 module.exports = {

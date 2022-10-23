@@ -10,14 +10,14 @@
  *  //> true
  */
 function alwaysTrue() {
-  return true
+  return true;
 }
 
 /**
  * greet()
  * ---------------------
  * Greets the person by name.
- * HINT: Look at the example closely. 
+ * HINT: Look at the example closely.
  * Capitalization, spacing, spelling, and punctuation count!
  * @param {string} name
  * @returns {string}
@@ -27,7 +27,7 @@ function alwaysTrue() {
  *  //> "Hello, Ian."
  */
 function greet(name) {
-  return `Hello, ${name}.`
+  return `Hello, ${name}.`;
 }
 
 /**
@@ -44,7 +44,7 @@ function greet(name) {
  *  //> 30
  */
 function add(a, b) {
-  return a + b
+  return a + b;
 }
 
 /**
@@ -61,7 +61,7 @@ function add(a, b) {
  *  //> 10
  */
 function multiply(a, b) {
-  return a * b
+  return a * b;
 }
 
 /**
@@ -83,7 +83,7 @@ function multiply(a, b) {
  *  //> 8 // 10 + 6 = 16; 16/2 = 8;
  */
 function average(a, b) {
-  return (a + b) / 2
+  return (a + b) / 2;
 }
 
 /**
@@ -104,7 +104,7 @@ function average(a, b) {
  *  //> 10 // 10 + 11 + 19 = 30; 30 / 3 = 10;
  */
 function averageThree(a, b, c) {
-  return (a + b + c) / 3
+  return (a + b + c) / 3;
 }
 
 /**
@@ -116,7 +116,7 @@ function averageThree(a, b, c) {
  * @returns {boolean}
  *
  * HINT: What JavaScript function returns the data type of something?
- * 
+ *
  * EXAMPLE:
  *  compareTypes("left", "right");
  *  //> true
@@ -125,10 +125,10 @@ function averageThree(a, b, c) {
  *  //> false
  */
 function compareTypes(a, b) {
-  if (typeof (a) === typeof (b)) {
-    return true
+  if (typeof a === typeof b) {
+    return true;
   } else {
-    return false
+    return false;
   }
 }
 
@@ -141,7 +141,7 @@ function compareTypes(a, b) {
  *
  * HINT: Using pencil and paper, how would you make a positive number look negative?
  * How could you apply this to a variable?
- * 
+ *
  * EXAMPLE:
  *  flipSign(-10);
  *  //> 10
@@ -150,7 +150,7 @@ function compareTypes(a, b) {
  *  //> -50
  */
 function flipSign(a) {
-  return a * -1
+  return a * -1;
 }
 
 /**
@@ -166,17 +166,16 @@ function flipSign(a) {
  *
  * HINT: You DON'T need fancy methods like `split()` and `join()` to do this.
  * What is the simplest way to combine two strings?
- * 
+ *
  * EXAMPLE:
  *  joinStringsWithSpaces("left", "right", "up", "down", "away");
  *  //> "left right up down away"
  */
 function joinStringsWithSpaces(a, b, c, d, e) {
-  let arr = [a,b,c,d,e]
-  let x = arr.join(' ')
-  return x
-
- }
+  let arr = [a, b, c, d, e];
+  let x = arr.join(" ");
+  return x;
+}
 
 /**
  * getFirstAndLastCharacter()
@@ -194,8 +193,8 @@ function joinStringsWithSpaces(a, b, c, d, e) {
  *  //> "us"
  */
 function getFirstAndLastCharacter(a) {
-  return `${a[0]}${a[a.length-1]}`
- }
+  return `${a[0]}${a[a.length - 1]}`;
+}
 
 // Do not change the code below.
 module.exports = {

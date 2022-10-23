@@ -10,7 +10,7 @@
  *  //> 4
  */
 function getLengthOfString(str) {
-  return str.length
+  return str.length;
 }
 
 /**
@@ -25,7 +25,7 @@ function getLengthOfString(str) {
  *  //> 111
  */
 function convertToNumber(val) {
-  return +val
+  return +val;
 }
 
 /**
@@ -41,7 +41,7 @@ function convertToNumber(val) {
  *  //> "99"
  */
 function convertToString(val) {
-return val.toString()
+  return val.toString();
 }
 
 /**
@@ -56,7 +56,7 @@ return val.toString()
  *  //> "HELLO THERE"
  */
 function convertToShoutingText(text) {
-  return text.toUpperCase()
+  return text.toUpperCase();
 }
 
 /**
@@ -71,7 +71,7 @@ function convertToShoutingText(text) {
  *  //> "hello there"
  */
 function convertToWhisperText(text) {
-  return text.toLowerCase()
+  return text.toLowerCase();
 }
 
 /**
@@ -90,9 +90,9 @@ function convertToWhisperText(text) {
  *  //> false
  */
 function checkIfCharacterIsInString(text, character) {
-  if(text.includes(character)){
-    return true
-  }else return false
+  if (text.includes(character)) {
+    return true;
+  } else return false;
 }
 
 /**
@@ -110,10 +110,10 @@ function checkIfCharacterIsInString(text, character) {
  *  //> false
  */
 function isEven(num) {
-  if(num%2===0){
-    return true
-  }else {
-    return false
+  if (num % 2 === 0) {
+    return true;
+  } else {
+    return false;
   }
 }
 
@@ -132,9 +132,9 @@ function isEven(num) {
  *  //> true
  */
 function isOdd(num) {
-  if(num %2 !==0 ){
-    return true 
-  }else return false
+  if (num % 2 !== 0) {
+    return true;
+  } else return false;
 }
 
 /**
@@ -152,10 +152,10 @@ function isOdd(num) {
  *  //> false
  */
 function isTruthy(val) {
-  if(!!val){
-    return true 
-  }else {
-    return false 
+  if (!!val) {
+    return true;
+  } else {
+    return false;
   }
 }
 
@@ -174,10 +174,10 @@ function isTruthy(val) {
  *  //> false
  */
 function isFalsy(val) {
-  if(!!!val){
-    return true
-  }else{
-    return false 
+  if (!!!val) {
+    return true;
+  } else {
+    return false;
   }
 }
 

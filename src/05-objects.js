@@ -124,7 +124,7 @@ function addValueToObject(object, val) {
  */
 function addKeyToObject(object, key) {
   object[key] = "yee-haww!";
-  return object
+  return object;
 }
 
 /**
@@ -158,8 +158,8 @@ function addKeyValuePairToObject(object, key, val) {
  *  //> { right: false }
  */
 function deleteKeyFromObject(object, key) {
-  delete object[key]
-  return object
+  delete object[key];
+  return object;
 }
 
 // Do not change any code below this line.
