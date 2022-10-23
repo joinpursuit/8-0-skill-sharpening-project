@@ -190,10 +190,34 @@ function getFullAddress(person) {
     };
  */
 function getFlatObject(person) {  
+
+  let flatStanley = 
+  {
+    first: person.names.first,
+    middle: person.names.middle,
+    last: person.names.last,
+    street: person.address.street,
+    unit: person.address.unit,
+    city: person.address.city,
+    state: person.address.state,
+    zip: person.address.zip,
+    numbers: person.numbers
+  }
+  
+  return flatStanley;
+}
+
+  /* NOPE
   const flatStanley = (person) => {
     let flattened = {};    //the final result
     for (const i in person) {  //run for loop thru person object
-      if ((typeof person[i]) === 'object' && !Array.isArray(person[i])) {
+      if (typeof (person[i]) === 'object' && !Array.isArray(person[i])) {
+        Object.keys
+        
+        flattened
+        //do something with object.keys. It wiill take all the properties of the object and put it in an array so it can be looped through.
+
+
         const temp = flatStanley(person[i]);
         for (const j in temp) {
           //store temp in result
@@ -208,8 +232,7 @@ function getFlatObject(person) {
     return flattened;
   
   };
- 
-}
+ */
 
 // Do not change the code below.
 module.exports = {

@@ -15,7 +15,8 @@
 function shoutForLoop(array) {
   let shoutier=[]
   for (let s = 0 ; s < array.length ; s++){
-    array[s]+"!"}
+    shoutier.push(array[s]+"!")
+  }
     return shoutier
   }
 
@@ -33,7 +34,16 @@ function shoutForLoop(array) {
  *  shoutWhileLoop([ "A", "Very", "Happy", "Array" ]);
  *  //> [ "A!", "Very!", "Happy!", "Array!" ];
  */
-function shoutWhileLoop(array) {}
+function shoutWhileLoop(array) {
+  let i = 0;
+  let shout = [];
+
+  while ( i < array.length ){
+    shout.push(array[i]+"!")
+    i++
+  }
+  return shout;
+}
 
 /**
  * shoutForOfLoop()
@@ -49,7 +59,13 @@ function shoutWhileLoop(array) {}
  *  shoutForOfLoop([ "A", "Very", "Happy", "Array" ]);
  *  //> [ "A!", "Very!", "Happy!", "Array!" ];
  */
-function shoutForOfLoop(array) {}
+function shoutForOfLoop(array) {
+  let forOfShout = []
+  for (const element of array) {
+    forOfShout.push(element + "!");
+  }
+  return forOfShout;
+}
 
 /**
  * sumArray()
@@ -62,7 +78,9 @@ function shoutForOfLoop(array) {}
  *  sumArray([ 10, 0, 10, 11 ]);
  *  //> 31
  */
-function sumArray(array) {}
+function sumArray(array) {
+  
+}
 
 /**
  * oddArray()
