@@ -86,7 +86,7 @@ function positiveNegativeOrZero(a) {
   } else {
     return "Zero"
   } 
-}
+} 
 
 /**
  * aroundTheWorldGreeting()
@@ -137,7 +137,7 @@ function aroundTheWorldGreeting(language) {
  *  //> "Hello World"
  */
 function aroundTheWorldGreetingWithSwitch(language) {
-  
+
 }
 
 /**
