@@ -234,8 +234,41 @@ function getFlatObject(person) {
 
   let flatObject = {}
 
-  
+  flatObject.first = person.names.first
+  flatObject.middle = person.names.middle
+  flatObject.last = person.names.last
+  flatObject.street = person.address.street
+  flatObject.unit = person.address.unit
+  flatObject.city = person.address.city
+  flatObject.state = person.address.state
+  flatObject.zip = person.address.zip
+  flatObject.numbers = person.numbers
+
+  return flatObject
+
+
+
 }
+
+
+// const person = {
+//   names: {
+//     first: "Rachel",
+//     middle: "Eleanor",
+//     last: "Rojas"
+//   },
+//   address: {
+//     street: "697 Pine Drive",
+//     unit: "2A",
+//     city: "Staten Island",
+//     state: "NY",
+//     zip: "10306"
+//   },
+//   numbers: [
+//     7185550921,
+//     7185558611
+//   ]
+// }
 
 // Do not change the code below.
 module.exports = {

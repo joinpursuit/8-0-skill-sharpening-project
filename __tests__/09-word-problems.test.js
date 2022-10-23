@@ -290,7 +290,7 @@ describe("gradeAssignments()", () => {
   });
 });
 
-describe("createLineOrder()", () => {
+describe.only("createLineOrder()", () => {
   test("should return an array of everyone's name who is in the line, in order", () => {
     const people = [
       { name: "Jackson Read", hasMembership: false },
