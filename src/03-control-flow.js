@@ -221,8 +221,7 @@ function evenOrOdd(a) {
  *  //> "Even"
  */
 function evenOrOddWithTernary(a) {
-  return (a ? ((a % 2) === 0) : "Even");
-  return (a ? !(a % 2) : "Odd")
+ return (a % 2 == 0) ? "Even" : "Odd"
 }
 
 // Do not change any code below this line.

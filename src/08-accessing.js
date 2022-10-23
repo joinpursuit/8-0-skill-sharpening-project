@@ -166,7 +166,7 @@ function getCityAndState(person) {
  *  //> "697 Pine Drive 2A, Staten Island, NY, 10306"
  */
 function getFullAddress(person) {
-return person["address"]["street"] + " " + person["address"]["unit"] + ", " + person["address"]["city"] + ", " + person["address"]["state"] + ", " + person["address"]["zip"]
+//return person["address"]["street"] + " " + person["address"]["unit"] + ", " + person["address"]["city"] + ", " + person["address"]["state"] + ", " + person["address"]["zip"]
 }
 
 /**
@@ -191,6 +191,11 @@ return person["address"]["street"] + " " + person["address"]["unit"] + ", " + pe
     };
  */
 function getFlatObject(person) {
+  //let newObj = person.names + person["address"]["street"] + " ," + person["address"]["unit"] + " ," + person["address"]["city"] + " ," + person["address"]["state"] + " ," + person["zip"] + " ," + person.numbers
+  //delete person[1]
+ // delete person[2]
+  //return newObj
+  //return person.flat.call(person.name)
   
 }
 

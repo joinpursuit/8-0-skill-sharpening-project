@@ -148,9 +148,10 @@ function isOdd(num) {
  *  //> false
  */
 function isTruthy(val) {
-  if (val === val) {return true}
-  else if (val !== 0) {return false}
-}
+  if (val != false) {return true}
+  else if (val != true)
+  {return false}
+} 
 /**
  * isFalsy()
  * ---------------------

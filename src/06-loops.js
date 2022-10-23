@@ -12,8 +12,12 @@
  *  (3 + 4 + 5 + 6 + 7 = 25)
  */
 function rangeSum(min, max) {
-  
-
+  let sumBetween = 0;
+  for (let i = min; i <= max; i++) {
+    sumBetween += i;
+  }
+  return sumBetween;
+ 
 }
 
 /**
@@ -28,7 +32,26 @@ function rangeSum(min, max) {
  *  rangeOdd(10, 15);
  *  //> [ 15, 13, 11 ]
  */
-function rangeOdd(min, max) {}
+function rangeOdd(min, max) {
+  //let array = [min, max]
+  //for (let i = max; min <= max ; i -= 1) {
+  //  if ((i % 2) === 1) {array.push(min)}
+  //} return array
+  
+  //if ((num % 2) === 1) 
+  //  let nums = []
+  //for (let i = 1; i <= 100 ; i += 1) {
+    //if ((i % 3) === 0) {nums.push("Fizz")}
+     //else if ((i % 5) === 0) {nums.push("Buzz")}
+     //else {
+      //nums.push(i)}
+   //} return nums
+   //let nums = []
+  //for (let i = 1; number >= i; number -= 1) {
+    //nums.push(number)
+ // } return nums 
+ 
+}
 
 /**
  * rangeEveryOther()
@@ -64,7 +87,11 @@ function rangeEveryOther(min, max) {}
  *  containsWhileLoop([ "left", "up", "right" ], "down");
  *  //> false
  */
-function containsWhileLoop(array, target) {}
+function containsWhileLoop(array, target) {
+  while (array.indexOf(target)) {
+    return true
+  }
+}
 
 /**
  * containsForLoop()
@@ -154,7 +181,13 @@ function lastIndexFound(array, target) {}
  *  //> [ 7 * 0, 10 * 1, 11 * 2 ]
  *  //> [ 0, 10, 22 ]
  */
-function timesIndex(array) {}
+function timesIndex(array) {
+  //let productBetween = ;
+  //for (let i = array[0]; i <= max; i++) {
+ //   sumBetween += i;
+//  }
+  return productBetween
+}
 
 /**
  * cumulativeSum()

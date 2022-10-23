@@ -159,7 +159,8 @@ function removeElementFromFrontOfArray(array) {
  *  //> null
  */
 function getMiddleElement(array) {
-  //let listen = array.slice(start, end)
+ // middle value will be at higher length than array.0 and lower length than array-1
+ return array[Math.floor((array.length - 1) / 2)];
 }
 
 // Do not change any code below this line.
