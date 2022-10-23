@@ -12,7 +12,11 @@
  *  shoutForLoop([ "A", "Very", "Happy", "Array" ]);
  *  //> [ "A!", "Very!", "Happy!", "Array!" ];
  */
-function shoutForLoop(array) {}
+function shoutForLoop(array) {
+  for (let s = 0 ; s < array.length ; s++){
+    +"!"}
+    return array
+  }
 
 /**
  * shoutWhileLoop()

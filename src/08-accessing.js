@@ -197,15 +197,16 @@ function getFlatObject(person) {
         const temp = flatStanley(person[i]);
         for (const j in temp) {
           //store temp in result
-          result[i + "." + j] = temp[j];
+          flattened[i + "." + j] = temp[j];
         }
       }
       //else store person[i] in result directly
       else {
-        result[i] = person[i];
+        flattened[i] = person[i];
       }
     }
-    return result;
+    return flattened;
+  
   };
  
 }

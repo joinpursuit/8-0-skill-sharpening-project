@@ -32,7 +32,15 @@ function rangeSum(min, max) {
  *  //> [ 15, 13, 11 ]
  */
 function rangeOdd(min, max) {
-  
+  let oddArray = [];
+  if (max % 2 === 0) {
+    //code to execute if first number is even;
+    max = (max-1);
+  } 
+  for (let d = max; d >= min; d-=2){
+    oddArray.push(d);
+  }
+  return oddArray;
 }
 
 /**
@@ -47,7 +55,13 @@ function rangeOdd(min, max) {
  *  rangeEveryOther(11, 18);
  *  //> [ 11, 13, 15, 17 ]
  */
-function rangeEveryOther(min, max) {}
+function rangeEveryOther(min, max) {
+  let skippingArray = [];
+  for (let e = min; e <= max; e+=2) {
+    skippingArray.push(e);
+  }
+  return skippingArray;
+}
 
 /**
  * containsWhileLoop()
@@ -69,7 +83,18 @@ function rangeEveryOther(min, max) {}
  *  containsWhileLoop([ "left", "up", "right" ], "down");
  *  //> false
  */
-function containsWhileLoop(array, target) {}
+function containsWhileLoop(array, target) {
+  let j = 0;
+  while (j < array.length) {
+    if (target === array[j]) {
+      return true;
+      
+    } else {
+      j++;
+    }
+ }
+return false
+}
 
 /**
  * containsForLoop()
@@ -91,7 +116,13 @@ function containsWhileLoop(array, target) {}
  *  containsForLoop([ "left", "up", "right" ], "down");
  *  //> false
  */
-function containsForLoop(array, target) {}
+function containsForLoop(array, target) {
+  for (let k = 0; k<array.length; k++){
+    if (target === array[k])
+      return true;
+  }
+return false;
+}
 
 /**
  * targetCount()
@@ -105,7 +136,15 @@ function containsForLoop(array, target) {}
  *  targetCount([ 10, 20, 10, 20, 30 ], 10);
  *  //> 2
  */
-function targetCount(array, target) {}
+function targetCount(array, target) {
+  let timesFound = 0;
+  for (let m = 0; m<array.length; m++){
+    if (target === array[m]) {
+      timesFound = timesFound + 1
+    }
+  }
+return timesFound;
+}
 
 /**
  * firstIndexFound()
@@ -125,7 +164,14 @@ function targetCount(array, target) {}
  *  firstIndexFound([ "left", "right", "left" ], "up");
  *  //> -1
  */
-function firstIndexFound(array, target) {}
+function firstIndexFound(array, target) {
+for (let n = 0; n < array.length; n++){
+  if (target === array[n]){
+    return n;
+}
+}
+return -1  // if the target is found, it will bew returned, so this doesn't need to be part of an if/else. The code will only reach this far if the target cannot be found amongst the array.
+}
 
 /**
  * lastIndexFound()
@@ -145,7 +191,15 @@ function firstIndexFound(array, target) {}
  *  lastIndexFound([ "left", "right", "left" ], "up");
  *  //> -1
  */
-function lastIndexFound(array, target) {}
+function lastIndexFound(array, target) {
+  for (let p = array.length; p >= 0; p--) {
+    if (target === array[p]){
+      return p;
+    }
+  }
+return -1
+}
+  
 
 /**
  * timesIndex()
@@ -159,7 +213,16 @@ function lastIndexFound(array, target) {}
  *  //> [ 7 * 0, 10 * 1, 11 * 2 ]
  *  //> [ 0, 10, 22 ]
  */
-function timesIndex(array) {}
+
+
+function timesIndex(array) {
+  let multiplicityArray = [];
+  for (let u = 0; u < array.length; u++) {
+    ((array[u]) * u);
+    multiplicityArray.push(u);
+  }
+  return multiplicityArray;
+}
 
 /**
  * cumulativeSum()
