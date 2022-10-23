@@ -104,9 +104,10 @@ function oddArray(array) {
 
       oddArray.push(array[i])
     }
-
-    return oddArray
+    
   }
+
+  return oddArray
 }
 
 /**
@@ -120,7 +121,20 @@ function oddArray(array) {
  *  evenArray([ 11, 15, 20, 22, 37 ]);
  *  //> [ 20, 22 ]
  */
-function evenArray(array) {}
+function evenArray(array) {
+
+  let evenArray = []
+  for(let i = 0; i < array.length; i++){
+
+    if(array[i] % 2 === 0){
+
+      evenArray.push(array[i])
+    }
+   
+  }
+  return evenArray
+
+}
 
 /**
  * findSmallest()
@@ -146,7 +160,16 @@ function findSmallest(array) {}
  *  findLargest([ 0, 11, -2, 5 ]);
  *  //> 11
  */
-function findLargest(array) {}
+function findLargest(array) {
+
+  let largeNum 
+  for(let i = 0; i < array[i].length; i++){
+
+     largeNum = Math.max(array[i])
+
+     return largeNum
+  }
+}
 
 /**
  * findEqual()
