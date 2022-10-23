@@ -12,7 +12,12 @@
  *  shoutForLoop([ "A", "Very", "Happy", "Array" ]);
  *  //> [ "A!", "Very!", "Happy!", "Array!" ];
  */
-function shoutForLoop(array) {}
+function shoutForLoop(array) { 
+for (let i = 0; i < array.length; i++) {
+  array[i]= `${array[i]}!` //we are asking to point at what we want the array to do -- the equal is going to assign it to the next element in array toadd the "!"
+} //YOU BETTER FORMAT IT SIS!
+return array
+}//END OF FUNCTION
 
 /**
  * shoutWhileLoop()
@@ -28,7 +33,15 @@ function shoutForLoop(array) {}
  *  shoutWhileLoop([ "A", "Very", "Happy", "Array" ]);
  *  //> [ "A!", "Very!", "Happy!", "Array!" ];
  */
-function shoutWhileLoop(array) {}
+function shoutWhileLoop(array) { // does not have a counter to iterate through the array!
+  let i = 0  // initialize!
+  while(i<array.length){ //loop through the array
+  array[i] = `${array[i]}!` //we are asking to point at what we want the array to do -- the equal is going to assign it to the next element in array toadd the "!"
+  i++ // increment
+} //YOU BETTER FORMAT IT SIS
+ return array
+} // END
+
 
 /**
  * shoutForOfLoop()
@@ -44,8 +57,12 @@ function shoutWhileLoop(array) {}
  *  shoutForOfLoop([ "A", "Very", "Happy", "Array" ]);
  *  //> [ "A!", "Very!", "Happy!", "Array!" ];
  */
-function shoutForOfLoop(array) {}
-
+function shoutForOfLoop(array) {
+  for (let fruit of array){
+    array[array.indexOf(fruit)] = `${array[array.indexOf(fruit)]}!`//when you first enter the index -- find the FIRST element --every time it iterates that index is gonna change the index.
+  }//above we must use the array to call the loop - we are calling
+  return array
+}
 /**
  * sumArray()
  * ---------------------
@@ -83,7 +100,16 @@ function oddArray(array) {}
  *  evenArray([ 11, 15, 20, 22, 37 ]);
  *  //> [ 20, 22 ]
  */
-function evenArray(array) {}
+function evenArray(array) {
+  let evenArray = []
+  console.log(array)//just checking to see if the array prints
+  for (let i = 0; i < array.length; i++) {
+    if (array[i] % 2 === 0)//as i iterate through this loop did we check each index to be divisible by 2? if not add into new array
+      evenArray.push(array[i])// is this being pushed in to the odd array
+  }
+  console.log(evenArray) //checking to see the other array
+  return evenArray
+}
 
 /**
  * findSmallest()
@@ -96,8 +122,15 @@ function evenArray(array) {}
  *  findSmallest([ 0, 11, -2, 5 ]);
  *  //> -2
  */
-function findSmallest(array) {}
-
+function findSmallest(array) {
+  let smallest = array[0] //define for the iteration below
+  for (let i = 1; i < array.length; i++) { //loop through
+    if (array[i] < smallest) { //is asking if the array is less than the smallest
+      smallest = array[i]// is going to represent the arrays index of smallest integer/element
+    }
+  }
+  return smallest //its giving
+}
 /**
  * findLargest()
  * ---------------------
@@ -109,7 +142,14 @@ function findSmallest(array) {}
  *  findLargest([ 0, 11, -2, 5 ]);
  *  //> 11
  */
-function findLargest(array) {}
+function findLargest(array) {
+  let largest = array[0] //define for the iteration below
+  for (let i = 1; i < array.length; i++) { //loop through
+    if (array[i] > largest) { //is asking if the array is greater than the largest
+      largest = array[i]// is going to represent the arrays index of largest integer/element
+    }
+  } return largest // its giving
+}
 
 /**
  * findEqual()
@@ -126,7 +166,15 @@ function findLargest(array) {}
  *  findEqual([ 0, 11, -2, 5 ], 9);
  *  //> false
  */
-function findEqual(array, selected) {}
+function findEqual(array, selected) {
+  let equal = false // we need to define the equal function to return only when found the TRUE value -- ya git me???
+  for (let i= 0; i < array.length; i++) { //loop on over up and through this array
+    if (array[i] === selected){ //is this the parameter selected from the index??
+      equal = true // WHAT IS THE TRUTH! Give it back to us this is the condition within a condition of value setting.
+    } // this is the condition that we are searching for to be true!!
+  }
+  return equal
+}//end findEqual
 
 /**
  * removeDuplicates()

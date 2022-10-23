@@ -80,16 +80,15 @@ return everyOther
  *  containsWhileLoop([ "left", "up", "right" ], "down");
  *  //> false
  */
-function containsWhileLoop(array, target) {
- let i = 0 // same proces slike for loop but break it down logic is before the incrementation
-  while (i < array.length){ //now iterate the loop through the length of array
-    if (array[i] === target) 
-      return true // return true if you DO find "target"
-    i++ // increment that thang through the loop!
-  }
-  return false // only return this if you DON'T find "target"
+ function containsWhileLoop(array, target) {
+let i = 0
+while(i < array.length){
+  if(array[i]===target)
+  return true
+  i++
+} 
+return false
 }
-
 /**
  * containsForLoop()
  * ---------------------

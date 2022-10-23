@@ -19,7 +19,23 @@
  *  applyDiscount(1000, 9, true);
  *  //> 700
  */
-function applyDiscount(priceInCents, age, hasMembership) {}
+function applyDiscount(priceInCents, age, hasMembership) {
+  // be sure to set up all these conditionals
+  // stack those conditionals in order from the most conditions met ----> to know conditions met 
+  // first define if there in NO MEMBERSHIP && <= TO AGE 
+
+  if (!hasMembership && (age <= 10 || age >= 65)){ // this meets first condition no membership but has age discount
+    return priceInCents * 0.9
+  } else if (hasMembership){//all of this is has membership = true
+    if (age <= 10 || age >= 65){ // meets second condition or 30% for having membership
+      return priceInCents * 0.7
+    } else {
+      return priceInCents * 0.8
+    }
+  } else {
+    return priceInCents // garbage collection is in affect -- give back everything else that doesnt meet the conditions
+  }
+}
 
 /**
  * getCartTotal()
@@ -40,7 +56,14 @@ function applyDiscount(priceInCents, age, hasMembership) {}
     getCartTotal(cart);
  *  //> "$30.00"
  */
-function getCartTotal(products) {}
+function getCartTotal(products) {
+  let checkoutPrice = 0 //determine total amount in a sum +=
+  for (let i = 0; i < products.length; i++){// set your var to remind you of what youre doing with this algo
+      checkoutPrice += products[i].priceInCents * products[i].quantity    //access products at certain index that has price in cents multiply the price in cents * .quantity
+}
+
+return  `$${(checkoutPrice / 100).toFixed(2)}`
+}
 
 /**
  * compareLocations()
@@ -80,7 +103,18 @@ function getCartTotal(products) {}
     compareLocations(address1, address2);
     //> "Same city."
  */
-function compareLocations(address1, address2) {}
+function compareLocations(address1, address2) {
+  if (address1.state!==address2.state) { // we are comparing first is the adresses states are NOT equal
+    return("Addresses are not near each other.") //then we return the string we want of not being the same
+  } else if (address1.state === address2.state) // else if the adresses states ARE EQUAL then 
+    if(address1.street === address2.street){  // else if the adresses states ARE EQUAL then  
+    return ("Same building.") // we shall return same builing in a string
+  } else if (address1.zip === address2.zip){ //of the same zip matches bundle it with
+    return ("Same city.") // this string return
+  } else { // if the same state then bundle again
+    return ("Same state.") //with this return.
+  }
+}
 
 /**
  * gradeAssignments()
@@ -127,7 +161,27 @@ function compareLocations(address1, address2) {}
     //>   },
     //> ];
  */
-function gradeAssignments(assignments) {}
+function gradeAssignments(assignments) {
+  for (let i =0; i < assignments.length; i++){
+    if (assignments[i].kind === 'PASS-FAIL') {
+    if (assignments[i].score.received === assignments[i].score.max) {
+      assignments[i]['status']= 'PASSED'
+    } else {
+      assignments[i]['status']= 'FAILED'
+    }
+  } else if (assignments[i].kind === 'PERCENTAGE'){
+     let gradePercentage = ((assignments[i].score.received / assignments[i].score.max)*100)
+    if (gradePercentage >= 80){
+      assignments[i]['status'] = `PASSED: ${gradePercentage.toFixed(1)}%`
+    } else {
+      assignments[i]['status'] = `FAILED: ${gradePercentage.toFixed(1)}%`
+     }
+    } else {
+      assignments[i]['status'] = `SCORE: ${assignments[i].score.received}/${assignments[i].score.max}`
+    }
+   }
+   return assignments
+}
 
 /**
  * createLineOrder()
@@ -152,7 +206,19 @@ function gradeAssignments(assignments) {}
     createLineOrder(people);
     //> [ "Ray Anderson", "America Marsh", "Wade Carson", "Patience Patel" ]
  */
-function createLineOrder(people) {}
+function createLineOrder(people) {
+  let arr1 = []
+let arr2 = []
+for (let i = 0; i <people.length; i++){
+  if(people[i].hasMembership){
+    arr1.push(people[i].name)
+  } else {
+    arr2.push(people[i].name)
+  }
+}
+let newArr = arr1.concat(arr2)
+return newArr
+}
 
 module.exports = {
   applyDiscount,
