@@ -13,9 +13,10 @@
  *  //> [ "A!", "Very!", "Happy!", "Array!" ];
  */
 function shoutForLoop(array) {
+  let shoutier=[]
   for (let s = 0 ; s < array.length ; s++){
-    +"!"}
-    return array
+    array[s]+"!"}
+    return shoutier
   }
 
 /**
@@ -113,7 +114,19 @@ function findSmallest(array) {}
  *  findLargest([ 0, 11, -2, 5 ]);
  *  //> 11
  */
-function findLargest(array) {}
+function findLargest(array) {
+  let bigBigger = 0
+  let i=0;
+  while (i<array.length){
+    if (array.length[i] > bigBigger) {
+      bigBigger = array.length[i];
+    }
+    i++
+  }
+return bigBigger;
+}
+
+
 
 /**
  * findEqual()
@@ -148,6 +161,13 @@ function findEqual(array, selected) {}
  */
 
 function removeDuplicates(array) {}
+//   freshArray = []
+//   for (let z=0; z<array.length; z++){
+//     if (array[z] is a new number for the array) {
+//       freshArray.unshift[z];
+//     }
+//   }
+// }
 
 // Do not change any code below this line.
 module.exports = {

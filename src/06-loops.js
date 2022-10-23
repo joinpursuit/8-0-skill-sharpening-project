@@ -217,9 +217,11 @@ return -1
 
 function timesIndex(array) {
   let multiplicityArray = [];
-  for (let u = 0; u < array.length; u++) {
-    ((array[u]) * u);
-    multiplicityArray.push(u);
+  let missing = 0
+
+  for (let i = 0; i < array.length; i++) {
+    missing = array[i] * i;
+    multiplicityArray.push(missing);
   }
   return multiplicityArray;
 }
@@ -236,7 +238,16 @@ function timesIndex(array) {
  *  //> [ 5, 5 + 2, 5 + 2 + 9 ]
  *  //> [ 5, 7, 16 ]
  */
-function cumulativeSum(array) {}
+function cumulativeSum(array) {
+let totalTotal=0;
+let newArr = []
+
+for (let i = 0; i < array.length; i++) {
+  totalTotal = totalTotal + array[i];
+  newArr.push(totalTotal);
+}
+return newArr;
+}
 
 // Do not change anything below this line.
 module.exports = {
