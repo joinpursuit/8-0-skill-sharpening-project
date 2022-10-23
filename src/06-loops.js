@@ -11,7 +11,21 @@
  *  //> 25
  *  (3 + 4 + 5 + 6 + 7 = 25)
  */
-function rangeSum(min, max) {}
+function rangeSum(min, max) {
+let sum = 0
+for(let i = min; i <= max; i++) {
+  sum += i
+}
+return sum
+}
+//   let sum = 0
+//   let min = Math.min(rangeSum)
+//   let max = Math.max(rangeSum)
+
+//   for(let i = min; i <= max; i++) {
+//   sum += i
+// }
+//   return sum
 
 /**
  * rangeOdd()
@@ -25,8 +39,45 @@ function rangeSum(min, max) {}
  *  rangeOdd(10, 15);
  *  //> [ 15, 13, 11 ]
  */
-function rangeOdd(min, max) {}
-
+function rangeOdd(min, max) {
+  // newArray = []
+  // for(let i = max; i > min; i--) {
+  //   if(i % 2 === 1) {
+  //   newArray.push()
+  //     }
+  //     return newArray
+  //   }
+}
+// newArray = []
+// for(let i = max; i > min; i--) {
+//   if(i % 2 === 1) {
+//   newArray.push()
+//     }
+//     return newArray
+//   }
+//  // while (array[i] % 2) {
+//     array.splice(i, 1);
+//   }
+// }
+// return array;
+// }
+ //array = []
+  // for(let i = min; i <= max; i++) {
+  //   if(i % 2 === 0) {
+  //     array.push(i)
+  //   }
+  // }
+// for(let i = min; i < max.length; i++) {
+//   if (!(array[i] % 2)) {
+//  array.push(array[i])
+//   }
+// }
+  // while (true) {
+  //   if (number % 2 ==)
+  // }
+//return array
+// array.push(number);
+// console.log(array)
 /**
  * rangeEveryOther()
  * ---------------------
