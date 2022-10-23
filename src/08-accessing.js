@@ -200,7 +200,7 @@ function getFlatObject(person) {
     city: person.address.city,
     state: person.address.state,
     zip: person.address.zip,
-    numbers: [7185550921, 7185558611],
+    numbers: person.numbers,
   };
   return newPerson
 }
