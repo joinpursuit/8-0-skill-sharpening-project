@@ -210,12 +210,12 @@ function findEqual(array, selected) {
  */
 
 function removeDuplicates(array) {
- 
   for (let i = 0; i < array.length; i++) {
     if (array.includes(array[i])) {
-      array.splice(array[i],array[i]);
+      array.splice(array[i], array[i]);
     }
-  } return array
+  }
+  return array;
 }
 
 // Do not change any code below this line.

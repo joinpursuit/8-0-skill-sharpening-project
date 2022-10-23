@@ -190,17 +190,19 @@ function getFullAddress(person) {
     };
  */
 function getFlatObject(person) {
-  let person = {
-    first: "Rachel",
-    middle: "Eleanor",
-    last: "Rojas",
-    street: "697 Pine Drive",
-    unit: "2A",
-    city: "Staten Island",
-    state: "NY",
-    zip: "10306",
+  
+  let newPerson = {
+    first: person.names.first,
+    middle: person.names.middle,
+    last: person.names.last,
+    street: person.address.street,
+    unit: person.address.unit,
+    city: person.address.city,
+    state: person.address.state,
+    zip: person.address.zip,
     numbers: [7185550921, 7185558611],
   };
+  return newPerson
 }
 
 // Do not change the code below.
