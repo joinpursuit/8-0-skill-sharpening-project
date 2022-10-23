@@ -58,7 +58,7 @@ function getArrayLength(array) {
  *  //> 10
  */
 function getFirstElementOfArray(array) {
-  return array.shift()
+  return array[0]
 }
 
 /**
@@ -74,7 +74,7 @@ function getFirstElementOfArray(array) {
  *  //> undefined
  */
 function getLastElementOfArray(array) {
-  return array.pop()
+  return array[array.length -1]
 }
 
 /**
@@ -90,7 +90,8 @@ function getLastElementOfArray(array) {
  *  //> [ 10, 9 ]
  */
 function addElementToEndOfArray(array, element) {
-  // return push.element()
+  array.push(element)
+  return array
 }
 
 /**
@@ -120,7 +121,10 @@ function removeElementFromEndOfArray(array) {
  *  addElementToFrontOfArray([ 10 ], 9);
  *  //> [ 9, 10 ]
  */
-function addElementToFrontOfArray(array, element) {}
+function addElementToFrontOfArray(array, element) {
+  array.unshift(element);
+  return array
+}
 
 /**
  * removeElementFromFrontOfArray()
@@ -152,7 +156,7 @@ function removeElementFromFrontOfArray(array) {
  *  //> null
  */
 function getMiddleElement(array) {
-  return array.Math.floor()
+  return array[(Math.floor(array.length/2))]
 }
 
 // Do not change any code below this line.
