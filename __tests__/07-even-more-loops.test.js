@@ -11,7 +11,7 @@ const {
   removeDuplicates,
 } = require("../src/07-even-more-loops");
 
-describe.only("shoutForLoop", () => {
+describe("shoutForLoop", () => {
   test("adds an ! to the end of each element", () => {
     expect(shoutForLoop([])).toEqual([]);
     expect(shoutForLoop(["I", "am", "a", "happy", "array"])).toEqual([
