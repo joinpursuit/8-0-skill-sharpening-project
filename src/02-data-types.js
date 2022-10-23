@@ -156,13 +156,13 @@ function isOdd(num) {
  *  //> false
  */
 function isTruthy(val) {
-  // if(val != 0n||false ||0||""||NaN||null||undefined||-0){
-  //   return true
-  // } else{
-  //   return false
-  // }
-  trueOrFalse = (val !== true) ? false:true;
-  return trueOrFalse
+  if(!val == true){
+    return false
+  } else{
+    return true
+  }
+  // trueOrFalse = (val !== true) ? false:true;
+  // return trueOrFalse
 }
 
 /**
@@ -180,10 +180,10 @@ function isTruthy(val) {
  *  //> false
  */
 function isFalsy(val) {
-  if(val !== 0n||false ||0||''||NaN||null||undefined||-0){
-    return false
-  } else{
+  if(!val == true){
     return true
+  } else{
+    return false
   }
 }
 
