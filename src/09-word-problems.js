@@ -103,13 +103,14 @@ function compareLocations(address1, address2) {
     if(address1.street === address2.street) {
       return ("Same building.")
     } else if (address1.zip === address2.zip) {
-      return ("Same city.") //"Same city."
+      return ("Same city.") 
     } else {
       return ("Same state.")
     }
-   } else {
-     return ("Addresses are not near each other.")
-   }
+    }   
+        //  else {
+        //   return ("Addresses are not near each other.")
+        // }
   }  // end of function
 
 /**
@@ -159,25 +160,25 @@ function compareLocations(address1, address2) {
  */
 function gradeAssignments(assignments) {
   for (let i =0; i < assignments.length; i++){
-  if (assignments[i].kind === 'PASS-FAIL') {
+    if (assignments[i].kind === 'PASS-FAIL') {
     if (assignments[i].score.received === assignments[i].score.max) {
       assignments[i]['status'] = 'PASSED'
-    } else {
+      } else {
       assignments[i]['status'] = 'FAILED'
     } // end of inner else if 
-  } else if (assignments[i].kind === 'PERCENTAGE') {
+    } else if (assignments[i].kind === 'PERCENTAGE') {
     let gradePercentage = ((assignments[i].score.received /assignments[i].score.max) * 100)
     if (gradePercentage >= 80) {
       assignments[i]['status'] = `PASSED: ${gradePercentage.toFixed(1)}%`
-    } else {
+      } else {
       assignments[i]['status'] = `FAILED: ${gradePercentage.toFixed(1)}%`
     }
-  } else {
+      } else {
     assignments[i]['status'] = `SCORE: ${assignments[i].score.received}/${assignments[i].score.max}`
-  }
-  } // end of loop
+    }
+    } // end of loop
     return assignments
-  }
+    }  // end of function
 
 /**
  * createLineOrder()
