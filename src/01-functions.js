@@ -9,7 +9,9 @@
  *  alwaysTrue();
  *  //> true
  */
-function alwaysTrue() {}
+function alwaysTrue() {
+return (true)// logs boolean true
+}
 
 /**
  * greet()
@@ -24,7 +26,9 @@ function alwaysTrue() {}
  *  greet("Ian");
  *  //> "Hello, Ian."
  */
-function greet() {}
+function greet(name) {
+return `Hello, ${name}.`//return the string Hello, and the string variable name using ``string interpolation
+}
 
 /**
  * add()
@@ -39,7 +43,10 @@ function greet() {}
  *  add(10, 20);
  *  //> 30
  */
-function add() {}
+function add(a , b) {
+  number = (a + b)//intiated variable assigned to the sum of number a & number b
+  return(number)// return the number variable
+}
 
 /**
  * multiply()
@@ -54,7 +61,10 @@ function add() {}
  *  multiply(2, 5);
  *  //> 10
  */
-function multiply() {}
+function multiply( a, b) {
+  number = a*b//intiated variable assigned to the product of number a & number b
+  return(number)// return the number variable
+}
 
 /**
  * average()
@@ -74,7 +84,10 @@ function multiply() {}
  *  average(10, 6);
  *  //> 8 // 10 + 6 = 16; 16/2 = 8;
  */
-function average() {}
+function average(a , b) {
+  number = ((a+b)/2)//intiated variable assigned to the sum of number a & number b divided by 2
+  return(number)//return the number variable
+}
 
 /**
  * averageThree()
@@ -93,7 +106,10 @@ function average() {}
  *  averageThree(10, 11, 19);
  *  //> 10 // 10 + 11 + 19 = 30; 30 / 3 = 10;
  */
-function averageThree() {}
+function averageThree(a,b,c) {
+  number =((a + b + c)/3)//intiated variable assigned to the sum of number a,number b, & number c  divided by 3
+  return(number)// return the number variable
+}
 
 /**
  * compareTypes()
@@ -112,7 +128,12 @@ function averageThree() {}
  *  compareTypes("left", 10);
  *  //> false
  */
-function compareTypes() {}
+function compareTypes(a,b) {
+  if (typeof(a) === typeof(b)){//if the data type of a strictly equal the data type of b
+    return(true)//return the boolean true
+  }else//otherwise
+  return(false)//return the boolean false
+}
 
 /**
  * flipSign()
@@ -131,7 +152,10 @@ function compareTypes() {}
  *  flipSign(50);
  *  //> -50
  */
-function flipSign() {}
+function flipSign(a) {
+  number = (a*(-1))//intiate variable number assigned to the product of variable a & -1
+  return(number)//returns number variable
+}
 
 /**
  * joinStringsWithSpaces()
@@ -151,7 +175,11 @@ function flipSign() {}
  *  joinStringsWithSpaces("left", "right", "up", "down", "away");
  *  //> "left right up down away"
  */
-function joinStringsWithSpaces() {}
+function joinStringsWithSpaces(a, b, c, d, e) {
+  return a+" "+b+ " "+c+" "+d+" "+e
+  //`${a} ${b} ${c} ${d} ${e}`
+  //easier solution
+}
 
 /**
  * getFirstAndLastCharacter()
@@ -168,7 +196,10 @@ function joinStringsWithSpaces() {}
  *  getFirstAndLastCharacter("upwards");
  *  //> "us"
  */
-function getFirstAndLastCharacter() {}
+function getFirstAndLastCharacter(a) {
+  return((a.charAt(0)+(a.charAt(a.length - 1))))
+  //return character at index 0 of string variable a plus the character at the last index of the string variable a
+}
 
 // Do not change the code below.
 module.exports = {
