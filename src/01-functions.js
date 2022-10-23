@@ -9,7 +9,9 @@
  *  alwaysTrue();
  *  //> true
  */
-function alwaysTrue() {}
+function alwaysTrue() {
+  return true;
+}
 
 /**
  * greet()
@@ -24,7 +26,9 @@ function alwaysTrue() {}
  *  greet("Ian");
  *  //> "Hello, Ian."
  */
-function greet() {}
+function greet(name) {
+  return `Hello, ${name}.`
+}
 
 /**
  * add()
@@ -39,7 +43,9 @@ function greet() {}
  *  add(10, 20);
  *  //> 30
  */
-function add() {}
+function add(numA, numB) {
+  return numA + numB;
+}
 
 /**
  * multiply()
@@ -54,7 +60,9 @@ function add() {}
  *  multiply(2, 5);
  *  //> 10
  */
-function multiply() {}
+function multiply(numA, numB) {
+  return numA * numB;
+}
 
 /**
  * average()
@@ -74,7 +82,9 @@ function multiply() {}
  *  average(10, 6);
  *  //> 8 // 10 + 6 = 16; 16/2 = 8;
  */
-function average() {}
+function average(numA, numB) {
+  return (numA + numB) / 2;
+}
 
 /**
  * averageThree()
@@ -93,7 +103,9 @@ function average() {}
  *  averageThree(10, 11, 19);
  *  //> 10 // 10 + 11 + 19 = 30; 30 / 3 = 10;
  */
-function averageThree() {}
+function averageThree(numA, numB, numC) {
+  return (numA + numB + numC) / 3;
+}
 
 /**
  * compareTypes()
@@ -112,7 +124,22 @@ function averageThree() {}
  *  compareTypes("left", 10);
  *  //> false
  */
-function compareTypes() {}
+// function compareTypes(a, b) {
+//   if (typeof a === typeof b) {
+//     return true;
+//   } else {
+//     return false;
+//   }
+// }
+// // another way to do:
+// // assigning the boolean value in the variable as a "default" value
+function compareTypes(a, b) {
+  let result = false;
+  if (typeof a === typeof b) {
+    result = true;
+  }
+  return result;
+}
 
 /**
  * flipSign()
@@ -131,7 +158,9 @@ function compareTypes() {}
  *  flipSign(50);
  *  //> -50
  */
-function flipSign() {}
+function flipSign(num) {
+  return -num;
+}
 
 /**
  * joinStringsWithSpaces()
@@ -151,7 +180,9 @@ function flipSign() {}
  *  joinStringsWithSpaces("left", "right", "up", "down", "away");
  *  //> "left right up down away"
  */
-function joinStringsWithSpaces() {}
+function joinStringsWithSpaces(a, b, c, d, e) {
+  return `${a} ${b} ${c} ${d} ${e}`;
+}
 
 /**
  * getFirstAndLastCharacter()
@@ -168,7 +199,11 @@ function joinStringsWithSpaces() {}
  *  getFirstAndLastCharacter("upwards");
  *  //> "us"
  */
-function getFirstAndLastCharacter() {}
+function getFirstAndLastCharacter(str) {
+  const arr = Array.from(str);
+  const newStr = arr[0] + arr[arr.length-1];
+  return newStr;
+}
 
 // Do not change the code below.
 module.exports = {
