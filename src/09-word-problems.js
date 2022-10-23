@@ -19,7 +19,17 @@
  *  applyDiscount(1000, 9, true);
  *  //> 700
  */
-function applyDiscount(priceInCents, age, hasMembership) {}
+function applyDiscount(priceInCents, age, hasMembership) {
+  if ((hasMembership && age <= 10) || (hasMembership && age >= 65)) {
+    return priceInCents * 0.7;
+  } else if (age <= 10 || age >= 65) {
+    return priceInCents * 0.9;
+  } else if (hasMembership) {
+    return priceInCents * 0.8;
+  } else {
+    return priceInCents;
+  }
+}
 
 /**
  * getCartTotal()
@@ -40,7 +50,13 @@ function applyDiscount(priceInCents, age, hasMembership) {}
     getCartTotal(cart);
  *  //> "$30.00"
  */
-function getCartTotal(products) {}
+function getCartTotal(products) {
+  let total = 0;
+  products.forEach((item) => {
+    total = total + item.priceInCents * item.quantity;
+  });
+  return `$${Number.parseFloat(total * 0.01).toFixed(2)}`;
+}
 
 /**
  * compareLocations()
@@ -80,7 +96,26 @@ function getCartTotal(products) {}
     compareLocations(address1, address2);
     //> "Same city."
  */
-function compareLocations(address1, address2) {}
+function compareLocations(address1, address2) {
+  const check = [];
+  for (const key in address1) {
+    if (address1[key] === address2[key]) {
+      check.push(1);
+    } else {
+      check.push(0);
+    }
+  }
+  switch (check.join("")) {
+    case "1111":
+      return "Same building.";
+    case "0111":
+      return "Same city.";
+    case "0010":
+      return "Same state.";
+    default:
+      return "Addresses are not near each other.";
+  }
+}
 
 /**
  * gradeAssignments()
@@ -127,7 +162,33 @@ function compareLocations(address1, address2) {}
     //>   },
     //> ];
  */
-function gradeAssignments(assignments) {}
+// - If the assignment has a `kind` of `"PASS-FAIL"`, set the `status` value to `"PASSED"` if the `score.received` equals the `score.max`. Otherwise, set that `status` to be `"FAILED"`.
+// * - If the assignment has a `kind` of `"PERCENTAGE"`, set the `status` value to be `"PASSED: <percentage>"` if the student scored at least 80.0%. The `<percentage>` should be set to one decimal place. If the student scored less than 80.0%, set the status to `"FAILED: <percentage>"`.
+// * - If the assignment has any other `kind` than the two above, set the `status` value to equal `"SCORE: <received>/<max>"`, where `<received>` is the `score.received` value and `<max>` is the `score.max` value.
+function gradeAssignments(assignments) {
+  assignments.forEach((assignment) => {
+    if (assignment.kind === "PASS-FAIL") {
+      if (assignment.score.received === assignment.score.max) {
+        assignment.status = "PASSED";
+      } else {
+        assignment.status = "FAILED";
+      }
+    } else if (assignment.kind === "PERCENTAGE") {
+      if ((assignment.score.received / assignment.score.max) * 100 >= 80) {
+        assignment.status = `PASSED: ${
+          Number((assignment.score.received / assignment.score.max) * 100 ).toFixed(1)
+        }%`;
+      } else {
+        assignment.status = `FAILED: ${
+          Number((assignment.score.received / assignment.score.max) * 100 ).toFixed(1)
+        }%`;
+      }
+    } else {
+      assignment.status = `SCORE: ${assignment.score.received}/${assignment.score.max}`;
+    }
+  });
+  return assignments
+}
 
 /**
  * createLineOrder()
@@ -152,7 +213,20 @@ function gradeAssignments(assignments) {}
     createLineOrder(people);
     //> [ "Ray Anderson", "America Marsh", "Wade Carson", "Patience Patel" ]
  */
-function createLineOrder(people) {}
+function createLineOrder(people) {
+  const member = []
+  const nonMember = []
+  console.log(people)
+  for(let i = 0;i<people.length;i++){
+    if(people[i].hasMembership){
+      member.push(people[i].name)
+    }else{
+      nonMember.push(people[i].name)
+    }
+  }
+  const orderedLine = member.concat(nonMember)
+  return orderedLine
+}
 
 module.exports = {
   applyDiscount,
