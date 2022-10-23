@@ -12,9 +12,15 @@
  *  shoutForLoop([ "A", "Very", "Happy", "Array" ]);
  *  //> [ "A!", "Very!", "Happy!", "Array!" ];
  */
-function shoutForLoop(array) {
-  for (let i = 0; i < array.length; i++) {
-    array[i] += "!";
+// function shoutForLoop(array) {
+//   for (let i = 0; i < array.length; i++) {
+//     array[i] += "!";
+//   }
+//   return array;
+// }
+const shoutForLoop = array => {
+  for (let i of array) {
+    array[array.indexOf(i)] += "!";
   }
   return array;
 }
@@ -33,7 +39,7 @@ function shoutForLoop(array) {
  *  shoutWhileLoop([ "A", "Very", "Happy", "Array" ]);
  *  //> [ "A!", "Very!", "Happy!", "Array!" ];
  */
-function shoutWhileLoop(array) {
+const shoutWhileLoop = array => {
   let i = 0;
   while (i < array.length) {
     array[i] += "!";
@@ -56,13 +62,20 @@ function shoutWhileLoop(array) {
  *  shoutForOfLoop([ "A", "Very", "Happy", "Array" ]);
  *  //> [ "A!", "Very!", "Happy!", "Array!" ];
  */
-function shoutForOfLoop(array) {
-  let newArr = [];
+// function shoutForOfLoop(array) {
+//   let newArr = [];
+//   for (let str of array) {
+//     str += "!";
+//     newArr.push(str);
+//   }
+//   return newArr;
+// }
+const shoutForOfLoop = array => {
   for (let str of array) {
-    str += "!";
-    newArr.push(str);
+    // array[array.indexOf(str)] = str.concat("!");
+    array[array.indexOf(str)] += "!";
   }
-  return newArr;
+  return array;
 }
 
 /**
@@ -76,10 +89,17 @@ function shoutForOfLoop(array) {
  *  sumArray([ 10, 0, 10, 11 ]);
  *  //> 31
  */
-function sumArray(array) {
+// function sumArray(array) {
+//   let sum = 0;
+//   for (let i = 0; i < array.length; i++) {
+//     sum += array[i];
+//   }
+//   return sum;
+// }
+const sumArray = array => {
   let sum = 0;
-  for (let i = 0; i < array.length; i++) {
-    sum += array[i];
+  for (let i of array) {
+    sum += i;
   }
   return sum;
 }
@@ -95,11 +115,20 @@ function sumArray(array) {
  *  oddArray([ 11, 15, 20, 22, 37 ]);
  *  //> [ 11, 15, 37 ]
  */
-function oddArray(array) {
+// function oddArray(array) {
+//   let newArr = [];
+//   for (let i = 0; i < array.length; i++) {
+//     if (array[i] % 2 === 1) {
+//       newArr.push(array[i]);
+//     }
+//   }
+//   return newArr;
+// }
+const oddArray = array => {
   let newArr = [];
-  for (let i = 0; i < array.length; i++) {
-    if (array[i] % 2 === 1) {
-      newArr.push(array[i]);
+  for (let i of array) {
+    if (i % 2 === 1) {
+      newArr.push(i);
     }
   }
   return newArr;
@@ -116,11 +145,20 @@ function oddArray(array) {
  *  evenArray([ 11, 15, 20, 22, 37 ]);
  *  //> [ 20, 22 ]
  */
-function evenArray(array) {
+// function evenArray(array) {
+//   let newArr = [];
+//   for (let i = 0; i < array.length; i++) {
+//     if (array[i] % 2 === 0) {
+//       newArr.push(array[i]);
+//     }
+//   }
+//   return newArr;
+// }
+const evenArray = array => {
   let newArr = [];
-  for (let i = 0; i < array.length; i++) {
-    if (array[i] % 2 === 0) {
-      newArr.push(array[i]);
+  for (let i of array) {
+    if (i % 2 === 0) {
+      newArr.push(i);
     }
   }
   return newArr;
@@ -210,15 +248,14 @@ function findEqual(array, selected) {
  *  removeDuplicates([ 1, 11, 2, 3, 4, 4, 2, 11, 9 ]);
  *  //> [ 1, 11, 2, 3, 4, 9 ]
  */
-
 function removeDuplicates(array) {
   for (let i = 0; i < array.length; i++) {
-    //first number assigned to a variable for later comparison
+    // first number assigned to a variable for later comparison
     let firstDup = array[i];
-    //second loop to compare with the previous assigned number
+    // second loop to compare with the previous assigned number
     for (let j = 1; j < array.length; j++) {
       if (firstDup === array[j]) {
-        //remove the duplicate number from the correct index nubmer
+        // remove the duplicate number from the correct index nubmer
         array.splice(array[j-1], 1);
       }
     }

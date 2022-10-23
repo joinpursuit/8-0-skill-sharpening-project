@@ -9,9 +9,12 @@
  *  getLengthOfString("down");
  *  //> 4
  */
- function getLengthOfString(str) {
-  return str.length;
-}
+//  function getLengthOfString(str) {
+//   return str.length;
+// }
+// // another way to do:
+// // using arrow function
+const getLengthOfString = str => str.length;
 
 /**
  * convertToNumber()
@@ -24,9 +27,10 @@
  *  convertToNumber("111");
  *  //> 111
  */
-function convertToNumber(val) {
-  return Number(val);
-}
+// function convertToNumber(val) {
+//   return Number(val);
+// }
+const convertToNumber = val => Number(val);
 
 /**
  * convertToString()
@@ -40,9 +44,10 @@ function convertToNumber(val) {
  *  convertToString(99);
  *  //> "99"
  */
-function convertToString(val) {
-  return String(val);
-}
+// function convertToString(val) {
+//   return String(val);
+// }
+const convertToString = val => String(val);
 
 /**
  * convertToShoutingText()
@@ -55,9 +60,10 @@ function convertToString(val) {
  *  convertToShoutingText("Hello There");
  *  //> "HELLO THERE"
  */
-function convertToShoutingText(text) {
-  return text.toUpperCase();
-}
+// function convertToShoutingText(text) {
+//   return text.toUpperCase();
+// }
+const convertToShoutingText = text => text.toUpperCase();
 
 /**
  * convertToWhisperText()
@@ -70,9 +76,10 @@ function convertToShoutingText(text) {
  *  convertToWhisperText("Hello There");
  *  //> "hello there"
  */
-function convertToWhisperText(text) {
-  return text.toLowerCase();
-}
+// function convertToWhisperText(text) {
+//   return text.toLowerCase();
+// }
+const convertToWhisperText = text => text.toLowerCase();
 
 /**
  * checkIfCharacterIsInString()
@@ -89,12 +96,18 @@ function convertToWhisperText(text) {
  *  checkIfCharacterIsInString("hello there", "a");
  *  //> false
  */
+// function checkIfCharacterIsInString(text, character) {
+//   let result = false;
+//   if (text.includes(character)) {
+//     result = true;
+//   } 
+//   return result;
+// }
+// // another way to do:
+// // using ternary operator
 function checkIfCharacterIsInString(text, character) {
-  if (text.includes(character)) {
-    return true;
-  } else {
-    return false;
-  }
+  let result = text.includes(character) ? true: false;
+  return result;
 }
 
 /**
@@ -111,12 +124,16 @@ function checkIfCharacterIsInString(text, character) {
  *  isEven(11);
  *  //> false
  */
+// function isEven(num) {
+//   let result = false;
+//   if (num % 2 === 0) {
+//     result = true;
+//   }
+//   return result;
+// }
 function isEven(num) {
-  if (num % 2 === 0) {
-    return true;
-  } else {
-    return false;
-  }
+  let result = (num % 2 === 0) ? true: false;
+  return result;
 }
 
 /**
@@ -133,12 +150,16 @@ function isEven(num) {
  *  isOdd(11);
  *  //> true
  */
+// function isOdd(num) {
+//   let result = false;
+//   if (num % 2 === 1) {
+//     result = true;
+//   }
+//   return result;
+// }
 function isOdd(num) {
-  if (num % 2 === 1) {
-    return true;
-  } else {
-    return false;
-  }
+  let result = (num % 2 === 1) ? true: false;
+  return result;
 }
 
 /**
@@ -155,13 +176,17 @@ function isOdd(num) {
  *  isTruthy(null);
  *  //> false
  */
-function isTruthy(val) {
-  if (val) {
-    return true;
-  } else {
-    return false;
-  }
-}
+// function isTruthy(val) {
+//   let result = false;
+//   if (val) {
+//     result = true;
+//   }
+//   return result;
+// }
+// // using arrow funtion and ternary operator
+// // don't need to declare a new variable
+// // return is implied on the arraw function
+const isTruthy = val => val? true: false;
 
 /**
  * isFalsy()
@@ -177,13 +202,14 @@ function isTruthy(val) {
  *  isFalsy(" ");
  *  //> false
  */
-function isFalsy(val) {
-  if (!val) {
-    return true;
-  } else {
-    return false;
-  }
-}
+// function isFalsy(val) {
+//   let result = false;
+//   if (!val) {
+//     result = true;
+//   }
+//   return result;
+// }
+const isFalsy = val => !val ? true: false;
 
 // Do not change the code below.
 module.exports = {

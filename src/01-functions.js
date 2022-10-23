@@ -124,12 +124,21 @@ function averageThree(numA, numB, numC) {
  *  compareTypes("left", 10);
  *  //> false
  */
+// function compareTypes(a, b) {
+//   if (typeof a === typeof b) {
+//     return true;
+//   } else {
+//     return false;
+//   }
+// }
+// // another way to do:
+// // assigning the boolean value in the variable as a "default" value
 function compareTypes(a, b) {
+  let result = false;
   if (typeof a === typeof b) {
-    return true;
-  } else {
-    return false;
+    result = true;
   }
+  return result;
 }
 
 /**

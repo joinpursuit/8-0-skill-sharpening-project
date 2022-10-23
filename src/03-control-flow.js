@@ -14,13 +14,14 @@
  *  isEqual(10, "10");
  *  //> false
  */
-function isEqual(a, b) {
-  if (a === b) {
-    return true;
-  } else {
-    return false;
-  }
-}
+// function isEqual(a, b) {
+//   let result = false;
+//   if (a === b) {
+//     result = true;
+//   }
+//   return result;
+// }
+const isEqual = (a, b) => (a === b) ? true: false;
 
 /**
  * findLarger()
@@ -34,13 +35,14 @@ function isEqual(a, b) {
  *  findLarger(19, 7);
  *  //> 19
  */
-function findLarger(a, b) {
-  if (a > b) {
-    return a;
-  } else {
-    return b;
-  }
-}
+// function findLarger(a, b) {
+//   if (a > b) {
+//     return a;
+//   } else {
+//     return b;
+//   }
+// }
+const findLarger = (a, b) => a > b ? a: b;
 
 /**
  * findLargerOrTie()
@@ -57,15 +59,17 @@ function findLarger(a, b) {
  *  findLargerOrTie(0, 0);
  *  //> "tie"
  */
-function findLargerOrTie(a, b) {
-  if (a > b) {
-    return a;
-  } if (a < b) {
-    return b;
-  } else {
-    return "tie";
-  }
-}
+// function findLargerOrTie(a, b) {
+//   if (a > b) {
+//     return a;
+//   } if (a < b) {
+//     return b;
+//   } else {
+//     return "tie";
+//   }
+// }
+// // using ternary operator with else if statement
+const findLargerOrTie = (a, b) => a > b ? a: (a < b ? b: "tie");
 
 /**
  * positiveNegativeOrZero()
@@ -85,15 +89,16 @@ function findLargerOrTie(a, b) {
  *  positiveNegativeOrZero(1);
  *  //> "Positive"
  */
-function positiveNegativeOrZero(a) {
-  if (a > 0) {
-    return "Positive";
-  } else if (a < 0) {
-    return "Negative";
-  } else {
-    return "Zero";
-  }
-}
+// function positiveNegativeOrZero(a) {
+//   if (a > 0) {
+//     return "Positive";
+//   } else if (a < 0) {
+//     return "Negative";
+//   } else {
+//     return "Zero";
+//   }
+// }
+const positiveNegativeOrZero = a => a > 0 ? "Positive" : (a < 0 ? "Negative": "Zero");
 
 /**
  * aroundTheWorldGreeting()
@@ -180,19 +185,21 @@ function aroundTheWorldGreetingWithSwitch(language) {
  *  calculateLetterGrade(99);
  *  //> "A"
  */
-function calculateLetterGrade(grade) {
-  if (grade >= 90) {
-    return "A";
-  } else if (grade >= 80) {
-    return "B";
-  } else if (grade >= 70) {
-    return "C";
-  } else if (grade >= 60) {
-    return "D";
-  } else {
-    return "F";
-  }
-}
+// function calculateLetterGrade(grade) {
+//   if (grade >= 90) {
+//     return "A";
+//   } else if (grade >= 80) {
+//     return "B";
+//   } else if (grade >= 70) {
+//     return "C";
+//   } else if (grade >= 60) {
+//     return "D";
+//   } else {
+//     return "F";
+//   }
+// }
+// // arrow function with nested ternary operators
+const calculateLetterGrade = grade => grade >= 90 ? "A": (grade >= 80 ? "B": (grade >= 70 ? "C": (grade >= 60 ? "D": "F")));
 
 /**
  * animalCounts()
@@ -232,13 +239,14 @@ function animalCounts(animal, numberOfAnimals) {
  *  evenOrOdd(48);
  *  //> "Even"
  */
-function evenOrOdd(a) {
-  if (a % 2 === 0) {
-    return "Even";
-  } else {
-    return "Odd";
-  }
-}
+// function evenOrOdd(a) {
+//   if (a % 2 === 0) {
+//     return "Even";
+//   } else {
+//     return "Odd";
+//   }
+// }
+const evenOrOdd = a => (a % 2 === 0) ? "Even": "Odd";
 
 /**
  * evenOrOddWithTernary()

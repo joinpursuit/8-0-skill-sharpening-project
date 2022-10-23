@@ -9,9 +9,12 @@
  *  createEmptyObject()
  *  //> {}
  */
+// function createEmptyObject() {
+//   return {};
+// }
 function createEmptyObject() {
-  const empty = {};
-  return empty;
+  const emptyObj = {};
+  return emptyObj;
 }
 
 /**
