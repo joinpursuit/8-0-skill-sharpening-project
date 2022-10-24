@@ -9,7 +9,10 @@
  *  createEmptyObject()
  *  //> {}
  */
-function createEmptyObject() {}
+function createEmptyObject() {
+  return {}
+
+}
 
 /**
  * createObjectWithValue()
@@ -22,11 +25,13 @@ function createEmptyObject() {}
  *  createObjectWithValue(19);
  *  //> { whateverKey: 19 }
  */
-function createObjectWithValue(val) {}
+function createObjectWithValue(val) {
+  return {Spongebob: val}
+}
 
 /**
- * createObjectWithKey()
- * ---------------------
+ * createObjectWithKey() 
+ * * ---------------------
  * Creates an object with the input as a key. The value can be anything.
  * @param {*} key
  * @returns {Object}
@@ -127,7 +132,11 @@ function addKeyToObject(object, key) {
  *  addKeyValuePairToObject({ up: true }, "left", false);
  *  //> { up: true, left: false }
  */
-function addKeyValuePairToObject(object, key, val) {}
+function addKeyValuePairToObject(object, key, val) {
+  object[key] = val
+  return object
+
+}
 
 /**
  * deleteKeyFromObject()
@@ -141,7 +150,11 @@ function addKeyValuePairToObject(object, key, val) {}
  *  deleteKeyFromObject({ left: true, right: false }, "left");
  *  //> { right: false }
  */
-function deleteKeyFromObject(object, key) {}
+function deleteKeyFromObject(object, key) {
+  delete object[key]
+  return object
+
+}
 
 // Do not change any code below this line.
 module.exports = {

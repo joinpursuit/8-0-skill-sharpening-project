@@ -113,7 +113,14 @@ function evenArray(array) {
  *  findSmallest([ 0, 11, -2, 5 ]);
  *  //> -2
  */
-function findSmallest(array) {}
+function findSmallest(array) {
+  let smallNumber = array[0];
+  for(let i = 0; i < array.length; i ++){
+   smallNumber = Math.min(...array)
+  }
+return smallNumber
+
+}
 
 /**
  * findLargest()
@@ -126,7 +133,14 @@ function findSmallest(array) {}
  *  findLargest([ 0, 11, -2, 5 ]);
  *  //> 11
  */
-function findLargest(array) {}
+function findLargest(array) {
+  let largeNumber = array[0];
+  for(let i = 0; i < array.length; i ++){
+   largeNumber = Math.max(...array)
+  }
+return largeNumber
+
+}
 
 /**
  * findEqual()
@@ -143,7 +157,15 @@ function findLargest(array) {}
  *  findEqual([ 0, 11, -2, 5 ], 9);
  *  //> false
  */
-function findEqual(array, selected) {}
+function findEqual(array, selected) {
+  for (elements of array){
+    if (array.includes(selected)){
+      return true
+    }
+  else return false
+  }
+
+}
 
 /**
  * removeDuplicates()
