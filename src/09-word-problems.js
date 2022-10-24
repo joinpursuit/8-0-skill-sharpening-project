@@ -57,9 +57,8 @@ function applyDiscount(priceInCents, age, hasMembership) {
  * ---------------------
  * An online store allows for customers to add products to their cart. Customers can add multiples of each product to the cart.
  * 
- * Write an algorithm that will determine the total amount of all items in the cart. Make sure to multiply the `priceInCents` times 
- * the `quantity` to get the full cost of each product.
- * 
+ * Write an algorithm that will determine the total amount of all items in the cart. Make sure to multiply the `priceInCents`
+ * times the `quantity` to get the full cost of each product.
  * @param {Object[]} products - An array of products.
  * @param {number} products[].priceInCents - The price of the product, in cents.
  * @param {number} products[].quantity - The number of products being bought.
@@ -85,12 +84,12 @@ function getCartTotal(products) {
 /**
  * compareLocations()
  * ---------------------
- * A shipping company is looking to make its deliveries more efficient by comparing the destinations of multiple deliveries. 
+ * A shipping company is looking to make its deliveries more efficient by comparing the destinations of multiple deliveries.
  * If the locations are similar, the packages may be able to be bundled together.
  * 
  * Write an algorithm that takes in two objects of similar shape, each object representing an address. Then, return a string that 
  * describes the relationship between those two addresses.
- * 
+ *
  * - If the street, city, state, and zip for both addresses are the same, return the string "Same building."
  * - If the city, state, and zip are the same, return the string "Same city."
  * - If just the state is the same, return the string "Same state."
@@ -145,10 +144,14 @@ function compareLocations(address1, address2) {
 
 
 
+
+
+
+
 /**
  * gradeAssignments()
  * ---------------------
- * An online learning management system needs a way to quickly add the current status to a list of assignments. 
+ * An online learning management system needs a way to quickly add the current status to a list of assignments.
  * Depending on the `kind` of assignment, different statuses should be applied.
  *
  * Write an algorithm that adds a key of `status` to each object in an array of objects. Each object represents a 
@@ -156,7 +159,7 @@ function compareLocations(address1, address2) {
  *
  * - If the assignment has a `kind` of `"PASS-FAIL"`, set the `status` value to `"PASSED"` if the `score.received` equals the `score.max`. 
  * Otherwise, set that `status` to be `"FAILED"`.
- * 
+ *
  * - If the assignment has a `kind` of `"PERCENTAGE"`, set the `status` value to be `"PASSED: <percentage>"` if the student scored 
  * at least 80.0%. The `<percentage>` should be set to one decimal place. If the student scored less than 80.0%, 
  * set the status to `"FAILED: <percentage>"`.
@@ -200,14 +203,22 @@ function compareLocations(address1, address2) {
  */
 function gradeAssignments(assignments) {}
 
+// - If the assignment has any other `kind` than the two above, set the `status` value to equal `"SCORE: <received>/<max>"`, where `
+//  * <received>` is the `score.received` value and `<max>` is the `score.max` value.
+//  *
+
 /**
  * createLineOrder()
  * ---------------------
- * An airline wants to build an application that improves the boarding process for its customers. They want to have customers sign up in order of arrival, but prioritize those customers who have a membership.
+ * An airline wants to build an application that improves the boarding process for its customers. They want to have customers sign up in order 
+ * of arrival, but prioritize those customers who have a membership.
  * 
- * Build an algorithm that takes in an array of objects, where each object represents a person. The order of the array is important; the person at index `0` arrived first while the person at index `1` arrived afterwards.
+ * Build an algorithm that takes in an array of objects, where each object represents a person. The order of the array is important; 
+ * the person at index `0` arrived first while the person at index `1` arrived afterwards.
  * 
- * Return an array that includes only the names of each person, but reordered to account for whether or not each person has a membership. Everyone who has a membership should be at the front of the line in the same order they arrived. Everyone without a membership should be in the same order they arrived but after those with a membership.
+ * Return an array that includes only the names of each person, but reordered to account for whether or not each person has a membership. 
+ * Everyone who has a membership should be at the front of the line in the same order they arrived. Everyone without a membership should be in the same 
+ * order they arrived but after those with a membership.
  * @param {Object[]} people - An array of people objects.
  * @param {string} people[].name - The name of the person.
  * @param {boolean} people[].hasMembership - Whether or not the person has a membership.

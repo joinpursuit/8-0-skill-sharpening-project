@@ -11,7 +11,13 @@
  *  //> 25
  *  (3 + 4 + 5 + 6 + 7 = 25)
  */
-function rangeSum(min, max) {}
+function rangeSum(min, max) {
+  let sum = 0
+  for(let i = min; i <= max; i++) {
+    sum +=i
+  }
+  return sum 
+}
 
 /**
  * rangeOdd()
@@ -25,7 +31,15 @@ function rangeSum(min, max) {}
  *  rangeOdd(10, 15);
  *  //> [ 15, 13, 11 ]
  */
-function rangeOdd(min, max) {}
+function rangeOdd(min, max) {
+  let oddNumbers = []
+  for (let i = max; i >= min; i--) {
+    if(i %2 !==0 ) {
+      oddNumbers.push(i)
+    }
+  }
+  return oddNumbers
+}
 
 /**
  * rangeEveryOther()
@@ -122,6 +136,7 @@ function containsForLoop(array, target) {}
  */
 function targetCount(array, target) {}
 
+
 /**
  * firstIndexFound()
  * ---------------------
@@ -160,7 +175,18 @@ function firstIndexFound(array, target) {}
  *  lastIndexFound([ "left", "right", "left" ], "up");
  *  //> -1
  */
-function lastIndexFound(array, target) {}
+function lastIndexFound(array, target) {
+
+  let num = -1
+for (let i =0; i < array.length; i++) {
+  if(array[i] === target) {
+   num = i
+    //return num 
+  }
+}
+ return num
+}
+
 
 /**
  * timesIndex()
@@ -174,7 +200,14 @@ function lastIndexFound(array, target) {}
  *  //> [ 7 * 0, 10 * 1, 11 * 2 ]
  *  //> [ 0, 10, 22 ]
  */
-function timesIndex(array) {}
+function timesIndex(array) {
+  let newArr = []
+  
+  for (let i= 0; i <= array.length-1; i++) {
+    newArr.push(array[i] * [i])
+  }
+  return newArr
+}
 
 /**
  * cumulativeSum()
@@ -188,7 +221,15 @@ function timesIndex(array) {}
  *  //> [ 5, 5 + 2, 5 + 2 + 9 ]
  *  //> [ 5, 7, 16 ]
  */
-function cumulativeSum(array) {}
+function cumulativeSum(array) {
+  
+  
+  for (let i = 1; i < array.length; i++) {
+    array[i] += array[i-1]
+  }
+  
+  return array
+}
 
 // Do not change anything below this line.
 module.exports = {

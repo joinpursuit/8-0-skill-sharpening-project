@@ -54,12 +54,15 @@ function add() {}
  *  multiply(2, 5);
  *  //> 10
  */
-function multiply() {}
+function multiply(a,b) {
+  return a*b
+}
 
 /**
  * average()
  * ---------------------
- * Returns the average of two numbers. You can get the average by adding up all numbers and then dividing by how many numbers were added.
+ * Returns the average of two numbers. You can get the average by adding up all 
+ * numbers and then dividing by how many numbers were added.
  *
  * NOTE: The sum of all numbers will always be even.
  * HINT: How is this problem similar to add()? How is it different?
@@ -74,7 +77,12 @@ function multiply() {}
  *  average(10, 6);
  *  //> 8 // 10 + 6 = 16; 16/2 = 8;
  */
-function average() {}
+function average(a,b) {
+let average = 0
+average = (a+b)/2
+return average
+
+}
 
 /**
  * averageThree()
@@ -93,7 +101,11 @@ function average() {}
  *  averageThree(10, 11, 19);
  *  //> 10 // 10 + 11 + 19 = 30; 30 / 3 = 10;
  */
-function averageThree() {}
+function averageThree(a,b,c) {
+
+  let average = (a+b+c)/3
+  return average
+}
 
 
 /********************************* VANDHANA MOHAN *******************************/

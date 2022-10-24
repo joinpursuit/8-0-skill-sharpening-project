@@ -10,7 +10,9 @@
  *  createEmptyArray();
  *  //> []
  */
-function createEmptyArray() {}
+function createEmptyArray() {
+  return []
+}
 
 /**
  * createArrayWithTwoElements()
@@ -24,7 +26,9 @@ function createEmptyArray() {}
  *  createArrayWithTwoElements(true, false);
  *  //> [ true, false ]
  */
-function createArrayWithTwoElements(a, b) {}
+function createArrayWithTwoElements(a, b) {
+  return [a,b]
+}
 
 /**
  * getArrayLength()
@@ -37,7 +41,9 @@ function createArrayWithTwoElements(a, b) {}
  *  getArrayLength([ 10, 20, 30 ]);
  *  //> 3
  */
-function getArrayLength(array) {}
+function getArrayLength(array) {
+  return array.length
+}
 
 
 
@@ -165,7 +171,11 @@ function removeElementFromFrontOfArray(array) {}
  *  getMiddleElement([ 10, null, "30" ]);
  *  //> null
  */
-function getMiddleElement(array) {}
+function getMiddleElement(array) {
+
+  let middleElement = (array.length -1) /2
+  return array[middleElement]
+}
 
 // Do not change any code below this line.
 module.exports = {
