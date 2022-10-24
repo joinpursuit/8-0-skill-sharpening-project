@@ -69,7 +69,7 @@ describe("shoutForOfLoop", () => {
   });
 });
 
-describe.only("sumArray", () => {
+describe("sumArray", () => {
   test("returns the sum of all values", () => {
     expect(sumArray([])).toBe(0);
     expect(sumArray([1, 2, 3])).toBe(6);
