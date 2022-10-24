@@ -15,17 +15,12 @@ const { array, number } = require("yargs");
  *  (3 + 4 + 5 + 6 + 7 = 25)
  */
 function rangeSum(min, max)
- {
-  let i = min
-  let arr= []; 
-
-  while (min <= max) { 
-    min++
-    arr.push(min)
-    
+ { 
+  let result = 0
+  for (let i = min; i <= max; i++) {
+    result = result + i
   }
-  return min
-  //return (max - min + 1) * (min + max) / 2
+  return result
 }
 
 /**
@@ -41,9 +36,9 @@ function rangeSum(min, max)
  *  //> [ 15, 13, 11 ]
  */
 function rangeOdd(min, max) {
-  let arr = [ ];
+  let arr = [];
   let i;
-  for (i = min; i <= max; i++) 
+  for (i = max; i >= min; i--) 
   {
     if (i % 2 != 0)
     arr.push(i)
@@ -64,7 +59,20 @@ function rangeOdd(min, max) {
  *  //> [ 11, 13, 15, 17 ]
  */
 function rangeEveryOther(min, max) {
-
+let arr =[];
+  if (min % 2 === 0) {
+     for (let i = min; i <= max; i++) {
+        if (i % 2 === 0) {
+          arr.push(i) }
+      } 
+  }
+  else {
+    for (let i = min; i <= max; i++) {
+      if (i % 2 != 0) {
+        arr.push(i) }
+    } 
+  }
+return arr
 }
 
 /**
@@ -87,7 +95,16 @@ function rangeEveryOther(min, max) {
  *  containsWhileLoop([ "left", "up", "right" ], "down");
  *  //> false
  */
-function containsWhileLoop(array, target) {}
+function containsWhileLoop(array, target) {
+  let i = 0
+    while (i < array.length) {
+      if (array[i] === target) {
+        return true
+      }
+      i++
+    }
+    return false
+}
 
 /**
  * containsForLoop()
@@ -109,7 +126,14 @@ function containsWhileLoop(array, target) {}
  *  containsForLoop([ "left", "up", "right" ], "down");
  *  //> false
  */
-function containsForLoop(array, target) {}
+function containsForLoop(array, target) {
+  for (let i = 0; i < array.length; i++) {
+    if (array[i] === target) {
+      return true
+    }
+  }
+  return false
+}
 
 /**
  * targetCount()
