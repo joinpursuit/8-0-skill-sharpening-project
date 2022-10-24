@@ -11,7 +11,13 @@
  *  //> 25
  *  (3 + 4 + 5 + 6 + 7 = 25)
  */
-function rangeSum(min, max) {}
+function rangeSum(min, max) {
+  let newNum = 0
+  for(i = min; i <= max ; i++){
+     newNum += i
+    }
+    return newNum
+}
 
 /**
  * rangeOdd()
@@ -25,7 +31,24 @@ function rangeSum(min, max) {}
  *  rangeOdd(10, 15);
  *  //> [ 15, 13, 11 ]
  */
-function rangeOdd(min, max) {}
+function rangeOdd(min, max) {
+  let array = []
+  for (i = min; i < max +1; i++){
+    if( i % 2 === 1) array.unshift(i)
+
+    }
+      return array
+}
+
+  // let newNum = 0
+  // for (let i = max; i >= min; i--) {
+  //   newNum += i
+  //   if(newNum % 2 === 1){
+  //     array.push(newNum)
+  //   }
+  // }
+  // return array
+
 
 /**
  * rangeEveryOther()
@@ -61,7 +84,9 @@ function rangeEveryOther(min, max) {}
  *  containsWhileLoop([ "left", "up", "right" ], "down");
  *  //> false
  */
-function containsWhileLoop(array, target) {}
+function containsWhileLoop(array, target) {
+  
+}
 
 /**
  * containsForLoop()
@@ -151,7 +176,13 @@ function lastIndexFound(array, target) {}
  *  //> [ 7 * 0, 10 * 1, 11 * 2 ]
  *  //> [ 0, 10, 22 ]
  */
-function timesIndex(array) {}
+function timesIndex(array) {
+  newArray = []
+  for (let i = 0; i < array.length; i++) {
+    newArray.push(array.index * i);
+  }
+  return newArray
+}
 
 /**
  * cumulativeSum()
@@ -165,7 +196,14 @@ function timesIndex(array) {}
  *  //> [ 5, 5 + 2, 5 + 2 + 9 ]
  *  //> [ 5, 7, 16 ]
  */
-function cumulativeSum(array) {}
+function cumulativeSum(array) {
+  let newArray = []
+
+  for (let i = 0; i < array.length; i++) {
+    newArray.push(i += array.element);
+  }
+  return newArray
+}
 
 // Do not change anything below this line.
 module.exports = {
