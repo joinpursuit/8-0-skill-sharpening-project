@@ -33,7 +33,7 @@
  *  //> "Rachel"
  */
 function getFirstName(person) {
-  return person.names.first
+  return person.names.first;
 }
 
 /**
@@ -48,7 +48,7 @@ function getFirstName(person) {
  *  //> "Rojas"
  */
 function getLastName(person) {
-  return person.names.last
+  return person.names.last;
 }
 
 /**
@@ -63,7 +63,7 @@ function getLastName(person) {
  *  //> "697 Pine Drive"
  */
 function getAddressStreet(person) {
-  return person.address.street
+  return person.address.street;
 }
 
 /**
@@ -96,7 +96,7 @@ function getCountOfPhoneNumbers(person) {
  *  //> 7185550921
  */
 function getFirstPhoneNumber(person) {
-  return person.numbers[0]
+  return person.numbers[0];
 }
 
 /**
@@ -114,7 +114,7 @@ function getFirstPhoneNumber(person) {
  *  //> 7185558611
  */
 function getLastPhoneNumber(person) {
-  return person.numbers[person.numbers.length - 1]
+  return person.numbers[person.numbers.length-1]
 }
 
 /**
@@ -129,7 +129,7 @@ function getLastPhoneNumber(person) {
  *  //> "Rachel Eleanor Rojas"
  */
 function getFullName(person) {
-  return person.names.first + " " + person.names.middle + " " + person.names.last
+  return person.names.first+" "+person.names.middle+" "+person.names.last;
 }
 
 /**
@@ -147,7 +147,7 @@ function getFullName(person) {
  *  //> "Staten Island, NY"
  */
 function getCityAndState(person) {
-  return person.address.city + ","+ " " + person.address.state
+  return person.address.city+", "+person.address.state;
 }
 
 /**

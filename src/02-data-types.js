@@ -10,7 +10,7 @@
  *  //> 4
  */
 function getLengthOfString(str) {
-  return str.length
+  return str.length;
 }
 
 /**
@@ -41,7 +41,7 @@ function convertToNumber(val) {
  *  //> "99"
  */
 function convertToString(val) {
-  return `${val}`
+  return `${val}`;
 }
 
 /**
@@ -56,7 +56,7 @@ function convertToString(val) {
  *  //> "HELLO THERE"
  */
 function convertToShoutingText(text) {
-  return text.toUpperCase()
+  return text.toUpperCase();
 }
 
 /**
@@ -71,7 +71,7 @@ function convertToShoutingText(text) {
  *  //> "hello there"
  */
 function convertToWhisperText(text) {
-  return text.toLowerCase()
+  return text.toLowerCase();
 }
 
 /**
@@ -90,7 +90,7 @@ function convertToWhisperText(text) {
  *  //> false
  */
 function checkIfCharacterIsInString(text, character) {
-  return text.includes(character)
+  return text.includes(character);
 }
 
 /**
@@ -108,9 +108,10 @@ function checkIfCharacterIsInString(text, character) {
  *  //> false
  */
 function isEven(num) {
-  if(num % 2 ===0){
-    return true;
-  }else return false
+  if (num % 2 === 0){
+    return true
+  }
+  return false;
 }
 
 /**
@@ -128,9 +129,10 @@ function isEven(num) {
  *  //> true
  */
 function isOdd(num) {
-  if(num % 2 !=0){
-    return true;
-  }else{return false}
+  if(num % 2 != 0){
+    return true 
+  } 
+  return false;
 }
 
 /**
@@ -140,7 +142,7 @@ function isOdd(num) {
  * @param {*} val
  * @returns {boolean}
  *
- * EXAMPLE:
+ * EXAMPLE0
  *  isTruthy(10);
  *  //> true
  *
@@ -166,7 +168,7 @@ function isTruthy(val) {
  *  //> false
  */
 function isFalsy(val) {
-  return !val
+  return !val;
 }
 
 // Do not change the code below.

@@ -14,7 +14,7 @@ function alwaysTrue() {
 return true;}
 }
 
-/**
+/** 
  * greet()
  * ---------------------
  * Greets the person by name.
@@ -28,7 +28,7 @@ return true;}
  *  //> "Hello, Ian."
  */
 function greet(name) {
-  return `Hello, ${name}.`
+  return `Hello, ${name}.`;
 }
 
 /**
@@ -45,8 +45,7 @@ function greet(name) {
  *  //> 30
  */
 function add(a,b) {
-  let sum = a+b
-  return sum;
+  return a + b;
 }
 
 /**
@@ -62,9 +61,8 @@ function add(a,b) {
  *  multiply(2, 5);
  *  //> 10
  */
-function multiply(a, b) {
-  let sum = a*b
-  return sum;
+function multiply(a,b) {
+  return a * b;
 }
 
 /**
@@ -86,9 +84,7 @@ function multiply(a, b) {
  *  //> 8 // 10 + 6 = 16; 16/2 = 8;
  */
 function average(a,b) {
-  let sum = a+b;
-   
-  return sum /2
+  return (a +b)/2;
 }
 
 /**
@@ -109,9 +105,7 @@ function average(a,b) {
  *  //> 10 // 10 + 11 + 19 = 30; 30 / 3 = 10;
  */
 function averageThree(a,b,c) {
-  let sum = a+b+c
-  
-  return sum / 3
+  return (a +b +c)/3;
 }
 
 /**
@@ -132,12 +126,7 @@ function averageThree(a,b,c) {
  *  //> false
  */
 function compareTypes(a,b) {
-    return(typeof(a) === typeof(b));
-      
-    
-      
-  
-  
+  return typeof(a) === typeof(b);
 }
 
 /**
@@ -158,7 +147,7 @@ function compareTypes(a,b) {
  *  //> -50
  */
 function flipSign(a) {
-  return a *= -1
+  return a *= -1;
 }
 
 /**
@@ -179,8 +168,8 @@ function flipSign(a) {
  *  joinStringsWithSpaces("left", "right", "up", "down", "away");
  *  //> "left right up down away"
  */
-function joinStringsWithSpaces(a, b, c, d, e) {
-  return a + " " + b + " " + c +" "+d+ " "+e 
+function joinStringsWithSpaces(a,b,c,d,e,) {
+  return a+" "+b+" "+c+" "+d+" "+e;
 }
 
 /**

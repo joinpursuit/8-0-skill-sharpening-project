@@ -10,7 +10,7 @@
  *  //> {}
  */
 function createEmptyObject() {
-  return {}
+  return {};
 }
 
 /**
@@ -25,7 +25,7 @@ function createEmptyObject() {
  *  //> { whateverKey: 19 }
  */
 function createObjectWithValue(val) {
-  return {val}
+  return {val};
 }
 
 /**
@@ -40,9 +40,10 @@ function createObjectWithValue(val) {
  *  //> { left: false }
  */
 function createObjectWithKey(key) {
-  let obj = {}
-  obj [key]= "value"
-  return obj
+
+  let obj = {};
+  obj[key]= "value";
+  return obj;
 }
 
 /**
@@ -59,8 +60,10 @@ function createObjectWithKey(key) {
  */
 function createObjectWithKeyValuePair(key, val) {
   let obj = {}
-  obj[key]= val
-  return obj
+  obj[key] = val ;
+  return obj;
+
+  
 }
 
 /**
@@ -75,7 +78,8 @@ function createObjectWithKeyValuePair(key, val) {
  *  //> "Jay"
  */
 function getNameFromObject(object) {
-  return object.name
+  return object.name;
+  
 }
 
 /**
@@ -90,7 +94,7 @@ function getNameFromObject(object) {
  *  //> 30
  */
 function getAgeFromObject(object) {
-  return object.age
+  return object.age;
 }
 
 /**
@@ -106,8 +110,8 @@ function getAgeFromObject(object) {
  *  //> { left: true, key: false }
  */
 function addValueToObject(object, val) {
-   object = {val}
-  return object
+  object= {val};
+  return object;
 }
 
 /**
@@ -123,8 +127,9 @@ function addValueToObject(object, val) {
  *  //> { right: false, left: true }
  */
 function addKeyToObject(object, key) {
-  object [key] = "value"
-  return object
+
+  object[key] = "value"
+  return object;
 }
 
 /**
@@ -141,8 +146,9 @@ function addKeyToObject(object, key) {
  *  //> { up: true, left: false }
  */
 function addKeyValuePairToObject(object, key, val) {
-  object [key]= val
-  return object
+  object[key]= val;
+  return object;
+  
 }
 
 /**
@@ -158,7 +164,7 @@ function addKeyValuePairToObject(object, key, val) {
  *  //> { right: false }
  */
 function deleteKeyFromObject(object, key) {
-  delete object[key]
+  delete object[key];
   return object
 }
 

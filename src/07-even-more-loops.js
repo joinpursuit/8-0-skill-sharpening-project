@@ -14,9 +14,11 @@
  */
 function shoutForLoop(array) {
   let newArray = []
-  for(let i =0; i< array.length; i++){
-    newArray.push(array[i] + "!")
-  }return newArray
+  for (let i = 0; i < array.length; i ++){
+    newArray.push(array[i]+ "!")
+  }
+  return newArray
+
 }
 
 /**
@@ -34,12 +36,12 @@ function shoutForLoop(array) {
  *  //> [ "A!", "Very!", "Happy!", "Array!" ];
  */
 function shoutWhileLoop(array) {
-  let newArray =[]
-  let i=0;
-  while (i<array.length){
+  let newArray = []
+  let i = 0
+  while(i < array.length){
     newArray.push(array[i] + "!")
-    i++
-  }return newArray
+    i ++
+  }return newArray;
 }
 
 /**
@@ -57,10 +59,11 @@ function shoutWhileLoop(array) {
  *  //> [ "A!", "Very!", "Happy!", "Array!" ];
  */
 function shoutForOfLoop(array) {
-  let newArray = [];
-  for (let element of array){
+  let newArray = []
+  for(let element of array){
     newArray.push(element + "!")
-  }return newArray
+  }
+  return newArray;
 }
 
 /**
@@ -77,8 +80,9 @@ function shoutForOfLoop(array) {
 function sumArray(array) {
   let sum = 0
   for(let value of array){
-    sum += value
-  }return sum
+    sum+= value
+  }
+  return sum;
 }
 
 /**
@@ -93,12 +97,13 @@ function sumArray(array) {
  *  //> [ 11, 15, 37 ]
  */
 function oddArray(array) {
-  let newArray =[];
+  let newArray = [];
   for (let value of array){
-    if (value % 2 === 1){
+    if(value % 2 === 1){
       newArray.push(value)
     }
-  }return newArray
+  }
+  return newArray
 }
 
 /**
@@ -113,12 +118,12 @@ function oddArray(array) {
  *  //> [ 20, 22 ]
  */
 function evenArray(array) {
-  let newArray = [];
-  for(let value of array){
+  let newArray = []
+  for (let value of array){
     if(value % 2 === 0){
       newArray.push(value)
     }
-  }return newArray
+  }return newArray;
 }
 
 /**
@@ -134,8 +139,7 @@ function evenArray(array) {
  */
 function findSmallest(array) {
   return Math.min(...array)
-  }
-
+}
 
 /**
  * findLargest()
@@ -149,7 +153,7 @@ function findSmallest(array) {
  *  //> 11
  */
 function findLargest(array) {
-  return Math.max(...array)
+  return Math.max(...array);
 }
 
 /**
@@ -168,7 +172,7 @@ function findLargest(array) {
  *  //> false
  */
 function findEqual(array, selected) {
-  for(let value of array){
+  for (let value of array){
     if(value === selected){
       return true
     }
@@ -191,27 +195,20 @@ function findEqual(array, selected) {
  */
 
 function removeDuplicates(array) {
-  let result = [];
-
-  for (let i of array) {
-     noRepeat = true;
-
-    for (let j of result) {
-      if (i === j) {
-        noRepeat = false;
-        break;
+  let result = []
+  for (let i of array){
+    noRepeat = true
+    for ( let j of result){
+      if (i === j){
+        noRepeat = false
       }
     }
-
-    if (noRepeat) {
-      result.push(i);
+    if (noRepeat){
+      result.push(i)
     }
   }
-
   return result;
 }
-
-
 
 // Do not change any code below this line.
 module.exports = {

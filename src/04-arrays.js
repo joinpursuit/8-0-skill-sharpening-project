@@ -11,7 +11,7 @@
  *  //> []
  */
 function createEmptyArray() {
-  return []
+  return [];
 }
 
 /**
@@ -27,7 +27,7 @@ function createEmptyArray() {
  *  //> [ true, false ]
  */
 function createArrayWithTwoElements(a, b) {
-  return [a,b]
+  return[a,b];
 }
 
 /**
@@ -42,7 +42,7 @@ function createArrayWithTwoElements(a, b) {
  *  //> 3
  */
 function getArrayLength(array) {
-  return array.length
+  return array.length;
 }
 
 /**
@@ -58,7 +58,7 @@ function getArrayLength(array) {
  *  //> 10
  */
 function getFirstElementOfArray(array) {
-  return array[0]
+  return array[0];
 }
 
 /**
@@ -74,7 +74,7 @@ function getFirstElementOfArray(array) {
  *  //> undefined
  */
 function getLastElementOfArray(array) {
-  return array[array.length-1]
+  return array[array.length-1];
 }
 
 /**
@@ -90,9 +90,10 @@ function getLastElementOfArray(array) {
  *  //> [ 10, 9 ]
  */
 function addElementToEndOfArray(array, element) {
-  array.push(element)
-  return array
+   array.push(element)
+   return array ;
 }
+  
 
 /**
  * removeElementFromEndOfArray()
@@ -106,7 +107,8 @@ function addElementToEndOfArray(array, element) {
  *  //> 8
  */
 function removeElementFromEndOfArray(array) {
-  return array.pop()
+  return array.pop();
+  
 }
 
 /**
@@ -122,10 +124,10 @@ function removeElementFromEndOfArray(array) {
  *  //> [ 9, 10 ]
  */
 function addElementToFrontOfArray(array, element) {
-  array.unshift(element)
-  return array
-}
+  array.unshift(element);
+  return array ;
   
+}
 
 /**
  * removeElementFromFrontOfArray()
@@ -139,7 +141,7 @@ function addElementToFrontOfArray(array, element) {
  *  //> 10
  */
 function removeElementFromFrontOfArray(array) {
-  return array.shift()
+return array.shift();
 }
 
 /**
@@ -157,7 +159,7 @@ function removeElementFromFrontOfArray(array) {
  *  //> null
  */
 function getMiddleElement(array) {
- return array[Math.floor(array.length/2)];
+  return array[Math.floor(array.length/2)];
 }
 
 // Do not change any code below this line.

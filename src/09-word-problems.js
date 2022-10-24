@@ -21,12 +21,14 @@
  */
 function applyDiscount(priceInCents, age, hasMembership) {
   let discount = 0
-  if(age <= 10 || age >=65){
-    discount += 0.1
-  }if(hasMembership){
-    discount += 0.2
+  if(age<= 10 || age>= 65){
+  discount+= 0.1;
   }
-  return priceInCents * (1 - discount)
+  if(hasMembership){
+    discount+= 0.2;
+  }
+
+  return priceInCents *(1 - discount)
 }
 
 /**
@@ -49,13 +51,17 @@ function applyDiscount(priceInCents, age, hasMembership) {
  *  //> "$30.00"
  */
 function getCartTotal(products) {
-let totalCost = 0 ;
-for (let item of products){
- totalCost +=  item.priceInCents * item.quantity;
+  let totalCost = 0 ;
+  for (let item of products){
+   totalCost +=  item.priceInCents * item.quantity;
+   
+
 }
 return "$" +(totalCost/100).toFixed(2)
+ 
+  
+  
 }
-
 
 /**
  * compareLocations()
@@ -96,13 +102,18 @@ return "$" +(totalCost/100).toFixed(2)
     //> "Same city."
  */
 function compareLocations(address1, address2) {
-  if(address1.street === address2.street && address1.state === address2.state && address1.city === address2.city && address1.zip === address2.zip){
+  if(address1.street === address2.street && address1.city === address2.city && address1.state=== address2.state && address1.zip === address2.zip){
     return "Same building."
-  }if(address1.city === address2.city && address1.state===address2.state && address1.zip === address2.zip){
-    return "Same city."
-  }if (address1.state === address2.state){
+  }
+  if(address1.city === address2.city && address1.state === address2.state && address1.zip === address2.zip){
+    return "Same city.";
+
+  }
+  if (address1.state === address2.state){
     return "Same state."
-  }return "Addresses are not near each other."
+  }
+  return "Addresses are not near each other."
+
 }
 
 /**
@@ -151,16 +162,23 @@ function compareLocations(address1, address2) {
     //> ];
  */
 function gradeAssignments(assignments) {
-  for(let assignment of assignments){
+  for (let assignment of assignments){
     if(assignment.kind === "PASS-FAIL"){
-      assignment.status = assignment.score.received === assignment.score.max ? "PASSED" : "FAILED"
-        
-      }else if(assignment.kind === "PERCENTAGE"){
-        let percentage = assignment.score.received / assignment.score.max * 100
-        assignment.status = percentage >= 80 ? `PASSED: ${percentage.toFixed(1)}%` : `FAILED: ${percentage.toFixed(1)}%`
-      }else {assignment.status === `SCORE: ${assignment.score.received} / ${assignment.score.max}`}
-    }return assignments
-  }
+    assignment.status = assignment.score.received === assignment.score.max
+? "PASSED" : "FAILED"  } 
+else if (assignment.kind === "PERCENTAGE"){
+  let percentage = assignment.score.received / assignment.score.max * 100;
+  assignment.status = percentage >= 80 ? `PASSED: ${percentage.toFixed(1)}%` : `FAILED: ${percentage.toFixed(1)}%`
+} else {
+  assignment.status = `SCORE: ${assignment.score.received}/${assignment.score.max}`;
+}
+    
+} 
+return assignments;
+
+
+}
+  
 
 
 /**
@@ -192,11 +210,12 @@ function createLineOrder(people) {
     if(customer.hasMembership){
       line.push(customer.name)
     }
-  }for(let customer of people){
-    if(!customer.hasMembership){
-      line.push(customer.name)
-    }
-  }return line
+  }
+  for(let customer of people){
+    if(!customer.hasMembership)
+    line.push(customer.name)
+  }
+  return line
 }
 
 module.exports = {

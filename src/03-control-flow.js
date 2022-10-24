@@ -15,7 +15,7 @@
  *  //> false
  */
 function isEqual(a, b) {
-  return a === b
+  return a === b;
 }
 
 /**
@@ -31,9 +31,10 @@ function isEqual(a, b) {
  *  //> 19
  */
 function findLarger(a, b) {
-  if(a>b){
-    return a
-  }return b
+  if (a > b){
+    return a;
+  }
+  return b;
 }
 
 /**
@@ -78,11 +79,12 @@ function findLargerOrTie(a, b) {
  *  //> "Positive"
  */
 function positiveNegativeOrZero(a) {
-  if(a >0){
-    return "Positive"
-  }else if (a<0){
-    return "Negative"
-  }else return "Zero"
+  if (a>0){
+    return "Positive";
+  }else if (a < 0){
+    return "Negative";
+  }
+  return "Zero";
 }
 
 /**
@@ -105,14 +107,16 @@ function positiveNegativeOrZero(a) {
  *  //> "Hello World"
  */
 function aroundTheWorldGreeting(language) {
-  if(language === "spanish"){
+  if (language === "spanish"){
     return "Hola Mundo"
-  }else if(language === "german"){
+
+  }else if (language === "german"){
     return "Hallo Welt"
-  }return "Hello World"
+
+  }
+  return "Hello World";
 }
-
-
+  
 /**
  * aroundTheWorldGreetingWithSwitch()
  * ---------------------
@@ -135,6 +139,7 @@ function aroundTheWorldGreeting(language) {
  *  //> "Hello World"
  */
 function aroundTheWorldGreetingWithSwitch(language) {
+
   switch (language){
   case "spanish":
     return "Hola Mundo";
@@ -164,17 +169,19 @@ function aroundTheWorldGreetingWithSwitch(language) {
  *  //> "A"
  */
 function calculateLetterGrade(grade) {
-  if(grade >= 90){
+  if (grade >= 90 ){
     return "A"
-  }else if(grade >= 80){
+  }else if (grade >=80){
     return "B"
-  }else if(grade >= 70){
-    return "C"
-  }else if(grade >= 60){
-    return "D"
-  } else (grade<= 59)
-    return "F"
   }
+  else if ( grade >= 70){
+    return "C"
+  }
+  else if(grade >= 60){
+    return "D"
+  }
+  return "F";
+}
 
 /**
  * animalCounts()
@@ -193,9 +200,10 @@ function calculateLetterGrade(grade) {
  *  //> "1 pig"
  */
 function animalCounts(animal, numberOfAnimals) {
-  if(numberOfAnimals >1){
-    return numberOfAnimals + " " + animal + "s"
-  }return numberOfAnimals + " " + animal
+  if(numberOfAnimals > 1){
+    return numberOfAnimals + " "+ animal + "s";
+  }
+  return numberOfAnimals + " " + animal;
 }
 
 /**
@@ -214,9 +222,10 @@ function animalCounts(animal, numberOfAnimals) {
  *  //> "Even"
  */
 function evenOrOdd(a) {
-  if(a%2 ===0){
+  if (a % 2 === 0){
     return "Even"
-  }return "Odd"
+  }
+  return "Odd"
 }
 
 /**
@@ -234,7 +243,7 @@ function evenOrOdd(a) {
  *  //> "Even"
  */
 function evenOrOddWithTernary(a) {
-  return a %2 === 0 ? "Even" : "Odd"
+  return a % 2 === 0 ? "Even": "Odd";
 }
 
 // Do not change any code below this line.
