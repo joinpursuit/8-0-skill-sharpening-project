@@ -203,7 +203,8 @@ function lastIndexFound(array, target) {
     if (array[i] === target) {
       return i
     }
-  } return -1
+  } 
+  return -1
 }
 
 /**
