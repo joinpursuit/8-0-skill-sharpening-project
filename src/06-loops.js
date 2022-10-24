@@ -62,13 +62,7 @@ function rangeOdd(min, max) {
  *  rangeEveryOther(11, 18);
  *  //> [ 11, 13, 15, 17 ]
  */
-function rangeEveryOther(min, max) {
-  let array = [min]
-  for (let i = min + 2; i < max + 1; i += 2){
-      array.push(i)
-  }
-  return array 
-}
+function rangeEveryOther(min, max) {}
 
 /**
  * containsWhileLoop()

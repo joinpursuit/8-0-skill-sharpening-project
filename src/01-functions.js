@@ -184,11 +184,7 @@ function joinStringsWithSpaces(a,b,c,d,e) {
  *  getFirstAndLastCharacter("upwards");
  *  //> "us"
  */
-function getFirstAndLastCharacter(a) {
-  
-  return a.charAt(0) && a.charAt(str.length - 1)
-
-}
+function getFirstAndLastCharacter(a) {}
 
 // Do not change the code below.
 module.exports = {
