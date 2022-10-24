@@ -56,7 +56,7 @@ function rangeOdd(min, max) {
  */
 function rangeEveryOther(min, max) {
   let array = []
-  for(i = min; i <= max; i += 2){ // whatever number i is we add the sum = sum + value
+  for(i = min; i <= max; i += 2){ // every other number would be +2
     array.push(i)
   }
  return array
