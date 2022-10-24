@@ -9,7 +9,10 @@
  *  createEmptyObject()
  *  //> {}
  */
-function createEmptyObject() {}
+function createEmptyObject() {
+  let x = {}
+  return x
+}
 
 /**
  * createObjectWithValue()
@@ -22,7 +25,12 @@ function createEmptyObject() {}
  *  createObjectWithValue(19);
  *  //> { whateverKey: 19 }
  */
-function createObjectWithValue(val) {}
+function createObjectWithValue(val) {
+  let x = { // creating an object 
+    anything:val //addding a value
+  }
+  return x
+} 
 
 /**
  * createObjectWithKey()
@@ -35,8 +43,11 @@ function createObjectWithValue(val) {}
  *  createObjectWithKey("left");
  *  //> { left: false }
  */
-function createObjectWithKey(key) {}
-
+function createObjectWithKey(key){
+  let x = {} //creating a object not established
+  x[key] = `i`// adds a key to an object using bracket notation 
+  return x
+}
 /**
  * createObjectWithKeyValuePair()
  * ---------------------
@@ -49,7 +60,12 @@ function createObjectWithKey(key) {}
  *  createObjectWithKeyValuePair("left", "right");
  *  //> { left: "right" }
  */
-function createObjectWithKeyValuePair(key, val) {}
+function createObjectWithKeyValuePair(key, val) {
+  let i = {
+    [key]: val,
+  }
+return i //adds both a key and a value using bracket notation 
+}
 
 /**
  * getNameFromObject()
@@ -62,7 +78,9 @@ function createObjectWithKeyValuePair(key, val) {}
  *  getNameFromObject({ name: "Jay" });
  *  //> "Jay"
  */
-function getNameFromObject(object) {}
+function getNameFromObject(object) {
+  return object.name // returns the value of the 'key' aka "jay"
+}
 
 /**
  * getAgeFromObject()
@@ -75,7 +93,9 @@ function getNameFromObject(object) {}
  *  getAgeFromObject({ age: 30 });
  *  //> 30
  */
-function getAgeFromObject(object) {}
+function getAgeFromObject(object){
+  return object.age //returning the value of age using dot notation "5"
+}
 
 /**
  * addValueToObject()
@@ -89,7 +109,10 @@ function getAgeFromObject(object) {}
  *  addValueToObject({ left: true }, false);
  *  //> { left: true, key: false }
  */
-function addValueToObject(object, val) {}
+function addValueToObject(object, val) {
+  object.key = val  //adds value to object aka 'val' using dot notation
+  return object  
+}
 
 /**
  * addKeyToObject()
@@ -103,7 +126,14 @@ function addValueToObject(object, val) {}
  *  addKeyToObject({ right: false }, "left");
  *  //> { right: false, left: true }
  */
-function addKeyToObject(object, key) {}
+function addKeyToObject(object, key) {
+  object = {} //the object is defined so we dont have to create it 
+  object[key] = `x` // we use bracket notation to add a property and a value 
+  return object //returns the object with the added pair properties
+}
+
+  
+
 
 /**
  * addKeyValuePairToObject()
@@ -118,7 +148,12 @@ function addKeyToObject(object, key) {}
  *  addKeyValuePairToObject({ up: true }, "left", false);
  *  //> { up: true, left: false }
  */
-function addKeyValuePairToObject(object, key, val) {}
+function addKeyValuePairToObject(object, key, val) {
+  object = {
+    [key]: val
+  }
+  return object
+}
 
 /**
  * deleteKeyFromObject()
@@ -132,8 +167,10 @@ function addKeyValuePairToObject(object, key, val) {}
  *  deleteKeyFromObject({ left: true, right: false }, "left");
  *  //> { right: false }
  */
-function deleteKeyFromObject(object, key) {}
-
+function deleteKeyFromObject(object, key) {
+  delete object[key] //use bracket notation because 'key' is a string 
+  return object
+}
 // Do not change any code below this line.
 module.exports = {
   createEmptyObject,
