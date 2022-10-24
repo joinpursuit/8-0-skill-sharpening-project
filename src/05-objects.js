@@ -9,7 +9,9 @@
  *  createEmptyObject()
  *  //> {}
  */
-function createEmptyObject() {}
+function createEmptyObject() {
+  return {};
+}//SC420
 
 /**
  * createObjectWithValue()
@@ -22,7 +24,9 @@ function createEmptyObject() {}
  *  createObjectWithValue(19);
  *  //> { whateverKey: 19 }
  */
-function createObjectWithValue(val) {}
+function createObjectWithValue(val) {
+  return {val};
+}//SC420
 
 /**
  * createObjectWithKey()
@@ -35,7 +39,11 @@ function createObjectWithValue(val) {}
  *  createObjectWithKey("left");
  *  //> { left: false }
  */
-function createObjectWithKey(key) {}
+function createObjectWithKey(key) {
+  let obj = {};
+  obj[key] = "name"
+  return obj;
+}
 
 /**
  * createObjectWithKeyValuePair()
@@ -49,7 +57,11 @@ function createObjectWithKey(key) {}
  *  createObjectWithKeyValuePair("left", "right");
  *  //> { left: "right" }
  */
-function createObjectWithKeyValuePair(key, val) {}
+function createObjectWithKeyValuePair(key, val) {
+  let obj = {};
+  obj[key] = val
+  return obj
+}
 
 /**
  * getNameFromObject()
@@ -65,7 +77,6 @@ function createObjectWithKeyValuePair(key, val) {}
 function getNameFromObject(object) {
   return object.name
 }
-//Jyoti Singh
 
 /**
  * getAgeFromObject()
@@ -113,8 +124,9 @@ function addValueToObject(object, val) {
  *  //> { right: false, left: true }
  */
 function addKeyToObject(object, key) {
-  
-}
+  object[key] = key;
+  return object;
+}//SC420
 
 /**
  * addKeyValuePairToObject()
@@ -129,7 +141,10 @@ function addKeyToObject(object, key) {
  *  addKeyValuePairToObject({ up: true }, "left", false);
  *  //> { up: true, left: false }
  */
-function addKeyValuePairToObject(object, key, val) {}
+function addKeyValuePairToObject(object, key, val) {
+  object[key] = val;
+  return object;
+}//SC420
 
 /**
  * deleteKeyFromObject()
@@ -143,7 +158,10 @@ function addKeyValuePairToObject(object, key, val) {}
  *  deleteKeyFromObject({ left: true, right: false }, "left");
  *  //> { right: false }
  */
-function deleteKeyFromObject(object, key) {}
+function deleteKeyFromObject(object, key) {
+  delete object[key];
+  return object;
+}//SC420
 
 // Do not change any code below this line.
 module.exports = {

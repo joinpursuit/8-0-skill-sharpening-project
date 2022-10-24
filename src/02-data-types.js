@@ -43,7 +43,9 @@ function convertToNumber(val) {
  *  convertToString(99);
  *  //> "99"
  */
-function convertToString(val) {}
+function convertToString(val) {
+  return String(val);
+}//SC420
 
 /**
  * convertToShoutingText()
@@ -56,7 +58,9 @@ function convertToString(val) {}
  *  convertToShoutingText("Hello There");
  *  //> "HELLO THERE"
  */
-function convertToShoutingText(text) {}
+function convertToShoutingText(text) {
+  return text.toUpperCase();
+}//SC420
 
 /**
  * convertToWhisperText()
@@ -69,7 +73,9 @@ function convertToShoutingText(text) {}
  *  convertToWhisperText("Hello There");
  *  //> "hello there"
  */
-function convertToWhisperText(text) {}
+function convertToWhisperText(text) {
+  return text.toLowerCase();
+}//SC420
 
 /**
  * checkIfCharacterIsInString()
@@ -86,7 +92,9 @@ function convertToWhisperText(text) {}
  *  checkIfCharacterIsInString("hello there", "a");
  *  //> false
  */
-function checkIfCharacterIsInString(text, character) {}
+function checkIfCharacterIsInString(text, character) {
+  return text.includes(character);
+}
 
 /**
  * isEven()
@@ -102,7 +110,15 @@ function checkIfCharacterIsInString(text, character) {}
  *  isEven(11);
  *  //> false
  */
-function isEven(num) {}
+function isEven(num) {
+  // if (num % 2 === 0) {
+  //   return true
+  // } else {
+  //   return false
+  // }
+  return (num % 2 === 0) ? true : false
+}
+
 
 /**
  * isOdd()
@@ -118,7 +134,14 @@ function isEven(num) {}
  *  isOdd(11);
  *  //> true
  */
-function isOdd(num) {}
+function isOdd(num) {
+  // if (num % 2 !== 0) {
+  //   return true
+  // } else {
+  //   return false
+  // }
+  return (num % 2 !== 0) ? true : false
+}
 
 /**
  * isTruthy()
