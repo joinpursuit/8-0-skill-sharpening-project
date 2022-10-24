@@ -17,6 +17,7 @@
  *  //> 1000
  *
  *  applyDiscount(1000, 66, false);
+ * 
  *  //> 900
  *
  *  applyDiscount(1000, 9, true);
@@ -100,21 +101,40 @@ function getCartTotal(products) {
     compareLocations(address1, address2);
     //> "Same city."
  */
-  function compareLocations(address1, address2) {}
-  
- 
-    
+function compareLocations(address1, address2) {
+  if(address1.state === address2.state) {
+    if(address1.city === address2.city && address1.zip === address2.zip) {
+      if(address1.street === address2.street) {
+        return 'Same building.'
+      }
+      return 'Same city.'
+    }
+    return 'Same state.'
+  } else {
+    return `Addresses are not near each other.`
+  }
+
+
+
+
+
+}code 
 
 /**
  * gradeAssignments()
  * ---------------------
- * An online learning management system needs a way to quickly add the current status to a list of assignments. Depending on the `kind` of assignment, different statuses should be applied.
+ * An online learning management system needs a way to quickly add the current status to a list of assignments. 
+ * Depending on the `kind` of assignment,
+ *  different statuses should be applied.
  *
  * Write an algorithm that adds a key of `status` to each object in an array of objects. Each object represents a single assignment submitted by a student.
  *
- * - If the assignment has a `kind` of `"PASS-FAIL"`, set the `status` value to `"PASSED"` if the `score.received` equals the `score.max`. Otherwise, set that `status` to be `"FAILED"`.
- * - If the assignment has a `kind` of `"PERCENTAGE"`, set the `status` value to be `"PASSED: <percentage>"` if the student scored at least 80.0%. The `<percentage>` should be set to one decimal place. If the student scored less than 80.0%, set the status to `"FAILED: <percentage>"`.
- * - If the assignment has any other `kind` than the two above, set the `status` value to equal `"SCORE: <received>/<max>"`, where `<received>` is the `score.received` value and `<max>` is the `score.max` value.
+ * - If the assignment has a `kind` of `"PASS-FAIL"`, set the `status` value to `"PASSED"` if the `score.received` equals the `score.max`. 
+ * Otherwise, set that `status` to be `"FAILED"`.
+ * - If the assignment has a `kind` of `"PERCENTAGE"`, set the `status` value to be `"PASSED: <percentage>"` if the student scored at least 80.0%.
+ *  The `<percentage>` should be set to one decimal place. If the student scored less than 80.0%, set the status to `"FAILED: <percentage>"`.
+ * - If the assignment has any other `kind` than the two above, set the `status` value to equal `"SCORE: <received>/<max>"`, 
+ * where `<received>` is the `score.received` value and `<max>` is the `score.max` value.
  *
  * Then, return the overall array with all modified assignments.
  *
@@ -150,12 +170,39 @@ function getCartTotal(products) {
     //>   },
     //> ];
  */
-function gradeAssignments(assignments) {}
+function gradeAssignments(assignments) {
 
+   for (let i = 0; i < assignments.length; i++) {
+       
+      switch(assignments[i].kind) {
+        case "PASS-FAIL":
+        if(assignments[i].score.received == 
+      assignments[i].score.max) {
+        assignments[i].status = "PASSED";
+      } else {
+        assignments[i].status = "FAILED";
+        }
+        break;
+        case "PERCENTAGE":
+          let percentage = (assignments[i].score.received /assignments[i].score.max) * 100;
+      if(percentage >= 80) {
+        assignments[i].status = `PASSED: ${percentage.toFixed(1)}%`
+      } else {
+        assignments[i].status = `FAILED: ${percentage.toFixed(1)}%`
+      }
+        break;
+       default:
+        assignments[i].status = `SCORE: ${assignments[i].score.received}/${assignments[i].score.max}`
+        break;
+        
+   }   
+   }
+    return assignments;
+  }
 /**
  * createLineOrder()
  * ---------------------
- * An airline wants to build an application that improves the boarding process for its customers. 
+ * An airline wants to build an application that improves the boarding process for its customers.
  * They want to have customers sign up in order of arrival, but prioritize those customers who have a membership.
  * 
  * Build an algorithm that takes in an array of objects, where each object represents a person. 
@@ -179,7 +226,24 @@ function gradeAssignments(assignments) {}
     createLineOrder(people);
     //> [ "Ray Anderson", "America Marsh", "Wade Carson", "Patience Patel" ]
  */
-function createLineOrder(people) {}
+function createLineOrder(people) {
+let hasMembership = [];
+let noMembership = [];
+for (let i = 0; i < people.length; i++) {
+    if(people[i].hasMembership) {
+    hasMembership.push(people[i].name)
+
+    } else {
+      noMembership.push(people[i].name)
+    }
+} 
+return hasMembership.concat(noMembership);
+
+
+}
+
+
+
 
 module.exports = {
   applyDiscount,

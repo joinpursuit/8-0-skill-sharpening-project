@@ -23,6 +23,11 @@ function isEqual(a, b) {
 
 }// end of function 
 
+
+
+
+
+
 /**
  * findLarger()
  * ---------------------
@@ -42,6 +47,7 @@ function findLarger(a, b) {
   return b;
  }
   }// end of function
+
 
 /**
  * findLargerOrTie()
@@ -71,6 +77,13 @@ function findLargerOrTie(a, b) {
   }// end of function
 
 
+
+
+
+
+
+
+
 /**
  * positiveNegativeOrZero()
  * ---------------------
@@ -89,7 +102,22 @@ function findLargerOrTie(a, b) {
  *  positiveNegativeOrZero(1);
  *  //> "Positive"
  */
-function positiveNegativeOrZero(a) {}
+function positiveNegativeOrZero(a) {
+
+  if (a < 0) {
+    return 'Negative';
+
+  }
+   else if(a === 0) {
+    return 'Zero';
+
+  } else if (a > 0 ) {
+
+    return 'Positive';
+  }
+
+  }
+
 
 /**
  * aroundTheWorldGreeting()
@@ -110,7 +138,26 @@ function positiveNegativeOrZero(a) {}
  *  aroundTheWorldGreeting();
  *  //> "Hello World"
  */
-function aroundTheWorldGreeting(language) {}
+function aroundTheWorldGreeting(language) {
+
+if (language === "english") {
+  return "Hello World"; 
+}
+  else if (language === "spanish") {
+  return "Hola Mundo"; 
+  } 
+  else if (language === "german") {
+  return "Hallo Welt";
+  
+} else {
+
+return "Hello World";
+      }
+     
+    }
+
+
+
 
 /**
  * aroundTheWorldGreetingWithSwitch()
@@ -133,8 +180,25 @@ function aroundTheWorldGreeting(language) {}
  *  aroundTheWorldGreetingWithSwitch();
  *  //> "Hello World"
  */
-function aroundTheWorldGreetingWithSwitch(language) {}
-   
+function aroundTheWorldGreetingWithSwitch(language) {
+ switch (language) {
+  case 'english':
+    return 'Hello World';
+    break;
+  case 'spanish':
+      return 'Hola Mundo';
+      break;
+  case  'german':
+        return 'Hallo Welt';
+        break;
+  default:
+        return 'Hello World';
+        break;
+ }
+
+
+
+}
 
 /**
  * calculateLetterGrade()
@@ -154,7 +218,7 @@ function aroundTheWorldGreetingWithSwitch(language) {}
  *  //> "A"
  */
 function calculateLetterGrade(grade) {
-  
+
   if(grade >= 90){
     return 'A';
   }else if (grade >= 80){
