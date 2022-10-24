@@ -70,7 +70,9 @@ function convertToShoutingText(text) {
  *  convertToWhisperText("Hello There");
  *  //> "hello there"
  */
-function convertToWhisperText(text) {}
+function convertToWhisperText(text) {
+  return text.toLowerCase();
+}
 
 /**
  * checkIfCharacterIsInString()
@@ -87,7 +89,10 @@ function convertToWhisperText(text) {}
  *  checkIfCharacterIsInString("hello there", "a");
  *  //> false
  */
-function checkIfCharacterIsInString(text, character) {}
+function checkIfCharacterIsInString(text, character) {
+  return text.includes(character);
+
+}
 
 /**
  * isEven()
@@ -103,55 +108,74 @@ function checkIfCharacterIsInString(text, character) {}
  *  isEven(11);
  *  //> false
  */
-function isEven(num) {}
+function isEven(num) {
+  return (num %2 === 0)
+    
+
+  
+}
 
 /**
- * isOdd()
- * ---------------------
- * Returns `true` if the number given is odd. Otherwise, returns `false`.
- * @param {number} num
- * @returns {boolean}
- *
- * EXAMPLE:
- *  isOdd(10);
- *  //> false
- *
- *  isOdd(11);
- *  //> true
- */
-function isOdd(num) {}
+* isOdd()
+* ---------------------
+* Returns `true` if the number given is odd. Otherwise, returns `false`.
+* @param {number} num
+* @returns {boolean}
+*
+* EXAMPLE:
+*  isOdd(10);
+*  //> false
+*
+*  isOdd(11);
+*  //> true
+*/
+function isOdd(num) {
+  return (num % 2 !==0)
+}
 
 /**
- * isTruthy()
- * ---------------------
- * Returns `true` if the value given is a truthy value. Otherwise, returns `false`.
- * @param {*} val
- * @returns {boolean}
- *
- * EXAMPLE:
- *  isTruthy(10);
- *  //> true
- *
- *  isTruthy(null);
- *  //> false
- */
-function isTruthy(val) {}
+* isTruthy()
+* ---------------------
+* Returns `true` if the value given is a truthy value. Otherwise, returns `false`.
+* @param {*} val
+* @returns {boolean}
+*
+* EXAMPLE:
+*  isTruthy(10);
+*  //> true
+*
+*  isTruthy(null);
+*  //> false
+*/
+function isTruthy(val) {
+  if(!val){
+    return false
+  }else {
+    return true
+  }
+}
 
 /**
- * isFalsy()
- * ---------------------
- * Returns `true` if the value given is a falsy value. Otherwise, returns `false`.
- * @param {*} val
- * @returns {boolean}
- *
- * EXAMPLE:
- *  isFalsy(undefined);
- *  //> true
- *
- *  isFalsy(" ");
- *  //> false
- */
-function isFalsy(val) {}
+* isFalsy()
+* ---------------------
+* Returns `true` if the value given is a falsy value. Otherwise, returns `false`.
+* @param {*} val
+* @returns {boolean}
+*
+* EXAMPLE:
+*  isFalsy(undefined);
+*  //> true
+*
+*  isFalsy(" ");
+*  //> false
+*/
+function isFalsy(val) {
+  if(!val){
+    return true
+  }else {
+    return false
+  }
+}
 
 // Do not change the code below.
 module.exports = {
