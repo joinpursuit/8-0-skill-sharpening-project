@@ -117,7 +117,16 @@ function targetCount(array, target) {}
  *  firstIndexFound([ "left", "right", "left" ], "up");
  *  //> -1
  */
-function firstIndexFound(array, target) {}
+
+function firstIndexFound(array, target) {
+  for (let i = 0; i < array.length; i++) {
+    if (array[i] === target) {
+      return i;
+    }
+    
+  }
+  return -1;
+}//SC420
 
 /**
  * lastIndexFound()
@@ -137,7 +146,14 @@ function firstIndexFound(array, target) {}
  *  lastIndexFound([ "left", "right", "left" ], "up");
  *  //> -1
  */
-function lastIndexFound(array, target) {}
+function lastIndexFound(array, target) {
+  for (let i = array.length-1; i > 0; i--) {
+    if(array[i] === target) {
+      return i;
+    }
+  }
+  return -1;
+}//SC420
 
 /**
  * timesIndex()
@@ -151,7 +167,14 @@ function lastIndexFound(array, target) {}
  *  //> [ 7 * 0, 10 * 1, 11 * 2 ]
  *  //> [ 0, 10, 22 ]
  */
-function timesIndex(array) {}
+function timesIndex(array) {
+  let newArr = []
+  for (let i = 0; i < array.length; i++) {
+    newArr.push(array[i] * i);
+
+  }
+  return newArr
+}//SC420
 
 /**
  * cumulativeSum()
