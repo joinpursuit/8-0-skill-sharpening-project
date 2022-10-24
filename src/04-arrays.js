@@ -10,7 +10,9 @@
  *  createEmptyArray();
  *  //> []
  */
-function createEmptyArray() {}
+function createEmptyArray() {
+  return[]
+}
 
 /**
  * createArrayWithTwoElements()
@@ -24,7 +26,9 @@ function createEmptyArray() {}
  *  createArrayWithTwoElements(true, false);
  *  //> [ true, false ]
  */
-function createArrayWithTwoElements(a, b) {}
+function createArrayWithTwoElements(a, b) {
+  return[a,b]
+}
 
 /**
  * getArrayLength()
@@ -37,7 +41,9 @@ function createArrayWithTwoElements(a, b) {}
  *  getArrayLength([ 10, 20, 30 ]);
  *  //> 3
  */
-function getArrayLength(array) {}
+function getArrayLength(array) {
+  return array.length
+}
 
 /**
  * getFirstElementOfArray()
@@ -51,7 +57,9 @@ function getArrayLength(array) {}
  *  getFirstElementOfArray([ 10, 20, 30 ]);
  *  //> 10
  */
-function getFirstElementOfArray(array) {}
+function getFirstElementOfArray(array) {
+  return array[0]
+}
 
 /**
  * getLastElementOfArray()
@@ -65,7 +73,9 @@ function getFirstElementOfArray(array) {}
  *  getLastElementOfArray([ null, undefined ]);
  *  //> undefined
  */
-function getLastElementOfArray(array) {}
+function getLastElementOfArray(array) {
+  return array.pop(array.length-1)
+}
 
 /**
  * addElementToEndOfArray()
@@ -79,7 +89,10 @@ function getLastElementOfArray(array) {}
  *  addElementToEndOfArray([ 10 ], 9);
  *  //> [ 10, 9 ]
  */
-function addElementToEndOfArray(array, element) {}
+function addElementToEndOfArray(array, element) {
+  array.push(element)
+  return array
+}
 
 /**
  * removeElementFromEndOfArray()
@@ -142,8 +155,10 @@ function removeElementFromFrontOfArray(array) {
  *  getMiddleElement([ 10, null, "30" ]);
  *  //> null
  */
-function getMiddleElement(array) {}
-
+function getMiddleElement(array) {
+  let arr = [Math.floor(array.length/2)]
+  return array[arr]
+}
 // Do not change any code below this line.
 module.exports = {
   createEmptyArray,
