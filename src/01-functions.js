@@ -68,7 +68,11 @@ function add(a,b) {
  *  multiply(2, 5);
  *  //> 10
  */
-function multiply() {}
+function multiply(a, b) {
+  // let result = a * b;
+  // return result;
+  return a * b;
+}//SC420
 
 /**
  * average()
@@ -88,7 +92,11 @@ function multiply() {}
  *  average(10, 6);
  *  //> 8 // 10 + 6 = 16; 16/2 = 8;
  */
-function average() {}
+function average(a, b) {
+  // let average = (a + b) /2;
+  // return average
+  return (a + b)/2
+}//SC420
 
 /**
  * averageThree()
@@ -107,7 +115,11 @@ function average() {}
  *  averageThree(10, 11, 19);
  *  //> 10 // 10 + 11 + 19 = 30; 30 / 3 = 10;
  */
-function averageThree() {}
+function averageThree(a, b, c) {
+  // let average = (a + b + c)/3;
+  // return average;
+  return (a + b + c)/3
+}//SC420
 
 /**
  * compareTypes()
