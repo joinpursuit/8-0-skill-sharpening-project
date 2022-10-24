@@ -116,16 +116,16 @@ function sumArray(array) {
  *  //> [ 11, 15, 37 ]
  */
 function oddArray(array) {
-  let odd =
+  // let odd =
 
-    //let i = 0
-  for (let i = 0; i < array.length; i++) {
-    if (array[i] % 2 == 0) {
-      //array.push(i)
+  //   //let i = 0
+  // for (let i = 0; i < array.length; i++) {
+  //   if (array[i] % 2 == 0) {
+  //     //array.push(i)
 
-    }
-  }
-  return array
+  //   }
+  // }
+  // return array
 
 
 

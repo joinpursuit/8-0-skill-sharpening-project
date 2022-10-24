@@ -40,12 +40,9 @@ function createObjectWithValue(val) {
  *  //> { left: false }
  */
 function createObjectWithKey(key, steam) {
-  createObjectWithKey = ('my key')
-  return { [key]: [steam] }
+ createObjectWithKey = ('my key')
+  return {[key] : [steam]}
 }
-// Brainstorming ---V
-//const result = {}
-// Object.key(key)
 
 // createObjectWithKey = ('my key')
 // return { [key]: [cake] }
@@ -113,8 +110,6 @@ function getAgeFromObject(object) {
 function addValueToObject(object, val) {
   object.value = val
   return object
-
-
 }
 
 /**
@@ -130,14 +125,8 @@ function addValueToObject(object, val) {
  *  //> { right: false, left: true }
  */
 function addKeyToObject(object, key) {
-
-  return Object.assign(object, { [key]: "my key" })
+  return Object.assign(object, { [key] : "my key" })
 }
-
-//Brainstorming ---V
-//return object[key] = 'value'
-// addKeyToObject = ('key')
-// return { [object]: [key] }
 
 /**
  * addKeyValuePairToObject()
@@ -153,7 +142,7 @@ function addKeyToObject(object, key) {
  *  //> { up: true, left: false }
  */
 function addKeyValuePairToObject(object, key, val) {
-  return Object.assign(object, { [key]: val })
+  return Object.assign(object, { [key] : val })
 }
 
 /**
@@ -169,13 +158,9 @@ function addKeyValuePairToObject(object, key, val) {
  *  //> { right: false }
  */
 function deleteKeyFromObject(object, key) {
-  delete object[key]
+  delete object [key]
   return object
 }
-
-
-
-
 
 // Do not change any code below this line.
 module.exports = {

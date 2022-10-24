@@ -11,8 +11,7 @@
  *  //> []
  */
 function createEmptyArray() {
-
-  return [];
+  return []
 }
 
 /**
@@ -28,10 +27,7 @@ function createEmptyArray() {
  *  //> [ true, false ]
  */
 function createArrayWithTwoElements(a, b) {
-
-
   return [a, b]
-
 }
 
 /**
@@ -99,9 +95,7 @@ function getLastElementOfArray(array) {
  *  //> [ 10, 9 ]
  */
 function addElementToEndOfArray(array, element) {
-
   return [array, element]
-
 }
 
 /**

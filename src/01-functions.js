@@ -10,18 +10,10 @@
  *  //> true
  */
 function alwaysTrue() {
-  return true;
+  true === alwaysTrue
+  return true
 }
-
-
-
-// if (true === true) {
-//   return true
-// } else if {
-//   if(true === false) {
-//   return false
-// }
-
+ 
 /**
  * greet()
  * ---------------------
@@ -36,8 +28,8 @@ function alwaysTrue() {
  *  //> "Hello, Ian."
  */
 function greet(name) {
-  //return "Hello," + name + "."
-  return `Hello, ` + name + `.`;
+
+return `Hello, ${name}.`
 }
 
 /** 
@@ -138,26 +130,14 @@ function averageThree(a, b, c) {
  *  compareTypes("left", 10)
  *  //> false
  */
-function compareTypes(a, b) {
-  if (typeof a == typeof b)
-    return true
-  else (typeof a !== typeof b)
-  return false
-
-
+function compareTypes(a, b)
+ {
+  if (typeof a == typeof b)  
+  return true
+  else (typeof a != typeof b) 
+   
+ return false
 }
-
-
-
-
-//Brainstorm---V
-//  const index = (a, b)
-//   const result = (typeof index === 'number');
-//   Object.is(a, b);
-//   return typeof 
-
-
-
 
 /**
  * flipSign()
@@ -202,18 +182,10 @@ function flipSign(a) {
  *  joinStringsWithSpaces("left", "right", "up", "down", "away");
  *  //> "left right up down away"
  */
-function joinStringsWithSpaces(a, b, c, d, e) {
-
+function joinStringsWithSpaces(a, b, c, d, e)
+{ 
   return `${a} ${b} ${c} ${d} ${e}`
-  //return ['a', 'b', 'c', 'd', 'e'].join()
-
 }
-//Brainstorming Attempt---V
-//const result = ["a ", "b ", "c ", "d ", "e"].join(" ");
-//`${a, b, c, d, e}`
-//return 
-//["a ", "b ", "c ", "d ", "e"].join(" ");
-//return result
 
 /**
  * getFirstAndLastCharacter()

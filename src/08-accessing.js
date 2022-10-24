@@ -78,8 +78,8 @@ function getAddressStreet(person) {
  *  //> 2
  */
 function getCountOfPhoneNumbers(person) {
-  return person.numbers.push()
 
+  return person.numbers.push()
 }
 
 /**
@@ -177,30 +177,10 @@ function getCityAndState(person) {
  *  getFullAddress(person);
  *  //> "697 Pine Drive 2A, Staten Island, NY, 10306"
  */
-// const person = {
-//   names: {
-//     first: "Rachel",
-//     middle: "Eleanor",
-//     last: "Rojas"
-//   },
-//   address: {
-//     street: "697 Pine Drive",
-//     unit: "2A",
-//     city: "Staten Island",//3
-//     state: "NY",//4
-//     zip: "10306"
-//   },
-//   numbers: [
-//     7185550921,
-//     7185558611
-//   ]
-// }
 function getFullAddress(person) {
   return `${person.address.street} ${person.address.unit}, ${person.address.city}, ${person.address.state}, ${person.address.zip}`
 }
-//brainstorming---V
-//person.street = "address"
-// return person.street
+
 /**
  * getFlatObject()
  * ---------------------
