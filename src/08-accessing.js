@@ -32,7 +32,9 @@
  *  getFirstName(person);
  *  //> "Rachel"
  */
-function getFirstName(person) {}
+function getFirstName(person) {
+  return person.names.first
+}
 
 /**
  * getLastName()
@@ -148,7 +150,9 @@ function getFullName(person) {
  *  getCityAndState(person);
  *  //> "Staten Island, NY"
  */
-function getCityAndState(person) {}
+function getCityAndState(person) {
+  return `${person.address.city}, ${person.address.state}`
+}
 
 /**
  * getFullAddress()
@@ -164,7 +168,9 @@ function getCityAndState(person) {}
  *  getFullAddress(person);
  *  //> "697 Pine Drive 2A, Staten Island, NY, 10306"
  */
-function getFullAddress(person) {}
+function getFullAddress(person) {
+  return `${person.address.street} ${person.address.unit}, ${person.address.city}, ${person.address.state}, ${person.address.zip}`
+}
 
 /**
  * getFlatObject()
@@ -187,7 +193,19 @@ function getFullAddress(person) {}
       numbers: [7185550921, 7185558611],
     };
  */
-function getFlatObject(person) {}
+function getFlatObject(person) {
+  let flatObj = {};
+  flatObj["first"] = person.names.first;
+  flatObj["middle"] = person.names.middle;
+  flatObj["last"] = person.names.last;
+  flatObj["street"] = person.address.street;
+  flatObj["unit"] = person.address.unit;
+  flatObj["city"] = person.address.city;
+  flatObj["state"] = person.address.state;
+  flatObj["zip"] = person.address.zip;
+  flatObj["numbers"] = person.numbers;
+  return flatObj
+}
 
 // Do not change the code below.
 module.exports = {
