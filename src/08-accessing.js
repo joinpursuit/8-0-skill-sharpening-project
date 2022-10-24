@@ -32,7 +32,9 @@
  *  getFirstName(person);
  *  //> "Rachel"
  */
-function getFirstName(person) {}
+function getFirstName(person) {
+  return person.names.first
+}
 
 /**
  * getLastName()
@@ -45,7 +47,9 @@ function getFirstName(person) {}
  *  getLastName(person);
  *  //> "Rojas"
  */
-function getLastName(person) {}
+function getLastName(person) {
+  return person.names.last
+}
 
 /**
  * getAddressStreet()
@@ -58,7 +62,9 @@ function getLastName(person) {}
  *  getAddressStreet(person);
  *  //> "697 Pine Drive"
  */
-function getAddressStreet(person) {}
+function getAddressStreet(person) {
+  return person.address.street
+}
 
 /**
  * getCountOfPhoneNumbers()
@@ -71,7 +77,13 @@ function getAddressStreet(person) {}
  *  getCountOfPhoneNumbers(person);
  *  //> 2
  */
-function getCountOfPhoneNumbers(person) {}
+function getCountOfPhoneNumbers(person) {
+  let count = 0
+  for (let i in person){
+    count = count + 1
+  }
+  return count
+}
 
 /**
  * getFirstPhoneNumber()

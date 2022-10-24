@@ -24,7 +24,13 @@ function createEmptyArray() {}
  *  createArrayWithTwoElements(true, false);
  *  //> [ true, false ]
  */
-function createArrayWithTwoElements(a, b) {}
+function createArrayWithTwoElements(a, b) {
+  let array = [];
+  array.push(a)
+  array.push(b)
+  return array
+
+}
 
 /**
  * getArrayLength()
@@ -37,7 +43,9 @@ function createArrayWithTwoElements(a, b) {}
  *  getArrayLength([ 10, 20, 30 ]);
  *  //> 3
  */
-function getArrayLength(array) {}
+function getArrayLength(array) {
+
+}
 
 /**
  * getFirstElementOfArray()
@@ -65,7 +73,9 @@ function getFirstElementOfArray(array) {}
  *  getLastElementOfArray([ null, undefined ]);
  *  //> undefined
  */
-function getLastElementOfArray(array) {}
+function getLastElementOfArray(array) {
+  return array[array.length-1]
+}
 
 /**
  * addElementToEndOfArray()
@@ -92,7 +102,9 @@ function addElementToEndOfArray(array, element) {}
  *  removeElementFromEndOfArray([ 10, 9, 8 ]);
  *  //> 8
  */
-function removeElementFromEndOfArray(array) {}
+function removeElementFromEndOfArray(array) {
+  return array.pop()
+  }
 
 /**
  * addElementToFrontOfArray()
@@ -135,7 +147,8 @@ function removeElementFromFrontOfArray(array) {}
  *  getMiddleElement([ 10, null, "30" ]);
  *  //> null
  */
-function getMiddleElement(array) {}
+function getMiddleElement(array) {
+}
 
 // Do not change any code below this line.
 module.exports = {
