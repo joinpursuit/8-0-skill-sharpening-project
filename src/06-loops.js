@@ -11,7 +11,13 @@
  *  //> 25
  *  (3 + 4 + 5 + 6 + 7 = 25)
  */
-function rangeSum(min, max) {}
+function rangeSum(min, max) {
+  let sum = 0
+  for (let i = min; i <= max; i++){
+    sum += i
+  }
+  return sum
+}
 
 /**
  * rangeOdd()
@@ -25,7 +31,14 @@ function rangeSum(min, max) {}
  *  rangeOdd(10, 15);
  *  //> [ 15, 13, 11 ]
  */
-function rangeOdd(min, max) {}
+function rangeOdd(min, max) {
+  let odd = [] // call your array what you want 
+  for (let i = max; i >= min; i--){ //initiate the loop so that you can start from the maximum and decrement to the min 
+    if (i % 2 !== 0) // if the index is divisible by 2 and not equal to zero then it is odd
+      odd.push(i) // now add the odd's in a push to the array
+  }
+  return odd // call your array.
+}
 
 /**
  * rangeEveryOther()
@@ -39,7 +52,13 @@ function rangeOdd(min, max) {}
  *  rangeEveryOther(11, 18);
  *  //> [ 11, 13, 15, 17 ]
  */
-function rangeEveryOther(min, max) {}
+function rangeEveryOther(min, max) {
+  let everyOther = [] // declare a new array
+  for (let i = min; i <= max; i+= 2) { //start your loop at the minimum and increment so that it goes through the function and gives the "second number" rather than every number
+    everyOther.push(i) // now add the every other number in a push to the array.
+}
+return everyOther
+} // * += will tell loop what you want it to do* 
 
 /**
  * containsWhileLoop()
@@ -61,8 +80,15 @@ function rangeEveryOther(min, max) {}
  *  containsWhileLoop([ "left", "up", "right" ], "down");
  *  //> false
  */
-function containsWhileLoop(array, target) {}
-
+ function containsWhileLoop(array, target) {
+let i = 0
+while(i < array.length){
+  if(array[i]===target)
+  return true
+  i++
+} 
+return false
+}
 /**
  * containsForLoop()
  * ---------------------
@@ -83,7 +109,13 @@ function containsWhileLoop(array, target) {}
  *  containsForLoop([ "left", "up", "right" ], "down");
  *  //> false
  */
-function containsForLoop(array, target) {}
+function containsForLoop(array, target) {
+  for (let i = 0; i < array.length; i++){
+      if (array[i] === target){
+        return true
+      }// end of condition
+  }return false//end of for loop
+} //end of function
 
 /**
  * targetCount()
@@ -97,7 +129,15 @@ function containsForLoop(array, target) {}
  *  targetCount([ 10, 20, 10, 20, 30 ], 10);
  *  //> 2
  */
-function targetCount(array, target) {}
+function targetCount(array, target) {
+  let count = 0
+for (let i = 0; i < array.length; i++){ // let this index be initilaized, then 
+    if (array[i] === target){
+      count++ // count must increment with the condition 
+      //when a function returns it STOPS
+    }
+} return count // return the target count
+}
 
 /**
  * firstIndexFound()
@@ -117,7 +157,14 @@ function targetCount(array, target) {}
  *  firstIndexFound([ "left", "right", "left" ], "up");
  *  //> -1
  */
-function firstIndexFound(array, target) {}
+function firstIndexFound(array, target) {
+  for (let i = 0; i < array.length; i++){//heres the loop iteration
+    if (array[i] === target){ //heres your conditional
+      return i // if you find the index give it up!!!
+    }
+  } return -1 // if not then return a string of `-1`
+  }//end of function
+  
 
 /**
  * lastIndexFound()
@@ -137,7 +184,13 @@ function firstIndexFound(array, target) {}
  *  lastIndexFound([ "left", "right", "left" ], "up");
  *  //> -1
  */
-function lastIndexFound(array, target) {}
+function lastIndexFound(array, target) {
+  for (let i = array.length; i >= 0; i--){
+    if(array[i] === target){
+      return i // GIVE it UP!
+    }
+  } return -1
+}
 
 /**
  * timesIndex()
@@ -151,7 +204,11 @@ function lastIndexFound(array, target) {}
  *  //> [ 7 * 0, 10 * 1, 11 * 2 ]
  *  //> [ 0, 10, 22 ]
  */
-function timesIndex(array) {}
+function timesIndex(array) {
+  for (let i = 0; i < array.length; i++){
+    array[i] *= i  //multiplying the array.length index by it's character placement in array
+  }return array //outside of loop
+  }
 
 /**
  * cumulativeSum()
@@ -165,7 +222,14 @@ function timesIndex(array) {}
  *  //> [ 5, 5 + 2, 5 + 2 + 9 ]
  *  //> [ 5, 7, 16 ]
  */
-function cumulativeSum(array) {}
+function cumulativeSum(array) {
+  let boo = []
+  let sum = 0
+  for (let i = 0; i < array.length; i++){
+    sum +=  array[i]
+    boo.push(sum)
+  } return boo
+}
 
 // Do not change anything below this line.
 module.exports = {
