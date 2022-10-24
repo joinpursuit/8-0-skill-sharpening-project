@@ -89,24 +89,13 @@ function shoutForOfLoop(array) {
  *  sumArray([ 10, 0, 10, 11 ]);
  *  //> 31
  */
-
-function sumArray(array){} // both methods work
-  // method 1
-
-  // let sumValue = array[0]
-  // for(let i = 1; i < array.length; i++){
-  //   sumValue += array[i]
-  // }
-  // return sumValue
-
-// method 2 using reduce()
-
-// let sum = 0;
-// for(let i = 0; i < array.length; i++){
-//   sum = array.reduce((x,y) => x + y)
-// }
-// return sum
-// }
+function sumArray(array) {
+  let sum = 0
+  for(let i = 0; i < array.length; i++){
+    sum += array[i];
+  }
+  return sum
+}
 
 /**
  * oddArray()
@@ -119,8 +108,14 @@ function sumArray(array){} // both methods work
  *  oddArray([ 11, 15, 20, 22, 37 ]);
  *  //> [ 11, 15, 37 ]
  */
-
-function oddArray(array) {}
+function oddArray(array) {
+  let oddNum = []
+  for(let i =0; i < array.length; i++)
+  if (array[i]%2 !== 0 ){
+    oddNum.push(array[i])
+  }
+  return oddNum
+}
 
 
 /**
@@ -134,7 +129,15 @@ function oddArray(array) {}
  *  evenArray([ 11, 15, 20, 22, 37 ]);
  *  //> [ 20, 22 ]
  */
-function evenArray(array) {}
+function evenArray(array) {
+  let evenNum = []
+  for(let i = 0;i < array.length; i++ ){
+    if(array[i]%2 === 0){
+      evenNum.push(array[i])
+    }
+  }
+  return evenNum
+}
 
 /********************************* VANDHANA MOHAN *******************************/
 

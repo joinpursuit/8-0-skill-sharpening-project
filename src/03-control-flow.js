@@ -14,7 +14,11 @@
  *  isEqual(10, "10");
  *  //> false
  */
-function isEqual(a, b) {}
+function isEqual(a, b) {
+  if(a === b ){
+    return true
+  }return false
+}
 
 /**
  * findLarger()
@@ -233,7 +237,11 @@ function calculateLetterGrade(grade) { // if else
  *  animalCounts("pig", 1);
  *  //> "1 pig"
  */
-function animalCounts(animal, numberOfAnimals) {}
+function animalCounts(animal, numberOfAnimals) {
+  if(numberOfAnimals > 1){
+    return `${numberOfAnimals} ${animal}s`
+  }return `${numberOfAnimals} ${animal}`
+}
 
 /**
  * evenOrOdd()
@@ -250,7 +258,11 @@ function animalCounts(animal, numberOfAnimals) {}
  *  evenOrOdd(48);
  *  //> "Even"
  */
-function evenOrOdd(a) {}
+function evenOrOdd(a) {
+  if(a%2 === 0){
+    return 'Even'
+  } return 'Odd'
+}
 
 /**
  * evenOrOddWithTernary()
@@ -266,7 +278,9 @@ function evenOrOdd(a) {}
  *  evenOrOddWithTernary(8);
  *  //> "Even"
  */
-function evenOrOddWithTernary(a) {}
+function evenOrOddWithTernary(a) {
+  return (a % 2 === 0 ? 'Even' : 'Odd');
+}
 
 // Do not change any code below this line.
 module.exports = {
