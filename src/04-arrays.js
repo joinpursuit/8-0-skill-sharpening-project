@@ -24,7 +24,13 @@ function createEmptyArray() {}
  *  createArrayWithTwoElements(true, false);
  *  //> [ true, false ]
  */
-function createArrayWithTwoElements(a, b) {}
+function createArrayWithTwoElements(a, b) {
+  let array = [];
+  array.push(a)
+  array.push(b)
+  return array
+
+}
 
 /**
  * getArrayLength()
@@ -37,7 +43,9 @@ function createArrayWithTwoElements(a, b) {}
  *  getArrayLength([ 10, 20, 30 ]);
  *  //> 3
  */
-function getArrayLength(array) {}
+function getArrayLength(array) {
+
+}
 
 /**
  * getFirstElementOfArray()
@@ -64,7 +72,10 @@ function getFirstElementOfArray(array) {}
  *  getLastElementOfArray([ null, undefined ]);
  *  //> undefined
  */
-function getLastElementOfArray(array) {}
+function getLastElementOfArray(array) {
+  return array[array.length-1]
+}
+
 /**
  * addElementToEndOfArray()
  * ---------------------
@@ -77,7 +88,10 @@ function getLastElementOfArray(array) {}
  *  addElementToEndOfArray([ 10 ], 9);
  *  //> [ 10, 9 ]
  */
-function addElementToEndOfArray(array, element) {}
+function addElementToEndOfArray(array, element) {
+  array.push(element)
+  return array
+}
 
 /**
  * removeElementFromEndOfArray()
