@@ -9,7 +9,9 @@
  *  alwaysTrue();
  *  //> true
  */
-function alwaysTrue() {}
+function alwaysTrue() {
+  return true
+}
 
 /**
  * greet()
@@ -24,7 +26,10 @@ function alwaysTrue() {}
  *  greet("Ian");
  *  //> "Hello, Ian."
  */
-function greet() {}
+function greet(name) {
+
+ return `Hello, ${name}.`
+}
 
 /**
  * add()
@@ -39,7 +44,9 @@ function greet() {}
  *  add(10, 20);
  *  //> 30
  */
-function add() {}
+function add(a,b) {
+  return a + b
+}
 
 /**
  * multiply()
@@ -54,12 +61,15 @@ function add() {}
  *  multiply(2, 5);
  *  //> 10
  */
-function multiply() {}
+function multiply(a,b) {
+  return a*b
+}
 
 /**
  * average()
  * ---------------------
- * Returns the average of two numbers. You can get the average by adding up all numbers and then dividing by how many numbers were added.
+ * Returns the average of two numbers. You can get the average by adding up all 
+ * numbers and then dividing by how many numbers were added.
  *
  * NOTE: The sum of all numbers will always be even.
  * HINT: How is this problem similar to add()? How is it different?
@@ -74,7 +84,12 @@ function multiply() {}
  *  average(10, 6);
  *  //> 8 // 10 + 6 = 16; 16/2 = 8;
  */
-function average() {}
+function average(a,b) {
+let average = 0
+average = (a+b)/2
+return average
+
+}
 
 /**
  * averageThree()
@@ -93,7 +108,15 @@ function average() {}
  *  averageThree(10, 11, 19);
  *  //> 10 // 10 + 11 + 19 = 30; 30 / 3 = 10;
  */
-function averageThree() {}
+function averageThree(a,b,c) {
+
+  let average = (a+b+c)/3
+  return average
+}
+
+
+/********************************* VANDHANA MOHAN *******************************/
+
 
 /**
  * compareTypes()
@@ -112,7 +135,17 @@ function averageThree() {}
  *  compareTypes("left", 10);
  *  //> false
  */
-function compareTypes() {}
+function compareTypes(a,b) {
+
+  // this function returns true if same datatype
+  
+  if (typeof a === typeof b){ // checking for same datatype, using typeof
+    return true
+  }
+  else{
+    return false
+  }
+}
 
 /**
  * flipSign()
@@ -131,7 +164,13 @@ function compareTypes() {}
  *  flipSign(50);
  *  //> -50
  */
-function flipSign() {}
+function flipSign(a) {
+  // if (a < 0){        // multiplying the given number with -1, whether positive or negative will flip
+  //   return (a * -1)
+  // }
+  // else if (a > 0){
+    return (a * -1)
+  }
 
 /**
  * joinStringsWithSpaces()
@@ -151,7 +190,12 @@ function flipSign() {}
  *  joinStringsWithSpaces("left", "right", "up", "down", "away");
  *  //> "left right up down away"
  */
-function joinStringsWithSpaces() {}
+function joinStringsWithSpaces(a,b,c,d,e) {
+  return `${a} ${b} ${c} ${d} ${e}`         // concatenating all the strings into one string
+  //return a + " " + b + " " + c + " " + d + " " + e
+}
+
+/********************************* VANDHANA MOHAN *******************************/
 
 /**
  * getFirstAndLastCharacter()
@@ -168,7 +212,10 @@ function joinStringsWithSpaces() {}
  *  getFirstAndLastCharacter("upwards");
  *  //> "us"
  */
-function getFirstAndLastCharacter() {}
+function getFirstAndLastCharacter(a) {
+  return a.charAt(0) + a.charAt(a.length-1)
+
+}
 
 // Do not change the code below.
 module.exports = {
