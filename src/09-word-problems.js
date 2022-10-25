@@ -118,7 +118,7 @@ function compareLocations(address1, address2) {
 
 
 
-}code 
+}
 
 /**
  * gradeAssignments()
