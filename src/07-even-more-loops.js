@@ -78,7 +78,7 @@ function shoutForOfLoop(array) {
  *  //> 31
  */
 function sumArray(array) {
-  let sum = 0 
+  let sum = 0
   for(let value of array){
     sum+= value
   }

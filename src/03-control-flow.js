@@ -53,13 +53,11 @@ function findLarger(a, b) {
  *  //> "tie"
  */
 function findLargerOrTie(a, b) {
-  if( a > b){
-    return a;
-  }else if (a < b){
-    return b;
-
-  }
-  return "tie";
+  if(a>b){
+    return a
+  }else if (a<b){
+    return b
+  }return "tie"
 }
 
 /**
@@ -141,17 +139,18 @@ function aroundTheWorldGreeting(language) {
  *  //> "Hello World"
  */
 function aroundTheWorldGreetingWithSwitch(language) {
-switch (language){
+
+  switch (language){
   case "spanish":
     return "Hola Mundo";
     break;
   case "german":
-      return "Hallo Welt";
-  break;
-         default :
-          return "Hello World";
-}
-}
+    return "Hallo Welt";
+    break;
+    default:
+      return "Hello World"
+}}
+
 /**
  * calculateLetterGrade()
  * ---------------------

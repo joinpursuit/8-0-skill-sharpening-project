@@ -25,7 +25,7 @@ function getLengthOfString(str) {
  *  //> 111
  */
 function convertToNumber(val) {
-  return val*1;
+  return val * 1
 }
 
 /**
@@ -150,9 +150,7 @@ function isOdd(num) {
  *  //> false
  */
 function isTruthy(val) {
-  
-    return  !!val;
-  
+  return !!val
 }
 
 /**

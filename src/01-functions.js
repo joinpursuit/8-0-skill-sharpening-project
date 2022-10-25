@@ -10,7 +10,8 @@
  *  //> true
  */
 function alwaysTrue() {
-  return true;
+  if (true){
+return true;}
 }
 
 /** 
@@ -83,7 +84,7 @@ function multiply(a,b) {
  *  //> 8 // 10 + 6 = 16; 16/2 = 8;
  */
 function average(a,b) {
-  return (a +b)/2; 
+  return (a +b)/2;
 }
 
 /**
@@ -187,7 +188,7 @@ function joinStringsWithSpaces(a,b,c,d,e,) {
  *  //> "us"
  */
 function getFirstAndLastCharacter(a) {
-return a[0]+ a[a.length-1];
+return a[0] + a[a.length-1];
 }
 
 // Do not change the code below.

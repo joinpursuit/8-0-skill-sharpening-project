@@ -40,7 +40,7 @@ function createObjectWithValue(val) {
  *  //> { left: false }
  */
 function createObjectWithKey(key) {
-  
+
   let obj = {};
   obj[key]= "value";
   return obj;
@@ -127,7 +127,7 @@ function addValueToObject(object, val) {
  *  //> { right: false, left: true }
  */
 function addKeyToObject(object, key) {
-  
+
   object[key] = "value"
   return object;
 }

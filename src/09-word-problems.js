@@ -20,7 +20,7 @@
  *  //> 700
  */
 function applyDiscount(priceInCents, age, hasMembership) {
-  let discount = 0 
+  let discount = 0
   if(age<= 10 || age>= 65){
   discount+= 0.1;
   }
