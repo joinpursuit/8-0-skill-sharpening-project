@@ -32,7 +32,9 @@
  *  getFirstName(person);
  *  //> "Rachel"
  */
-function getFirstName(person) {}
+function getFirstName(person) {
+  return person.names.first;
+}// end of function
 
 /**
  * getLastName()
@@ -45,7 +47,9 @@ function getFirstName(person) {}
  *  getLastName(person);
  *  //> "Rojas"
  */
-function getLastName(person) {}
+function getLastName(person) {
+  return person.names.last;
+}// end of function
 
 /**
  * getAddressStreet()
@@ -58,8 +62,10 @@ function getLastName(person) {}
  *  getAddressStreet(person);
  *  //> "697 Pine Drive"
  */
-function getAddressStreet(person) {}
-
+function getAddressStreet(person) {
+  return person.address.street;
+}
+// end of function
 /**
  * getCountOfPhoneNumbers()
  * ---------------------
@@ -71,7 +77,10 @@ function getAddressStreet(person) {}
  *  getCountOfPhoneNumbers(person);
  *  //> 2
  */
-function getCountOfPhoneNumbers(person) {}
+function getCountOfPhoneNumbers(person) {
+  return person.numbers.length
+  
+}// end of function
 
 /**
  * getFirstPhoneNumber()
@@ -87,7 +96,10 @@ function getCountOfPhoneNumbers(person) {}
  *  getFirstPhoneNumber(person);
  *  //> 7185550921
  */
-function getFirstPhoneNumber(person) {}
+function getFirstPhoneNumber(person) {
+
+  return person.numbers[0];
+}
 
 /**
  * getLastPhoneNumber()
@@ -103,7 +115,9 @@ function getFirstPhoneNumber(person) {}
  *  getLastPhoneNumber(person);
  *  //> 7185558611
  */
-function getLastPhoneNumber(person) {}
+function getLastPhoneNumber(person) {
+  return person.numbers[person.numbers.length - 1]
+}
 
 /**
  * getFullName()
@@ -116,7 +130,11 @@ function getLastPhoneNumber(person) {}
  *  getFullName(person);
  *  //> "Rachel Eleanor Rojas"
  */
-function getFullName(person) {}
+function getFullName(person) {
+return `${person.names.first} ${person.names.middle} ${person.names.last}`
+
+
+}
 
 /**
  * getCityAndState()

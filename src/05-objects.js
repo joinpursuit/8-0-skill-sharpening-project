@@ -9,7 +9,9 @@
  *  createEmptyObject()
  *  //> {}
  */
-function createEmptyObject() {}
+function createEmptyObject() {
+  return {}
+}// end of function
 
 /**
  * createObjectWithValue()
@@ -22,7 +24,10 @@ function createEmptyObject() {}
  *  createObjectWithValue(19);
  *  //> { whateverKey: 19 }
  */
-function createObjectWithValue(val) {}
+function createObjectWithValue(val) {
+  return {val}
+}// end of function
+ 
 
 /**
  * createObjectWithKey()
@@ -35,7 +40,11 @@ function createObjectWithValue(val) {}
  *  createObjectWithKey("left");
  *  //> { left: false }
  */
-function createObjectWithKey(key) {}
+function createObjectWithKey(key) {
+  const newObj = {}
+   newObj[key] = "my key";
+   return newObj
+}// end of function
 
 /**
  * createObjectWithKeyValuePair()
@@ -49,7 +58,13 @@ function createObjectWithKey(key) {}
  *  createObjectWithKeyValuePair("left", "right");
  *  //> { left: "right" }
  */
-function createObjectWithKeyValuePair(key, val) {}
+function createObjectWithKeyValuePair(key, val) {
+const newObj = {}
+
+newObj[key] = val
+
+return newObj;
+}
 
 /**
  * getNameFromObject()
@@ -62,7 +77,10 @@ function createObjectWithKeyValuePair(key, val) {}
  *  getNameFromObject({ name: "Jay" });
  *  //> "Jay"
  */
-function getNameFromObject(object) {}
+function getNameFromObject(object) {
+
+  return object.name;
+}
 
 /**
  * getAgeFromObject()
@@ -75,7 +93,11 @@ function getNameFromObject(object) {}
  *  getAgeFromObject({ age: 30 });
  *  //> 30
  */
-function getAgeFromObject(object) {}
+function getAgeFromObject(object) {
+
+return object.age;
+
+}
 
 /**
  * addValueToObject()
@@ -89,7 +111,13 @@ function getAgeFromObject(object) {}
  *  addValueToObject({ left: true }, false);
  *  //> { left: true, key: false }
  */
-function addValueToObject(object, val) {}
+function addValueToObject(object, val) {
+object.zip = val;
+
+return object;
+
+
+}
 
 /**
  * addKeyToObject()
