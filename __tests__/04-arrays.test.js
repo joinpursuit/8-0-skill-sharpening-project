@@ -50,7 +50,7 @@ describe("createArrayWithTwoElements()", () => {
   });
 });
 
-describe("getArrayLength()", () => {
+describe.only("getArrayLength()", () => {
   test("should return the length of an array", () => {
     const actual = getArrayLength([1, 2, 3]);
     const expected = 3;
