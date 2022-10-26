@@ -9,7 +9,7 @@
  *  getLengthOfString("down");
  *  //> 4
  */
-function getLengthOfString(str) { 
+function getLengthOfString(str) {
   return str.length
 }
 
@@ -25,7 +25,7 @@ function getLengthOfString(str) {
  *  //> 111
  */
 function convertToNumber(val) {
-  return + val
+  return +val
 }
 
 /**
@@ -56,7 +56,7 @@ function convertToString(val) {
  *  //> "HELLO THERE"
  */
 function convertToShoutingText(text) {
-  return text.toLocaleUpperCase()
+  return text.toUpperCase()
 }
 
 /**
@@ -70,8 +70,7 @@ function convertToShoutingText(text) {
  *  convertToWhisperText("Hello There");
  *  //> "hello there"
  */
-function convertToWhisperText(text) 
-{
+function convertToWhisperText(text) {
   return text.toLocaleLowerCase()
 }
 
@@ -90,19 +89,28 @@ function convertToWhisperText(text)
  *  checkIfCharacterIsInString("hello there", "a");
  *  //> false
  */
-function checkIfCharacterIsInString(text, character)
- {
-
-  if (text.includes(character)){    
+function checkIfCharacterIsInString(text, character) {
+  if (text.includes(character)) {
     return true
+  }
+  else {
+    return false
+  }
 }
-else{
-return false
-}
-}
-  
 
-
+//Brainstorming ---V 
+// checking if character is inside the text
+// const str = text
+// const char = character
+// if (char.includes(str)) {
+//   return true
+// } else
+//   return false
+//const result = true || false
+// if (character === text)
+//   return true
+// else (character !== text)
+// return false
 /**
  * isEven()
  * ---------------------
@@ -118,12 +126,11 @@ return false
  *  //> false
  */
 function isEven(num) {
-  if (num%2 === 0) 
-  return true 
-  else
-   {
-  return false 
-   }
+  if (num % 2 === 0)
+    return true
+  else {
+    return false
+  }
 }
 
 /**
@@ -140,14 +147,12 @@ function isEven(num) {
  *  isOdd(11);
  *  //> true
  */
-function isOdd(num) 
-{
-if (num%2 !== 0) 
-return true 
-else 
-{
-  return false
-}
+function isOdd(num) {
+  if (num % 2 !== 0)
+    return true
+  else {
+    return false
+  }
 }
 
 /**
@@ -164,18 +169,14 @@ else
  *  isTruthy(null);
  *  //> false
  */
-function isTruthy(val)
- { if (val) 
-    {
+function isTruthy(val) {
 
-return true
- 
-}
-else {
-  
-  return false
-}
-}
+  if (val)
+    return true
+  else {
+    return false
+  }
+}//should dynamically change depending on the input
 
 /**
  * isFalsy()
@@ -191,15 +192,15 @@ else {
  *  isFalsy(" ");
  *  //> false
  */
-function isFalsy(val) 
-{
+function isFalsy(val) {
+
   if (val)
-  return false
-  else 
-  {
+    return false
+  else {
     return true
-  } 
-}
+  }
+
+}//should dynamically change depending on the input
 
 // Do not change the code below.
 module.exports = {

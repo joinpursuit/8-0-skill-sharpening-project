@@ -10,7 +10,7 @@
  *  //> true
  */
 function alwaysTrue() {
-  true === alwaysTrue 
+  true === alwaysTrue
   return true
 }
  
@@ -28,11 +28,11 @@ function alwaysTrue() {
  *  //> "Hello, Ian."
  */
 function greet(name) {
-   
+
 return `Hello, ${name}.`
 }
 
-/**
+/** 
  * add()
  * ---------------------
  * Adds two numbers together and returns the sum.
@@ -46,9 +46,7 @@ return `Hello, ${name}.`
  *  //> 30
  */
 function add(a, b) {
-  let sum = a + b;
-//return a+b
-  return sum;
+  return a + b;
 }
 
 /**
@@ -87,10 +85,10 @@ function multiply(a, b) {
  *  //> 8 // 10 + 6 = 16; 16/2 = 8;
  */
 function average(a, b) {
-  //const result = [ ]
-  const arr = [a, b];    
+  //const result = [ ];
+  const arr = [a, b];
   const average = arr.reduce((a, b) => a + b, 0) / arr.length;
-return average
+  return average
 }
 
 /**
@@ -111,7 +109,7 @@ return average
  *  //> 10 // 10 + 11 + 19 = 30; 30 / 3 = 10;
  */
 function averageThree(a, b, c) {
-  const average = (a + b + c) / 3; 
+  const average = (a + b + c) / 3;
   return average
 }
 
@@ -129,7 +127,7 @@ function averageThree(a, b, c) {
  *  compareTypes("left", "right");
  *  //> true
  *
- *  compareTypes("left", 10);
+ *  compareTypes("left", 10)
  *  //> false
  */
 function compareTypes(a, b)
@@ -159,10 +157,13 @@ function compareTypes(a, b)
  *  //> -50
  */
 function flipSign(a) {
+
   return a *= -1
-
 }
-
+//Brainstorming ---V
+//return Math.abs(a)//>positive
+//return Math.abs(-a)//>positive
+//return Math.abs(-(a))//>positive
 /**
  * joinStringsWithSpaces()
  * ---------------------
@@ -181,7 +182,7 @@ function flipSign(a) {
  *  joinStringsWithSpaces("left", "right", "up", "down", "away");
  *  //> "left right up down away"
  */
-function joinStringsWithSpaces(a, b, c, d, e) 
+function joinStringsWithSpaces(a, b, c, d, e)
 { 
   return `${a} ${b} ${c} ${d} ${e}`
 }
@@ -201,11 +202,14 @@ function joinStringsWithSpaces(a, b, c, d, e)
  *  getFirstAndLastCharacter("upwards");
  *  //> "us"
  */
-function getFirstAndLastCharacter(a) 
-{
-return a[0] + a[a.length -1]
-}
+function getFirstAndLastCharacter(a) {
+  return a[0] + a[a.length - 1]
 
+}
+//`${a[0]}${a.length - }`
+//getFirstAndLastCharacter(a.length - 1)
+
+// `${a[0]}${a.length - 1}`
 // Do not change the code below.
 module.exports = {
   alwaysTrue,

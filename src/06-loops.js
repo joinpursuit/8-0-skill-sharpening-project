@@ -1,6 +1,3 @@
-const yargs = require("yargs");
-const { array, number } = require("yargs");
-
 /**
  * rangeSum()
  * ---------------------
@@ -12,17 +9,56 @@ const { array, number } = require("yargs");
  * EXAMPLE:
  *  rangeSum(3, 7);
  *  //> 25
- *  (3 + 4 + 5 + 6 + 7 = 25)
+ *  (3 + 4 + 5 + 6 + 7 = 25)//add to the 
  */
-function rangeSum(min, max)
- { 
-  let result = 0
-  for (let i = min; i <= max; i++) {
-    result = result + i
+
+function rangeSum(min, max) {
+  //const result = { number }
+  let i = min;
+  let arr = [];
+
+
+  while (min <= max) {
+    arr.push(max)
+    min++
   }
-  return result
+  return min;
+
 }
 
+//Brainstorming--V 
+
+
+// // //const result = newSum;
+// const newSum = 0;
+// for (let i = 0; i < arr.length; i++) {
+//   newSum += Math.max(arr[i]) + Math.min(arr[i]);
+// }
+// return newSum
+
+// min = arr[0];
+// max = arr[1];
+// if (arr[0] > arr[1]) {
+//   min = arr[1];
+//   max = arr[0]
+// }
+// return result
+
+// while (min <= max) {
+//   result.push(min)
+//   min++
+// }
+// return result;
+
+//let sum = 0;
+// for (let i = 0; i < arr.length; i++) {
+//   sum += Math.max(arr[i]) + Math.min(arr[i]);
+
+// }
+// return sum 
+
+//pass the test but not a loop =>return (max - min + 1) * (min + max) / 2
+//how many # there are^____how many in the middle^
 /**
  * rangeOdd()
  * ---------------------
@@ -58,6 +94,7 @@ function rangeOdd(min, max) {
  *  rangeEveryOther(11, 18);
  *  //> [ 11, 13, 15, 17 ]
  */
+
 function rangeEveryOther(min, max) {
 let arr =[];
   if (min % 2 === 0) {
@@ -74,6 +111,7 @@ let arr =[];
   }
 return arr
 }
+
 
 /**
  * containsWhileLoop()
@@ -95,6 +133,7 @@ return arr
  *  containsWhileLoop([ "left", "up", "right" ], "down");
  *  //> false
  */
+
 function containsWhileLoop(array, target) {
   let i = 0
     while (i < array.length) {
@@ -105,6 +144,7 @@ function containsWhileLoop(array, target) {
     }
     return false
 }
+
 
 /**
  * containsForLoop()
@@ -126,6 +166,7 @@ function containsWhileLoop(array, target) {
  *  containsForLoop([ "left", "up", "right" ], "down");
  *  //> false
  */
+
 function containsForLoop(array, target) {
   for (let i = 0; i < array.length; i++) {
     if (array[i] === target) {
@@ -134,6 +175,7 @@ function containsForLoop(array, target) {
   }
   return false
 }
+
 
 /**
  * targetCount()
@@ -147,7 +189,7 @@ function containsForLoop(array, target) {
  *  targetCount([ 10, 20, 10, 20, 30 ], 10);
  *  //> 2
  */
-function targetCount(array, target) {}
+function targetCount(array, target) { }
 
 /**
  * firstIndexFound()
@@ -167,7 +209,7 @@ function targetCount(array, target) {}
  *  firstIndexFound([ "left", "right", "left" ], "up");
  *  //> -1
  */
-function firstIndexFound(array, target) {}
+function firstIndexFound(array, target) { }
 
 /**
  * lastIndexFound()
@@ -187,7 +229,7 @@ function firstIndexFound(array, target) {}
  *  lastIndexFound([ "left", "right", "left" ], "up");
  *  //> -1
  */
-function lastIndexFound(array, target) {}
+function lastIndexFound(array, target) { }
 
 /**
  * timesIndex()
@@ -201,7 +243,7 @@ function lastIndexFound(array, target) {}
  *  //> [ 7 * 0, 10 * 1, 11 * 2 ]
  *  //> [ 0, 10, 22 ]
  */
-function timesIndex(array) {}
+function timesIndex(array) { }
 
 /**
  * cumulativeSum()
@@ -215,7 +257,7 @@ function timesIndex(array) {}
  *  //> [ 5, 5 + 2, 5 + 2 + 9 ]
  *  //> [ 5, 7, 16 ]
  */
-function cumulativeSum(array) {}
+function cumulativeSum(array) { }
 
 // Do not change anything below this line.
 module.exports = {

@@ -57,8 +57,9 @@ function getArrayLength(array) {
  *  getFirstElementOfArray([ 10, 20, 30 ]);
  *  //> 10
  */
-function getFirstElementOfArray(array) { 
-  return array [0]
+function getFirstElementOfArray(array) {
+  return array[0]
+
 }
 
 /**
@@ -74,8 +75,12 @@ function getFirstElementOfArray(array) {
  *  //> undefined
  */
 function getLastElementOfArray(array) {
-  return array.pop()
+
+  return array.pop();
 }
+//Brainstorming Attempt ---V
+//let array = ["first", "last"];
+// let lastElement = array.slice(-1)
 
 /**
  * addElementToEndOfArray()
@@ -120,8 +125,7 @@ function removeElementFromEndOfArray(array) {
  *  addElementToFrontOfArray([ 10 ], 9);
  *  //> [ 9, 10 ]
  */
-function addElementToFrontOfArray(array, element)
- {
+function addElementToFrontOfArray(array, element) {
   return [element, array]
 }
 
@@ -155,7 +159,7 @@ function removeElementFromFrontOfArray(array) {
  *  //> null
  */
 function getMiddleElement(array) {
-  return array[Math.floor((array.length -1) / 2)]
+  return array[Math.floor((array.length - 1) / 2)]
 }
 
 // Do not change any code below this line.

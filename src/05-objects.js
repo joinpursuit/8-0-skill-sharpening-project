@@ -1,5 +1,3 @@
-const { array } = require("yargs");
-
 /**
  * createEmptyObject()
  * ---------------------
@@ -27,7 +25,7 @@ function createEmptyObject() {
  *  //> { whateverKey: 19 }
  */
 function createObjectWithValue(val) {
-  return {whateverKey: val}
+  return { whateverKey: val }
 }
 
 /**
@@ -46,6 +44,8 @@ function createObjectWithKey(key, steam) {
   return {[key] : [steam]}
 }
 
+// createObjectWithKey = ('my key')
+// return { [key]: [cake] }
 /**
  * createObjectWithKeyValuePair()
  * ---------------------
@@ -59,11 +59,12 @@ function createObjectWithKey(key, steam) {
  *  //> { left: "right" }
  */
 function createObjectWithKeyValuePair(key, val) {
-  return Object.assign ({ [key] :val });
-   
-  
+  return Object.assign({ [key]: val })
 }
-
+//one out of two test passed
+// const obj = { [key]: 'my key'};
+// obj.key = val;
+// return obj
 /**
  * getNameFromObject()
  * ---------------------

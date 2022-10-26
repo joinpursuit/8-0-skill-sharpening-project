@@ -10,8 +10,8 @@
     address: {
       street: "697 Pine Drive",
       unit: "2A",
-      city: "Staten Island",
-      state: "NY",
+      city: "Staten Island",//3
+      state: "NY",//4
       zip: "10306"
     },
     numbers: [
@@ -33,10 +33,8 @@
  *  //> "Rachel"
  */
 function getFirstName(person) {
-
   return person.names.first
 }
-
 
 /**
  * getLastName()
@@ -80,7 +78,7 @@ function getAddressStreet(person) {
  *  //> 2
  */
 function getCountOfPhoneNumbers(person) {
- 
+
   return person.numbers.push()
 }
 
@@ -132,10 +130,15 @@ function getLastPhoneNumber(person) {
  *  //> "Rachel Eleanor Rojas"
  */
 function getFullName(person) {
-   
   return person.names.first + " " + person.names.middle + " " + person.names.last
 }
 
+
+// const firstName = "first"
+// const middleName = "middle"
+// const lastName = "last"
+// const fullName = firstName  + middleName + lastName
+// return person.fullName
 /**
  * getCityAndState()
  * ---------------------
@@ -152,9 +155,14 @@ function getFullName(person) {
  */
 function getCityAndState(person) {
 
-return person.address.city + ", " + person.address.state
-}
+  return person.address.city + ", " + person.address.state
 
+
+
+}
+//Brainstorming ---V 
+//Array.prototype.toString.call(({ city }, { state }))
+//return person.adress([{ city }, { state }])
 /**
  * getFullAddress()
  * ---------------------
@@ -194,24 +202,30 @@ function getFullAddress(person) {
       numbers: [7185550921, 7185558611],
     };
  */
-function getFlatObject(otherPerson) {
- 
-  let newObj = {}
-  newObj.first = otherPerson.names.first
-  newObj.middle = otherPerson.names.middle
-  newObj.last = otherPerson.names.last
-  newObj.street = otherPerson.address.street
-  newObj.unit = otherPerson.address.unit
-  newObj.city = otherPerson.address.city
-  newObj.state = otherPerson.address.state
-  newObj.zip = otherPerson.address.zip
-  newObj.numbers = otherPerson.numbers
-    //}
-   // newObj['numbers'] = person.numbers
-   //newObj.push(otherPerson.numbers)
-    return newObj
-  
-  }
+function getFlatObject(person) {
+  console.log(person.numbers)
+  const newObj = {}
+  let names = person.names
+  let address = person.address
+
+  Object.assign(newObj, names, address)
+  newObj.numbers = JSON.parse(JSON.stringify(person.numbers))
+  console.log(newObj.numbers)
+  return newObj
+}
+//Brainstorming ---V
+// const numbers = [7185550921, 7185558611]
+// const i = new Array(7185550921, 7185558611)
+
+// first: person.names.first,
+// middle: person.names.middle,
+// last: person.names.last,
+// street: person.address.street,
+// unit: person.address.unit,
+// city: person.address.city,
+// state: person.address.state,
+// zip: person.address.zip,
+// numbers: person.numbers.push()
 
 // Do not change the code below.
 module.exports = {

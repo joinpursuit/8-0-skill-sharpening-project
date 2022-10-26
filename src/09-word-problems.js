@@ -19,21 +19,57 @@
  *  applyDiscount(1000, 9, true);
  *  //> 700
  */
-function applyDiscount(priceInCents, age, hasMembership) //let priceInCents = 1000 let membership = true 
+//10 yrs old or younger OR 65 yrs old or older = 10% discount; attending w/ memember of memebership =20% off; both apply = 30% off
+function applyDiscount(priceInCents, age, hasMembership) {
 
-//{
-  //if (hasMembership && age <= 10 || age >= 65)
-  //{
-    //hasMembership = priceInCents * 0.3
-    // priceInCents -= hasMembership 
-  //}   
-  
-   //else if
-   //{
-    //hasMembership = priceInCents * 0.2
-   // priceInCents -= hasMembership
-  //}
-//else 
+  if (hasMembership = priceInCents * 0.10 || priceInCents * 0.20 || priceInCents * 0.30) {
+    return priceInCents//this line passed in test run only
+  } else if (age <= 10 || age >= 65 && priceInCents * 0.10) {
+    return priceInCents
+  } else if (hasMembership === true && priceInCents * 0.20) {
+    return priceInCents
+  } else if (hasMembership && age <= 10 || age >= 65 || priceInCents * 0.30) {
+    return priceInCents
+  } else {
+    return priceInCents
+  }
+}
+
+
+
+
+
+
+
+
+
+
+
+// Brainstroming---V 
+
+// if (hasMemebership && age <= 10 || age >= 65) 
+
+// if (age <= 10 && hasMembership) {
+//   return priceInCents;
+// } else if (age >= 65 && hasMembership) {
+//   return priceInCents;
+// } 
+
+//let TotalCost = 0;
+// for (let purchasedItems = 0; purchasedItems <= ct.length - 1; purchasedItems++) {
+//   let priceOfToy = ct[purchasedItems].costInCents;
+//   let toyDiscount = 0.10;
+//   if (ct[purchasedItems].promotions.includes("CLASSICS"))
+//     toyDiscount = 0.20;
+//   if (ct[purchasedItems].promotions.includes("EDUCATIONAL"))
+//     toyDiscount += 0.30;
+//   if (ct[purchasedItems].promotions.includes("OVERSTOCKED"))
+//     toyDiscount += 0.25;
+//   let newToyPrice = priceOfToy * toyDiscount;
+//   priceOfToy -= newToyPrice;
+//   TotalCost += priceOfToy;
+// }
+// return "$" + (TotalCost / 100).toFixed(2);
 //}
 
 /**
@@ -55,7 +91,7 @@ function applyDiscount(priceInCents, age, hasMembership) //let priceInCents = 10
     getCartTotal(cart);
  *  //> "$30.00"
  */
-function getCartTotal(products) {}
+function getCartTotal(products) { }
 
 /**
  * compareLocations()
@@ -95,7 +131,7 @@ function getCartTotal(products) {}
     compareLocations(address1, address2);
     //> "Same city."
  */
-function compareLocations(address1, address2) {}
+function compareLocations(address1, address2) { }
 
 /**
  * gradeAssignments()
@@ -142,7 +178,7 @@ function compareLocations(address1, address2) {}
     //>   },
     //> ];
  */
-function gradeAssignments(assignments) {}
+function gradeAssignments(assignments) { }
 
 /**
  * createLineOrder()
@@ -167,7 +203,7 @@ function gradeAssignments(assignments) {}
     createLineOrder(people);
     //> [ "Ray Anderson", "America Marsh", "Wade Carson", "Patience Patel" ]
  */
-function createLineOrder(people) {}
+function createLineOrder(people) { }
 
 module.exports = {
   applyDiscount,
