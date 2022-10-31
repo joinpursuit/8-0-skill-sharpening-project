@@ -96,7 +96,16 @@ function evenArray(array) {}
  *  findSmallest([ 0, 11, -2, 5 ]);
  *  //> -2
  */
-function findSmallest(array) {}
+function findSmallest(array) {
+  let smallNum = array[0];
+  for (let i = 0; i < array.length; i++) {
+    if (array[i] < smallNum) {
+      smallNum = array[i];
+    }
+  }
+
+  return smallNum;
+}
 
 /**
  * findLargest()
@@ -109,7 +118,16 @@ function findSmallest(array) {}
  *  findLargest([ 0, 11, -2, 5 ]);
  *  //> 11
  */
-function findLargest(array) {}
+function findLargest(array) {
+  let bigNum = array[0];
+  for (let i = 0; i < array.length; i++) {
+    if (array[i] > bigNum) {
+      bigNum = array[i];
+    }
+  }
+
+  return bigNum;
+}
 
 /**
  * findEqual()
@@ -126,7 +144,15 @@ function findLargest(array) {}
  *  findEqual([ 0, 11, -2, 5 ], 9);
  *  //> false
  */
-function findEqual(array, selected) {}
+function findEqual(array, selected) {
+  for (let ele of array) {
+    if (ele === selected) {
+      return true;
+    }
+  }
+
+  return false;
+}
 
 /**
  * removeDuplicates()
@@ -143,7 +169,16 @@ function findEqual(array, selected) {}
  *  //> [ 1, 11, 2, 3, 4, 9 ]
  */
 
-function removeDuplicates(array) {}
+function removeDuplicates(array) {
+  let arr = [];
+  for (let ele of array) {
+    if (!arr.includes(ele)) {
+      arr.push(ele);
+    }
+  }
+
+  return arr;
+}
 
 // Do not change any code below this line.
 module.exports = {

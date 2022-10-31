@@ -40,7 +40,8 @@ function applyDiscount(priceInCents, age, hasMembership) {}
     getCartTotal(cart);
  *  //> "$30.00"
  */
-function getCartTotal(products) {}
+function getCartTotal(products) {
+}
 
 /**
  * compareLocations()
@@ -80,7 +81,18 @@ function getCartTotal(products) {}
     compareLocations(address1, address2);
     //> "Same city."
  */
-function compareLocations(address1, address2) {}
+function compareLocations(address1, address2) {
+  if (JSON.stringify(address1) === JSON.stringify(address2)) {
+    return "Same building.";
+  } else if (address1.city === address2.city && address1.state === address2.state && address1.zip === address2.zip) {
+    return "Same city.";
+  } else if (address1.state === address2.state) {
+    return "Same state.";
+  }
+  
+
+  return "Addresses are not near each other.";
+}
 
 /**
  * gradeAssignments()
