@@ -20,7 +20,7 @@
  *  //> 700
  */
 function applyDiscount(priceInCents, age, hasMembership) {
-  let discount = 0; 
+  let discount = 0;
 
   if (age <= 10 || age >= 65) {
     discount += 0.10;
@@ -54,7 +54,14 @@ function applyDiscount(priceInCents, age, hasMembership) {
  *  //> "$30.00"
  */
 function getCartTotal(products) {
+  let total = 0;
+for (let i = 0; i < products.length; i++){
+  total += products[i].priceInCents * products[i].quantity;
 }
+
+
+return `$${(total/100).toFixed(2)}`
+} 
 
 /**
  * compareLocations()
@@ -201,7 +208,22 @@ function gradeAssignments(assignments) {
     createLineOrder(people);
     //> [ "Ray Anderson", "America Marsh", "Wade Carson", "Patience Patel" ]
  */
-function createLineOrder(people) {}
+function createLineOrder(people) {
+  let arr = [];
+  let arr2 = [];
+  for (let i = 0; i < people.length; i++){
+    if (people[i].hasMembership) {
+      arr.push(people[i].name)
+    } else {
+      arr2.push(people[i].name)
+    } 
+
+  }
+
+
+
+  return arr.concat(arr2);
+} 
 
 module.exports = {
   applyDiscount,
