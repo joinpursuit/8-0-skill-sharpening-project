@@ -9,7 +9,10 @@
  *  createEmptyObject()
  *  //> {}
  */
-function createEmptyObject() {}
+ function createEmptyObject() {
+  let obj ={}
+  return obj
+}
 
 /**
  * createObjectWithValue()
@@ -22,7 +25,10 @@ function createEmptyObject() {}
  *  createObjectWithValue(19);
  *  //> { whateverKey: 19 }
  */
-function createObjectWithValue(val) {}
+function createObjectWithValue(val) {
+  let obj = {anythingkey: val}
+  return obj
+}
 
 /**
  * createObjectWithKey()
@@ -35,7 +41,10 @@ function createObjectWithValue(val) {}
  *  createObjectWithKey("left");
  *  //> { left: false }
  */
-function createObjectWithKey(key) {}
+function createObjectWithKey(key) {
+  let obj = {key: null}
+  return obj
+}
 
 /**
  * createObjectWithKeyValuePair()
@@ -49,7 +58,10 @@ function createObjectWithKey(key) {}
  *  createObjectWithKeyValuePair("left", "right");
  *  //> { left: "right" }
  */
-function createObjectWithKeyValuePair(key, val) {}
+function createObjectWithKeyValuePair(key, val) {
+  let obj = { key: val}
+  return obj
+}
 
 /**
  * getNameFromObject()
@@ -62,7 +74,10 @@ function createObjectWithKeyValuePair(key, val) {}
  *  getNameFromObject({ name: "Jay" });
  *  //> "Jay"
  */
-function getNameFromObject(object) {}
+function getNameFromObject(object) {
+  let name = object.name
+  return name
+}
 
 /**
  * getAgeFromObject()
@@ -75,7 +90,10 @@ function getNameFromObject(object) {}
  *  getAgeFromObject({ age: 30 });
  *  //> 30
  */
-function getAgeFromObject(object) {}
+function getAgeFromObject(object) {
+  let age = object.age
+  return age
+}
 
 /**
  * addValueToObject()
@@ -89,7 +107,10 @@ function getAgeFromObject(object) {}
  *  addValueToObject({ left: true }, false);
  *  //> { left: true, key: false }
  */
-function addValueToObject(object, val) {}
+function addValueToObject(object, val) {
+  let addObjValue= object.anythingkey= val
+  return addObjValue
+}
 
 /**
  * addKeyToObject()
@@ -103,7 +124,10 @@ function addValueToObject(object, val) {}
  *  addKeyToObject({ right: false }, "left");
  *  //> { right: false, left: true }
  */
-function addKeyToObject(object, key) {}
+function addKeyToObject(object, key) {
+let addObjKey = object.key = val
+return addObjKey
+}
 
 /**
  * addKeyValuePairToObject()
@@ -118,7 +142,10 @@ function addKeyToObject(object, key) {}
  *  addKeyValuePairToObject({ up: true }, "left", false);
  *  //> { up: true, left: false }
  */
-function addKeyValuePairToObject(object, key, val) {}
+function addKeyValuePairToObject(object, key, val) {
+  let addObjKeyVal= object.key = val
+  return addObjKeyVal
+}
 
 /**
  * deleteKeyFromObject()
@@ -132,7 +159,10 @@ function addKeyValuePairToObject(object, key, val) {}
  *  deleteKeyFromObject({ left: true, right: false }, "left");
  *  //> { right: false }
  */
-function deleteKeyFromObject(object, key) {}
+function deleteKeyFromObject(object, key) {
+  let remove = delete object.key
+  return remove
+}
 
 // Do not change any code below this line.
 module.exports = {
