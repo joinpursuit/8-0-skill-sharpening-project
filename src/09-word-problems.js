@@ -19,7 +19,20 @@
  *  applyDiscount(1000, 9, true);
  *  //> 700
  */
-function applyDiscount(priceInCents, age, hasMembership) {}
+function applyDiscount(priceInCents, age, hasMembership) {
+  let discount = 0; 
+
+  if (age <= 10 || age >= 65) {
+    discount += 0.10;
+    }  
+  
+    if (hasMembership) {
+    discount += 0.20;
+    } 
+    
+  
+    return priceInCents * (1 - discount);  
+}
 
 /**
  * getCartTotal()
@@ -139,7 +152,30 @@ function compareLocations(address1, address2) {
     //>   },
     //> ];
  */
-function gradeAssignments(assignments) {}
+function gradeAssignments(assignments) {
+  
+  for (let i = 0; i < assignments.length; i++){
+    if (assignments[i].kind === "PASS-FAIL") {
+      if (assignments[i].score.received === assignments[i].score.max) {
+        assignments[i].status = "PASSED";
+      } else {
+        assignments[i].status = "FAILED";
+      }
+    } else if (assignments[i].kind === "PERCENTAGE") {
+      if ((assignments[i].score.received / assignments[i].score.max) >= 0.8) {
+        assignments[i].status = `PASSED: ${((assignments[i].score.received / assignments[i].score.max) * 100).toFixed(1)}%`;
+      } else {
+        assignments[i].status = `FAILED: ${((assignments[i].score.received / assignments[i].score.max) * 100).toFixed(1)}%`;
+      }
+    } else {
+        assignments[i].status = `SCORE: ${assignments[i].score.received}/${assignments[i].score.max}`;
+    }  
+      
+  } 
+  
+      return assignments;
+
+}
 
 /**
  * createLineOrder()
@@ -148,7 +184,8 @@ function gradeAssignments(assignments) {}
  * 
  * Build an algorithm that takes in an array of objects, where each object represents a person. The order of the array is important; the person at index `0` arrived first while the person at index `1` arrived afterwards.
  * 
- * Return an array that includes only the names of each person, but reordered to account for whether or not each person has a membership. Everyone who has a membership should be at the front of the line in the same order they arrived. Everyone without a membership should be in the same order they arrived but after those with a membership.
+ * Return an array that includes only the names of each person, but reordered to account for whether or not each person has a membership. 
+ * Everyone who has a membership should be at the front of the line in the same order they arrived. Everyone without a membership should be in the same order they arrived but after those with a membership.
  * @param {Object[]} people - An array of people objects.
  * @param {string} people[].name - The name of the person.
  * @param {boolean} people[].hasMembership - Whether or not the person has a membership.

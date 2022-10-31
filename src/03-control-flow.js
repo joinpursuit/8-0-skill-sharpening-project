@@ -31,7 +31,7 @@ function isEqual(a, b) {
  *  //> 19
  */
 function findLarger(a, b) {}
-
+ 
 /**
  * findLargerOrTie()
  * ---------------------
@@ -69,7 +69,14 @@ function findLargerOrTie(a, b) {
  *  positiveNegativeOrZero(1);
  *  //> "Positive"
  */
-function positiveNegativeOrZero(a) {}
+function positiveNegativeOrZero(a) {
+  if (a > 0) {
+    return "Positive";
+} else if (a < 0) {
+    return "Negative";
+} 
+   return "Zero";
+}
 
 /**
  * aroundTheWorldGreeting()
@@ -90,7 +97,14 @@ function positiveNegativeOrZero(a) {}
  *  aroundTheWorldGreeting();
  *  //> "Hello World"
  */
-function aroundTheWorldGreeting(language) {}
+function aroundTheWorldGreeting(language) {
+  if (language === "spanish") {
+    return "Hola Mundo";
+  } else if (language === "german") {
+    return "Hallo Welt";
+  } 
+    return "Hello World"
+}
 
 /**
  * aroundTheWorldGreetingWithSwitch()
@@ -113,7 +127,18 @@ function aroundTheWorldGreeting(language) {}
  *  aroundTheWorldGreetingWithSwitch();
  *  //> "Hello World"
  */
-function aroundTheWorldGreetingWithSwitch(language) {}
+function aroundTheWorldGreetingWithSwitch(language) {
+    switch (language) {
+      case "spanish":
+        return "Hola Mundo";
+        break;
+      case "german":
+        return "Hallo Welt";
+        break;
+      default:
+        return "Hello World";
+    }
+}
 
 /**
  * calculateLetterGrade()
