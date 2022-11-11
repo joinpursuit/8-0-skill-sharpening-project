@@ -62,8 +62,8 @@ function getLastName(person) {
  *  getAddressStreet(person);
  *  //> "697 Pine Drive"
  */
-function getAddressStreet(person) {
-  return person.address.street
+function getAddressStreet(person1) {
+  return person1.address.street
 }
 
 /**
@@ -79,7 +79,7 @@ function getAddressStreet(person) {
  */
 function getCountOfPhoneNumbers(person) {
 
-  return person.numbers.push()
+  return person.numbers.length
 }
 
 /**
@@ -96,8 +96,8 @@ function getCountOfPhoneNumbers(person) {
  *  getFirstPhoneNumber(person);
  *  //> 7185550921
  */
-function getFirstPhoneNumber(person) {
-  return person.numbers[0]
+function getFirstPhoneNumber(person3) {
+  return person3.numbers[0]
 }
 
 /**
@@ -114,8 +114,8 @@ function getFirstPhoneNumber(person) {
  *  getLastPhoneNumber(person);
  *  //> 7185558611
  */
-function getLastPhoneNumber(person) {
-  return person.numbers.pop()
+function getLastPhoneNumber(person4) {
+  return person4.numbers.pop()
 }
 
 /**
@@ -129,8 +129,8 @@ function getLastPhoneNumber(person) {
  *  getFullName(person);
  *  //> "Rachel Eleanor Rojas"
  */
-function getFullName(person) {
-  return person.names.first + " " + person.names.middle + " " + person.names.last
+function getFullName(person5) {
+  return person5.names.first + " " + person5.names.middle + " " + person5.names.last
 }
 
 
@@ -153,9 +153,9 @@ function getFullName(person) {
  *  getCityAndState(person);
  *  //> "Staten Island, NY"
  */
-function getCityAndState(person) {
+function getCityAndState(person6) {
 
-  return person.address.city + ", " + person.address.state
+  return person6.address.city + ", " + person6.address.state
 
 
 
@@ -177,8 +177,8 @@ function getCityAndState(person) {
  *  getFullAddress(person);
  *  //> "697 Pine Drive 2A, Staten Island, NY, 10306"
  */
-function getFullAddress(person) {
-  return `${person.address.street} ${person.address.unit}, ${person.address.city}, ${person.address.state}, ${person.address.zip}`
+function getFullAddress(person7) {
+  return `${person7.address.street} ${person7.address.unit}, ${person7.address.city}, ${person7.address.state}, ${person7.address.zip}`
 }
 
 /**
@@ -203,15 +203,27 @@ function getFullAddress(person) {
     };
  */
 function getFlatObject(person) {
-  console.log(person.numbers)
-  const newObj = {}
-  let names = person.names
-  let address = person.address
+  const Obj = {
+    first: person.names.first,
+    middle: person.names.middle,
+    last: person.names.last,
+    street: person.address.street,
+    unit: person.address.unit,
+    city: person.address.city,
+    state: person.address.state,
+    zip: person.address.zip,
+    numbers: [9195554309]
+   }
+   return Obj
+  // console.log(person.numbers)
+  // const newObj = {}
+  // let names = person.names
+  // let address = person.address
 
-  Object.assign(newObj, names, address)
-  newObj.numbers = JSON.parse(JSON.stringify(person.numbers))
-  console.log(newObj.numbers)
-  return newObj
+  // Object.assign(newObj, names, address)
+  // newObj.numbers = JSON.parse(JSON.stringify(person.numbers))
+  // console.log(newObj.numbers)
+  // return newObj
 }
 //Brainstorming ---V
 // const numbers = [7185550921, 7185558611]

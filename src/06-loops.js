@@ -13,18 +13,15 @@
  */
 
 function rangeSum(min, max) {
-  //const result = { number }
-  let i = min;
-  let arr = [];
+  let newRange = 0
+  for (let i = min; i <= max; i++) {
+    newRange += i
 
-
-  while (min <= max) {
-    arr.push(max)
-    min++
   }
-  return min;
-
+  return newRange
 }
+
+
 
 //Brainstorming--V 
 
@@ -189,7 +186,19 @@ function containsForLoop(array, target) {
  *  targetCount([ 10, 20, 10, 20, 30 ], 10);
  *  //> 2
  */
-function targetCount(array, target) { }
+function targetCount(array, target) {
+  let count = 0
+  for (const element of array) {
+    if (element === target) {
+      count += 1
+    }
+
+
+  }
+  return count
+}
+
+
 
 /**
  * firstIndexFound()
@@ -209,7 +218,22 @@ function targetCount(array, target) { }
  *  firstIndexFound([ "left", "right", "left" ], "up");
  *  //> -1
  */
-function firstIndexFound(array, target) { }
+function firstIndexFound(array, target) {
+  for (let i = 0; i < array.length; i++) {
+    if (array[i] === target)
+
+      return i
+
+
+
+  }
+
+  return -1
+}
+
+
+
+
 
 /**
  * lastIndexFound()
@@ -229,7 +253,23 @@ function firstIndexFound(array, target) { }
  *  lastIndexFound([ "left", "right", "left" ], "up");
  *  //> -1
  */
-function lastIndexFound(array, target) { }
+function lastIndexFound(array, target) { 
+  let lastNum = -1//unlike previous function, must declare the last index found as - 1 
+  for (let i = 0; i < array.length; i++) {
+    if (array[i] === target)
+      lastNum = i//reassigned lastNum =i after the loop in ran through array 
+
+
+
+
+
+
+  }
+
+
+  return lastNum
+}
+
 
 /**
  * timesIndex()
@@ -243,8 +283,15 @@ function lastIndexFound(array, target) { }
  *  //> [ 7 * 0, 10 * 1, 11 * 2 ]
  *  //> [ 0, 10, 22 ]
  */
-function timesIndex(array) { }
+function timesIndex(array) { 
+  let totalArr = []
+  for (let i = 0; i < array.length; i++) {
+    totalArr.push(array[i] * i)
+  }
+  return totalArr
+}
 
+  
 /**
  * cumulativeSum()
  * ---------------------
@@ -257,7 +304,16 @@ function timesIndex(array) { }
  *  //> [ 5, 5 + 2, 5 + 2 + 9 ]
  *  //> [ 5, 7, 16 ]
  */
-function cumulativeSum(array) { }
+function cumulativeSum(array) { 
+  let newArr = []
+  let newSum = 0
+  for (let i in array) {
+    newSum = newSum + array[i]
+    newArr.push(newSum)
+  }
+  return newArr
+}
+
 
 // Do not change anything below this line.
 module.exports = {
