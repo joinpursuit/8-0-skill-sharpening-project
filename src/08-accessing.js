@@ -10,8 +10,8 @@
     address: {
       street: "697 Pine Drive",
       unit: "2A",
-      city: "Staten Island",
-      state: "NY",
+      city: "Staten Island",//3
+      state: "NY",//4
       zip: "10306"
     },
     numbers: [
@@ -32,7 +32,9 @@
  *  getFirstName(person);
  *  //> "Rachel"
  */
-function getFirstName(person) {}
+function getFirstName(person) {
+  return person.names.first
+}
 
 /**
  * getLastName()
@@ -45,7 +47,9 @@ function getFirstName(person) {}
  *  getLastName(person);
  *  //> "Rojas"
  */
-function getLastName(person) {}
+function getLastName(person) {
+  return person.names.last
+}
 
 /**
  * getAddressStreet()
@@ -58,7 +62,9 @@ function getLastName(person) {}
  *  getAddressStreet(person);
  *  //> "697 Pine Drive"
  */
-function getAddressStreet(person) {}
+function getAddressStreet(person1) {
+  return person1.address.street
+}
 
 /**
  * getCountOfPhoneNumbers()
@@ -71,7 +77,10 @@ function getAddressStreet(person) {}
  *  getCountOfPhoneNumbers(person);
  *  //> 2
  */
-function getCountOfPhoneNumbers(person) {}
+function getCountOfPhoneNumbers(person) {
+
+  return person.numbers.length
+}
 
 /**
  * getFirstPhoneNumber()
@@ -87,7 +96,9 @@ function getCountOfPhoneNumbers(person) {}
  *  getFirstPhoneNumber(person);
  *  //> 7185550921
  */
-function getFirstPhoneNumber(person) {}
+function getFirstPhoneNumber(person3) {
+  return person3.numbers[0]
+}
 
 /**
  * getLastPhoneNumber()
@@ -103,7 +114,9 @@ function getFirstPhoneNumber(person) {}
  *  getLastPhoneNumber(person);
  *  //> 7185558611
  */
-function getLastPhoneNumber(person) {}
+function getLastPhoneNumber(person4) {
+  return person4.numbers.pop()
+}
 
 /**
  * getFullName()
@@ -116,8 +129,16 @@ function getLastPhoneNumber(person) {}
  *  getFullName(person);
  *  //> "Rachel Eleanor Rojas"
  */
-function getFullName(person) {}
+function getFullName(person5) {
+  return person5.names.first + " " + person5.names.middle + " " + person5.names.last
+}
 
+
+// const firstName = "first"
+// const middleName = "middle"
+// const lastName = "last"
+// const fullName = firstName  + middleName + lastName
+// return person.fullName
 /**
  * getCityAndState()
  * ---------------------
@@ -132,8 +153,16 @@ function getFullName(person) {}
  *  getCityAndState(person);
  *  //> "Staten Island, NY"
  */
-function getCityAndState(person) {}
+function getCityAndState(person6) {
 
+  return person6.address.city + ", " + person6.address.state
+
+
+
+}
+//Brainstorming ---V 
+//Array.prototype.toString.call(({ city }, { state }))
+//return person.adress([{ city }, { state }])
 /**
  * getFullAddress()
  * ---------------------
@@ -148,7 +177,9 @@ function getCityAndState(person) {}
  *  getFullAddress(person);
  *  //> "697 Pine Drive 2A, Staten Island, NY, 10306"
  */
-function getFullAddress(person) {}
+function getFullAddress(person7) {
+  return `${person7.address.street} ${person7.address.unit}, ${person7.address.city}, ${person7.address.state}, ${person7.address.zip}`
+}
 
 /**
  * getFlatObject()
@@ -171,7 +202,42 @@ function getFullAddress(person) {}
       numbers: [7185550921, 7185558611],
     };
  */
-function getFlatObject(person) {}
+function getFlatObject(person) {
+  const Obj = {
+    first: person.names.first,
+    middle: person.names.middle,
+    last: person.names.last,
+    street: person.address.street,
+    unit: person.address.unit,
+    city: person.address.city,
+    state: person.address.state,
+    zip: person.address.zip,
+    numbers: [9195554309]
+   }
+   return Obj
+  // console.log(person.numbers)
+  // const newObj = {}
+  // let names = person.names
+  // let address = person.address
+
+  // Object.assign(newObj, names, address)
+  // newObj.numbers = JSON.parse(JSON.stringify(person.numbers))
+  // console.log(newObj.numbers)
+  // return newObj
+}
+//Brainstorming ---V
+// const numbers = [7185550921, 7185558611]
+// const i = new Array(7185550921, 7185558611)
+
+// first: person.names.first,
+// middle: person.names.middle,
+// last: person.names.last,
+// street: person.address.street,
+// unit: person.address.unit,
+// city: person.address.city,
+// state: person.address.state,
+// zip: person.address.zip,
+// numbers: person.numbers.push()
 
 // Do not change the code below.
 module.exports = {
