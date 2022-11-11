@@ -9,7 +9,9 @@
  *  alwaysTrue();
  *  //> true
  */
- function alwaysTrue() {}
+ function alwaysTrue() {
+  return true;
+ }
 
  /**
   * greet()
@@ -24,7 +26,9 @@
   *  greet("Ian");
   *  //> "Hello, Ian."
   */
- function greet() {}
+ function greet(name) {
+  return `Hello, ${name}.`
+ }
  
  /**
   * add()
@@ -39,7 +43,9 @@
   *  add(10, 20);
   *  //> 30
   */
- function add() {}
+ function add(a, b) {
+  return a + b;
+ }
  
  /**
   * multiply()
@@ -54,7 +60,9 @@
   *  multiply(2, 5);
   *  //> 10
   */
- function multiply() {}
+ function multiply(a, b) {
+  return a * b;
+ }
  
  /**
   * average()
@@ -74,7 +82,10 @@
   *  average(10, 6);
   *  //> 8 // 10 + 6 = 16; 16/2 = 8;
   */
- function average() {}
+ function average(a, b) {
+  let sum = a + b
+  return sum / 2
+ }
  
  /**
   * averageThree()
@@ -93,7 +104,9 @@
   *  averageThree(10, 11, 19);
   *  //> 10 // 10 + 11 + 19 = 30; 30 / 3 = 10;
   */
- function averageThree() {}
+ function averageThree(a, b, c) {
+  return (a + b + c) / 3
+ }
  
  /**
   * compareTypes()

@@ -14,7 +14,13 @@
  *  isEqual(10, "10");
  *  //> false
  */
- function isEqual(a, b) {}
+ function isEqual(a, b) {
+  if(a === b){
+    return true
+  } else {
+    return false
+  }
+ }
 
  /**
   * findLarger()
@@ -29,7 +35,11 @@
   *  //> 19
   */
  function findLarger(a, b) {
- 
+  if(a > b){
+    return a
+  } else if (b > a) {
+    return b 
+  }
  }
  
  /**
@@ -47,7 +57,15 @@
   *  findLargerOrTie(0, 0);
   *  //> "tie"
   */
- function findLargerOrTie(a, b) {}
+ function findLargerOrTie(a, b) {
+  if(a > b){
+    return a
+  } else if (b > a){
+    return b
+  }else if (a === b){
+    return "tie"
+  }
+ }
  
  /**
   * positiveNegativeOrZero()
@@ -67,7 +85,17 @@
   *  positiveNegativeOrZero(1);
   *  //> "Positive"
   */
- function positiveNegativeOrZero(a) {}
+ function positiveNegativeOrZero(a) {
+  if(a === 0){
+    return "Zero"
+  } else if (a >= 1){
+    return "Positive"
+  } else if (a <= -1){
+    return "Negative"
+  } else {
+    return NaN
+  }
+ }
  
  /**
   * aroundTheWorldGreeting()
@@ -88,7 +116,17 @@
   *  aroundTheWorldGreeting();
   *  //> "Hello World"
   */
- function aroundTheWorldGreeting(language) {}
+ function aroundTheWorldGreeting(language) {
+  if(language === 'english'){
+    return 'Hello World'
+  } else if(language === 'spanish'){
+    return 'Hola Mundo'
+  }else if(language === 'german'){
+    return 'Hallo Welt'
+  } else {
+    return 'Hello World'
+  }
+ }
  
  
  /**
@@ -201,6 +239,11 @@
   *  //> "Even"
   */
  function evenOrOdd(a) {
+  if(a % 2 === 0){
+    return "Even"
+  } else {
+    return "Odd"
+  }
  }
  /**
   * evenOrOddWithTernary()
@@ -216,7 +259,9 @@
   *  evenOrOddWithTernary(8);
   *  //> "Even"
   */
- function evenOrOddWithTernary(a) {} 
+ function evenOrOddWithTernary(a) {
+  return a % 2 === 0 ? "Even":"Odd"
+ } 
  
  // Do not change any code below this line.
  module.exports = {

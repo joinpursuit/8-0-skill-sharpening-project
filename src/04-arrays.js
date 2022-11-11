@@ -10,7 +10,10 @@
  *  createEmptyArray();
  *  //> []
  */
- function createEmptyArray() {}
+ function createEmptyArray() {
+  let arr = []
+  return arr
+ }
  
  /**
   * createArrayWithTwoElements()
@@ -24,7 +27,12 @@
   *  createArrayWithTwoElements(true, false);
   *  //> [ true, false ]
   */
- function createArrayWithTwoElements(a, b) {}
+ function createArrayWithTwoElements(a, b) {
+  let array = [];
+  array.push(a)
+  array.push(b)
+  return array
+ }
  
  /**
   * getArrayLength()
@@ -37,7 +45,9 @@
   *  getArrayLength([ 10, 20, 30 ]);
   *  //> 3
   */
- function getArrayLength(array) {}
+ function getArrayLength(array) {
+  return array.length
+ }
  
  /**
   * getFirstElementOfArray()
@@ -51,7 +61,9 @@
   *  getFirstElementOfArray([ 10, 20, 30 ]);
   *  //> 10
   */
- function getFirstElementOfArray(array) {}
+ function getFirstElementOfArray(array) {
+  return array.shift()
+ }
  /**
   * getLastElementOfArray()
   * ---------------------
@@ -64,7 +76,9 @@
   *  getLastElementOfArray([ null, undefined ]);
   *  //> undefined
   */
- function getLastElementOfArray(array) {}
+ function getLastElementOfArray(array) {
+  return array[array.length-1]
+ }
  /**
   * addElementToEndOfArray()
   * ---------------------
@@ -77,7 +91,10 @@
   *  addElementToEndOfArray([ 10 ], 9);
   *  //> [ 10, 9 ]
   */
- function addElementToEndOfArray(array, element) {}
+ function addElementToEndOfArray(array, element) {
+  array.push(element)
+  return array
+ }
  
  /**
   * removeElementFromEndOfArray()
