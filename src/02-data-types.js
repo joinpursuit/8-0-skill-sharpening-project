@@ -49,9 +49,7 @@ function convertToString(val) {}
  *  convertToShoutingText("Hello There");
  *  //> "HELLO THERE"
  */
-function convertToShoutingText(text) {
-  return text.toUpperCase();
-}
+function convertToShoutingText(text) {}
 
 /**
  * convertToWhisperText()
@@ -64,9 +62,7 @@ function convertToShoutingText(text) {
  *  convertToWhisperText("Hello There");
  *  //> "hello there"
  */
-function convertToWhisperText(text) {
-  return text.toLowerCase();
-}
+function convertToWhisperText(text) {}
 
 /**
  * checkIfCharacterIsInString()
@@ -83,9 +79,7 @@ function convertToWhisperText(text) {
  *  checkIfCharacterIsInString("hello there", "a");
  *  //> false
  */
-function checkIfCharacterIsInString(text, character) {
-  return text.includes(character);
-}
+function checkIfCharacterIsInString(text, character) {}
 
 /**
  * isEven()
@@ -101,10 +95,7 @@ function checkIfCharacterIsInString(text, character) {
  *  isEven(11);
  *  //> false
  */
-function isEven(num) {
-   return num % 2 === 0 ? true : false;
-  
-}
+function isEven(num) {}
 
 /**
  * isOdd()
@@ -120,10 +111,7 @@ function isEven(num) {
  *  isOdd(11);
  *  //> true
  */
-function isOdd(num) {
-  return num % 2 !== 0 ? true : false; 
-
-}
+function isOdd(num) {}
 
 /**
  * isTruthy()
@@ -139,9 +127,7 @@ function isOdd(num) {
  *  isTruthy(null);
  *  //> false
  */
-function isTruthy(val) {
-  return val ? true : false;
-}
+function isTruthy(val) {}
 
 /**
  * isFalsy()
@@ -157,9 +143,7 @@ function isTruthy(val) {
  *  isFalsy(" ");
  *  //> false
  */
-function isFalsy(val) {
-  return val ? false : true;
-}
+function isFalsy(val) {}
 
 // Do not change the code below.
 module.exports = {

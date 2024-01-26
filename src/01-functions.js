@@ -9,9 +9,7 @@
  *  alwaysTrue();
  *  //> true
  */
-function alwaysTrue() {
-  return true;
-}
+function alwaysTrue() {}
 
 /**
  * greet()
@@ -26,9 +24,7 @@ function alwaysTrue() {
  *  greet("Ian");
  *  //> "Hello, Ian."
  */
-function greet(name) {
-  return `Hello, ${name}.`
-}
+function greet(name) {}
 
 /**
  * add()
@@ -43,9 +39,7 @@ function greet(name) {
  *  add(10, 20);
  *  //> 30
  */
-function add(a, b) {
-  return a + b;
-}
+function add(a, b) {}
 
 /**
  * multiply()
@@ -118,10 +112,7 @@ function averageThree(a, b, c) {}
  *  compareTypes("left", 10);
  *  //> false
  */
-function compareTypes(a, b) {
-
-  return typeof a === typeof b;
-}
+function compareTypes(a, b) {}
 
 /**
  * flipSign()
@@ -140,9 +131,7 @@ function compareTypes(a, b) {
  *  flipSign(50);
  *  //> -50
  */
-function flipSign(a) {
-    return a * -1
-}
+function flipSign(a) {}
 
 /**
  * joinStringsWithSpaces()
@@ -162,10 +151,7 @@ function flipSign(a) {
  *  joinStringsWithSpaces("left", "right", "up", "down", "away");
  *  //> "left right up down away"
  */
-function joinStringsWithSpaces(a, b, c, d, e) {
-
-  return `${a} ${b} ${c} ${d} ${e}`;
-}
+function joinStringsWithSpaces(a, b, c, d, e) {}
 
 /**
  * getFirstAndLastCharacter()
@@ -182,10 +168,7 @@ function joinStringsWithSpaces(a, b, c, d, e) {
  *  getFirstAndLastCharacter("upwards");
  *  //> "us"
  */
-function getFirstAndLastCharacter(a) {
-
-  return `${a[0]}${a[a.length - 1]}`;
-}
+function getFirstAndLastCharacter(a) {}
 
 // Do not change the code below.
 module.exports = {

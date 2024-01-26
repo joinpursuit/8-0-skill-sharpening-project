@@ -19,20 +19,7 @@
  *  applyDiscount(1000, 9, true);
  *  //> 700
  */
-function applyDiscount(priceInCents, age, hasMembership) {
-  let discount = 0;
-
-  if (age <= 10 || age >= 65) {
-    discount += 0.10;
-    }  
-  
-    if (hasMembership) {
-    discount += 0.20;
-    } 
-    
-  
-    return priceInCents * (1 - discount);  
-}
+function applyDiscount(priceInCents, age, hasMembership) {}
 
 /**
  * getCartTotal()
@@ -53,15 +40,7 @@ function applyDiscount(priceInCents, age, hasMembership) {
     getCartTotal(cart);
  *  //> "$30.00"
  */
-function getCartTotal(products) {
-  let total = 0;
-for (let i = 0; i < products.length; i++){
-  total += products[i].priceInCents * products[i].quantity;
-}
-
-
-return `$${(total/100).toFixed(2)}`
-} 
+function getCartTotal(products) {} 
 
 /**
  * compareLocations()
@@ -148,30 +127,7 @@ function compareLocations(address1, address2) {}
     //>   },
     //> ];
  */
-function gradeAssignments(assignments) {
-  
-  for (let i = 0; i < assignments.length; i++){
-    if (assignments[i].kind === "PASS-FAIL") {
-      if (assignments[i].score.received === assignments[i].score.max) {
-        assignments[i].status = "PASSED";
-      } else {
-        assignments[i].status = "FAILED";
-      }
-    } else if (assignments[i].kind === "PERCENTAGE") {
-      if ((assignments[i].score.received / assignments[i].score.max) >= 0.8) {
-        assignments[i].status = `PASSED: ${((assignments[i].score.received / assignments[i].score.max) * 100).toFixed(1)}%`;
-      } else {
-        assignments[i].status = `FAILED: ${((assignments[i].score.received / assignments[i].score.max) * 100).toFixed(1)}%`;
-      }
-    } else {
-        assignments[i].status = `SCORE: ${assignments[i].score.received}/${assignments[i].score.max}`;
-    }  
-      
-  } 
-  
-      return assignments;
-
-}
+function gradeAssignments(assignments) {}
 
 /**
  * createLineOrder()
@@ -197,22 +153,7 @@ function gradeAssignments(assignments) {
     createLineOrder(people);
     //> [ "Ray Anderson", "America Marsh", "Wade Carson", "Patience Patel" ]
  */
-function createLineOrder(people) {
-  let arr = [];
-  let arr2 = [];
-  for (let i = 0; i < people.length; i++){
-    if (people[i].hasMembership) {
-      arr.push(people[i].name)
-    } else {
-      arr2.push(people[i].name)
-    } 
-
-  }
-
-
-
-  return arr.concat(arr2);
-} 
+function createLineOrder(people) {} 
 
 module.exports = {
   applyDiscount,

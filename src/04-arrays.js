@@ -10,10 +10,7 @@
  *  createEmptyArray();
  *  //> []
  */
-function createEmptyArray() {
-  return [];
-
-}
+function createEmptyArray() {}
 
 /**
  * createArrayWithTwoElements()
@@ -27,9 +24,7 @@ function createEmptyArray() {
  *  createArrayWithTwoElements(true, false);
  *  //> [ true, false ]
  */
-function createArrayWithTwoElements(a, b) {
-  return [a, b];
-}
+function createArrayWithTwoElements(a, b) {}
 
 /**
  * getArrayLength()
@@ -42,9 +37,7 @@ function createArrayWithTwoElements(a, b) {
  *  getArrayLength([ 10, 20, 30 ]);
  *  //> 3
  */
-function getArrayLength(array) {
-  return array.length;
-}
+function getArrayLength(array) {}
 
 /**
  * getFirstElementOfArray()
@@ -99,9 +92,7 @@ function addElementToEndOfArray(array, element) {}
  *  removeElementFromEndOfArray([ 10, 9, 8 ]);
  *  //> 8
  */
-function removeElementFromEndOfArray(array) {
-  return array.pop();
-}
+function removeElementFromEndOfArray(array) {}
 
 /**
  * addElementToFrontOfArray()
@@ -115,10 +106,7 @@ function removeElementFromEndOfArray(array) {
  *  addElementToFrontOfArray([ 10 ], 9);
  *  //> [ 9, 10 ]
  */
-function addElementToFrontOfArray(array, element) {
-   array.unshift(element);
- return array;
-}
+function addElementToFrontOfArray(array, element) {}
 /**
  * removeElementFromFrontOfArray()
  * ---------------------
@@ -130,9 +118,7 @@ function addElementToFrontOfArray(array, element) {
  *  removeElementFromFrontOfArray([ 10, 9, 8 ]);
  *  //> 10
  */
-function removeElementFromFrontOfArray(array) {
-  return array.shift();
-}
+function removeElementFromFrontOfArray(array) {}
 
 /**
  * getMiddleElement()
@@ -148,9 +134,7 @@ function removeElementFromFrontOfArray(array) {
  *  getMiddleElement([ 10, null, "30" ]);
  *  //> null
  */
-function getMiddleElement(array) {
-  return array[(array.length - 1) / 2];
-}
+function getMiddleElement(array) {}
 
 // Do not change any code below this line.
 module.exports = {
