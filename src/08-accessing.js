@@ -71,7 +71,9 @@ function getAddressStreet(person) {}
  *  getCountOfPhoneNumbers(person);
  *  //> 2
  */
-function getCountOfPhoneNumbers(person) {}
+function getCountOfPhoneNumbers(person) {
+  return person.numbers.length;
+}
 
 /**
  * getFirstPhoneNumber()
@@ -87,7 +89,9 @@ function getCountOfPhoneNumbers(person) {}
  *  getFirstPhoneNumber(person);
  *  //> 7185550921
  */
-function getFirstPhoneNumber(person) {}
+function getFirstPhoneNumber(person) {
+  return person.numbers[0];
+}
 
 /**
  * getLastPhoneNumber()
@@ -103,7 +107,9 @@ function getFirstPhoneNumber(person) {}
  *  getLastPhoneNumber(person);
  *  //> 7185558611
  */
-function getLastPhoneNumber(person) {}
+function getLastPhoneNumber(person) {
+  return person.numbers[person.numbers.length - 1];
+}
 
 /**
  * getFullName()
@@ -116,7 +122,10 @@ function getLastPhoneNumber(person) {}
  *  getFullName(person);
  *  //> "Rachel Eleanor Rojas"
  */
-function getFullName(person) {}
+function getFullName(person) {
+  return `${person.names.first} ${person.names.middle} ${person.names.last}`;
+
+}
 
 /**
  * getCityAndState()
@@ -132,7 +141,9 @@ function getFullName(person) {}
  *  getCityAndState(person);
  *  //> "Staten Island, NY"
  */
-function getCityAndState(person) {}
+function getCityAndState(person) {
+  return `${person.address.city}, ${person.address.state}`;
+}
 
 /**
  * getFullAddress()
@@ -148,7 +159,9 @@ function getCityAndState(person) {}
  *  getFullAddress(person);
  *  //> "697 Pine Drive 2A, Staten Island, NY, 10306"
  */
-function getFullAddress(person) {}
+function getFullAddress(person) {
+  return `${person.address.street} ${person.address.unit}, ${person.address.city}, ${person.address.state}, ${person.address.zip}`;
+}
 
 /**
  * getFlatObject()
@@ -172,8 +185,10 @@ function getFullAddress(person) {}
     };
  */
 function getFlatObject(person) {
-
+  let obj = {...person.names, ...person.address, numbers: person.numbers};
+  return obj;
 }
+
 
 // Do not change the code below.
 module.exports = {

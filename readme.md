@@ -6,7 +6,7 @@ The goal of this project is to give you repeated practice.
 
 There are 186 unit tests that need to pass. Each passing test will be worth 1 point.
 
-A minium of 129 points must be attained in order to pass this assessment.
+A minium of 129 points must be attained in order to pass this project.
 
 There is no partial credit for the tests.
 
