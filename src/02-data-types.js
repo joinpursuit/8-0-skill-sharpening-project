@@ -9,9 +9,7 @@
  *  getLengthOfString("down");
  *  //> 4
  */
-function getLengthOfString(str) {
-  return str.length;
-}
+function getLengthOfString(str) {}
 
 /**
  * convertToNumber()
@@ -24,9 +22,7 @@ function getLengthOfString(str) {
  *  convertToNumber("111");
  *  //> 111
  */
-function convertToNumber(val) {
-  return Number(val);
-}
+function convertToNumber(val) {}
 
 /**
  * convertToString()
@@ -40,9 +36,7 @@ function convertToNumber(val) {
  *  convertToString(99);
  *  //> "99"
  */
-function convertToString(val) {
-  return val.toString();
-}
+function convertToString(val) {}
 
 /**
  * convertToShoutingText()

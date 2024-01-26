@@ -32,9 +32,7 @@
  *  getFirstName(person);
  *  //> "Rachel"
  */
-function getFirstName(person) {
-  return person.names.first;
-}
+function getFirstName(person) {}
 
 /**
  * getLastName()
@@ -47,9 +45,7 @@ function getFirstName(person) {
  *  getLastName(person);
  *  //> "Rojas"
  */
-function getLastName(person) {
-  return person.names.last;
-}
+function getLastName(person) {}
 
 /**
  * getAddressStreet()
@@ -62,9 +58,7 @@ function getLastName(person) {
  * EXAMPLE:
  *  //> "697 Pine Drive"
  */
-function getAddressStreet(person) {
-  return person.address.street;
-}
+function getAddressStreet(person) {}
 
 /**
  * getCountOfPhoneNumbers()

@@ -51,9 +51,7 @@ function getArrayLength(array) {}
  *  getFirstElementOfArray([ 10, 20, 30 ]);
  *  //> 10
  */
-function getFirstElementOfArray(array) {
-  return array[0];
-}
+function getFirstElementOfArray(array) {}
 
 /**
  * getLastElementOfArray()
@@ -67,9 +65,7 @@ function getFirstElementOfArray(array) {
  *  getLastElementOfArray([ null, undefined ]);
  *  //> undefined
  */
-function getLastElementOfArray(array) {
-  return array[array.length - 1];
-}
+function getLastElementOfArray(array) {}
 
 /**
  * addElementToEndOfArray()
@@ -83,10 +79,7 @@ function getLastElementOfArray(array) {
  *  addElementToEndOfArray([ 10 ], 9);
  *  //> [ 10, 9 ]
  */
-function addElementToEndOfArray(array, element) {
-  array.push(element);
-  return array;
-}
+function addElementToEndOfArray(array, element) {}
 
 /**
  * removeElementFromEndOfArray()
